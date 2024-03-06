@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context=".activity.WordsFragment">
+    <item android:id="@+id/action_settings"
+          android:title="@string/action_settings"
+          android:orderInCategory="100"
+          app:showAsAction="never"/>
+    <item android:id="@+id/action_select_for_topic"
+          android:title="@string/select_for_topic"
+          android:layout_width="wrap_content"
+          android:orderInCategory="200"
+          android:layout_height="wrap_content"/>
+    <item android:id="@+id/action_parse_words"
+          android:title="@string/parse_words"
+          android:layout_width="wrap_content"
+          android:orderInCategory="200"
+          android:layout_height="wrap_content"/>
+</menu>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+            android:name=".ApplicationWithDI"
+            android:allowBackup="true"
+            android:dataExtractionRules="@xml/data_extraction_rules"
+            android:fullBackupContent="@xml/backup_rules"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/Theme.DictionaryApk"
+            tools:targetApi="31">
+        <activity
+                android:name=".activity.ParseWordsSettingsActivity"
+                android:exported="false"
+                android:label="@string/title_activity_parse_words_settings"/>
+        <activity
+                android:name=".activity.TopicsActivity"
+                android:exported="false"
+                android:label="@string/title_activity_topics"/>
+        <activity
+                android:name=".activity.AssetsActivity"
+                android:exported="false"
+                android:label="@string/title_activity_assets"/>
+        <activity
+                android:name=".activity.SettingsActivity"
+                android:exported="false"
+                android:label="@string/title_activity_settings"/>
+        <activity
+                android:name=".activity.MainActivity"
+                android:exported="true"
+                android:label="@string/app_name"
+                android:theme="@style/Theme.DictionaryApk">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

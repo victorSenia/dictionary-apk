@@ -1,0 +1,173 @@
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+            app:title="@string/general">
+
+        <EditTextPreference
+                app:key="org.leo.dictionary.config.entity.General.delayBefore"
+                android:defaultValue="100"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:inputType="number"
+                android:title="@string/delay_before"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:useSimpleSummaryProvider="true"/>
+        <EditTextPreference
+                app:key="org.leo.dictionary.config.entity.General.delayPerLetterAfter"
+                android:defaultValue="40"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:inputType="number"
+                android:title="@string/delay_per_letter_after"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:useSimpleSummaryProvider="true"/>
+        <EditTextPreference
+                app:key="org.leo.dictionary.config.entity.General.knowledgeIncrease"
+                android:defaultValue="0.02"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:inputType="number"
+                android:title="@string/knowledge_increase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:useSimpleSummaryProvider="true" app:isPreferenceVisible="false"/>
+        <SwitchPreference
+                app:key="org.leo.dictionary.config.entity.General.includeArticle"
+                android:defaultValue="true"
+                android:title="@string/include_article"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <SwitchPreference
+                app:key="org.leo.dictionary.config.entity.General.shuffle"
+                android:defaultValue="false"
+                android:title="@string/shuffle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            app:title="@string/repeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <EditTextPreference
+                app:key="org.leo.dictionary.config.entity.Repeat.times"
+                android:defaultValue="2"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:inputType="number"
+                android:title="@string/times"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:useSimpleSummaryProvider="true"/>
+        <EditTextPreference
+                app:key="org.leo.dictionary.config.entity.Repeat.delay"
+                android:defaultValue="300"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:inputType="number"
+                android:title="@string/delay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:useSimpleSummaryProvider="true"/>
+
+    </PreferenceCategory>
+    <PreferenceCategory
+            app:title="@string/translation">
+
+        <SwitchPreference
+                app:key="org.leo.dictionary.config.entity.Translation.active"
+                android:defaultValue="true"
+                android:title="@string/active"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <EditTextPreference
+                app:key="org.leo.dictionary.config.entity.Translation.delay"
+                android:defaultValue="500"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:inputType="number"
+                android:title="@string/delay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:useSimpleSummaryProvider="true"
+                app:dependency="org.leo.dictionary.config.entity.Translation.active"/>
+        <SwitchPreference
+                app:key="org.leo.dictionary.config.entity.Translation.eachTime"
+                android:defaultValue="true"
+                android:title="@string/each_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:dependency="org.leo.dictionary.config.entity.Translation.active"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            app:title="@string/spelling">
+
+        <SwitchPreference
+                app:key="org.leo.dictionary.config.entity.Spelling.active"
+                android:defaultValue="false"
+                android:title="@string/active"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <EditTextPreference
+                app:key="org.leo.dictionary.config.entity.Spelling.delay"
+                android:defaultValue="100"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:inputType="number"
+                android:title="@string/delay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:useSimpleSummaryProvider="true"
+                app:dependency="org.leo.dictionary.config.entity.Spelling.active"/>
+        <SwitchPreference
+                app:key="org.leo.dictionary.config.entity.Spelling.eachTime"
+                android:defaultValue="true"
+                android:title="@string/each_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:dependency="org.leo.dictionary.config.entity.Spelling.active"/>
+        <EditTextPreference
+                app:key="org.leo.dictionary.config.entity.Spelling.letterDelay"
+                android:defaultValue="200"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:inputType="number"
+                android:title="@string/letter_delay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:useSimpleSummaryProvider="true"
+                app:dependency="org.leo.dictionary.config.entity.Spelling.active"/>
+
+    </PreferenceCategory>
+    <PreferenceCategory
+            app:title="@string/speech">
+
+        <EditTextPreference
+                app:key="org.leo.dictionary.apk.config.entity.Speech.speed"
+                android:defaultValue="1.0"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:inputType="number"
+                android:title="@string/speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:useSimpleSummaryProvider="true"/>
+        <EditTextPreference
+                app:key="org.leo.dictionary.apk.config.entity.Speech.pitch"
+                android:defaultValue="1.0"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:inputType="number"
+                android:title="@string/pitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:useSimpleSummaryProvider="true"/>
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,81 @@
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+            app:title="@string/parse_words">
+
+        <EditTextPreference
+                app:key="org.leo.dictionary.config.entity.ParseWords.topicDelimiter"
+                android:defaultValue=""
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:title="@string/topic_delimiter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:useSimpleSummaryProvider="true"/>
+        <EditTextPreference
+                app:key="org.leo.dictionary.config.entity.ParseWords.languageFrom"
+                android:defaultValue="de"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:title="@string/language_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:useSimpleSummaryProvider="true"/>
+        <EditTextPreference
+                app:key="org.leo.dictionary.config.entity.ParseWords.languageTo"
+                android:defaultValue="en"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:title="@string/language_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:useSimpleSummaryProvider="true"/>
+        <EditTextPreference
+                app:key="org.leo.dictionary.config.entity.ParseWords.articles"
+                android:defaultValue="die ;das ;der "
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:title="@string/articles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:useSimpleSummaryProvider="true"/>
+        <EditTextPreference
+                app:key="org.leo.dictionary.config.entity.ParseWords.additionalInformationDelimiter"
+                android:defaultValue=";"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:title="@string/additional_information_delimiter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:useSimpleSummaryProvider="true"/>
+        <EditTextPreference
+                app:key="org.leo.dictionary.config.entity.ParseWords.delimiter"
+                android:defaultValue="\\|"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:title="@string/delimiter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:useSimpleSummaryProvider="true"/>
+        <EditTextPreference
+                app:key="org.leo.dictionary.config.entity.ParseWords.translationDelimiter"
+                android:defaultValue=";"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:title="@string/translation_delimiter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:useSimpleSummaryProvider="true"/>
+        <EditTextPreference
+                app:key="org.leo.dictionary.config.entity.ParseWords.topicFlag"
+                android:defaultValue="\\t"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:title="@string/topic_flag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:useSimpleSummaryProvider="true"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

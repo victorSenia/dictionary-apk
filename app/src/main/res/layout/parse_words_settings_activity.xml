@@ -1,0 +1,35 @@
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:orientation="vertical"
+        tools:context=".activity.ParseWordsSettingsActivity">
+    <FrameLayout
+            android:id="@+id/settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_weight="1">
+    </FrameLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_weight="0">
+        <Button
+                android:text="@string/file"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/Widget.AppCompat.Button"
+                android:id="@+id/file" android:layout_weight="1"/>
+        <Button
+                android:text="@string/asset"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/Widget.AppCompat.Button"
+                android:id="@+id/asset" android:layout_weight="1"/>
+    </LinearLayout>
+    <Button
+            android:text="@string/parse_words"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Button"
+            android:id="@+id/parseWords" android:layout_weight="0"/>
+</LinearLayout>

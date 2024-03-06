@@ -1,0 +1,40 @@
+package org.leo.dictionary.apk.activity;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import org.jetbrains.annotations.NotNull;
+import org.leo.dictionary.UiUpdater;
+import org.leo.dictionary.apk.ApkUiUpdater;
+import org.leo.dictionary.apk.ApplicationWithDI;
+import org.leo.dictionary.apk.databinding.FragmentDetailsBinding;
+
+public class DetailsFragment extends Fragment {
+
+    private DetailsViewModel mViewModel;
+    private UiUpdater uiUpdater;
+
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        FragmentDetailsBinding binding = FragmentDetailsBinding.inflate(inflater, container, false);
+        mViewModel = new ViewModelProvider(this).get(DetailsViewModel.class);
+        binding.setViewmodel(mViewModel);
+        binding.setLifecycleOwner(this);
+        ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) getActivity().getApplicationContext()).appComponent.uiUpdater();
+        uiUpdater = word -> mViewModel.updateWord(word);
+        apkUiUpdater.addUiUpdater(uiUpdater);
+        return binding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+    }
+}
