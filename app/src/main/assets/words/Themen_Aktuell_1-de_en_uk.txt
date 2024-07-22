@@ -38,7 +38,7 @@ die Hausfrau | the housewife | домогосподарка; господиня
 der Herr | the gentleman | джентльмен; пан
 das Hobby; -s | the hobby | хобі; захоплення
 das Jahr; -e | the year | рік
-die Kauffrau | the saleswoman | продавщиця; продавець
+die Kauffrau | the saleswoman | продавщиця
 der Kaufmann | the salesman | продавець
 das Kind; -er | the child | дитина; дитя
 das Klavier | the piano | фортепіано; піаніно
@@ -67,7 +67,7 @@ der Student | the student (male) | студент
 der Tag; -e | the day | день
 das Telefon | the telephone | телефон
 die Telefonnummer | the phone number | номер телефону
-der Vorname | the first name | ім'я; ім'я
+der Vorname | the first name | ім'я
 der Wohnort | the place of residence | місце проживання
 die Zahl; -en | the number | число; номер
 		Adjektive
@@ -107,28 +107,28 @@ mit | with | з
 nein | no | ні
 und | and | і; та
 von | from | від
-was? | what? | що?; що?
-wer? | who? | хто?; хто?
-wie? | how? | як?; як?
-wie viel? | how much? | скільки?; скільки?
-wo? | where? | де?; де?
-woher? | where from? | звідки?; звідки?
-wohin? | where to? | куди?; куди?
+was? | what? | що?
+wer? | who? | хто?
+wie? | how? | як?
+wie viel? | how much? | скільки?
+wo? | where? | де?
+woher? | where from? | звідки?
+wohin? | where to? | куди?
 		Ausdrücke
 Ach so! | Oh, I see! | О, я бачу!; О, я розумію!
 Ach was! | Oh, come on! | Ну, давай!; Ах ти!
 Bitte schön! | You're welcome! | Будь ласка!; Немає за що!
 Danke! | Thank you! | Дякую!; Спасибі!
-Danke, es geht. | Thanks, I'm okay. | Дякую, мені все добре.; Спасибі, я в порядку.
+Danke, es geht. | Thanks, I'm okay. | Дякую, у мене все добре.; Спасибі, я в порядку.
 Danke, gut. | Thanks, fine. | Дякую, добре.; Спасибі, добре.
 Danke schön! | Thank you very much! | Дуже вдячний!; Дякую вам дуже!
 Entschuldigung! | Excuse me! | Вибачте!; Перепрошую!
 Es geht! | I'm fine. | Я в порядку.; Мені добре.
 Guten Abend! | Good evening! | Добрий вечір!; Вечір добрий!
-Guten Morgen! | Good morning! | Доброго ранку!; Доброго ранку!
-Guten Tag! | Good day! | Добрий день!; Добрий день!
+Guten Morgen! | Good morning! | Доброго ранку!
+Guten Tag! | Good day! | Добрий день!
 Hallo! | Hello! | Привіт!; Вітаю!
-Ist hier noch frei? | Is this seat taken? | Це місце вільне?; Це місце вільне?
+Ist hier noch frei? | Is this seat taken? | Це місце вільне?
 Macht nichts. | It's okay. | Все гаразд.; Все нормально.
 Wie bitte? | Pardon? | Що, простіть?; Як, вибачте?
 Wie geht es Ihnen? | How are you? | Як у вас справи?; Як ви?
@@ -137,10 +137,10 @@ Wie heißen Sie? | What is your name? | Як вас звати?; Як вас з�
 Wie heißt du? | What's your name? | Як тебе звати?; Як тебе звуть?
 Wie ist Ihre Adresse? | What's your address? | Яка ваша адреса?; Яка твоя адреса?
 Wie ist deine Adresse? | What's your address? | Яка твоя адреса?; Яка ваша адреса?
-Wie ist Ihr Name? | What's your name? | Як ваше ім'я?; Як ваше ім'я?
-Wie ist dein Name? | What's your name? | Як твоє ім'я?; Як твоє ім'я?
-Wie ist Ihre Telefonnummer? | What's your phone number? | Який ваш номер телефону?; Який ваш номер телефону?
-Wie ist deine Telefonnummer? | What's your phone number? | Який твій номер телефону?; Який твій номер телефону?
+Wie ist Ihr Name? | What's your name? | Як ваше ім'я?
+Wie ist dein Name? | What's your name? | Як твоє ім'я?
+Wie ist Ihre Telefonnummer? | What's your phone number? | Який ваш номер телефону?
+Wie ist deine Telefonnummer? | What's your phone number? | Який твій номер телефону?
 zur Zeit | at the moment | на даний момент; наразі
 	Lektion 2
 		Verben
@@ -183,7 +183,7 @@ die Kamera; -s | the camera | камера
 die Karte; -n | the card | карта
 die Kassette; -n | the cassette | касета
 die Küche; -n | the kitchen | кухня
-der Küchenschrank; -schränke | the kitchen cabinet | кухонний шафа
+der Küchenschrank; -schränke | the kitchen cabinet | кухонна шафа
 der Kugelschreiber; - | the pen | ручка
 der Kühlschrank; -schränke | the fridge; the refrigerator | холодильник
 die Lampe; -n | the lamp | лампа
@@ -285,7 +285,7 @@ das Gespräch; -e | conversation | розмова; бесіда
 das Getränk; -e | drink | напій; пити
 das Gewürz; -e | spice | спеція; прянощі
 das Glas; Gläser | glass | скло; келих
-das Gramm | gram | грам; грамовий
+das Gramm | gram | грам
 das Hähnchen | chicken | курка; курятина
 der Kaffee | coffee | кава; кавовий
 die Kartoffel; -n | potato | картопля; картопляний
@@ -351,7 +351,7 @@ fantastisch | fantastic | фантастичний; чудовий
 rot | red | червоний; рудий
 salzig | salty | солоний; солодкий
 satt | full | повний; ситний
-sauer | sour | кислий; квасолка
+sauer | sour | кислий
 scharf | spicy | гострий; пекучий
 schlank | slim | стрункий; підтягнутий
 stark | strong | сильний; міцний
@@ -420,7 +420,7 @@ bedienen | serve; attend | обслуговувати; служити
 beschreiben | describe | описувати
 bringen | bring | приносити
 dürfen | be allowed to; may | мати дозвіл; можна
-duschen | shower | душуватися
+duschen | shower | приймати душ
 einkaufen | shop; buy | купувати; шопінгувати
 einladen | invite | запрошувати
 feiern | celebrate | святкувати
@@ -593,13 +593,13 @@ das Ehepaar; -e | married couple | подружжя
 das Einkommen; ­ | income | дохід
 das Ende | end | кінець
 das Erdgeschoss; -e | ground floor | перший поверх
-die Erlaubnis | permission; permit | дозвіл; дозвілка
+die Erlaubnis | permission; permit | дозвіл
 die Familie; -n | family | сім'я
 das Fenster; ­ | window | вікно
 der Flur; -e | corridor; hallway | коридор; хол
 der Fußboden; Fußböden | floor | підлога; поверх
 die Garage; -n | garage | гараж
-die Garderobe; -n | cloakroom | прибиральня
+die Garderobe; -n | cloakroom | гардероб
 der Garten; Gärten | garden | сад
 das Hochhaus; Hochhäuser | skyscraper | хмарочос
 der Hof; Höfe | yard; courtyard | двір; подвір'я
@@ -615,7 +615,7 @@ das Leben; - | life | життя
 die Miete; -n | rent | оренда
 der Mietvertrag; -verträge | lease agreement | договір оренди
 die Mutter; Mütter | mother | мати
-der Nachbar; -n | neighbor | сусід
+der Nachbar; -n | neighbour | сусід
 die Natur | nature | природа
 der Quadratmeter; - | square meter | квадратний метр
 der Raum; Räume | room; space | кімната; простір
@@ -627,7 +627,7 @@ der Schreibtisch; -e | desk | письмовий стіл
 der Sessel; - | armchair | крісло
 die Sonne; -n | sun | сонце
 der Spiegel; - | mirror | дзеркало
-der Stock | floor; story | поверх; етаж
+der Stock | floor; story | поверх
 der Strand; Strände | beach | пляж
 der Streit; Streitigkeiten | argument; quarrel | сварка; конфлікт
 die Stunde; -n | hour | година
@@ -652,7 +652,7 @@ das Zimmer; ­ | room | кімната
 direkt | direct | прямий; безпосередній
 frei | free | вільний; безкоштовний
 glücklich | happy | щасливий; радісний
-günstig | favorable; cheap | вигідний; дешевий
+günstig | favourable; cheap | вигідний; дешевий
 hässlich | ugly | потворний; непривабливий
 interessant | interesting | цікавий; захоплюючий
 privat | private | приватний; особистий
@@ -733,7 +733,7 @@ die Chefin; -nen | female boss | начальниця
 der Chef; -s | male boss | начальник
 der Doktor; -en; Dr. = Doktor | doctor; physician | лікар
 das Drittel | third (part) | третина
-die Drogerie; -n | drugstore | дрогерія
+die Drogerie; -n | drugstore | аптека
 die Erkältung; -en | cold; common cold | застуда
 die Frage; -n | question | питання
 der Fuß; Füße | foot | нога; стопа
@@ -842,7 +842,7 @@ kündigen | resign; terminate | звільняти; складати з поса
 lassen | let; allow | дозволяти
 malen | paint | малювати
 merken | notice; realize | помічати; розуміти
-operieren | operate | операціювати
+operieren | operate | оперувати
 parken | park | паркуватися
 putzen | clean | прибирати
 rufen | call; shout | викликати; кричати
@@ -1073,8 +1073,8 @@ der Discman | Discman | дискмен; портативний плеєр
 der DVD-Player | DVD player | програвач DVD; DVD-плеєр
 die Erinnerung; -en | memory | пам'ять; спогад
 die Feier; -n | celebration | святкування; вечірка
-der Fernseher; ­ | television | телевізор; телек
-das Feuerzeug; -e | lighter | запальничка; зажигалка
+der Fernseher; ­ | television | телевізор
+das Feuerzeug; -e | lighter | запальничка
 der Führerschein; -e | driver's license | посвідчення водія; права
 der Geburtstag; -e | birthday | день народження; свято
 das Gerät; -e | device | пристрій; апарат
@@ -1084,17 +1084,17 @@ das Holz | wood | дерево; деревина
 das Huhn; Hühner | chicken | курка; курятина
 der Hund; -e | dog | собака; пес
 die Information; -en | information | інформація; дані
-die Ingenieurin; -nen | engineer (female) | інженерка; інженерша
+die Ingenieurin; -nen | engineer (female) | інженер
 der Ingenieur; -e | engineer (male) | інженер; технік
 die Kette; -n | chain | ланцюг; крижаний
 der König; -e | king | король; цар
 die Kuh; Kühe | cow | корова; ковбаса
 der Kunde; -n | customer | клієнт; покупець
 Möbel (Plural) | furniture | меблі; обладнання
-das Motorrad; -räder | motorcycle | мотоцикл; мото
+das Motorrad; -räder | motorcycle | мотоцикл
 die Musikdatei | music file | музичний файл; аудіозапис
 die Party; -s | party | вечірка; святкування
-die Pfeife; -n | pipe | трубка; пайпа
+die Pfeife; -n | pipe | трубка
 das Pferd; -e | horse | кінь; коня
 das Rad; Räder | wheel | колесо; руль
 der Reiseführer; ­ | travel guide | подорожній посібник; гід
@@ -1105,7 +1105,7 @@ der Schmuck | jewelry | прикраси; ювелірні вироби
 der Strom; Ströme | electricity | електрика; струм
 die Tante; -n | aunt | тітка; тітонька
 das Tier; -e | animal | тварина; звір
-die Verkäuferin; -nen | saleswoman | продавщиця; менеджерка
+die Verkäuferin; -nen | saleswoman | продавщиця
 der Verkäufer; - | salesman | продавець; менеджер
 VideoPhone | VideoPhone | відеотелефон; відеозв'язок
 (das) Weihnachten | Christmas | Різдво; Різдвяні свята
@@ -1143,7 +1143,7 @@ fließen | to flow | течі; розливатися
 gehören | to belong | належати
 wachsen | to grow | рости
 wählen | to choose; to elect | вибирати; обирати
-wandern | to hike; to trek | мандрівати; ходити в походи
+wandern | to hike; to trek | мандрувати; ходити в походи
 		Nomen
 die Arbeit; -en | work; job | робота; праця
 das Ausland | abroad; foreign countries | за кордоном; закордоння
@@ -1171,11 +1171,11 @@ die Kneipe; -n | pub; bar | паб; бар
 die Küste; -n | coast | узбережжя
 Lebensmittel (Plural) | groceries | продукти харчування
 der Meter; - | meter | метр
-die Ministerin | minister (female) | міністрка
+die Ministerin | minister (female) | міністр
 der Minister; - | minister (male) | міністр
 die Nation; -en | nation | нація
 die Pension; -en | pension; retirement | пенсія; відпустка
-die Politikerin; -nen | politician (female) | політичка; політик
+die Politikerin; -nen | politician (female) | політик
 der Politiker; - | politician (male) | політик
 die Ruine; -n | ruin | руїна
 die Schauspielerin; -nen | actress | акторка

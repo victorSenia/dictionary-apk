@@ -11,8 +11,10 @@ import org.leo.dictionary.*;
 import org.leo.dictionary.apk.audio.AndroidAudioService;
 import org.leo.dictionary.apk.config.AssetsConfigurationReader;
 import org.leo.dictionary.apk.config.PreferenceConfigurationReader;
+import org.leo.dictionary.apk.helper.DBManager;
 import org.leo.dictionary.apk.helper.WordCriteriaProvider;
 import org.leo.dictionary.apk.word.provider.AssetsWordProvider;
+import org.leo.dictionary.apk.word.provider.DBWordProvider;
 import org.leo.dictionary.apk.word.provider.InputStreamWordProvider;
 import org.leo.dictionary.audio.AudioService;
 import org.leo.dictionary.config.ConfigParser;
@@ -34,6 +36,7 @@ public class ApkModule {
 
     public static final String ASSET = "asset";
     public static final String FILE = "file";
+    public static final String DB = "db";
     public static final String LAST_STATE_SOURCE = "org.leo.dictionary.apk.config.entity.LastState.source";
     public static final String LAST_STATE_URI = "org.leo.dictionary.apk.config.entity.LastState.uri";
     public static final String LAST_STATE_VOICE = "org.leo.dictionary.apk.config.entity.LastState.voice.";
@@ -41,6 +44,7 @@ public class ApkModule {
     public static final String LAST_STATE_IS_PORTRAIT = "org.leo.dictionary.apk.config.entity.LastState.isPortrait";
     public static final String LAST_STATE_IS_NIGHT_MODE = "org.leo.dictionary.apk.config.entity.LastState.isNightMode";
     public static final String LAST_STATE_WORD_CRITERIA = "org.leo.dictionary.apk.config.entity.LastState.wordCriteria";
+    public static final String LAST_STATE_CURRENT_INDEX = "org.leo.dictionary.apk.config.entity.LastState.currentIndex";
     public static final String LANGUAGES_SEPARATOR = "_";
     private final Application application;
 
@@ -54,6 +58,20 @@ public class ApkModule {
         updateLanguagesInConfiguration(configuration);
         wordProvider.setContext(context);
         return wordProvider;
+    }
+
+    @Provides
+    @Singleton
+    @Named("dbWordProvider")
+    public static DBWordProvider provideDBWordProvider(Context context) {
+        DBWordProvider wordProvider = new DBWordProvider();
+        wordProvider.setDbManager(new DBManager(context));
+        return wordProvider;
+    }
+
+    public static boolean isDBSource(@Named("lastState") SharedPreferences lastState) {
+        String source = lastState.getString(LAST_STATE_SOURCE, ASSET);
+        return DB.equals(source);
     }
 
     protected static void updateLanguagesInConfiguration(ParseWords configuration) {
@@ -96,7 +114,9 @@ public class ApkModule {
         String source = lastState.getString(LAST_STATE_SOURCE, ASSET);
         String uri = lastState.getString(LAST_STATE_URI, null);
         try {
-            if (ASSET.equals(source)) {
+            if (DB.equals(source)) {
+                return provideDBWordProvider(context);
+            } else if (ASSET.equals(source)) {
                 ParseWords configuration = provideParseWordsConfiguration(context);
                 if (uri != null && Arrays.asList(context.getAssets().list(AssetsWordProvider.ASSETS_WORDS)).contains(uri)) {
                     configuration.setPath(uri);
@@ -182,8 +202,10 @@ public class ApkModule {
 
     @Provides
     @Singleton
-    public static UiUpdater provideUiUpdater() {
-        return new ApkUiUpdater();
+    public static UiUpdater provideUiUpdater(@Named("lastState") SharedPreferences lastState) {
+        ApkUiUpdater apkUiUpdater = new ApkUiUpdater();
+        apkUiUpdater.setLastState(lastState);
+        return apkUiUpdater;
     }
 
     @Provides

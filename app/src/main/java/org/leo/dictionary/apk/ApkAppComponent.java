@@ -7,6 +7,8 @@ import org.leo.dictionary.ExternalWordProvider;
 import org.leo.dictionary.PlayService;
 import org.leo.dictionary.UiUpdater;
 import org.leo.dictionary.apk.helper.WordCriteriaProvider;
+import org.leo.dictionary.apk.word.provider.DBWordProvider;
+import org.leo.dictionary.audio.AudioService;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
@@ -15,6 +17,8 @@ import javax.inject.Singleton;
 @Component(modules = ApkModule.class)
 public interface ApkAppComponent {
     PlayService playService();
+
+    AudioService audioService();
 
     ExternalWordProvider externalWordProvider();
 
@@ -26,4 +30,7 @@ public interface ApkAppComponent {
 
     @Named("lastState")
     SharedPreferences lastState();
+
+    @Named("dbWordProvider")
+    DBWordProvider dbWordProvider();
 }

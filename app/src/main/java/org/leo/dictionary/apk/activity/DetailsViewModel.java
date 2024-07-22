@@ -12,7 +12,7 @@ public class DetailsViewModel extends ViewModel {
         return uiState;
     }
 
-    public void updateWord(Word word) {
+    public void updateWord(Word word, int index) {
         uiState.postValue(word);
     }
 

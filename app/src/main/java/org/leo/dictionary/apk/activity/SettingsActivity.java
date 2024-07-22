@@ -37,7 +37,10 @@ public class SettingsActivity extends AppCompatActivity {
             setInputTypeNumber("org.leo.dictionary.config.entity.Translation.delay");
             setInputTypeNumber("org.leo.dictionary.config.entity.Spelling.delay");
             setInputTypeNumber("org.leo.dictionary.config.entity.Spelling.letterDelay");
+            setInputTypeNumber("org.leo.dictionary.config.entity.General.delayPerLetterAfter");
             setInputTypeNumber("org.leo.dictionary.config.entity.General.knowledgeIncrease");
+            setInputTypeNumber("org.leo.dictionary.apk.config.entity.Speech.speed");
+            setInputTypeNumber("org.leo.dictionary.apk.config.entity.Speech.pitch");
         }
 
         private void setInputTypeNumber(String key) {

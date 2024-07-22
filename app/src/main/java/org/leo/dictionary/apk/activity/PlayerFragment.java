@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import org.leo.dictionary.PlayService;
+import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.databinding.FragmentPlayerBinding;
@@ -58,7 +59,12 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
         binding.buttonPlay.setOnClickListener(v -> {
             if (!playService.isPlaying()) {
                 if (isAudioFocusGranted()) {
-                    playService.play();
+                    int index = ((ApplicationWithDI) getActivity().getApplicationContext()).appComponent.lastState().getInt(ApkModule.LAST_STATE_CURRENT_INDEX, -1);
+                    if (index != -1) {
+                        playService.playFrom(index);
+                    } else {
+                        playService.play();
+                    }
                 }
             } else {
                 playService.pause();

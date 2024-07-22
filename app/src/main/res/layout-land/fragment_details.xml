@@ -5,32 +5,37 @@
                 name="viewmodel"
                 type="org.leo.dictionary.apk.activity.DetailsViewModel"/>
     </data>
-    <LinearLayout
+    <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context=".activity.DetailsFragment"
-            android:orientation="vertical"
-            android:keepScreenOn="true"
-            android:visibility="@{viewmodel.uiState==null?android.view.View.GONE:android.view.View.VISIBLE}">
-
-        <TextView
+            android:layout_height="match_parent">
+        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/word"
-                android:text="@{viewmodel.uiState.fullWord}"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:gravity="bottom|center"
-                android:textSize="64sp"
-                android:layout_weight="1"/>
-        <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/translation"
-                android:text='@{viewmodel.uiState.getFormattedTranslations("\n")}'
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:gravity="center|top"
-                android:textSize="50sp"
-                android:layout_weight="1"/>
+                tools:context=".activity.DetailsFragment"
+                android:orientation="vertical"
+                android:keepScreenOn="true"
+                android:visibility="@{viewmodel.uiState==null?android.view.View.GONE:android.view.View.VISIBLE}"
+                android:layout_gravity="center">
 
-    </LinearLayout>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/word"
+                    android:text="@{viewmodel.uiState.fullWord}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:gravity="bottom|center"
+                    android:textSize="64sp"
+                    android:layout_weight="1"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/translation"
+                    android:text='@{viewmodel.uiState.getFormattedTranslations("\n")}'
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:gravity="center|top"
+                    android:textSize="50sp"
+                    android:layout_weight="1"/>
+
+        </LinearLayout>
+    </ScrollView>
 </layout>

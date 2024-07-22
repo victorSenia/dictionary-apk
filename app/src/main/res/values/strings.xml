@@ -4,6 +4,8 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="play">Play</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="action_play_from">Play from</string>
     <string name="title_activity_topics">Topics</string>
@@ -32,6 +34,7 @@
     <string name="language_from">Language from</string>
     <string name="languages_to">Languages to</string>
     <string name="languages_to_speak">Languages to speak</string>
+    <string name="languages_to_delete">Languages to delete</string>
     <string name="articles">Articles</string>
     <string name="additional_information_delimiter">Additional information delimiter</string>
     <string name="delimiter">Delimiter</string>
@@ -46,6 +49,13 @@
     <string name="select_voices">Select voices</string>
     <string name="default_voice">Default voice</string>
     <string name="find_voices">Find voices</string>
-    <string name="find_words">Find words</string>
+    <string name="find_words">Filter words</string>
     <string name="set_mode">Change mode</string>
+    <string name="import_words">Import words</string>
+    <string name="use_db">Use database</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_delete">Delete</string>
+    <string name="options">Options</string>
+    <string name="clean_db">Clean database</string>
+    <string name="change_orientation">Change orientation</string>
 </resources>

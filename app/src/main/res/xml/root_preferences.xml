@@ -40,12 +40,6 @@
                 android:title="@string/include_article"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-        <SwitchPreference
-                app:key="org.leo.dictionary.config.entity.General.shuffle"
-                android:defaultValue="false"
-                android:title="@string/shuffle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
 
     </PreferenceCategory>
 

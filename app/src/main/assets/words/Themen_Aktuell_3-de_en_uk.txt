@@ -4,7 +4,7 @@
 auffallen | stand out | виділятися; привертати увагу
 aufhören | stop | зупинятися; припиняти
 aufregen | get upset | дратуватися; збуджуватися
-ausruhen | rest | відпочивати; релаксувати
+ausruhen | rest | відпочивати
 bedeuten | mean | означати; мати значення
 begrüßen | greet | вітати; привітати
 bemühen | strive | старатися; намагатися
@@ -36,7 +36,7 @@ vertrauen | trust | довіряти; вірити
 warnen | warn | попереджати; застерігати
 weinen | cry | плакати; кричати
 wünschen | wish | бажати; побажати
-zuwinken | wave | махати; звітатися
+zuwinken | wave | махати
 zweifeln | doubt | сумніватися; питатися
 		Nomen
 der Automechaniker; - | car mechanic | автомеханік
@@ -56,7 +56,7 @@ das Lied; -er | song | пісня; спів
 der Lohn; -e | wage | зарплата; оплата праці
 die Menge; -n | amount | кількість; сума
 das Mitglied; -er | member | член; учасник
-der Onkel; - | uncle | дядько (тіткова або дядькова сестра)
+der Onkel; - | uncle | дядько
 die Ordnung; -en | order | порядок; замовлення
 der Plan; -e | plan | план; програма
 das Recht; -e | right | право; справедливість
@@ -65,7 +65,7 @@ die Regierung; -en | government | уряд; влада
 die Reparatur; -en | repair | ремонт; відновлення
 der Sommer; - | summer | літо; сезон
 der Taxifahrer; - | taxi driver | таксист; водій таксі
-die Umarmung; -en | hug | обійма; обіймання
+die Umarmung; -en | hug | обійми; обіймання
 der Unfall; -e | accident | аварія; нещасний випадок
 der Verein; -e | association | асоціація; об'єднання
 der Vertrag; -e | contract | контракт; договір
@@ -76,7 +76,7 @@ das Wetter | weather | погода; атмосфера
 bestimmt | certain | певний; впевнений
 kritisch | critical | критичний; важливий
 notwendig | necessary | необхідний; обов'язковий
-traurig | sad | сумний; грустний
+traurig | sad | сумний
 verletzt | injured | поранений; травмований
 weit | far | далекий; віддалений
 westlich | western | західний (географічний)
@@ -91,7 +91,7 @@ worauf | whereupon | після чого; в результаті чого
 abschließen | to finish | закінчувати; завершувати
 abwaschen | to wash up | мити; вимивати
 anbauen | to grow | вирощувати; встановлювати
-anbieten | to offer | пропонувати; продаавати
+anbieten | to offer | пропонувати; продавати
 aufpassen | to watch out | берегти; доглядати
 ausbauen | to expand | розширювати; вдосконалювати
 beginnen | to begin | починати; розпочинати
@@ -147,7 +147,7 @@ das Glas; -er | glass | скло; склянка
 die Größe; -n | size | розмір; величина
 die Haustür; -en | front door | вхідна двері; двері в передпокій
 die Heimat | homeland | батьківщина; рідний край
-die Holztür; -en | wooden door | дерев'яні двері; дерев'яна дверка
+die Holztür; -en | wooden door | дерев'яні двері; дерев'яні дверцята
 die Jugend | youth | молодь; юність
 das Kaufhaus; -er | department store | універмаг; торгівельний центр
 das Kinderzimmer; - | child's room | дитяча кімната
@@ -159,7 +159,7 @@ die Lage; -n | location | розташування; місце
 die Landschaft; -en | landscape | пейзаж; краєвид
 die Markthalle; -n | market hall | ринкова зала; торгова зали
 die Mehrheit; -en | majority | більшість
-die Meinung; -en | opinion | думка; мнення
+die Meinung; -en | opinion | думка
 der Nachtclub; -s | nightclub | нічний клуб; дискотека
 der Nachteil; -e | disadvantage | недолік
 das Parkhaus; -er | parking garage | паркінг
@@ -388,7 +388,7 @@ das Vergnügen; - | pleasure | задоволення; радість
 der Vorteil; -e | advantage | перевага; бонус
 die Wirklichkeit; -en | reality | реальність; дійсність
 		Adjektive
-enttäuscht | disappointed | розчарований; розчаровуваний
+enttäuscht | disappointed | розчарований
 ernst | serious | серйозний; важливий
 fein | fine | прекрасний; дрібний
 möglich | possible | можливий; потенційний
@@ -415,7 +415,7 @@ montags | on Mondays | в понеділок; по понеділках
 nebenbei | on the side | на боці; додатково
 nun | now | зараз; тепер
 schließlich | finally | нарешті; врешті
-übermorgen | day after tomorrow | післязавтра; засівраць
+übermorgen | day after tomorrow | післязавтра
 vorgestern | day before yesterday | позавчора; навчора
 zuletzt | lastly | наостанок; останнім
 		Funktionsworter
@@ -449,7 +449,7 @@ produzieren | to produce | виробляти; продукувати
 schlagen | to beat | бити; перемагати
 sorgen | to worry | турбуватися; хвилюватися
 treffen | to meet | зустрічатися; відповідати
-überzeugen | to convince | переконувати; убеждать
+überzeugen | to convince | переконувати
 verbessern | to improve | покращувати; вдосконалювати
 verlangen | to demand | вимагати; запитувати
 versuchen | to try | спробувати; намагатися
@@ -508,7 +508,7 @@ die Stelle; -n | position | позиція
 die Stimmung; -en | mood | настрій; атмосфера
 die Tätigkeit; -en | activity | діяльність; активність
 das Team; -s | team | команда
-der Teich; -e | pond | ставок; пруд
+der Teich; -e | pond | ставок
 die Untersuchung; -en | examination | обстеження; іспит
 die Werbung | advertising | реклама
 der Zeitpunkt; -e | moment | момент
@@ -556,11 +556,11 @@ die Anmeldung; -en | registration | реєстрація; реєстраційн
 der Ausflug; -e | trip | поїздка; екскурсія
 die Bedingung; -en | condition | стан; умова
 der Druck | pressure | тиск; натиск
-der Ehemann; -er | husband | чоловік (супруг)
+der Ehemann; -er | husband | чоловік
 das Ereignis; -se | event | подія; захід
 der Erfolg; -e | success | успіх; досягнення
 das Ergebnis; -se | result | результат; висновок
-die Erlaubnis; -se | permission | дозвіл; дозвілити
+die Erlaubnis; -se | permission | дозвіл; дозволити
 der/die Erwachsene; -n | adult | дорослий
 das Gegenteil; -e | opposite | протилежний; протилежність
 die Geschwister (Plural) | siblings | брати та сестри; рідня
@@ -593,7 +593,7 @@ das Ziel; -e | goal | мета; ціль
 der Zoo; -s | zoo | зоопарк; тваринний сад
 		Adjektive
 ängstlich | anxious | тривожний; напружений
-arbeitslos | unemployed | безробітний; безробітниця
+arbeitslos | unemployed | безробітний
 ärgerlich | annoyed | розгніваний; обурений
 einsam | lonely | самотній; усамітнений
 fröhlich | happy | щасливий; радісний
@@ -603,7 +603,7 @@ jung | young | молодий; юний
 klug | smart | розумний; кмітливий
 kompliziert | complicated | складний; заплутаний
 laut | loud | голосний; шумний
-männlich | male | чоловічий; самецький
+männlich | male | чоловічий
 nass | wet | мокрий; вологий
 ordentlich | neat | охайний; чистий
 sauer | sour | кислий; розлючений
@@ -650,7 +650,7 @@ lügen | lie | брехати; лежати
 merken | notice | помічати; замічати
 pflegen | care | доглядати; піклуватися
 streiten | argue | сваритися; посваритися
-überraschen | surprise | здивовувати; вражати
+überraschen | surprise | здивувати; вражати
 unterhalten | entertain | розважати; забавляти
 verabreden | arrange | домовлятися; узгоджувати
 versprechen | promise | обіцяти; обіцянка
@@ -694,12 +694,12 @@ die Wiederholung; -en | repetition | повторення; репетиція
 der Witz; -e | joke | жарт; анекдот
 das Ziel; -e | goal | ціль; мета
 		Adjektive
-ängstlich | fearful | побоюваний; боязкий
+ängstlich | fearful | побоювання; боязкий
 ärgerlich | angry | сердитий; злий
 blond | blond | блондин; світлошкірий
 böse | angry | сердитий; злий
 dumm | stupid | дурний; глупий
-faul | lazy | лінивий; пігний
+faul | lazy | лінивий
 frech | cheeky | нахабний; сміливий
 fröhlich | happy | щасливий; веселий
 höflich | polite | ввічливий; люб'язний
@@ -715,10 +715,10 @@ positiv | positive | позитивний
 pünktlich | punctual | пунктуальний; своєчасний
 rund | round | круглий
 schlimm | bad | поганий; злий
-schmutzig | dirty | брудний; грязний
+schmutzig | dirty | брудний
 sportlich | sporty | спортивний
 sympathisch | likable | симпатичний; приємний
-traurig | sad | сумний; грустний
+traurig | sad | сумний
 unangenehm | unpleasant | неприємний
 unfreundlich | unfriendly | недружелюбний; ворожий
 unkompliziert | uncomplicated | невимушений; простий
@@ -795,8 +795,8 @@ die Landschaft; -en | landscape | ландшафт; пейзаж
 das Leder; - | leather | шкіра; шкіри
 die Liebe | love | любов; кохання
 der Marktpreis; -e | market price | ринкова ціна; ціни на ринку
-die Meinung; -en | opinion | думка; мніння
-das Netz; -e | net | мережа; нети
+die Meinung; -en | opinion | думка
+das Netz; -e | net | мережа
 der Ofen; - | oven | духовка; піч
 die Panne; -n | breakdown | поломка; аварія
 das Papier; -e | paper | папір; папери
@@ -855,7 +855,7 @@ verabreden | to arrange | домовлятися; організовувати
 verbinden | to connect | з'єднувати; підключати
 vermuten | to assume | припускати; передбачати
 verteilen | to distribute | розподіляти; розповсюджувати
-vorbereiten | to prepare | готувати; підготовувати
+vorbereiten | to prepare | готувати
 vorstellen | to introduce | вводити; представляти
 wünschen | to wish | бажати; побажання
 zahlen | to pay | платити; оплачувати
@@ -895,7 +895,7 @@ die Nachricht; -en | message | повідомлення; лист
 der Ofen; - | oven | піч; духовка
 die Ordnung; -en | order | порядок; упорядкування
 das Papier; -e | paper | папір; паперовий
-die Papiere (Plural) | papers | документи; папіри
+die Papiere (Plural) | papers | документи; папери
 die Quittung; -en | receipt | квитанція; отримання
 die Reaktion; -en | reaction | реакція; реагування
 der Schreibtisch; -e | desk | стіл; письмовий стіл
@@ -921,7 +921,7 @@ schwierig | difficult | складний; важкий
 		Adverbien
 ab und zu | now and then | час від часу; іноді
 häufig | frequently | часто; здебільшого
-manchmal | sometimes | іноді; п sometimes
+manchmal | sometimes | іноді
 nämlich | namely | а саме; ім'я
 nie | never | ніколи
 oft | often | часто

@@ -3,7 +3,6 @@ package org.leo.dictionary.apk.activity;
 import android.app.Activity;
 import android.content.Intent;
 import androidx.fragment.app.Fragment;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -15,7 +14,6 @@ public class ReturnSelectedStringRecyclerViewAdapter extends StringRecyclerViewA
         super(items, fragment, getOnClickListener(fragment));
     }
 
-    @NotNull
     private static OnClickListener getOnClickListener(Fragment fragment) {
         return new OnClickListener() {
             @Override

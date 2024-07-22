@@ -47,12 +47,13 @@
             android:id="@+id/change_orientation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_marginEnd="6dp"
-            android:layout_marginBottom="6dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
             app:srcCompat="@android:drawable/ic_menu_rotate"
             app:fabSize="mini"
             app:fabCustomSize="40dp"
+            android:contentDescription="@string/change_orientation"
     />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

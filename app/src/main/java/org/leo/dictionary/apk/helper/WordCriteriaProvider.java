@@ -21,11 +21,9 @@ public class WordCriteriaProvider {
         }
     }
 
-    public static Object deserialize(String string) {
+    public static Object deserialize(String string) throws IOException, ClassNotFoundException {
         try (ByteArrayInputStream bis = new ByteArrayInputStream(Base64.getDecoder().decode(string)); ObjectInput in = new ObjectInputStream(bis)) {
             return in.readObject();
-        } catch (Exception ex) {
-            throw new RuntimeException(ex);
         }
     }
 
@@ -39,6 +37,7 @@ public class WordCriteriaProvider {
     public void setWordCriteria(WordCriteria criteria) {
         wordCriteria = criteria;
         if (lastState != null) {
+            lastState.edit().remove(ApkModule.LAST_STATE_CURRENT_INDEX).apply();
             if (criteria == null) {
                 lastState.edit().remove(ApkModule.LAST_STATE_WORD_CRITERIA).apply();
             } else {
@@ -49,7 +48,11 @@ public class WordCriteriaProvider {
 
     public WordCriteria getLastStateWordCriteria() {
         if (lastState != null && lastState.contains(ApkModule.LAST_STATE_WORD_CRITERIA)) {
-            return (WordCriteria) deserialize(lastState.getString(ApkModule.LAST_STATE_WORD_CRITERIA, ""));
+            try {
+                return (WordCriteria) deserialize(lastState.getString(ApkModule.LAST_STATE_WORD_CRITERIA, ""));
+            } catch (Exception e) {
+                return null;
+            }
         }
         return null;
     }

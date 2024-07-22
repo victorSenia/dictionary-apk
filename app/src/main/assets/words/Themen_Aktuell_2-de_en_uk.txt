@@ -42,11 +42,11 @@ der Job; -s | job | робота; посада
 das Kleid; -er | dress | сукня
 die Kleidung | clothing | одяг; одягання
 der Kollege; -n | colleague | колега
-die Krawatte; -n | tie | кравата
+die Krawatte; -n | tie | краватка
 die Leistung; -en | performance; achievement | досягнення; виконання
 die Liebe | love | любов
 der Mann; -er | man | чоловік
-die Meinung; -en | opinion | думка; мнення
+die Meinung; -en | opinion | думка
 der Morgen | morning | ранок
 der Mund; -er | mouth | рот
 der Musiker; - | musician | музикант
@@ -222,7 +222,7 @@ das Studium; Studien | studies | навчання
 der Termin; -e | appointment; deadline | термін; дедлайн
 der Text; -e | text | текст
 die Universität; -en | university | університет
-die Verkäuferin; -nen | saleswoman | продавчиня
+die Verkäuferin; -nen | saleswoman | продавець
 der Vertrag; -e | contract | контракт; договір
 der Vorteil; -e | advantage; benefit | перевага
 die Wirtschaft | economy; business | економіка
@@ -596,7 +596,7 @@ schimpfen | to scold; to swear | ругати; лаятися
 schlagen | to hit; to beat | бити; лупити
 schmecken | to taste | смакувати
 schwimmen | to swim | плавати
-setzen | to put; to set | ставити; кладати
+setzen | to put; to set | ставити; класти
 sparen | to save (money) | заощаджувати
 spazieren gehen | to go for a walk | гуляти
 sterben | to die | помирати
@@ -766,7 +766,7 @@ der Herbst | autumn | осінь; осінній
 der Hügel; - | hill | пагорб; підніжжя
 die Industrie; -n | industry | промисловість; індустрія
 die Insel; -n | island | острів; острівець
-der Käse | cheese | сир; сируха
+der Käse | cheese | сир
 das Klima | climate | клімат; атмосфера
 der Kunststoff; -e | plastic | пластик; пластмаса
 das Land; -er | land | земля; країна
@@ -774,7 +774,7 @@ die Landkarte; -n | map | карта; мапа
 die Limonade; -n | lemonade | лимонад; лимонна вода
 die Losung; -en | solution | розчин; розв'язок
 die Luft | air | повітря; атмосфера
-der Marz | March | березень; март
+der Marz | March | березень
 das Meer; -e | sea | море; океан
 die Menge; -n | quantity | кількість; маса
 der Meter; - | meter | метр; вимірювач
@@ -790,10 +790,10 @@ die Pflanze; -n | plant | рослина; рослинний
 das Plastik | plastic | пластик; пластмасовий
 der Rasen | lawn | газон; лужок
 der Regen | rain | дощ; дощовик
-der Saft; -e | juice | сік; сіків
+der Saft; -e | juice | сік
 das Schiff; -e | ship | корабель; судно
 der Schnee | snow | сніг; сніжок
-der Schnupfen | cold | насморк; кашель
+der Schnupfen | cold | нежить; кашель
 die See | sea | море; океан
 der Sommer | summer | літо; літній
 die Sonne; -n | sun | сонце; сонячний
@@ -824,10 +824,10 @@ besser | better | краще; кращий
 deutsch | German | німецький; німецькою мовою
 erste | first | перший; перше
 flach | flat | плоский; рівний
-folgend | following | наступний; слідуючий
+folgend | following | наступний
 gleichzeitig | simultaneous | одночасний; синхронний
 heiß | hot | гарячий; жаркий
-herrlich | gorgeous | чудовий; великоліпний
+herrlich | gorgeous | чудовий
 ideal | ideal | ідеальний; ідеально
 kalt | cold | холодний; холодно
 kühl | cool | прохолодний; прохолодно
@@ -849,7 +849,7 @@ zwischen | between | між; поміж
 		Ausdrucke
 am Tage | during the day | протягом дня; вдень
 baden gehen | go bathing | піти в баню; купатися
-den ganzen Tag | all day | весь день; цілий день; ється
+den ganzen Tag | all day | весь день; цілий день
 es gibt | there is; there are | є
 es ist heiß | it is hot | гаряче; жарко
 es regnet | it is raining | йде дощ; падає дощ
@@ -877,7 +877,7 @@ empfehlen | to recommend | рекомендувати; порадити
 erkennen | to recognize | впізнавати; розпізнавати
 erledigen | to accomplish | виконувати; завершувати
 fahren | to drive | їхати; водити
-fliegen | to fly | літати; польот
+fliegen | to fly | літати
 gelten | to apply | застосовувати; вважатися
 gewöhnen | to get used to | звикати; призвичаювати
 glauben | to believe | вірити; уявляти
@@ -910,13 +910,13 @@ die Bedienung; -en | service | обслуговування; послуга
 die Besitzerin; -nen | owner | власник; власниця
 das Betttuch; -er | bedsheet | простирадло; постільна простирадло
 das Blatt; -er | sheet | аркуш; лист
-der Bleistift; -e | pencil | олівець; карандаш
+der Bleistift; -e | pencil | олівець
 die Briefmarke; -n | stamp | марка; поштова марка
 die Buchhandlung; -en | bookstore | книгарня; книжковий магазин
 das Camping | camping | кемпінг; відпочинок на природі
 (s) Deutschland | Germany | Німеччина
 die Diskussion; -en | discussion | обговорення; дискусія
-die Drogerie; -n | drugstore | аптека; дрогерія
+die Drogerie; -n | drugstore | аптека
 das Einkommen; - | income | дохід; дохідність
 die Erfahrung; -en | experience | досвід; враження
 die Fahrkarte; -n | ticket | квиток; квитанція
@@ -935,7 +935,7 @@ die Heimat | homeland | батьківщина; рідний край
 das Hotel; -s | hotel | готель; готельний номер
 die Jugendherberge; -n | youth hostel | молодіжний гуртожиток; хостел
 der Kaffee | coffee | кава; кавовий напій
-die Kellnerin; -nen | waitress | офіціантка; сервіторка
+die Kellnerin; -nen | waitress | офіціантка
 der Koffer; - | suitcase | валіза; чемодан
 der Kontakt; -e | contact | контакт; зв'язок
 der Krankenschein; -e | sick note | лікарняний; медична довідка
@@ -946,7 +946,7 @@ das Medikament; -e | medication | ліки; медикамент
 die Mode; -n | fashion | мода; стиль
 die Natur | nature | природа; натура
 der Pass; -e | passport | паспорт; документ
-das Pech | bad luck | нещастя; неудача
+das Pech | bad luck | нещастя; невдача
 die Pension; -en | pension | пенсія; гостьовий будинок
 das Pflaster | plaster | пластир; лейкопластир
 die Presse | press | преса; прес
@@ -958,7 +958,7 @@ der Schlüssel; - | key | ключ; ключик
 der Schweizer; - | Swiss | швейцарський; швейцар
 die Schwierigkeit; -en | difficulty | складність; трудність
 die Seife; -n | soap | мило; мильниця
-das Streichholz; -er | match | сірник; спічка
+das Streichholz; -er | match | сірник
 die Tasche; -n | bag | сумка; торба
 das Telefonbuch; -er | telephone directory | телефонний довідник; довідник
 der Tourist; -en | tourist | турист; туристичний
@@ -1057,7 +1057,7 @@ die Demokratie; -n | democracy | демократія; республіка
 die Demonstration; -en | demonstration | демонстрація; мітинг
 die Deutsche Demokratische Republik | German Democratic Republic | Німецька Демократична Республіка; НДР
 der Dienstag | Tuesday | вівторок
-die Diktatur; -en | dictatorship | диктатура; тирания
+die Diktatur; -en | dictatorship | диктатура; тиранія
 der Einfluss; -e | influence | вплив
 der Empfang; -e | reception | прийом
 das Ende; -n | end | кінець
@@ -1115,7 +1115,7 @@ der Staat; -en | state | держава; стан
 das Stadion; Stadien | stadium | стадіон; арена
 die Straßenbahn; -en | tram | трамвай
 der Streik; -s | strike | страйк
-das System; -e | system | система; устрійство
+das System; -e | system | система; устрій
 die Uhr; -en | clock | годинник
 die Umwelt | environment | навколишнє середовище; середовище
 das Unglück | misfortune | нещастя
@@ -1242,7 +1242,7 @@ der Tod | death | смерть; загибель
 die Toilette; -n | toilet | туалет; санвузол
 die Veranstaltung; -en | event | подія; захід
 der Verein; -e | association | об'єднання; асоціація
-das WC; -s | WC | туалет; уборна
+das WC; -s | WC | туалет; вбиральня
 das Werkzeug; -e | tool | інструмент; знаряддя
 		Adjektive
 besonder- | special | особливий; спеціальний
@@ -1329,7 +1329,7 @@ zahlen | to pay | платити; оплатити
 der Abend; -e | evening | вечір; вечірка
 das Alter | age | вік; старість
 die Arbeiterin; -nen | worker (female) | працівниця; робітниця
-der August | August | серпень; август
+der August | August | серпень
 die Autorin; -nen | author (female) | авторка; письменниця
 die Badewanne; -n | bathtub | ванна кімната
 die Bank; -e | bank | банк; у берега
@@ -1337,7 +1337,7 @@ die Bäuerin; -nen | farmer (female) | фермерка; селянка
 das Bier; -e | beer | пиво; пивниця
 die Blume; -n | flower | квітка
 das Blut | blood | кров; кровотеча
-das Boot; -e | boat | човен; лодка
+das Boot; -e | boat | човен
 der Brief; -e | letter | лист; поштова відправка
 das Brot; -'e | bread | хліб; печиво
 die Brust; -e | chest | груди; грудка
@@ -1355,7 +1355,7 @@ das Gemüse | vegetable | овоч; овочі
 das Glas; -er | glass | скло; склянка
 das Gras | grass | трава
 die Hand; -e | hand | рука
-die Hausfrau; -en | housewife | домогосподиня; господиня
+die Hausfrau; -en | housewife | домогосподарка; господиня
 das Herz; -en | heart | серце
 der Hund; -e | dog | собака; пес
 der Hunger | hunger | голод

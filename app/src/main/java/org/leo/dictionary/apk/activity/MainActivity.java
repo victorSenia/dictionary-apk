@@ -1,29 +1,39 @@
 package org.leo.dictionary.apk.activity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import org.leo.dictionary.PlayService;
+import org.leo.dictionary.PlayServiceImpl;
 import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.databinding.ActivityMainBinding;
 import org.leo.dictionary.apk.helper.WordCriteriaProvider;
+import org.leo.dictionary.apk.word.provider.DBWordProvider;
 import org.leo.dictionary.entity.Word;
 import org.leo.dictionary.entity.WordCriteria;
+import org.leo.dictionary.word.provider.WordProvider;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private final ActivityResultLauncher<Intent> topicsActivityResultLauncher = registerForActivityResult(
+    public static final String POSITION_ID = "positionId";
+    public static final String WORD = "word";
+    public static final String UPDATED_WORD = "updatedWord";
+    private final ActivityResultLauncher<Intent> filterWordsActivityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
                 if (result.getResultCode() == Activity.RESULT_OK) {
@@ -39,18 +49,32 @@ public class MainActivity extends AppCompatActivity {
                     updateWordsAndUi(null);
                 }
             });
+    private final ActivityResultLauncher<Intent> editWordActivityResultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == Activity.RESULT_OK) {
+                    DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
+                    Word updatedWord = (Word) ((ApplicationWithDI) getApplicationContext()).data.get(UPDATED_WORD);
+                    wordProvider.updateWord(updatedWord);
+                    PlayService playService = ((ApplicationWithDI) getApplicationContext()).appComponent.playService();
+                    Integer positionId = (Integer) ((ApplicationWithDI) getApplicationContext()).data.get(POSITION_ID);
+                    playService.safeUpdate(positionId, updatedWord);
+
+                    WordsFragment wordsFragment = (WordsFragment) getSupportFragmentManager().findFragmentById(R.id.words_fragment);
+                    wordsFragment.wordUpdated(positionId);
+                }
+                ((ApplicationWithDI) getApplicationContext()).data.clear();
+            });
     private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setNightMode(false);
         setOrientation(false);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-//        binding.changeOrientation.getBehavior().
         binding.changeOrientation.setOnClickListener(v -> setOrientation(true));
 //        binding.changeOrientation.postDelayed(() -> {
 //            binding.changeOrientation.setVisibility(View.GONE);
@@ -60,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
     protected void setOrientation(boolean change) {
         SharedPreferences preferences = ((ApplicationWithDI) getApplicationContext()).appComponent.lastState();
         boolean isPortrait = preferences.getBoolean(ApkModule.LAST_STATE_IS_PORTRAIT, true);
-        if (change ^ !isPortrait) {
+        if (!change ^ !isPortrait) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
             getWindow().getDecorView().getWindowInsetsController().
                     hide(android.view.WindowInsets.Type.statusBars() | android.view.WindowInsets.Type.navigationBars()
@@ -91,10 +115,10 @@ public class MainActivity extends AppCompatActivity {
             return true;
         } else if (id == R.id.action_select_for_topic) {
             Intent intent = new Intent(this, FilterWordsActivity.class);
-            topicsActivityResultLauncher.launch(intent);
+            filterWordsActivityResultLauncher.launch(intent);
             return true;
         } else if (id == R.id.action_change_mode) {
-            setNightMode(true);
+            changeNightMode();
             return true;
         } else if (id == R.id.action_parse_words) {
             Intent i = new Intent(this, ParseWordsSettingsActivity.class);
@@ -104,22 +128,60 @@ public class MainActivity extends AppCompatActivity {
             Intent i = new Intent(this, VoiceSelectorActivity.class);
             startActivity(i);
             return true;
-        }
+        } else if (id == R.id.action_import_words) {
+            if (ApkModule.isDBSource(((ApplicationWithDI) getApplicationContext()).appComponent.lastState())) {
+                showMessage("Not possible. Already used source DB");
+            } else {
+                importWords(((ApplicationWithDI) getApplicationContext()).appComponent.playService().getUnknownWords());
+            }
+            return true;
+        } else if (id == R.id.action_use_db) {
+            ((ApplicationWithDI) getApplicationContext()).appComponent.lastState().edit().putString(ApkModule.LAST_STATE_SOURCE, ApkModule.DB).apply();
 
+            PlayService playService = ((ApplicationWithDI) getApplicationContext()).appComponent.playService();
+            WordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
+            ((PlayServiceImpl) playService).setWordProvider(wordProvider);
+
+            Intent intent = new Intent(this, FilterWordsActivity.class);
+            filterWordsActivityResultLauncher.launch(intent);
+            return true;
+        } else if (id == R.id.action_clean_db) {
+            AlertDialog.Builder builder = getOptionsBuilder(this);
+            builder.show();
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
-    protected void setNightMode(boolean change) {
+    private AlertDialog.Builder getOptionsBuilder(Context context) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle(R.string.languages_to_delete);
+        DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
+        String[] items = wordProvider.languageFrom().toArray(new String[0]);
+        builder.setCancelable(true);
+        DialogInterface.OnClickListener onClickListener = (dialog, position) -> wordProvider.deleteWords(items[position]);
+        builder.setItems(items, onClickListener);
+        return builder;
+    }
+
+    final
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        menu.findItem(R.id.action_use_db).setVisible(!ApkModule.isDBSource(((ApplicationWithDI) getApplicationContext()).appComponent.lastState()));
+        menu.findItem(R.id.action_import_words).setVisible(!ApkModule.isDBSource(((ApplicationWithDI) getApplicationContext()).appComponent.lastState()));
+        menu.findItem(R.id.action_clean_db).setVisible(ApkModule.isDBSource(((ApplicationWithDI) getApplicationContext()).appComponent.lastState()));
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    protected void changeNightMode() {
         SharedPreferences preferences = ((ApplicationWithDI) getApplicationContext()).appComponent.lastState();
         boolean isNightMode = preferences.getBoolean(ApkModule.LAST_STATE_IS_NIGHT_MODE, false);
-        if (change ^ isNightMode) {
+        if (!isNightMode) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
         }
-        if (change) {
-            preferences.edit().putBoolean(ApkModule.LAST_STATE_IS_NIGHT_MODE, !isNightMode).apply();
-        }
+        preferences.edit().putBoolean(ApkModule.LAST_STATE_IS_NIGHT_MODE, !isNightMode).apply();
     }
 
     private void updateWordsAndUi(WordCriteria wordCriteria) {
@@ -140,6 +202,29 @@ public class MainActivity extends AppCompatActivity {
     private void updateUiWithNewData(List<Word> unknownWords) {
         WordsFragment wordsFragment = (WordsFragment) getSupportFragmentManager().findFragmentById(R.id.words_fragment);
         wordsFragment.replaceData(unknownWords);
+    }
+
+    public void editWord(int positionId, Word word) {
+        Intent intent = new Intent(this, EditWordActivity.class);
+        intent.putExtra(EditWordActivity.WORD_ID_TO_EDIT, word.getId());
+        ((ApplicationWithDI) getApplicationContext()).data.put(POSITION_ID, positionId);
+        ((ApplicationWithDI) getApplicationContext()).data.put(WORD, word);
+        editWordActivityResultLauncher.launch(intent);
+    }
+
+    private void importWords(List<Word> words) {
+        new Thread(() -> {
+            showMessage("Import started. It could take few minutes. Please do not import next, until this import is finished");
+            DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
+            long time = System.currentTimeMillis();
+            wordProvider.importWords(words);
+            String text = "Import took " + (System.currentTimeMillis() - time) + " ms";
+            showMessage(text);
+        }).start();
+    }
+
+    private void showMessage(String text) {
+        runOnUiThread(() -> Toast.makeText(this, text, Toast.LENGTH_LONG).show());
     }
 
     @Override

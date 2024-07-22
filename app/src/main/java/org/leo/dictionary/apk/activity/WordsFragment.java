@@ -2,10 +2,9 @@ package org.leo.dictionary.apk.activity;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.view.*;
-import android.widget.AdapterView;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,9 +19,6 @@ import org.leo.dictionary.entity.Word;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A fragment representing a list of Items.
- */
 public class WordsFragment extends Fragment {
 
     // TODO: Customize parameter argument names
@@ -40,36 +36,13 @@ public class WordsFragment extends Fragment {
         }
     }
 
-    @Override
-    public void onCreateContextMenu(@NonNull ContextMenu menu, @NonNull View v, @Nullable @org.jetbrains.annotations.Nullable ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-        MenuInflater inflater = getActivity().getMenuInflater();
-        inflater.inflate(R.menu.menu_list, menu);
-    }
-
-    @Override
-    public boolean onContextItemSelected(@NonNull MenuItem item) {
-        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-        if (item.getItemId() == R.id.action_play_from) {
-            PlayService playService = ((ApplicationWithDI) getActivity().getApplicationContext()).appComponent.playService();
-
-            playService.playFrom(((WordsRecyclerViewAdapter) recyclerView.getAdapter()).getPositionId());
-            updatePlayerUi();
-            return true;
-        } else {
-            return super.onContextItemSelected(item);
-        }
-    }
-
-    private void updatePlayerUi() {
-        PlayerFragment player = (PlayerFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.player_fragment);
-        if (player != null) {
-            player.updateButtonUi();
-        }
-    }
-
     public void replaceData(List<Word> unknownWords) {
         ((WordsRecyclerViewAdapter) recyclerView.getAdapter()).replaceData(unknownWords);
+    }
+
+    public void wordUpdated(int index) {
+        RecyclerView.Adapter adapter = recyclerView.getAdapter();
+        adapter.notifyItemChanged(index);
     }
 
     @Override
@@ -93,7 +66,7 @@ public class WordsFragment extends Fragment {
             recyclerView.setAdapter(new WordsRecyclerViewAdapter(words, this));
 
             ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) getActivity().getApplicationContext()).appComponent.uiUpdater();
-            uiUpdater = word -> getActivity().runOnUiThread(() -> recyclerView.scrollToPosition(words.indexOf(word)));
+            uiUpdater = (word, index) -> getActivity().runOnUiThread(() -> recyclerView.scrollToPosition(index));
             apkUiUpdater.addUiUpdater(uiUpdater);
         }
         return view;

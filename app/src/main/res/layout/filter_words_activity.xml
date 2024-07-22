@@ -3,11 +3,11 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent" android:layout_height="match_parent"
         android:orientation="vertical">
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp" android:layout_weight="1">
         <LinearLayout
-                android:layout_width="match_parent" android:layout_height="match_parent"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:orientation="vertical">
             <TextView
                     android:text="@string/title_activity_topics"
@@ -26,57 +26,52 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:layout="@layout/fragment_string"/>
-            <Space
+            <LinearLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:id="@+id/language_from_container">
+                <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"/>
+                <TextView
+                        android:text="@string/language_from"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/language_from_label"
+                        style="@style/Widget.AppCompat.TextView.SpinnerItem"
+                />
+                <androidx.fragment.app.FragmentContainerView
+                        android:id="@+id/language_from"
+                        android:name="org.leo.dictionary.apk.activity.FilterWordsActivity$LanguageFromFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:layout="@layout/fragment_string"
+                />
+            </LinearLayout>
+            <LinearLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:id="@+id/languages_to_container">
+                <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="15dp"
+                />
+                <TextView
+                        android:text="@string/languages_to"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:id="@+id/languages_to_label"
+                        style="@style/Widget.AppCompat.TextView.SpinnerItem"/>
+                <androidx.fragment.app.FragmentContainerView
+                        android:id="@+id/languages_to"
+                        android:name="org.leo.dictionary.apk.activity.FilterWordsActivity$LanguageToFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:layout="@layout/fragment_string"/>
+            </LinearLayout>
+            <androidx.appcompat.widget.SwitchCompat
+                    android:text="@string/shuffle"
                     android:layout_width="match_parent"
-                    android:layout_height="15dp"/>
-            <TextView
-                    android:text="@string/language_from"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/language_from_label"
-                    style="@style/Widget.AppCompat.TextView.SpinnerItem"
-                    android:visibility="gone"/>
-            <androidx.fragment.app.FragmentContainerView
-                    android:id="@+id/language_from"
-                    android:name="org.leo.dictionary.apk.activity.FilterWordsActivity$LanguageFromFragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:layout="@layout/fragment_string"
-                    android:visibility="gone"/>
-            <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="15dp"
-                    android:visibility="gone"/>
-            <TextView
-                    android:text="@string/languages_to"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/languages_to_label"
-                    style="@style/Widget.AppCompat.TextView.SpinnerItem"
-                    android:visibility="gone"/>
-            <androidx.fragment.app.FragmentContainerView
-                    android:id="@+id/languages_to"
-                    android:name="org.leo.dictionary.apk.activity.FilterWordsActivity$LanguageToFragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:layout="@layout/fragment_string"
-                    android:visibility="gone"/>
-            <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="15dp"
-                    android:visibility="gone"/>
-            <TextView
-                    android:text="@string/languages_to_speak"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/languages_to_speak_label"
-                    style="@style/Widget.AppCompat.TextView.SpinnerItem"/>
-            <androidx.fragment.app.FragmentContainerView
-                    android:id="@+id/languages_to_speak"
-                    android:name="org.leo.dictionary.apk.activity.FilterWordsActivity$LanguageToFragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:layout="@layout/fragment_string"
-            />
+                    android:layout_height="wrap_content" android:id="@+id/shuffle" android:paddingStart="10dp"
+                    android:paddingEnd="10dp"/>
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
     <Button
             android:text="@string/find_words"
             android:layout_width="match_parent"
