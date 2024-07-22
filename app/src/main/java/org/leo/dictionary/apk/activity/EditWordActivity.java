@@ -2,32 +2,46 @@ package org.leo.dictionary.apk.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.ViewGroup;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.databinding.ActivityEditWordBinding;
 import org.leo.dictionary.apk.word.provider.DBWordProvider;
+import org.leo.dictionary.entity.Topic;
 import org.leo.dictionary.entity.Translation;
 import org.leo.dictionary.entity.Word;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class EditWordActivity extends AppCompatActivity {
 
     public static final String WORD_ID_TO_EDIT = "WORD_ID_TO_EDIT";
     public static final String TRANSLATION_INDEX_TO_EDIT = "TRANSLATION_INDEX_TO_EDIT";
     public static final long DEFAULT_VALUE_OF_WORD_ID = -1L;
+    private ActivityEditWordBinding binding;
+    private List<Topic> filteredList = new ArrayList<>();
+    private List<Topic> topics;
+    private EditWordViewModel model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        long id = getIntent().getExtras() != null && getIntent().getExtras().containsKey(WORD_ID_TO_EDIT) ? getIntent().getExtras().getLong(WORD_ID_TO_EDIT, DEFAULT_VALUE_OF_WORD_ID) : DEFAULT_VALUE_OF_WORD_ID;
-        ActivityEditWordBinding binding = ActivityEditWordBinding.inflate(getLayoutInflater());
+        model = new ViewModelProvider(this).get(EditWordViewModel.class);
+        FilterWordsActivity.LanguageViewModel languageViewModel = new ViewModelProvider(this).get(FilterWordsActivity.LanguageViewModel.class);
+        long id = extrasContainsKey(WORD_ID_TO_EDIT) ? getIntent().getExtras().getLong(WORD_ID_TO_EDIT) : DEFAULT_VALUE_OF_WORD_ID;
+        binding = ActivityEditWordBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        EditWordViewModel model = new ViewModelProvider(this).get(EditWordViewModel.class);
+        languageViewModel.getSelected().observe(this, this::updateTopicListData);
         if (id != DEFAULT_VALUE_OF_WORD_ID) {
             DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
             model.setWord(wordProvider.findWord(id));
@@ -35,24 +49,116 @@ public class EditWordActivity extends AppCompatActivity {
             model.setNewWord();
         }
         binding.buttonSave.setOnClickListener(v -> {
-            Word word = model.getUiState().getValue();
             if (isValidData()) {
+                Word word = model.getUiState().getValue();
                 ((ApplicationWithDI) getApplicationContext()).data.put(MainActivity.UPDATED_WORD, word);
                 setResult(Activity.RESULT_OK);
                 finish();
             }
         });
-        if (model.getUiState().getValue().getTranslations() == null) {
-            model.getUiState().getValue().setTranslations(new ArrayList<>());
+        Word word = model.getUiState().getValue();
+        if (word.getTranslations() == null) {
+            word.setTranslations(new ArrayList<>());
         }
-        List<Translation> translations = model.getUiState().getValue().getTranslations();
+        if (word.getTopics() == null) {
+            word.setTopics(new ArrayList<>());
+        }
+        List<Translation> translations = word.getTranslations();
         binding.buttonAddTranslation.setOnClickListener(v -> {
             translations.add(new Translation());
             addTranslationUi(translations.size() - 1);
         });
-        for (int i = 0; i < translations.size(); i++) {
-            addTranslationUi(i);
+        for (int index = 0; index < translations.size(); index++) {
+            addTranslationUi(index);
         }
+        binding.textTopic.addTextChangedListener(new AbstractTextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                filterTopics(s);
+            }
+        });
+        binding.topicList.setLayoutManager(new LinearLayoutManager(binding.topicList.getContext()));
+        binding.topicList.setAdapter(new TopicRecyclerViewAdapter(filteredList) {
+            @Override
+            public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+                return createStringViewHolder(parent);
+            }
+
+            @Override
+            protected void onClickListener(StringViewHolder viewHolder) {
+                addTopicToWord(viewHolder.mItem);
+            }
+        });
+        binding.createTopic.setOnClickListener(v -> createAndAddTopicToWord());
+    }
+
+    private boolean extrasContainsKey(String key) {
+        return getIntent().getExtras() != null && getIntent().getExtras().containsKey(key);
+    }
+
+    private void addTopicToWord(Topic topic) {
+        getWord().getTopics().add(topic);
+        updateTopicsFragment();
+        filterTopics();
+    }
+
+    public void filterTopics() {
+        filterTopics(binding.textTopic.getText().toString());
+    }
+
+    private void updateTopicsFragment() {
+        EditTopicFragment topicFragment = (EditTopicFragment) getSupportFragmentManager().findFragmentById(R.id.edit_word_topics);
+        if (topicFragment != null) {
+            topicFragment.replaceData(getWord().getTopics());
+        }
+    }
+
+    private void createAndAddTopicToWord() {
+        Topic topic = new Topic();
+        topic.setName(binding.textTopic.getText().toString());
+        topic.setLevel(1);
+        topic.setLanguage(getWord().getLanguage());
+        topics.add(topic);
+        addTopicToWord(topic);
+    }
+
+    private Word getWord() {
+        return model.getUiState().getValue();
+    }
+
+    private void filterTopics(CharSequence input) {
+        if (input.length() > 0) {
+            List<Topic> wordTopics = getWord().getTopics();
+            filteredList = topics.stream().filter(topic -> topic.getName().contains(input)).filter(topic -> !wordTopics.contains(topic)).collect(Collectors.toList());
+        } else {
+            filteredList = new ArrayList<>();
+        }
+        ((TopicRecyclerViewAdapter) binding.topicList.getAdapter()).replaceData(filteredList);
+    }
+
+
+    private void updateTopicListData(String language) {
+        if (topics != null && !topics.isEmpty() && Objects.equals(topics.get(0).getLanguage(), language)) {
+            //the same language, do nothing
+        } else if (language != null && !language.isEmpty()) {
+            topics = findTopics(language);
+            filterTopics();
+            filterWordTopics(language);
+            updateTopicsFragment();
+        } else {
+            filterWordTopics(language);
+            updateTopicsFragment();
+        }
+    }
+
+    private void filterWordTopics(String language) {
+        Word word = getWord();
+        word.setTopics(word.getTopics().stream().filter(t -> Objects.equals(t.getLanguage(), language)).collect(Collectors.toList()));
+    }
+
+    private List<Topic> findTopics(String language) {
+        DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
+        return wordProvider.findTopics(language, 1);
     }
 
     private boolean isValidData() {
@@ -70,9 +176,26 @@ public class EditWordActivity extends AppCompatActivity {
     private void addTranslationUi(int i) {
         Bundle bundle = new Bundle();
         bundle.putInt(TRANSLATION_INDEX_TO_EDIT, i);
-        getSupportFragmentManager().beginTransaction()
-                .setReorderingAllowed(true)
-                .add(R.id.edit_word_translations, EditTranslationFragment.class, bundle)
-                .commit();
+        getSupportFragmentManager().beginTransaction().setReorderingAllowed(true).add(R.id.edit_word_translations, EditTranslationFragment.class, bundle).commit();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        binding = null;
+    }
+
+    public static class AbstractTextWatcher implements TextWatcher {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+        }
     }
 }

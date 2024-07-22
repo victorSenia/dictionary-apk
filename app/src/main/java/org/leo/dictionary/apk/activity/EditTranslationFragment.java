@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.databinding.FragmentEditTranslationBinding;
 import org.leo.dictionary.apk.helper.ValidationUtils;
+import org.leo.dictionary.audio.AudioService;
 import org.leo.dictionary.entity.Translation;
 import org.leo.dictionary.entity.Word;
 
@@ -24,11 +25,11 @@ public class EditTranslationFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentEditTranslationBinding.inflate(inflater, container, false);
         int index = getArguments().getInt(EditWordActivity.TRANSLATION_INDEX_TO_EDIT);
-        EditTranslationViewModel viewmodel = new ViewModelProvider(this).get(EditTranslationViewModel.class);
+        EditTranslationViewModel translationViewModel = new ViewModelProvider(this).get(EditTranslationViewModel.class);
         MutableLiveData<Word> word = new ViewModelProvider(requireActivity()).get(EditWordViewModel.class).getUiState();
-        viewmodel.setTranslation(word.getValue().getTranslations().get(index));
-        binding.setViewmodel(viewmodel);
-        binding.playTranslation.setOnClickListener(v -> playTranslation(viewmodel.getUiState()));
+        translationViewModel.setTranslation(word.getValue().getTranslations().get(index));
+        binding.setViewmodel(translationViewModel);
+        binding.playTranslation.setOnClickListener(v -> playTranslation(translationViewModel.getUiState()));
         binding.buttonDeleteTranslation.setOnClickListener(v -> removeTranslation(word, binding.getViewmodel().getUiState()));
         binding.textLanguage.requestFocus();
         return binding.getRoot();
@@ -36,7 +37,8 @@ public class EditTranslationFragment extends Fragment {
 
     private void playTranslation(MutableLiveData<Translation> uiState) {
         try {
-            ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.audioService().play(uiState.getValue().getLanguage(), uiState.getValue().getTranslation());
+            AudioService audioService = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.audioService();
+            audioService.play(uiState.getValue().getLanguage(), uiState.getValue().getTranslation());
         } catch (InterruptedException e) {
             //ignore
         }

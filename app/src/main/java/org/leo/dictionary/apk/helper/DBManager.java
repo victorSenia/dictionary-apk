@@ -68,6 +68,21 @@ public class DBManager {
         }
     }
 
+    private static void mapTopicsFromCursor(String language, Cursor res, List<Topic> topics) {
+        int idIndex = res.getColumnIndexOrThrow(DatabaseHelper.COLUMN_ID);
+        int nameIndex = res.getColumnIndexOrThrow(DatabaseHelper.TOPIC_COLUMN_NAME);
+        int levelIndex = res.getColumnIndexOrThrow(DatabaseHelper.TOPIC_COLUMN_LEVEL);
+        while (!res.isAfterLast()) {
+            Topic topic = new Topic();
+            topic.setId(res.getLong(idIndex));
+            topic.setName(res.getString(nameIndex));
+            topic.setLevel(res.getInt(levelIndex));
+            topic.setLanguage(language);
+            topics.add(topic);
+            res.moveToNext();
+        }
+    }
+
     protected DBManager open() throws SQLException {
         dbHelper = new DatabaseHelper(context);
         database = dbHelper.getWritableDatabase();
@@ -94,7 +109,7 @@ public class DBManager {
     }
 
     protected long insertWord(Word word) {
-        long id = getId(word);
+        long id = getWordId(word);
         if (id != -1) {
             return id;
         }
@@ -111,7 +126,7 @@ public class DBManager {
         if (topic.getId() > 0) {
             return topic.getId();
         }
-        long id = getId(topic);
+        long id = getTopicId(topic);
         if (id != -1) {
             return id;
         }
@@ -124,19 +139,19 @@ public class DBManager {
         return insertedId;
     }
 
-    protected long getId(Topic topic) {
+    protected long getTopicId(Topic topic) {
         return getId(DatabaseHelper.TABLE_NAME_TOPIC,
                 DatabaseHelper.COLUMN_LANGUAGE + " = ? AND " + DatabaseHelper.TOPIC_COLUMN_NAME + " = ? AND " + DatabaseHelper.TOPIC_COLUMN_LEVEL + " = ?",
                 topic.getLanguage(), topic.getName(), Integer.toString(topic.getLevel()));
     }
 
-    protected long getId(Translation translation, long wordId) {
+    protected long getTranslationId(Translation translation, long wordId) {
         return getId(DatabaseHelper.TABLE_NAME_TRANSLATION,
                 DatabaseHelper.COLUMN_LANGUAGE + " = ? AND " + DatabaseHelper.TRANSLATION_COLUMN_WORD_ID + " = ? AND " + DatabaseHelper.TRANSLATION_COLUMN_TRANSLATION + " = ?",
                 translation.getLanguage(), Long.toString(wordId), translation.getTranslation());
     }
 
-    protected long getId(Word word) {
+    protected long getWordId(Word word) {
         if (word.getArticle() == null) {
             if (word.getAdditionalInformation() == null) {
                 return getId(DatabaseHelper.TABLE_NAME_WORD,
@@ -175,7 +190,7 @@ public class DBManager {
     }
 
     public long insertTranslation(Translation translation, long wordId) {
-        long id = getId(translation, wordId);
+        long id = getTranslationId(translation, wordId);
         if (id != -1) {
             return id;
         }
@@ -285,18 +300,24 @@ public class DBManager {
         try (Cursor res = fetchTopics(language, level, false, null)) {
             List<Topic> topics = new ArrayList<>();
             if (!res.isAfterLast()) {
-                int idIndex = res.getColumnIndexOrThrow(DatabaseHelper.COLUMN_ID);
-                int nameIndex = res.getColumnIndexOrThrow(DatabaseHelper.TOPIC_COLUMN_NAME);
-                int levelIndex = res.getColumnIndexOrThrow(DatabaseHelper.TOPIC_COLUMN_LEVEL);
-                while (!res.isAfterLast()) {
-                    Topic topic = new Topic();
-                    topic.setId(res.getLong(idIndex));
-                    topic.setName(res.getString(nameIndex));
-                    topic.setLevel(res.getInt(levelIndex));
-                    topic.setLanguage(language);
-                    topics.add(topic);
-                    res.moveToNext();
-                }
+                mapTopicsFromCursor(language, res, topics);
+            }
+            return topics;
+        }
+    }
+
+    public List<Topic> getTopicsForWord(String wordId, String language, String level) {
+        try (Cursor res = database.rawQuery("SELECT t.* FROM " + DatabaseHelper.TABLE_NAME_TOPIC + " t " +
+                        " INNER JOIN " + DatabaseHelper.TABLE_NAME_WORD_TOPIC + " tw " +
+                        " ON t." + DatabaseHelper.COLUMN_ID + " = tw." + DatabaseHelper.COLUMN_ID +
+                        " AND tw." + DatabaseHelper.TRANSLATION_COLUMN_WORD_ID + "= ?" +
+                        " AND t." + DatabaseHelper.COLUMN_LANGUAGE + "= ?" +
+                        " AND t." + DatabaseHelper.TOPIC_COLUMN_LEVEL + "= ?"
+                , new String[]{wordId, language, level})) {
+            res.moveToFirst();
+            List<Topic> topics = new ArrayList<>();
+            if (!res.isAfterLast()) {
+                mapTopicsFromCursor(language, res, topics);
             }
             return topics;
         }
@@ -423,7 +444,9 @@ public class DBManager {
             }
         }
         if (!words.isEmpty()) {
-            return words.get(0);
+            Word word = words.get(0);
+            word.setTopics(getTopicsForWord(String.valueOf(word.getId()), word.getLanguage(), "1"));//TODO
+            return word;
         }
         return null;
     }

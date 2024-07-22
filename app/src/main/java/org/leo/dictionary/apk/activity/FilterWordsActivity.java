@@ -14,6 +14,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
+import org.jetbrains.annotations.NotNull;
 import org.leo.dictionary.ExternalWordProvider;
 import org.leo.dictionary.apk.ApkAppComponent;
 import org.leo.dictionary.apk.ApkModule;
@@ -22,6 +23,7 @@ import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.helper.WordCriteriaProvider;
 import org.leo.dictionary.entity.WordCriteria;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -162,26 +164,35 @@ public class FilterWordsActivity extends AppCompatActivity {
                 @Override
                 public void onClick(StringRecyclerViewAdapter.StringViewHolder viewHolder) {
                     super.onClick(viewHolder);
-                    new ViewModelProvider(requireActivity()).get(LanguageViewModel.class).select(viewHolder.mItem);
+                    getLanguageViewModel().select(viewHolder.mItem);
                 }
             });
             if (adapter.mValues.size() == 1) {
                 adapter.setSelected(0);
-                new ViewModelProvider(requireActivity()).get(LanguageViewModel.class).select(adapter.mValues.get(0));
+                getLanguageViewModel().select(adapter.mValues.get(0));
             } else {
                 String languageFrom = getWordCriteria(requireActivity()).getLanguageFrom();
                 adapter.setSelected(adapter.mValues.indexOf(languageFrom));
-                new ViewModelProvider(requireActivity()).get(LanguageViewModel.class).select(languageFrom);
+                getLanguageViewModel().select(languageFrom);
             }
             return adapter;
+        }
+
+        private LanguageViewModel getLanguageViewModel() {
+            return new ViewModelProvider(requireActivity()).get(LanguageViewModel.class);
         }
     }
 
     public static class LanguageToFragment extends StringsFragment {
         @Override
         protected List<String> getStrings() {
-            String language = new ViewModelProvider(requireActivity()).get(LanguageViewModel.class).getSelected().getValue();
-            return getLanguageTo(language);
+            String language = getLanguageViewModel().getSelected().getValue();
+            return new ArrayList<>(getLanguageTo(language));
+        }
+
+        @NotNull
+        private LanguageViewModel getLanguageViewModel() {
+            return new ViewModelProvider(requireActivity()).get(LanguageViewModel.class);
         }
 
         private List<String> getLanguageTo(String language) {
@@ -193,7 +204,7 @@ public class FilterWordsActivity extends AppCompatActivity {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            new ViewModelProvider(requireActivity()).get(LanguageViewModel.class).getSelected().observe(requireActivity(), this::updateListData);
+            getLanguageViewModel().getSelected().observe(requireActivity(), this::updateListData);
         }
 
         private void updateListData(String language) {

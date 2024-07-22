@@ -61,6 +61,10 @@ public class DBWordProvider implements WordProvider {
 
     @Override
     public void updateWord(Word updatedWord) {
+        dbManager.updateWord(updatedWord);
+    }
+
+    public void updateWordFully(Word updatedWord) {
         if (updatedWord.getId() == 0) {
             dbManager.insertFully(updatedWord);
         } else {

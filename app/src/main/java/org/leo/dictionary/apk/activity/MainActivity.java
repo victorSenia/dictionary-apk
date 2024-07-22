@@ -23,12 +23,14 @@ import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.databinding.ActivityMainBinding;
 import org.leo.dictionary.apk.helper.WordCriteriaProvider;
 import org.leo.dictionary.apk.word.provider.DBWordProvider;
+import org.leo.dictionary.entity.Topic;
 import org.leo.dictionary.entity.Word;
 import org.leo.dictionary.entity.WordCriteria;
 import org.leo.dictionary.word.provider.WordProvider;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
     public static final String POSITION_ID = "positionId";
@@ -53,37 +55,46 @@ public class MainActivity extends AppCompatActivity {
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
                 if (result.getResultCode() == Activity.RESULT_OK) {
-                    DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
                     Word updatedWord = (Word) ((ApplicationWithDI) getApplicationContext()).data.get(UPDATED_WORD);
-                    wordProvider.updateWord(updatedWord);
-
-                    PlayService playService = ((ApplicationWithDI) getApplicationContext()).appComponent.playService();
-                    Integer positionId = (Integer) ((ApplicationWithDI) getApplicationContext()).data.get(POSITION_ID);
-                    WordsFragment wordsFragment = (WordsFragment) getSupportFragmentManager().findFragmentById(R.id.words_fragment);
-                    if (positionId != null) {
-                        if (shouldBeDisplayed(updatedWord)) {
-                            playService.safeUpdate(positionId, updatedWord);
-                            wordsFragment.wordUpdated(positionId);
-                        } else {
-                            playService.safeDelete(positionId);
-                            wordsFragment.wordDeleted(positionId);
-                        }
-                    } else {
-                        if (shouldBeDisplayed(updatedWord)) {
-                            playService.safeAdd(updatedWord);
-                            positionId = playService.getUnknownWords().size() - 1;
-                            wordsFragment.wordAdded(positionId, updatedWord);
-                        }
-                    }
+                    addUpdateOrDeleteWordInDbAndUi(updatedWord);
                 }
                 ((ApplicationWithDI) getApplicationContext()).data.clear();
             });
     private ActivityMainBinding binding;
 
+    private void addUpdateOrDeleteWordInDbAndUi(Word updatedWord) {
+        DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
+        wordProvider.updateWordFully(updatedWord);
+
+        PlayService playService = ((ApplicationWithDI) getApplicationContext()).appComponent.playService();
+        Integer positionId = (Integer) ((ApplicationWithDI) getApplicationContext()).data.get(POSITION_ID);
+        WordsFragment wordsFragment = (WordsFragment) getSupportFragmentManager().findFragmentById(R.id.words_fragment);
+        if (positionId != null) {
+            if (shouldBeDisplayed(updatedWord)) {
+                playService.safeUpdate(positionId, updatedWord);
+                wordsFragment.wordUpdated(positionId);
+            } else {
+                playService.safeDelete(positionId);
+                wordsFragment.wordDeleted(positionId);
+            }
+        } else {
+            if (shouldBeDisplayed(updatedWord)) {
+                playService.safeAdd(updatedWord);
+                positionId = playService.getUnknownWords().size() - 1;
+                wordsFragment.wordAdded(positionId, updatedWord);
+            }
+        }
+    }
+
     private boolean shouldBeDisplayed(Word updatedWord) {
         WordCriteria wordCriteria = ((ApplicationWithDI) getApplicationContext()).appComponent.wordCriteriaProvider().getWordCriteria();
-        //TODO check topics
-        return Objects.equals(updatedWord.getLanguage(), wordCriteria.getLanguageFrom());
+        return Objects.equals(updatedWord.getLanguage(), wordCriteria.getLanguageFrom())
+                && (wordCriteria.getTopicsOr() == null || wordCriteria.getTopicsOr().isEmpty() ||
+                containsAnyOfTopic(wordCriteria.getTopicsOr(), updatedWord.getTopics()));
+    }
+
+    private boolean containsAnyOfTopic(Set<String> topicsOr, List<Topic> topics) {
+        return topics.stream().map(Topic::getName).anyMatch(topicsOr::contains);
     }
 
     @Override

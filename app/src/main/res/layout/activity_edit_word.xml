@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+
+<androidx.core.widget.NestedScrollView
+        android:id="@+id/container"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp" android:layout_weight="1">
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -18,7 +19,7 @@
         <TextView
                 android:text="@string/translations"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/textView" android:textSize="20sp"/>
+                android:layout_height="wrap_content" android:textSize="20sp"/>
         <LinearLayout
                 android:id="@+id/edit_word_translations"
                 android:orientation="vertical"
@@ -30,10 +31,44 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/button_add_translation"
                 style="@style/Widget.Material3.Button.TonalButton"/>
+        <TextView
+                android:text="@string/title_activity_topics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textSize="20sp"/>
+        <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/edit_word_topics"
+                android:name="org.leo.dictionary.apk.activity.EditTopicFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/fragment_edit_topic_list"/>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <EditText
+                    android:id="@+id/text_topic"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint="@string/title_activity_topics"
+                    android:text="" android:minHeight="48dp" android:drawableStart="@android:drawable/ic_menu_search"
+                    android:layout_weight="1" android:layout_gravity="center_vertical"/>
+            <Button
+                    android:text="@string/create"
+                    style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/create_topic" android:layout_weight="0"
+                    android:drawableLeft="@android:drawable/ic_menu_add" android:textSize="0sp"
+                    android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:id="@+id/topic_list"/>
         <Button
                 android:text="@string/save"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/button_save"
                 style="@style/Widget.Material3.Button.TonalButton"/>
     </LinearLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

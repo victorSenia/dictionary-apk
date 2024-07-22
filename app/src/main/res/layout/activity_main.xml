@@ -49,11 +49,10 @@
             android:id="@+id/change_orientation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="start|top"
-            android:layout_marginStart="@dimen/fab_margin"
-            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_gravity="end|bottom"
             app:srcCompat="@android:drawable/ic_menu_rotate"
             app:fabSize="mini"
             app:fabCustomSize="40dp"
-            android:contentDescription="@string/change_orientation" style="@style/Widget.Material3.Button.TonalButton"/>
+            android:contentDescription="@string/change_orientation" style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_margin="@dimen/fab_margin"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

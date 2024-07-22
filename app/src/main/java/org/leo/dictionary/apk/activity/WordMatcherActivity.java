@@ -99,10 +99,20 @@ public class WordMatcherActivity extends AppCompatActivity {
             binding.wordContainer.getChildAt(selected[WORDS_ARRAY]).setVisibility(View.INVISIBLE);
             binding.translationContainer.getChildAt(selected[TRANSLATIONS_ARRAY]).setVisibility(View.INVISIBLE);
             clearSelection();
+            nextIfAllInvisible();
         } else {
             clearSelection();
         }
         playAudio(audioService, element);
+    }
+
+    private void nextIfAllInvisible() {
+        for (int index = 0; index < binding.wordContainer.getChildCount(); index++) {
+            if (View.VISIBLE == binding.wordContainer.getChildAt(index).getVisibility()) {
+                return;
+            }
+        }
+        clearAndFillWords();
     }
 
     private void clearSelection() {

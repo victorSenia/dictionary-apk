@@ -44,7 +44,6 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
         binding = FragmentPlayerBinding.inflate(inflater, container, false);
         playService = ((ApplicationWithDI) getActivity().getApplicationContext()).appComponent.playService();
         audioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
-//        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         return binding.getRoot();
     }
 

@@ -95,7 +95,7 @@ public class StringRecyclerViewAdapter extends RecyclerView.Adapter<StringRecycl
     }
 
     public class StringViewHolder extends RecyclerView.ViewHolder {
-        public final TextView mContentView;
+        public TextView mContentView;
         public String mItem;
 
         public StringViewHolder(FragmentStringBinding binding) {

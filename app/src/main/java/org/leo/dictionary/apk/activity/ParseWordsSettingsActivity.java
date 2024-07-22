@@ -79,7 +79,7 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
         binding.parseWords.setOnClickListener(v -> {
             if (type != null) {
                 try {
-                    if (ApkModule.ASSET.equals(type)) {//TODO for files URI is not correct;
+                    if (ApkModule.ASSET.equals(type)) {//TODO for files URI is not correct; and problems with rights
                         ((ApplicationWithDI) getApplicationContext()).appComponent.lastState().edit()
                                 .putString(ApkModule.LAST_STATE_SOURCE, type)
                                 .putString(ApkModule.LAST_STATE_URI, uri.toString())

@@ -93,7 +93,7 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public final TextView mContentView;
+        public TextView mContentView;
         public Word mItem;
 
         public ViewHolder(FragmentWordBinding binding) {
@@ -118,7 +118,7 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
             binding.playFrom.setOnClickListener(view -> playFromSelected());
             binding.actionDelete.setOnClickListener(view -> {
                 if (isDBSource()) {
-                    getConfirmationBuilder(view).show();
+                    getDeleteConfirmationBuilder(view).show();
                 }
             });
             binding.actionEdit.setOnClickListener(view -> {
@@ -133,7 +133,7 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
             return super.toString() + " '" + mContentView.getText() + "'";
         }
 
-        private AlertDialog.Builder getConfirmationBuilder(View view) {
+        private AlertDialog.Builder getDeleteConfirmationBuilder(View view) {
             AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
             builder.setTitle("Delete confirmation");
             builder.setIcon(android.R.drawable.ic_dialog_alert);

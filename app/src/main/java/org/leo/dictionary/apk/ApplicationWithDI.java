@@ -9,9 +9,9 @@ import java.util.Map;
 // appComponent lives in the Application class to share its lifecycle
 public class ApplicationWithDI extends Application {
 
+    public final Map<String, Object> data = new HashMap<>();
     // Reference to the application graph that is used across the whole app
     public ApkAppComponent appComponent;
-    public final Map<String, Object> data = new HashMap<>();
 
     @Override
     public void onCreate() {
