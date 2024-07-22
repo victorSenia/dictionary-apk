@@ -56,8 +56,8 @@ public class ApkModule {
     public static WordProvider provideAssetsWordProvider(ParseWords configuration, Context context) {
         AssetsWordProvider wordProvider = new AssetsWordProvider();
         wordProvider.setConfiguration(configuration);
-        updateLanguagesInConfiguration(configuration);
         wordProvider.setContext(context);
+        wordProvider.parseAndUpdateConfiguration();
         return wordProvider;
     }
 
@@ -85,23 +85,6 @@ public class ApkModule {
             return lastState.getInt(LAST_STATE_CURRENT_INDEX, defaultIndex);
         }
         return defaultIndex;
-    }
-
-    protected static void updateLanguagesInConfiguration(ParseWords configuration) {
-        try {
-            String path = configuration.getPath();
-            int start = path.lastIndexOf("-") + 1;
-            int end = path.lastIndexOf(".");
-            String languagesString = path.substring(start, end);
-            String[] languages = languagesString.split(LANGUAGES_SEPARATOR, 2);
-            String languageFrom = languages[0];
-            languages = languages[1].split(LANGUAGES_SEPARATOR);
-            configuration.setLanguageFrom(languageFrom);
-            configuration.setLanguagesTo(new ArrayList<>(Arrays.asList(languages)));
-        } catch (Exception e) {
-            MainActivity.logUnhandledException(e);
-            //ignore
-        }
     }
 
     @Provides

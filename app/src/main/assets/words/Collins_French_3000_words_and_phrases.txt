@@ -1,0 +1,3484 @@
+org.leo.dictionary.config.entity.ParseWords:fr:en:le+;la+;les+;les+:%5C%7C:%3B:%3B:%5Ct:
+
+rouge | red
+vert | green
+bleu | blue
+noir | black
+blanc | white
+jaune | yellow
+
+Bonjour. | Hello.
+Salut ! | Hi!
+Rebonjour ! | Hello again!
+Bonjour. | Good morning.
+Bonjour. | Good afternoon.
+Bonsoir. | Good evening.
+Bonne nuit. | Good night.
+Au revoir. | Goodbye.
+Salut ! | Bye!
+À bientôt. | See you soon.
+À demain. | See you tomorrow.
+À samedi. | See you on Saturday.
+Bonne journée ! | Have a good day!
+Bonne soirée ! | Have a good evening!
+
+Oui / Si. | Yes.
+Non. | No.
+Je ne sais pas. | I don’t know.
+s’il vous plaît | please
+Merci. | Thank you.
+Non merci. | No, thanks.
+Excusez-moi. | Excuse me.
+Pardon ? | Sorry?
+Je suis désolé. | I’m sorry.
+D’accord ! | OK!
+De rien. | You’re welcome.
+Je ne comprends pas. | I don’t understand.
+
+Quel âge avez-vous ? | How old are you?
+Puis-je demander votre âge ? | May I ask how old you are?
+Quelle est votre date d’anniversaire ? | When is your birthday?
+J’ai … ans. | I’m … years old.
+Mon anniversaire est le… | My birthday is on…
+D’où venez-vous ? | Where are you from?
+
+Où habitez-vous ? | Where do you live?
+Je viens… | I’m from...
+... du Royaume-Uni. | ... the UK.
+J’habite à… | I live in...
+Je suis… | I’m...
+écossais | Scottish
+anglais | English
+irlandais | Irish
+gallois | Welsh
+britannique | British
+Êtes-vous marié ? | Are you married? (to a man)
+Êtes-vous mariée ? | Are you married? (to a woman)
+Êtes-vous célibataire ? | Are you single?
+Je suis marié / divorcé. | I’m married / divorced. (man)
+Je suis mariée / divorcée. | I’m married / divorced. (woman)
+J’ai un compagnon / une compagne. | I have a partner.
+Je suis célibataire. | I’m single.
+Je suis veuf. | I’m widowed. (man)
+Je suis veuve. | I’m widowed. (woman)
+Avez-vous des enfants ? | Do you have any children?
+J’ai … enfants. | I have ... children.
+Je n’ai pas d’enfants. | I don’t have any children.
+
+Voici mon / ma… | This is my...
+Voici mes… | These are my...
+le mari | husband
+l’épouse; f | wife
+le fils | son
+la fille | daughter
+les parents; mpl | parents
+le compagnon / la compagne | partner
+le copain | boyfriend
+la copine | girlfriend
+le fiancé / la fiancée | fiancé / fiancée
+le père | father
+
+la mère | mother
+le frère | brother
+la sœur | sister
+le grand-père | grandfather
+la grand-mère | grandmother
+le petit-fils | grandson
+la petite-fille | granddaughter
+le beau-père | father-in-law / stepfather
+la belle-mère | mother-in-law / stepmother
+la belle-fille | daughter-in-law / stepdaughter
+le beau-fils | son-in-law / stepson
+le beau-frère | brother-in-law / stepbrother
+la belle-sœur | sister-in-law / stepsister
+l’oncle; m | uncle
+la tante | aunt
+le neveu | nephew
+la nièce | niece
+le cousin / la cousine | cousin
+l’ami m / l’amie; f | friend
+le collègue / la collègue | colleague
+le voisin / la voisine | neighbour
+le bébé | baby
+l’enfant; m | child
+l’adolescent m / l’adolescente; f | teenager
+
+Comment allezvous ? | How are you?
+Comment ça va ? | How’s it going?
+Comment va-t-il / elle ? | How is he / she?
+Comment vont-ils / elles ? | How are they?
+Très bien, merci, et vous ? | Very well, thanks, and you?
+Bien, merci. | Fine, thanks.
+
+Super bien ! | Great!
+Comme ci comme ça. | So-so.
+Pas mal, merci. | Not bad, thanks.
+On fait aller. | Could be worse.
+Pas terrible. | Not great.
+Je suis fatigué. | I’m tired.
+J’ai faim / soif. | I’m hungry / thirsty.
+Je n’ai plus faim. | I’m full.
+J’ai froid. | I’m cold.
+J’ai chaud. | I’m warm.
+Je suis… | I am...
+Il / Elle est… | He / She is...
+Ils / Elles sont… | They are...
+heureux | happy
+excité | excited
+calme | calm
+surpris | surprised
+mécontent | annoyed
+en colère | angry
+triste | sad
+inquiet | worried
+effrayé | afraid
+détendu | relaxed
+Je m’ennuie. | I’m bored.
+Je me sens… | I feel...
+Il / Elle se sent… | He / She feels...
+Ils / Elles se sentent… | They feel...
+bien | well
+indisposé | unwell
+mieux | better
+pire | worse
+
+Où travaillez-vous ? | Where do you work?
+Que faites-vous dans la vie ? | What do you do?
+Quel est votre métier ? | What’s your occupation?
+Est-ce que vous travaillez / étudiez ? | Do you work / study?
+Je travaille à mon compte. | I’m self-employed.
+Je suis au chômage. | I’m unemployed.
+
+Je suis encore à l’école. | I’m still at school.
+Je suis à l’université. | I’m at university.
+Je suis à la retraite. | I’m retired.
+Je voyage. | I’m travelling.
+Je travaille de chez moi. | I work from home.
+Je travaille à temps partiel / complet. | I work part-/ full-time.
+Je travaille comme… | I work as a / an...
+Je suis… | I’m a / an...
+l’architecte m / l’architecte; f | architect
+le chef / la chef | chef
+le fonctionnaire / la fonctionnaire | civil servant
+l’employé de ménage m / l’employée de ménage; f | cleaner
+le dentiste / la dentiste | dentist
+le médecin / la médecin | doctor
+le conducteur / la conductrice | driver
+l’électricien m / l’électricienne; f | electrician
+l’ingénieur m / l’ingénieure; f | engineer
+l’agriculteur m / l’agricultrice; f | farmer
+le sapeur-pompier / la sapeur-pompier | firefighter
+le pêcheur / la pêcheuse | fisherman
+l’informaticien m / l’informaticienne; f | IT worker
+le menuisier / la menuisière | joiner
+le journaliste / la journaliste | journalist
+l’avocat m / l’avocate; f | lawyer
+le mécanicien / la mécanicienne | mechanic
+l’infirmier m / l’infirmière; f | nurse
+l’employé de bureau m / l’employée de bureau; f | office worker
+le plombier / la plombière | plumber
+le policier / la policière | police officer
+le facteur / la factrice | postal worker
+le marin / la femme marin | sailor
+le vendeur / la vendeuse | salesperson
+le scientifique / la scientifique | scientist
+le soldat / la soldate | soldier
+
+le professeur / la professeure | teacher
+le vétérinaire / la vétérinaire | vet
+le serveur | waiter
+la serveuse | waitress
+Je travaille à / pour / dans… | I work at / for / in...
+le commerce | business
+la compagnie | company
+le chantier | construction site
+l’usine; f | factory
+le gouvernement | government
+l’hôpital; m | hospital
+l’hôtel; m | hotel
+le bureau | office
+le restaurant | restaurant
+l’école; f | school
+le magasin | shop
+
+
+time | l’heure
+le matin | morning
+l’après-midi; m | afternoon
+le soir | evening
+la nuit | night
+le midi | midday
+minuit; m | midnight
+aujourd’hui | today
+ce soir | tonight
+demain | tomorrow
+hier | yesterday
+du matin | a.m.
+de l’après-midi / du soir | p.m.
+Quelle heure est-il ? | What time is it?
+Il est neuf heures. | It’s nine o’clock.
+Il est neuf heures dix. | It’s ten past nine.
+Il est neuf heures et quart. | It’s quarter past nine.
+Il est neuf heures vingt-cinq. | It’s 25 past nine.
+Il est neuf heures et demie. | It’s half past nine.
+Il est dix heures moins vingt. | It’s 20 to ten.
+
+Il est dix heures moins le quart. | It’s quarter to ten.
+Il est dix heures moins cinq. | It’s five to ten.
+Il est dix-sept heures trente. | It’s 17:30.
+Quand...? | When...?
+... dans 60 secondes / deux minutes. | ... in 60 seconds / two minutes.
+... dans un quart d’heure / une demiheure / une heure. | ... in quarter of an hour / half an hour / an hour.
+tôt | early
+en retard | late
+bientôt | soon
+plus tard | later
+maintenant | now
+avant | before
+après | after
+
+lundi | Monday
+mardi | Tuesday
+mercredi | Wednesday
+jeudi | Thursday
+vendredi | Friday
+samedi | Saturday
+dimanche | Sunday
+janvier | January
+février | February
+mars | March
+avril | April
+mai | May
+juin | June
+juillet | July
+août | August
+septembre | September
+octobre | October
+novembre | November
+décembre | December
+
+le jour | day
+le week-end | weekend
+la semaine | week
+les quinze jours; mpl | fortnight
+le mois | month
+l’année; f | year
+la décennie | decade
+quotidien | daily
+hebdomadaire | weekly
+tous les quinze jours | fortnightly
+mensuel | monthly
+annuel | yearly
+les lundis | on Mondays
+tous les dimanches | every Sunday
+jeudi dernier | last Thursday
+vendredi prochain | next Friday
+il y a quinze jours | the week before
+dans deux semaines | the week after
+en février | in February
+en 2019 | in 2019
+dans les années 80 | in the ’80s
+le printemps | spring
+l’été; m | summer
+l’automne; m | autumn
+l’hiver; m | winter
+au printemps | in spring
+en hiver | in winter
+
+Quel temps fait-il ? | How’s the weather?
+Quelles sont les prévisons météo pour aujourd’hui / demain ? | What’s the forecast for today / tomorrow?
+Est-ce qu’il fait chaud / froid ? | How warm / cold is it?
+Est-ce qu’il va pleuvoir ? | Is it going to rain?
+Quelle belle journée ! | What a lovely day!
+Quel mauvais temps ! | What awful weather!
+Il y a du soleil. | It’s sunny.
+C’est nuageux / brumeux. | It’s cloudy / misty.
+
+Il y a du brouillard. | It’s foggy.
+Il gèle. | It’s freezing.
+Il pleut / neige. | It’s raining / snowing.
+Il y a du vent. | It’s windy.
+Il y a de l’orage. | It’s stormy.
+Le temps est changeant. | It’s changeable.
+Il fait… | It is...
+beau | nice
+mauvais | horrible
+chaud | hot
+chaud | warm
+doux | mild
+frais | cool
+pluvieux | wet
+humide | humid
+le soleil | sun
+la pluie | rain
+la neige | snow
+la grêle | hail
+le vent | wind
+le coup de vent | gale
+la brume | mist
+le brouillard | fog
+le tonnerre | thunder
+l’éclair; m | lightning
+l’orage; m | thunderstorm
+le nuage | cloud
+la température | temperature
+
+un
+deux
+trois
+quatre
+cinq
+six
+sept
+huit
+neuf
+dix
+onze
+douze
+treize
+quatorze
+quinze
+seize
+dix-sept
+dix-huit
+dix-neuf
+vingt
+trente
+quarante
+cinquante
+soixante
+soixante-dix
+quatre-vingts
+quatre-vingt-dix
+cent
+mille
+million
+
+l’hélicoptère; m | helicopter
+le rotor | rotor
+la pale | blade
+le nez | nose
+le cockpit | cockpit
+la queue | tail
+
+la rue | street
+le conducteur / la conductrice | driver
+le passager / la passagère | passenger
+le piéton / la piétonne | pedestrian
+le trafic | traffic
+l’embouteillage; m | traffic jam
+l’heure de pointe; f | rush hour
+les transports en commun; mpl | public transport
+le taxi | taxi
+la station de taxis | taxi rank
+les indications; fpl | directions
+l’itinéraire; m | route
+le panneau de signalisation | road sign
+marcher | to walk
+conduire | to drive
+revenir | to return
+traverser | to cross
+tourner | to turn
+faire la navette | to commute
+la carte | map
+le billet | ticket
+l’horaire; m | timetable
+
+le monospace | people carrier
+le SUV | SUV
+le camping-car | motorhome
+la caravane | caravan
+la décapotable | convertible
+le siège du passager | passenger seat
+
+la place du conducteur | driver’s seat
+le siège arrière | back seat
+le siège enfant | child seat
+la galerie | roof rack
+le toit ouvrant | sunroof
+le moteur | engine
+la batterie | battery
+le frein | brake
+l’accélérateur; m | accelerator
+la climatisation | air conditioning
+l’embrayage; m | clutch
+le régulateur de vitesse | cruise control
+le pot d’échappement | exhaust (pipe)
+le réservoir de carburant | fuel tank
+la boîte de vitesses | gearbox
+l’alcootest; m | Breathalyser®
+automatique | automatic
+électrique | electric
+hybride | hybrid
+démarrer | to start the engine
+freiner | to brake
+dépasser | to overtake
+garer | to park
+faire marche arrière | to reverse
+ralentir | to slow down
+être en excès de vitesse | to speed
+s’arrêter | to stop
+
+le coffre | boot
+le toit | roof
+la vitre | window
+la roue | wheel
+la portière | door
+l’aile; f | wing
+le pneu | tyre
+le capot | bonnet
+le pare-brise | windscreen
+
+l’essuie-glace; m | windscreen wiper
+le rétroviseur extérieur | wing mirror
+le phare | headlight
+le pare-chocs | bumper
+la plaque d’immatriculation | number plate
+le clignotant | indicator
+
+le tableau de bord | dashboard
+la jauge d’essence | fuel gauge
+le levier de vitesse | gearstick
+la boîte à gants | glove compartment
+le frein à main | handbrake
+l’appuie-tête; m | headrest
+l’allumage; m | ignition
+le rétroviseur | rearview mirror
+le GPS | sat nav
+la ceinture de sécurité | seatbelt
+le compteur de vitesse | speedometer
+le volant | steering wheel
+
+la route à quatre voies | dual carriageway
+la route à voie unique | single-track road
+le macadam | tarmac®
+le coin | corner
+la sortie | exit
+la bretelle | slip road
+
+le bas-côté | layby
+l’aire de service; f | services
+la limitation de vitesse | speed limit
+la déviation | diversion
+le permis de conduire | driving licence
+la carte grise | car registration document
+l’assurance automobile; f | car insurance
+la location de voiture | car hire / rental
+l’essence sans plomb; f | unleaded petrol
+le diesel | diesel
+les travaux; mpl | roadworks
+la place de parking handicapé | accessible parking space
+le pont | bridge
+le parking | car park
+la station de lavage | car wash
+la pompe à essence | fuel pump
+le carrefour | junction
+le bord du trottoir | kerb
+la voie | lane
+le passage à niveau | level crossing
+l’autoroute; f | motorway
+le parcmètre | parking meter
+la place de parking | parking space
+le trottoir | pavement
+la station-service | petrol station
+le nid-de-poule | pothole
+la route | road
+le rond-point | roundabout
+le radar | speed camera
+le péage | toll point
+le cône de signalisation | traffic cone
+les feux; mpl | traffic lights
+l’agent de la circulation; m/f | traffic warden
+le tunnel | tunnel
+le passage piéton | zebra crossing
+
+l’accident; m | accident
+la panne | breakdown
+la collision | collision
+le pneu à plat | flat tyre
+tomber en panne | to break down
+avoir un accident | to have an accident
+avoir un pneu à plat | to have a flat tyre
+changer le pneu | to change a tyre
+remorquer | to tow
+l’airbag; m | airbag
+l’antigel; m | antifreeze
+la borne d’urgence | emergency phone
+le garage | garage
+le gilet de sécurité | hi-viz vest
+le cric | jack
+les câbles de démarrage; mpl | jump leads
+le mécanicien / la mécanicienne | mechanic
+les chaînes à neige; fpl | snow chains
+la roue de secours | spare wheel
+la dépanneuse | tow truck
+le triangle de présignalisation | warning triangle
+
+la ligne de bus | bus route
+la voie réservée aux bus | bus lane
+la gare routière | bus station
+la carte de bus | bus pass
+le prix | fare
+le plein tarif | full fare
+le demi-tarif | half fare
+la réduction | concession
+l’accessibilité aux handicapés; f | wheelchair access
+
+le bus de nuit | night bus
+le car de ramassage scolaire | school bus
+la navette de l’aéroport | airport bus
+l’autocar touristique; m | tour bus
+prendre le bus | to catch the bus
+le bus | bus
+l’Abribus®; m | bus shelter
+l’arrêt de bus; m | bus stop
+le car | coach
+le minibus | minibus
+le trolleybus | trolley bus
+
+le cycliste / la cycliste | cyclist
+le VTT | mountain bike
+le vélo de route | road bike
+le râtelier à bicyclettes | bike stand
+le porte-vélos | bike rack
+la piste cyclable | cycle lane / path
+le gilet de sécurité | reflective vest
+le siège enfant | child seat
+la trousse crevaison | puncture repair kit
+faire du vélo | to cycle
+faire une promenade en vélo | to go for a bike ride
+crever | to get a puncture
+
+la sonnette | bell
+l’antivol; m | bike lock
+le phare avant | front light
+le casque | helmet
+la pompe à vélo | pump
+le réflecteur | reflector
+
+le frein | brake
+le guidon | handlebars
+les vitesses; fpl | gears
+la barre transversale | crossbar
+la selle | saddle
+le cadre | frame
+la pédale | pedal
+la chaîne | chain
+le pneu | tyre
+la roue | wheel
+
+le motard / la motarde | motorcyclist
+la mobylette | moped
+le scooter | scooter
+le réservoir de carburant | fuel tank
+le guidon | handlebars
+le garde-boue | mudguard
+la béquille | kickstand
+le tuyau d’échappement | exhaust pipe
+les vêtements de moto; mpl | leathers
+les bottes; fpl | boots
+le casque | helmet
+la caméra pour casque | helmet cam
+les gants en cuir; mpl | leather gloves
+le blouson de cuir | leather jacket
+la moto | motorbike
+
+le réseau ferroviaire | rail network
+le train à grande vitesse | high-speed train
+le train de passagers | passenger train
+le train de marchandises | freight train
+le train-couchettes | sleeper
+l’espace calme; m | quiet coach
+le wagon | coach
+la station de métro | metro station
+la consigne | left luggage
+la carte de réduction | railcard
+le carnet | book of tickets
+l’aller simple; m | single ticket
+l’aller-retour; m | return ticket
+le billet électronique | e-ticket
+la première classe | first-class
+la réservation | seat reservation
+changer de train | to change trains
+composter un billet | to validate a ticket
+le wagon | carriage
+la couchette | couchette
+le tableau des départs | departure board
+le garde / la garde | guard
+le TLR | light railway
+la locomotive | locomotive
+le porte-bagages | luggage rack
+le métro | metro
+le quai | platform
+le porteur / la porteuse | porter
+la voiture-restaurant | restaurant car
+la porte coulissante | sliding doors
+le portillon | ticket barrier
+le guichet automatique | ticket machine
+le guichet | ticket office
+la voie | track
+le train | train
+le chef de train / la chef de train | train conductor
+le tramway | tram
+la gare | train station
+le composteur de billets | validation machine
+
+la compagnie aérienne | airline
+le terminal | terminal
+Arrivées / Départs | Arrivals / Departures
+les contrôles de sécurité; mpl | security
+le contrôle des passeports | passport control
+la douane | customs
+la porte | gate
+le personnel navigant | cabin crew
+le steward / l’hôtesse; f | flight attendant
+la classe affaires / économique | business / economy class
+le couloir | aisle
+la tablette | tray table
+le compartiment à bagages | overhead locker
+la ceinture de sécurité | seatbelt
+le gilet de sauvetage | life jacket
+le masque à oxygène | oxygen mask
+la soute | hold
+l’aile; f | wing
+le moteur | engine
+le fuselage | fuselage
+les bagages enregistrés; mpl | hold luggage
+les bagages en cabine; mpl | cabin baggage
+l’excédent de bagages; m | excess baggage
+le bagage à main | hand luggage
+le décalage horaire | jetlag
+s’enregistrer (en ligne) | to check in (online)
+l’avion; m | aeroplane
+l’aéroport; m | airport
+le retrait des bagages | baggage reclaim
+la carte d’embarquement | boarding card
+la cabine | cabin
+l’enregistrement; m | check-in desk
+le cockpit | cockpit
+le tableau des départs | departure board
+la boutique hors taxes | duty-free shop
+le sac fourre-tout | holdall
+
+le chariot à bagages | luggage trolley
+le passeport | passport
+le pilote / la pilote | pilot
+la piste | runway
+la valise | suitcase
+
+la traversée en ferry | ferry crossing
+le terminal de ferry | ferry terminal
+le pont-garage | car deck
+le pont | deck
+l’hublot; m | porthole
+la cheminée | funnel
+la proue | bow
+la poupe | stern
+le port | port
+le port de plaisance | marina
+la jetée | pier
+le canal | canal
+le garde-côte | coastguard
+le canot de sauvetage | lifeboat
+le capitaine / la capitaine | captain
+l’équipage; m | crew
+le piéton / la piétonne | foot passenger
+monter à bord de | to board
+naviguer | to sail
+mettre à quai | to dock
+
+l’ancre; f | anchor
+la bouée | buoy
+la passerelle | gangway
+le port | harbour
+la jetée | jetty
+la bouée de sauvetage | lifebuoy
+
+le gilet de sauvetage | lifejacket
+l’écluse; f | lock
+le mouillage | mooring
+
+la péniche | canal boat
+le canoë | canoe
+le ferry | ferry
+le canot pneumatique | inflatable dinghy
+le kayak | kayak
+le paquebot | liner
+la barque | rowing boat
+le voilier | sailing boat
+le yacht | yacht
+
+l’immeuble; m | block of flats
+le toit | roof
+la fenêtre | window
+le balcon | balcony
+
+le gîte rural | country cottage
+la maison mitoyenne | terraced house
+la maison de ville | townhouse
+la villa | villa
+le bâtiment | building
+l’adresse; f | address
+la banlieue | suburb
+le quartier | district
+le propriétaire / la propriétaire | owner
+le locataire / la locataire | tenant
+le voisin / la voisine | neighbour
+le prêt immobilier | mortgage
+le loyer | rent
+le contrat de location | rental agreement
+la location de vacances | holiday let
+louer | to rent
+posséder | to own
+déménager | to move house
+construire une maison | to build a house
+
+l’immeuble; m | apartment block
+le pavillon | bungalow
+la maison individuelle | detached house
+la ferme | farmhouse
+la maison jumelée | semi-detached house
+le studio | studio flat
+
+la pièce | room
+la cave | cellar
+le grenier | attic
+le plafond | ceiling
+le mur | wall
+le sol | floor
+le balcon | balcony
+la prise | plug / socket
+l’adaptateur; m | adaptor
+l’électricité; f | electricity
+la plomberie | plumbing
+la climatisation | air conditioning
+le chauffage central | central heating
+l’antenne parabolique; f | satellite dish
+la porte de derrière | back door
+la porte-fenêtre | French windows
+le puits de lumière | skylight
+la lucarne | dormer
+réparer | to fix
+décorer | to decorate
+rénover | to renovate
+
+la chaudière | boiler
+le ventilateur de plafond | ceiling fan
+la multiprise | extension cable
+la boîte à fusibles | fusebox
+le radiateur | heater
+l’ampoule; f | light bulb
+le compteur | meter
+le radiateur | radiator
+l’alarme; f | security alarm
+l’alarme incendie; f | smoke alarm
+le thermostat | thermostat
+le poêle à bois | wood-burning stove
+
+le toit | roof
+la cheminée | chimney
+l’antenne | aerial
+la gouttière | gutter
+le tuyau de descente | drainpipe
+le pignon | gable
+la fenêtre | window
+le volet | shutter
+le portail | gate
+l’allée | driveway
+la porte d’entrée | front door
+le garage | garage
+
+l’entree; f | porch / hallway
+le judas | peephole
+le paillasson | doormat
+la boîte aux lettres | letterbox
+le couloir | corridor
+la cage d’escalier | stairwell
+l’escalier; m | staircase
+le palier | landing
+l’ascenseur; m | lift
+faire entrer quelqu’un (par interphone) | to buzz somebody in 
+s’essuyer les pieds | to wipe one’s feet
+accrocher sa veste | to hang one’s jacket up
+la sonnette | doorbell
+l’interphone; m | intercom
+la clé | key
+
+la moquette | carpet
+le parquet | floorboards
+l’ensemble de meubles; m | suite
+le canapé-lit | sofa bed
+la lampe de table | table lamp
+la télévision par câble / satellite | cable / satellite TV
+la télévision intelligente | smart TV
+la télévision à la demande | TV on demand
+se détendre | to relax
+s’asseoir | to sit down
+regarder la télé | to watch TV
+écouter de la musique | to listen to music
+
+la bibliothèque | bookcase
+les rideaux; mpl | curtains
+la vitrine | display cabinet
+le lecteur DVD / Blu-ray® | DVD/Blu-ray® player
+la radio | radio
+la télécommande | remote control
+le buffet | sideboard
+le meuble télé | TV stand
+le store vénitien | Venetian blind
+
+l’applique; f | wall light
+la télé | TV
+la cheminée | fireplace
+la table basse | coffee table
+le canapé | sofa
+l’image; f | picture
+l’ornement; m | ornament
+l’étagère; f | shelves
+le fauteuil | armchair
+le repose-pied | footstool
+le tapis | rug
+le coussin | cushion
+
+la cuisinière | (electric) cooker
+la gazinière | gas cooker
+la hotte | cooker hood
+la bouilloire | kettle
+le grille-pain | toaster
+cuisiner | to cook
+frire | to fry
+faire sauter | to stir-fry
+bouillir | to boil
+rôtir | to roast
+cuire (au four) | to bake
+faire la vaisselle | to wash up
+débarrasser le plan | to clean the worktops
+to put away the | de travail
+ranger les courses | groceries
+
+la plaque pour le four | baking tray
+la cafetière à piston | cafetière
+la cocotte | casserole dish
+la planche à découper | chopping board
+la passoire | colander
+le tire-bouchon | corkscrew
+le robot de cuisine | food processor
+la poêle | frying pan
+la râpe | grater
+le batteur | hand mixer
+le couteau de cuisine | kitchen knife
+la louche | ladle
+le presse-purée | masher
+le verre mesureur | measuring jug
+le saladier | mixing bowl
+l’économe; m | peeler
+le rouleau à pâtisserie | rolling pin
+la casserole | saucepan
+le tamis | sieve
+la spatule | spatula
+l’ouvre-boîtes; m | tin opener
+
+le fouet | whisk
+le wok | wok
+la cuillère en bois | wooden spoon
+
+le papier aluminium | aluminium foil
+le sac poubelle | bin bag
+la huche à pain | bread bin
+le film alimentaire | clingfilm
+l’essuie-tout; m | kitchen roll
+la poubelle à pédale | pedal bin
+
+l’évier; m | sink
+le four | oven
+la plaque chauffante | hob
+le four à microondes | microwave
+le spot | spotlight
+le réfrigérateurcongélateur | fridge-freezer
+le placard | cupboard
+le robinet | tap
+l’égouttoir; m | draining board
+le tiroir | drawer
+le plan de travail | worktop
+les carreaux; mpl | tiles
+
+la table à manger | dining table
+le set de table | place mat
+le dessous de verre | coaster
+la vaiselle | crockery
+les couverts; mpl | cutlery
+la verrerie | glassware
+mettre la table | to set the table
+dîner | to dine
+débarrasser la table | to clear the table
+
+la saucière | gravy boat
+la serviette | napkin
+le moulin à poivre | pepper mill
+le saladier | salad bowl
+la salière | salt cellar
+le plat de service | serving dish
+
+le bol | bowl
+la flûte à champagne | champagne flute
+la tasse et la soucoupe | cup and saucer
+le couteau et la fourchette | knife and fork
+l’assiette; f | plate
+la cuillère | spoon
+la cuillère à café | teaspoon
+le verre | tumbler
+le verre à vin | wine glass
+
+le lit d’une personne | single bed
+le lit deux personnes | double bed
+la chambre principale | master bedroom
+la chambre d’ami | spare room
+la salle de bain attenante | en-suite bathroom
+la chambre d’enfant | nursery
+la literie | bedding
+aller se coucher | to go to bed
+dormir | to sleep
+se réveiller | to wake up
+faire le lit | to make the bed
+changer les draps | to change the sheets
+
+la couverture | blanket
+les lits superposés; mpl | bunk beds
+le radio-réveil | clock radio
+le portemanteau | coat hanger
+la coiffeuse | dressing table
+le sèche-cheveux | hairdryer
+le panier à linge | laundry basket
+l’édredon; m | quilt
+les draps; mpl | sheets
+
+le miroir | mirror
+la commode | chest of drawers
+le lit | bed
+l’armoire; f | wardrobe
+la couette | duvet
+les rideaux; mpl | curtains
+le fauteuil | armchair
+la lampe de chevet | bedside lamp
+le tapis | rug
+l’oreiller; m | pillow
+le matelas | mattress
+la table de chevet | bedside table
+
+le rideau de douche | shower curtain
+le siège WC | toilet seat
+la chasse d’eau | flush
+l’égout; m | drain
+se doucher | to shower
+prendre un bain | to have a bath
+se laver les mains | to wash one’s hands
+se brosser les dents | to brush one’s teeth
+aller aux toilettes | to go to the toilet
+
+le tapis de bain | bath mat
+la serviette de bain | bath towel
+le gant de toilette | face cloth
+l’essuie-mains; m | hand towel
+la fleur de douche | shower puff
+le savon | soap
+l’éponge; f | sponge
+la brosse à toilettes | toilet brush
+le papier toilette | toilet roll
+
+le miroir | mirror
+l’évier; m | sink
+la douche | shower
+les toilettes; fpl | toilet
+le porte-serviettes | towel rail
+le robinet | tap
+le cabinet | cabinet
+le bidet | bidet
+la paroi de douche | shower screen
+la baignoire | bath
+
+l’arbre; m | tree
+la terre | soil
+l’herbe; f | grass
+la plante | plant
+la mauvaise herbe | weed
+la plate-bande | flowerbed
+le compost | compost
+le jardin ouvrier | allotment
+le jardinier / la jardinière | gardener
+
+désherber | to weed
+arroser | to water
+cultiver | to grow
+planter | to plant
+
+la terrasse en bois | decking
+la fourche | garden fork
+le tuyau | garden hose
+les gants de jardinage; mpl | gardening gloves
+la cabane | garden shed
+la serre | greenhouse
+la binette | hoe
+la tondeuse | lawnmower
+le parasol | parasol
+le pot de fleurs | plant pot
+le sécateur | pruners
+la pelle | spade
+le déplantoir | trowel
+l’arrosoir; m | watering can
+le désherbant | weedkiller
+les bottes en caoutchouc; fpl | Wellington boots
+la brouette | wheelbarrow
+la jardinière | windowbox
+
+le treillis | trellis
+la pelouse | lawn
+l’arbuste; m | shrub
+le portail | gate
+la palissade | fence
+le nichoir | birdbox
+les meubles de jardin; mpl | patio furniture
+le chemin | path
+les fleurs; fpl | flowers
+le patio | patio
+le pot de fleur | flowerpot
+
+la buanderie | utility room
+les appareils électroménagers; mpl | household appliances
+les tâches ménagères; fpl | chores
+la bassine | basin
+l’eau de javel; f | bleach
+le désinfectant | disinfectant
+la pastille lave-vaisselle | dishwasher tablet
+la lessive | laundry detergent
+la poubelle de recyclage | recycling bin
+la corbeille | wastepaper basket
+le liquide vaisselle | washing-up liquid
+balayer le sol | to sweep the floor
+faire la lessive | to do the laundry
+passer l’aspirateur | to hoover
+ranger | to tidy up
+nettoyer | to clean
+sortir les poubelles | to take out the bin
+la brosse | brush
+le seau | bucket
+le torchon | cloth
+l’étendoir; m | clothes horse
+les pinces à linge; fpl | clothes pegs
+le lave-vaisselle | dishwasher
+la poubelle | dustbin
+la pelle | dustpan
+le fer à repasser | iron
+la planche à repasser | ironing board
+la serpillière | mop
+les gants en caoutchouc; mpl | rubber gloves
+le tampon à récurer | scourer
+le torchon | tea towel
+le sèche-linge | tumble drier
+l’aspirateur; m | vacuum cleaner
+la corde à linge | washing line
+la machine à laver | washing machine
+
+le panier | basket
+la banane | banana
+le pain | bread
+l’huile végétale; f | vegetable oil
+
+le magasin | shop
+le supermarché | supermarket
+le centre commercial | shopping centre
+le commerce de proximité | convenience store
+la grande enseigne | high-street shop
+le marché | market
+le liquide | cash
+la monnaie | change
+sans contact | contactless
+le code personnel | PIN
+l’échange; m | exchange
+le remboursement | refund
+le coupon | voucher
+les provisions | groceries
+le vendeur / la vendeuse | shop assistant
+le client / la cliente | customer
+regarder dans les magasins | to browse
+acheter | to buy
+payer | to pay
+faire du shopping (en ligne) | to shop (online)
+faire des courses | to do the shopping / go shopping
+les billets de banque; mpl | banknotes
+le lecteur de cartes | card reader
+les pièces de monnaie; fpl | coins
+la carte de paiement / de crédit | debit / credit card
+le sac en papier | paper bag
+le sac en plastique | plastic bag
+le reçu | receipt
+le sac réutilisable | reusable shopping bag
+la caisse | till point
+
+l’allée; f | aisle
+la carte de fidélité | loyalty card
+l’épicerie fine; f | delicatessen
+le plat cuisiné | ready meal
+la bouteille | bottle
+la boîte | box
+la brique | carton
+le bocal | jar
+le paquet | packet
+la conserve | tin
+en boîte | tinned
+frais | fresh
+surgelé | frozen
+maigre | low-fat
+basses calories | low-calorie
+
+le panier | basket
+la balance | scales
+le chariot | trolley
+
+les biscuits; mpl | biscuits
+le couscous | couscous
+les fines herbes; fpl | herbs
+le miel | honey
+le sucre glace | icing sugar
+le café instantané | instant coffee
+la confiture | jam
+le ketchup | ketchup
+la marmelade | marmalade
+la mayonnaise | mayonnaise
+les nouilles; fpl | noodles
+l’huile d’olive; f | olive oil
+les pâtes; fpl | pasta
+le poivre | pepper
+le riz | rice
+le sel | salt
+les épices; fpl | spices
+le sucre | sugar
+
+les sachets de thé; mpl | teabags
+l’huile végétale; f | vegetable oil
+le vinaigre | vinegar
+
+le chocolat | chocolate
+les chips; fpl | crisps
+les fruits à coque; mpl | nuts
+les olives; mpl | olives
+le popcorn | popcorn
+les bonbons; mpl | sweets
+
+la bière | beer
+la boisson gazeuse | fizzy drink
+le jus de fruit | fruit juice
+l’eau minérale; f | mineral water
+les spiritueux; mpl | spirits
+le vin | wine
+
+la place du marché | marketplace
+la fabrication artisanale | traditional production
+le marché aux puces | flea market
+le marché couvert | indoor market
+le marché fermier | farmer’s market
+le commerçant / la commerçante | trader
+l’étal; m | stall
+les produits; mpl | produce
+local | local
+bio | organic
+saisonnier | seasonal
+fait maison | home-made
+
+l’épicerie; f | grocer’s
+le jus | juice
+la feuille | leaf
+la pelure | peel
+le pépin | pip
+le zeste | rind
+la graine | seed
+le quartier | segment
+la peau | skin
+le noyau | stone
+cru | raw
+frais | fresh
+pourri | rotten
+mûr | ripe
+pas mûr | unripe
+sans pépins | seedless
+couper | to chop
+couper en dés | to dice
+râper | to grate
+faire du jus de | to juice
+peler | to peel
+
+la pomme | apple
+l’abricot; m | apricot
+la banane | banana
+la mûre | blackberry
+le cassis | blackcurrant
+la myrtille | blueberry
+la cerise | cherry
+la groseille à maquereau | gooseberry
+le raisin | grape
+le pamplemousse | grapefruit
+le kiwi | kiwi fruit
+le citron | lemon
+la mangue | mango
+le melon | melon
+l’orange; f | orange
+le fruit de la passion | passion fruit
+la pêche | peach
+la poire | pear
+
+l’ananas; m | pineapple
+la prune | plum
+la framboise | raspberry
+la groseille | redcurrant
+la fraise | strawberry
+la pastèque | watermelon
+
+l’artichaut; m | artichoke
+l’asperge; f | asparagus
+l’aubergine; f | aubergine
+la betterave | beetroot
+les brocolis; mpl | broccoli
+le chou de Bruxelles | Brussels sprout
+le chou | cabbage
+la carotte | carrot
+le chou-fleur | cauliflower
+le céleri | celery
+le piment | chilli
+la courgette | courgette
+le concombre | cucumber
+l’ail; m | garlic
+les haricots verts; mpl | green beans
+le poireau | leek
+la laitue | lettuce
+le champignon | mushroom
+l’oignon; m | onion
+les petits pois; mpl | peas
+la pomme de terre | potato
+le poivron rouge | red pepper
+les épinards; mpl | spinach
+la tomate | tomato
+
+le poissonnier / la poissonnière | fishmonger
+l’arête; f | (fish)bone
+le filet | fillet
+
+les œufs de poisson; mpl | roe
+les écailles; fpl | scales
+les crustacés; mpl | shellfish
+la coquille | shell
+d’eau douce | freshwater
+de mer | saltwater
+d’élevage | farmed
+sauvage | wild
+salé | salted
+fumé | smoked
+découpé en filets | filleted
+désarêté | deboned
+
+le cabillaud | cod
+l’aiglefin; m | haddock
+le hareng | herring
+la limande-sole | lemon sole
+le maquereau | mackerel
+le saumon | salmon
+la sardine | sardine
+le bar | sea bass
+la dorade | sea bream
+la raie | skate
+la truite | trout
+le thon | tuna
+
+la palourde | clam
+le crabe | crab
+l’écrevisse; f | crayfish
+le homard | lobster
+la moule | mussel
+la pieuvre | octopus
+l’huître; f | oyster
+la crevette | prawn
+la coquille Saint-Jacques | scallop
+l’oursin; m | sea urchin
+la crevette | shrimp
+le calamar | squid
+
+le boucher / la bouchère | butcher
+la viande | meat
+la viande rouge | red meat
+la viande blanche | white meat
+la charcuterie | charcuterie
+le morceau (de viande) | cut (of meat)
+le pâté | pâté
+le bœuf | beef
+le porc | pork
+l’agneau; m | lamb
+le gibier | game
+la venaison | venison
+le veau | veal
+la volaille | poultry
+le canard | duck
+l’oie; f | goose
+la dinde | turkey
+les abats; mpl | offal
+cuit | cooked
+cru | raw
+élevé en plein air | free-range
+le bacon | bacon
+le steak haché | burger
+le blanc de poulet | chicken breast
+la côtelette | chop
+le saucisson | (cured) sausage
+le jambon | ham
+le rôti | joint
+les lardons; mpl | lardons
+la viande hachée | mince
+les côtes; fpl | ribs
+les saucisses; fpl | sausages
+le steak | steak
+
+le boulanger / la boulangère | baker
+le pain | bread
+un pain | loaf
+une tranche | slice
+la croûte | crust
+la pâte | dough
+la farine | flour
+sans gluten | gluten-free
+faire cuire au four | to bake
+le croissant aux amandes | almond croissant
+la baguette | baguette
+les petits pains; mpl | bread rolls
+la brioche | brioche
+le croissant | croissant
+le feuilleté | Danish pastry
+le beignet | doughnut
+l’éclair; m | éclair
+la tarte aux fruits | fruit tart
+le macaron | macaroon
+le millefeuille | mille-feuille
+le pain au chocolat | pain au chocolat
+les crêpes; mpl | pancakes
+la gaufre | waffle
+le pain complet | wholemeal bread
+
+le fromage | cheese
+le bleu | blue cheese
+le fromage à tartiner | cream cheese
+le brie | brie
+le camembert | Camembert
+le cantal | Cantal
+le cheddar | cheddar
+le comté | Comté
+le fromage blanc maigre | cottage cheese
+
+l’emmental; m | Emmenthal
+l’époisses; f | Époisses
+le fromage de chèvre | goat’s cheese
+le manchego | Manchego
+la mozzarella | mozzarella
+le parmesan | parmesan
+le reblochon | reblochon
+le roquefort | Roquefort
+le stilton | Stilton®
+
+le blanc d’œuf | egg white
+le jaune d’œuf | egg yolk
+le lait entier | whole milk
+le lait écrémé / demi-écrémé | skimmed / semiskimmed milk
+le lait UHT | UHT milk
+le lait de soja | soymilk
+la crème liquide / épaisse | single / double cream
+la crème aigre | sour cream
+de poules élevées en plein air | free-range
+pasteurisé | pasteurized
+non pasteurisé | unpasteurized
+sans produits laitiers | dairy-free
+le beurre | butter
+la crème | cream
+l’œuf; m | egg
+la margarine | margarine
+le lait | milk
+le yaourt | yoghurt
+
+le pharmacien / la pharmacienne | pharmacist
+l’ordonnance; f | prescription
+l’antihistaminique; m | antihistamine
+le décongestif | decongestant
+l’analgésique; m | painkiller
+le savon liquide mains | handwash
+le parfum | fragrance
+le rhume | cold
+la diarrhée | diarrhoea
+le rhume des foins | hay fever
+le mal de tête / ventre | headache / stomachache
+le mal de gorge | sore throat
+
+la crème antiseptique | antiseptic cream
+le bandage | bandage
+la capsule | capsule
+le préservatif | condom
+le sirop pour la toux | cough mixture
+les gouttes; fpl | drops
+le répulsif à insectes | insect repellent
+la pastille | lozenge
+le médicament | medicine
+le pansement | plaster
+la crème solaire | suntan lotion
+le cachet | tablet / pill
+
+l’antitranspirant; m | antiperspirant
+l’après-shampooing; m | conditioner
+le bain de bouche | mouthwash
+le rasoir | razor
+la serviette hygiénique | sanitary towel
+le shampooing | shampoo
+
+la mousse à raser | shaving foam
+le gel douche | shower gel
+le savon | soap
+le tampon | tampon
+la brosse à dents | toothbrush
+le dentifrice | toothpaste
+
+le fard à joues | blusher
+le peigne | comb
+l’eye-liner; m | eyeliner
+le fard à paupières | eyeshadow
+le fond de teint | foundation
+la brosse à cheveux | hairbrush
+la laque | hairspray
+le baume à lèvres | lip balm
+le rouge à lèvres | lipstick
+le mascara | mascara
+le vernis à ongles | nail varnish
+la poudre | powder
+
+les coliques; fpl | colic
+la couche jetable / lavable | disposable / reusable nappy
+le sac hygiénique | nappy sack
+l’érythème fessier; m | nappy rash
+le gel de dentition | teething gel
+allaiter | to breast-feed
+faire ses dents | to be teething
+
+la grenouillère | babygro®/ sleepsuit
+le bavoir | bib
+les chaussons de bébé; mpl | bootees
+les moufles; fpl | mittens
+la combinaison rembourrée | snowsuit
+le body | vest
+
+les aliments pour bébés; mpl | baby food
+la crème hydratante pour bébé | baby lotion
+le biberon | baby’s bottle
+le sac à langer | changing bag
+le coton-tige | cotton bud
+le coton hydrophile | cotton wool
+le lait maternisé | formula milk
+la couche | nappy
+la crème pour le change | nappy cream
+la biscotte | rusk
+le talc | talcum powder
+les lingettes humides; fpl | wet wipes
+
+la baignoire pour bébé | baby bath
+le siège bébé | baby seat
+le trotteur | baby walker
+le lit d’enfant | cot
+la tétine | dummy
+la chaise haute | highchair
+le mobile | mobile
+le couffin | Moses basket
+le landau | pram
+la poussette | pushchair
+l’anneau de dentition; m | teething ring
+le lit-parapluie | travel cot
+
+le kiosque | kiosk
+le (bureau de) tabac | tobacconist
+le vendeur / la vendeuse | vendor
+le journal grand format | broadsheet
+
+le tabloïd | tabloid
+le carnet | book of tickets
+les fournitures de bureau; fpl | stationery
+quotidien | daily
+hebdomadaire | weekly
+
+le livre | book
+le cigare | cigar
+la cigarette | cigarette
+la bande dessinée | comic book
+la confiserie | confectionery
+la cigarette électronique | e-cigarette 
+l’enveloppe; f | envelope
+la carte de vœux | greetings card
+le magazine | magazine
+la carte | map
+le journal | newspaper
+le carnet | notebook
+le stylo | pen
+le crayon | pencil
+la carte postale | postcard
+le livre de casse-têtes | puzzle book
+la carte à gratter | scratch card
+le timbre | stamp
+
+la marque | brand
+le comptoir | counter
+le rayon | department
+l’étage; m | floor
+l’escalator; m | escalator
+l’ascenseur; m | lift
+les toilettes; fpl | toilets
+les soldes; fpl | sale
+les vêtements pour femmes; mpl | womenswear
+
+les vêtements pour hommes; mpl | menswear
+les vêtements de sport; mpl | sportswear
+les maillots de bain; mpl | swimwear
+les accessoires de mode; mpl | accessories
+les produits de beauté; mpl | cosmetics
+la mode | fashion
+l’alimentation; f | food and drink
+les chaussures; fpl | footwear
+les meubles; mpl | furniture
+les ustensiles de cuisine; mpl | kitchenware
+la maroquinerie | leather goods
+l’éclairage; m | lighting
+la lingerie | lingerie
+les tissus d’ameublement; mpl | soft furnishings
+les jouets; mpl | toys
+
+les vêtements; mpl | clothes / clothing
+les chaussures; fpl | shoes / footwear
+les sous-vêtements; mpl | underwear
+la cabine d’essayage | fitting room
+le portefeuille | wallet
+le porte-monnaie | purse
+les bijoux; mpl | jewellery
+le parapluie | umbrella
+la taille | size (clothing)
+la pointure | size (shoe)
+décontracté | casual
+élégant | smart
+la laine | wool
+le jean | denim
+le coton | cotton
+
+le cuir | leather
+la soie | silk
+petite taille | petite
+grande taille | plus-size
+essayer | to try on
+être à la bonne taille | to fit
+
+le bikini | bikini
+le chemisier | blouse
+le caleçon | boxer shorts
+le soutien-gorge | bra
+le gilet | cardigan
+le manteau | coat
+la robe | dress
+la robe de chambre | dressing gown
+la veste | jacket
+le jean | jeans
+le pantalon de survêtement | jogging bottoms
+le pull | jumper
+les leggings; mpl | leggings
+le slip | pants
+le pyjama | pyjamas
+la chemise | shirt
+le short | shorts
+la jupe | skirt
+les chaussettes; fpl | socks
+le sweat | sweatshirt
+le maillot de bain | swimsuit
+le costume | (three-piece) suit
+la cravate | tie
+les collants; mpl | tights
+le pantalon | trousers
+le t-shirt | T-shirt
+l’imperméable; m | waterproof jacket
+
+la casquette | baseball cap
+la ceinture | belt
+le bracelet | bracelet
+les boucles d’oreille; fpl | earrings
+les gants; mpl | gloves
+le sac à main | handbag
+
+le collier | necklace
+le foulard | scarf
+le bonnet | woolly hat
+
+les bottes; fpl | boots
+les talons hauts; mpl | high heels
+les chaussures à lacets; fpl | lace-up shoes
+les sandales; fpl | sandals
+les pantoufles; fpl | slippers
+les baskets; fpl | trainers
+
+le bricolage | home improvements
+la quincaillerie | hardware shop
+l’outil; m | tool
+l’outil électrique; m | power tool
+la boîte à outils | toolbox
+l’électricité; f | electricity
+la menuiserie | joinery
+la peinture | painting
+la tapisserie | decorating
+la plomberie | plumbing
+faire du bricolage | to do DIY
+décorer | to decorate
+le burin | chisel
+la perceuse électrique | electric drill
+le marteau | hammer
+les clous; mpl | nails
+les écrous et boulons; mpl | nuts and bolts
+la peinture | paint
+le pinceau | paintbrush
+le rouleau à peinture | paint roller
+la tenaille | pliers
+la scie | saw
+
+le tournevis | screwdriver
+les vis; fpl | screws
+la clé | spanner
+le niveau à bulle | spirit level
+l’escabeau; m | stepladder
+les carreaux; mpl | tiles
+le papier peint | wallpaper
+la clé à molette | wrench
+
+le magasin d’antiquités | antique shop
+le barbier | barber’s
+le salon de beauté | beauty salon
+le bookmaker | bookmaker’s
+la librairie | bookshop
+la boutique | boutique
+la concession automobile | car showroom
+le magasin caritatif | charity shop
+le magasin d’électroménager | electrical retailer
+l’agence immobilière; f | estate agency
+le magasin de fleurs | florist’s
+le magasin d’ameublement | furniture store
+la jardinerie | garden centre
+le salon de coiffure | hairdresser’s
+le magasin d’alimentation bio | health food shop
+la bijouterie | jeweller’s
+le magasin de musique | music shop
+le débit de boissons | off-licence
+l’opticien; m | optician’s
+l’animalerie; f | pet shop
+la boutique de téléphonie | phone shop
+le magasin de chaussures | shoe shop
+le magasin de jouets | toyshop
+l’agence de voyage; f | travel agent’s
+
+
+le café au lait | coffee with milk
+la tasse | cup
+l’anse; f | handle
+la soucoupe | saucer
+
+se réveiller | to wake up
+s’habiller | to get dressed
+arriver | to arrive
+partir | to leave
+étudier | to study
+travailler | to work
+retrouver des amis | to meet friends
+rentrer à la maison | to go home
+aller se coucher | to go to bed
+
+le bar de cuisine | breakfast bar
+la tartine de beurre | bread and butter
+la tartine de confiture | bread and jam
+tartiner | to spread
+prendre le petit déjeuner | to have breakfast
+sauter le petit déjeuner | to skip breakfast
+
+le café | coffee
+le café au lait | coffee with milk
+le chocolat chaud | hot chocolate
+le lait | milk
+le jus d’orange | orange juice
+le thé | tea
+
+la baguette | baguette
+les petits pains; mpl | bread rolls
+les céréales; fpl | cereal
+la pâte à tartiner | chocolate spread
+le croissant | croissant
+la confiture | jam
+
+le muesli | muesli
+le pain au chocolat | pain au chocolat
+la tartine | tartine
+
+la nourriture | food
+la boisson | drink
+le déjeuner | lunch
+le dîner | dinner
+les plats; mpl | courses
+la recette | recipe
+l’apéritif; m | aperitif
+le digestif | digestif
+déjeuner | to have lunch
+dîner | to have dinner
+aller au restaurant | to eat out
+
+les œufs en cocotte; mpl | baked eggs
+le bouillon | broth
+les viandes froides; fpl | cold meats
+la salade niçoise  | Nicoise salad
+le pâté | pâté
+la quiche | savoury tart
+le saumon fumé | smoked salmon
+le soufflé | soufflé
+la soupe | soup
+
+les frites; fpl | chips
+les légumes cuits; mpl | cooked vegetables
+le couscous | couscous
+le gratin | gratin
+la salade verte | green salad
+la salade composée | mixed salad
+
+les nouilles; fpl | noodles
+les olives; mpl | olives
+les pâtes; fpl | pasta
+les pommes de terre; fpl | potatoes
+les crudités; fpl | raw vegetables
+le riz | rice
+
+le bœuf bourguignon | beef bourguignon
+le coq au vin | coq au vin
+le confit de canard | duck confit
+la bouillabaisse | fish soup
+la soupe à l’oignon | French onion soup
+les moules marinières; fpl | mussels in white wine
+la raie meunière | poached skate
+la quiche lorraine | quiche lorraine
+la ratatouille | ratatouille
+le cassoulet | sausage and bean hotpot
+les escargots à la bourguignonne; mpl | snails in garlic butter
+la tarte flambée | tarte flambée
+
+la tarte aux pommes | apple tart
+le gâteau au chocolat | chocolate cake
+la mousse au chocolat | chocolate mousse
+la crème brûlée | crème brûlée
+le flan | flan
+la tarte aux fruits | fruit tart
+la glace | ice cream
+la tarte au citron | lemon tart
+la meringue | meringue
+les profiteroles; fpl | profiteroles
+le baba au rhum | rum baba
+le sorbet | sorbet
+
+le menu | set menu
+les plats du jour; mpl | daily specials
+le service | service charge
+le pourboire | tip
+le sommelier / la sommelière | wine waiter
+végétarien | vegetarian
+végétalien | vegan
+sans gluten | gluten-free
+sans produits laitiers | dairy-free
+commander | to order
+demander l’addition | to ask for the bill
+être servi | to be served
+le bar | bar
+la note | bill
+la corbeille à pain | bread basket
+la chaise | chair
+la flûte à champagne | champagne flute
+le couteau à fromage | cheese knife
+le couteau à poisson | fish knife
+la carafe d’eau | jug of water
+la carte | menu
+la serviette | napkin
+du sel et du poivre | salt and pepper
+le couteau à viande | steak knife
+la table | table
+la nappe | tablecloth
+les cure-dents; mpl | toothpicks
+du vinaigre et de l’huile | vinegar and oil
+le serveur / la serveuse | waiter / waitress
+le verre à vin | wine glass
+
+la chaîne de fastfood | fast-food chain
+le stand de nourriture | food stall
+la cuisine de rue | street food
+le vendeur / la vendeuse | vendor
+le drive-in | drive-thru
+un plat à emporter | an order to go / a takeaway
+les frais de livraison; mpl | delivery charge
+le livreur / la livreuse | delivery man / woman
+passer commande par téléphone | to phone in an order
+passer commande | to place an order
+récupérer des plats | to collect an order
+le hamburger | burger
+le sandwich | filled baguette
+les frites; fpl | fries
+le hot dog | hot dog
+la brochette | kebab
+l’omelette; f | omelette
+les crêpes; mpl | pancakes
+la pizza | pizza
+le sandwich | sandwich
+le sushi | sushi
+le croque-monsieur | toasted ham and cheese sandwich
+le wrap | wrap
+
+le post | post
+les réseaux sociaux; mpl | social media
+l’e-mail; m | email
+l’adresse électronique; f | email address
+l’internet; m | internet
+le wifi | WiFi
+le site web | website
+le lien | link
+l’icône; f | icon
+la souris | mouse
+le tapis de souris | mouse mat
+le clavier | keyboard
+l’appli; f | app
+les données mobiles; fpl | data
+le téléphone portable | mobile phone
+la ligne fixe | landline
+le SMS | text message
+le signal de téléphonie mobile | phone signal
+le message vocal | voice mail
+l’écran tactile; m | touchscreen
+l’écran; m | screen
+le bouton | button
+la batterie | battery
+le câble | cable
+passer un appel | to make a phone call
+poster (en ligne) | to post (online)
+télécharger | to download / upload
+charger son portable | to charge your phone
+allumer / éteindre | to switch on / off
+cliquer sur | to click on
+le chargeur | charger
+l’ordinateur; m | computer
+la carte SIM | SIM card
+le smartphone | smartphone
+la tablette | tablet
+le routeur sans fil | wireless router
+
+l’école maternelle; f | nursery school
+l’école primaire; f | primary school
+le collège | middle school
+le lycée | high school
+l’enseignement supérieur; m | higher education
+l’université; f | university
+l’élève m / l’élève; f | pupil
+le professeur / la professeure | teacher
+le principal / la principale | headteacher
+la salle de classe | classroom
+le concierge / la concierge | janitor
+l’emploi du temps; m | timetable
+la leçon | lesson
+le cours | lecture
+le didacticiel | tutorial
+les devoirs; mpl | homework
+l’examen; m | exam
+le diplôme (universitaire) | degree
+l’étudiant en premier cycle m / l’étudiante en premier cycle; f | undergraduate
+l’étudiant en troisième cycle m / l’étudiante en troisième cycle; f | postgraduate
+la cantine | canteen
+le terrain de jeu | playing field
+la résidence universitaire | halls of residence
+le foyer des étudiants | student union
+la carte d’étudiant | student card
+apprendre | to learn
+enseigner | to teach
+réviser | to revise
+passer un examen | to sit an exam
+obtenir son diplôme | to graduate
+étudier | to study
+
+les crayons de couleur; mpl | colouring pencils
+la gomme | eraser
+le cahier de cours | exercise book
+le papier | paper
+le stylo | pen
+le crayon | pencil
+la trousse | pencil case
+la règle | ruler
+le cartable | schoolbag
+le taille-crayon | sharpener
+le manuel | textbook
+le tableau blanc | whiteboard
+
+la cafétéria | cafeteria
+le campus | campus
+l’amphithéâtre; m | lecture hall
+le professeur / la professeure d’université | lecturer 
+la bibliothèque | library
+l’étudiant m / l’étudiante; f | student
+
+le gérant / la gérante | manager
+le personnel | staff
+le collègue / la collègue | colleague
+le client / la cliente | client
+les ressources humaines; fpl | human resources
+la comptabilité | accounts
+les chiffres; mpl | figures
+la feuille de calcul | spreadsheet
+la présentation | presentation
+
+le rapport | report
+la réunion | meeting
+la conférence téléphonique | conference call
+la visioconférence | video conference
+la cartouche d’encre | ink cartridge
+la boîte de réception | inbox
+le fichier | file
+la pièce jointe | attachment
+le nom d’utilisateur | username
+le mot de passe | password
+taper | to type
+se connecter / fermer la session | to log on / off
+faire une présentation | to give a presentation
+tenir une réunion | to hold a meeting
+tomber en panne | to crash
+la calculatrice | calculator
+le bureau | desk
+la lampe de bureau | desk lamp
+le classeur | filing cabinet
+la chemise | folder
+la perforatrice | hole punch
+la corbeille à courrier | in / out tray
+l’ordinateur portable; m | laptop
+le bloc-notes | notepad
+le trombone | paper clip
+la photocopieuse | photocopier
+l’imprimante; f | printer
+le classeur | ring binder
+le scanner | scanner
+les ciseaux; mpl | scissors
+l’agrafeuse; f | stapler
+les post-it®; mpl | sticky notes
+le scotch® | sticky tape
+le fauteuil pivotant | swivel chair
+le téléphone | telephone
+la clé USB | USB stick
+
+l’agence; f | branch
+le guichetier / la guichetière | cashier
+les services bancaires en ligne; mpl | online banking
+le compte en banque | bank account
+le compte courant | current account
+le compte d’épargne | savings account
+le numéro de compte | account number
+le relevé de compte | bank statement
+le solde | bank balance
+le découvert | overdraft
+le virement bancaire | bank transfer
+le carnet de chèques | chequebook
+la devise | currency
+le prêt | loan
+le prêt immobilier | mortgage
+les intérêts; mpl | interest
+emprunter | to borrow
+rembourser | to repay
+retirer | to withdraw
+verser de l’argent sur un compte | to make a deposit
+changer de l’argent | to change money
+le distributeur de billets | ATM
+les billets de banque; mpl | banknotes
+le bureau de change | bureau de change
+la carte de paiement / de crédit | debit / credit card
+le taux de change | exchange rate
+le coffre-fort | safety deposit box
+
+l’adresse; f | address
+la lettre prioritaire | first-class
+la lettre écopli | second-class
+
+la lettre verte | green letter
+le coursier | courier
+le courrier | mail
+la poste aérienne | airmail
+poster | to post
+envoyer | to send
+la boîte | box
+l’enveloppe; f | envelope
+la lettre | letter
+le colis | package
+l’enveloppe à bulles; f | padded envelope
+le facteur / la factrice | postal worker
+la boîte aux lettres | postbox
+la carte postale | postcard
+le timbre | stamp
+
+le café | café
+la cathédrale | cathedral
+l’église; f | church
+le palais des congrès | conference centre
+le tribunal | courthouse
+la caserne de pompiers | fire station
+la fontaine | fountain
+l’hôpital; m | hospital
+l’hôtel; m | hotel
+la laverie | laundrette
+la bibliothèque | library
+la mosquée | mosque
+l’immeuble de bureaux; m | office block
+le parc | park
+l’aire de jeux; f | playground
+le commissariat | police station
+la synagogue | synagogue
+la mairie | town hall
+
+la tente | tent
+le double toit | flysheet
+le tapis de sol | groundsheet
+la corde de tente | guy rope
+le piquet | tent peg
+
+les vacances; fpl | holiday
+le temps libre | spare time
+l’activité; f | activity
+le passe-temps | hobby / pastime
+amusant | fun
+ennuyeux | boring
+s’intéresser à | to be interested in
+être passionné par | to be keen on
+passer le temps | to pass the time
+se détendre | to relax
+apprécier | to enjoy
+s’ennuyer | to be bored
+la cuisine | cooking
+le bricolage | DIY
+les jeux vidéo; mpl | gaming
+le jardinage | gardening
+le jogging | jogging
+écouter de la musique | listening to music
+la lecture | reading
+le shopping | shopping
+le sport | sports
+le voyage | travelling
+la marche | walking
+regarder la télévision / des films | watching TV / films
+
+le touriste / la touriste | tourist
+l’attraction touristique; f | tourist attraction
+l’excursion; f | excursion
+
+la réserve naturelle | nature reserve
+le site historique | historic site
+la visite guidée | guided tour
+l’audio-guide; m | audio guide
+visiter | to visit
+voir | to see
+la galerie d’art | art gallery
+l’appareil photo; m | camera
+le château | castle
+la cathédrale | cathedral
+le plan du centre-ville | city map
+le jardin public | gardens
+le guide | guidebook
+le monument | monument
+le musée | museum
+le bus touristique | sightseeing bus
+le guide touristique / la guide touristique | tour guide
+l’office de tourisme; m | tourist office
+
+un verre | a drink
+la vie nocturne | nightlife
+la fête | party
+le spectacle | show
+la pièce | play
+le film | film
+le festival | festival
+la billetterie | box office
+rencontrer des gens | to socialize
+s’amuser | to enjoy oneself
+voir un spectacle | to see a show
+regarder un film | to watch a film
+aller danser | to go dancing
+commander à manger / au bar | to order food / drinks
+
+le ballet | ballet
+le bar | bar
+le carnaval | carnival
+le casino | casino
+le cinéma | cinema
+le spectacle comique | comedy show
+le concert | concert
+la fête foraine | funfair
+la comédie musicale | musical
+la boîte de nuit | nightclub
+l’opéra; m | opera
+le restaurant | restaurant
+le théâtre | theatre
+
+la chambre d’hôte | bed and breakfast
+la pension complète | full board
+la demi-pension | half board
+le room service | room service
+le réveil par téléphone | wake-up call
+le numéro de chambre | room number
+par personne et par nuit | per person per night
+s’enregistrer | to check in
+régler sa note | to check out
+commander quelque chose au room service | to order room service
+le couloir | corridor
+le panneau “prière de ne pas déranger” | “do not disturb” sign
+la chambre pour deux personnes | double room
+la carte magnétique | key card
+le minibar | minibar
+le bagagiste / la bagagiste | porter
+
+la réception | reception
+le réceptionniste / la réceptionniste | receptionist
+le coffre-fort | safe
+la chambre pour une personne | single room
+les affaires de toilette; fpl | toiletries
+la chambre à deux lits | twin room
+
+le camping | campsite
+le chalet | chalet
+la colonie de vacances | summer camp
+l’emplacement; m | pitch
+le branchement électrique | electricity hook-up
+le bloc sanitaire | toilet / shower block
+le campeur / la campeuse | camper
+la personne en caravane | caravanner
+camper | to camp
+monter une tente | to pitch a tent
+démonter une tente | to take down a tent
+partir en caravane | to go caravanning
+le matelas pneumatique | air bed
+le réchaud de camping | camping stove
+la caravane | caravan
+la glacière | cool box
+les allumettes; fpl | matches
+le camping-car | motorhome
+le sac de couchage | sleeping bag
+la tente | tent
+la lampe torche | torch
+
+“Baignade interdite” | “No swimming”
+la zone de baignade | bathing zone
+le poste de secours | lifeguard post
+le bronzage | suntan
+prendre un bain de soleil | to sunbathe
+nager | to swim
+
+le sable | sand
+la mer | sea
+les vagues | waves
+le parasol | parasol
+la chaise longue | sunbed
+la serviette de plage | beach towel
+
+le ballon de plage | beach ball
+la cabine de plage | beach hut
+le bikini | bikini
+le seau et la pelle | bucket and spade
+le transat | deckchair
+les tongs; fpl | flip-flops
+les palmes; fpl | flippers
+la promenade | promenade
+le château de sable | sandcastle
+les coquillages; mpl | seashells
+l’algue; f | seaweed
+le tuba | snorkel
+les lunettes de soleil; fpl | sunglasses
+le chapeau de soleil | sunhat
+la crème solaire | suntan lotion
+le short de bain | swimming trunks
+le maillot de bain | swimsuit
+le brise-vent | windbreak
+
+la chanson | song
+l’album; m | album
+le groupe | band / backing group
+le concert | live music / gig
+le chanteur auteur compositeur / la chanteuse auteur compositrice | singer-songwriter
+le DJ / la DJ | DJ
+le CD | CD
+le disque vinyle | vinyl record
+le microphone | microphone
+la pop | pop
+le rock | rock
+le hip hop | hip-hop
+le rap | rap
+classique | classical
+folk | folk
+électronique | electronic
+jouer d’un instrument | to play an instrument
+chanter | to sing
+écouter de la musique | to listen to music
+aller à des concerts | to go to gigs
+écouter de la musique en streaming | to stream music
+
+l’enceinte Bluetooth®; f | Bluetooth® speaker
+les écouteurs; mpl | earphones
+le casque | headphones
+la barre de son | soundbar
+les haut-parleurs; mpl | speakers
+la platine | turntable
+
+l’accordéon; m | accordion
+la guitare acoustique | acoustic guitar
+la grosse caisse | bass drum
+
+la guitare basse | bass guitar
+le violoncelle | cello
+la clarinette | clarinet
+les cymbales; fpl | cymbals
+la contrebasse | double bass
+la guitare électrique | electric guitar
+la flûte | flute
+la harpe | harp
+le clavier | keyboard
+l’harmonica; m | mouth organ
+le piano | piano
+le saxophone | saxophone
+la caisse claire | snare drum
+le trombone | trombone
+la trompette | trumpet
+le tuba | tuba
+le violon | violin
+le xylophone | xylophone
+
+la chorale | choir
+le chef d’orchestre / la chef d’orchestre | conductor
+le musicien / la musicienne | musician
+l’orchestre; m | orchestra
+la partition | sheet music
+le chanteur / la chanteuse | singer
+
+le photographe / la photographe | photographer
+la photo | photo
+le selfie | selfie
+la perche à selfie | selfie stick
+prendre une photo / un selfie | to take a photo / selfie
+zoomer | to zoom in
+
+l’objectif photo; m | camera lens
+l’appareil photo compact; m | compact camera
+le drone | drone
+l’appareil photo reflex numérique; m | DSLR camera
+la carte SD | SD card
+le trépied | tripod
+
+le joueur / la joueuse | player
+les charades; fpl | charades
+le cache-cache | hide and seek
+le solitaire | solitaire
+le poker | poker
+le jeu | hand (in cards)
+le jeu vidéo | video game
+la console de jeux | games console
+la manette de jeu | game controller
+le joystick | joystick
+la casque de réalité virtuelle | virtual reality headset
+les mots croisés; mpl | crossword
+le sudoku | sudoku
+le jeu de quilles | skittles
+jouer | to play
+jeter les dés | to roll the dice
+gagner | to win
+perdre | to lose
+le backgammon | backgammon
+le jeu de société | board game
+le bowling | bowling
+les cartes; fpl | cards
+les échecs; mpl | chess
+les pions; mpl | counters
+les fléchettes; fpl | darts
+le dé | dice
+les dominos; mpl | dominoes
+les dames; fpl | draughts
+le puzzle | jigsaw puzzle
+la pétanque | petanque
+
+les objets artisanaux; mpl | handicrafts
+l’exposition-vente d’artisanat; f | craft fair
+l’artiste m / l’artiste; f | artist
+l’amateur m / l’amatrice; f | amateur
+le couturier / la couturière | dressmaker
+peindre | to paint
+esquisser | to sketch
+coudre | to sew
+tricoter | to knit
+être créatif | to be creative
+
+la broderie | embroidery
+fabriquer des bijoux | jewellery-making
+le modélisme | model-making
+la création en papier | papercrafts
+la poterie | pottery
+la menuiserie | woodwork
+
+la toile | canvas
+le chevalet | easel
+l’encre; f | ink
+la peinture à l’huile | oil paint
+le pinceau | paintbrush
+la palette | palette
+le papier | paper
+les pastels; mpl | pastels
+le stylo | pen
+le crayon | pencil
+le carnet de croquis | sketchpad
+les couleurs pour aquarelle; fpl | watercolours
+
+la pelote de laine | ball of wool
+les boutons; mpl | buttons
+l’aiguille à crochet; f | crochet hook
+le tissu | fabric
+les ciseaux de couture; mpl | fabric scissors
+les aiguilles à tricoter; fpl | knitting needles
+du fil et une aiguille | needle and thread
+les épingles; fpl | pins
+l’épingle à nourrice; f | safety pin
+la boîte à couture | sewing basket
+la machine à coudre | sewing machine
+le mètre ruban | tape measure
+
+le terrain de football | football pitch
+la surface de réparation | penalty box
+le cercle central | centre circle
+le but | goal
+
+le tournoi | tournament
+la compétition | competition
+la ligue | league
+le champion / la championne | champion
+le concurrent / la concurrente | competitor
+le coéquipier / la coéquipière | teammate
+l’entraîneur m / l’entraîneuse; f | coach
+le directeur sportif / la directrice sportive | manager
+le match | match
+les points; mpl | points
+entraîner | to coach
+participer | to compete
+marquer | to score
+gagner | to win
+perdre | to lose
+faire match nul | to draw
+le centre sportif | leisure centre
+la médaille | medal
+l’officiel m / l’officielle; f | official
+le podium | podium
+l’arbitre m / l’arbitre; f | referee
+le tableau des scores | scoreboard
+les spectateurs; mpl | spectators
+le sportif / la sportive | sportsperson
+le stade | stadium
+la tribune | stands
+l’équipe; f | team
+le trophée | trophy
+
+la salle de sport | gym
+le professeur de fitness / la professeure de fitness | gym instructor
+l’entraîneur personnel m / l’entraîneuse personnelle; f | personal trainer
+l’abonnement à la salle de sport; m | gym membership
+le cours de remise en forme | exercise class
+le Pilates | Pilates
+le yoga | yoga
+les pompes; fpl | press-ups
+les abdominaux; mpl | sit-ups
+la course | running
+faire du sport | to exercise
+se maintenir en forme | to keep fit
+aller courir | to go for a run
+aller à la salle de sport | to go to the gym
+
+le vestiaire | changing room
+le vélo elliptique | cross trainer
+l’haltère; m | dumbbell
+le vélo d’appartement | exercise bike
+le ballon de gym | gym ball
+le kettlebell | kettle bell
+le casier | locker
+le rameur | rowing machine
+les douches; fpl | showers
+la corde à sauter | skipping rope
+le tapis roulant | treadmill
+le banc de musculation | weightlifting bench
+
+le défenseur / la défenseure | defender
+l’attaquant m / l’attaquante; f | striker
+le remplaçant / la remplaçante | substitute
+le coup d’envoi | kick-off
+la mi-temps | half-time
+la fin du match | full-time
+les prolongations; fpl | extra time
+le temps additionnel | added time
+le coup franc | free kick
+le coup de tête | header
+l’arrêt (du ballon); m | save
+la faute | foul
+hors jeu | offside
+le penalty | penalty
+la surface de réparation | penalty box
+jouer au football | to play football
+donner un coup de pied | to kick
+faire une passe | to pass the ball
+marquer un but | to score a goal
+le juge de ligne / la juge de ligne | assistant referee
+le ballon de foot | football
+les chaussures de foot; fpl | football boots
+le match de football | football match
+le terrain de football | football pitch
+le footballeur / la footballeuse | football player
+le but | goal
+le gardien de but / la gardienne de but | goalkeeper
+les gants de gardien de but; mpl | goalkeeper’s gloves
+les protège-tibias; mpl | shin pads
+le sifflet | whistle
+le carton jaune / rouge | yellow / red card
+
+le rugby à treize / quinze | rugby league / union
+le rugby fauteuil | wheelchair rugby
+l’avant m / l’avant; f | forward
+l’arrière m / l’arrière; f | back
+l’essai; m | try
+la transformation | conversion
+la pénalité | penalty kick
+le drop | drop goal
+la passe | pass
+le casque | headguard
+le protège-dents | mouthguard
+jouer au rugby | to play rugby
+plaquer | to tackle
+marquer un essai | to score a try
+le rugby | rugby
+le ballon de rugby | rugby ball
+le terrain de rugby | rugby field
+les poteaux de but (de rugby); mpl | (rugby) goalposts
+le joueur de rugby / la joueuse de rugby | rugby player
+la mêlée | scrum
+
+le basket fauteuil | wheelchair basketball
+le panneau | backboard
+le tir en course | layup
+le dunk | slam dunk
+le lancer franc | free throw
+jouer au basket-ball | to play basketball
+attraper | to catch
+lancer | to throw
+dribbler | to dribble
+contrer | to block
+marquer | to mark
+marquer un panier | to score a basket
+le panier | basket
+le ballon de basket-ball | basketball
+le terrain | basketball court
+le (match de) basket-ball | basketball game
+le basketteur / la basketteuse | basketball player
+les chaussures de basket; fpl | basketball shoes
+
+l’ace; m | ace
+le service | serve
+le revers | backhand
+le coup droit | forehand
+la faute | fault
+le filet | net
+l’échange; m | rally
+jeu, set et match | game, set and match
+le simple | singles
+le double | doubles
+la tête de série | top seed
+jouer au tennis | to play tennis
+
+jouer au badminton / squash | to play badminton / squash
+frapper | to hit
+servir | to serve
+prendre le service de son adversaire | to break his / her serve
+
+le badminton | badminton
+la raquette de badminton | badminton racket
+le volant | shuttlecock
+
+le squash | squash
+la balle de squash | squash ball
+la raquette de squash | squash racket
+
+le ramasseur de balles / la ramasseuse de balles | ball boy / girl
+le juge de ligne / la juge de ligne | line judge
+le tennis | tennis
+la balle de tennis | tennis ball
+le court de tennis | tennis court
+le joueur de tennis / la joueuse de tennis | tennis player
+la raquette de tennis | tennis racket
+l’arbitre m / l’arbitre; f | umpire
+la chaise de l’arbitre | umpire’s chair
+
+la natation | swimming
+le nageur / la nageuse | swimmer
+le plongeur / la plongeuse | diver
+la brasse | breaststroke
+le dos crawlé | backstroke
+le crawl | front crawl
+le papillon | butterfly
+le couloir | lane
+la longueur | length
+la leçon de natation | swimming lesson
+la plongée | diving
+la pêche à la ligne | angling
+le pêcheur / la pêcheuse | angler
+le surfeur / la surfeuse | surfer
+nager | to swim
+plonger | to dive
+surfer | to surf
+pagayer | to paddle
+ramer | to row
+naviguer | to sail
+pêcher | to fish
+
+les brassards; mpl | armbands
+le plongeoir | diving board
+les palmes; fpl | flippers
+les lunettes de piscine; fpl | goggles
+le sauveteur / la sauveteuse | lifeguard
+le bonnet de bain | swimming cap
+la piscine | swimming pool
+le short de bain | swimming trunks
+le maillot de bain | swimsuit
+
+le bodyboard | bodyboarding
+le canoë | canoeing
+le jet-ski | jetski
+le kayak | kayaking
+le gilet de sauvetage | lifejacket
+les avirons; mpl | oars
+la pagaie | paddle
+le paddle | paddleboarding
+la plongée sous-marine | scuba diving
+la plongée (avec masque et tuba) | snorkelling
+la planche de surf | surfboard
+le surf | surfing
+le ski nautique | waterskiing
+la combinaison de plongée | wetsuit
+la planche à voile | windsurfing
+
+le skieur / la skieuse | skier
+la station de sports d’hiver | ski resort
+le remonte-pente | ski lift
+le moniteur de ski / la monitrice de ski | ski instructor
+le secours en montagne | mountain rescue service
+la trousse de premiers secours | first-aid kit
+la neige | snow
+la poudreuse | powder
+la glace | ice
+l’avalanche; f | avalanche
+le risque d’avalanches | avalanche risk
+
+skier (hors-piste) | to ski (off-piste)
+faire du snowboard | to snowboard
+faire de la luge | to go sledging
+faire du patin à glace | to go ice skating
+faire de l’alpinisme | to go mountain climbing
+
+les crampons; mpl | crampons
+le piolet | ice axe
+les patins à glace; mpl | ice skates
+le patinage | ice skating
+la corde | rope
+la luge | sledge
+
+la piste | piste
+la salopette de ski | salopettes
+les chaussures de ski; fpl | ski boots
+les gants de ski; mpl | ski gloves
+les lunettes de ski; fpl | ski goggles
+le casque | ski helmet
+le manteau de ski | ski jacket
+les bâtons de ski; mpl | ski poles
+les skis; mpl | skis
+la combinaison de ski | ski suit
+la planche de snowboard | snowboard
+les chaussures de snowboard; fpl | snowboarding boots
+
+le combat | fight
+le boxeur / la boxeuse | boxer
+le combattant / la combattante | fighter
+l’adversaire m / l’adversaire; f | opponent
+le poids plume | featherweight
+le poids lourd | heavyweight
+le coup de poing | punch
+le K.-O. | knockout
+les arts martiaux; mpl | martial arts
+boxer | to box
+faire de la lutte | to wrestle
+donner un coup de poing | to punch
+donner un coup de pied | to kick
+frapper | to strike
+s’entraîner | to spar
+assommer | to knock out
+
+les gants de boxe; mpl | boxing gloves
+le ring | boxing ring
+les chaussures de boxe; fpl | boxing shoes
+le casque | headguard
+le protège-dents | mouthguard
+le sac de frappe | punchbag
+
+l’escrime; m | fencing
+le judo | judo
+le karaté | karate
+le kick boxing | kickboxing
+le taekwondo | taekwondo
+la lutte | wrestling
+
+la course | race
+le marathon | marathon
+le pistolet de départ | starter’s gun
+le faux départ | false start
+le coureur / la coureuse | runner
+le couloir | lane
+le départ | start line
+la ligne d’arrivée | finish line
+l’éliminatoire; f | heat
+la finale | final
+le sprint | sprint
+la course de relais | relay
+le triple saut | triple jump
+l’heptathlon; m | heptathlon
+le décathlon | decathlon
+l’athlétisme en salle; m | indoor athletics
+faire de l’athlétisme | to do athletics
+courir | to run
+faire la course | to race
+sauter | to jump
+lancer | to throw
+l’athlète m / l’athlète; f | athlete
+le disque | discus
+le saut en hauteur | high jump
+la haie | hurdles
+le javelot | javelin
+le saut en longueur | long jump
+le saut à la perche | pole vault
+la piste | running track
+le lancer de poids | shot put
+les chaussures à pointes; fpl | spikes
+le starting-block | starting block
+le chronomètre | stopwatch
+
+le joueur de golf / la joueuse de golf | golfer
+le caddie | caddie
+le terrain de golf | golf course
+le fairway | fairway
+le pavillon | clubhouse
+le green | green
+le bunker | bunker
+le trou | hole
+le trou en un | hole-in-one
+le birdie | birdie
+le handicap | handicap
+le swing | swing
+au-dessus / au-dessous du par | over / under par
+jouer au golf | to play golf
+prendre le départ | to tee off
+le sac de golf | golf bag
+la balle de golf | golf ball
+la voiturette de golf | golf buggy
+le club de golf | golf club
+le putter | putter
+le té | tee
+
+le football américain | American football
+le tir à l’arc | archery
+le baseball | baseball
+les boules; fpl | bowls
+l’escalade; f | climbing
+le cricket | cricket
+la pêche | fishing
+la gymnastique | gymnastics
+le handball | handball
+le hockey | hockey
+les courses hippiques; fpl | horse racing
+le hockey sur glace | ice hockey
+la course de motos | motorcycle racing
+la course automobile | motor racing
+le netball | netball
+le tir | shooting
+le concours hippique | showjumping
+le skate | skateboarding
+le snooker | snooker
+le tennis de table | table tennis
+le cyclisme sur piste | track cycling
+le volley | volleyball
+le water-polo | water polo
+l’haltérophilie; f | weightlifting
+
+la trousse de secours | first-aid kit
+le bandage | bandage
+le cachet | tablet / pill
+la seringue | syringe
+le pansement | plaster
+
+le secouriste / la secouriste | first aider
+la douleur | pain
+la maladie | illness
+le symptôme | symptom
+la santé mentale | mental health
+le traitement | treatment
+l’assurance maladie; f | health insurance
+sain | healthy
+avoir mal | to be ill / in pain
+se remettre | to recover
+s’occuper de | to look after
+traiter | to treat
+le médecin / la médecin | doctor
+la trousse de secours | first-aid kit
+l’hôpital; m | hospital
+le médicament | medicine
+l’infirmier m / l’infirmière; f | nurse
+le secouriste / la secouriste | paramedic
+le patient / la patiente | patient
+le pharmacien / la pharmacienne | pharmacist
+la pharmacie | pharmacy
+
+la gorge | throat
+l’aisselle; f | armpit
+les organes génitaux; mpl | genitals
+le sein | breast
+le cil | eyelash
+le sourcil | eyebrow
+
+la paupière | eyelid
+le lobe de l’oreille | earlobe
+les narines; fpl | nostrils
+les lèvres; fpl | lips
+la langue | tongue
+la peau | skin
+les poils; mpl | (body) hair
+la taille | height
+le poids | weight
+l’IMC; m | BMI
+l’ouïe; f | sense of hearing
+la vue | sense of sight
+l’odorat; m | sense of smell
+le goût | sense of taste
+le toucher | sense of touch
+l’équilibre; m | balance
+voir | to see
+sentir | to smell
+entendre | to hear
+toucher | to touch
+goûter | to taste
+être debout | to stand
+marcher | to walk
+perdre l’équilibre | to lose one’s balance
+
+les cheveux; mpl | hair
+le front | forehead
+l’œil; m | eye
+l’oreille; f | ear
+la joue | cheek
+le nez | nose
+la bouche | mouth
+la mâchoire | jaw
+le menton | chin
+
+le poignet | wrist
+l’articulation du doigt | knuckle
+l’ongle | fingernail
+
+le doigt | finger
+le pouce | thumb
+la paume | palm
+
+le gros orteil | big toe
+l’ongle du pied; m | toenail
+le doigt de pied | toe
+la plante du pied | sole
+le talon | heel
+la cheville | ankle
+
+la tête | head
+le visage | face
+le cou | neck
+le bras | arm
+la poitrine | chest
+l’abdomen; m | abdomen
+la main | hand
+la cuisse | thigh
+la jambe | leg
+le genou | knee
+le tibia | shin
+le pied | foot
+
+l’épaule; f | shoulder
+la coude | elbow
+le dos | back
+la hanche | hip
+les fesses; fpl | buttocks
+le mollet | calf
+
+l’organe; m | organ
+le cerveau | brain
+le cœur | heart
+le poumon | lung
+le foie | liver
+l’estomac; m | stomach
+le rein | kidney
+les intestins; mpl | intestines
+la vessie | bladder
+le système digestif | digestive system
+le système respiratoire | respiratory system
+le sang | blood
+l’articulation; f | joint
+l’os; m | bone
+le muscle | muscle
+le nerf | nerve
+le tendon | tendon
+le tissu | tissue
+le ligament | ligament
+la cellule | cell
+l’artère; f | artery
+la veine | vein
+l’oxygène; m | oxygen
+
+le crâne | skull
+la clavicule | collarbone
+les vertèbres; fpl | vertebrae
+l’humérus; m | humerus
+le sternum | breastbone
+les côtes; fpl | ribs
+la colonne vertébrale | spine
+le cubitus | ulna
+le radius | radius
+le bassin | pelvis
+le fémur | femur
+la rotule | kneecap
+le péroné | fibula
+le tibia | tibia
+
+le rendez-vous | appointment
+les consultations; fpl | clinic
+l’examen médical; m | examination
+le test | test
+les antibiotiques; mpl | antibiotics
+la pilule | the pill
+le somnifère | sleeping pill
+l’ordonnance; f | prescription
+la visite à domicile | home visit
+le vaccin | vaccination
+le médicament | medication
+prendre rendez-vous | to make an appointment
+examiner | to examine
+être sous médication | to be on medication
+le tensiomètre | blood pressure monitor
+la salle d’examen | examination room
+la table d’examen | examination table
+le médecin généraliste / la médecin généraliste | GP
+l’infirmier auxiliaire; m / l’infirmière auxiliaire; f | practice nurse
+le stéthoscope | stethoscope
+la seringue | syringe
+le thermomètre | thermometer
+la salle d’attente | waiting room
+
+l’examen dentaire; m | check-up
+la molaire | molar
+l’incisive; f | incisor
+la canine | canine
+les dents de sagesse; fpl | wisdom teeth
+la plombage | filling
+la couronne | crown
+le traitement radiculaire | root canal treatment
+l’extraction; f | extraction
+la douleur dentaire | toothache
+l’abcès; m | abscess
+se brosser les dents | to brush one’s teeth
+se passer du fil dentaire entre les dents | to floss
+l’appareil (dentaire); m | braces
+le fil dentaire | dental floss
+l’assistant dentaire; m / l’assistante dentaire; f | dental nurse
+le dentiste / la dentiste | dentist
+le fauteuil de dentiste | dentist’s chair
+la fraise dentaire | dentist’s drill
+le dentier | dentures
+les gencives; fpl | gums
+le bain de bouche | mouthwash
+les dents; fpl | teeth
+la brosse à dents | toothbrush
+le dentifrice | toothpaste
+
+l’ophtalmologue m / l’ophtalmologue; f | ophthalmologist
+les lunettes de lecture; fpl | reading glasses
+les lunettes à double foyer; fpl | bifocals
+hard / soft contact lenses
+les lentilles de contact souples / rigides; fpl
+la lentille | lens
+la conjonctivite | conjunctivitis
+l’orgelet; m | stye
+la vision brouillée | blurred vision
+les cataractes; fpl | cataracts
+myope | short-sighted
+hypermétrope | long-sighted
+malvoyant | visually impaired
+aveugle | blind
+daltonien | colour-blind
+porter des lunettes | to wear glasses
+porter des lentilles de contact | to wear contacts
+les lentilles de contact | contact lenses
+l’étui pour lentilles de contact; m | contact lens case
+le tableau d’acuité visuelle | eye chart
+le collyre | eye drops
+l’examen de la vue; m | eye test
+la monture | frames
+les lunettes; fpl | glasses
+l’étui à lunettes; m | glasses case
+l’opticien m / l’opticienne; f | optician
+
+l’hôpital; m | public hospital
+la clinique | private hospital
+le kinésithérapeute / la kinésithérapeute | physiotherapist
+le radiologue / la radiologue | radiographer
+le chirurgien / la chirurgienne | surgeon
+l’opération; f | operation
+le scanner | scan
+le défibrillateur | defibrillator
+les soins intensifs; mpl | intensive care
+le diagnostic | diagnosis
+subir une intervention | to undergo surgery
+laisser entrer / sortir | to be admitted / discharged
+le service des urgences | A&E
+l’ambulance; f | ambulance
+les béquilles; fpl | crutches
+la perfusion | drip
+le lit d’hôpital | hospital bed
+le chariot roulant | hospital trolley
+l’écran; m | monitor
+la salle d’opération | operating theatre
+le masque à oxygène | oxygen mask
+le plâtre | plaster cast
+les points de suture; mpl | stitches
+la salle d’hôpital | ward
+le fauteuil roulant | wheelchair
+la radio | X-ray
+le déambulateur | Zimmer frame®
+
+l’accident; m | accident
+le pouls | pulse
+la commotion | concussion
+la chute | fall
+le déboîtement | dislocation
+la foulure | sprain
+la cicatrice | scar
+le coup du lapin | whiplash
+l’enflure; f | swelling
+les premiers secours; mpl | first aid
+la position latérale de sécurité | recovery position
+la RCP | CPR
+être inconscient | to be unconscious
+prendre son pouls | to take his / her pulse
+se blesser | to injure oneself
+tomber | to fall
+se casser le bras | to break one’s arm
+se tordre la cheville | to twist one’s ankle
+
+l’ampoule; f | blister
+le bleu | bruise
+la brûlure | burn
+la coupure | cut
+la fracture | fracture
+l’éraflure; f | graze
+l’écharde; f | splinter
+la piqûre | sting
+le coup de soleil | sunburn
+
+l’antiseptique; m | antiseptic
+le bandage | bandage
+le pansement | dressing
+la poche de glace | ice pack
+la minerve | neck brace
+la pommade | ointment
+le pansement | plaster
+l’écharpe; f | sling
+la pince à épiler | tweezers
+
+la crise cardiaque | heart attack
+l’attaque; f | stroke
+l’infection; f | infection
+l’otite; f | ear infection
+la fièvre | fever
+le virus | virus
+la varicelle | chicken pox
+l’éruption cutanée; f | rash
+la gastroentérite | stomach bug
+l’intoxication alimentaire; f | food poisoning
+les vomissements; mpl | vomiting
+la nausée | nausea
+la diarrhée | diarrhoea
+la constipation | constipation
+le diabète | diabetes
+l’épilepsie; f | epilepsy
+l’asthme; m | asthma
+le vertige | dizziness
+l’inhalateur; m | inhaler
+l’insuline; f | insulin
+les douleurs menstruelles; fpl | period pain
+faire de l’hypertension / l’hypotension | to have high / low blood pressure
+tousser | to cough
+éternuer | to sneeze
+vomir | to vomit
+s’évanouir | to faint
+
+la femme enceinte | pregnant woman
+le nouveau-né / la nouveau-née | newborn
+le fœtus | foetus
+l’utérus; m | uterus
+le col de l’utérus | cervix
+le travail | labour
+le gaz analgésique | gas and air
+la péridurale | epidural
+le projet d’accouchement | birth plan
+l’accouchement; m | delivery
+la césarienne | Caesarean section
+la fausse couche | miscarriage
+la date d’accouchement | due date
+la nausée matinale | morning sickness
+mort-né | stillborn
+tomber enceinte | to fall pregnant
+être en travail | to be in labour
+accoucher | to give birth
+faire une fausse couche | to miscarry
+allaiter | to breast-feed
+la couveuse | incubator
+la salle d’accouchement | labour suite
+la sage-femme | midwife
+le test de grossesse | pregnancy test
+l’échographiste m / l’échographiste; f | sonographer
+l’échographie; f | ultrasound
+
+le thérapeute / la thérapeute | therapist
+le masseur | masseur
+la masseuse | masseuse
+le chiropracteur; m / la chiropractrice; f | chiropractor
+l’acupuncteur; m / l’acupunctrice; f | acupuncturist
+le réflexologue / la réflexologue | reflexologist
+le remède | remedy
+le reiki | reiki
+la pleine conscience | mindfulness
+masser | to massage
+méditer | to meditate
+
+l’huile essentielle; f | essential oil
+la phytothérapie | herbal medicine
+l’homéopathie; f | homeopathy
+
+l’acupuncture; f | acupunture
+la chiropraxie | chiropractic
+l’hypnothérapie; f | hypnotherapy
+le massage | massage
+la méditation | meditation
+l’ostéopathie; f | osteopathy
+la réflexologie | reflexology
+la thalassothérapie | thalassotherapy
+la médecine traditionnelle chinoise | traditional Chinese medicine
+
+le vétérinaire / la vétérinaire | vet
+l’animal de compagnie; m | pet
+la puce | flea
+la tique | tick
+le passeport pour animal domestique | pet passport
+la quarantaine | quarantine
+la puce | microchip
+vacciner | to vaccinate
+traiter contre les vers | to worm
+pucer | to microchip
+stériliser | to spay / neuter
+piquer | to put down
+la collerette vétérinaire | E-collar
+le collier antipuces | flea collar
+le panier de transport | pet carrier
+
+le perroquet | parrot
+le bec | beak
+la queue | tail
+la griffe | claw
+
+l’animal; m | animal
+l’oiseau; m | bird
+le poisson | fish
+l’espèce; f | species
+le zoo | zoo
+la réserve naturelle | nature reserve
+le paysage | scenery
+la fourrure | fur
+la laine | wool
+la patte | paw
+le sabot | hoof
+le museau | snout
+la crinière | mane
+la queue | tail
+la griffe | claw
+la corne | horn
+la plume | feather
+l’aile; f | wing
+le bec | beak
+à sang froid | cold-blooded
+à sang chaud | warm-blooded
+aboyer | to bark
+ronronner | to purr
+grogner | to growl
+pépier | to chirp
+bourdonner | to buzz
+rugir | to roar
+
+l’agriculteur m / l’agricultrice; f | farmer
+la ferme | farm
+le propriétaire / la propriétaire | owner
+
+la nourriture pour poisson | fish food
+la litière (pour chat) | cat litter
+la grange | barn
+le foin | hay
+la paille | straw
+la prairie | meadow
+le troupeau | flock / herd
+le chien d’aveugle | guide dog
+le veau | calf
+l’agneau; m | lamb
+le poulain | foal
+le chiot | puppy
+le chaton | kitten
+promener le chien | to walk the dog
+aller chez le vétérinaire | to go to the vet
+cultiver | to farm (crops)
+élever | to farm (animals)
+
+la perruche | budgerigar
+le canari | canary
+le chat | cat
+le chien | dog
+le furet | ferret
+le poisson rouge | goldfish
+le cochon d’Inde | guinea pig
+le hamster | hamster
+le perroquet | parrot
+le poney | pony
+le lapin | rabbit
+le rat | rat
+
+le taureau | bull
+le poulet | chicken
+la vache | cow
+l’âne; m | donkey
+le canard | duck
+la chèvre | goat
+l’oie; f | goose
+le cheval | horse
+le cochon | pig
+
+le mouton | sheep
+le chien de berger | sheepdog
+le dindon | turkey
+
+l’aquarium; m | aquarium
+la cage | cage
+la chatière | catflap
+le collier | collar
+le panier pour chien | dog basket
+le clapier | hutch
+la niche | kennel
+la laisse | lead
+le bac à litière | litter tray
+la muselière | muzzle
+la nourriture pour animaux | pet food
+l’écurie; f | stable
+
+l’alligator; m | alligator
+le crocodile | crocodile
+la grenouille | frog
+le gecko | gecko
+l’iguane; m | iguana
+le lézard | lizard
+le triton | newt
+la salamandre | salamander
+le serpent | snake
+le crapaud | toad
+la tortue | tortoise
+la tortue marine | turtle
+
+le blaireau | badger
+la chauve-souris | bat
+le sanglier | boar
+le cerf | deer
+le renard | fox
+le lièvre | hare
+le hérisson | hedgehog
+la taupe | mole
+la souris | mouse
+la loutre | otter
+l’écureuil; m | squirrel
+le loup | wolf
+
+l’ours; m | bear
+le chameau | camel
+le chimpanzé | chimpanzee
+l’éléphant; m | elephant
+la girafe | giraffe
+le gorille | gorilla
+l’hippopotame; m | hippopotamus
+le kangourou | kangaroo
+le lion | lion
+le singe | monkey
+le rhinocéros | rhinoceros
+le tigre | tiger
+
+le merle | blackbird
+la grue | crane
+le corbeau | crow
+la colombe | dove
+l’aigle; m | eagle
+le pinson | finch
+
+le flamant rose | flamingo
+la mouette | gull
+le faucon | hawk
+le héron | heron
+le martin-pêcheur | kingfisher
+l’alouette; f | lark
+l’autruche; f | ostrich
+la chouette | owl
+le paon | peacock
+le pélican | pelican
+le manchot | penguin
+le pigeon | pigeon
+le macareux | puffin
+le rouge-gorge | robin
+le moineau | sparrow
+la cigogne | stork
+le cygne | swan
+la grive | thrush
+
+l’essaim; m | swarm
+la colonie | colony
+la toile d’araignée | cobweb
+la piqûre d’insecte | insect bite
+bourdonner | to buzz
+piquer | to sting
+la fourmi | ant
+l’abeille; f | bee
+le scarabée | beetle
+le papillon | butterfly
+la chenille | caterpillar
+le mille-pattes | centipede
+le cafard | cockroach
+le grillon | cricket
+la libellule | dragonfly
+le ver de terre | earthworm
+la mouche | fly
+la sauterelle | grasshopper
+la coccinelle | ladybird
+l’éphémère; f | mayfly
+le moustique | mosquito
+
+le papillon de nuit | moth
+la limace | slug
+l’escargot; m | snail
+l’araignée; f | spider
+la guêpe | wasp
+le cloporte | woodlouse
+
+le corail | coral
+le crabe | crab
+le dauphin | dolphin
+l’anguille; f | eel
+la méduse | jellyfish
+l’orque; f | killer whale
+le homard | lobster
+le phoque | seal
+l’oursin; m | sea urchin
+le requin | shark
+l’étoile de mer; f | starfish
+la baleine | whale
+
+la tige | stalk
+la feuille | leaf
+le pétale | petal
+le pollen | pollen
+le bourgeon | bud
+le bois | wood
+la branche | branch
+le tronc | trunk
+l’écorce; f | bark
+la racine | root
+la graine | seed
+le bulbe | bulb
+
+le bouton-d’or | buttercup
+l’œillet; m | carnation
+le chrysanthème | chrysanthemum
+la jonquille | daffodil
+la pâquerette | daisy
+la jacinthe | hyacinth
+l’iris; m | iris
+le lys | lily
+le muguet | lily-of-the-valley
+l’orchidée; f | orchid
+la pensée | pansy
+le coquelicot | poppy
+la rose | rose
+le tournesol | sunflower
+la tulipe | tulip
+
+le marronnier | chestnut
+le cyprès | cypress
+le sapin | fir
+le champignon | fungus
+la vigne | grapevine
+le lierre | ivy
+la lavande | lavender
+le lilas | lilac
+la mousse | moss
+le chêne | oak
+l’olivier; m | olive
+le pin | pine
+le platane | plane
+le peuplier | poplar
+le saule | willow
+
+le paysage | landscape
+la terre | soil
+la boue | mud
+l’eau; f | water
+l’estuaire; m | estuary
+l’air; m | air
+l’atmosphère; f | atmosphere
+la comète | comet
+le lever du soleil | sunrise
+le coucher de soleil | sunset
+rural | rural
+urbain | urban
+polaire | polar
+alpin | alpine
+tropical | tropical
+
+la grotte | cave
+le désert | desert
+les terres cultivées; fpl | farmland
+la forêt | forest
+le glacier | glacier
+la prairie | grassland
+la colline | hill
+le lac | lake
+le marais | marsh
+la montagne | mountain
+la mare | pond
+le fleuve | river
+les rochers; mpl | rocks
+les broussailles; fpl | scrub
+la rivière | stream
+la vallée | valley
+le volcan | volcano
+la cascade | waterfall
+
+la falaise | cliff
+la côte | coast
+le récif coralien | coral reef
+l’île; f | island
+la péninsule | peninsula
+la flaque d’eau salée | rockpool
+
+l’aurore; f | aurora
+les nuages; mpl | clouds
+la lune | moon
+l’arc-en-ciel; m | rainbow
+les étoiles; fpl | stars
+le soleil | sun
+
+le costume | costume
+le masque | mask
+la plume | feather
+
+l’occasion; f | occasion
+l’anniversaire; m | birthday
+le mariage | wedding
+l’anniversaire de mariage; m | wedding anniversary
+le jour férié | public holiday
+la fête religieuse | religious holiday
+la célébration | celebration
+la fête surprise | surprise party
+une bonne / mauvaise nouvelle | good / bad news
+célébrer | to celebrate
+faire une fête | to throw a party
+porter un toast à | to toast
+le bouquet | bouquet
+la boîte de chocolats | box of chocolates
+les banderoles; fpl | bunting
+le gâteau | cake
+le champagne | champagne
+les confettis; mpl | confetti
+la fête foraine | funfair
+le cadeau | gift
+les serpentins; mpl | streamers
+
+le baptême | baptism / christening
+la bar-mitsva | bar mitzvah
+la bat-mitsva | bat mitzvah
+la fête prénatale | baby shower
+la fête des Mères | Mother’s Day
+la fête des Pères | Father’s Day
+le premier Mai | May Day
+la Saint Valentin | Valentine’s Day
+le jour d’action de grâce | Thanksgiving
+la naissance | birth
+le premier jour d’école | first day of school
+
+obtenir son permis de conduire | passing your driving test
+la remise des diplômes | graduation
+trouver un boulot | finding a job
+les fiançailles; fpl | engagement
+le mariage | marriage
+avoir un bébé | having a child
+le déménagement | relocation
+la retraite | retirement
+l’enterrement; m | funeral
+
+la fête nationale | Bastille Day
+les feux d’artifice; mpl | fireworks
+la guirlande | garland
+
+la Toussaint | All Saints’ Day
+le premier avril | April Fool’s Day
+le nouvel an chinois | Chinese New Year
+Dipavali; f | Diwali
+Pâques; fpl | Easter
+l’Aïd-el-Fitr; m | Eid-al-Fitr
+Halloween; f | Halloween
+Hanoukka; f | Hanukkah
+Holi; f | Holi
+le mardi gras | Mardi Gras
+Pâque juive; f | Passover
+le ramadan | Ramadan
+
+la veille de Noël | Christmas Eve
+le jour de Noël | Christmas Day
+la carte / le sapin de Noël | Christmas card / tree
+la Saint-Sylvestre | New Year’s Eve
+le jour de l’an | New Year’s Day
+
+les étrennes; fpl | New Year gift
+le père Noël | Father Christmas / Santa Claus
+le marché de Noël | Christmas market
+le gui | mistletoe
+la crèche de Noël | Nativity scene
+la couronne | wreath
+la bûche de Noël | Yule log
+
+le char | carnival float
+le costume | costume
+l’effigie; f | effigy
+le maquillage | face paint
+la coiffure | headdress
+la galette des Rois | king cake
+le masque | mask
+la parade | parade
+l’artiste de rue m / l’artiste de rue; f | street performer
+

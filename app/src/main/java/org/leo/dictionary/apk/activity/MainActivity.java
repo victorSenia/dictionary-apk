@@ -67,14 +67,14 @@ public class MainActivity extends AppCompatActivity {
     private final ActivityResultLauncher<Intent> importWordsActivityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
-                if (result.getResultCode() == Activity.RESULT_OK) {
+                if (result.getResultCode() == Activity.RESULT_OK && result.getData() != null) {
                     runAtBackground(() -> readWordsFromFile(result.getData().getData()));
                 }
             });
     private final ActivityResultLauncher<Intent> exportWordsActivityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
-                if (result.getResultCode() == Activity.RESULT_OK) {
+                if (result.getResultCode() == Activity.RESULT_OK && result.getData() != null) {
                     runAtBackground(() -> writeWordsToFile(result.getData().getData()));
                 }
             });
@@ -172,19 +172,21 @@ public class MainActivity extends AppCompatActivity {
 
         PlayService playService = ((ApplicationWithDI) getApplicationContext()).appComponent.playService();
         WordsFragment wordsFragment = (WordsFragment) getSupportFragmentManager().findFragmentById(R.id.words_fragment);
-        if (positionId != null) {
-            if (shouldBeDisplayed(updatedWord)) {
-                playService.safeUpdate(positionId, updatedWord);
-                wordsFragment.wordUpdated(positionId);
+        if (wordsFragment != null) {
+            if (positionId != null) {
+                if (shouldBeDisplayed(updatedWord)) {
+                    playService.safeUpdate(positionId, updatedWord);
+                    wordsFragment.wordUpdated(positionId);
+                } else {
+                    playService.safeDelete(positionId);
+                    wordsFragment.wordDeleted(positionId);
+                }
             } else {
-                playService.safeDelete(positionId);
-                wordsFragment.wordDeleted(positionId);
-            }
-        } else {
-            if (shouldBeDisplayed(updatedWord)) {
-                playService.safeAdd(updatedWord);
-                positionId = playService.getUnknownWords().size() - 1;
-                wordsFragment.wordAdded(positionId, updatedWord);
+                if (shouldBeDisplayed(updatedWord)) {
+                    playService.safeAdd(updatedWord);
+                    positionId = playService.getUnknownWords().size() - 1;
+                    wordsFragment.wordAdded(positionId, updatedWord);
+                }
             }
         }
     }
@@ -392,7 +394,9 @@ public class MainActivity extends AppCompatActivity {
     private void updateUiWithNewData(List<Word> unknownWords) {
         runOnUiThread(() -> {
             WordsFragment wordsFragment = (WordsFragment) getSupportFragmentManager().findFragmentById(R.id.words_fragment);
-            wordsFragment.replaceData(unknownWords);
+            if (wordsFragment != null) {
+                wordsFragment.replaceData(unknownWords);
+            }
         });
     }
 

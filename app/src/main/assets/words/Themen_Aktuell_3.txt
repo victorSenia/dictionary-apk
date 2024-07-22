@@ -1,3 +1,5 @@
+org.leo.dictionary.config.entity.ParseWords:de:en;uk:die+;das+;der+:%5C%7C:%3B:%3B:%5Ct:
+
 	Lektion 1
 		Verben
 ärgern | annoy | обурювати; дратувати

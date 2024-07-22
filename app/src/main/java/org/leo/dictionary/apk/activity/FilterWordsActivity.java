@@ -69,7 +69,9 @@ public class FilterWordsActivity extends AppCompatActivity {
         });
         findViewById(R.id.all_topics).setOnClickListener(v -> {
             TopicsFragment topics = (TopicsFragment) getSupportFragmentManager().findFragmentById(R.id.topics);
-            ((MultiSelectionStringRecyclerViewAdapter) topics.recyclerView.getAdapter()).clearSelection();
+            if (topics != null) {
+                ((MultiSelectionStringRecyclerViewAdapter) topics.recyclerView.getAdapter()).clearSelection();
+            }
         });
         if (getWordCriteria(this).getShuffleRandom() != -1) {
             SwitchCompat shuffle = findViewById(R.id.shuffle);
@@ -125,9 +127,11 @@ public class FilterWordsActivity extends AppCompatActivity {
 
         private void updateListData(String language) {
             StringRecyclerViewAdapter adapter = (StringRecyclerViewAdapter) this.recyclerView.getAdapter();
-            adapter.mValues.clear();
-            adapter.mValues.addAll(findTopics(language));
-            adapter.notifyDataSetChanged();
+            if (adapter != null) {
+                adapter.mValues.clear();
+                adapter.mValues.addAll(findTopics(language));
+                adapter.notifyDataSetChanged();
+            }
         }
 
         protected List<String> getStrings() {
