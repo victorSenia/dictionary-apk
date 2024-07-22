@@ -9,5 +9,5 @@
         android:layout_height="match_parent"
         app:layoutManager="LinearLayoutManager"
         tools:context=".activity.TopicsActivity"
-        tools:listitem="@layout/fragment_strings"
+        tools:listitem="@layout/fragment_string"
         android:scrollbars="vertical"/>

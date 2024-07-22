@@ -25,7 +25,7 @@
                     android:name="org.leo.dictionary.apk.activity.TopicsActivity$TopicsFragment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:layout="@layout/fragment_strings"/>
+                    tools:layout="@layout/fragment_string"/>
             <Space
                     android:layout_width="match_parent"
                     android:layout_height="15dp"/>
@@ -40,7 +40,7 @@
                     android:name="org.leo.dictionary.apk.activity.TopicsActivity$LanguageFromFragment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:layout="@layout/fragment_strings"
+                    tools:layout="@layout/fragment_string"
                     android:visibility="gone"/>
             <Space
                     android:layout_width="match_parent"
@@ -57,7 +57,7 @@
                     android:name="org.leo.dictionary.apk.activity.TopicsActivity$LanguageToFragment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:layout="@layout/fragment_strings"
+                    tools:layout="@layout/fragment_string"
                     android:visibility="gone"/>
             <Space
                     android:layout_width="match_parent"
@@ -73,7 +73,7 @@
                     android:name="org.leo.dictionary.apk.activity.TopicsActivity$LanguageToFragment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:layout="@layout/fragment_strings"
+                    tools:layout="@layout/fragment_string"
             />
         </LinearLayout>
     </ScrollView>

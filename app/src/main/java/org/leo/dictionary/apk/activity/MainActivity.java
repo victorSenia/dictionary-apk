@@ -63,12 +63,12 @@ public class MainActivity extends AppCompatActivity {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
             getWindow().getDecorView().getWindowInsetsController().
                     hide(android.view.WindowInsets.Type.statusBars() | android.view.WindowInsets.Type.navigationBars()
-            );
+                    );
         } else {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
             getWindow().getDecorView().getWindowInsetsController().
                     show(android.view.WindowInsets.Type.statusBars() | android.view.WindowInsets.Type.navigationBars()
-            );
+                    );
         }
         if (change) {
             preferences.edit().putBoolean(ApkModule.LAST_STATE_IS_PORTRAIT, !isPortrait).apply();

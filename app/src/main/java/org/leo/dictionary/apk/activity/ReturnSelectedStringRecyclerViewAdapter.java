@@ -19,7 +19,7 @@ public class ReturnSelectedStringRecyclerViewAdapter extends StringRecyclerViewA
     private static OnClickListener getOnClickListener(Fragment fragment) {
         return new OnClickListener() {
             @Override
-            public void onClick(ViewHolder viewHolder) {
+            public void onClick(StringViewHolder viewHolder) {
                 Intent intent = new Intent();
                 intent.putExtra(DATA_STRING_EXTRA, viewHolder.mItem);
                 fragment.getActivity().setResult(Activity.RESULT_OK, intent);

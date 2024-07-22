@@ -34,7 +34,7 @@ public class TopicsActivity extends AppCompatActivity {
         });
         findViewById(R.id.all_topics).setOnClickListener(v -> {
             TopicsFragment topics = (TopicsFragment) getSupportFragmentManager().findFragmentById(R.id.topics);
-            ((MultiSelectionStringRecyclerViewAdapter) topics.recyclerView.getAdapter()).getSelected().clear();
+            ((MultiSelectionStringRecyclerViewAdapter) topics.recyclerView.getAdapter()).clearSelection();
             topics.recyclerView.getAdapter().notifyDataSetChanged();
         });
     }

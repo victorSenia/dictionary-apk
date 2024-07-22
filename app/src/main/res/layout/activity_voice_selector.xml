@@ -31,5 +31,5 @@
             android:name="org.leo.dictionary.apk.activity.VoiceSelectorActivity$VoicesFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:layout="@layout/fragment_strings"/>
+            tools:layout="@layout/fragment_string"/>
 </LinearLayout>

@@ -94,18 +94,18 @@ public class ApkModule {
     public static WordProvider createWordProvider(Context context, SharedPreferences last_state) {
         String source = last_state.getString(LAST_STATE_SOURCE, ASSET);
         String uri = last_state.getString(LAST_STATE_URI, null);
-        if (ASSET.equals(source)) {
-            ParseWords configuration = provideParseWordsConfiguration(context);
-            if (uri != null) {
-                configuration.setPath(uri);
-            }
-            return provideAssetsWordProvider(configuration, context);
-        } else {
-            try {
+        try {
+            if (ASSET.equals(source)) {
+                ParseWords configuration = provideParseWordsConfiguration(context);
+                if (uri != null && Arrays.asList(context.getAssets().list(AssetsWordProvider.ASSETS_WORDS)).contains(uri)) {
+                    configuration.setPath(uri);
+                }
+                return provideAssetsWordProvider(configuration, context);
+            } else {
                 return getInputStreamWordProvider(context, Uri.parse(uri));
-            } catch (Exception e) {
-                return provideAssetsWordProvider(provideParseWordsConfiguration(context), context);
             }
+        } catch (Exception e) {
+            return provideAssetsWordProvider(provideParseWordsConfiguration(context), context);
         }
     }
 

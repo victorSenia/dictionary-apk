@@ -1,63 +1,67 @@
 package org.leo.dictionary.apk.activity;
 
-import android.widget.Toast;
+import android.util.SparseBooleanArray;
 import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MultiSelectionStringRecyclerViewAdapter extends StringRecyclerViewAdapter {
+
     public MultiSelectionStringRecyclerViewAdapter(List<String> items, Fragment fragment) {
         super(items, fragment, new MultiSelectionOnClickListener());
     }
 
-    @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        super.onBindViewHolder(holder, position);
-        if (((MultiSelectionOnClickListener) onClickListener).selected.contains(holder.mItem)) {
-//            holder.itemView.setBackground(fragment.getActivity().getResources().getDrawable(android.R.drawable.alert_light_frame));
-        }
+    protected boolean isBackgroundColorNeeded(StringViewHolder holder) {
+        return ((MultiSelectionOnClickListener) onClickListener).selected.get(holder.getAbsoluteAdapterPosition(), false);
     }
 
     public List<String> getSelected() {
-        return ((MultiSelectionOnClickListener) onClickListener).selected;
+        List<String> result = new ArrayList<>();
+        for (int i = 0; i < mValues.size(); i++) {
+            if (((MultiSelectionOnClickListener) onClickListener).selected.get(i, false)) {
+                result.add(mValues.get(i));
+            }
+        }
+        return result;
+    }
 
-//        return ((MultiSelectionOnClickListener) onClickListener).selected.stream().sorted().map(position -> mValues.get(position)).collect(Collectors.toList());
+    public void clearSelection() {
+        ((MultiSelectionOnClickListener) onClickListener).selected.clear();
+        ((MultiSelectionOnClickListener) onClickListener).isMultiSelect = false;
+        notifyDataSetChanged();
     }
 
     public static class MultiSelectionOnClickListener implements StringRecyclerViewAdapter.OnClickListener {
-        private final List<String> selected = new ArrayList<>();
+        private final SparseBooleanArray selected = new SparseBooleanArray();
         private boolean isMultiSelect = false;
 
         @Override
-        public void onClick(ViewHolder viewHolder) {
+        public void onClick(StringViewHolder viewHolder) {
             if (isMultiSelect) {
-                if (selected.contains(viewHolder.mItem)) {
-                    selected.remove(viewHolder.mItem);
+                if (selected.get(viewHolder.getAbsoluteAdapterPosition(), false)) {
+                    selected.delete(viewHolder.getAbsoluteAdapterPosition());
                 } else {
-                    selected.add(viewHolder.mItem);
+                    selected.put(viewHolder.getAbsoluteAdapterPosition(), true);
                 }
-                viewHolder.getBindingAdapter().notifyDataSetChanged();
+                viewHolder.getBindingAdapter().notifyItemChanged(viewHolder.getAbsoluteAdapterPosition());
             } else {
                 selected.clear();
-                selected.add(viewHolder.mItem);
+                selected.put(viewHolder.getAbsoluteAdapterPosition(), true);
                 viewHolder.getBindingAdapter().notifyDataSetChanged();
             }
-            Toast.makeText(viewHolder.itemView.getContext(), selected.toString(), Toast.LENGTH_SHORT).show();
         }
 
         @Override
-        public boolean onLongClick(ViewHolder viewHolder) {
+        public boolean onLongClick(StringViewHolder viewHolder) {
             if (!isMultiSelect) {
                 isMultiSelect = true;
             }
-            if (!selected.contains(viewHolder.mItem)) {
-                selected.add(viewHolder.mItem);
-                viewHolder.getBindingAdapter().notifyDataSetChanged();
+            if (!selected.get(viewHolder.getAbsoluteAdapterPosition(), false)) {
+                selected.put(viewHolder.getAbsoluteAdapterPosition(), true);
+                viewHolder.getBindingAdapter().notifyItemChanged(viewHolder.getAbsoluteAdapterPosition());
             }
-            Toast.makeText(viewHolder.itemView.getContext(), selected.toString(), Toast.LENGTH_SHORT).show();
             return true;
         }
     }
-
 }

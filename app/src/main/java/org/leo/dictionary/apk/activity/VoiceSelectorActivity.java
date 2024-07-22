@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import org.leo.dictionary.ExternalVoiceService;
 import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApplicationWithDI;
@@ -25,10 +26,9 @@ public class VoiceSelectorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ActivityVoiceSelectorBinding binding = ActivityVoiceSelectorBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        binding.findVoices.setOnClickListener(v -> {
-            updateUiWithWords(getLanguage(binding.getRoot()));
-        });
+        binding.findVoices.setOnClickListener(v -> updateUiWithWords(getLanguage(binding.getRoot())));
         binding.defaultVoice.setOnClickListener(v -> {
+            clearSelection();
             String language = getLanguage(binding.getRoot());
             ApkModule.provideLastState(getApplicationContext()).edit()
                     .remove(ApkModule.LAST_STATE_VOICE + language).apply();
@@ -45,11 +45,22 @@ public class VoiceSelectorActivity extends AppCompatActivity {
     }
 
     private void updateUiWithNewData(List<String> voices) {
-        VoicesFragment fragment = (VoicesFragment) getSupportFragmentManager().findFragmentById(R.id.voices);
-        StringRecyclerViewAdapter adapter = (StringRecyclerViewAdapter) fragment.recyclerView.getAdapter();
+        StringRecyclerViewAdapter adapter = getStringRecyclerViewAdapter();
+        ((VoiceSelectionOnClickListener) adapter.onClickListener).clearSelection();
         adapter.mValues.clear();
         adapter.mValues.addAll(voices);
         adapter.notifyDataSetChanged();
+    }
+
+    private void clearSelection() {
+        StringRecyclerViewAdapter adapter = getStringRecyclerViewAdapter();
+        ((VoiceSelectionOnClickListener) adapter.onClickListener).clearSelection();
+        adapter.notifyDataSetChanged();
+    }
+
+    private StringRecyclerViewAdapter getStringRecyclerViewAdapter() {
+        VoicesFragment fragment = (VoicesFragment) getSupportFragmentManager().findFragmentById(R.id.voices);
+        return (StringRecyclerViewAdapter) fragment.recyclerView.getAdapter();
     }
 
     public static class VoicesFragment extends StringsFragment {
@@ -60,15 +71,25 @@ public class VoiceSelectorActivity extends AppCompatActivity {
 
         @Override
         protected StringRecyclerViewAdapter createRecyclerViewAdapter() {
-            return new StringRecyclerViewAdapter(getStrings(), this, new StringRecyclerViewAdapter.OnClickListener() {
-                @Override
-                public void onClick(StringRecyclerViewAdapter.ViewHolder viewHolder) {
-                    String language = getLanguage(getView().getRootView());
-                    ApkModule.provideLastState(getActivity().getApplicationContext()).edit()
-                            .putString(ApkModule.LAST_STATE_VOICE + language, viewHolder.mItem).apply();
-                    Toast.makeText(getActivity().getBaseContext(), viewHolder.mItem + " used for " + language, Toast.LENGTH_SHORT).show();
-                }
-            });
+            return new StringRecyclerViewAdapter(getStrings(), this, new VoiceSelectionOnClickListener(this));
+        }
+    }
+
+    public static class VoiceSelectionOnClickListener extends StringRecyclerViewAdapter.RememberSelectionOnClickListener {
+
+        private final Fragment fragment;
+
+        public VoiceSelectionOnClickListener(Fragment fragment) {
+            this.fragment = fragment;
+        }
+
+        @Override
+        public void onClick(StringRecyclerViewAdapter.StringViewHolder viewHolder) {
+            super.onClick(viewHolder);
+            String language = getLanguage(fragment.getView().getRootView());
+            ApkModule.provideLastState(fragment.getActivity().getApplicationContext()).edit()
+                    .putString(ApkModule.LAST_STATE_VOICE + language, viewHolder.mItem).apply();
+            Toast.makeText(fragment.getActivity().getBaseContext(), viewHolder.mItem + " used for " + language, Toast.LENGTH_SHORT).show();
         }
     }
 }
