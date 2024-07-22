@@ -52,9 +52,8 @@ public class MainActivity extends AppCompatActivity {
             result -> {
                 if (result.getResultCode() == Activity.RESULT_OK) {
                     WordCriteriaProvider criteriaProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.wordCriteriaProvider();
-                    updateWordsAndUi(criteriaProvider.getWordCriteria());
-                }
-                else {
+                    runAtBackground(() -> updateWordsAndUi(criteriaProvider.getWordCriteria()));
+                } else {
                     revertDbUsage();
                 }
             });
@@ -62,21 +61,21 @@ public class MainActivity extends AppCompatActivity {
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
                 if (result.getResultCode() == Activity.RESULT_OK) {
-                    updateWordsAndUi(null);
+                    runAtBackground(() -> updateWordsAndUi(null));
                 }
             });
     private final ActivityResultLauncher<Intent> importWordsActivityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
                 if (result.getResultCode() == Activity.RESULT_OK) {
-                    readWordsFromFile(result.getData().getData());
+                    runAtBackground(() -> readWordsFromFile(result.getData().getData()));
                 }
             });
     private final ActivityResultLauncher<Intent> exportWordsActivityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
                 if (result.getResultCode() == Activity.RESULT_OK) {
-                    writeWordsToFile(result.getData().getData());
+                    runAtBackground(() -> writeWordsToFile(result.getData().getData()));
                 }
             });
     private final ActivityResultLauncher<Intent> editWordActivityResultLauncher = registerForActivityResult(
@@ -84,11 +83,16 @@ public class MainActivity extends AppCompatActivity {
             result -> {
                 if (result.getResultCode() == Activity.RESULT_OK) {
                     Word updatedWord = (Word) ((ApplicationWithDI) getApplicationContext()).data.get(UPDATED_WORD);
-                    addUpdateOrDeleteWordInDbAndUi(updatedWord);
+                    Integer positionId = (Integer) ((ApplicationWithDI) getApplicationContext()).data.get(POSITION_ID);
+                    runAtBackground(() -> addUpdateOrDeleteWordInDbAndUi(updatedWord, positionId));
                 }
                 ((ApplicationWithDI) getApplicationContext()).data.clear();
             });
     private ActivityMainBinding binding;
+
+    public static void runAtBackground(Runnable runnable) {
+        new Thread(runnable).start();
+    }
 
     public static void logUnhandledException(Exception e) {
         LOGGER.log(Level.SEVERE, e.getMessage(), e);
@@ -121,19 +125,27 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Language already present");
         builder.setMessage("In database already present some data for language " + language + ".Do you want to delete this data before import?");
-        DialogInterface.OnClickListener dialogClickListener = (dialog, which) -> {
+        DialogInterface.OnClickListener dialogClickListener = (dialog, which) -> runAtBackground(() -> {
             switch (which) {
                 case DialogInterface.BUTTON_POSITIVE:
-                    wordProvider.deleteWords(language);
+                    deleteWordsAndUpdateUi(language, wordProvider);
                     break;
                 case DialogInterface.BUTTON_NEGATIVE:
                     break;
             }
             importWords(words);
-        };
+        });
         builder.setPositiveButton("Yes", dialogClickListener);
         builder.setNegativeButton("No", dialogClickListener);
         return builder;
+    }
+
+    private void deleteWordsAndUpdateUi(String language, DBWordProvider wordProvider) {
+        wordProvider.deleteWords(language);
+        WordCriteria wordCriteria = ((ApplicationWithDI) getApplicationContext()).appComponent.wordCriteriaProvider().getWordCriteria();
+        if (Objects.equals(language, wordCriteria.getLanguageFrom())) {
+            updateWordsAndUi(wordCriteria);
+        }
     }
 
     private void writeWordsToFile(Uri uri) {
@@ -154,12 +166,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void addUpdateOrDeleteWordInDbAndUi(Word updatedWord) {
+    private void addUpdateOrDeleteWordInDbAndUi(Word updatedWord, Integer positionId) {
         DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
         wordProvider.updateWordFully(updatedWord);
 
         PlayService playService = ((ApplicationWithDI) getApplicationContext()).appComponent.playService();
-        Integer positionId = (Integer) ((ApplicationWithDI) getApplicationContext()).data.get(POSITION_ID);
         WordsFragment wordsFragment = (WordsFragment) getSupportFragmentManager().findFragmentById(R.id.words_fragment);
         if (positionId != null) {
             if (shouldBeDisplayed(updatedWord)) {
@@ -235,7 +246,7 @@ public class MainActivity extends AppCompatActivity {
             Intent i = new Intent(this, SettingsActivity.class);
             startActivity(i);
             return true;
-        } else if (id == R.id.action_select_for_topic) {
+        } else if (id == R.id.action_filter_words) {
             Intent intent = new Intent(this, FilterWordsActivity.class);
             filterWordsActivityResultLauncher.launch(intent);
             return true;
@@ -254,18 +265,18 @@ public class MainActivity extends AppCompatActivity {
             if (isDbSource()) {
                 showMessage("Not possible. Already used source DB");
             } else {
-                importWords(((ApplicationWithDI) getApplicationContext()).appComponent.playService().getUnknownWords());
+                runAtBackground(() -> importWords(((ApplicationWithDI) getApplicationContext()).appComponent.playService().getUnknownWords()));
             }
             return true;
         } else if (id == R.id.action_use_db) {
             prepareForDbUsage();
-
             Intent intent = new Intent(this, FilterWordsActivity.class);
             filterWordsActivityResultLauncher.launch(intent);
             return true;
         } else if (id == R.id.action_clean_db) {
             DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
-            AlertDialog.Builder builder = getLanguageChooserBuilder(this, R.string.languages_to_delete, wordProvider::deleteWords);
+            AlertDialog.Builder builder = getLanguageChooserBuilder(this, R.string.languages_to_delete,
+                    language -> runAtBackground(() -> deleteWordsAndUpdateUi(language, wordProvider)));
             builder.show();
             return true;
         } else if (id == R.id.action_word_matcher) {
@@ -379,8 +390,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateUiWithNewData(List<Word> unknownWords) {
-        WordsFragment wordsFragment = (WordsFragment) getSupportFragmentManager().findFragmentById(R.id.words_fragment);
-        wordsFragment.replaceData(unknownWords);
+        runOnUiThread(() -> {
+            WordsFragment wordsFragment = (WordsFragment) getSupportFragmentManager().findFragmentById(R.id.words_fragment);
+            wordsFragment.replaceData(unknownWords);
+        });
     }
 
     public void editWord(int positionId, Word word) {
@@ -391,14 +404,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void importWords(List<Word> words) {
-        new Thread(() -> {
-            showMessage("Import started. It could take few minutes. Please do not import next, until this import is finished");
-            DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
-            long time = System.currentTimeMillis();
-            wordProvider.importWords(words);
-            String text = "Import took " + (System.currentTimeMillis() - time) + " ms";
-            showMessage(text);
-        }).start();
+        showMessage("Import started. It will take few seconds.");
+        DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
+        long time = System.currentTimeMillis();
+        wordProvider.importWords(words);
+        String text = "Import took " + (System.currentTimeMillis() - time) + " ms";
+        showMessage(text);
     }
 
     private void showMessage(String text) {

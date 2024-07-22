@@ -81,10 +81,7 @@ public class WordsFragment extends Fragment {
             recyclerView.scrollToPosition(currentIndex);
 
             ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.uiUpdater();
-            uiUpdater = (word, index) -> {
-                adapter.setSelectedPosition(index);
-                requireActivity().runOnUiThread(() -> recyclerView.scrollToPosition(index));
-            };
+            uiUpdater = (word, index) -> requireActivity().runOnUiThread(() -> recyclerView.scrollToPosition(index));
             apkUiUpdater.addUiUpdater(uiUpdater);
         }
         return view;

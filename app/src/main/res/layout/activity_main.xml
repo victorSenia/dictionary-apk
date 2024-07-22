@@ -28,21 +28,21 @@
     </com.google.android.material.appbar.AppBarLayout>
     <LinearLayout
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                  android:orientation="vertical"
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent">
-    <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/details_fragment"
-            android:name="org.leo.dictionary.apk.activity.DetailsFragment"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:layout="@layout/fragment_details"/>
-    <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/words_fragment"
-            android:name="org.leo.dictionary.apk.activity.WordsFragment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:layout="@layout/fragment_strings_list"/>
+            android:layout_height="match_parent">
+        <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/details_fragment"
+                android:name="org.leo.dictionary.apk.activity.DetailsFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/fragment_details"/>
+        <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/words_fragment"
+                android:name="org.leo.dictionary.apk.activity.WordsFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/fragment_strings_list"/>
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

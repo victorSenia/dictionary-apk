@@ -12,6 +12,7 @@ import org.leo.dictionary.entity.WordCriteria;
 
 import java.util.*;
 import java.util.function.Function;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 public class DBManager {
@@ -114,6 +115,17 @@ public class DBManager {
             }
         }
         return wordId;
+    }
+
+    public synchronized <T> T executeInTransaction(Supplier<T> supplier) {
+        database.beginTransaction();
+        try {
+            T result = supplier.get();
+            database.setTransactionSuccessful();
+            return result;
+        } finally {
+            database.endTransaction();
+        }
     }
 
     protected long insertWord(Word word) {
@@ -350,10 +362,7 @@ public class DBManager {
     }
 
     public List<String> languageTo(String language) {
-        try (Cursor res = database.rawQuery("SELECT DISTINCT t." + DatabaseHelper.COLUMN_LANGUAGE +
-                " FROM " + DatabaseHelper.TABLE_NAME_TRANSLATION + " t" + " INNER JOIN " + DatabaseHelper.TABLE_NAME_WORD + " w " +
-                "ON w." + DatabaseHelper.COLUMN_ID + " = t." + DatabaseHelper.TRANSLATION_COLUMN_WORD_ID +
-                " AND w." + DatabaseHelper.COLUMN_LANGUAGE + "= ?", new String[]{language})) {
+        try (Cursor res = languageToCursor(language)) {
             List<String> languages = new ArrayList<>();
             res.moveToFirst();
             if (!res.isAfterLast()) {
@@ -364,6 +373,20 @@ public class DBManager {
                 }
             }
             return languages;
+        }
+    }
+
+    private Cursor languageToCursor(String language) {
+        if (language != null) {
+            return database.rawQuery("SELECT DISTINCT t." + DatabaseHelper.COLUMN_LANGUAGE +
+                    " FROM " + DatabaseHelper.TABLE_NAME_TRANSLATION + " t" + " INNER JOIN " + DatabaseHelper.TABLE_NAME_WORD + " w " +
+                    "ON w." + DatabaseHelper.COLUMN_ID + " = t." + DatabaseHelper.TRANSLATION_COLUMN_WORD_ID +
+                    " AND w." + DatabaseHelper.COLUMN_LANGUAGE + "= ?", new String[]{language});
+        } else {
+            return database.query(true, DatabaseHelper.TABLE_NAME_TRANSLATION,
+                    new String[]{DatabaseHelper.COLUMN_LANGUAGE}, null,
+                    null,
+                    null, null, null, null);
         }
     }
 
@@ -422,8 +445,11 @@ public class DBManager {
             deleteWords(wordIds.subList(fromIndex, Math.min(wordIds.size(), fromIndex + PAGE_SIZE)));
         }
         database.delete(DatabaseHelper.TABLE_NAME_TOPIC, DatabaseHelper.COLUMN_LANGUAGE + "= ?", new String[]{language});
-        database.execSQL("VACUUM");
         return wordIds.size();
+    }
+
+    public void vacuum() {
+        database.execSQL("VACUUM");
     }
 
     private int deleteWords(List<String> wordIds) {

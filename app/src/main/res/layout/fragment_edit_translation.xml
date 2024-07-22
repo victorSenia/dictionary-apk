@@ -47,4 +47,5 @@
                 android:layout_height="wrap_content" android:id="@+id/button_delete_translation"
                 style="@style/Widget.Material3.Button.TonalButton"/>
 
-    </LinearLayout></layout>
+    </LinearLayout>
+</layout>

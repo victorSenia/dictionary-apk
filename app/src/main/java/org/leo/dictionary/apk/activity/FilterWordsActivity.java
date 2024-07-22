@@ -76,11 +76,11 @@ public class FilterWordsActivity extends AppCompatActivity {
             shuffle.setChecked(true);
         }
         ApkAppComponent appComponent = ((ApplicationWithDI) getApplicationContext()).appComponent;
-        if (!ApkModule.isDBSource(appComponent.lastState())
-                || appComponent.externalWordProvider().languageFrom().isEmpty()) {
+        List<String> languagesFrom = appComponent.externalWordProvider().languageFrom();
+        if (!ApkModule.isDBSource(appComponent.lastState()) || languagesFrom.isEmpty()) {
             findViewById(R.id.language_from_container).setVisibility(View.GONE);
-        } else if (appComponent.externalWordProvider().languageFrom().size() == 1) {
-            languageViewModel.select(appComponent.externalWordProvider().languageFrom().get(0));
+        } else if (languagesFrom.size() == 1) {
+            languageViewModel.select(languagesFrom.get(0));
             findViewById(R.id.language_from_container).setVisibility(View.GONE);
         }
         TextView text = findViewById(R.id.languages_to_label);

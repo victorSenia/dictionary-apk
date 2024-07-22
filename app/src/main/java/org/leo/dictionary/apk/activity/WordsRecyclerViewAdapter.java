@@ -95,6 +95,16 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
         return ApkModule.isDBSource(((ApplicationWithDI) fragment.requireActivity().getApplicationContext()).appComponent.lastState());
     }
 
+    public void setSelectedPosition(int positionId) {
+        int previousPosition = this.positionId;
+        this.positionId = positionId;
+        fragment.requireActivity().runOnUiThread(() -> {
+                    notifyItemChanged(previousPosition);
+                    notifyItemChanged(positionId);
+                }
+        );
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView mContentView;
         public Word mItem;
@@ -136,15 +146,5 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
             builder.setPositiveButton("Yes", (dialog, which) -> deleteWord());
             return builder;
         }
-    }
-
-    public void setSelectedPosition(int positionId) {
-        int previousPosition = this.positionId;
-        this.positionId = positionId;
-        fragment.requireActivity().runOnUiThread(() -> {
-                    notifyItemChanged(previousPosition);
-                    notifyItemChanged(positionId);
-                }
-        );
     }
 }

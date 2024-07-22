@@ -66,53 +66,71 @@ public class DBWordProvider implements WordProvider {
 
     public void updateWordFully(Word updatedWord) {
         if (updatedWord.getId() == 0) {
-            dbManager.insertFully(updatedWord);
+            dbManager.executeInTransaction(() -> dbManager.insertFully(updatedWord));
         } else {
             Word oldWord = dbManager.findWord(updatedWord.getId());
-            if (!oldWord.equals(updatedWord)) {
-                dbManager.updateWord(updatedWord);
-            }
-            for (Translation translation : updatedWord.getTranslations()) {
-                if (translation.getId() == 0) {
-                    dbManager.insertTranslation(translation, updatedWord.getId());
-                } else if (!translation.equals(findTranslationById(oldWord, translation.getId()))) {
-                    dbManager.updateTranslation(translation);
-                }
-            }
-            for (Translation translation : oldWord.getTranslations()) {
-                if (findTranslationById(updatedWord, translation.getId()) == null) {
-                    dbManager.deleteTranslation(translation.getId());
-                }
-            }
-            for (Topic topic : updatedWord.getTopics()) {
-                if (topic.getId() == 0) {
-                    dbManager.insertWordTopicLink(updatedWord.getId(), dbManager.insertTopic(topic));
-                } else if (findTranslationById(oldWord, topic.getId()) == null) {
-                    dbManager.insertWordTopicLink(updatedWord.getId(), topic.getId());
-                }
-            }
-            for (Topic topic : oldWord.getTopics()) {
-                if (findTopicById(updatedWord, topic.getId()) == null) {
-                    dbManager.deleteWordTopicLink(updatedWord.getId(), topic.getId());
-                }
+            if (oldWord != null) {
+                dbManager.executeInTransaction(() -> updateWord(updatedWord, oldWord));
+            } else {
+                dbManager.executeInTransaction(() -> dbManager.insertFully(updatedWord));
             }
         }
     }
 
-    public void importWords(List<Word> words) {
-        int i = 0;
-        long start = System.currentTimeMillis();
-        long startPart = start;
-        int partSize = 100;
-        for (Word word : words) {
-            i++;
-            dbManager.insertFully(word);
-            if (i % partSize == 0) {
-                LOGGER.info("Save " + partSize + " words took " + (System.currentTimeMillis() - startPart) + " ms");
-                startPart = System.currentTimeMillis();
+    private Word updateWord(Word updatedWord, Word oldWord) {
+        if (!oldWord.equals(updatedWord)) {
+            dbManager.updateWord(updatedWord);
+        }
+        for (Translation translation : updatedWord.getTranslations()) {
+            if (translation.getId() == 0) {
+                dbManager.insertTranslation(translation, updatedWord.getId());
+            } else if (!translation.equals(findTranslationById(oldWord, translation.getId()))) {
+                dbManager.updateTranslation(translation);
             }
         }
+        for (Translation translation : oldWord.getTranslations()) {
+            if (findTranslationById(updatedWord, translation.getId()) == null) {
+                dbManager.deleteTranslation(translation.getId());
+            }
+        }
+        for (Topic topic : updatedWord.getTopics()) {
+            if (topic.getId() == 0) {
+                dbManager.insertWordTopicLink(updatedWord.getId(), dbManager.insertTopic(topic));
+            } else if (findTranslationById(oldWord, topic.getId()) == null) {
+                dbManager.insertWordTopicLink(updatedWord.getId(), topic.getId());
+            }
+        }
+        for (Topic topic : oldWord.getTopics()) {
+            if (findTopicById(updatedWord, topic.getId()) == null) {
+                dbManager.deleteWordTopicLink(updatedWord.getId(), topic.getId());
+            }
+        }
+        return updatedWord;
+    }
+
+    public void importWords(List<Word> words) {
+        long start = System.currentTimeMillis();
+        int chunkSize = 1000;
+        importWordsInChunks(words, chunkSize);
         LOGGER.info("Save " + words.size() + " words took " + (System.currentTimeMillis() - start) + " ms");
+    }
+
+    private void importWordsInChunks(List<Word> words, int chunkSize) {
+        long startPart = System.currentTimeMillis();
+        for (int chunkStart = 0; chunkStart < words.size(); chunkStart += chunkSize) {
+            int start = chunkStart;
+            int end = Math.min(words.size(), start + chunkSize);
+            dbManager.executeInTransaction(() -> importWordsIntoDatabase(words.subList(start, end)));
+            LOGGER.info("Save " + end + " words took " + (System.currentTimeMillis() - startPart) + " ms");
+            startPart = System.currentTimeMillis();
+        }
+    }
+
+    private List<Word> importWordsIntoDatabase(List<Word> words) {
+        for (Word word : words) {
+            dbManager.insertFully(word);
+        }
+        return words;
     }
 
     public Word findWord(long id) {
@@ -125,12 +143,13 @@ public class DBWordProvider implements WordProvider {
 
     public void deleteWords(String language) {
         long start = System.currentTimeMillis();
-        int deleted = dbManager.deleteForLanguage(language);
+        int deleted = dbManager.executeInTransaction(() -> dbManager.deleteForLanguage(language));
+        dbManager.vacuum();
         LOGGER.info("Delete " + deleted + " words took " + (System.currentTimeMillis() - start) + " ms");
     }
 
     public void deleteWord(long id) {
-        dbManager.deleteWord(id);
+        dbManager.executeInTransaction(() -> dbManager.deleteWord(id));
     }
 
     public void setDbManager(DBManager dbManager) {
