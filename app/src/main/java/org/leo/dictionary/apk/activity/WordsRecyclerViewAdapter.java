@@ -5,13 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import org.leo.dictionary.PlayService;
 import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
-import org.leo.dictionary.apk.databinding.FragmentWordBinding;
+import org.leo.dictionary.apk.databinding.FragmentStringBinding;
 import org.leo.dictionary.apk.databinding.FragmentWordSelectedBinding;
 import org.leo.dictionary.apk.word.provider.DBWordProvider;
 import org.leo.dictionary.entity.Word;
@@ -24,11 +25,12 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
     protected final List<Word> words;
     private final Fragment fragment;
 
-    private int positionId = -1;
+    private int positionId;
 
-    public WordsRecyclerViewAdapter(List<Word> words, Fragment fragment) {
+    public WordsRecyclerViewAdapter(List<Word> words, Fragment fragment, int currentIndex) {
         this.words = words;
         this.fragment = fragment;
+        this.positionId = currentIndex;
     }
 
     public void replaceData(List<Word> words) {
@@ -38,11 +40,12 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    @NonNull
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (viewType == SELECTED_WORD_VIEW_TYPE) {
             return new ViewHolder(FragmentWordSelectedBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
         }
-        return new ViewHolder(FragmentWordBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
+        return new ViewHolder(FragmentStringBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
     }
 
     @Override
@@ -96,19 +99,11 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
         public TextView mContentView;
         public Word mItem;
 
-        public ViewHolder(FragmentWordBinding binding) {
+        public ViewHolder(FragmentStringBinding binding) {
             super(binding.getRoot());
             mContentView = binding.content;
             binding.getRoot().setOnCreateContextMenuListener(fragment);
-            binding.getRoot().setOnClickListener(v -> {
-                int previousPosition = positionId;
-                positionId = getAbsoluteAdapterPosition();
-                fragment.requireActivity().runOnUiThread(() -> {
-                            notifyItemChanged(previousPosition);
-                            notifyItemChanged(positionId);
-                        }
-                );
-            });
+            binding.getRoot().setOnClickListener(v -> setSelectedPosition(getAbsoluteAdapterPosition()));
         }
 
         public ViewHolder(FragmentWordSelectedBinding binding) {
@@ -141,5 +136,15 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
             builder.setPositiveButton("Yes", (dialog, which) -> deleteWord());
             return builder;
         }
+    }
+
+    public void setSelectedPosition(int positionId) {
+        int previousPosition = this.positionId;
+        this.positionId = positionId;
+        fragment.requireActivity().runOnUiThread(() -> {
+                    notifyItemChanged(previousPosition);
+                    notifyItemChanged(positionId);
+                }
+        );
     }
 }

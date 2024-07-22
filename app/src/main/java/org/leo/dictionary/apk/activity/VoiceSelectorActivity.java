@@ -94,9 +94,9 @@ public class VoiceSelectorActivity extends AppCompatActivity {
         public void onClick(StringRecyclerViewAdapter.StringViewHolder viewHolder) {
             super.onClick(viewHolder);
             String language = getLanguage(fragment.getView().getRootView());
-            ((ApplicationWithDI) fragment.getActivity().getApplicationContext()).appComponent.lastState().edit()
+            ((ApplicationWithDI) fragment.requireActivity().getApplicationContext()).appComponent.lastState().edit()
                     .putString(ApkModule.LAST_STATE_VOICE + language, viewHolder.mItem).apply();
-            Toast.makeText(fragment.getActivity().getBaseContext(), viewHolder.mItem + " used for " + language, Toast.LENGTH_SHORT).show();
+            Toast.makeText(fragment.requireActivity().getBaseContext(), viewHolder.mItem + " used for " + language, Toast.LENGTH_SHORT).show();
         }
     }
 }

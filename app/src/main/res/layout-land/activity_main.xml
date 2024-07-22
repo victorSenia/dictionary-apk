@@ -40,7 +40,7 @@
                 android:name="org.leo.dictionary.apk.activity.WordsFragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:layout="@layout/fragment_words_list" android:visibility="gone"/>
+                tools:layout="@layout/fragment_strings_list" android:visibility="gone"/>
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

@@ -18,11 +18,10 @@ import java.util.stream.Collectors;
 public class AndroidAudioService implements AudioService {
     private final static Logger LOGGER = Logger.getLogger(AndroidAudioService.class.getName());
 
-    private TextToSpeech textToSpeech = null;
+    private TextToSpeech textToSpeech;
     private ConcurrentSkipListSet<String> speaking;
     private Context context;
     private Speech speech;
-    private PreferenceConfigurationReader.SharedPreferencesProperties changeListener;
     private Map<String, List<Voice>> voicesPerLanguage;
 
     public void setContext(Context context) {
@@ -31,7 +30,7 @@ public class AndroidAudioService implements AudioService {
 
     public void setup() {
         HashMap<Object, Object> properties = new HashMap<>(PreferenceManager.getDefaultSharedPreferences(context).getAll());
-        changeListener = new PreferenceConfigurationReader.SharedPreferencesProperties(properties);
+        PreferenceConfigurationReader.SharedPreferencesProperties changeListener = new PreferenceConfigurationReader.SharedPreferencesProperties(properties);
         PreferenceManager.getDefaultSharedPreferences(context).registerOnSharedPreferenceChangeListener(changeListener);
         speech = new Speech();
         speech.setProperties(properties);
@@ -55,6 +54,12 @@ public class AndroidAudioService implements AudioService {
 
             @Override
             public void onError(String utteranceId) {
+                onError(utteranceId, -1);
+            }
+
+            @Override
+            public void onError(String utteranceId, int errorCode) {
+                LOGGER.severe("Text '" + utteranceId + "' finished with error " + errorCode);
                 speaking.remove(utteranceId);
             }
         });

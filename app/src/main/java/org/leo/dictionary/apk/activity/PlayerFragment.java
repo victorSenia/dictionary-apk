@@ -40,10 +40,10 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentPlayerBinding.inflate(inflater, container, false);
-        playService = ((ApplicationWithDI) getActivity().getApplicationContext()).appComponent.playService();
-        audioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
+        playService = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.playService();
+        audioManager = (AudioManager) requireActivity().getSystemService(Context.AUDIO_SERVICE);
         return binding.getRoot();
     }
 
@@ -58,7 +58,7 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
         binding.buttonPlay.setOnClickListener(v -> {
             if (!playService.isPlaying()) {
                 if (isAudioFocusGranted()) {
-                    int index = ((ApplicationWithDI) getActivity().getApplicationContext()).appComponent.lastState().getInt(ApkModule.LAST_STATE_CURRENT_INDEX, -1);
+                    int index = ApkModule.getLastStateCurrentIndex(((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.lastState());
                     if (index != -1) {
                         playService.playFrom(index);
                     } else {
@@ -93,10 +93,10 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
             return true;
         } else if (AudioManager.AUDIOFOCUS_REQUEST_DELAYED == res) {
             resumeOnFocusGain.set(true);
-            Toast.makeText(getActivity().getBaseContext(), getString(R.string.audio_delayed), Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireActivity().getBaseContext(), getString(R.string.audio_delayed), Toast.LENGTH_SHORT).show();
             return false;
         }
-        Toast.makeText(getActivity().getBaseContext(), getString(R.string.audio_not_possible), Toast.LENGTH_SHORT).show();
+        Toast.makeText(requireActivity().getBaseContext(), getString(R.string.audio_not_possible), Toast.LENGTH_SHORT).show();
         return false;
     }
 

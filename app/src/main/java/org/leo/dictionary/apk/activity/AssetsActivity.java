@@ -27,7 +27,7 @@ public class AssetsActivity extends AppCompatActivity {
         @Override
         protected List<String> getStrings() {
             try {
-                return Arrays.asList(getActivity().getAssets().list(AssetsWordProvider.ASSETS_WORDS));
+                return Arrays.asList(requireActivity().getAssets().list(AssetsWordProvider.ASSETS_WORDS));
             } catch (IOException e) {
                 MainActivity.logUnhandledException(e);
                 return Collections.emptyList();

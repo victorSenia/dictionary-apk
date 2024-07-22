@@ -46,7 +46,7 @@ public class EditTranslationFragment extends Fragment {
 
     private void removeTranslation(MutableLiveData<Word> word, MutableLiveData<Translation> uiState) {
         word.getValue().getTranslations().remove(uiState.getValue());
-        getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
+        requireActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
     }
 
     public static class EditTranslationViewModel extends ViewModel {

@@ -20,8 +20,8 @@ public class ReturnSelectedStringRecyclerViewAdapter extends StringRecyclerViewA
             public void onClick(StringViewHolder viewHolder) {
                 Intent intent = new Intent();
                 intent.putExtra(DATA_STRING_EXTRA, viewHolder.mItem);
-                fragment.getActivity().setResult(Activity.RESULT_OK, intent);
-                fragment.getActivity().finish();
+                fragment.requireActivity().setResult(Activity.RESULT_OK, intent);
+                fragment.requireActivity().finish();
             }
         };
     }

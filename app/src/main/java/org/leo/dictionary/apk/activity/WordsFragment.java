@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import org.leo.dictionary.PlayService;
 import org.leo.dictionary.UiUpdater;
+import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApkUiUpdater;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
@@ -57,7 +58,7 @@ public class WordsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_words_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_strings_list, container, false);
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -69,13 +70,21 @@ public class WordsFragment extends Fragment {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
 
-            PlayService playService = ((ApplicationWithDI) getActivity().getApplicationContext()).appComponent.playService();
+            PlayService playService = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.playService();
 
             ArrayList<Word> words = new ArrayList<>(playService.getUnknownWords());
-            recyclerView.setAdapter(new WordsRecyclerViewAdapter(words, this));
+            int currentIndex = ApkModule.getLastStateCurrentIndex(((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.lastState());
 
-            ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) getActivity().getApplicationContext()).appComponent.uiUpdater();
-            uiUpdater = (word, index) -> getActivity().runOnUiThread(() -> recyclerView.scrollToPosition(index));
+            WordsRecyclerViewAdapter adapter = new WordsRecyclerViewAdapter(words, this, currentIndex);
+            recyclerView.setAdapter(adapter);
+
+            recyclerView.scrollToPosition(currentIndex);
+
+            ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.uiUpdater();
+            uiUpdater = (word, index) -> {
+                adapter.setSelectedPosition(index);
+                requireActivity().runOnUiThread(() -> recyclerView.scrollToPosition(index));
+            };
             apkUiUpdater.addUiUpdater(uiUpdater);
         }
         return view;
@@ -84,7 +93,7 @@ public class WordsFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) getActivity().getApplicationContext()).appComponent.uiUpdater();
+        ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.uiUpdater();
         apkUiUpdater.removeUiUpdater(uiUpdater);
     }
 }

@@ -7,7 +7,6 @@ import android.net.Uri;
 import androidx.preference.PreferenceManager;
 import dagger.Module;
 import dagger.Provides;
-import org.jetbrains.annotations.NotNull;
 import org.leo.dictionary.*;
 import org.leo.dictionary.apk.activity.MainActivity;
 import org.leo.dictionary.apk.audio.AndroidAudioService;
@@ -78,6 +77,14 @@ public class ApkModule {
 
     public static String getLastStateSource(SharedPreferences lastState) {
         return lastState.getString(LAST_STATE_SOURCE, ASSET);
+    }
+
+    public static int getLastStateCurrentIndex(SharedPreferences lastState) {
+        int defaultIndex = -1;
+        if (lastState.contains(LAST_STATE_CURRENT_INDEX)) {
+            return lastState.getInt(LAST_STATE_CURRENT_INDEX, defaultIndex);
+        }
+        return defaultIndex;
     }
 
     protected static void updateLanguagesInConfiguration(ParseWords configuration) {

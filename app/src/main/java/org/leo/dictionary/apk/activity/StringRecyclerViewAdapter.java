@@ -3,6 +3,7 @@ package org.leo.dictionary.apk.activity;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import org.leo.dictionary.apk.R;
@@ -32,7 +33,8 @@ public class StringRecyclerViewAdapter extends RecyclerView.Adapter<StringRecycl
     }
 
     @Override
-    public StringViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    @NonNull
+    public StringViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new StringViewHolder(FragmentStringBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
     }
 

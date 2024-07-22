@@ -24,7 +24,7 @@ public class DetailsFragment extends Fragment {
         DetailsViewModel mViewModel = new ViewModelProvider(this).get(DetailsViewModel.class);
         binding.setViewmodel(mViewModel);
         binding.setLifecycleOwner(this);
-        ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) getActivity().getApplicationContext()).appComponent.uiUpdater();
+        ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.uiUpdater();
         uiUpdater = mViewModel::updateWord;
         apkUiUpdater.addUiUpdater(uiUpdater);
         return binding.getRoot();
@@ -33,7 +33,7 @@ public class DetailsFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) getActivity().getApplicationContext()).appComponent.uiUpdater();
+        ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.uiUpdater();
         apkUiUpdater.removeUiUpdater(uiUpdater);
     }
 

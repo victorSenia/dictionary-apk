@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.ViewGroup;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -80,7 +81,8 @@ public class EditWordActivity extends AppCompatActivity {
         binding.topicList.setLayoutManager(new LinearLayoutManager(binding.topicList.getContext()));
         binding.topicList.setAdapter(new TopicRecyclerViewAdapter(filteredList) {
             @Override
-            public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            @NonNull
+            public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                 return createStringViewHolder(parent);
             }
 

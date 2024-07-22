@@ -3,6 +3,7 @@ package org.leo.dictionary.apk.activity;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import org.leo.dictionary.apk.databinding.FragmentEditTopicBinding;
 import org.leo.dictionary.apk.databinding.FragmentStringBinding;
@@ -19,7 +20,8 @@ public class TopicRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
     }
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    @NonNull
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return createDeleteViewHolder(parent);
     }
 
@@ -32,7 +34,7 @@ public class TopicRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
     }
 
     @Override
-    public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof DeleteViewHolder) {
             onBindDeleteViewHolder((DeleteViewHolder) holder, position);
         } else if (holder instanceof StringViewHolder) {
