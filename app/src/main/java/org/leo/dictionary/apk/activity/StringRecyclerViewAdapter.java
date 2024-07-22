@@ -49,6 +49,18 @@ public class StringRecyclerViewAdapter extends RecyclerView.Adapter<StringRecycl
         return mValues.size();
     }
 
+    public void clearSelection() {
+        if (onClickListener instanceof RememberSelectionOnClickListener) {
+            ((RememberSelectionOnClickListener) onClickListener).clearSelection();
+        }
+    }
+
+    public void setSelected(int selected) {
+        if (onClickListener instanceof RememberSelectionOnClickListener) {
+            ((RememberSelectionOnClickListener) onClickListener).setSelected(selected);
+        }
+    }
+
     public interface OnClickListener {
         default void onClick(StringViewHolder viewHolder) {
         }

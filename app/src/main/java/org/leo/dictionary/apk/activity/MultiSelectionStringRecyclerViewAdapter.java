@@ -4,6 +4,7 @@ import android.util.SparseBooleanArray;
 import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class MultiSelectionStringRecyclerViewAdapter extends StringRecyclerViewAdapter {
@@ -26,9 +27,26 @@ public class MultiSelectionStringRecyclerViewAdapter extends StringRecyclerViewA
         return result;
     }
 
+    public void setSelected(Collection<String> items) {
+        if (items != null && !items.isEmpty()) {
+            MultiSelectionOnClickListener onClickListener = (MultiSelectionOnClickListener) this.onClickListener;
+            for (String item : items) {
+                int key = mValues.indexOf(item);
+                if (key != -1) {
+                    onClickListener.selected.put(key, true);
+                }
+            }
+            if (onClickListener.selected.size() > 1) {
+                onClickListener.isMultiSelect = true;
+            }
+            notifyDataSetChanged();
+        }
+    }
+
     public void clearSelection() {
-        ((MultiSelectionOnClickListener) onClickListener).selected.clear();
-        ((MultiSelectionOnClickListener) onClickListener).isMultiSelect = false;
+        MultiSelectionOnClickListener onClickListener = (MultiSelectionOnClickListener) this.onClickListener;
+        onClickListener.selected.clear();
+        onClickListener.isMultiSelect = false;
         notifyDataSetChanged();
     }
 

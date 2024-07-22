@@ -30,7 +30,7 @@ public class VoiceSelectorActivity extends AppCompatActivity {
         binding.defaultVoice.setOnClickListener(v -> {
             clearSelection();
             String language = getLanguage(binding.getRoot());
-            ApkModule.provideLastState(getApplicationContext()).edit()
+            ((ApplicationWithDI) getApplicationContext()).appComponent.lastState().edit()
                     .remove(ApkModule.LAST_STATE_VOICE + language).apply();
             Toast.makeText(getBaseContext(), "default voice used for " + language, Toast.LENGTH_SHORT).show();
         });
@@ -40,21 +40,28 @@ public class VoiceSelectorActivity extends AppCompatActivity {
         if (language.length() == 2) {
             ExternalVoiceService voiceService = ((ApplicationWithDI) getApplicationContext()).appComponent.externalVoiceService();
             voiceService.getVoicesNames(language);
-            updateUiWithNewData(voiceService.getVoicesNames(language));
+            updateUiWithNewData(language, voiceService.getVoicesNames(language));
         }
     }
 
-    private void updateUiWithNewData(List<String> voices) {
+    private void updateUiWithNewData(String language, List<String> voices) {
         StringRecyclerViewAdapter adapter = getStringRecyclerViewAdapter();
-        ((VoiceSelectionOnClickListener) adapter.onClickListener).clearSelection();
+        adapter.clearSelection();
         adapter.mValues.clear();
         adapter.mValues.addAll(voices);
+        String selectedVoice = ((ApplicationWithDI) getApplicationContext()).appComponent.lastState().getString(ApkModule.LAST_STATE_VOICE + language, null);
+        if (selectedVoice != null) {
+            int index = voices.indexOf(selectedVoice);
+            if (index != -1) {
+                adapter.setSelected(index);
+            }
+        }
         adapter.notifyDataSetChanged();
     }
 
     private void clearSelection() {
         StringRecyclerViewAdapter adapter = getStringRecyclerViewAdapter();
-        ((VoiceSelectionOnClickListener) adapter.onClickListener).clearSelection();
+        adapter.clearSelection();
         adapter.notifyDataSetChanged();
     }
 
@@ -87,7 +94,7 @@ public class VoiceSelectorActivity extends AppCompatActivity {
         public void onClick(StringRecyclerViewAdapter.StringViewHolder viewHolder) {
             super.onClick(viewHolder);
             String language = getLanguage(fragment.getView().getRootView());
-            ApkModule.provideLastState(fragment.getActivity().getApplicationContext()).edit()
+            ((ApplicationWithDI) fragment.getActivity().getApplicationContext()).appComponent.lastState().edit()
                     .putString(ApkModule.LAST_STATE_VOICE + language, viewHolder.mItem).apply();
             Toast.makeText(fragment.getActivity().getBaseContext(), viewHolder.mItem + " used for " + language, Toast.LENGTH_SHORT).show();
         }

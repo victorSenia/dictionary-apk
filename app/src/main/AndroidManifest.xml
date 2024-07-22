@@ -22,7 +22,7 @@
                 android:exported="false"
                 android:label="@string/title_activity_parse_words_settings"/>
         <activity
-                android:name=".activity.TopicsActivity"
+                android:name=".activity.FilterWordsActivity"
                 android:exported="false"
                 android:label="@string/title_activity_topics"/>
         <activity

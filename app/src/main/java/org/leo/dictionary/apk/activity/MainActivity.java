@@ -16,6 +16,7 @@ import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.databinding.ActivityMainBinding;
+import org.leo.dictionary.apk.helper.WordCriteriaProvider;
 import org.leo.dictionary.entity.Word;
 import org.leo.dictionary.entity.WordCriteria;
 
@@ -27,15 +28,15 @@ public class MainActivity extends AppCompatActivity {
             result -> {
                 if (result.getResultCode() == Activity.RESULT_OK) {
                     Intent data = result.getData();
-                    WordCriteria criteria = (WordCriteria) data.getSerializableExtra(TopicsActivity.WORDS_CRITERIA);
-                    updateTopicAndUi(criteria);
+                    WordCriteria criteria = (WordCriteria) data.getSerializableExtra(FilterWordsActivity.WORDS_CRITERIA);
+                    updateWordsAndUi(criteria);
                 }
             });
     private final ActivityResultLauncher<Intent> parseWordsActivityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
                 if (result.getResultCode() == Activity.RESULT_OK) {
-                    updateTopicAndUi(null);
+                    updateWordsAndUi(null);
                 }
             });
     private ActivityMainBinding binding;
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void setOrientation(boolean change) {
-        SharedPreferences preferences = ApkModule.provideLastState(getApplicationContext());
+        SharedPreferences preferences = ((ApplicationWithDI) getApplicationContext()).appComponent.lastState();
         boolean isPortrait = preferences.getBoolean(ApkModule.LAST_STATE_IS_PORTRAIT, true);
         if (change ^ !isPortrait) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
@@ -89,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
             return true;
         } else if (id == R.id.action_select_for_topic) {
-            Intent intent = new Intent(this, TopicsActivity.class);
+            Intent intent = new Intent(this, FilterWordsActivity.class);
             topicsActivityResultLauncher.launch(intent);
             return true;
         } else if (id == R.id.action_change_mode) {
@@ -109,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void setNightMode(boolean change) {
-        SharedPreferences preferences = ApkModule.provideLastState(getApplicationContext());
+        SharedPreferences preferences = ((ApplicationWithDI) getApplicationContext()).appComponent.lastState();
         boolean isNightMode = preferences.getBoolean(ApkModule.LAST_STATE_IS_NIGHT_MODE, false);
         if (change ^ isNightMode) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
@@ -121,7 +122,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void updateTopicAndUi(WordCriteria wordCriteria) {
+    private void updateWordsAndUi(WordCriteria wordCriteria) {
+        WordCriteriaProvider wordCriteriaProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.wordCriteriaProvider();
+        wordCriteriaProvider.setWordCriteria(wordCriteria);
         if (wordCriteria == null) {
             wordCriteria = new WordCriteria();
         }

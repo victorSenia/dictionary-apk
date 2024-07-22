@@ -1,11 +1,14 @@
 package org.leo.dictionary.apk;
 
+import android.content.SharedPreferences;
 import dagger.Component;
 import org.leo.dictionary.ExternalVoiceService;
 import org.leo.dictionary.ExternalWordProvider;
 import org.leo.dictionary.PlayService;
 import org.leo.dictionary.UiUpdater;
+import org.leo.dictionary.apk.helper.WordCriteriaProvider;
 
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 @Singleton
@@ -18,4 +21,9 @@ public interface ApkAppComponent {
     ExternalVoiceService externalVoiceService();
 
     UiUpdater uiUpdater();
+
+    WordCriteriaProvider wordCriteriaProvider();
+
+    @Named("lastState")
+    SharedPreferences lastState();
 }

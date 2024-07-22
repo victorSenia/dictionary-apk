@@ -80,7 +80,7 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
             if (type != null) {
                 try {
                     if (ApkModule.ASSET.equals(type)) {//TODO for files URI is not correct;
-                        ApkModule.provideLastState(getApplicationContext()).edit()
+                        ((ApplicationWithDI) getApplicationContext()).appComponent.lastState().edit()
                                 .putString(ApkModule.LAST_STATE_SOURCE, type)
                                 .putString(ApkModule.LAST_STATE_URI, uri.toString())
                                 .apply();
@@ -123,7 +123,7 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
         if (data instanceof Uri) {
             wordProvider = ApkModule.getInputStreamWordProvider(getApplicationContext(), (Uri) data);
         } else {
-            wordProvider = ApkModule.createWordProvider(getApplicationContext(), ApkModule.provideLastState(getApplicationContext()));
+            wordProvider = ApkModule.createWordProvider(getApplicationContext(), ((ApplicationWithDI) getApplicationContext()).appComponent.lastState());
         }
         PlayService playService = ((ApplicationWithDI) getApplicationContext()).appComponent.playService();
         ((PlayServiceImpl) playService).setWordProvider(wordProvider);

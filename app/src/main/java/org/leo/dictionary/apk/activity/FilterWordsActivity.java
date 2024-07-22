@@ -8,19 +8,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import org.leo.dictionary.ExternalWordProvider;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
+import org.leo.dictionary.apk.helper.WordCriteriaProvider;
 import org.leo.dictionary.entity.WordCriteria;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
-public class TopicsActivity extends AppCompatActivity {
+public class FilterWordsActivity extends AppCompatActivity {
 
     public static final String WORDS_CRITERIA = "wordsCriteria";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.topics_activity);
+        setContentView(R.layout.filter_words_activity);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -74,7 +76,10 @@ public class TopicsActivity extends AppCompatActivity {
         @Override
         protected StringRecyclerViewAdapter createRecyclerViewAdapter() {
             recyclerView.setNestedScrollingEnabled(false);
-            return new MultiSelectionStringRecyclerViewAdapter(getStrings(), this);
+            MultiSelectionStringRecyclerViewAdapter adapter = new MultiSelectionStringRecyclerViewAdapter(getStrings(), this);
+            WordCriteriaProvider wordCriteriaProvider = ((ApplicationWithDI) getActivity().getApplicationContext()).appComponent.wordCriteriaProvider();
+            adapter.setSelected(wordCriteriaProvider.getWordCriteria().getTopicsOr());
+            return adapter;
         }
     }
 
@@ -88,7 +93,10 @@ public class TopicsActivity extends AppCompatActivity {
         @Override
         protected StringRecyclerViewAdapter createRecyclerViewAdapter() {
             recyclerView.setNestedScrollingEnabled(false);
-            return new MultiSelectionStringRecyclerViewAdapter(getStrings(), this);
+            MultiSelectionStringRecyclerViewAdapter adapter = new MultiSelectionStringRecyclerViewAdapter(getStrings(), this);
+            WordCriteriaProvider wordCriteriaProvider = ((ApplicationWithDI) getActivity().getApplicationContext()).appComponent.wordCriteriaProvider();
+            adapter.setSelected(Collections.singleton(wordCriteriaProvider.getWordCriteria().getLanguageFrom()));
+            return adapter;
         }
     }
 
@@ -102,7 +110,10 @@ public class TopicsActivity extends AppCompatActivity {
         @Override
         protected StringRecyclerViewAdapter createRecyclerViewAdapter() {
             recyclerView.setNestedScrollingEnabled(false);
-            return new MultiSelectionStringRecyclerViewAdapter(getStrings(), this);
+            MultiSelectionStringRecyclerViewAdapter adapter = new MultiSelectionStringRecyclerViewAdapter(getStrings(), this);
+            WordCriteriaProvider wordCriteriaProvider = ((ApplicationWithDI) getActivity().getApplicationContext()).appComponent.wordCriteriaProvider();
+            adapter.setSelected(wordCriteriaProvider.getWordCriteria().getLanguageTo());
+            return adapter;
         }
     }
 }

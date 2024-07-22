@@ -57,7 +57,7 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
             mContentView = binding.content;
             binding.getRoot().setOnCreateContextMenuListener(fragment);
             binding.getRoot().setOnLongClickListener(v -> {
-                positionId = getBindingAdapterPosition();
+                positionId = getAbsoluteAdapterPosition();
                 return false;
             });
         }

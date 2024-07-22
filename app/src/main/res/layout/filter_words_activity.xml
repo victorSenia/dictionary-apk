@@ -22,7 +22,7 @@
                     style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"/>
             <androidx.fragment.app.FragmentContainerView
                     android:id="@+id/topics"
-                    android:name="org.leo.dictionary.apk.activity.TopicsActivity$TopicsFragment"
+                    android:name="org.leo.dictionary.apk.activity.FilterWordsActivity$TopicsFragment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:layout="@layout/fragment_string"/>
@@ -37,7 +37,7 @@
                     android:visibility="gone"/>
             <androidx.fragment.app.FragmentContainerView
                     android:id="@+id/language_from"
-                    android:name="org.leo.dictionary.apk.activity.TopicsActivity$LanguageFromFragment"
+                    android:name="org.leo.dictionary.apk.activity.FilterWordsActivity$LanguageFromFragment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:layout="@layout/fragment_string"
@@ -54,7 +54,7 @@
                     android:visibility="gone"/>
             <androidx.fragment.app.FragmentContainerView
                     android:id="@+id/languages_to"
-                    android:name="org.leo.dictionary.apk.activity.TopicsActivity$LanguageToFragment"
+                    android:name="org.leo.dictionary.apk.activity.FilterWordsActivity$LanguageToFragment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:layout="@layout/fragment_string"
@@ -70,7 +70,7 @@
                     style="@style/Widget.AppCompat.TextView.SpinnerItem"/>
             <androidx.fragment.app.FragmentContainerView
                     android:id="@+id/languages_to_speak"
-                    android:name="org.leo.dictionary.apk.activity.TopicsActivity$LanguageToFragment"
+                    android:name="org.leo.dictionary.apk.activity.FilterWordsActivity$LanguageToFragment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:layout="@layout/fragment_string"

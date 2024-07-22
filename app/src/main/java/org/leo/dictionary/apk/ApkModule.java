@@ -11,6 +11,7 @@ import org.leo.dictionary.*;
 import org.leo.dictionary.apk.audio.AndroidAudioService;
 import org.leo.dictionary.apk.config.AssetsConfigurationReader;
 import org.leo.dictionary.apk.config.PreferenceConfigurationReader;
+import org.leo.dictionary.apk.helper.WordCriteriaProvider;
 import org.leo.dictionary.apk.word.provider.AssetsWordProvider;
 import org.leo.dictionary.apk.word.provider.InputStreamWordProvider;
 import org.leo.dictionary.audio.AudioService;
@@ -18,7 +19,6 @@ import org.leo.dictionary.config.ConfigParser;
 import org.leo.dictionary.config.ConfigurationReader;
 import org.leo.dictionary.config.ConfigurationService;
 import org.leo.dictionary.config.entity.ParseWords;
-import org.leo.dictionary.entity.WordCriteria;
 import org.leo.dictionary.word.provider.WordProvider;
 
 import javax.inject.Named;
@@ -40,6 +40,7 @@ public class ApkModule {
     public static final String LAST_STATE = "_last_state";
     public static final String LAST_STATE_IS_PORTRAIT = "org.leo.dictionary.apk.config.entity.LastState.isPortrait";
     public static final String LAST_STATE_IS_NIGHT_MODE = "org.leo.dictionary.apk.config.entity.LastState.isNightMode";
+    public static final String LAST_STATE_WORD_CRITERIA = "org.leo.dictionary.apk.config.entity.LastState.wordCriteria";
     public static final String LANGUAGES_SEPARATOR = "_";
     private final Application application;
 
@@ -47,8 +48,6 @@ public class ApkModule {
         this.application = application;
     }
 
-    @Provides
-    @Singleton
     public static WordProvider provideAssetsWordProvider(ParseWords configuration, Context context) {
         AssetsWordProvider wordProvider = new AssetsWordProvider();
         wordProvider.setConfiguration(configuration);
@@ -86,14 +85,16 @@ public class ApkModule {
 
     @Provides
     @Singleton
-    @Named("last_state")
+    @Named("lastState")
     public static SharedPreferences provideLastState(Context context) {
         return context.getSharedPreferences(context.getPackageName() + LAST_STATE, Context.MODE_PRIVATE);
     }
 
-    public static WordProvider createWordProvider(Context context, SharedPreferences last_state) {
-        String source = last_state.getString(LAST_STATE_SOURCE, ASSET);
-        String uri = last_state.getString(LAST_STATE_URI, null);
+    @Provides
+    @Singleton
+    public static WordProvider createWordProvider(Context context, @Named("lastState") SharedPreferences lastState) {
+        String source = lastState.getString(LAST_STATE_SOURCE, ASSET);
+        String uri = lastState.getString(LAST_STATE_URI, null);
         try {
             if (ASSET.equals(source)) {
                 ParseWords configuration = provideParseWordsConfiguration(context);
@@ -145,17 +146,23 @@ public class ApkModule {
 
     @Provides
     @Singleton
-    public static PlayServiceImpl providePlayServiceImpl(Context context, ConfigurationService configurationService, AudioService audioService, WordProvider wordProvider,
-                                                         UiUpdater uiUpdater, @Named("last_state") SharedPreferences last_state) {
+    public static PlayServiceImpl providePlayServiceImpl(ConfigurationService configurationService, AudioService audioService, WordProvider wordProvider,
+                                                         UiUpdater uiUpdater, WordCriteriaProvider criteriaProvider) {
         PlayServiceImpl playService = new PlayServiceImpl();
         playService.setConfigurationService(configurationService);
         playService.setAudioService(audioService);
-        playService.setWordProvider(createWordProvider(context, last_state));
+        playService.setWordProvider(wordProvider);
         playService.setUiUpdater(uiUpdater);
-
-        playService.findWords(new WordCriteria());
-
+        playService.findWords(criteriaProvider.getWordCriteria());
         return playService;
+    }
+
+    @Provides
+    @Singleton
+    public static WordCriteriaProvider provideWordCriteriaProvider(@Named("lastState") SharedPreferences lastState) {
+        WordCriteriaProvider criteriaProvider = new WordCriteriaProvider();
+        criteriaProvider.setLastState(lastState);
+        return criteriaProvider;
     }
 
     @Provides
