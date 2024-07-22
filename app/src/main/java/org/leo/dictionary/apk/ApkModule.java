@@ -45,7 +45,6 @@ public class ApkModule {
     public static final String LAST_STATE_IS_NIGHT_MODE = "org.leo.dictionary.apk.config.entity.LastState.isNightMode";
     public static final String LAST_STATE_WORD_CRITERIA = "org.leo.dictionary.apk.config.entity.LastState.wordCriteria";
     public static final String LAST_STATE_CURRENT_INDEX = "org.leo.dictionary.apk.config.entity.LastState.currentIndex";
-    public static final String LANGUAGES_SEPARATOR = "_";
     private final Application application;
 
     public ApkModule(Application application) {

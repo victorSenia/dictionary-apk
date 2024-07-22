@@ -79,7 +79,7 @@ public class WordsFragment extends Fragment {
             recyclerView.setAdapter(adapter);
             MainActivity.runAtBackground(() -> {
                 adapter.words.addAll(playService.getUnknownWords());
-                requireActivity().runOnUiThread(() -> adapter.notifyDataSetChanged());
+                requireActivity().runOnUiThread(adapter::notifyDataSetChanged);
             });
             recyclerView.scrollToPosition(currentIndex);
 

@@ -140,43 +140,4 @@
                 app:dependency="org.leo.dictionary.config.entity.Spelling.active"/>
 
     </PreferenceCategory>
-    <PreferenceCategory
-            app:title="@string/speech">
-
-        <EditTextPreference
-                app:key="org.leo.dictionary.apk.config.entity.Speech.speed"
-                android:defaultValue="1.0"
-                android:selectAllOnFocus="true"
-                android:singleLine="true"
-                android:inputType="number"
-                android:title="@string/speed"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:useSimpleSummaryProvider="true"/>
-        <EditTextPreference
-                app:key="org.leo.dictionary.apk.config.entity.Speech.pitch"
-                android:defaultValue="1.0"
-                android:selectAllOnFocus="true"
-                android:singleLine="true"
-                android:inputType="number"
-                android:title="@string/pitch"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:useSimpleSummaryProvider="true"/>
-    </PreferenceCategory>
-
-    <PreferenceCategory
-            app:title="@string/match_words" android:layout_width="wrap_content" android:layout_height="wrap_content">
-
-        <EditTextPreference
-                app:key="org.leo.dictionary.apk.config.entity.MatchWords.limit"
-                android:defaultValue="10"
-                android:selectAllOnFocus="true"
-                android:singleLine="true"
-                android:inputType="number"
-                android:title="@string/words"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:useSimpleSummaryProvider="true"/>
-    </PreferenceCategory>
 </PreferenceScreen>

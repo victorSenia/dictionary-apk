@@ -62,7 +62,6 @@ public class VoiceSelectorActivity extends AppCompatActivity {
     private void clearSelection() {
         StringRecyclerViewAdapter adapter = getStringRecyclerViewAdapter();
         adapter.clearSelection();
-        adapter.notifyDataSetChanged();
     }
 
     private StringRecyclerViewAdapter getStringRecyclerViewAdapter() {

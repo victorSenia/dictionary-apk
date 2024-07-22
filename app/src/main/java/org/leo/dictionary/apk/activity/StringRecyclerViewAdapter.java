@@ -63,8 +63,9 @@ public class StringRecyclerViewAdapter extends RecyclerView.Adapter<StringRecycl
 
     public void clearSelection() {
         if (onClickListener instanceof RememberSelectionOnClickListener) {
+            int selected = ((RememberSelectionOnClickListener) onClickListener).selected;
             ((RememberSelectionOnClickListener) onClickListener).clearSelection();
-            notifyDataSetChanged();
+            notifyItemChanged(selected);
         }
     }
 
@@ -84,7 +85,7 @@ public class StringRecyclerViewAdapter extends RecyclerView.Adapter<StringRecycl
         @Override
         public void onClick(StringRecyclerViewAdapter.StringViewHolder viewHolder) {
             selected = viewHolder.getAbsoluteAdapterPosition();
-            viewHolder.getBindingAdapter().notifyDataSetChanged();
+            viewHolder.getBindingAdapter().notifyItemChanged(selected);
         }
 
         public void clearSelection() {

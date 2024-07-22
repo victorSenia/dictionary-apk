@@ -66,7 +66,7 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = words.get(position);
-        holder.mContentView.setText(Word.formatWord(words.get(position)));
+        holder.mContentView.setText(Word.formatWord(holder.mItem));
     }
 
     @Override
@@ -74,9 +74,9 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
         return words.size();
     }
 
-    private void deleteWord() {
+    private void deleteWord(Word word) {
         DBWordProvider wordProvider = ((ApplicationWithDI) fragment.requireActivity().getApplicationContext()).appComponent.dbWordProvider();
-        wordProvider.deleteWord(words.get(positionId).getId());
+        wordProvider.deleteWord(word.getId());
         words.remove(positionId);
         notifyItemRemoved(positionId);
 
@@ -89,9 +89,9 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
         playService.playFrom(positionId);
     }
 
-    private void editWord() {
+    private void editWord(Word word) {
         MainActivity activity = (MainActivity) fragment.requireActivity();
-        activity.editWord(positionId, words.get(positionId));
+        activity.editWord(positionId, word);
     }
 
     private boolean isDBSource() {
@@ -130,14 +130,14 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
             binding.playFrom.setOnClickListener(view -> playFromSelected());
             binding.actionDelete.setOnClickListener(view -> {
                 if (isDBSource()) {
-                    getDeleteConfirmationBuilder(view).show();
+                    getDeleteConfirmationBuilder(view, mItem).show();
                 } else {
                     noDBSourceError();
                 }
             });
             binding.actionEdit.setOnClickListener(view -> {
                 if (isDBSource()) {
-                    editWord();
+                    editWord(mItem);
                 } else {
                     noDBSourceError();
                 }
@@ -156,12 +156,12 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
             return super.toString() + " '" + mContentView.getText() + "'";
         }
 
-        private AlertDialog.Builder getDeleteConfirmationBuilder(View view) {
+        private AlertDialog.Builder getDeleteConfirmationBuilder(View view, Word word) {
             AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
             builder.setTitle("Delete confirmation");
             builder.setIcon(android.R.drawable.ic_dialog_alert);
-            builder.setMessage("Do you really want to delete word '" + words.get(positionId).getFullWord() + "'?");
-            builder.setPositiveButton("Yes", (dialog, which) -> deleteWord());
+            builder.setMessage("Do you really want to delete word '" + word.getFullWord() + "'?");
+            builder.setPositiveButton("Yes", (dialog, which) -> deleteWord(word));
             return builder;
         }
     }

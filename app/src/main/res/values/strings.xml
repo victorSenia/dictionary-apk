@@ -73,4 +73,5 @@
     <string name="import_words_from_file">Import words from file</string>
     <string name="root_topic">Root topic</string>
     <string name="topic_name">Topic name</string>
+    <string name="hint">Hint</string>
 </resources>

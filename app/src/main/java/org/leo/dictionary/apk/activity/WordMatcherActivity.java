@@ -1,9 +1,11 @@
 package org.leo.dictionary.apk.activity;
 
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.preference.PreferenceManager;
@@ -27,6 +29,8 @@ public class WordMatcherActivity extends AppCompatActivity {
     private final int[] selected = new int[2];
     private int limit;
     private ActivityWordMatcherBinding binding;
+    private boolean showWord;
+    private float textSize;
 
     private static String getText(Element element) {
         return element.type == WORDS_ARRAY ? ((Word) element.value).getFullWord() : ((Translation) element.value).getTranslation();
@@ -42,12 +46,27 @@ public class WordMatcherActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        showWord = PreferenceManager.getDefaultSharedPreferences(this).getBoolean("org.leo.dictionary.apk.config.entity.MatchWords.showWord", true);
         super.onCreate(savedInstanceState);
         ((ApplicationWithDI) getApplicationContext()).appComponent.playService().pause();
         binding = ActivityWordMatcherBinding.inflate(getLayoutInflater());
         binding.actionNext.setOnClickListener(v -> clearAndFillWords());
+        if (!showWord) {
+            binding.actionHint.setVisibility(View.VISIBLE);
+            binding.actionHint.setOnClickListener(v -> hintClicked());
+        }
         clearAndFillWords();
         setContentView(binding.getRoot());
+    }
+
+    private void hintClicked() {
+        if (selected[WORDS_ARRAY] != NOT_SET) {
+            Button button = (Button) binding.wordContainer.getChildAt(selected[WORDS_ARRAY]);
+            button.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
+//            new Handler(Looper.getMainLooper()).postDelayed(() -> button.setTextSize(0), 1500);
+        } else {
+            Toast.makeText(this, "Word is not selected", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void clearAndFillWords() {
@@ -84,11 +103,19 @@ public class WordMatcherActivity extends AppCompatActivity {
         Button button = new Button(this);
         button.setText(getText(element));
         button.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        setTextSize(element.type, button);
         button.setBackground(AppCompatResources.getDrawable(this, R.drawable.word_background));
         button.setAllCaps(false);
         button.setOnClickListener(v -> onClickListener(element, audioService));
         button.setLayoutParams(layoutParams);
         return button;
+    }
+
+    private void setTextSize(int type, Button button) {
+        if (!showWord && type == WORDS_ARRAY) {
+            textSize = button.getTextSize();
+            button.setTextSize(0);
+        }
     }
 
     private int differentType(int type) {

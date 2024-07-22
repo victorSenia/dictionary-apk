@@ -48,9 +48,7 @@ public class ExportWordsActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-        findViewById(R.id.find_words).setOnClickListener(v -> {
-            exportWordsToFile();
-        });
+        findViewById(R.id.find_words).setOnClickListener(v -> exportWordsToFile());
         findViewById(R.id.all_root_topics).setOnClickListener(v -> {
             FilterWordsActivity.RootTopicsFragment topics = (FilterWordsActivity.RootTopicsFragment) getSupportFragmentManager().findFragmentById(R.id.root_topics);
             if (topics != null) {
