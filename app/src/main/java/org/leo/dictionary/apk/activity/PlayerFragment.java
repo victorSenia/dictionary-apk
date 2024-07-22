@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import org.leo.dictionary.PlayService;
 import org.leo.dictionary.apk.ApplicationWithDI;
@@ -20,10 +19,10 @@ import org.leo.dictionary.apk.databinding.FragmentPlayerBinding;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocusChangeListener {
+    private final AtomicBoolean resumeOnFocusGain = new AtomicBoolean(false);
     private FragmentPlayerBinding binding;
     private PlayService playService;
     private AudioManager audioManager;
-    private final AtomicBoolean resumeOnFocusGain = new AtomicBoolean(false);
 
     @Override
     public void onResume() {
@@ -31,7 +30,7 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
         updateButtonUi();
     }
 
-    private void updateButtonUi() {
+    public void updateButtonUi() {
         if (!playService.isPlaying()) {
             binding.buttonPlay.setCompoundDrawablesWithIntrinsicBounds(android.R.drawable.ic_media_play, 0, 0, 0);
         } else {
@@ -40,21 +39,11 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
     }
 
     @Override
-    public void onDestroy() {
-        super.onDestroy();
-        playService.pause();
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        playService = ((ApplicationWithDI) getActivity().getApplicationContext()).appComponent.playService();
-        audioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentPlayerBinding.inflate(inflater, container, false);
+        playService = ((ApplicationWithDI) getActivity().getApplicationContext()).appComponent.playService();
+        audioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
+//        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         return binding.getRoot();
     }
 
@@ -116,23 +105,25 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
 
     @Override
     public void onAudioFocusChange(int focusChange) {
-        switch (focusChange) {
-            case AudioManager.AUDIOFOCUS_LOSS:
-                playService.pause();
-                updateButtonUi();
-                break;
-            case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT:
-            case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK:
-                if (playService.isPlaying()) {
-                    resumeOnFocusGain.set(true);
+        if (playService != null) {
+            switch (focusChange) {
+                case AudioManager.AUDIOFOCUS_LOSS:
                     playService.pause();
                     updateButtonUi();
-                }
-                break;
-            case AudioManager.AUDIOFOCUS_GAIN:
-                if (resumeOnFocusGain.get()) {
-                    playService.play();
-                }
+                    break;
+                case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT:
+                case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK:
+                    if (playService.isPlaying()) {
+                        resumeOnFocusGain.set(true);
+                        playService.pause();
+                        updateButtonUi();
+                    }
+                    break;
+                case AudioManager.AUDIOFOCUS_GAIN:
+                    if (resumeOnFocusGain.get()) {
+                        playService.play();
+                    }
+            }
         }
     }
 }

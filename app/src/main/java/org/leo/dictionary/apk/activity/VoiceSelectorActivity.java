@@ -25,7 +25,7 @@ public class VoiceSelectorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ActivityVoiceSelectorBinding binding = ActivityVoiceSelectorBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        binding.selectVoice.setOnClickListener(v -> {
+        binding.findVoices.setOnClickListener(v -> {
             updateUiWithWords(getLanguage(binding.getRoot()));
         });
         binding.defaultVoice.setOnClickListener(v -> {

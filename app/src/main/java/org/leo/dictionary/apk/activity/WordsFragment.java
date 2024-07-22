@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import org.jetbrains.annotations.NotNull;
 import org.leo.dictionary.PlayService;
 import org.leo.dictionary.UiUpdater;
 import org.leo.dictionary.apk.ApkUiUpdater;
@@ -42,22 +41,30 @@ public class WordsFragment extends Fragment {
     }
 
     @Override
-    public void onCreateContextMenu(@NonNull @NotNull ContextMenu menu, @NonNull @NotNull View v, @Nullable @org.jetbrains.annotations.Nullable ContextMenu.ContextMenuInfo menuInfo) {
+    public void onCreateContextMenu(@NonNull ContextMenu menu, @NonNull View v, @Nullable @org.jetbrains.annotations.Nullable ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         MenuInflater inflater = getActivity().getMenuInflater();
         inflater.inflate(R.menu.menu_list, menu);
     }
 
     @Override
-    public boolean onContextItemSelected(@NonNull @NotNull MenuItem item) {
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         if (item.getItemId() == R.id.action_play_from) {
             PlayService playService = ((ApplicationWithDI) getActivity().getApplicationContext()).appComponent.playService();
 
             playService.playFrom(((WordsRecyclerViewAdapter) recyclerView.getAdapter()).getPositionId());
+            updatePlayerUi();
             return true;
         } else {
             return super.onContextItemSelected(item);
+        }
+    }
+
+    private void updatePlayerUi() {
+        PlayerFragment player = (PlayerFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.player_fragment);
+        if (player != null) {
+            player.updateButtonUi();
         }
     }
 
@@ -90,5 +97,12 @@ public class WordsFragment extends Fragment {
             apkUiUpdater.addUiUpdater(uiUpdater);
         }
         return view;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) getActivity().getApplicationContext()).appComponent.uiUpdater();
+        apkUiUpdater.removeUiUpdater(uiUpdater);
     }
 }

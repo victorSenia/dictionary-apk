@@ -14,4 +14,9 @@ public class ApplicationWithDI extends Application {
         appComponent = DaggerApkAppComponent.builder().apkModule(new ApkModule(this)).build();
     }
 
+    @Override
+    public void onTerminate() {
+        appComponent.playService().pause();
+        super.onTerminate();
+    }
 }

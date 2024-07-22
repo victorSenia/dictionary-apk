@@ -16,6 +16,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/all_topics"
             android:layout_weight="0"
-            style="@style/Widget.AppCompat.Button"
+            style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
             android:layout_gravity="bottom"/>
 </LinearLayout>

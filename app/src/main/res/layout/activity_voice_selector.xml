@@ -15,17 +15,17 @@
             android:ems="10"
             android:id="@+id/language"/>
     <Button
-            android:text="find_voices"
+            android:text="@string/find_voices"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/select_voice"
-            style="@style/Widget.AppCompat.Button.Colored"/>
+            android:id="@+id/find_voices"
+            style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"/>
     <Button
-            android:text="default_voice"
+            android:text="@string/default_voice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/default_voice"
-            style="@style/Widget.AppCompat.Button.Colored"/>
+            style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"/>
     <androidx.fragment.app.FragmentContainerView
             android:id="@+id/voices"
             android:name="org.leo.dictionary.apk.activity.VoiceSelectorActivity$VoicesFragment"

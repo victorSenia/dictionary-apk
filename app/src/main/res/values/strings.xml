@@ -44,4 +44,6 @@
     <string name="audio_not_possible">Audio not possible</string>
     <string name="audio_delayed">Audio delayed</string>
     <string name="select_voices">Select voices</string>
+    <string name="default_voice">Default voice</string>
+    <string name="find_voices">Find voices</string>
 </resources>

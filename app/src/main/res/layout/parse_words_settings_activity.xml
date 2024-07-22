@@ -17,19 +17,19 @@
                 android:text="@string/file"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                style="@style/Widget.AppCompat.Button"
+                style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
                 android:id="@+id/file" android:layout_weight="1"/>
         <Button
                 android:text="@string/asset"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                style="@style/Widget.AppCompat.Button"
+                style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
                 android:id="@+id/asset" android:layout_weight="1"/>
     </LinearLayout>
     <Button
             android:text="@string/parse_words"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Widget.AppCompat.Button"
+            style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
             android:id="@+id/parseWords" android:layout_weight="0"/>
 </LinearLayout>

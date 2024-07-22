@@ -1225,7 +1225,7 @@ das Bier | beer
 die Limo | fizzy drink
 der Fruchtsaft | fruit juice
 das Mineralwasser | mineral water
-die Spirituosen pl | spirits
+die Spirituosen; pl | spirits
 der Wein | wine
 
 		der markt | market
@@ -1652,7 +1652,7 @@ passen | to fit
 
 der Bikini | bikini
 die Bluse | blouse
-die Boxershorts pl | boxer shorts
+die Boxershorts; pl | boxer shorts
 der Büstenhalter | bra
 die Strickjacke | cardigan
 der Mantel | coat
@@ -1660,14 +1660,14 @@ das Kleid | dress
 der Bademantel | dressing gown
 die Latzhose | dungarees
 die Jacke | jacket
-die Jeans pl | jeans
+die Jeans; pl | jeans
 die Jogginghose | jogging bottoms
 der Pullover | jumper
-die Leggings pl | leggings
+die Leggings; pl | leggings
 die Unterhose | pants
 der Schlafanzug | pyjamas
 das Hemd | shirt
-die Shorts pl | shorts
+die Shorts; pl | shorts
 der Rock | skirt
 die Socken; fpl | socks
 das Kostüm | suit
@@ -1721,7 +1721,7 @@ der Meißel | chisel
 die Bohrmaschine | electric drill
 der Hammer | hammer
 die Nägel; mpl | nails
-die Muttern und Bolzen pl | nuts and bolts
+die Muttern und Bolzen; pl | nuts and bolts
 die Farbe | paint
 der Pinsel | paintbrush
 der Farbroller | paint roller
@@ -1796,7 +1796,7 @@ frühstücken | to have breakfast
 das Frühstück überspringen | to skip breakfast
 die gekochten Eier; ntpl | boiled eggs
 die Brötchen; ntpl | bread rolls
-die Frühstückscerealien pl | cereal
+die Frühstückscerealien; pl | cereal
 der Kaffee | coffee
 der Milchkaffee | coffee with milk
 die Wurst und der Käse | cold meats and cheese
@@ -1838,7 +1838,7 @@ die Suppe | soup
 
 die Pommes; ntpl | chips
 der Gurkensalat | cucumber salad
-die Bratkartoffeln ntp | fried potatoes
+die Bratkartoffeln; ntpl | fried potatoes
 die Klöße; mpl | German dumplings
 der Auflauf | gratin
 der Kartoffelbrei | mash
@@ -1917,7 +1917,7 @@ das Streetfood | street food
 der Verkäufer / die Verkäuferin | vendor
 das Drive-In | drive-thru
 zum Mitnehmen | an order to go / a takeaway
-die Lieferkosten pl | delivery charge
+die Lieferkosten; pl | delivery charge
 der Lieferant / die Lieferantin | delivery man / woman
 eine Bestellung telefonisch aufgeben | to phone in an order
 bestellen | to place an order
@@ -2104,7 +2104,7 @@ das Scheckheft | chequebook
 die Währung | currency
 das Darlehen | loan
 die Hypothek | mortgage
-die Zinsen pl | interest
+die Zinsen; pl | interest
 einen Kredit aufnehmen | to borrow
 zurückzahlen | to repay
 abheben | to withdraw
@@ -2365,7 +2365,7 @@ auf Konzerte gehen | to go to gigs
 
 der Bluetooth®-Lautsprecher | Bluetooth® speaker
 die Ohrhörer; mpl | earphones
-die Kopfhörer pl | headphones
+die Kopfhörer; pl | headphones
 die Soundbar | soundbar
 die Lautsprecher; mpl | speakers
 der Plattenspieler | turntable
