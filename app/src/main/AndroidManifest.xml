@@ -32,6 +32,10 @@
                 android:exported="false"
                 android:label="@string/title_activity_topics"/>
         <activity
+                android:name=".activity.ExportWordsActivity"
+                android:exported="false"
+                android:label="@string/title_activity_topics"/>
+        <activity
                 android:name=".activity.AssetsActivity"
                 android:exported="false"
                 android:label="@string/title_activity_assets"/>

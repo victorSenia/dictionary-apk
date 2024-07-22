@@ -30,7 +30,7 @@ public class EditWordActivity extends AppCompatActivity {
     public static final String TRANSLATION_INDEX_TO_EDIT = "TRANSLATION_INDEX_TO_EDIT";
     public static final long DEFAULT_VALUE_OF_WORD_ID = -1L;
     private ActivityEditWordBinding binding;
-    private List<Topic> filteredList = new ArrayList<>();
+    private List<Topic> filteredTopics = new ArrayList<>();
     private List<Topic> topics;
     private EditWordViewModel model;
 
@@ -79,7 +79,7 @@ public class EditWordActivity extends AppCompatActivity {
             }
         });
         binding.topicList.setLayoutManager(new LinearLayoutManager(binding.topicList.getContext()));
-        binding.topicList.setAdapter(new TopicRecyclerViewAdapter(filteredList) {
+        binding.topicList.setAdapter(new TopicRecyclerViewAdapter(filteredTopics) {
             @Override
             @NonNull
             public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -118,7 +118,7 @@ public class EditWordActivity extends AppCompatActivity {
     private void createAndAddTopicToWord() {
         Topic topic = new Topic();
         topic.setName(binding.textTopic.getText().toString());
-        topic.setLevel(1);
+        topic.setLevel(2);
         topic.setLanguage(getWord().getLanguage());
         topics.add(topic);
         addTopicToWord(topic);
@@ -131,11 +131,11 @@ public class EditWordActivity extends AppCompatActivity {
     private void filterTopics(CharSequence input) {
         if (input.length() > 0) {
             List<Topic> wordTopics = getWord().getTopics();
-            filteredList = topics.stream().filter(topic -> topic.getName().contains(input)).filter(topic -> !wordTopics.contains(topic)).collect(Collectors.toList());
+            filteredTopics = topics.stream().filter(topic -> topic.getName().contains(input)).filter(topic -> !wordTopics.contains(topic)).collect(Collectors.toList());
         } else {
-            filteredList = new ArrayList<>();
+            filteredTopics = new ArrayList<>();
         }
-        ((TopicRecyclerViewAdapter) binding.topicList.getAdapter()).replaceData(filteredList);
+        ((TopicRecyclerViewAdapter) binding.topicList.getAdapter()).replaceData(filteredTopics);
     }
 
 
@@ -160,7 +160,7 @@ public class EditWordActivity extends AppCompatActivity {
 
     private List<Topic> findTopics(String language) {
         DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
-        return wordProvider.findTopics(language, 1);
+        return wordProvider.findTopics(language, 2);
     }
 
     private boolean isValidData() {

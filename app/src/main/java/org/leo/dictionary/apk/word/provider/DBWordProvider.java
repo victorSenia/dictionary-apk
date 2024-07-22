@@ -41,7 +41,16 @@ public class DBWordProvider implements WordProvider {
 
     @Override
     public List<Topic> findTopics(String language, int level) {
-        return dbManager.getTopics(language, Integer.toString(level));
+        return dbManager.getTopics(language, null, Integer.toString(level));
+    }
+
+    @Override
+    public List<Topic> findTopicsWithRoot(String language, String rootName, int level) {
+        return dbManager.getTopics(language, rootName, Integer.toString(level));
+    }
+
+    public List<Topic> findRootTopics(String language) {
+        return dbManager.findRootTopics(language);
     }
 
     @Override
@@ -137,8 +146,8 @@ public class DBWordProvider implements WordProvider {
         return dbManager.findWord(id);
     }
 
-    public List<Word> getWordsForLanguage(String language) {
-        return dbManager.getWordsForLanguage(language);
+    public List<Word> getWordsForLanguage(String language, String rootTopic) {
+        return dbManager.getWordsForLanguage(language, rootTopic);
     }
 
     public void deleteWords(String language) {

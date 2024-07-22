@@ -1,4 +1,4 @@
-org.leo.dictionary.config.entity.ParseWords:fr:en;uk:le+;la+;les+;l%27:%5C%7C:%3B:%3B:%5Ct:
+org.leo.dictionary.config.entity.ParseWords:fr:en;uk:le+;la+;les+;l%27:%5C%7C:%3B:%3B:%5Ct::Collins+French+3000
 
 	 l'essentiel | the essentials
 l'essentiel | the essentials | найнеобхідніше

@@ -19,6 +19,35 @@ public class AssetsWordProvider extends FileWordProvider {
     public static final String PARSE_WORDS_CONFIGURATION = "org.leo.dictionary.config.entity.ParseWords";
     private Context context;
 
+    private static boolean isConfigurationLine(String line) {
+        return line.startsWith(PARSE_WORDS_CONFIGURATION);
+    }
+
+    private static String decode(String string) {
+        if (string == null || string.isEmpty()) {
+            return null;
+        }
+        return WordImporter.decode(string);
+    }
+
+    private static List<String> parseListProperty(String configPart) {
+        return Arrays.stream(configPart.split(WordExporter.PARTS_DIVIDER)).map(AssetsWordProvider::decode).collect(Collectors.toList());
+    }
+
+    private static String encode(String string) {
+        if (string == null || string.isEmpty()) {
+            return "";
+        }
+        return WordExporter.encode(string);
+    }
+
+    private static String listPropertyToString(List<String> strings) {
+        if (strings == null || strings.isEmpty()) {
+            return "";
+        }
+        return strings.stream().map(AssetsWordProvider::encode).collect(Collectors.joining(WordExporter.PARTS_DIVIDER));
+    }
+
     public void setContext(Context context) {
         this.context = context;
     }
@@ -33,17 +62,13 @@ public class AssetsWordProvider extends FileWordProvider {
         return super.isIgnoredLine(line) || isConfigurationLine(line);
     }
 
-    private static boolean isConfigurationLine(String line) {
-        return line.startsWith(PARSE_WORDS_CONFIGURATION);
-    }
-
     public void parseAndUpdateConfiguration() {
         try (BufferedReader fileReader = getBufferedReader()) {
             String line;
             while ((line = fileReader.readLine()) != null) {
                 if (isConfigurationLine(line)) {
                     String[] configParts = line.split(WordExporter.MAIN_DIVIDER, -1);
-                    if (configParts.length < 9) {
+                    if (configParts.length < 10) {
                         throw new IllegalArgumentException("config incorrect " + line);
                     }
                     configuration.setLanguageFrom(decode(configParts[1]));
@@ -54,23 +79,13 @@ public class AssetsWordProvider extends FileWordProvider {
                     configuration.setTranslationDelimiter(decode(configParts[6]));
                     configuration.setTopicFlag(decode(configParts[7]));
                     configuration.setTopicDelimiter(decode(configParts[8]));
+                    configuration.setRootTopic(decode(configParts[9]));
                     break;
                 }
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    private static String decode(String string) {
-        if (string == null || string.isEmpty()) {
-            return null;
-        }
-        return WordImporter.decode(string);
-    }
-
-    private static List<String> parseListProperty(String configPart) {
-        return Arrays.stream(configPart.split(WordExporter.PARTS_DIVIDER)).map(AssetsWordProvider::decode).collect(Collectors.toList());
     }
 
     public String configurationToLine() {
@@ -83,22 +98,8 @@ public class AssetsWordProvider extends FileWordProvider {
                 encode(configuration.getAdditionalInformationDelimiter()),
                 encode(configuration.getTranslationDelimiter()),
                 encode(configuration.getTopicFlag()),
-                encode(configuration.getTopicDelimiter())
+                encode(configuration.getTopicDelimiter()),
+                encode(configuration.getRootTopic())
         });
-    }
-
-
-    private static String encode(String string) {
-        if (string == null || string.isEmpty()) {
-            return "";
-        }
-        return WordExporter.encode(string);
-    }
-
-    private static String listPropertyToString(List<String> strings) {
-        if (strings == null || strings.isEmpty()) {
-            return "";
-        }
-        return strings.stream().map(AssetsWordProvider::encode).collect(Collectors.joining(WordExporter.PARTS_DIVIDER));
     }
 }

@@ -76,6 +76,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:useSimpleSummaryProvider="true"/>
+        <EditTextPreference
+                app:key="org.leo.dictionary.config.entity.ParseWords.rootTopic"
+                android:defaultValue=""
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:title="@string/root_topic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:useSimpleSummaryProvider="true"/>
     </PreferenceCategory>
 
 </PreferenceScreen>

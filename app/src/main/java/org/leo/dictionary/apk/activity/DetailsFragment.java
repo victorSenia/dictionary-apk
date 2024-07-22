@@ -18,10 +18,9 @@ public class DetailsFragment extends Fragment {
     private UiUpdater uiUpdater;
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         FragmentDetailsBinding binding = FragmentDetailsBinding.inflate(inflater, container, false);
-        DetailsViewModel mViewModel = new ViewModelProvider(this).get(DetailsViewModel.class);
+        DetailsViewModel mViewModel = new ViewModelProvider(requireActivity()).get(DetailsViewModel.class);
         binding.setViewmodel(mViewModel);
         binding.setLifecycleOwner(this);
         ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.uiUpdater();
@@ -35,11 +34,6 @@ public class DetailsFragment extends Fragment {
         super.onDestroyView();
         ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.uiUpdater();
         apkUiUpdater.removeUiUpdater(uiUpdater);
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
+        uiUpdater = null;
     }
 }

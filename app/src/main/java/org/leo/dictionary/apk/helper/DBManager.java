@@ -153,6 +153,9 @@ public class DBManager {
         ContentValues contentValue = new ContentValues();
         contentValue.put(DatabaseHelper.COLUMN_LANGUAGE, topic.getLanguage());
         contentValue.put(DatabaseHelper.TOPIC_COLUMN_LEVEL, topic.getLevel());
+        if (topic.getRoot() != null) {
+            contentValue.put(DatabaseHelper.TOPIC_COLUMN_ROOT_ID, insertTopic(topic.getRoot()));
+        }
         contentValue.put(DatabaseHelper.TOPIC_COLUMN_NAME, topic.getName());
         long insertedId = database.insert(DatabaseHelper.TABLE_NAME_TOPIC, null, contentValue);
         topic.setId(insertedId);
@@ -160,9 +163,27 @@ public class DBManager {
     }
 
     protected long getTopicId(Topic topic) {
+        List<String> arguments = new ArrayList<>();
+        arguments.add(topic.getLanguage());
+        arguments.add(topic.getName());
+        arguments.add(Integer.toString(topic.getLevel()));
         return getId(DatabaseHelper.TABLE_NAME_TOPIC,
-                DatabaseHelper.COLUMN_LANGUAGE + " = ? AND " + DatabaseHelper.TOPIC_COLUMN_NAME + " = ? AND " + DatabaseHelper.TOPIC_COLUMN_LEVEL + " = ?",
-                topic.getLanguage(), topic.getName(), Integer.toString(topic.getLevel()));
+                DatabaseHelper.COLUMN_LANGUAGE + " = ? AND " + DatabaseHelper.TOPIC_COLUMN_NAME + " = ? AND " + DatabaseHelper.TOPIC_COLUMN_LEVEL + " = ?" +
+                        andNullOrEquals(DatabaseHelper.TOPIC_COLUMN_ROOT_ID, () -> topic.getRoot() != null ? Long.toString(insertTopic(topic.getRoot())) : null, arguments),
+                arguments.toArray(new String[0]));
+    }
+
+    private String andNullOrEquals(String column, Supplier<String> supplier, List<String> arguments) {
+        return " AND " + nullOrEquals(column, supplier, arguments);
+    }
+
+    private String nullOrEquals(String column, Supplier<String> supplier, List<String> arguments) {
+        String value = supplier.get();
+        if (value == null) {
+            return column + " IS NULL ";
+        }
+        arguments.add(value);
+        return column + " = ? ";
     }
 
     protected long getTranslationId(Translation translation, long wordId) {
@@ -172,28 +193,14 @@ public class DBManager {
     }
 
     protected long getWordId(Word word) {
-        if (word.getArticle() == null) {
-            if (word.getAdditionalInformation() == null) {
-                return getId(DatabaseHelper.TABLE_NAME_WORD,
-                        DatabaseHelper.COLUMN_LANGUAGE + " = ? AND " + DatabaseHelper.WORD_COLUMN_WORD + " = ? AND " + DatabaseHelper.WORD_COLUMN_ARTICLE + " IS NULL AND "
-                                + DatabaseHelper.WORD_COLUMN_ADDITIONAL_INFORMATION + " IS NULL",
-                        word.getLanguage(), word.getWord());
-            }
-            return getId(DatabaseHelper.TABLE_NAME_WORD,
-                    DatabaseHelper.COLUMN_LANGUAGE + " = ? AND " + DatabaseHelper.WORD_COLUMN_WORD + " = ? AND " + DatabaseHelper.WORD_COLUMN_ARTICLE + " IS NULL AND "
-                            + DatabaseHelper.WORD_COLUMN_ADDITIONAL_INFORMATION + " = ?",
-                    word.getLanguage(), word.getWord(), word.getAdditionalInformation());
-        } else if (word.getAdditionalInformation() == null) {
-            return getId(DatabaseHelper.TABLE_NAME_WORD,
-                    DatabaseHelper.COLUMN_LANGUAGE + " = ? AND " + DatabaseHelper.WORD_COLUMN_WORD + " = ? AND " + DatabaseHelper.WORD_COLUMN_ARTICLE + " = ? AND "
-                            + DatabaseHelper.WORD_COLUMN_ADDITIONAL_INFORMATION + " IS NULL",
-                    word.getLanguage(), word.getWord(), word.getArticle());
-        } else {
-            return getId(DatabaseHelper.TABLE_NAME_WORD,
-                    DatabaseHelper.COLUMN_LANGUAGE + " = ? AND " + DatabaseHelper.WORD_COLUMN_WORD + " = ? AND " + DatabaseHelper.WORD_COLUMN_ARTICLE + " = ? AND "
-                            + DatabaseHelper.WORD_COLUMN_ADDITIONAL_INFORMATION + " = ?",
-                    word.getLanguage(), word.getWord(), word.getArticle(), word.getAdditionalInformation());
-        }
+        List<String> arguments = new ArrayList<>();
+        arguments.add(word.getLanguage());
+        arguments.add(word.getWord());
+        return getId(DatabaseHelper.TABLE_NAME_WORD,
+                DatabaseHelper.COLUMN_LANGUAGE + " = ? AND " + DatabaseHelper.WORD_COLUMN_WORD + " = ? " +
+                        andNullOrEquals(DatabaseHelper.WORD_COLUMN_ARTICLE, word::getArticle, arguments) +
+                        andNullOrEquals(DatabaseHelper.WORD_COLUMN_ADDITIONAL_INFORMATION, word::getAdditionalInformation, arguments),
+                arguments.toArray(new String[0]));
     }
 
     protected long getId(String table, String selection, String... selectionArg) {
@@ -246,8 +253,8 @@ public class DBManager {
         String sql = "SELECT DISTINCT w.* FROM " + DatabaseHelper.TABLE_NAME_WORD + " w";
         List<String> selectionArgs = new ArrayList<>();
         String where = "";
-        if (criteria.getTopicsOr() != null && !criteria.getTopicsOr().isEmpty()) {
-            List<String> topicIds = getTopicIds(criteria.getLanguageFrom(), criteria.getTopicsOr());
+        if ((criteria.getTopicsOr() != null && !criteria.getTopicsOr().isEmpty()) || criteria.getRootTopic() != null) {
+            List<String> topicIds = getTopicIds(criteria.getLanguageFrom(), createRootTopicObject(criteria.getLanguageFrom(), criteria.getRootTopic()), criteria.getTopicsOr());
             sql += " INNER JOIN " + DatabaseHelper.TABLE_NAME_WORD_TOPIC + " t ON w." + DatabaseHelper.COLUMN_ID + " = t." + DatabaseHelper.TRANSLATION_COLUMN_WORD_ID + " AND t." + DatabaseHelper.COLUMN_ID + " IN (" + createPlaceholders(topicIds.size()) + ")";
             selectionArgs.addAll(topicIds);
         }
@@ -258,6 +265,17 @@ public class DBManager {
         Cursor cursor = database.rawQuery(sql + (!where.isEmpty() ? " WHERE " + where : "") + " ORDER BY " + DatabaseHelper.COLUMN_ID, !selectionArgs.isEmpty() ? selectionArgs.toArray(selectionArgs.toArray(new String[0])) : null);
         cursor.moveToFirst();
         return cursor;
+    }
+
+    protected Topic createRootTopicObject(String language, String name) {
+        if (name != null) {
+            Topic rootTopic = new Topic();
+            rootTopic.setLevel(1);
+            rootTopic.setName(name);
+            rootTopic.setLanguage(language);
+            return rootTopic;
+        }
+        return null;
     }
 
     protected Cursor fetchTranslationsCursor(Set<String> languages, List<String> wordIds) {
@@ -276,8 +294,9 @@ public class DBManager {
         return cursor;
     }
 
-    protected List<String> getTopicIds(String languageFrom, Set<String> topicsOr) {
-        try (Cursor res = fetchTopics(languageFrom, null, true, topicsOr)) {
+    protected List<String> getTopicIds(String languageFrom, Topic rootTopic, Set<String> topicsOr) {
+        String rootId = rootTopic != null ? Long.toString(getTopicId(rootTopic)) : null;
+        try (Cursor res = fetchTopics(languageFrom, null, true, rootId, topicsOr)) {
             List<String> ids = new ArrayList<>();
             while (!res.isAfterLast()) {
                 ids.add(res.getString(0));
@@ -287,7 +306,7 @@ public class DBManager {
         }
     }
 
-    protected Cursor fetchTopics(String language, String level, boolean idOnly, Set<String> names) {
+    protected Cursor fetchTopics(String language, String level, boolean idOnly, String rootId, Set<String> names) {
         String selection = " 1 = 1";
         List<String> selectionArgs = new ArrayList<>();
         if (language != null) {
@@ -295,8 +314,12 @@ public class DBManager {
             selectionArgs.add(language);
         }
         if (level != null) {
-            selection += " AND " + DatabaseHelper.TOPIC_COLUMN_LEVEL + "<= ?";
+            selection += " AND " + DatabaseHelper.TOPIC_COLUMN_LEVEL + "= ?";
             selectionArgs.add(level);
+        }
+        if (rootId != null) {
+            selection += " AND " + DatabaseHelper.TOPIC_COLUMN_ROOT_ID + "= ?";
+            selectionArgs.add(rootId);
         }
         if (names != null && !names.isEmpty()) {
             selection += " AND " + DatabaseHelper.TOPIC_COLUMN_NAME + " IN (" + createPlaceholders(names.size()) + ")";
@@ -316,14 +339,20 @@ public class DBManager {
         return cursor;
     }
 
-    public List<Topic> getTopics(String language, String level) {
-        try (Cursor res = fetchTopics(language, level, false, null)) {
+    public List<Topic> getTopics(String language, String rootName, String level) {
+        Topic rootTopic = createRootTopicObject(language, rootName);
+        String rootId = rootTopic != null ? Long.toString(getTopicId(rootTopic)) : null;
+        try (Cursor res = fetchTopics(language, level, false, rootId, null)) {
             List<Topic> topics = new ArrayList<>();
             if (!res.isAfterLast()) {
                 mapTopicsFromCursor(language, res, topics, new HashMap<>());
             }
             return topics;
         }
+    }
+
+    public List<Topic> findRootTopics(String language) {
+        return getTopics(language, null, "1");
     }
 
     public List<Topic> getTopicsForWord(String wordId, String language, String level, Map<Long, Topic> loadedTopics) {
@@ -394,9 +423,10 @@ public class DBManager {
         return getWords(() -> fetchWordsCursor(criteria), criteria.getLanguageTo(), false);
     }
 
-    public List<Word> getWordsForLanguage(String language) {
+    public List<Word> getWordsForLanguage(String language,String rootTopic) {
         WordCriteria criteria = new WordCriteria();
         criteria.setLanguageFrom(language);
+        criteria.setRootTopic(rootTopic);
         return getWords(() -> fetchWordsCursor(criteria), null, true);
     }
 
@@ -421,7 +451,7 @@ public class DBManager {
         if (includeTopics && !words.isEmpty()) {
             Map<Long, Topic> topics = new HashMap<>();
             for (Word word : words) {
-                word.setTopics(getTopicsForWord(String.valueOf(word.getId()), word.getLanguage(), "1", topics));//TODO
+                word.setTopics(getTopicsForWord(String.valueOf(word.getId()), word.getLanguage(), "2", topics));//TODO
             }
         }
         return words;

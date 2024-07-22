@@ -27,7 +27,6 @@ import org.leo.dictionary.word.provider.WordProvider;
 import javax.inject.Named;
 import javax.inject.Singleton;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;

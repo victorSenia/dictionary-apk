@@ -13,7 +13,9 @@ public class DetailsViewModel extends ViewModel {
     }
 
     public void updateWord(Word word, int index) {
-        uiState.postValue(word);
+        if (word != null) {
+            uiState.postValue(word);
+        }
     }
 
 }

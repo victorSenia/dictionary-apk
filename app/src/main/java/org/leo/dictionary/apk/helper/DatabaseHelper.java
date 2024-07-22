@@ -21,6 +21,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String TOPIC_COLUMN_NAME = "name";
     public static final String TOPIC_COLUMN_LEVEL = "level";
+    public static final String TOPIC_COLUMN_ROOT_ID = "root";
 
     public static final String TRANSLATION_COLUMN_WORD_ID = "word_" + COLUMN_ID;
     public static final String TRANSLATION_COLUMN_TRANSLATION = "translation";
@@ -50,7 +51,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE " + TABLE_NAME_TOPIC + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_LANGUAGE + " TEXT NOT NULL, " +
-                TOPIC_COLUMN_NAME + " TEXT NOT NULL, " + TOPIC_COLUMN_LEVEL + " INTEGER);");
+                TOPIC_COLUMN_NAME + " TEXT NOT NULL, " + TOPIC_COLUMN_LEVEL + " INTEGER, " + TOPIC_COLUMN_ROOT_ID + " INTEGER);");
         db.execSQL("CREATE TABLE " + TABLE_NAME_WORD + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_LANGUAGE + " TEXT NOT NULL, " + WORD_COLUMN_WORD + " TEXT NOT NULL, " +
                 WORD_COLUMN_ADDITIONAL_INFORMATION + " TEXT, " + WORD_COLUMN_ARTICLE + " TEXT, " + WORD_COLUMN_KNOWLEDGE + " REAL);");
         db.execSQL("CREATE TABLE " + TABLE_NAME_TRANSLATION + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_LANGUAGE + " TEXT NOT NULL, " +
@@ -62,7 +63,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "CONSTRAINT fk_word FOREIGN KEY (" + COLUMN_ID + ") REFERENCES " + TABLE_NAME_WORD + "(" + COLUMN_ID + ")" +
                 ");");
 
-        db.execSQL("CREATE UNIQUE INDEX " + TABLE_NAME_TOPIC + "_unique1 " + " ON " + TABLE_NAME_TOPIC + " (" + COLUMN_LANGUAGE + ", " + TOPIC_COLUMN_LEVEL + ", " + TOPIC_COLUMN_NAME + ");");
+        db.execSQL("CREATE UNIQUE INDEX " + TABLE_NAME_TOPIC + "_unique1 " + " ON " + TABLE_NAME_TOPIC + " (" + COLUMN_LANGUAGE + ", " + TOPIC_COLUMN_LEVEL + ", " + TOPIC_COLUMN_ROOT_ID + ", " + TOPIC_COLUMN_NAME + ");");
         db.execSQL("CREATE UNIQUE INDEX " + TABLE_NAME_WORD + "_unique1 " + " ON " + TABLE_NAME_WORD + " (" + COLUMN_LANGUAGE + ", " + WORD_COLUMN_WORD + ", " + WORD_COLUMN_ARTICLE + ", " + WORD_COLUMN_ADDITIONAL_INFORMATION + ");");
         db.execSQL("CREATE UNIQUE INDEX " + TABLE_NAME_TRANSLATION + "_unique1 " + " ON " + TABLE_NAME_TRANSLATION + " (" + TRANSLATION_COLUMN_WORD_ID + ", " + COLUMN_LANGUAGE + ", " + TRANSLATION_COLUMN_TRANSLATION + ");");
         db.execSQL("CREATE UNIQUE INDEX " + TABLE_NAME_WORD_TOPIC + "_unique1 " + " ON " + TABLE_NAME_WORD_TOPIC + " (" + COLUMN_ID + ", " + TRANSLATION_COLUMN_WORD_ID + ");");

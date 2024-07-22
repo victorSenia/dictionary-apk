@@ -10,9 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 import org.leo.dictionary.PlayService;
+import org.leo.dictionary.UiUpdater;
 import org.leo.dictionary.apk.ApkModule;
+import org.leo.dictionary.apk.ApkUiUpdater;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.databinding.FragmentPlayerBinding;
@@ -24,15 +30,37 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
     private FragmentPlayerBinding binding;
     private PlayService playService;
     private AudioManager audioManager;
+    private IsPlayingViewModel isPlayingViewModel;
+    private UiUpdater uiUpdater;
 
     @Override
-    public void onResume() {
-        super.onResume();
-        updateButtonUi();
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        isPlayingViewModel = new ViewModelProvider(requireActivity()).get(IsPlayingViewModel.class);
+        ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.uiUpdater();
+        uiUpdater = (word, index) -> {
+            if (word != null) {
+                isPlayingViewModel.setPlaying();
+            } else {
+                isPlayingViewModel.setPaused();
+            }
+        };
+        apkUiUpdater.addUiUpdater(uiUpdater);
     }
 
-    public void updateButtonUi() {
-        if (!playService.isPlaying()) {
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.uiUpdater();
+        apkUiUpdater.removeUiUpdater(uiUpdater);
+        uiUpdater = null;
+        binding = null;
+        playService = null;
+        audioManager = null;
+    }
+
+    public void updateButtonUi(Boolean isPlaying) {
+        if (!isPlaying) {
             binding.buttonPlay.setCompoundDrawablesWithIntrinsicBounds(android.R.drawable.ic_media_play, 0, 0, 0);
         } else {
             binding.buttonPlay.setCompoundDrawablesWithIntrinsicBounds(android.R.drawable.ic_media_pause, 0, 0, 0);
@@ -44,6 +72,7 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
         binding = FragmentPlayerBinding.inflate(inflater, container, false);
         playService = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.playService();
         audioManager = (AudioManager) requireActivity().getSystemService(Context.AUDIO_SERVICE);
+        isPlayingViewModel.isPlaying.observe(requireActivity(), this::updateButtonUi);
         return binding.getRoot();
     }
 
@@ -52,7 +81,7 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
         binding.buttonNext.setOnClickListener(v -> {
             if (isAudioFocusGranted()) {
                 playService.next();
-                updateButtonUi();
+                isPlayingViewModel.setPlaying();
             }
         });
         binding.buttonPlay.setOnClickListener(v -> {
@@ -68,12 +97,10 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
             } else {
                 playService.pause();
             }
-            updateButtonUi();
         });
         binding.buttonPrevious.setOnClickListener(v -> {
             if (isAudioFocusGranted()) {
                 playService.previous();
-                updateButtonUi();
             }
         });
     }
@@ -100,13 +127,6 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
         return false;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
-        playService = null;
-        audioManager = null;
-    }
 
     @Override
     public void onAudioFocusChange(int focusChange) {
@@ -114,14 +134,12 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
             switch (focusChange) {
                 case AudioManager.AUDIOFOCUS_LOSS:
                     playService.pause();
-                    updateButtonUi();
                     break;
                 case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT:
                 case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK:
                     if (playService.isPlaying()) {
                         resumeOnFocusGain.set(true);
                         playService.pause();
-                        updateButtonUi();
                     }
                     break;
                 case AudioManager.AUDIOFOCUS_GAIN:
@@ -129,6 +147,18 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
                         playService.play();
                     }
             }
+        }
+    }
+
+    public static class IsPlayingViewModel extends ViewModel {
+        private final MutableLiveData<Boolean> isPlaying = new MutableLiveData<>(Boolean.FALSE);
+
+        public void setPlaying() {
+            isPlaying.postValue(true);
+        }
+
+        public void setPaused() {
+            isPlaying.postValue(false);
         }
     }
 }

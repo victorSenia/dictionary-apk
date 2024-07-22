@@ -65,6 +65,7 @@ public class StringRecyclerViewAdapter extends RecyclerView.Adapter<StringRecycl
         if (onClickListener instanceof RememberSelectionOnClickListener) {
             ((RememberSelectionOnClickListener) onClickListener).clearSelection();
         }
+        notifyDataSetChanged();
     }
 
     public interface OnClickListener {

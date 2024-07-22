@@ -72,12 +72,15 @@ public class WordsFragment extends Fragment {
 
             PlayService playService = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.playService();
 
-            ArrayList<Word> words = new ArrayList<>(playService.getUnknownWords());
+            ArrayList<Word> words = new ArrayList<>();
             int currentIndex = ApkModule.getLastStateCurrentIndex(((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.lastState());
 
             WordsRecyclerViewAdapter adapter = new WordsRecyclerViewAdapter(words, this, currentIndex);
             recyclerView.setAdapter(adapter);
-
+            MainActivity.runAtBackground(() -> {
+                adapter.words.addAll(playService.getUnknownWords());
+                requireActivity().runOnUiThread(() -> adapter.notifyDataSetChanged());
+            });
             recyclerView.scrollToPosition(currentIndex);
 
             ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.uiUpdater();

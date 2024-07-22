@@ -21,12 +21,14 @@ import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.helper.WordCriteriaProvider;
+import org.leo.dictionary.entity.Topic;
 import org.leo.dictionary.entity.WordCriteria;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FilterWordsActivity extends AppCompatActivity {
 
@@ -54,6 +56,7 @@ public class FilterWordsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         LanguageViewModel languageViewModel = new ViewModelProvider(this).get(LanguageViewModel.class);
+        RootTopicViewModel rootTopicViewModel = new ViewModelProvider(this).get(RootTopicViewModel.class);
         setContentView(R.layout.filter_words_activity);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -71,6 +74,13 @@ public class FilterWordsActivity extends AppCompatActivity {
             TopicsFragment topics = (TopicsFragment) getSupportFragmentManager().findFragmentById(R.id.topics);
             if (topics != null) {
                 ((MultiSelectionStringRecyclerViewAdapter) topics.recyclerView.getAdapter()).clearSelection();
+            }
+        });
+        findViewById(R.id.all_root_topics).setOnClickListener(v -> {
+            RootTopicsFragment topics = (RootTopicsFragment) getSupportFragmentManager().findFragmentById(R.id.root_topics);
+            if (topics != null) {
+                ((StringRecyclerViewAdapter) topics.recyclerView.getAdapter()).clearSelection();
+                rootTopicViewModel.select(null);
             }
         });
         if (getWordCriteria(this).getShuffleRandom() != -1) {
@@ -95,6 +105,7 @@ public class FilterWordsActivity extends AppCompatActivity {
 
     private WordCriteria createCriteria() {
         TopicsFragment topics = (TopicsFragment) getSupportFragmentManager().findFragmentById(R.id.topics);
+        RootTopicsFragment rootTopics = (RootTopicsFragment) getSupportFragmentManager().findFragmentById(R.id.root_topics);
         LanguageFromFragment languageFrom = (LanguageFromFragment) getSupportFragmentManager().findFragmentById(R.id.language_from);
         LanguageToFragment languageTo = (LanguageToFragment) getSupportFragmentManager().findFragmentById(R.id.languages_to);
         WordCriteria criteria = new WordCriteria();
@@ -114,10 +125,14 @@ public class FilterWordsActivity extends AppCompatActivity {
         if (selectedLanguageFrom != null) {
             criteria.setLanguageFrom(selectedLanguageFrom.get(0));
         }
+        List<String> selectedRootTopic = getSelected(rootTopics);
+        if (selectedRootTopic != null) {
+            criteria.setRootTopic(selectedRootTopic.get(0));
+        }
         return criteria;
     }
 
-    public static class TopicsFragment extends StringsFragment {
+    public static class RootTopicsFragment extends StringsFragment {
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -125,10 +140,11 @@ public class FilterWordsActivity extends AppCompatActivity {
             new ViewModelProvider(requireActivity()).get(LanguageViewModel.class).getSelected().observe(requireActivity(), this::updateListData);
         }
 
-        private void updateListData(String language) {
+        protected void updateListData(String language) {
             StringRecyclerViewAdapter adapter = (StringRecyclerViewAdapter) this.recyclerView.getAdapter();
             if (adapter != null) {
                 adapter.mValues.clear();
+                adapter.clearSelection();
                 adapter.mValues.addAll(findTopics(language));
                 adapter.notifyDataSetChanged();
             }
@@ -139,9 +155,57 @@ public class FilterWordsActivity extends AppCompatActivity {
             return findTopics(language);
         }
 
-        private List<String> findTopics(String language) {
+        protected List<String> findTopics(String language) {
             ExternalWordProvider wordProvider = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.externalWordProvider();
-            return wordProvider.findTopics(language);
+            List<String> result = wordProvider.findTopics(new ViewModelProvider(requireActivity()).get(LanguageViewModel.class).getSelected().getValue(), 1).stream().map(Topic::getName).sorted().collect(Collectors.toList());
+            requireActivity().findViewById(R.id.root_topics_container).setVisibility(result.size() > 1 ? View.VISIBLE : View.GONE);
+            new ViewModelProvider(requireActivity()).get(RootTopicViewModel.class).select(null);
+            return result;
+        }
+
+        @Override
+        protected StringRecyclerViewAdapter createRecyclerViewAdapter() {
+            recyclerView.setNestedScrollingEnabled(false);
+            StringRecyclerViewAdapter adapter = new StringRecyclerViewAdapter(getStrings(), this, new StringRecyclerViewAdapter.RememberSelectionOnClickListener() {
+                @Override
+                public void onClick(StringRecyclerViewAdapter.StringViewHolder viewHolder) {
+                    super.onClick(viewHolder);
+                    new ViewModelProvider(requireActivity()).get(RootTopicViewModel.class).select(viewHolder.mItem);
+                }
+            });
+            if (adapter.mValues.size() == 1) {
+                adapter.setSelected(0);
+                new ViewModelProvider(requireActivity()).get(RootTopicViewModel.class).select(adapter.mValues.get(0));
+            } else {
+                String rootTopic = getWordCriteria(requireActivity()).getRootTopic();
+                adapter.setSelected(adapter.mValues.indexOf(rootTopic));
+                new ViewModelProvider(requireActivity()).get(RootTopicViewModel.class).select(rootTopic);
+            }
+            return adapter;
+        }
+    }
+
+    public static class TopicsFragment extends RootTopicsFragment {
+
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            new ViewModelProvider(requireActivity()).get(RootTopicViewModel.class).getSelected().observe(requireActivity(), this::updateListData);
+        }
+
+        protected List<String> getStrings() {
+            String language = new ViewModelProvider(requireActivity()).get(LanguageViewModel.class).getSelected().getValue();
+            return findTopics(language);
+        }
+
+        protected List<String> findTopics(String language) {
+            ExternalWordProvider wordProvider = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.externalWordProvider();
+            List<String> result = wordProvider.findTopicsWithRoot(
+                    new ViewModelProvider(requireActivity()).get(LanguageViewModel.class).getSelected().getValue(),
+                    new ViewModelProvider(requireActivity()).get(RootTopicViewModel.class).getSelected().getValue(),2).
+                    stream().map(Topic::getName).sorted().collect(Collectors.toList());
+            requireActivity().findViewById(R.id.topics_container).setVisibility(result.size() > 1 ? View.VISIBLE : View.GONE);
+            return result;
         }
 
         @Override
@@ -200,7 +264,9 @@ public class FilterWordsActivity extends AppCompatActivity {
 
         private List<String> getLanguageTo(String language) {
             ExternalWordProvider wordProvider = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.externalWordProvider();
-            return wordProvider.languageTo(language);
+            List<String> languagesTo = wordProvider.languageTo(language);
+            requireActivity().findViewById(R.id.languages_to_container).setVisibility(languagesTo.size() > 1 ? View.VISIBLE : View.GONE);
+            return languagesTo;
         }
 
 
@@ -213,6 +279,7 @@ public class FilterWordsActivity extends AppCompatActivity {
         private void updateListData(String language) {
             StringRecyclerViewAdapter adapter = (StringRecyclerViewAdapter) this.recyclerView.getAdapter();
             adapter.mValues.clear();
+            adapter.clearSelection();
             adapter.mValues.addAll(getLanguageTo(language));
             adapter.notifyDataSetChanged();
         }
@@ -236,5 +303,8 @@ public class FilterWordsActivity extends AppCompatActivity {
         public LiveData<String> getSelected() {
             return selected;
         }
+    }
+
+    public static class RootTopicViewModel extends LanguageViewModel {
     }
 }

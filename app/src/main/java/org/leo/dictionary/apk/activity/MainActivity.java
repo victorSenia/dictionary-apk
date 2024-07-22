@@ -16,8 +16,6 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.lifecycle.ViewModelProvider;
-import org.jetbrains.annotations.NotNull;
 import org.leo.dictionary.PlayService;
 import org.leo.dictionary.PlayServiceImpl;
 import org.leo.dictionary.apk.ApkAppComponent;
@@ -30,11 +28,13 @@ import org.leo.dictionary.apk.word.provider.DBWordProvider;
 import org.leo.dictionary.entity.Topic;
 import org.leo.dictionary.entity.Word;
 import org.leo.dictionary.entity.WordCriteria;
-import org.leo.dictionary.word.provider.WordExporter;
 import org.leo.dictionary.word.provider.WordImporter;
 import org.leo.dictionary.word.provider.WordProvider;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
@@ -69,13 +69,6 @@ public class MainActivity extends AppCompatActivity {
             result -> {
                 if (result.getResultCode() == Activity.RESULT_OK && result.getData() != null) {
                     runAtBackground(() -> readWordsFromFile(result.getData().getData()));
-                }
-            });
-    private final ActivityResultLauncher<Intent> exportWordsActivityResultLauncher = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult(),
-            result -> {
-                if (result.getResultCode() == Activity.RESULT_OK && result.getData() != null) {
-                    runAtBackground(() -> writeWordsToFile(result.getData().getData()));
                 }
             });
     private final ActivityResultLauncher<Intent> editWordActivityResultLauncher = registerForActivityResult(
@@ -120,7 +113,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @NotNull
     private AlertDialog.Builder getConfirmDbCleanupOnImport(String language, DBWordProvider wordProvider, List<Word> words) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Language already present");
@@ -148,24 +140,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void writeWordsToFile(Uri uri) {
-        try (OutputStream outputStream = getContentResolver().openOutputStream(uri)) {
-            FilterWordsActivity.LanguageViewModel model = new ViewModelProvider(this).get(FilterWordsActivity.LanguageViewModel.class);
-            model.getSelected().getValue();
-            DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
-            new WordExporter() {
-                @Override
-                protected BufferedWriter getBufferedWriter() {
-                    return new BufferedWriter(new OutputStreamWriter(outputStream));
-                }
-            }.writeWords(wordProvider.getWordsForLanguage(model.getSelected().getValue()));
-
-        } catch (IOException e) {
-            logUnhandledException(e);
-            showMessage("Error happened. Please check logs");
-        }
-    }
-
     private void addUpdateOrDeleteWordInDbAndUi(Word updatedWord, Integer positionId) {
         DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
         wordProvider.updateWordFully(updatedWord);
@@ -176,16 +150,16 @@ public class MainActivity extends AppCompatActivity {
             if (positionId != null) {
                 if (shouldBeDisplayed(updatedWord)) {
                     playService.safeUpdate(positionId, updatedWord);
-                    wordsFragment.wordUpdated(positionId);
+                    runOnUiThread(() -> wordsFragment.wordUpdated(positionId));
                 } else {
                     playService.safeDelete(positionId);
-                    wordsFragment.wordDeleted(positionId);
+                    runOnUiThread(() -> wordsFragment.wordDeleted(positionId));
                 }
             } else {
                 if (shouldBeDisplayed(updatedWord)) {
                     playService.safeAdd(updatedWord);
-                    positionId = playService.getUnknownWords().size() - 1;
-                    wordsFragment.wordAdded(positionId, updatedWord);
+                    int newPositionId = playService.getUnknownWords().size() - 1;
+                    runOnUiThread(() -> wordsFragment.wordAdded(newPositionId, updatedWord));
                 }
             }
         }
@@ -219,16 +193,16 @@ public class MainActivity extends AppCompatActivity {
     protected void setOrientation(boolean change) {
         SharedPreferences preferences = ((ApplicationWithDI) getApplicationContext()).appComponent.lastState();
         boolean isPortrait = preferences.getBoolean(ApkModule.LAST_STATE_IS_PORTRAIT, true);
-        if (!change ^ !isPortrait) {
+        if (change ^ !isPortrait) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-            getWindow().getDecorView().getWindowInsetsController().
-                    hide(android.view.WindowInsets.Type.statusBars() | android.view.WindowInsets.Type.navigationBars()
-                    );
+//            getWindow().getDecorView().getWindowInsetsController().
+//                    hide(android.view.WindowInsets.Type.statusBars() | android.view.WindowInsets.Type.navigationBars()
+//                    );
         } else {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
-            getWindow().getDecorView().getWindowInsetsController().
-                    show(android.view.WindowInsets.Type.statusBars() | android.view.WindowInsets.Type.navigationBars()
-                    );
+//            getWindow().getDecorView().getWindowInsetsController().
+//                    show(android.view.WindowInsets.Type.statusBars() | android.view.WindowInsets.Type.navigationBars()
+//                    );
         }
         if (change) {
             preferences.edit().putBoolean(ApkModule.LAST_STATE_IS_PORTRAIT, !isPortrait).apply();
@@ -290,8 +264,8 @@ public class MainActivity extends AppCompatActivity {
             editWordActivityResultLauncher.launch(intent);
             return true;
         } else if (id == R.id.action_export_words_to_file) {
-            AlertDialog.Builder builder = getLanguageChooserBuilder(this, R.string.languages_to_export, this::exportWordsToFile);
-            builder.show();
+            Intent i = new Intent(this, ExportWordsActivity.class);
+            startActivity(i);
             return true;
         } else if (id == R.id.action_import_words_from_file) {
             Intent chooseFile = new Intent(Intent.ACTION_GET_CONTENT);
@@ -300,17 +274,6 @@ public class MainActivity extends AppCompatActivity {
             importWordsActivityResultLauncher.launch(chooseFile);
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    private void exportWordsToFile(String language) {
-        FilterWordsActivity.LanguageViewModel model = new ViewModelProvider(this).get(FilterWordsActivity.LanguageViewModel.class);
-        model.select(language);
-        Intent createFile = new Intent(Intent.ACTION_CREATE_DOCUMENT);
-        createFile.setType("text/plain");
-        createFile.addCategory(Intent.CATEGORY_OPENABLE);
-        createFile = Intent.createChooser(createFile, "Choose a file");
-        createFile.putExtra(Intent.EXTRA_TITLE, "fileName_de.txt");
-        exportWordsActivityResultLauncher.launch(createFile);
     }
 
     private void prepareForDbUsage() {

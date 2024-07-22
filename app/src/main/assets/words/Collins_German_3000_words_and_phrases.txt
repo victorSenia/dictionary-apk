@@ -1,4 +1,4 @@
-org.leo.dictionary.config.entity.ParseWords:de:en;uk:die+;das+;der+:%5C%7C:%3B:%3B:%5Ct:
+org.leo.dictionary.config.entity.ParseWords:de:en;uk:die+;das+;der+:%5C%7C:%3B:%3B:%5Ct::Collins+German+3000
 
 	das wesentliche | the essentials
 das wesentliche | the essentials | найнеобхідніше

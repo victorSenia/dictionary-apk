@@ -5,13 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import org.leo.dictionary.PlayService;
 import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApplicationWithDI;
-import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.databinding.FragmentStringBinding;
 import org.leo.dictionary.apk.databinding.FragmentWordSelectedBinding;
 import org.leo.dictionary.apk.word.provider.DBWordProvider;
@@ -80,10 +80,6 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
     private void playFromSelected() {
         PlayService playService = ((ApplicationWithDI) fragment.requireActivity().getApplicationContext()).appComponent.playService();
         playService.playFrom(positionId);
-        PlayerFragment player = (PlayerFragment) fragment.requireActivity().getSupportFragmentManager().findFragmentById(R.id.player_fragment);
-        if (player != null) {
-            player.updateButtonUi();
-        }
     }
 
     private void editWord() {
@@ -105,6 +101,10 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
         );
     }
 
+    private void noDBSourceError() {
+        Toast.makeText(fragment.requireActivity().getBaseContext(), "Can only be used with database", Toast.LENGTH_SHORT).show();
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView mContentView;
         public Word mItem;
@@ -124,11 +124,15 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
             binding.actionDelete.setOnClickListener(view -> {
                 if (isDBSource()) {
                     getDeleteConfirmationBuilder(view).show();
+                } else {
+                    noDBSourceError();
                 }
             });
             binding.actionEdit.setOnClickListener(view -> {
                 if (isDBSource()) {
                     editWord();
+                } else {
+                    noDBSourceError();
                 }
             });
         }
