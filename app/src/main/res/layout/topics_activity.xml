@@ -33,30 +33,36 @@
                     android:text="@string/language_from"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/language_from_label"
-                    style="@style/Widget.AppCompat.TextView.SpinnerItem"/>
+                    style="@style/Widget.AppCompat.TextView.SpinnerItem"
+                    android:visibility="gone"/>
             <androidx.fragment.app.FragmentContainerView
                     android:id="@+id/language_from"
                     android:name="org.leo.dictionary.apk.activity.TopicsActivity$LanguageFromFragment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:layout="@layout/fragment_strings"/>
+                    tools:layout="@layout/fragment_strings"
+                    android:visibility="gone"/>
             <Space
                     android:layout_width="match_parent"
-                    android:layout_height="15dp"/>
+                    android:layout_height="15dp"
+                    android:visibility="gone"/>
             <TextView
                     android:text="@string/languages_to"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" android:id="@+id/languages_to_label"
-                    style="@style/Widget.AppCompat.TextView.SpinnerItem"/>
+                    style="@style/Widget.AppCompat.TextView.SpinnerItem"
+                    android:visibility="gone"/>
             <androidx.fragment.app.FragmentContainerView
                     android:id="@+id/languages_to"
                     android:name="org.leo.dictionary.apk.activity.TopicsActivity$LanguageToFragment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:layout="@layout/fragment_strings"/>
+                    tools:layout="@layout/fragment_strings"
+                    android:visibility="gone"/>
             <Space
                     android:layout_width="match_parent"
-                    android:layout_height="15dp"/>
+                    android:layout_height="15dp"
+                    android:visibility="gone"/>
             <TextView
                     android:text="@string/languages_to_speak"
                     android:layout_width="match_parent"
@@ -69,9 +75,6 @@
                     android:layout_height="wrap_content"
                     tools:layout="@layout/fragment_strings"
             />
-            <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="15dp"/>
         </LinearLayout>
     </ScrollView>
     <Button

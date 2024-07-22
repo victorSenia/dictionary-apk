@@ -24,7 +24,8 @@ import org.leo.dictionary.word.provider.WordProvider;
 import javax.inject.Named;
 import javax.inject.Singleton;
 import java.io.FileNotFoundException;
-import java.util.Collections;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,11 +36,11 @@ public class ApkModule {
     public static final String FILE = "file";
     public static final String LAST_STATE_SOURCE = "org.leo.dictionary.apk.config.entity.LastState.source";
     public static final String LAST_STATE_URI = "org.leo.dictionary.apk.config.entity.LastState.uri";
-    public static final String LAST_STATE_TOPIC = "org.leo.dictionary.apk.config.entity.LastState.topic";
     public static final String LAST_STATE_VOICE = "org.leo.dictionary.apk.config.entity.LastState.voice.";
     public static final String LAST_STATE = "_last_state";
     public static final String LAST_STATE_IS_PORTRAIT = "org.leo.dictionary.apk.config.entity.LastState.isPortrait";
     public static final String LAST_STATE_IS_NIGHT_MODE = "org.leo.dictionary.apk.config.entity.LastState.isNightMode";
+    public static final String LANGUAGES_SEPARATOR = "_";
     private final Application application;
 
     public ApkModule(Application application) {
@@ -51,8 +52,25 @@ public class ApkModule {
     public static WordProvider provideAssetsWordProvider(ParseWords configuration, Context context) {
         AssetsWordProvider wordProvider = new AssetsWordProvider();
         wordProvider.setConfiguration(configuration);
+        updateLanguagesInConfiguration(configuration);
         wordProvider.setContext(context);
         return wordProvider;
+    }
+
+    protected static void updateLanguagesInConfiguration(ParseWords configuration) {
+        try {
+            String path = configuration.getPath();
+            int start = path.lastIndexOf("-") + 1;
+            int end = path.lastIndexOf(".");
+            String languagesString = path.substring(start, end);
+            String[] languages = languagesString.split(LANGUAGES_SEPARATOR, 2);
+            String languageFrom = languages[0];
+            languages = languages[1].split(LANGUAGES_SEPARATOR);
+            configuration.setLanguageFrom(languageFrom);
+            configuration.setLanguagesTo(new ArrayList<>(Arrays.asList(languages)));
+        } catch (Exception e) {
+            //ignore
+        }
     }
 
     @Provides
@@ -86,7 +104,6 @@ public class ApkModule {
             try {
                 return getInputStreamWordProvider(context, Uri.parse(uri));
             } catch (Exception e) {
-                last_state.edit().remove(LAST_STATE_TOPIC).apply();
                 return provideAssetsWordProvider(provideParseWordsConfiguration(context), context);
             }
         }
@@ -136,12 +153,7 @@ public class ApkModule {
         playService.setWordProvider(createWordProvider(context, last_state));
         playService.setUiUpdater(uiUpdater);
 
-        WordCriteria wordCriteria = new WordCriteria();
-        String topic = last_state.getString(LAST_STATE_TOPIC, null);
-        if (topic != null && !topic.isEmpty()) {
-            wordCriteria.setTopicsOr(Collections.singleton(topic));
-        }
-        playService.findWords(wordCriteria);
+        playService.findWords(new WordCriteria());
 
         return playService;
     }
