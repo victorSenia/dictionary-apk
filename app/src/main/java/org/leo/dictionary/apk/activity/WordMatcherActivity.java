@@ -120,21 +120,18 @@ public class WordMatcherActivity extends AppCompatActivity {
     }
 
     private void playAudio(AudioService audioService, Element element) {
-        try {
-            if (element.type == WORDS_ARRAY) {
-                Word word = (Word) element.value;
-                if (audioService instanceof AndroidAudioService) {
-                    ((AndroidAudioService) audioService).playAsynchronous(word.getLanguage(), word.getFullWord());
-                } else {
-                    audioService.play(word.getLanguage(), word.getFullWord());
-                }
+        if (element.type == WORDS_ARRAY) {
+            Word word = (Word) element.value;
+            if (audioService instanceof AndroidAudioService) {
+                ((AndroidAudioService) audioService).playAsynchronous(word.getLanguage(), word.getFullWord());
             } else {
+                audioService.play(word.getLanguage(), word.getFullWord());
+            }
+        } else {
 //                Translation translation = (Translation) element.value;
 //                audioService.play(translation.getLanguage(), translation.getTranslation());
-            }
-        } catch (InterruptedException e) {
-            //ignore
         }
+
     }
 
     private void fillWordsToMatch(List<Word> unknownWords, List<Word> wordsToMatch, List<Translation> translationsToMatch, Element[][] words) {

@@ -30,8 +30,6 @@ import java.util.List;
 
 public class FilterWordsActivity extends AppCompatActivity {
 
-    public static final String WORDS_CRITERIA = "wordsCriteria";
-
     private static List<String> getSelected(StringsFragment strings) {
         if (strings != null && strings.recyclerView.getAdapter() instanceof MultiSelectionStringRecyclerViewAdapter) {
             MultiSelectionStringRecyclerViewAdapter adapter = (MultiSelectionStringRecyclerViewAdapter) strings.recyclerView.getAdapter();
@@ -64,7 +62,8 @@ public class FilterWordsActivity extends AppCompatActivity {
         findViewById(R.id.find_words).setOnClickListener(v -> {
             Intent intent = new Intent();
             WordCriteria criteria = createCriteria();
-            intent.putExtra(WORDS_CRITERIA, criteria);
+            WordCriteriaProvider criteriaProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.wordCriteriaProvider();
+            criteriaProvider.setWordCriteria(criteria);
             setResult(Activity.RESULT_OK, intent);
             finish();
         });

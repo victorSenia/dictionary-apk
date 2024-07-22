@@ -35,6 +35,7 @@
     <string name="languages_to">Languages to</string>
     <string name="languages_to_speak">Languages to speak</string>
     <string name="languages_to_delete">Languages to delete</string>
+    <string name="languages_to_export">Languages to export</string>
     <string name="articles">Articles</string>
     <string name="additional_information_delimiter">Additional information delimiter</string>
     <string name="delimiter">Delimiter</string>
@@ -51,7 +52,7 @@
     <string name="find_voices">Find voices</string>
     <string name="find_words">Filter words</string>
     <string name="set_mode">Change theme</string>
-    <string name="import_words">Import words</string>
+    <string name="import_words">Import words into database</string>
     <string name="use_db">Use database</string>
     <string name="action_edit">Edit</string>
     <string name="action_delete">Delete</string>
@@ -68,4 +69,6 @@
     <string name="word">word</string>
     <string name="additional_information">additional information</string>
     <string name="create">Create</string>
+    <string name="export_words_to_file">Export words to file</string>
+    <string name="import_words_from_file">Import words from file</string>
 </resources>

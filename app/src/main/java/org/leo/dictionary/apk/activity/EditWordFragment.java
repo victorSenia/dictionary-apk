@@ -40,12 +40,8 @@ public class EditWordFragment extends Fragment {
     }
 
     private void playWord(MutableLiveData<Word> uiState) {
-        try {
-            AudioService audioService = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.audioService();
-            audioService.play(uiState.getValue().getLanguage(), uiState.getValue().getFullWord());
-        } catch (InterruptedException e) {
-            //ignore
-        }
+        AudioService audioService = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.audioService();
+        audioService.play(uiState.getValue().getLanguage(), uiState.getValue().getFullWord());
     }
 
     @Override

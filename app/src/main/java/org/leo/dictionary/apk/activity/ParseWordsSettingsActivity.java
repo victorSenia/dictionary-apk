@@ -92,6 +92,7 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
                     setResult(Activity.RESULT_OK, intent);
                     finish();
                 } catch (FileNotFoundException e) {
+                    MainActivity.logUnhandledException(e);
                     throw new RuntimeException(e);
                 }
             }
@@ -113,6 +114,7 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
                 }
             }
         } catch (Exception e) {
+            MainActivity.logUnhandledException(e);
             return "";
         }
         return "";

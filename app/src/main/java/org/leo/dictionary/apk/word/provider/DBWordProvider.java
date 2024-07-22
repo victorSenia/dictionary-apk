@@ -119,6 +119,10 @@ public class DBWordProvider implements WordProvider {
         return dbManager.findWord(id);
     }
 
+    public List<Word> getWordsForLanguage(String language) {
+        return dbManager.getWordsForLanguage(language);
+    }
+
     public void deleteWords(String language) {
         long start = System.currentTimeMillis();
         int deleted = dbManager.deleteForLanguage(language);

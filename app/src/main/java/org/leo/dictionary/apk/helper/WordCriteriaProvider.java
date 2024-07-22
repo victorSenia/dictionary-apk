@@ -2,6 +2,7 @@ package org.leo.dictionary.apk.helper;
 
 import android.content.SharedPreferences;
 import org.leo.dictionary.apk.ApkModule;
+import org.leo.dictionary.apk.activity.MainActivity;
 import org.leo.dictionary.entity.WordCriteria;
 
 import java.io.*;
@@ -16,8 +17,9 @@ public class WordCriteriaProvider {
             out.writeObject(obj);
             out.flush();
             return Base64.getEncoder().encodeToString(bos.toByteArray());
-        } catch (Exception ex) {
-            throw new RuntimeException(ex);
+        } catch (Exception e) {
+            MainActivity.logUnhandledException(e);
+            return "";
         }
     }
 
@@ -51,6 +53,7 @@ public class WordCriteriaProvider {
             try {
                 return (WordCriteria) deserialize(lastState.getString(ApkModule.LAST_STATE_WORD_CRITERIA, ""));
             } catch (Exception e) {
+                MainActivity.logUnhandledException(e);
                 return null;
             }
         }

@@ -29,6 +29,7 @@ public class AssetsActivity extends AppCompatActivity {
             try {
                 return Arrays.asList(getActivity().getAssets().list(AssetsWordProvider.ASSETS_WORDS));
             } catch (IOException e) {
+                MainActivity.logUnhandledException(e);
                 return Collections.emptyList();
             }
         }

@@ -36,12 +36,8 @@ public class EditTranslationFragment extends Fragment {
     }
 
     private void playTranslation(MutableLiveData<Translation> uiState) {
-        try {
-            AudioService audioService = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.audioService();
-            audioService.play(uiState.getValue().getLanguage(), uiState.getValue().getTranslation());
-        } catch (InterruptedException e) {
-            //ignore
-        }
+        AudioService audioService = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.audioService();
+        audioService.play(uiState.getValue().getLanguage(), uiState.getValue().getTranslation());
     }
 
     public boolean isValid() {

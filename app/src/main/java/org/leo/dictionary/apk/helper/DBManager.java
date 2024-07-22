@@ -68,17 +68,25 @@ public class DBManager {
         }
     }
 
-    private static void mapTopicsFromCursor(String language, Cursor res, List<Topic> topics) {
+    private static void mapTopicsFromCursor(String language, Cursor res, List<Topic> topics, Map<Long, Topic> loadedTopics) {
         int idIndex = res.getColumnIndexOrThrow(DatabaseHelper.COLUMN_ID);
         int nameIndex = res.getColumnIndexOrThrow(DatabaseHelper.TOPIC_COLUMN_NAME);
         int levelIndex = res.getColumnIndexOrThrow(DatabaseHelper.TOPIC_COLUMN_LEVEL);
+        Topic topic;
         while (!res.isAfterLast()) {
-            Topic topic = new Topic();
-            topic.setId(res.getLong(idIndex));
-            topic.setName(res.getString(nameIndex));
-            topic.setLevel(res.getInt(levelIndex));
-            topic.setLanguage(language);
-            topics.add(topic);
+            long id = res.getLong(idIndex);
+            topic = loadedTopics.get(id);
+            if (topic != null) {
+                topics.add(topic);
+            } else {
+                topic = new Topic();
+                topic.setId(id);
+                topic.setName(res.getString(nameIndex));
+                topic.setLevel(res.getInt(levelIndex));
+                topic.setLanguage(language);
+                topics.add(topic);
+                loadedTopics.put(topic.getId(), topic);
+            }
             res.moveToNext();
         }
     }
@@ -222,7 +230,7 @@ public class DBManager {
                 new String[]{Long.toString(wordId), Long.toString(topicId)});
     }
 
-    protected Cursor fetchWords(WordCriteria criteria) {
+    protected Cursor fetchWordsCursor(WordCriteria criteria) {
         String sql = "SELECT DISTINCT w.* FROM " + DatabaseHelper.TABLE_NAME_WORD + " w";
         List<String> selectionArgs = new ArrayList<>();
         String where = "";
@@ -240,7 +248,7 @@ public class DBManager {
         return cursor;
     }
 
-    protected Cursor fetchTranslations(Set<String> languages, List<String> wordIds) {
+    protected Cursor fetchTranslationsCursor(Set<String> languages, List<String> wordIds) {
         String selection = DatabaseHelper.TRANSLATION_COLUMN_WORD_ID + " IN (" + createPlaceholders(wordIds.size()) + ")";
         List<String> selectionArgs = new ArrayList<>(wordIds);
         if (languages != null && !languages.isEmpty()) {
@@ -300,13 +308,13 @@ public class DBManager {
         try (Cursor res = fetchTopics(language, level, false, null)) {
             List<Topic> topics = new ArrayList<>();
             if (!res.isAfterLast()) {
-                mapTopicsFromCursor(language, res, topics);
+                mapTopicsFromCursor(language, res, topics, new HashMap<>());
             }
             return topics;
         }
     }
 
-    public List<Topic> getTopicsForWord(String wordId, String language, String level) {
+    public List<Topic> getTopicsForWord(String wordId, String language, String level, Map<Long, Topic> loadedTopics) {
         try (Cursor res = database.rawQuery("SELECT t.* FROM " + DatabaseHelper.TABLE_NAME_TOPIC + " t " +
                         " INNER JOIN " + DatabaseHelper.TABLE_NAME_WORD_TOPIC + " tw " +
                         " ON t." + DatabaseHelper.COLUMN_ID + " = tw." + DatabaseHelper.COLUMN_ID +
@@ -317,7 +325,7 @@ public class DBManager {
             res.moveToFirst();
             List<Topic> topics = new ArrayList<>();
             if (!res.isAfterLast()) {
-                mapTopicsFromCursor(language, res, topics);
+                mapTopicsFromCursor(language, res, topics, loadedTopics);
             }
             return topics;
         }
@@ -360,8 +368,19 @@ public class DBManager {
     }
 
     public List<Word> getWords(WordCriteria criteria) {
+        return getWords(() -> fetchWordsCursor(criteria), criteria.getLanguageTo(), false);
+    }
+
+    public List<Word> getWordsForLanguage(String language) {
+        WordCriteria criteria = new WordCriteria();
+        criteria.setLanguageFrom(language);
+        return getWords(() -> fetchWordsCursor(criteria), null, true);
+    }
+
+
+    private List<Word> getWords(CursorProvider cursorProvider, Set<String> languages, boolean includeTopics) {
         List<Word> words = new ArrayList<>();
-        try (Cursor res = fetchWords(criteria)) {
+        try (Cursor res = cursorProvider.getCursor()) {
             if (!res.isAfterLast()) {
                 mapWordsFromCursor(res, words);
             }
@@ -369,13 +388,24 @@ public class DBManager {
         Map<Long, Word> wordsMap = words.stream().collect(Collectors.toMap(Word::getId, Function.identity()));
         List<String> wordIds = words.stream().map(w -> Long.toString(w.getId())).collect(Collectors.toList());
         for (int fromIndex = 0; fromIndex < words.size(); fromIndex += PAGE_SIZE) {
-            try (Cursor res = fetchTranslations(criteria.getLanguageTo(), wordIds.subList(fromIndex, Math.min(wordIds.size(), fromIndex + PAGE_SIZE)))) {
+            try (Cursor res = fetchTranslationsCursor(languages, wordIds.subList(fromIndex, Math.min(wordIds.size(), fromIndex + PAGE_SIZE)))) {
                 if (!res.isAfterLast()) {
                     mapTranslationsFromCursor(res, wordsMap);
                 }
             }
         }
+        words = words.stream().filter(this::hasTranslations).collect(Collectors.toList());
+        if (includeTopics && !words.isEmpty()) {
+            Map<Long, Topic> topics = new HashMap<>();
+            for (Word word : words) {
+                word.setTopics(getTopicsForWord(String.valueOf(word.getId()), word.getLanguage(), "1", topics));//TODO
+            }
+        }
         return words;
+    }
+
+    private boolean hasTranslations(Word w) {
+        return w.getTranslations() != null && !w.getTranslations().isEmpty();
     }
 
     protected String createPlaceholders(int length) {
@@ -408,8 +438,8 @@ public class DBManager {
                 new String[]{DatabaseHelper.COLUMN_ID}, DatabaseHelper.COLUMN_LANGUAGE + "= ?",
                 new String[]{language},
                 null, null, null, null)) {
-            List<String> result = new ArrayList<>();
             res.moveToFirst();
+            List<String> result = new ArrayList<>();
             if (!res.isAfterLast()) {
                 int columnIndex = res.getColumnIndexOrThrow(DatabaseHelper.COLUMN_ID);
                 while (!res.isAfterLast()) {
@@ -422,33 +452,24 @@ public class DBManager {
     }
 
     public Word findWord(long id) {
-        List<Word> words = new ArrayList<>();
-        try (Cursor res = database.query(true, DatabaseHelper.TABLE_NAME_WORD,
+        List<Word> words = getWords(() -> getCursorForWordById(id), null, true);
+        if (!words.isEmpty()) {
+            return words.get(0);
+        }
+        return null;
+    }
+
+    private Cursor getCursorForWordById(long id) {
+        Cursor cursor = database.query(true, DatabaseHelper.TABLE_NAME_WORD,
                 new String[]{DatabaseHelper.COLUMN_ID, DatabaseHelper.COLUMN_LANGUAGE,
                         DatabaseHelper.WORD_COLUMN_WORD, DatabaseHelper.WORD_COLUMN_ADDITIONAL_INFORMATION,
                         DatabaseHelper.WORD_COLUMN_ARTICLE},
                 DatabaseHelper.COLUMN_ID + "= ?",
                 new String[]{Long.toString(id)},
-                null, null, null, null)) {
-            res.moveToFirst();
-            if (!res.isAfterLast()) {
-                mapWordsFromCursor(res, words);
-            }
-        }
-        Map<Long, Word> wordsMap = words.stream().collect(Collectors.toMap(Word::getId, Function.identity()));
-        for (int fromIndex = 0; fromIndex < words.size(); fromIndex += PAGE_SIZE) {
-            try (Cursor res = fetchTranslations(null, Collections.singletonList(Long.toString(id)))) {
-                if (!res.isAfterLast()) {
-                    mapTranslationsFromCursor(res, wordsMap);
-                }
-            }
-        }
-        if (!words.isEmpty()) {
-            Word word = words.get(0);
-            word.setTopics(getTopicsForWord(String.valueOf(word.getId()), word.getLanguage(), "1"));//TODO
-            return word;
-        }
-        return null;
+                null, null, null, null);
+        cursor.moveToFirst();
+        return cursor;
+
     }
 
     public int updateWord(Word word) {
@@ -471,5 +492,9 @@ public class DBManager {
     public void deleteTranslation(long id) {
         database.delete(DatabaseHelper.TABLE_NAME_TRANSLATION, DatabaseHelper.COLUMN_ID + " = ?", new String[]{Long.toString(id)});
 
+    }
+
+    public interface CursorProvider {
+        Cursor getCursor();
     }
 }

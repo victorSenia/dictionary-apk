@@ -7,7 +7,9 @@ import android.net.Uri;
 import androidx.preference.PreferenceManager;
 import dagger.Module;
 import dagger.Provides;
+import org.jetbrains.annotations.NotNull;
 import org.leo.dictionary.*;
+import org.leo.dictionary.apk.activity.MainActivity;
 import org.leo.dictionary.apk.audio.AndroidAudioService;
 import org.leo.dictionary.apk.config.AssetsConfigurationReader;
 import org.leo.dictionary.apk.config.PreferenceConfigurationReader;
@@ -70,8 +72,12 @@ public class ApkModule {
     }
 
     public static boolean isDBSource(@Named("lastState") SharedPreferences lastState) {
-        String source = lastState.getString(LAST_STATE_SOURCE, ASSET);
+        String source = getLastStateSource(lastState);
         return DB.equals(source);
+    }
+
+    public static String getLastStateSource(SharedPreferences lastState) {
+        return lastState.getString(LAST_STATE_SOURCE, ASSET);
     }
 
     protected static void updateLanguagesInConfiguration(ParseWords configuration) {
@@ -86,6 +92,7 @@ public class ApkModule {
             configuration.setLanguageFrom(languageFrom);
             configuration.setLanguagesTo(new ArrayList<>(Arrays.asList(languages)));
         } catch (Exception e) {
+            MainActivity.logUnhandledException(e);
             //ignore
         }
     }
@@ -111,7 +118,7 @@ public class ApkModule {
     @Provides
     @Singleton
     public static WordProvider createWordProvider(Context context, @Named("lastState") SharedPreferences lastState) {
-        String source = lastState.getString(LAST_STATE_SOURCE, ASSET);
+        String source = getLastStateSource(lastState);
         String uri = lastState.getString(LAST_STATE_URI, null);
         try {
             if (DB.equals(source)) {
@@ -126,6 +133,7 @@ public class ApkModule {
                 return getInputStreamWordProvider(context, Uri.parse(uri));
             }
         } catch (Exception e) {
+            MainActivity.logUnhandledException(e);
             return provideAssetsWordProvider(provideParseWordsConfiguration(context), context);
         }
     }
