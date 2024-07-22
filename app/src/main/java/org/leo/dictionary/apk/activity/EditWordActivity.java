@@ -43,7 +43,7 @@ public class EditWordActivity extends AppCompatActivity {
         long id = extrasContainsKey(WORD_ID_TO_EDIT) ? getIntent().getExtras().getLong(WORD_ID_TO_EDIT) : DEFAULT_VALUE_OF_WORD_ID;
         binding = ActivityEditWordBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        languageViewModel.getSelected().observe(this, this::updateTopicListData);
+        languageViewModel.getData().observe(this, this::updateTopicListData);
         if (id != DEFAULT_VALUE_OF_WORD_ID) {
             DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
             model.setWord(wordProvider.findWord(id));

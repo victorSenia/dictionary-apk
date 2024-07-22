@@ -49,10 +49,9 @@
     <string name="audio_delayed">Audio delayed</string>
     <string name="select_voices">Select voices</string>
     <string name="default_voice">Default voice</string>
-    <string name="find_voices">Find voices</string>
     <string name="find_words">Filter words</string>
     <string name="set_mode">Change theme</string>
-    <string name="import_words">Import words into database</string>
+    <string name="import_words">Import current words into database</string>
     <string name="use_db">Use database</string>
     <string name="action_edit">Edit</string>
     <string name="action_delete">Delete</string>
@@ -74,4 +73,5 @@
     <string name="root_topic">Root topic</string>
     <string name="topic_name">Topic name</string>
     <string name="hint">Hint</string>
+    <string name="database">Database</string>
 </resources>

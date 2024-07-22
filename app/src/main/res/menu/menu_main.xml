@@ -26,18 +26,8 @@
           android:layout_width="wrap_content"
           android:orderInCategory="200"
           android:layout_height="wrap_content"/>
-    <item android:id="@+id/action_import_words"
-          android:title="@string/import_words"
-          android:layout_width="wrap_content"
-          android:orderInCategory="200"
-          android:layout_height="wrap_content"/>
     <item android:id="@+id/action_use_db"
           android:title="@string/use_db"
-          android:layout_width="wrap_content"
-          android:orderInCategory="200"
-          android:layout_height="wrap_content"/>
-    <item android:id="@+id/action_clean_db"
-          android:title="@string/clean_db"
           android:layout_width="wrap_content"
           android:orderInCategory="200"
           android:layout_height="wrap_content"/>
@@ -51,14 +41,32 @@
           android:layout_width="wrap_content"
           android:orderInCategory="200"
           android:layout_height="wrap_content"/>
-    <item android:id="@+id/action_export_words_to_file"
-          android:title="@string/export_words_to_file"
+    <item android:id="@+id/action_db"
+          android:title="@string/database"
           android:layout_width="wrap_content"
           android:orderInCategory="200"
-          android:layout_height="wrap_content"/>
-    <item android:id="@+id/action_import_words_from_file"
-          android:title="@string/import_words_from_file"
-          android:layout_width="wrap_content"
-          android:orderInCategory="200"
-          android:layout_height="wrap_content"/>
+          android:layout_height="wrap_content">
+        <menu>
+            <item android:id="@+id/action_import_words"
+                  android:title="@string/import_words"
+                  android:layout_width="wrap_content"
+                  android:orderInCategory="200"
+                  android:layout_height="wrap_content"/>
+            <item android:id="@+id/action_clean_db"
+                  android:title="@string/clean_db"
+                  android:layout_width="wrap_content"
+                  android:orderInCategory="200"
+                  android:layout_height="wrap_content"/>
+            <item android:id="@+id/action_export_words_to_file"
+                  android:title="@string/export_words_to_file"
+                  android:layout_width="wrap_content"
+                  android:orderInCategory="200"
+                  android:layout_height="wrap_content"/>
+            <item android:id="@+id/action_import_words_from_file"
+                  android:title="@string/import_words_from_file"
+                  android:layout_width="wrap_content"
+                  android:orderInCategory="200"
+                  android:layout_height="wrap_content"/>
+        </menu>
+    </item>
 </menu>

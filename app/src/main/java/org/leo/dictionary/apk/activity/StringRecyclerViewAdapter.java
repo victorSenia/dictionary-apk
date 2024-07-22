@@ -10,6 +10,7 @@ import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.databinding.FragmentStringBinding;
 
 import java.util.List;
+import java.util.function.Consumer;
 
 public class StringRecyclerViewAdapter extends RecyclerView.Adapter<StringRecyclerViewAdapter.StringViewHolder> {
     protected final List<String> mValues;
@@ -80,12 +81,20 @@ public class StringRecyclerViewAdapter extends RecyclerView.Adapter<StringRecycl
 
     public static class RememberSelectionOnClickListener implements StringRecyclerViewAdapter.OnClickListener {
         protected int selected = RecyclerView.NO_POSITION;
+        private Consumer<StringRecyclerViewAdapter.StringViewHolder> additionalOnClickHandling;
+
+        public RememberSelectionOnClickListener(Consumer<StringViewHolder> additionalOnClickHandling) {
+            this.additionalOnClickHandling = additionalOnClickHandling;
+        }
 
 
         @Override
         public void onClick(StringRecyclerViewAdapter.StringViewHolder viewHolder) {
             selected = viewHolder.getAbsoluteAdapterPosition();
             viewHolder.getBindingAdapter().notifyItemChanged(selected);
+            if (additionalOnClickHandling != null) {
+                additionalOnClickHandling.accept(viewHolder);
+            }
         }
 
         public void clearSelection() {

@@ -26,7 +26,7 @@ public class EditWordFragment extends Fragment {
         binding.textLanguage.addTextChangedListener(new EditWordActivity.AbstractTextWatcher() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                languageViewModel.select(s.toString());
+                languageViewModel.setSelected(s.toString());
             }
         });
         EditWordViewModel wordViewModel = new ViewModelProvider(requireActivity()).get(EditWordViewModel.class);

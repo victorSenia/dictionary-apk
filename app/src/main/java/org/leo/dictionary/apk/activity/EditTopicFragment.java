@@ -86,8 +86,8 @@ public class EditTopicFragment extends Fragment {
 
     public static class EditTopicDialogFragment extends DialogFragment {
         private final Runnable onSafeConsumer;
-        private List<Topic> topics;
         private final Topic topicToEdit;
+        private List<Topic> topics;
         private List<Topic> filteredTopics = new ArrayList<>();
         private DialogEditTopicBinding binding;
 

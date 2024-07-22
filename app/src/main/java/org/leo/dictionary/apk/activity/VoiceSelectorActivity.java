@@ -2,10 +2,9 @@ package org.leo.dictionary.apk.activity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import org.leo.dictionary.ExternalVoiceService;
 import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApplicationWithDI;
@@ -16,24 +15,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class VoiceSelectorActivity extends AppCompatActivity {
-
-    private static String getLanguage(View view) {
-        return ((EditText) view.findViewById(R.id.language)).getText().toString().trim();
-    }
+    private ActivityVoiceSelectorBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityVoiceSelectorBinding binding = ActivityVoiceSelectorBinding.inflate(getLayoutInflater());
+        FilterWordsActivity.LanguageViewModel languageViewModel = new ViewModelProvider(this).get(FilterWordsActivity.LanguageViewModel.class);
+        languageViewModel.setSelected(getString(R.string.default_language));
+        binding = ActivityVoiceSelectorBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        binding.findVoices.setOnClickListener(v -> updateUiWithWords(getLanguage(binding.getRoot())));
+        languageViewModel.getData().observe(this, this::updateUiWithWords);
+        binding.setViewmodel(languageViewModel);
+        binding.setLifecycleOwner(this);
         binding.defaultVoice.setOnClickListener(v -> {
             clearSelection();
-            String language = getLanguage(binding.getRoot());
+            String language = languageViewModel.getSelected();
             ((ApplicationWithDI) getApplicationContext()).appComponent.lastState().edit()
                     .remove(ApkModule.LAST_STATE_VOICE + language).apply();
-            Toast.makeText(getBaseContext(), "default voice used for " + language, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getBaseContext(), "Default voice used for " + language, Toast.LENGTH_SHORT).show();
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        binding = null;
     }
 
     private void updateUiWithWords(String language) {
@@ -41,13 +47,23 @@ public class VoiceSelectorActivity extends AppCompatActivity {
             ExternalVoiceService voiceService = ((ApplicationWithDI) getApplicationContext()).appComponent.externalVoiceService();
             voiceService.getVoicesNames(language);
             updateUiWithNewData(language, voiceService.getVoicesNames(language));
+            binding.defaultVoice.setVisibility(View.VISIBLE);
+        } else {
+            StringRecyclerViewAdapter adapter = getStringRecyclerViewAdapter();
+            clearAdapter(adapter);
+            adapter.notifyDataSetChanged();
+            binding.defaultVoice.setVisibility(View.GONE);
         }
+    }
+
+    private static void clearAdapter(StringRecyclerViewAdapter adapter) {
+        adapter.clearSelection();
+        adapter.mValues.clear();
     }
 
     private void updateUiWithNewData(String language, List<String> voices) {
         StringRecyclerViewAdapter adapter = getStringRecyclerViewAdapter();
-        adapter.clearSelection();
-        adapter.mValues.clear();
+        clearAdapter(adapter);
         adapter.mValues.addAll(voices);
         String selectedVoice = ((ApplicationWithDI) getApplicationContext()).appComponent.lastState().getString(ApkModule.LAST_STATE_VOICE + language, null);
         if (selectedVoice != null) {
@@ -60,8 +76,7 @@ public class VoiceSelectorActivity extends AppCompatActivity {
     }
 
     private void clearSelection() {
-        StringRecyclerViewAdapter adapter = getStringRecyclerViewAdapter();
-        adapter.clearSelection();
+        getStringRecyclerViewAdapter().clearSelection();
     }
 
     private StringRecyclerViewAdapter getStringRecyclerViewAdapter() {
@@ -77,25 +92,15 @@ public class VoiceSelectorActivity extends AppCompatActivity {
 
         @Override
         protected StringRecyclerViewAdapter createRecyclerViewAdapter() {
-            return new StringRecyclerViewAdapter(getStrings(), this, new VoiceSelectionOnClickListener(this));
-        }
-    }
-
-    public static class VoiceSelectionOnClickListener extends StringRecyclerViewAdapter.RememberSelectionOnClickListener {
-
-        private final Fragment fragment;
-
-        public VoiceSelectionOnClickListener(Fragment fragment) {
-            this.fragment = fragment;
-        }
-
-        @Override
-        public void onClick(StringRecyclerViewAdapter.StringViewHolder viewHolder) {
-            super.onClick(viewHolder);
-            String language = getLanguage(fragment.getView().getRootView());
-            ((ApplicationWithDI) fragment.requireActivity().getApplicationContext()).appComponent.lastState().edit()
-                    .putString(ApkModule.LAST_STATE_VOICE + language, viewHolder.mItem).apply();
-            Toast.makeText(fragment.requireActivity().getBaseContext(), viewHolder.mItem + " used for " + language, Toast.LENGTH_SHORT).show();
+            return new StringRecyclerViewAdapter(getStrings(), this,
+                    new StringRecyclerViewAdapter.RememberSelectionOnClickListener(viewHolder ->
+                    {
+                        FilterWordsActivity.LanguageViewModel languageViewModel = new ViewModelProvider(requireActivity()).get(FilterWordsActivity.LanguageViewModel.class);
+                        String language = languageViewModel.getSelected();
+                        ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.lastState().edit()
+                                .putString(ApkModule.LAST_STATE_VOICE + language, viewHolder.mItem).apply();
+                        Toast.makeText(requireActivity().getBaseContext(), viewHolder.mItem + " used for " + language, Toast.LENGTH_SHORT).show();
+                    }));
         }
     }
 }

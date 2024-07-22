@@ -81,7 +81,7 @@ public class FilterWordsActivity extends AppCompatActivity {
             RootTopicsFragment topics = (RootTopicsFragment) getSupportFragmentManager().findFragmentById(R.id.root_topics);
             if (topics != null) {
                 ((StringRecyclerViewAdapter) topics.recyclerView.getAdapter()).clearSelection();
-                rootTopicViewModel.select(null);
+                rootTopicViewModel.setSelected(null);
             }
         });
         if (getWordCriteria(this).getShuffleRandom() != -1) {
@@ -93,7 +93,7 @@ public class FilterWordsActivity extends AppCompatActivity {
         if (!ApkModule.isDBSource(appComponent.lastState()) || languagesFrom.isEmpty()) {
             binding.languageFromContainer.setVisibility(View.GONE);
         } else if (languagesFrom.size() == 1) {
-            languageViewModel.select(languagesFrom.get(0));
+            languageViewModel.setSelected(languagesFrom.get(0));
             binding.languageFromContainer.setVisibility(View.GONE);
         }
         setFilterViewToRootTopicsFragment(R.id.topics, binding.textTopic);
@@ -150,7 +150,7 @@ public class FilterWordsActivity extends AppCompatActivity {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            new ViewModelProvider(requireActivity()).get(LanguageViewModel.class).getSelected().observe(requireActivity(), this::updateListData);
+            new ViewModelProvider(requireActivity()).get(LanguageViewModel.class).getData().observe(requireActivity(), this::updateListData);
         }
 
         protected void updateListData(String value) {
@@ -205,7 +205,7 @@ public class FilterWordsActivity extends AppCompatActivity {
         }
 
         protected String getStateLanguage() {
-            return new ViewModelProvider(requireActivity()).get(LanguageViewModel.class).getSelected().getValue();
+            return new ViewModelProvider(requireActivity()).get(LanguageViewModel.class).getSelected();
         }
 
         protected List<String> findTopics(String value) {
@@ -213,27 +213,23 @@ public class FilterWordsActivity extends AppCompatActivity {
             language = getStateLanguage();
             List<String> result = wordProvider.findTopics(language, 1).stream().map(Topic::getName).sorted().collect(Collectors.toList());
             requireActivity().findViewById(R.id.root_topics_container).setVisibility(result.size() > 1 ? View.VISIBLE : View.GONE);
-            new ViewModelProvider(requireActivity()).get(RootTopicViewModel.class).select(null);
+            new ViewModelProvider(requireActivity()).get(RootTopicViewModel.class).setSelected(null);
             return result;
         }
 
         @Override
         protected StringRecyclerViewAdapter createRecyclerViewAdapter() {
             recyclerView.setNestedScrollingEnabled(false);
-            StringRecyclerViewAdapter adapter = new StringRecyclerViewAdapter(getStrings(), this, new StringRecyclerViewAdapter.RememberSelectionOnClickListener() {
-                @Override
-                public void onClick(StringRecyclerViewAdapter.StringViewHolder viewHolder) {
-                    super.onClick(viewHolder);
-                    new ViewModelProvider(requireActivity()).get(RootTopicViewModel.class).select(viewHolder.mItem);
-                }
-            });
+            StringRecyclerViewAdapter adapter = new StringRecyclerViewAdapter(getStrings(), this,
+                    new StringRecyclerViewAdapter.RememberSelectionOnClickListener(
+                            viewHolder -> new ViewModelProvider(requireActivity()).get(RootTopicViewModel.class).setSelected(viewHolder.mItem)));
             if (adapter.mValues.size() == 1) {
                 adapter.setSelected(0);
-                new ViewModelProvider(requireActivity()).get(RootTopicViewModel.class).select(adapter.mValues.get(0));
+                new ViewModelProvider(requireActivity()).get(RootTopicViewModel.class).setSelected(adapter.mValues.get(0));
             } else {
                 String rootTopic = getWordCriteria(requireActivity()).getRootTopic();
                 adapter.setSelected(adapter.mValues.indexOf(rootTopic));
-                new ViewModelProvider(requireActivity()).get(RootTopicViewModel.class).select(rootTopic);
+                new ViewModelProvider(requireActivity()).get(RootTopicViewModel.class).setSelected(rootTopic);
             }
             return adapter;
         }
@@ -245,7 +241,7 @@ public class FilterWordsActivity extends AppCompatActivity {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            new ViewModelProvider(requireActivity()).get(RootTopicViewModel.class).getSelected().observe(requireActivity(), this::updateListData);
+            new ViewModelProvider(requireActivity()).get(RootTopicViewModel.class).getData().observe(requireActivity(), this::updateListData);
         }
 
         @Override
@@ -264,7 +260,7 @@ public class FilterWordsActivity extends AppCompatActivity {
         }
 
         private String getStateRootTopic() {
-            return new ViewModelProvider(requireActivity()).get(RootTopicViewModel.class).getSelected().getValue();
+            return new ViewModelProvider(requireActivity()).get(RootTopicViewModel.class).getSelected();
         }
 
         @Override
@@ -286,20 +282,17 @@ public class FilterWordsActivity extends AppCompatActivity {
         @Override
         protected StringRecyclerViewAdapter createRecyclerViewAdapter() {
             recyclerView.setNestedScrollingEnabled(false);
-            StringRecyclerViewAdapter adapter = new StringRecyclerViewAdapter(getStrings(), this, new StringRecyclerViewAdapter.RememberSelectionOnClickListener() {
-                @Override
-                public void onClick(StringRecyclerViewAdapter.StringViewHolder viewHolder) {
-                    super.onClick(viewHolder);
-                    getLanguageViewModel().select(viewHolder.mItem);
-                }
-            });
+            StringRecyclerViewAdapter adapter = new StringRecyclerViewAdapter(getStrings(), this,
+                    new StringRecyclerViewAdapter.RememberSelectionOnClickListener(
+                            viewHolder -> getLanguageViewModel().setSelected(viewHolder.mItem)
+                    ));
             if (adapter.mValues.size() == 1) {
                 adapter.setSelected(0);
-                getLanguageViewModel().select(adapter.mValues.get(0));
+                getLanguageViewModel().setSelected(adapter.mValues.get(0));
             } else {
                 String languageFrom = getWordCriteria(requireActivity()).getLanguageFrom();
                 adapter.setSelected(adapter.mValues.indexOf(languageFrom));
-                getLanguageViewModel().select(languageFrom);
+                getLanguageViewModel().setSelected(languageFrom);
             }
             return adapter;
         }
@@ -319,7 +312,7 @@ public class FilterWordsActivity extends AppCompatActivity {
         }
 
         protected String getStateLanguage() {
-            return getLanguageViewModel().getSelected().getValue();
+            return getLanguageViewModel().getSelected();
         }
 
         private LanguageViewModel getLanguageViewModel() {
@@ -336,7 +329,7 @@ public class FilterWordsActivity extends AppCompatActivity {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            getLanguageViewModel().getSelected().observe(requireActivity(), this::updateListData);
+            getLanguageViewModel().getData().observe(requireActivity(), this::updateListData);
         }
 
         protected void updateListData(String language) {
@@ -362,14 +355,18 @@ public class FilterWordsActivity extends AppCompatActivity {
     }
 
     public static class LanguageViewModel extends ViewModel {
-        private final MutableLiveData<String> selected = new MutableLiveData<>();
+        private final MutableLiveData<String> data = new MutableLiveData<>();
 
-        public void select(String item) {
-            selected.setValue(item);
+        public LiveData<String> getData() {
+            return data;
         }
 
-        public LiveData<String> getSelected() {
-            return selected;
+        public String getSelected() {
+            return data.getValue();
+        }
+
+        public void setSelected(String item) {
+            data.setValue(item);
         }
     }
 
