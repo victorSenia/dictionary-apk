@@ -59,6 +59,7 @@ public class ApkModule {
             audioService.play(language, string);
         }
     }
+
     public static WordProvider createAssetsWordProvider(ParseWords configuration, Context context) {
         AssetsWordProvider wordProvider = new AssetsWordProvider();
         wordProvider.setConfiguration(configuration);

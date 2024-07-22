@@ -39,6 +39,7 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
     public void replaceData(List<Word> words) {
         this.words.clear();
         this.words.addAll(words);
+        this.positionId = RecyclerView.NO_POSITION;
         notifyDataSetChanged();
     }
 

@@ -15,7 +15,6 @@ import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.activity.fragment.RecyclerViewFragment;
 import org.leo.dictionary.apk.activity.viewadapter.StringRecyclerViewAdapter;
 import org.leo.dictionary.apk.activity.viewmodel.LanguageViewModel;
-import org.leo.dictionary.apk.audio.AndroidAudioService;
 import org.leo.dictionary.apk.databinding.ActivityVoiceSelectorBinding;
 import org.leo.dictionary.audio.AudioService;
 

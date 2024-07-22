@@ -22,9 +22,9 @@ import java.util.stream.Collectors;
 
 public class SpeechRecognitionActivity extends AppCompatActivity {
     private final AndroidSpeechRecognitionService speechRecognitionService = new AndroidSpeechRecognitionService();
-    private ActivitySpeechRecognitionBinding binding;
     private final Map<String, String> languagesMapping = new HashMap<>();
     private final AtomicBoolean recoding = new AtomicBoolean(false);
+    private ActivitySpeechRecognitionBinding binding;
     private DetailsViewModel detailsViewModel;
 
     @Override

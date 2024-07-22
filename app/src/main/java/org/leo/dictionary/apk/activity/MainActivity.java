@@ -48,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
     public static final String POSITION_ID = "positionId";
     public static final String UPDATED_WORD = "updatedWord";
     public static final String WORD_PROVIDER = "wordProvider";
-
-    private UiUpdater uiUpdater;
     private final ActivityResultLauncher<Intent> filterWordsActivityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
@@ -84,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 ((ApplicationWithDI) getApplicationContext()).data.clear();
             });
+    private UiUpdater uiUpdater;
     private ActivityMainBinding binding;
 
     public static void runAtBackground(Runnable runnable) {
@@ -264,7 +263,7 @@ public class MainActivity extends AppCompatActivity {
             return true;
         } else if (id == R.id.action_clean_db) {
             DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
-            AlertDialog.Builder builder = getLanguageChooserBuilder(this, R.string.languages_to_delete,
+            AlertDialog.Builder builder = getLanguageChooserBuilder(this,
                     language -> runAtBackground(() -> deleteWordsAndUpdateUi(language, wordProvider)));
             builder.show();
             return true;
@@ -324,14 +323,17 @@ public class MainActivity extends AppCompatActivity {
         applicationContext.data.clear();
     }
 
-    private AlertDialog.Builder getLanguageChooserBuilder(Context context, int title, Consumer<String> consumer) {
+    private AlertDialog.Builder getLanguageChooserBuilder(Context context,  Consumer<String> consumer) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle(title);
         DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
         String[] items = wordProvider.languageFrom().toArray(new String[0]);
-        builder.setCancelable(true);
-        DialogInterface.OnClickListener onClickListener = (dialog, position) -> consumer.accept(items[position]);
-        builder.setItems(items, onClickListener);
+        if (items.length > 0) {
+            builder.setMessage( R.string.languages_to_delete);
+            DialogInterface.OnClickListener onClickListener = (dialog, position) -> consumer.accept(items[position]);
+            builder.setItems(items, onClickListener);
+        } else {
+            builder.setMessage("There is no language in DB");
+        }
         return builder;
     }
 

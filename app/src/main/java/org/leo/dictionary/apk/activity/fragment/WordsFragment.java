@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import org.jetbrains.annotations.Nullable;
 import org.leo.dictionary.PlayService;
 import org.leo.dictionary.UiUpdater;
 import org.leo.dictionary.apk.ApkModule;
@@ -42,9 +41,11 @@ public class WordsFragment extends Fragment {
 
     public void replaceData(List<Word> unknownWords) {
         getRecyclerViewAdapter().replaceData(unknownWords);
+        if (!unknownWords.isEmpty()) {
+            recyclerView.scrollToPosition(0);
+        }
     }
 
-    @Nullable
     private WordsRecyclerViewAdapter getRecyclerViewAdapter() {
         return (WordsRecyclerViewAdapter) recyclerView.getAdapter();
     }

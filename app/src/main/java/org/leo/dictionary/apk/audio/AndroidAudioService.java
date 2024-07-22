@@ -78,7 +78,13 @@ public class AndroidAudioService implements AudioService {
         }
         speaking.add(text);
         textToSpeech.speak(text, TextToSpeech.QUEUE_ADD, null, text);
+        long startTime = System.currentTimeMillis();
+        int loggingTimeout = 1000;
         do {
+            if (startTime + loggingTimeout < System.currentTimeMillis()) {
+                LOGGER.info("Still speaking text '" + text + "'");
+                startTime += loggingTimeout;
+            }
         } while (speaking.contains(text));
     }
 

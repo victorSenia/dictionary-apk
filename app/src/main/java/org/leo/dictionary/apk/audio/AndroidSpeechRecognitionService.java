@@ -11,15 +11,14 @@ import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.function.Consumer;
 import java.util.logging.Logger;
 
 public class AndroidSpeechRecognitionService {
-    private final static Logger LOGGER = Logger.getLogger(AndroidSpeechRecognitionService.class.getName());
     public static final Integer RecordAudioRequestCode = 1;
+    private final static Logger LOGGER = Logger.getLogger(AndroidSpeechRecognitionService.class.getName());
     private SpeechRecognizer speechRecognizer;
     private Consumer<ArrayList<String>> resultConsumer;
     private Consumer<String> onErrorConsumer;
@@ -46,7 +45,6 @@ public class AndroidSpeechRecognitionService {
         speechRecognizer.startListening(speechRecognizerIntent);
     }
 
-    @NotNull
     protected RecognitionListener createRecognitionListener() {
         return new RecognitionListener() {
             @Override
