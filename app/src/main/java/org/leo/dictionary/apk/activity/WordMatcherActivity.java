@@ -33,7 +33,7 @@ public class WordMatcherActivity extends AppCompatActivity {
     }
 
     private static Translation getTranslation(Word word, Set<String> languageTo, Random random) {
-        List<Translation> translations = word.getTranslations().stream().filter(t -> languageTo.isEmpty() || languageTo.contains(t.getLanguage())).collect(Collectors.toList());
+        List<Translation> translations = word.getTranslations().stream().filter(t -> languageTo == null || languageTo.isEmpty() || languageTo.contains(t.getLanguage())).collect(Collectors.toList());
         if (translations.isEmpty()) {
             return new Translation();
         }
@@ -57,10 +57,7 @@ public class WordMatcherActivity extends AppCompatActivity {
         AudioService audioService = ((ApplicationWithDI) getApplicationContext()).appComponent.audioService();
         int limitFromConfiguration = Integer.parseInt(PreferenceManager.getDefaultSharedPreferences(this).getString("org.leo.dictionary.apk.config.entity.MatchWords.limit", DEFAULT_LIMIT));
         limit = Math.min(limitFromConfiguration, unknownWords.size());
-        Element[][] words = new Element[2][limit];
-        List<Translation> translationsToMatch = new ArrayList<>(limit);
-        List<Word> wordsToMatch = new ArrayList<>(limit);
-        fillWordsToMatch(unknownWords, wordsToMatch, translationsToMatch, words);
+        Element[][] words = createElements(unknownWords);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT,
@@ -74,6 +71,13 @@ public class WordMatcherActivity extends AppCompatActivity {
             Button button = createButton(element, audioService, layoutParams);
             binding.translationContainer.addView(button);
         }
+    }
+
+    private Element[][] createElements(List<Word> unknownWords) {
+        Element[][] words = new Element[2][limit];
+        List<Translation> translationsToMatch = new ArrayList<>(limit);
+        List<Word> wordsToMatch = new ArrayList<>(limit);
+        return fillWordsToMatch(unknownWords, wordsToMatch, translationsToMatch, words);
     }
 
     private Button createButton(Element element, AudioService audioService, LinearLayout.LayoutParams layoutParams) {
@@ -134,20 +138,30 @@ public class WordMatcherActivity extends AppCompatActivity {
 
     }
 
-    private void fillWordsToMatch(List<Word> unknownWords, List<Word> wordsToMatch, List<Translation> translationsToMatch, Element[][] words) {
+    private Element[][] fillWordsToMatch(List<Word> unknownWords, List<Word> wordsToMatch, List<Translation> translationsToMatch, Element[][] words) {
         Set<String> languageTo = ((ApplicationWithDI) getApplicationContext()).appComponent.wordCriteriaProvider().getWordCriteria().getLanguageTo();
         Random random = new Random();
+        int attempt = 0;
         for (int index = 0; index < limit; index++) {
+            if (attempt++ > limit * 100) {
+                limit = index;
+                return createElements(unknownWords);
+            }
             Word word = unknownWords.get(random.nextInt(unknownWords.size()));
             if (wordsToMatch.contains(word)) {
                 index--;
-            } else {
-                wordsToMatch.add(word);
-                Translation translation = getTranslation(word, languageTo, random);
-                translationsToMatch.add(translation);
-                findFreeSpaces(words, word, translation, random);
+                continue;
             }
+            Translation translation = getTranslation(word, languageTo, random);
+            if (translationsToMatch.contains(translation)) {
+                index--;
+                continue;
+            }
+            wordsToMatch.add(word);
+            translationsToMatch.add(translation);
+            findFreeSpaces(words, word, translation, random);
         }
+        return words;
     }
 
     private void findFreeSpaces(Element[][] wordsMap, Word word, Translation translation, Random random) {

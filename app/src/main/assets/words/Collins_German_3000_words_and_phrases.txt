@@ -1,6 +1,6 @@
 org.leo.dictionary.config.entity.ParseWords:de:en;uk:die+;das+;der+:%5C%7C:%3B:%3B:%5Ct:
 
-	das wesentliche | the essentials 
+	das wesentliche | the essentials
 das wesentliche | the essentials | найнеобхідніше
 
 rot | red | червоний
@@ -10,7 +10,7 @@ schwarz | black | чорний
 weiß | white | білий
 gelb | yellow | жовтий
 
-		das wesentliche | the basics 
+		das wesentliche | the basics
 das wesentliche | the basics | найнеобхідніше
 
 Hallo! | Hello. | Привіт.
@@ -39,7 +39,7 @@ Einverstanden! | OK! | Згоден!
 Bitte. | You're welcome. | Будь ласка
 Ich verstehe nicht. | I don't understand. | Я не розумію
 
-		über sie | about you 
+		über sie | about you
 über sie | about you | про вас
 
 Wie alt sind Sie? | How old are you? | Скільки тобі років?
@@ -70,7 +70,7 @@ Haben Sie Kinder? | Do you have any children? | У вас є діти?
 Ich habe ... Kinder. | I have ... children. | У мене... дітей.
 Ich bin kinderlos | I don't have any children. | Я бездітна
 
-		familie und freunde | family and friends 
+		familie und freunde | family and friends
 familie und freunde | family and friends | родина та друзі
 
 Das ist mein / meine... | This is my... | Це мій...
@@ -79,8 +79,10 @@ der Ehemann | husband | чоловік
 die Ehefrau | wife | дружина
 der Freund | boyfriend | хлопець
 die Freundin | girlfriend | подруга
-der Partner / die Partnerin | partner | партнер
-der Verlobte / die Verlobte | fiancé / fiancée | наречений / наречена
+der Partner | partner | партнер
+die Partnerin | partner | партнер
+der Verlobte | fiancé / fiancée | наречений / наречена
+die Verlobte | fiancé / fiancée | наречений / наречена
 der Sohn | son | син
 die Tochter | daughter | дочка
 die Eltern | parents | батьки
@@ -106,15 +108,18 @@ der Onkel | uncle | дядько
 die Tante | aunt | тітка
 der Neffe | nephew | племінник
 die Nichte | niece | племінниця
-der Cousin / die Cousine | cousin | двоюрідний брат
+der Cousin | cousin | двоюрідний брат
+die Cousine | cousin | двоюрідний брат
 die Großfamilie | extended family | розширена сім'я
-der Freund / die Freundin | friend | хлопець / дівчина
-der Kollege / die Kollegin | colleague | колега
+der Freund | friend | хлопець / дівчина
+die Freundin | friend | хлопець / дівчина
+der Kollege | colleague | колега
+die Kollegin | colleague | колега
 das Baby | baby | немовля
 das Kind | child | дитина
 der Teenager | teenager | підліток
 
-		gesundheit und wohlbefinden | general health and wellbeing 
+		gesundheit und wohlbefinden | general health and wellbeing
 gesundheit und wohlbefinden | general health and wellbeing | здоров'я і благополуччя
 
 Wie geht es Ihnen? | How are you? | Як справи?
@@ -153,7 +158,7 @@ unwohl | unwell | погано; недобре
 besser | better | краще
 schlechter | worse | гірше
 
-		arbeit | work 
+		arbeit | work
 arbeit | work | працювати
 
 Wo arbeiten Sie? | Where do you work? | Де ти працюєш?
@@ -169,34 +174,61 @@ Ich arbeite zu Hause. | I work from home. | Я працюю вдома.
 Ich habe eine Teilzeit- / Vollzeitbeschäftigung. | I work part- / full-time. | У мене неповний / повний робочий день.
 Ich arbeite als... | I work as a / an... | Я працюю як...
 Ich bin... | I'm a / an... | Я...
-der Maurer / die Maurerin | builder | будівельник
-der Koch / die Köchin | chef | кухар
-der Beamter / die Beamtin | civil servant | державний службовець
-der Zahnarzt / die Zahnärztin | dentist | стоматолог
-der Arzt / die Ärztin | doctor | лікар
-der Fahrer / die Fahrerin | driver | водій
-der Elektriker / die Elektrikerin | electrician | електрик
-der Ingenieur / die Ingenieurin | engineer | інженер
-der Bauer / die Bäuerin | farmer | фермер
-der Feuerwehrmann / die Feuerwehrfrau | firefighter | пожежник
-der Fischer / die Fischerin | fisherman | рибалка
-der Informatiker / die Informatikerin | IT worker | IT-працівник
-der Tischler / die Tischlerin | joiner | столяр; тесля
-der Journalist / die Journalistin | journalist | журналіст
-der Rechtsanwalt / die Rechtsanwältin | lawyer | юрист
-der Dozent / die Dozentin | lecturer | викладач
-der Mechaniker / die Mechanikerin | mechanic | механік
-der Krankenpfleger / die Krankenschwester | nurse | медсестра
+der Maurer | builder | будівельник
+die Maurerin | builder | будівельник
+der Koch | chef | кухар
+die Köchin | chef | кухар
+der Beamter | civil servant | державний службовець
+die Beamtin | civil servant | державний службовець
+der Zahnarzt | dentist | стоматолог
+die Zahnärztin | dentist | стоматолог
+der Arzt | doctor | лікар
+die Ärztin | doctor | лікар
+der Fahrer | driver | водій
+die Fahrerin | driver | водій
+der Elektriker | electrician | електрик
+die Elektrikerin | electrician | електрик
+der Ingenieur | engineer | інженер
+die Ingenieurin | engineer | інженер
+der Bauer | farmer | фермер
+die Bäuerin | farmer | фермер
+der Feuerwehrmann | firefighter | пожежник
+die Feuerwehrfrau | firefighter | пожежник
+der Fischer | fisherman | рибалка
+die Fischerin | fisherman | рибалка
+der Informatiker | IT worker | IT-працівник
+die Informatikerin | IT worker | IT-працівник
+der Tischler | joiner | столяр; тесля
+die Tischlerin | joiner | столяр; тесля
+der Journalist | journalist | журналіст
+die Journalistin | journalist | журналіст
+der Rechtsanwalt | lawyer | юрист
+die Rechtsanwältin | lawyer | юрист
+der Dozent | lecturer | викладач
+die Dozentin | lecturer | викладач
+der Mechaniker | mechanic | механік
+die Mechanikerin | mechanic | механік
+der Krankenpfleger | nurse | медсестра
+die Krankenschwester | nurse | медсестра
 der / die Büroangestellte | office worker | офісний працівник
-der Klempner / die Klempnerin | plumber | водопровідник; сантехнік
-der Polizeibeamte / die Polizeibeamtin | police officer | поліцейський
-der Briefträger / die Briefträgerin | postal worker | поштовий працівник
-der Matrose / die Matrosin | sailor | моряк
-der Verkäufer / die Verkäuferin | salesperson | продавець
-der Wissenschaftler / die Wissenschaftlerin | scientist | науковець
-der Soldat / die Soldatin | soldier | солдат
-der Lehrer / die Lehrerin | teacher | викладач
-der Tierarzt / die Tierärztin | vet | ветеринар
+der Klempner | plumber | водопровідник; сантехнік
+die Klempnerin | plumber | водопровідник; сантехнік
+der Polizeibeamte | police officer | поліцейський
+die Polizeibeamtin | police officer | поліцейський
+der Briefträger | postal worker | поштовий працівник
+die Briefträgerin | postal worker | поштовий працівник
+der Matrose | sailor | моряк
+die Matrosin | sailor | моряк
+der Verkäufer | salesperson | продавець
+die Verkäuferin | salesperson | продавець
+der Wissenschaftler | scientist | науковець
+die Wissenschaftlerin | scientist | науковець
+der Soldat | soldier | солдат
+die Soldatin | soldier | солдат
+der Lehrer | teacher | викладач
+die Lehrerin | teacher | викладач
+der Tierarzt | vet | ветеринар
+die Tierärztin | vet | ветеринар
 der Kellner | waiter | офіціант
 die Kellnerin | waitress | офіціантка
 Ich arbeite bei... | I work at / in... | Я працюю в...
@@ -212,7 +244,7 @@ das Restaurant | restaurant | ресторан
 die Schule | school | школа
 der Laden | shop | магазин
 
-		die uhrzeit | time 
+		die uhrzeit | time
 die uhrzeit | time | час
 
 der Morgen | morning | ранок
@@ -249,7 +281,7 @@ bald | soon | скоро
 später | later | пізніше
 jetzt | now | зараз
 
-		tage, monate und jahreszeiten | days, months, and seasons 
+		tage, monate und jahreszeiten | days, months, and seasons
 tage, monate und jahreszeiten | days, months, and seasons | дні, місяці та пори року
 
 Montag | Monday | понеділок
@@ -297,8 +329,8 @@ der Herbst | autumn | осінь
 der Winter | winter | зима
 im Frühling / Winter | in spring / winter | навесні / взимку
 
-		das wetter | weather 
-das wetter | weather | Погода
+		das wetter | weather
+das wetter | weather | погода
 
 Wie ist das Wetter? | How's the weather? | Як погода?
 Wie ist die Wettervorhersage für heute / morgen? | What's the forecast for today / tomorrow? | Який прогноз погоди на сьогодні / завтра?
@@ -338,7 +370,7 @@ der Blitz | lightning | блискавка
 das Gewitter | thunderstorm | гроза
 die Wolke | cloud | хмара
 
-		die zahlen | numbers 
+		die zahlen | numbers
 die zahlen | numbers | цифри
 eins | 1 | один
 zwei | 2 | два
@@ -371,7 +403,7 @@ hundert | 100 | сто
 tausend | 1 000 | тисяча
 Million | 1 000 000 | мільйон
 
-	verkehrsmittel | transport 
+	verkehrsmittel | transport
 verkehrsmittel | transport | транспортні засоби
 
 der Hubschrauber | helicopter | вертоліт
@@ -381,13 +413,17 @@ die Nase | nose | ніс
 das Cockpit | cockpit | кабіна
 das Heck | tail | хвіст
 
-		das wesentliche | the basics 
+		das wesentliche | the basics
 
 die Straße | street | вулиця
-der Pendler / die Pendlerin | commuter | пасажир
-der Fahrer / die Fahrerin | driver | водій
-der Passagier / die Passagierin | passenger | пасажир
-der Fußgänger / die Fußgängerin | pedestrian | пішохід
+der Pendler | commuter | пасажир
+die Pendlerin | commuter | пасажир
+der Fahrer | driver | водій
+die Fahrerin | driver | водій
+der Passagier | passenger | пасажир
+die Passagierin | passenger | пасажир
+der Fußgänger | pedestrian | пішохід
+die Fußgängerin | pedestrian | пішохід
 der Verkehr | traffic | трафік
 der Verkehrsstau | traffic jam | затор
 die Hauptverkehrszeit | rush hour | година пік
@@ -406,7 +442,7 @@ die Landkarte | map | карта
 die Fahrkarte | ticket | квиток
 der Zeitplan | timetable | розклад
 
-		mit dem auto | car 
+		mit dem auto | car
 mit dem auto | car | автомобілем
 
 der Minivan | people carrier | мікроавтобус
@@ -471,7 +507,7 @@ der Sicherheitsgurt | seatbelt | ремінь безпеки
 der Tachometer | speedometer | спідометр
 das Lenkrad | steering wheel | кермо
 
-		das fahren | driving 
+		das fahren | driving
 das fahren | driving | водіння
 die Schnellstraße | dual carriageway | швидкісна дорога
 die einspurige Landstraße | single-track road | односмугова сільська дорога
@@ -510,11 +546,12 @@ die Raststätte | service area | зона обслуговування
 die Geschwindigkeitskamera | speed camera | камера контролю швидкості
 der Pylon | traffic cone | дорожній конус
 die Verkehrsampel | traffic lights | світлофор
-der Verkehrspolizist / die Verkehrspolizistin | traffic warden | працівник автополіції
+der Verkehrspolizist | traffic warden | працівник автополіції
+die Verkehrspolizistin | traffic warden | працівник автополіції
 der Tunnel | tunnel | тунель
 der Zebrastreifen | zebra crossing | пішохідний перехід
 
-		probleme mit dem auto | car trouble 
+		probleme mit dem auto | car trouble
 probleme mit dem auto | car trouble | проблеми з автомобілем
 der Unfall | accident | нещасний випадок
 die Panne | breakdown | поломка
@@ -532,13 +569,14 @@ die Garage | garage | гараж
 die Warnweste | hi-viz vest | попереджувальний жилет
 der Wagenheber | jack | домкрат
 die Starthilfekabel; ntpl | jump leads | з'єднувальні кабелі
-der Mechaniker / die Mechanikerin | mechanic | механік
+der Mechaniker | mechanic | механік
+die Mechanikerin | mechanic | механік
 die Schneeketten; fpl | snow chains | ланцюги протиковзання
 das Reserverad | spare wheel | запасне колесо
 der Abschleppwagen | tow truck | евакуатор
 das Warndreieck | warning triangle | попереджувальний трикутник
 
-		mit dem bus | bus 
+		mit dem bus | bus
 mit dem bus | bus | автобусом
 die Buslinie | bus route | автобусна лінія
 die Busspur | bus lane | автобусна смуга
@@ -561,9 +599,10 @@ der Reisebus | coach | тренер
 der Kleinbus | minibus | мікроавтобус
 der Trolleybus | trolley bus | тролейбус
 
-		mit dem fahrrad | bicycle 
+		mit dem fahrrad | bicycle
 mit dem fahrrad | bicycle | на велосипеді
-der Radfahrer / die Radfahrerin | cyclist | велосипедист
+der Radfahrer | cyclist | велосипедист
+die Radfahrerin | cyclist | велосипедист
 das Mountainbike | mountain bike | гірський велосипед
 das Rennrad | road bike | гоночний велосипед
 das Hybridrad | hybrid bike | гібридний велосипед
@@ -596,9 +635,10 @@ die Kette | chain | ланцюг
 das Rad | wheel | колесо
 der Radreifen | tyre | шина колеса
 
-		mit dem motorrad | motorbike 
+		mit dem motorrad | motorbike
 mit dem motorrad | motorbike | мотоциклом
-der Motorradfahrer / die Motorradfahrerin | motorcyclist | мотоцикліст
+der Motorradfahrer | motorcyclist | мотоцикліст
+die Motorradfahrerin | motorcyclist | мотоцикліст
 das Moped | moped | мопед
 der Roller | scooter | скутер
 der Benzintank | fuel tank | бензобак
@@ -614,7 +654,7 @@ die Lederhandschuhe; mpl | leather gloves | шкіряні рукавички
 die Lederjacke | leather jacket | шкіряна куртка
 das Motorrad | motorbike | мотоцикл
 
-		mit dem zug | rail travel 
+		mit dem zug | rail travel
 mit dem zug | rail travel | потягом
 das Eisenbahnnetz | rail network | залізнична мережа
 der Hochgeschwindigkeitszug | high-speed train | швидкісний поїзд
@@ -637,13 +677,15 @@ eine Fahrkarte entwerten | to validate a ticket | валідувати квит�
 der Wagen | carriage | вагон
 der Liegeplatz | couchette | спальне місце
 der Anzeigetafel | departure board | табло
-der Bahnbeamte / die Bahnbeamtin | guard | службовець залізниці
+der Bahnbeamte | guard | службовець залізниці
+die Bahnbeamtin | guard | службовець залізниці
 die S-Bahn | light railway | приміський поїзд
 die Lokomotive | locomotive | локомотив
 die Gepäckablage | luggage rack | багажна полиця
 die U-Bahn | metro | метро
 der Bahnsteig | platform | платформа
-der Gepäckträger / die Gepäckträgerin | porter | носильник
+der Gepäckträger | porter | носильник
+die Gepäckträgerin | porter | носильник
 das Bordrestaurant | restaurant car | вагон-ресторан
 das Stellwerk | signal box | сигнальна коробка
 die Schiebetüren; fpl | sliding doors | розсувні двері
@@ -656,11 +698,12 @@ der Bahnhof | train station | станція
 die Straßenbahn | tram | трамвай
 der Entwerter | validation machine | машина перевірки
 
-		mit dem flugzeug | air travel 
+		mit dem flugzeug | air travel
 mit dem flugzeug | air travel | літаком
 die Fluglinie | airline | авіакомпанія
 der Terminal | terminal | термінал
-Ankünfte / Abflüge | Arrivals / Departures | Прибуття / Відбуття
+Ankünfte | Arrivals | Прибуття
+Abflüge | Departures | Відбуття
 der Sicherheitsdienst | security | служба безпеки
 die Passkontrolle | passport control | паспортний контроль
 die Zollabfertigung | customs | митне оформлення
@@ -693,11 +736,12 @@ der Duty-free-Shop | duty-free shop | магазин безмитної торг
 die Reisetasche | holdall | дорожня сумка
 der Kofferkuli | luggage trolley | багажний візок
 der Reisepass | passport | паспорт
-der Pilot / die Pilotin | pilot | пілот
+der Pilot | pilot | пілот
+die Pilotin | pilot | пілот
 die Landebahn | runway | злітно-посадкова смуга
 der Koffer | suitcase | валіза
 
-		fähre und boot | ferry and boat travel 
+		fähre und boot | ferry and boat travel
 fähre und boot | ferry and boat travel | пором і катер
 die Überfahrt | ferry crossing | поромна переправа
 der Fährhafen | ferry terminal | поромний порт
@@ -714,7 +758,8 @@ der Kanal | canal | канал
 die Küstenwache | coastguard | берегова охорона
 der Kapitän | captain | капітан
 die Besatzung | crew | екіпаж
-der Fußpassagier / die Fußpassagierin | foot passenger | пішохідний пасажир
+der Fußpassagier | foot passenger | пішохід
+die Fußpassagierin | foot passenger | пішохід
 an Bord gehen | to board | сісти на борт
 auslaufen | to sail | відпливати
 anlegen | to dock | пристиковуватись
@@ -740,12 +785,12 @@ das Segelboot | sailing boat | вітрильний човен
 die Jacht | yacht | яхта
 
 
-	im haus | in the home 
+	im haus | in the home
 im haus | in the home | в будинку
 
 der Wohnblock | block of flats | житловий будинок
 
-		das wesentliche | the basics 
+		das wesentliche | the basics
 
 das Reihenhaus | terraced house | будинок із верандою
 das Stadthaus | townhouse | заміський будинок
@@ -754,12 +799,16 @@ das Gebäude | building | будівля
 die Adresse | address | адреса
 der Vorort | suburb | передмістя
 der Bezirk | district | район
-der Makler / die Maklerin | letting agent | агент з оренди
-der Immobilienhändler / die Immobilienhändlerin | estate agent | агент з нерухомості
+der Makler | letting agent | агент з оренди
+die Maklerin | letting agent | агент з оренди
+der Immobilienhändler | estate agent | агент з нерухомості
+die Immobilienhändlerin | estate agent | агент з нерухомості
 der Vermieter | landlord | орендодавець
 die Vermieterin | landlady | хазяйка
-der Mieter / die Mieterin | tenant | орендар
-der Nachbar / die Nachbarin | neighbour | сусід
+der Mieter | tenant | орендар
+die Mieterin | tenant | орендар
+der Nachbar | neighbour | сусід
+die Nachbarin | neighbour | сусід
 die Hypothek | mortgage | іпотека
 die Miete | rent | орендна плата
 der Mietvertrag | rental agreement | договір оренди
@@ -777,7 +826,7 @@ der Bauernhof | farmhouse | ферма
 das Doppelhaus | semi-detached house | двоквартирний будинок
 die Einzimmerwohnung | studio flat | однокімнатна квартира
 
-		das haus | the house 
+		das haus | the house
 das haus | the house | будинок
 das Zimmer | room | кімната
 der Keller | cellar | підвал
@@ -799,7 +848,8 @@ die Klimaanlage | air conditioning | кондиціонер
 die Zentralheizung | central heating | центральне опалення
 die Parabolantenne | satellite dish | супутникова антена
 der Stromausfall | power cut | збій живлення
-der Fensterputzer / die Fensterputzerin | window cleaner | очисник вікон
+der Fensterputzer | window cleaner | очисник вікон
+die Fensterputzerin | window cleaner | очисник вікон
 reparieren | to fix | виправити
 dekorieren | to decorate | прикрашати
 renovieren | to renovate | ремонтувати
@@ -830,7 +880,7 @@ die Auffahrt | driveway | під'їзна дорога
 die Haustür | front door | вхідні двері
 die Garage | garage | гараж
 
-		der eingang | the entrance 
+		der eingang | the entrance
 der eingang | the entrance | вхід
 
 die Haustür | front door | вхідні двері
@@ -849,7 +899,7 @@ die Türklingel | doorbell | дверний дзвінок
 die Sprechanlage | intercom | домофон
 der Briefkasten | letterbox | поштова скринька
 
-		das wohnzimmer | the lounge 
+		das wohnzimmer | the lounge
 das wohnzimmer | the lounge | вітальня
 
 der Teppich | carpet | килим
@@ -888,7 +938,7 @@ der Schemel | footstool | стілець
 der Teppich | rug | килим
 das Kissen | cushion | подушка
 
-		die küche | the kitchen 
+		die küche | the kitchen
 die küche | the kitchen | кухня
 
 der Kessel | kettle | котел
@@ -949,7 +999,7 @@ die Schublade | drawer | ящик
 die Arbeitsfläche | worktop | робоча поверхня
 die Fliesen; fpl | tiles | плитка
 
-		das esszimmer | the dining room 
+		das esszimmer | the dining room
 das esszimmer | the dining room | їдальня
 der Esstisch | dining table | обідній стіл
 das Set | place mat | килимок
@@ -977,7 +1027,7 @@ der Teelöffel | teaspoon | чайна ложка
 das Trinkglas | tumbler | склянка
 das Weinglas | wine glass | келих для вина
 
-		das schlafzimmer | the bedroom 
+		das schlafzimmer | the bedroom
 das schlafzimmer | the bedroom | спальня
 das Einzelbett | single bed | односпальне ліжко
 das Doppelbett | double bed | двоспальне ліжко
@@ -1015,7 +1065,7 @@ das Kopfkissen | pillow | подушка
 die Matratze | mattress | матрац
 der Nachttisch | bedside table | тумбочка
 
-		das bad | the bathroom 
+		das bad | the bathroom
 das bad | the bathroom | ванна кімната
 
 der Duschvorhang | shower curtain | шторка для душу
@@ -1048,7 +1098,7 @@ das Bidet | bidet | біде
 die Duschabtrennung | shower screen | душова кабіна
 die Badewanne | bath | ванна
 
-		der garten | the garden 
+		der garten | the garden
 der garten | the garden | сад
 der Baum | tree | дерево
 die Erde | soil | земля
@@ -1058,7 +1108,8 @@ das Unkraut | weed | бур'ян
 das Blumenbeet | flowerbed | клумба
 der Kompost | compost | компост
 der Kleingarten | allotment | присадибний сад
-der Gärtner / die Gärtnerin | gardener | садівник
+der Gärtner | gardener | садівник
+die Gärtnerin | gardener | садівник
 jäten | to weed | полоти
 gießen | to water | поливати
 anpflanzen | to grow | вирощувати
@@ -1095,7 +1146,7 @@ die Blumen; fpl | flowers | квіти
 die Terrasse | patio | тераса
 der Blumentopf | flowerpot | вазон
 
-		die hausarbeit | housework 
+		die hausarbeit | housework
 die hausarbeit | housework | домашня робота
 der Hauswirtschaftsraum | utility room | підсобне приміщення
 die Haushaltsgeräte; ntpl | household appliances | побутова техніка
@@ -1132,16 +1183,18 @@ der Staubsauger | vacuum cleaner | пилосос
 die Wäscheleine | washing line | мотузка для білизни
 die Waschmaschine | washing machine | пральна машина
 
-	im laden | at the shops 
+	im laden | at the shops
 im laden | at the shops | в магазині
 
-		das wesentliche | the basics 
+		das wesentliche | the basics
 
 der Laden | shop | магазин
 der Supermarkt | supermarket | супермаркет
 das Einkaufszentrum | shopping centre | торговий центр
-der Verkäufer / die Verkäuferin | shop assistant | продавець
-der Kunde / die Kundin | customer | покупець
+der Verkäufer | shop assistant | продавець
+die Verkäuferin | shop assistant | продавець
+der Kunde | customer | покупець
+die Kundin | customer | покупець
 der Markt | market | ринок
 das Bargeld | cash | готівка
 das Wechselgeld | change | решта
@@ -1168,7 +1221,7 @@ die Quittung | receipt | квитанція
 die wiederverwendbare Einkaufstasche | reusable shopping bag | багаторазова сумка для покупок
 die Kasse | till point | касовий апарат
 
-		der supermarkt | supermarket 
+		der supermarkt | supermarket
 der supermarkt | supermarket | супермаркет
 der Gang | aisle | прохід
 das Feinkostgeschäft | delicatessen | делікатес
@@ -1228,21 +1281,22 @@ das Mineralwasser | mineral water | мінеральна вода
 die Spirituosen; pl | spirits | спиртні напої
 der Wein | wine | вино
 
-		der Markt | market 
+		der Markt | market
 der Markt | market | ринок
 der Marktplatz | marketplace | ринок
 der Flohmarkt | flea market | барахолка
 die Markthalle | indoor market | зал ринку
 der Bauernmarkt | farmer's market | фермерський ринок
 der Stand | stall | прилавок
-der Händler / die Händlerin | trader | продавець
+der Händler | trader | продавець
+die Händlerin | trader | продавець
 die Produkte; ntpl | produce | продукти
 örtlich | local | локальний
 bio | organic | органічний
 saisonbedingt | seasonal | сезонний
 selbstgemacht | home-made | саморобний
 
-		obst und gemüse | fruit and vegetables 
+		obst und gemüse | fruit and vegetables
 obst und gemüse | fruit and vegetables | фрукти та овочі
 der Gemüseladen | greengrocer's | овочевий магазин
 der Saft | juice | сік
@@ -1316,10 +1370,11 @@ der rote Paprika | red pepper | червоний перець
 der Spinat | spinach | шпинат
 die Tomate | tomato | помідор
 
-		das fischgeschäft | fishmonger's 
+		das fischgeschäft | fishmonger's
 das fischgeschäft | fishmonger's | рибний магазин
 
-der Fischhändler / die Fischhändlerin | fishmonger | торговець рибою
+der Fischhändler | fishmonger | торговець рибою
+die Fischhändlerin | fishmonger | торговець рибою
 die Gräte | (fish)bone | кістки
 das Filet | fillet | філе
 der Rogen | roe | ікра
@@ -1364,10 +1419,11 @@ der Seeigel | sea urchin | морський їжак
 die Garnele | shrimp | креветка
 der Tintenfisch | squid | кальмар
 
-		die metzgerei | butcher's 
+		die metzgerei | butcher's
 die metzgerei | butcher's | м'ясник
 
-der Metzger / die Metzgerin | butcher | м'ясник
+der Metzger | butcher | м'ясник
+die Metzgerin | butcher | м'ясник
 das Fleisch | meat | м'ясо
 das rote / weiße Fleisch | red / white meat | червоне / біле м'ясо
 die Wurstwaren; fpl | cold meats | сосиски
@@ -1400,10 +1456,11 @@ die Wurst | sausage | ковбаса
 das Schnitzel | schnitzel | шніцель
 das Steak | steak | стейк
 
-		die bäckerei und die konditorei | bakery and patisserie 
+		die bäckerei und die konditorei | bakery and patisserie
 die bäckerei und die konditorei | bakery and patisserie | пекарня та кондитерська
 
-der Bäcker / die Bäckerin | baker | пекар
+der Bäcker | baker | пекар
+die Bäckerin | baker | пекар
 das Brot | bread | хліб
 das Vollkornbrot | wholemeal bread | цільнозерновий хліб
 der Brotlaib | loaf | буханець хліба
@@ -1428,7 +1485,7 @@ die Pfannkuchen; mpl | pancakes | млинці
 die Brezel | pretzel | крендель
 der Stollen | stollen | кекс
 
-		eier und milchprodukte | eggs and dairy products 
+		eier und milchprodukte | eggs and dairy products
 eier und milchprodukte | eggs and dairy products | яйця і молочні продукти
 
 das Eiweiß | egg white | білок
@@ -1444,7 +1501,7 @@ die Magermilch | skimmed milk | знежирене молоко
 die Halbfettmilch | semi-skimmed milk | напівзнежирене молоко
 aus Käfighaltung | caged | від кліткового вирощування
 aus Freilandhaltung | free-range | з вільного вигулу
-milchfrei | dairy-free | немолочні
+milchfrei | dairy-free | немолочний
 die Butter | butter | вершкове масло
 die Sahne | cream | крем
 das Ei | egg | яйце
@@ -1452,7 +1509,7 @@ die Milch | milk | молоко
 die Sojamilch | soymilk | соєве молоко
 der Joghurt | yoghurt | йогурт
 
-		der käse | cheese 
+		der käse | cheese
 der käse | cheese | сир
 
 der Blauschimmelkäse | blue cheese | блакитний сир
@@ -1468,10 +1525,11 @@ der Roquefort | Roquefort | рокфор
 der Räucherkäse | smoked cheese | сир копчений
 der Tilsiter | Tilsit cheese | сир тильзіт
 
-		die apotheke | pharmacy 
+		die apotheke | pharmacy
 die apotheke | pharmacy | аптека
 
-der Apotheker / die Apothekerin | pharmacist | фармацевт
+der Apotheker | pharmacist | фармацевт
+die Apothekerin | pharmacist | фармацевт
 das Rezept | prescription | рецепт
 die Erkältung | cold | застуда
 der Durchfall | diarrhoea | діарея
@@ -1524,7 +1582,7 @@ die Mascara | mascara | туш
 der Nagellack | nail varnish | лак для нігтів
 der Puder | powder | пудра
 
-		für das baby | baby goods 
+		für das baby | baby goods
 für das baby | baby goods | для дитини
 
 die Kolik | colic | кольки
@@ -1567,7 +1625,7 @@ der Sportwagen | pushchair | коляска
 der Beißring | teething ring | зубне кільце
 das Reisebett | travel cot | дитяче ліжечко
 
-		der zeitungsladen | newsagent 
+		der zeitungsladen | newsagent
 der zeitungsladen | newsagent | газетний кіоск
 
 die großformatige Zeitung | broadsheet | газета великого формату
@@ -1575,7 +1633,8 @@ der Kiosk | kiosk | кіоск
 die Schreibwaren; fpl | stationery | письмове приладдя
 die Boulevardzeitung | tabloid | таблоїд
 der Tabakwarenladen | tobacconist | тютюновий магазин
-der Verkäufer / die Verkäuferin | vendor | продавець
+der Verkäufer | vendor | продавець
+die Verkäuferin | vendor | продавець
 täglich | daily | щодня
 wöchentlich | weekly | щотижня
 
@@ -1598,7 +1657,7 @@ das Rubbellos | scratch card | скретч-картка
 die Briefmarke | stamp | штамп
 der Tabak | tobacco | тютюн
 
-		das kaufhaus | department store 
+		das kaufhaus | department store
 das kaufhaus | department store | універмаг
 
 die Marke | brand | марка
@@ -1628,7 +1687,7 @@ die Damenwäsche | lingerie | жіноча білизна
 die Wohntextilien; fpl | soft furnishings | домашній текстиль
 das Spielzeug | toys | іграшки
 
-		kleidung und schuhe | clothing and footwear 
+		kleidung und schuhe | clothing and footwear
 kleidung und schuhe | clothing and footwear | одяг і взуття
 
 die Umkleidekabine | fitting room | роздягальня
@@ -1704,7 +1763,7 @@ die Pantoffeln; fpl | slippers | тапочки
 die Sportschuhe; mpl | trainers | спортивне взуття
 die Gummistiefel; mpl | Wellington boots | гумові чоботи
 
-		der baumarkt | diy store 
+		der baumarkt | diy store
 der baumarkt | diy store | будівельний магазин
 
 die Elektrizität | electricity | електрика
@@ -1736,7 +1795,7 @@ die Fliesen; fpl | tiles | плитка
 die Tapete | wallpaper | шпалери
 der Schraubenschlüssel | wrench | гайковий ключ
 
-		andere läden | other shops 
+		andere läden | other shops
 andere läden | other shops | інші магазини
 die Antiquitätenhandlung | antique shop | антикварний магазин
 der Herrenfriseur | barber's | перукар
@@ -1763,7 +1822,7 @@ das Shoppingcenter | shopping mall | торговий центр
 das Spielwarengeschäft | toyshop | магазин іграшок
 das Reisebüro | travel agency | туристичне агентство
 
-	der alltag | day-to-day 
+	der alltag | day-to-day
 der alltag | day-to-day | повсякденний
 
 der Milchkaffee | coffee with milk | кава з молоком
@@ -1771,7 +1830,7 @@ die Tasse | cup | чашка
 der Henkel | handle | ручка
 die Untertasse | saucer | блюдце
 
-		das wesentliche | the basics 
+		das wesentliche | the basics
 aufwachen | to wake up | прокидатися
 sich anziehen | to get dressed | одягатися
 ankommen | to arrive | прибути
@@ -1782,7 +1841,7 @@ sich mit Freunden treffen | to meet friends | зустрітися з друзя
 nach Hause gehen | to go home | йди додому
 ins Bett gehen | to go to bed | лягати спати
 
-		das frühstück | breakfast 
+		das frühstück | breakfast
 das frühstück | breakfast | сніданок
 
 die Frühstückstheke | breakfast bar | бар для сніданку
@@ -1810,7 +1869,7 @@ das Müsli | muesli | крупа
 die Rühreier; ntpl | scrambled eggs | яєчня
 der Tee | tea | чай
 
-		die hauptmahlzeiten | main meals 
+		die hauptmahlzeiten | main meals
 die hauptmahlzeiten | main meals | основні страви
 
 das Essen | food | їжа
@@ -1821,7 +1880,8 @@ die Gänge; mpl | courses | страви
 das Rezept | recipe | рецепт
 der Aperitif | aperitif | аперитив
 der Digestif | after-dinner drink | дижестив
-essen / trinken | to eat / drink | їсти / пити
+essen | to eat| їсти
+trinken | to drink | пити
 zu Mittag essen | to have lunch | обідати
 speisen | to have dinner | вечеряти
 zum Essen ausgehen | to eat out | їсти не вдома
@@ -1873,15 +1933,17 @@ die rote Grütze | red fruit compote | компот з червоних фрук
 der Kaiserschmarrn | shredded pancake | Кайзершмаррн
 die Weinschaumcreme | syllabub | винна піна крем
 
-		auswärts essen | eating out 
+		auswärts essen | eating out
 auswärts essen | eating out | їсти на свіжому повітрі
 
 die Tageskarte | set menu | меню дня
 die Tagesgerichte; ntpl | daily specials | щоденні пропозиції
 die Bedienung | service charge | сервіс
 das Trinkgeld | tip | чайові
-der Weinkellner / die Weinkellnerin | wine waiter | винний офіціант
-der Barkeeper / die Bardame | barman / barmaid | бармен
+der Weinkellner | wine waiter | винний офіціант
+die Weinkellnerin | wine waiter | винний офіціант
+der Barkeeper | barman / barmaid | бармен
+die Bardame | barman / barmaid | бармен
 vegetarisch | vegetarian | вегетаріанський
 veganisch | vegan | веганський
 glutenfrei | gluten-free | не містить глютену
@@ -1906,19 +1968,22 @@ der Tisch | table | стіл
 die Tischdecke | tablecloth | скатертина
 die Zahnstocher; mpl | toothpicks | зубочистки
 der Essig und das Öl | vinegar and oil | оцет і олія
-der Kellner / die Kellnerin | waiter / waitress | офіціант
+der Kellner | waiter / waitress | офіціант
+die Kellnerin | waiter / waitress | офіціант
 das Weinglas | wine glass | келих для вина
 
-		das fastfood | fast food 
+		das fastfood | fast food
 das fastfood | fast food | фастфуд
 die Fastfood-Kette | fast-food chain | мережа швидкого харчування
 der Schnellimbiss | food stall | заклад швидкого харчування
 das Streetfood | street food | вулична їжа
-der Verkäufer / die Verkäuferin | vendor | продавець
+der Verkäufer | vendor | продавець
+die Verkäuferin | vendor | продавець
 das Drive-In | drive-thru | автокафе
 zum Mitnehmen | an order to go / a takeaway | забрати з собою
 die Lieferkosten; pl | delivery charge | вартість доставки
-der Lieferant / die Lieferantin | delivery man / woman | кур'єр
+der Lieferant | delivery man / woman | кур'єр
+die Lieferantin | delivery man / woman | кур'єр
 eine Bestellung telefonisch aufgeben | to phone in an order | зробити замовлення по телефону
 bestellen | to place an order | замовити
 die Bestellung abholen | to collect an order | забрати замовлення
@@ -1935,7 +2000,7 @@ die Currywurst | sausage with curry sauce | ковбаса з соусом ка�
 die Sushis; ntpl | sushi | суші
 der Wrap | wrap | обгортка
 
-		die kommunikation und die informationstechnologie | communication and IT 
+		die kommunikation und die informationstechnologie | communication and IT
 die kommunikation und die informationstechnologie | communication and IT | комунікаційно-інформаційні технології
 
 der Beitrag | post | пост
@@ -1966,10 +2031,12 @@ das Kabel | cable | кабель
 anrufen | to make a phone call | подзвонити
 eine SMS / E-Mail schicken | to send a text / an email | відправити SMS / електронну пошту
 posten | to post (online) | опублікувати
-herunterladen / hochladen | to download / upload | скачати / завантажити
+herunterladen | to download| скачати
+hochladen | to upload | завантажити
 anklicken | to click on | натиснути
 das Handy aufladen | to charge your phone | зарядити мобільний
-einschalten / ausschalten | to switch on / off | увімкнути / вимкнути
+einschalten | to switch on | увімкнути
+ausschalten | to switch off | вимкнути
 das Ladegerät | charger | зарядний пристрій
 der Computer | computer | комп'ютер
 die SIM-Karte | SIM card | SIM-картка
@@ -1977,7 +2044,7 @@ das Smartphone | smartphone | смартфон
 das Tablet | tablet | планшет
 der WLAN-Router | wireless router | роутер WiFi
 
-		die bildung | education 
+		die bildung | education
 die bildung | education | освіта
 
 die Vorschule | nursery school | дошкільний заклад
@@ -1985,10 +2052,14 @@ die Grundschule | primary school | початкова школа
 die Realschule | secondary school | середня школа
 die Hochschule | college | коледж
 die Universität | university | університет
-der Schulleiter / die Schulleiterin | headteacher | директор
-der Lehrer / die Lehrerin | teacher | учитель
-der Schüler / die Schülerin | pupil | студент
-der Hausmeister / die Hausmeisterin | janitor | прибиральник
+der Schulleiter | headteacher | директор
+die Schulleiterin | headteacher | директор
+der Lehrer | teacher | учитель
+die Lehrerin | teacher | учитель
+der Schüler | pupil | студент
+die Schülerin | pupil | студент
+der Hausmeister | janitor | прибиральник
+die Hausmeisterin | janitor | прибиральник
 das Klassenzimmer | classroom | клас
 der Stundenplan | timetable | розклад
 die Unterrichtsstunde | lesson | урок
@@ -1998,8 +2069,10 @@ die Hausaufgaben; fpl | homework | домашня робота
 die Aufgabe | assignment | завдання
 die Prüfung | exam | екзамен
 der Abschluss | degree | диплом; ступінь
-der Student / die Studentin | undergraduate | студент
-der Graduierte / die Graduierte | postgraduate | випускник
+der Student | undergraduate | студент
+die Studentin | undergraduate | студент
+der Graduierte | postgraduate | випускник
+die Graduierte | postgraduate | випускник
 die Kantine | canteen | їдальня
 die Aula | assembly hall | аудиторія
 das Spielfeld | playing field | ігровий майданчик
@@ -2032,18 +2105,24 @@ die Weißwandtafel | whiteboard | біла дошка
 die Cafeteria | cafeteria | кафетерій
 der Campus | campus | кампус
 der Hörsaal | lecture hall | лекційна зала
-der Dozent / die Dozentin | lecturer | викладач
+der Dozent | lecturer | викладач
+die Dozentin | lecturer | викладач
 die Bibliothek | library | бібліотека
-der Student / die Studentin | student | студент
+der Student | student | студент
+die Studentin | student | студент
 
-		im büro | the office 
+		im büro | the office
 im büro | the office | в офісі
 
-der Chef / die Chefin | manager | керівник
+der Chef | manager | керівник
+die Chefin | manager | керівник
 die Mitarbeiter; mpl | staff | співробітники
-der Kunde / die Kundin | client | клієнт
-der Lieferant / die Lieferantin | supplier | постачальник
-der Kollege / die Kollegin | colleague | колега
+der Kunde | client | клієнт
+die Kundin | client | клієнт
+der Lieferant | supplier | постачальник
+die Lieferantin | supplier | постачальник
+der Kollege | colleague | колега
+die Kollegin | colleague | колега
 die Personalabteilung | human resources | людські ресурси
 die Buchhaltung | accounts | бухгалтерський облік
 die Zahlen; fpl | figures | цифри
@@ -2061,7 +2140,8 @@ das Upgrade | upgrade | оновлення
 der Benutzername | username | ім'я користувача
 das Passwort | password | пароль
 Maschine schreiben | to type | набирати текст
-einloggen / ausloggen | to log on / off | увійти / вийти
+einloggen | to log on | увійти
+ausloggen | to log off | вийти
 einen Vortrag halten | to give a presentation | виступити з презентацією
 eine Sitzung einberufen | to hold a meeting | скликати зустріч
 der Taschenrechner | calculator | калькулятор
@@ -2086,11 +2166,12 @@ der Drehstuhl | swivel chair | поворотне крісло
 das Telefon | telephone | телефон
 der USB-Stick | USB stick | USB-накопичувач
 
-		auf der bank | the bank 
+		auf der bank | the bank
 auf der bank | the bank | банк
 
 die Zweigstelle | branch | відділення
-der Kassierer / die Kassierin | cashier | касир
+der Kassierer | cashier | касир
+die Kassierin | cashier | касир
 das Online-Banking | online banking | онлайн-банкінг
 das Bankkonto | bank account | банківський рахунок
 das Girokonto | current account | поточний рахунок
@@ -2117,7 +2198,7 @@ die Bankkarte / Kreditkarte | debit / credit card | банківська кар�
 der Wechselkurs | exchange rate | обмінний курс
 der Safe | safety deposit box | сейф
 
-		auf der post | the post office 
+		auf der post | the post office
 auf der post | the post office | на пошті
 
 die Adresse | address | адреса
@@ -2136,12 +2217,13 @@ der Briefumschlag | envelope | конверт
 der Brief | letter | лист
 das Paket | package | пакунок
 die Luftpolstertasche | padded envelope | бульбашковий мішок
-der Postangestellte / die Postangestellte | postal worker | поштовий працівник
+der Postangestellte | postal worker | поштовий працівник
+die Postangestellte | postal worker | поштовий працівник
 der Briefkasten | postbox | поштова скринька
 die Postkarte | postcard | листівка
 die Briefmarke | stamp | штамп
 
-		in der stadt | in town 
+		in der stadt | in town
 in der stadt | in town | в місті
 
 das Café | café | кафе
@@ -2163,7 +2245,7 @@ die Polizeiwache | police station | поліцейська дільниця
 die Synagoge | synagogue | синагога
 das Rathaus | town hall | ратуша
 
-	in der freizeit | leisure 
+	in der freizeit | leisure
 in der freizeit | leisure | у вільний час
 
 das Zelt | tent | намет
@@ -2172,7 +2254,7 @@ der Zeltboden | groundsheet | підлога намету
 die Zeltleine | guy rope | наметова мотузка
 der Zeltpflock | tent peg | кілок для намету
 
-		das wesentliche | the basics 
+		das wesentliche | the basics
 
 der Urlaub | holiday | канікули
 die Freizeit | spare time | вільний час
@@ -2197,9 +2279,10 @@ das Reisen | travelling | подорожі
 das Laufen | walking | біг
 fernsehen / Filme sehen | watching TV / films | дивитися телевізор / фільми
 
-		besichtigungen | sightseeing 
+		besichtigungen | sightseeing
 besichtigungen | sightseeing | огляд пам'яток
-der Tourist / die Touristin | tourist | турист
+der Tourist | tourist | турист
+die Touristin | tourist | турист
 die Touristenattraktion | tourist attraction | туристична привабливість
 der Ausflug | excursion | екскурсія
 das Naturschutzgebiet | nature reserve | природний заповідник
@@ -2219,10 +2302,11 @@ der Reiseführer | guidebook | путівник
 das Denkmal | monument | пам'ятник
 das Museum | museum | музей
 der Sightseeing-Bus | sightseeing bus | екскурсійний автобус
-der Reiseführer / die Reiseführerin | tour guide | гід
+der Reiseführer | tour guide | гід
+die Reiseführerin | tour guide | гід
 das Fremdenverkehrsbüro | tourist office | туристичний офіс
 
-		ausgehen | evenings out 
+		ausgehen | evenings out
 ausgehen | evenings out | виходити
 ein Glas | a drink | напій
 das Nachtleben | nightlife | нічне життя
@@ -2252,7 +2336,7 @@ die Oper | opera | опера
 das Restaurant | restaurant | ресторан
 das Theater | theatre | театр
 
-		im hotel | hotel 
+		im hotel | hotel
 im hotel | hotel | в готелі
 
 die Frühstückspension | bed and breakfast | ліжко та сніданок
@@ -2271,22 +2355,25 @@ das "Bitte nicht stören"-Schild | "do not disturb" sign | знак «Не ту�
 das Doppelzimmer | double room | двомісний номер
 die Schlüsselkarte | key card | ключ картка
 die Minibar | minibar | міні-бар
-der Gepäckträger / die Gepäckträgerin | porter | носильник
+der Gepäckträger | porter | носильник
+die Gepäckträgerin | porter | носильник
 der Empfangsbereich | reception | приймальня
-der Empfangschef / die Empfangschefin | receptionist | реєстратор
+der Empfangschef | receptionist | реєстратор
+die Empfangschefin | receptionist | реєстратор
 der Tresor | safe | сейф
 das Einzelzimmer | single room | одномісний номер
 die Toilettenartikel; mpl | toiletries | туалетні приналежності
 das Zweibettzimmer | twin room | кімната з двома односпальними ліжками
 
-		campen | camping 
+		campen | camping
 campen | camping | кемпінг
 
 der Campingplatz | campsite | кемпінг
 der Platz | pitch | місце
 der Stromanschluss | electricity hook-up | підключення живлення
 der Sanitärblock | toilet / shower block | санблок
-der Camper / die Camperin | camper | кемпер
+der Camper | camper | кемпер
+die Camperin | camper | кемпер
 Zelten verboten | "no camping" | без кемпінгу
 zelten | to camp | кемпінг
 ein Zelt aufschlagen / abbrechen | to pitch / take down a tent | поставити / зібрати намет
@@ -2303,7 +2390,7 @@ der Schlafsack | sleeping bag | спальний мішок
 das Zelt | tent | намет
 die Taschenlampe | torch | ліхтарик
 
-		am strand | the beach 
+		am strand | the beach
 am strand | the beach | на пляжі
 
 Baden verboten. | "No swimming." | Купання заборонено
@@ -2338,7 +2425,7 @@ die Badehose | swimming trunks | плавки
 der Badeanzug | swimsuit | купальник
 der Windschutz | windbreak | захист від вітру
 
-		musik | music 
+		musik | music
 musik | music | музика
 
 der DJ | DJ | діджей
@@ -2347,7 +2434,8 @@ die Schallplatte | vinyl record | запис
 das Mikrofon | microphone | мікрофон
 das Lied | song | пісня
 das Album | album | альбом
-der SingerSongwriter / die SingerSongwriterin | singer / songwriter | співак / пісняр
+der SingerSongwriter | singer / songwriter | співак / пісняр
+die SingerSongwriterin | singer / songwriter | співак / пісняр
 die Band | band | група
 die Livemusik | live music | жива музика
 der Gig | gig | концерт
@@ -2393,16 +2481,20 @@ die Geige | violin | скрипка
 das Xylophon | xylophone | ксилофон
 
 der Chor | choir | хор
-der Dirigent / die Dirigentin | conductor | диригент
-der Musiker / die Musikerin | musician | музикант
+der Dirigent | conductor | диригент
+die Dirigentin | conductor | диригент
+der Musiker | musician | музикант
+die Musikerin | musician | музикант
 das Orchester | orchestra | оркестр
 die Noten; fpl | sheet music | ноти
-der Sänger / die Sängerin | singer | співак / співачка
+der Sänger | singer | співак / співачка
+die Sängerin | singer | співак / співачка
 
-		fotografie | photography 
+		fotografie | photography
 fotografie | photography | фотографія
 das Foto | photo | фотографія
-der Fotograf / die Fotografin | photographer | фотограф
+der Fotograf | photographer | фотограф
+die Fotografin | photographer | фотограф
 das Selfie | selfie | селфі
 der Selfie-Stick | selfie stick | палка для селфі
 ein Foto / Selfie machen | to take a photo / selfie | зробити фото / селфі
@@ -2414,10 +2506,11 @@ die DSLR-Kamera | DSLR camera | камера DSLR
 die SD-Speicherkarte | SD card | карта пам’яті
 das Stativ | tripod | штатив
 
-		spiele | games 
+		spiele | games
 spiele | games | ігри
 
-der Spieler / die Spielerin | player | гравець
+der Spieler | player | гравець
+die Spielerin | player | гравець
 das Versteckspiel | hide and seek | гра в хованки
 das Kreuzworträtsel | crossword | кросворд
 die Patience | solitaire | пасьянс
@@ -2442,14 +2535,17 @@ das Damespiel | draughts | шашки
 das Puzzle | jigsaw puzzle | головоломка
 das Kegelspiel | skittles | боулінг
 
-		kunsthandwerk | arts and crafts 
+		kunsthandwerk | arts and crafts
 kunsthandwerk | arts and crafts | мистецтво і ремесла
 
 das Kunsthandwerk | handicrafts | ремесло
 der Kunsthandwerksmarkt | craft fair | ярмарок ремесел
-der Künstler / die Künstlerin | artist | артист
-der Amateur / die Amateurin | amateur | любитель
-der Schneider / die Schneiderin | dressmaker | кравець / кравчиня
+der Künstler | artist | артист
+die Künstlerin | artist | артист
+der Amateur | amateur | любитель
+die Amateurin | amateur | любитель
+der Schneider | dressmaker | кравець / кравчиня
+die Schneiderin | dressmaker | кравець / кравчиня
 malen | to paint | малювати
 skizzieren | to sketch | ескіз
 nähen | to sew | шити
@@ -2489,21 +2585,26 @@ der Nähkorb | sewing basket | кошик для шиття
 die Nähmaschine | sewing machine | швейна машина
 das Maßband | tape measure | рулетка; сантиметр
 
-	der sport | sport 
+	der sport | sport
 der sport | sport | спорт
 
 der Mittelkreis | centre circle | середнє коло
 
-		das wesentliche | the basics 
+		das wesentliche | the basics
 
 das Turnier | tournament | турнір
 der Wettbewerb | competition | змагання
 die Meisterschaft | league | чемпіонат
-der Meister / die Meisterin | champion | чемпіон
-der Mannschaftskamerad / die Mannschaftskameradin | teammate | товариш по команді
-der Teilnehmer / die Teilnehmerin | competitor | учасник
-der Trainer / die Trainerin | coach | тренер
-der Cheftrainer / die Cheftrainerin | manager | головний тренер
+der Meister | champion | чемпіон
+die Meisterin | champion | чемпіон
+der Mannschaftskamerad | teammate | товариш по команді
+die Mannschaftskameradin | teammate | товариш по команді
+der Teilnehmer | competitor | учасник
+die Teilnehmerin | competitor | учасник
+der Trainer | coach | тренер
+die Trainerin | coach | тренер
+der Cheftrainer | manager | головний тренер
+die Cheftrainerin | manager | головний тренер
 das Spiel | match | гра
 die Punkte; mpl | points | бали
 trainieren | to coach | тренувати
@@ -2514,22 +2615,26 @@ verlieren | to lose | втрачати
 unentschieden spielen | to draw | зіграти внічию
 das Freizeitzentrum | leisure centre | центр дозвілля
 die Medaille | medal | медаль
-der Offizielle / die Offizielle | official | службовець; чиновник
+der Offizielle | official | службовець; чиновник
+die Offizielle | official | службовець; чиновник
 das Podium | podium | подіум
-der Schiedsrichter / die Schiedsrichterin | referee | рефері
+der Schiedsrichter | referee | рефері
+die Schiedsrichterin | referee | рефері
 die Anzeigetafel | scoreboard | табло
 die Zuschauer; mpl | spectators | глядачі
-der Sportler / die Sportlerin | sportsperson | спортсмен
+der Sportler | sportsperson | спортсмен
+die Sportlerin | sportsperson | спортсмен
 das Stadion | stadium | стадіон
 die Tribüne | stands | трибуна
 die Mannschaft | team | команда
 die Trophäe | trophy | трофей
 
-		fitness | wellbeing 
+		fitness | wellbeing
 fitness | wellbeing | фітнес
 
 das Fitnessstudio | gym | тренажерний зал
-der Fitnesstrainer / die Fitnesstrainerin | gym instructor | фітнес-тренер
+der Fitnesstrainer | gym instructor | фітнес-тренер
+die Fitnesstrainerin | gym instructor | фітнес-тренер
 die Mitgliedschaft im Fitnessstudio | gym membership | абонемент у спортзал
 der Personal Trainer | personal trainer | особистий тренер
 der Fitnesskurs | exercise class | курс фітнесу
@@ -2558,12 +2663,15 @@ das Springseil | skipping rope | скакалка
 das Laufband | treadmill | бігова доріжка
 die Hantelbank | weightlifting bench | вагова лава
 
-		fußball | football 
+		fußball | football
 fußball | football | футбол
 
-der Abwehrspieler / die Abwehrspielerin | defender | захисник
-der Stürmer / die Stürmerin | striker | нападаючий
-der Ersatzspieler / die Ersatzspielerin | substitute | запасний гравець
+der Abwehrspieler | defender | захисник
+die Abwehrspielerin | defender | захисник
+der Stürmer | striker | нападаючий
+die Stürmerin | striker | нападаючий
+der Ersatzspieler | substitute | запасний гравець
+die Ersatzspielerin | substitute | запасний гравець
 der Anstoß | kick-off | поштовх
 die Halbzeit | half-time | тайм
 die reguläre Spielzeit | full-time | звичайний час гри
@@ -2581,20 +2689,23 @@ kicken | to kick | удар ногою
 angreifen | to tackle | нападати
 den Ball abgeben | to pass the ball | передати м'яч
 ein Tor schießen | to score a goal | забити гол
-der Schiedrichterassistent / die Schiedrichterassistentin | assistant referee | помічник арбітра
+der Schiedrichterassistent | assistant referee | помічник арбітра
+die Schiedrichterassistentin | assistant referee | помічник арбітра
 der Fußball | football | футбол
 die Fußballschuhe; mpl | football boots | футбольні бутси
 das Fußballspiel | football match | футбольна гра
 das Spielfeld | football pitch | ігрове поле
-der Fußballspieler / die Fußballspielerin | football player | футболіст
+der Fußballspieler | football player | футболіст
+die Fußballspielerin | football player | футболіст
 das Tor | goal | ворота
-der Torwart / die Torwartin | goalkeeper | воротар
+der Torwart | goalkeeper | воротар
+die Torwartin | goalkeeper | воротар
 die Torwarthandschuhe; mpl | goalkeeper's gloves | воротарські рукавички
 die Schienbeinschützer; mpl | shin pads | щитки для гомілок
 die Pfeife | whistle | свисток
 die gelbe / rote Karte | yellow / red card | жовта / червона картка
 
-		eishockey | ice hockey 
+		eishockey | ice hockey
 eishockey | ice hockey | хокей
 
 die blaue Linie | blue line | синя лінія
@@ -2607,13 +2718,14 @@ das Drittel | period | одна третя
 das Powerplay | powerplay | силова гра
 Eishockey spielen | to play ice hockey | грати в хокей
 das Gitter | helmet cage | сітка шолому
-der Eishockeyspieler / die Eishockeyspielerin | ice hockey player | хокеїст
+der Eishockeyspieler | ice hockey player | хокеїст
+die Eishockeyspielerin | ice hockey player | хокеїст
 der Eishockeyschläger | ice hockey stick | хокейна ключка
 die Fanghandschuhe; mpl | mitts | ловні рукавички
 der Puck | puck | шайба
 die Schlittschuhe; mpl | skates | ковзани
 
-		basketball | basketball 
+		basketball | basketball
 basketball | basketball | баскетбол
 der Korbleger | layup | простой
 der Slam Dunk | slam dunk | слем-данк
@@ -2628,10 +2740,11 @@ der Korb | basket | кошик
 der Basketball | basketball | баскетбол
 das Basketballfeld | basketball court | баскетбольний майданчик
 das Basketball | basketball game | баскетбол
-der Basketballspieler / die Basketballspielerin | basketball player | баскетболіст
+der Basketballspieler | basketball player | баскетболіст
+die Basketballspielerin | basketball player | баскетболіст
 die Basketballschuhe; mpl | basketball shoes | взуття для баскетболу
 
-		schlägersportarten | racket sports 
+		schlägersportarten | racket sports
 schlägersportarten | racket sports | ракетковий спорт
 
 das Netz | net | сітка
@@ -2644,7 +2757,8 @@ der Ballwechsel | rally | зміна м'яча
 Spiel, Satz und Sieg | game, set and match | гра, сет і матч
 das Einzel | singles | одинаки
 das Doppel | doubles | подвійні
-der topgesetzte Spieler / die topgesetzte Spielerin | top seed | перший сіяний гравець
+der topgesetzte Spieler | top seed | перший сіяний гравець
+die topgesetzte Spielerin | top seed | перший сіяний гравець
 Tennis spielen | to play tennis | грати в теніс
 Badminton spielen | to play badminton | грати в бадмінтон
 schlagen | to hit | удар
@@ -2659,17 +2773,21 @@ das Squash | squash | сквош
 der Squashball | squash ball | м'яч для сквошу
 der Squashschläger | squash racket | ракетка для сквошу
 
-der Balljunge / das Ballmädchen | ball boy / girl | подавач м'яча (хлопчик / дівчинка)
-der Linienrichter / die Linienrichterin | line judge | лінійний суддя
+der Balljunge | ball boy / girl | подавач м'яча (хлопчик / дівчинка)
+das Ballmädchen | ball boy / girl | подавач м'яча (хлопчик / дівчинка)
+der Linienrichter | line judge | лінійний суддя
+die Linienrichterin | line judge | лінійний суддя
 das Tennis | tennis | теніс
 der Tennisball | tennis ball | тенісний м'яч
 der Tennisplatz | tennis court | тенісний корт
-der Tennisspieler / die Tennisspielerin | tennis player | тенісистка
+der Tennisspieler | tennis player | тенісистка
+die Tennisspielerin | tennis player | тенісистка
 der Tennisschläger | tennis racket | тенісна ракетка
-der Schiedsrichter / die Schiedsrichterin | umpire | рефері
+der Schiedsrichter | umpire | рефері
+die Schiedsrichterin | umpire | рефері
 der Hochstuhl | umpire's chair | високий стілець
 
-		wassersport | water sports 
+		wassersport | water sports
 wassersport | water sports | водні види спорту
 
 das Schwimmen | swimming | плавання
@@ -2680,12 +2798,16 @@ der Butterfly | butterfly | батерфляй
 die Spur | lane | трек
 die Länge | length | довжина
 der Schwimmunterricht | swimming lesson | уроки плавання
-der Schwimmer / die Schwimmerin | swimmer | плавець
-der Taucher / die Taucherin | diver | водолаз
+der Schwimmer | swimmer | плавець
+die Schwimmerin | swimmer | плавець
+der Taucher | diver | водолаз
+die Taucherin | diver | водолаз
 das Tauchen | diving | дайвінг
 das Angeln | angling | риболовля
-der Angler / die Anglerin | angler | рибалка
-der Surfer / die Surferin | surfer | серфер
+der Angler | angler | рибалка
+die Anglerin | angler | рибалка
+der Surfer | surfer | серфер
+die Surferin | surfer | серфер
 schwimmen | to swim | плавати
 tauchen | to dive | пірнати
 surfen | to surf | серфінг
@@ -2697,7 +2819,8 @@ die Schwimmflügel; mpl | armbands | водяні крила
 das Sprungbrett | diving board | трамплін
 die Flossen; fpl | flippers | ласти
 die Schwimmbrille | goggles | окуляри для плавання
-der Rettungsschwimmer / die Rettungsschwimmerin | lifeguard | рятувальник
+der Rettungsschwimmer | lifeguard | рятувальник
+die Rettungsschwimmerin | lifeguard | рятувальник
 die Bademütze | swimming cap | шапочка для купання
 das Schwimmbecken | swimming pool | басейн
 die Badehose | swimming trunks | плавки
@@ -2719,13 +2842,15 @@ das Wasserskilaufen | waterskiing | катання на водних лижах
 der Neoprenanzug | wetsuit | гідрокостюм
 das Windsurfen | windsurfing | віндсерфінг
 
-		wintersport | winter sports 
+		wintersport | winter sports
 wintersport | winter sports | зимові види спорту
 
-der Skifahrer / die Skifahrerin | skier | лижник
+der Skifahrer | skier | лижник
+die Skifahrerin | skier | лижник
 das Skigebiet | ski resort | гірськолижний курорт
 der Skilift | ski lift | гірськолижний підйомник
-der Skilehrer / die Skilehrerin | ski instructor | лижний інструктор
+der Skilehrer | ski instructor | лижний інструктор
+die Skilehrerin | ski instructor | лижний інструктор
 die Bergwacht | mountain rescue service | гірська рятувальна служба
 der Verbandskasten | first-aid kit | аптечка першої допомоги
 der Schnee | snow | сніг
@@ -2760,14 +2885,18 @@ der Skianzug | ski suit | лижний костюм
 das Snowboard | snowboard | сноуборд
 die Snowboardschuhe; mpl | snowboarding boots | черевики для сноуборду
 
-		kampfsportarten | combat sports 
+		kampfsportarten | combat sports
 kampfsportarten | combat sports | бойові мистецтва
 
 der Kampf | fight | битва
-der Boxer / die Boxerin | boxer | боксер
-der Kämpfer / die Kämpferin | fighter | боєць
-der Ringkämpfer / die Ringkämpferin | wrestler | борець
-der Gegner / die Gegnerin | opponent | суперник
+der Boxer | boxer | боксер
+die Boxerin | boxer | боксер
+der Kämpfer | fighter | боєць
+die Kämpferin | fighter | боєць
+der Ringkämpfer | wrestler | борець
+die Ringkämpferin | wrestler | борець
+der Gegner | opponent | суперник
+die Gegnerin | opponent | суперник
 das Federgewicht | featherweight | напівлегка вага
 das Schwergewicht | heavyweight | важка вага
 der Punch | punch | удар
@@ -2796,10 +2925,11 @@ das Kung-Fu | kung fu | кунг-фу
 das Taekwondo | taekwondo | тхеквондо
 der Ringkampf | wrestling | змагання з боротьби
 
-		athletik | athletics 
+		athletik | athletics
 athletik | athletics | легка атлетика
 
-der Läufer / die Läuferin | runner | бігун
+der Läufer | runner | бігун
+die Läuferin | runner | бігун
 das Rennen | race | гонка
 der Marathon | marathon | марафон
 der Sprint | sprint | спринт
@@ -2819,7 +2949,8 @@ laufen | to run | бігати
 Rennen laufen | to race | бігати в перегонах
 springen | to jump | стрибати
 werfen | to throw | кидати
-der Leichtathlet / die Leichtathletin | athlete | легкоатлет
+der Leichtathlet | athlete | легкоатлет
+die Leichtathletin | athlete | легкоатлет
 der Diskus | discus | диск
 der Hochsprung | high jump | стрибок у висоту
 die Hürden; fpl | hurdles | перешкоди
@@ -2832,9 +2963,10 @@ die Spikes; mpl | spikes | шипи
 der Startblock | starting blocks | стартовий блок
 die Stoppuhr | stopwatch | секундомір
 
-		golf | golf 
+		golf | golf
 
-der Golfer / die Golferin | golfer | гравець у гольф
+der Golfer | golfer | гравець у гольф
+die Golferin | golfer | гравець у гольф
 der Caddie | caddie | кедді
 der Golfplatz | golf course | поле для гольфу
 das Fairway | fairway | фарватер
@@ -2856,7 +2988,7 @@ der Golfklub | golf club | гольф-клуб
 der Putter | putter | клюшка
 das Tee | tee | чай
 
-		andere sportarten | other sports 
+		andere sportarten | other sports
 andere sportarten | other sports | інші види спорту
 
 der American Football | American football | американський футбол
@@ -2884,12 +3016,13 @@ der Volleyball | volleyball | волейбол
 der Wasserball | water polo | водне поло
 das Gewichtheben | weightlifting | важка атлетика
 
-	gesundheit | health 
+	gesundheit | health
 gesundheit | health | здоров'я
 
-		das wesentliche | the basics 
+		das wesentliche | the basics
 
-der Patient / die Patientin | patient | пацієнт
+der Patient | patient | пацієнт
+die Patientin | patient | пацієнт
 der Schmerz | pain | біль
 die Krankheit | illness | захворювання
 die geistige Gesundheit | mental health | психічне здоров'я
@@ -2901,11 +3034,13 @@ gesund | healthy | здоровий
 sich erholen | to recover | одужувати
 sich um ... kümmern | to look after | піклуватися про
 behandeln | to treat | лікувати
-der Arzt / die Ärztin | doctor | лікар
-der Apotheker / die Apothekerin | pharmacist | фармацевт
+der Arzt | doctor | лікар
+die Ärztin | doctor | лікар
+der Apotheker | pharmacist | фармацевт
+die Apothekerin | pharmacist | фармацевт
 die Apotheke | pharmacy | аптека
 
-		der körper | the body 
+		der körper | the body
 der körper | the body | тіло
 
 der Hals | throat | шия
@@ -2980,7 +3115,7 @@ die Sohle | sole | підошва
 die Ferse | heel | каблук
 der Fußknöchel | ankle | щиколотка
 
-		das skelett | the skeleton 
+		das skelett | the skeleton
 das skelett | the skeleton | скелет
 
 das Organ | organ | орган
@@ -3022,10 +3157,11 @@ die Kniescheibe | kneecap | колінна чашечка
 das Wadenbein | fibula | малогомілкова кістка
 das Schienbein | tibia | гомілка
 
-		die verletzung | injury 
+		die verletzung | injury
 die verletzung | injury | травма
 
-der Sanitäter / die Sanitäterin | paramedic | фельдшер
+der Sanitäter | paramedic | фельдшер
+die Sanitäterin | paramedic | фельдшер
 der Unfall | accident | нещасний випадок
 die Gehirnerschütterung | concussion | струс мозку
 der Sturz | fall | падіння
@@ -3061,7 +3197,7 @@ das Pflaster | plaster | пластир
 die Schlinge | sling | канат
 die Pinzette | tweezers | пінцет
 
-		die krankheit | illness 
+		die krankheit | illness
 die krankheit | illness | захворювання
 
 der Herzinfarkt | heart attack | серцевий напад
@@ -3097,7 +3233,7 @@ der Ausschlag | rash | висип
 eine laufende Nase | runny nose | нежить
 das Niesen | sneezing | чхання
 
-		beim arzt | the doctor's surgery 
+		beim arzt | the doctor's surgery
 beim arzt | the doctor's surgery | у лікаря
 
 der Termin | appointment | призначення
@@ -3117,14 +3253,16 @@ Medikamente einnehmen | to be on medication | приймати ліки
 das Blutdruckmessgerät | blood pressure monitor | тонометр
 der Untersuchungsraum | examination room | кабінет для обстеження
 der Untersuchungstisch | examination table | оглядовий стіл
-der Hausarzt / die Hausärztin | the general practitioner | сімейний лікар
-der Arzthelfer / die Arzthelferin | practice nurse | помічник лікаря
+der Hausarzt | the general practitioner | сімейний лікар
+die Hausärztin | the general practitioner | сімейний лікар
+der Arzthelfer | practice nurse | помічник лікаря
+die Arzthelferin | practice nurse | помічник лікаря
 das Stethoskop | stethoscope | стетоскоп
 die Spritze | syringe | шприц
 das Thermometer | thermometer | термометр
 das Wartezimmer | waiting room | приймальня
 
-		beim zahnarzt | the dentist's surgery 
+		beim zahnarzt | the dentist's surgery
 beim zahnarzt | the dentist's surgery | у стоматолога
 
 der Backenzahn | molar | моляр
@@ -3141,8 +3279,10 @@ sich die Zähne putzen | to brush one's teeth | чистити зуби
 mit Zahnseide reinigen | to floss | очистити зубною ниткою
 die Zahnspange | braces | брекети
 die Zahnseide | dental floss | зубна нитка
-der Zahnarzthelfer / die Zahnarzthelferin | dental nurse | асистент стоматолога
-der Zahnarzt / die Zahnärztin | dentist | стоматолог
+der Zahnarzthelfer | dental nurse | асистент стоматолога
+die Zahnarzthelferin | dental nurse | асистент стоматолога
+der Zahnarzt | dentist | стоматолог
+die Zahnärztin | dentist | стоматолог
 der Zahnarztstuhl | dentist's chair | крісло стоматолога
 der Bohrer | dentist's drill | дриль
 der Zahnersatz | dentures | зубні протези
@@ -3152,10 +3292,11 @@ die Zähne; mpl | teeth | зуби
 die Zahnbürste | toothbrush | зубна щітка
 die Zahnpasta | toothpaste | зубна паста
 
-		beim optiker | the optician's 
+		beim optiker | the optician's
 beim optiker | the optician's | в оптиці
 
-der Augenarzt / die Augenärztin | ophthalmologist | офтальмолог
+der Augenarzt | ophthalmologist | офтальмолог
+die Augenärztin | ophthalmologist | офтальмолог
 die Lesebrille | reading glasses | окуляри для читання
 die Bifokalbrille | bifocals | біфокальні окуляри
 die harten / weichen Kontaktlinsen; fpl | hard / soft contact lenses | жорсткі / м'які контактні лінзи
@@ -3178,19 +3319,24 @@ der Sehtest | eye test | перевірка зору
 das Brillengestell | frames | оправа окулярів
 die Brille | glasses | окуляри
 das Brillenetui | glasses case | футляр для окулярів
-der Optiker / die Optikerin | optician | оптик
+der Optiker | optician | оптик
+die Optikerin | optician | оптик
 
-		im krankenhaus | the hospital 
+		im krankenhaus | the hospital
 im krankenhaus | the hospital | у лікарні
 
 das Krankenhaus | hospital | лікарня
 die Notaufnahme | the emergency room | відділення невідкладної допомоги
 der Rettungswagen | ambulance | швидка допомога
 das öffentliche / private Krankenhaus | public / private hospital | державна / приватна лікарня
-der Krankenpfleger / die Krankenschwester | nurse | медсестра
-der Physiotherapeut / die Physiotherapeutin | physiotherapist | фізіотерапевт
-der Röntgenassistent / die Röntgenassistentin | radiographer | рентгенолог
-der Chirurg / die Chirurgin | surgeon | хірург
+der Krankenpfleger | nurse | медсестра
+die Krankenschwester | nurse | медсестра
+der Physiotherapeut | physiotherapist | фізіотерапевт
+die Physiotherapeutin | physiotherapist | фізіотерапевт
+der Röntgenassistent | radiographer | рентгенолог
+die Röntgenassistentin | radiographer | рентгенолог
+der Chirurg | surgeon | хірург
+die Chirurgin | surgeon | хірург
 die Operation | operation | операція
 die CT­ / MRTUntersuchung | CT / MRI scan | обстеження КТ / МРТ
 die Intensivstation | intensive care | відділення інтенсивної терапії
@@ -3212,7 +3358,7 @@ der Rollstuhl | wheelchair | інвалідний візок
 das Röntgenbild | X-ray | рентгенівське зображення
 der Rollator | Zimmer frame® | ходок
 
-		die schwangerschaft | pregnancy 
+		die schwangerschaft | pregnancy
 die schwangerschaft | pregnancy | вагітність
 
 die Schwangere | pregnant woman | вагітна жінка
@@ -3240,18 +3386,23 @@ der Inkubator | incubator | інкубатор
 der Kreißsaal | labour suite | пологовий зал
 die Hebamme | midwife | акушерка
 der Schwangerschaftstest | pregnancy test | тест на вагітність
-der Ultraschalldiagnostiker / die Ultraschalldiagnostikerin | sonographer | лікар ультразвукової діагностики
+der Ultraschalldiagnostiker | sonographer | лікар ультразвукової діагностики
+die Ultraschalldiagnostikerin | sonographer | лікар ультразвукової діагностики
 der Ultraschall | ultrasound | ультразвук
 
-		alternative therapien | alternative therapies 
+		alternative therapien | alternative therapies
 alternative therapien | alternative therapies | альтернативні методи лікування
 
-der Therapeut / die Therapeutin | therapist | терапевт
+der Therapeut | therapist | терапевт
+die Therapeutin | therapist | терапевт
 der Masseur | masseur | масажист
 die Masseurin | masseuse | масажистка
-der Chiropraktor / die Chiropraktorin | chiropractor | мануальний терапевт
-der Akupunkteur / die Akupunkteurin | acupuncturist | акупунктурист
-der Reflexologe / die Reflexologin | reflexologist | рефлексотерапевт
+der Chiropraktor | chiropractor | мануальний терапевт
+die Chiropraktorin | chiropractor | мануальний терапевт
+der Akupunkteur | acupuncturist | акупунктурист
+die Akupunkteurin | acupuncturist | акупунктурист
+der Reflexologe | reflexologist | рефлексотерапевт
+die Reflexologin | reflexologist | рефлексотерапевт
 das Heilmittel | remedy | ліки
 Reiki | reiki | рейки
 die Achtsamkeit | mindfulness | уважність
@@ -3273,11 +3424,12 @@ die Reflexzonenmassage | reflexology | рефлекторний масаж
 die Thalassotherapie | thalassotherapy | таласотерапія
 die traditionelle chinesische Medizin | traditional Chinese medicine | традиційна китайська медицина
 
-		beim tierarzt | the vet 
+		beim tierarzt | the vet
 beim tierarzt | the vet | у ветеринара
 
 die Tierklinik | veterinary clinic | ветеринарна клініка
-der Tierarzt / die Tierärztin | vet | ветеринар
+der Tierarzt | vet | ветеринар
+die Tierärztin | vet | ветеринар
 das Haustier | pet | домашня тварина
 der Floh | flea | блоха
 die Zecke | tick | кліщ
@@ -3286,16 +3438,17 @@ der Heimtierausweis | pet passport | паспорт тварини
 die Quarantäne | quarantine | карантин
 zum Tierarzt gehen | to go to the vet | піти до ветеринара
 mit einem Mikrochip versehen | to microchip | оснащений мікрочіпом
-sterilisieren / kastrieren | to spay / neuter | стерилізувати / каструвати
+sterilisieren | to spay | стерилізувати
+kastrieren | to neuter | каструвати
 einschläfern | to put to sleep | приспати
 der Elisabeth­Kragen | E-collar | комір Елізабет
 das Flohhalsband | flea collar | нашийник від бліх
 die Transportbox | pet carrier | транспортний ящик
 
-	die erde | planet earth 
+	die erde | planet earth
 die erde | planet earth | земля
 
-		das wesentliche | the basics 
+		das wesentliche | the basics
 das Tier | animal | тварина
 die Spezies | species | вид
 das Säugetier | mammal | ссавець
@@ -3327,11 +3480,12 @@ brüllen | to roar | ревіти
 zwitschern | to chirp | щебетати
 summen | to buzz | дзижчати
 
-		haustiere und vögel | domestic animals and birds 
+		haustiere und vögel | domestic animals and birds
 haustiere und vögel | domestic animals and birds | домашні тварини і птахи
 das Fischfutter | fish food | корм для риб
 die Katzenstreu | cat litter | котячий туалет
-der Bauer / die Bäuerin | farmer | фермер
+der Bauer | farmer | фермер
+die Bäuerin | farmer | фермер
 der Bauernhof | farm | ферма
 die Scheune | barn | сарай
 das Heu | hay | сіно
@@ -3387,7 +3541,7 @@ der Maulkorb | muzzle | морда
 das Tierfutter | pet food | корм для тварин
 der Stall | stable | стайня
 
-		amphibien und reptilien | amphibians and reptiles 
+		amphibien und reptilien | amphibians and reptiles
 amphibien und reptilien | amphibians and reptiles | амфібії та рептилії
 
 der Alligator | alligator | алігатор
@@ -3403,7 +3557,7 @@ die Kröte | toad | жаба
 die Schildkröte | tortoise | черепаха
 die Wasserschildkröte | turtle | водяна черепаха
 
-		säugetiere | mammals 
+		säugetiere | mammals
 säugetiere | mammals | ссавці
 
 der Dachs | badger | борсук
@@ -3431,7 +3585,7 @@ der Affe | monkey | мавпа
 das Nashorn | rhinoceros | носоріг
 der Tiger | tiger | тигр
 
-		vögel | birds 
+		vögel | birds
 vögel | birds | птахи
 die Amsel | blackbird | дрозд
 der Bussard | buzzard | канюк
@@ -3458,7 +3612,7 @@ der Storch | stork | лелека
 der Schwan | swan | лебідь
 die Drossel | thrush | дрізд
 
-		gliederfüßer | minibeasts 
+		gliederfüßer | minibeasts
 gliederfüßer | minibeasts | членистоногі
 der Schwarm | swarm | рій
 die Kolonie | colony | колонія
@@ -3488,7 +3642,7 @@ die Spinne | spider | павук
 die Wespe | wasp | оса
 die Kellerassel | woodlouse | мокриця
 
-		meerestiere | marine creatures 
+		meerestiere | marine creatures
 meerestiere | marine creatures | морські тварини
 die Koralle | coral | корал
 die Krabbe | crab | краб
@@ -3503,7 +3657,7 @@ der Hai | shark | акула
 der Seestern | starfish | морська зірка
 der Wal | whale | кит
 
-		blumen, pflanzen und bäume | flowers, plants, and trees 
+		blumen, pflanzen und bäume | flowers, plants, and trees
 blumen, pflanzen und bäume | flowers, plants, and trees | квіти, рослини та дерева
 
 der Stiel | stalk | стебло
@@ -3551,7 +3705,7 @@ die Platane | plane | площина
 die Pappel | poplar | тополя
 die Weide | willow | верба
 
-		land, meer und himmel | land, sea, and sky 
+		land, meer und himmel | land, sea, and sky
 land, meer und himmel | land, sea, and sky | земля, море і небо
 
 die Landschaft | landscape | краєвид
@@ -3603,10 +3757,10 @@ der Regenbogen | rainbow | веселка
 die Sterne; mpl | stars | зірки
 die Sonne | sun | сонце
 
-	feste und festtage | celebrations and festivals 
+	feste und festtage | celebrations and festivals
 feste und festtage | celebrations and festivals | фестивалі та свята
 
-		das wesentliche | the basics 
+		das wesentliche | the basics
 die Gelegenheit | occasion | нагода
 der Geburtstag | birthday | день народження
 die Hochzeit | wedding | весілля
@@ -3632,7 +3786,7 @@ die Grußkarte | greetings card | вітальна листівка
 die Party | party | вечірка
 die Luftschlangen; fpl | streamers | розтяжки
 
-		festtage | high days and holidays 
+		festtage | high days and holidays
 festtage | high days and holidays | свята
 
 die Taufe | baptism | хрещення
@@ -3666,7 +3820,7 @@ der Rosenmontag | Rose Monday | розовий понеділок
 das Erntedankfest | Thanksgiving | день подяки
 der Valentinstag | Valentine's Day | день Святого Валентина
 
-		weihnachten und neujahr | christmas and new year 
+		weihnachten und neujahr | christmas and new year
 weihnachten und neujahr | christmas and new year | різдво і новий рік
 
 der Heiligabend | Christmas Eve | святвечір
@@ -3691,7 +3845,7 @@ Sankt Nikolaus und Knecht Ruprecht | Saint Nicholas and Knecht Ruprecht | свя
 der Stollen | stollen | кекс
 der Kranz | wreath | вінок
 
-		karneval | carnival 
+		karneval | carnival
 karneval | carnival | карнавал
 
 die Kinderschminke | face paint | дитячий макіяж
@@ -3705,4 +3859,5 @@ das Kostüm | costume | костюм
 die Strohpuppe | effigy | солом'яна лялька
 der Jahrmarkt | funfair | ярмарок
 der Karnevalsumzug | parade | карнавальний парад
-der Straßenkünstler / die Straßenkünstlerin | street performer | вуличний артист
+der Straßenkünstler | street performer | вуличний артист
+die Straßenkünstlerin | street performer | вуличний артист
