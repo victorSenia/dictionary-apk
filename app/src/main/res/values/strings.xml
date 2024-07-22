@@ -9,6 +9,7 @@
     <string name="select_for_topic">Select for topic</string>
     <string name="title_activity_topics">Topics</string>
     <string name="title_activity_parse_words_settings">ParseWordsSettingsActivity</string>
+    <string name="title_activity_voice_selector">VoiceSelectorActivity</string>
     <string name="parse_words">Parse words from file</string>
     <string name="file">File</string>
     <string name="pitch">Pitch</string>
@@ -41,4 +42,6 @@
     <string name="asset">Asset</string>
     <string name="title_activity_assets">Assets</string>
     <string name="audio_not_possible">Audio not possible</string>
+    <string name="audio_delayed">Audio delayed</string>
+    <string name="select_voices">Select voices</string>
 </resources>

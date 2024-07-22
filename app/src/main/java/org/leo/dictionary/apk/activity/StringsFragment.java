@@ -17,6 +17,7 @@ import java.util.List;
 public class StringsFragment extends Fragment {
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
+    protected RecyclerView recyclerView;
     // TODO: Customize parameters
     private int mColumnCount = 1;
 
@@ -36,7 +37,7 @@ public class StringsFragment extends Fragment {
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
-            RecyclerView recyclerView = (RecyclerView) view;
+            recyclerView = (RecyclerView) view;
             if (mColumnCount <= 1) {
                 recyclerView.setLayoutManager(new LinearLayoutManager(context));
             } else {

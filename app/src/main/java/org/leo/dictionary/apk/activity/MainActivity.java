@@ -20,7 +20,6 @@ import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private ActivityMainBinding binding;
     private final ActivityResultLauncher<Intent> topicsActivityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
@@ -37,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                     updateTopicAndUi(null);
                 }
             });
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +67,10 @@ public class MainActivity extends AppCompatActivity {
         } else if (id == R.id.action_parse_words) {
             Intent i = new Intent(this, ParseWordsSettingsActivity.class);
             parseWordsActivityResultLauncher.launch(i);
+            return true;
+        } else if (id == R.id.action_select_voices) {
+            Intent i = new Intent(this, VoiceSelectorActivity.class);
+            startActivity(i);
             return true;
         }
 

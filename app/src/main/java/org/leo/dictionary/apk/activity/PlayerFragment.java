@@ -17,10 +17,13 @@ import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.databinding.FragmentPlayerBinding;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocusChangeListener {
     private FragmentPlayerBinding binding;
     private PlayService playService;
     private AudioManager audioManager;
+    private final AtomicBoolean resumeOnFocusGain = new AtomicBoolean(false);
 
     @Override
     public void onResume() {
@@ -43,7 +46,7 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
     }
 
     @Override
-    public void onCreate(@Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         playService = ((ApplicationWithDI) getActivity().getApplicationContext()).appComponent.playService();
         audioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
@@ -94,6 +97,10 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
         int res = audioManager.requestAudioFocus(focusRequest);
         if (AudioManager.AUDIOFOCUS_REQUEST_GRANTED == res) {
             return true;
+        } else if (AudioManager.AUDIOFOCUS_REQUEST_DELAYED == res) {
+            resumeOnFocusGain.set(true);
+            Toast.makeText(getActivity().getBaseContext(), getString(R.string.audio_delayed), Toast.LENGTH_SHORT).show();
+            return false;
         }
         Toast.makeText(getActivity().getBaseContext(), getString(R.string.audio_not_possible), Toast.LENGTH_SHORT).show();
         return false;
@@ -111,10 +118,21 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
     public void onAudioFocusChange(int focusChange) {
         switch (focusChange) {
             case AudioManager.AUDIOFOCUS_LOSS:
-            case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT:
-            case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK:
                 playService.pause();
                 updateButtonUi();
+                break;
+            case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT:
+            case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK:
+                if (playService.isPlaying()) {
+                    resumeOnFocusGain.set(true);
+                    playService.pause();
+                    updateButtonUi();
+                }
+                break;
+            case AudioManager.AUDIOFOCUS_GAIN:
+                if (resumeOnFocusGain.get()) {
+                    playService.play();
+                }
         }
     }
 }

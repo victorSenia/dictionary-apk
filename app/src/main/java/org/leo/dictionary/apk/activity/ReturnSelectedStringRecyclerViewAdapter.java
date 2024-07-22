@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ReturnSelectedStringRecyclerViewAdapter extends StringRecyclerViewAdapter {
 
-    public static final String DATA_STRING_EXTRA = "topic";
+    public static final String DATA_STRING_EXTRA = "selectedValue";
 
     public ReturnSelectedStringRecyclerViewAdapter(List<String> items, Fragment fragment) {
         super(items, fragment);

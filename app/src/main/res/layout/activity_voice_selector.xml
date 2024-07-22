@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.VoiceSelectorActivity"
+        android:orientation="vertical">
+
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:text="en"
+            android:ems="10"
+            android:id="@+id/language"/>
+    <Button
+            android:text="find_voices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/select_voice"
+            style="@style/Widget.AppCompat.Button.Colored"/>
+    <Button
+            android:text="default_voice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/default_voice"
+            style="@style/Widget.AppCompat.Button.Colored"/>
+    <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/voices"
+            android:name="org.leo.dictionary.apk.activity.VoiceSelectorActivity$VoicesFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_strings"/>
+</LinearLayout>

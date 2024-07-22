@@ -5,15 +5,15 @@ import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
 import android.speech.tts.Voice;
 import androidx.preference.PreferenceManager;
+import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.config.PreferenceConfigurationReader;
 import org.leo.dictionary.apk.config.entity.Speech;
 import org.leo.dictionary.audio.AudioService;
 
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 public class AndroidAudioService implements AudioService {
     private final static Logger LOGGER = Logger.getLogger(AndroidAudioService.class.getName());
@@ -23,6 +23,7 @@ public class AndroidAudioService implements AudioService {
     private Context context;
     private Speech speech;
     private PreferenceConfigurationReader.SharedPreferencesProperties changeListener;
+    private Map<String, List<Voice>> voicesPerLanguage;
 
     public void setContext(Context context) {
         this.context = context;
@@ -39,12 +40,7 @@ public class AndroidAudioService implements AudioService {
         textToSpeech = new TextToSpeech(context, status -> {
             if (status != TextToSpeech.ERROR) {
                 Set<Voice> voices = textToSpeech.getVoices();
-                voices.forEach(v -> {
-                            LOGGER.info("getName " + v.getName());
-                            LOGGER.info("getLanguage " + v.getLocale().getLanguage());
-                            LOGGER.info("getDisplayName " + v.getLocale().getDisplayName());
-                        }
-                );
+                voicesPerLanguage = voices.stream().collect(Collectors.groupingBy(v -> v.getLocale().getLanguage()));
             }
         });
         textToSpeech.setOnUtteranceProgressListener(new UtteranceProgressListener() {
@@ -69,11 +65,32 @@ public class AndroidAudioService implements AudioService {
         LOGGER.info(language + " " + text);
         textToSpeech.setSpeechRate(speech.getSpeed());
         textToSpeech.setPitch(speech.getPitch());
-        textToSpeech.setLanguage(Locale.forLanguageTag(language.substring(0, 2)));
+        Voice selectedVoice = getSelectedVoice(language);
+        if (selectedVoice != null) {
+            textToSpeech.setVoice(selectedVoice);
+        } else {
+            textToSpeech.setLanguage(Locale.forLanguageTag(language));
+        }
         speaking.add(text);
         textToSpeech.speak(text, TextToSpeech.QUEUE_ADD, null, text);
         do {
         } while (speaking.contains(text));
+    }
+
+    private Voice getSelectedVoice(String language) {
+        String voiceName = ApkModule.provideLastState(context).getString(ApkModule.LAST_STATE_VOICE + language, null);
+        if (voiceName != null && voicesPerLanguage.get(language) != null) {
+            return voicesPerLanguage.get(language).stream().filter(v -> voiceName.equals(v.getName())).findFirst().orElse(null);
+        }
+        return null;
+    }
+
+    @Override
+    public List<String> getVoicesNames(String language) {
+        if (voicesPerLanguage.get(language) != null) {
+            return voicesPerLanguage.get(language).stream().map(Voice::getName).collect(Collectors.toList());
+        }
+        return Collections.emptyList();
     }
 
     @Override

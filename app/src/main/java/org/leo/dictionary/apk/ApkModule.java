@@ -38,6 +38,8 @@ public class ApkModule {
     public static final String LAST_STATE_SOURCE = "org.leo.dictionary.apk.config.entity.LastState.source";
     public static final String LAST_STATE_URI = "org.leo.dictionary.apk.config.entity.LastState.uri";
     public static final String LAST_STATE_TOPIC = "org.leo.dictionary.apk.config.entity.LastState.topic";
+    public static final String LAST_STATE_VOICE = "org.leo.dictionary.apk.config.entity.LastState.voice.";
+    public static final String LAST_STATE = "_last_state";
     private final Application application;
 
     public ApkModule(Application application) {
@@ -68,7 +70,7 @@ public class ApkModule {
     @Singleton
     @Named("last_state")
     public static SharedPreferences provideLastState(Context context) {
-        return context.getSharedPreferences(context.getPackageName() + "_last_state", Context.MODE_PRIVATE);
+        return context.getSharedPreferences(context.getPackageName() + LAST_STATE, Context.MODE_PRIVATE);
     }
 
     public static WordProvider createWordProvider(Context context, SharedPreferences last_state) {
