@@ -4,8 +4,6 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="play">Play</string>
-    <string name="edit">Edit</string>
-    <string name="delete">Delete</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="action_play_from">Play from</string>
     <string name="title_activity_topics">Topics</string>
@@ -55,7 +53,6 @@
     <string name="use_db">Use database</string>
     <string name="action_edit">Edit</string>
     <string name="action_delete">Delete</string>
-    <string name="options">Options</string>
     <string name="clean_db">Clean database</string>
     <string name="change_orientation">Change orientation</string>
 </resources>

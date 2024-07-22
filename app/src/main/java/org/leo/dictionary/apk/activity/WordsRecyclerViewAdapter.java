@@ -1,7 +1,6 @@
 package org.leo.dictionary.apk.activity;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +8,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import org.leo.dictionary.PlayService;
+import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.databinding.FragmentWordBinding;
@@ -29,10 +29,6 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
     public WordsRecyclerViewAdapter(List<Word> words, Fragment fragment) {
         this.words = words;
         this.fragment = fragment;
-    }
-
-    public int getPositionId() {
-        return positionId;
     }
 
     public void replaceData(List<Word> words) {
@@ -92,20 +88,12 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
         activity.editWord(positionId, words.get(positionId));
     }
 
+    private boolean isDBSource() {
+        return ApkModule.isDBSource(((ApplicationWithDI) fragment.requireActivity().getApplicationContext()).appComponent.lastState());
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final TextView mContentView;
-        final DialogInterface.OnClickListener onClickListener = (dialog, position) -> {
-            if (position == 0) {
-                playFromSelected();
-            }
-            if (position == 1) {
-                editWord();
-            }
-            if (position == 2) {
-                deleteWord();
-            }
-        };
-        final CharSequence[] items = {fragment.getText(R.string.play), fragment.getText(R.string.edit), fragment.getText(R.string.delete)};
         public Word mItem;
 
         public ViewHolder(FragmentWordBinding binding) {
@@ -127,8 +115,17 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
             super(binding.getRoot());
             mContentView = binding.content;
             binding.getRoot().setOnCreateContextMenuListener(fragment);
-            binding.options.setOnClickListener(view -> getOptionsBuilder(view).show());
             binding.playFrom.setOnClickListener(view -> playFromSelected());
+            binding.actionDelete.setOnClickListener(view -> {
+                if (isDBSource()) {
+                    getConfirmationBuilder(view).show();
+                }
+            });
+            binding.actionEdit.setOnClickListener(view -> {
+                if (isDBSource()) {
+                    editWord();
+                }
+            });
         }
 
         @Override
@@ -136,12 +133,13 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
             return super.toString() + " '" + mContentView.getText() + "'";
         }
 
-        private AlertDialog.Builder getOptionsBuilder(View view) {
+        private AlertDialog.Builder getConfirmationBuilder(View view) {
             AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-            builder.setTitle(R.string.options);
-            builder.setItems(items, onClickListener);
+            builder.setTitle("Delete confirmation");
+            builder.setIcon(android.R.drawable.ic_dialog_alert);
+            builder.setMessage("Do you really want to delete word '" + words.get(positionId).getFullWord() + "'?");
+            builder.setPositiveButton("Yes", (dialog, which) -> deleteWord());
             return builder;
         }
     }
-
 }

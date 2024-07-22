@@ -1,11 +1,11 @@
 package org.leo.dictionary.apk.activity;
 
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
+import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.databinding.FragmentStringBinding;
 
 import java.util.List;
@@ -31,7 +31,7 @@ public class StringRecyclerViewAdapter extends RecyclerView.Adapter<StringRecycl
         holder.mItem = mValues.get(position);
         holder.mContentView.setText(holder.mItem);
         if (isBackgroundColorNeeded(holder)) {
-            holder.itemView.setBackgroundColor(Color.DKGRAY);
+            holder.itemView.setBackgroundColor(fragment.requireActivity().getColor(R.color.selected_background));
         } else {
             holder.itemView.setBackground(null);
         }
