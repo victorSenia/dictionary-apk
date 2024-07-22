@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateUiWithNewData(List<Word> unknownWords) {
-        WordsFragment wordsFragment = (WordsFragment) getSupportFragmentManager().findFragmentById(R.id.wordsFragment);
+        WordsFragment wordsFragment = (WordsFragment) getSupportFragmentManager().findFragmentById(R.id.words_fragment);
         wordsFragment.replaceData(unknownWords);
     }
 

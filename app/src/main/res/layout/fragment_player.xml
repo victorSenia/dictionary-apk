@@ -11,7 +11,7 @@
             android:layout_height="wrap_content"
             android:textSize="0sp"
             style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
-            android:id="@+id/buttonPrevious"
+            android:id="@+id/button_previous"
             android:drawableLeft="@android:drawable/ic_media_previous"/>
     <Button
             android:layout_width="wrap_content"
@@ -19,7 +19,7 @@
             android:text="@string/play"
             android:textSize="0sp"
             style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
-            android:id="@+id/buttonPlay"
+            android:id="@+id/button_play"
             android:drawableLeft="@android:drawable/ic_media_play"/>
     <Button
             android:text="@string/next"
@@ -27,6 +27,6 @@
             android:layout_height="wrap_content"
             android:textSize="0sp"
             style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
-            android:id="@+id/buttonNext"
+            android:id="@+id/button_next"
             android:drawableLeft="@android:drawable/ic_media_next"/>
 </LinearLayout>

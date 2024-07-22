@@ -17,7 +17,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize">
             <androidx.fragment.app.FragmentContainerView
-                    android:id="@+id/PlayerFragment"
+                    android:id="@+id/player_fragment"
                     android:name="org.leo.dictionary.apk.activity.PlayerFragment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
