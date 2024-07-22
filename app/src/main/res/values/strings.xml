@@ -81,4 +81,5 @@
     <string name="preset_name">Preset name</string>
     <string name="configuration_presets">Settings presets</string>
     <string name="action_update">Update</string>
+    <string name="word_recognition">Speech recognition</string>
 </resources>

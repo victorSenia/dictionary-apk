@@ -46,6 +46,11 @@
           android:layout_width="wrap_content"
           android:orderInCategory="200"
           android:layout_height="wrap_content"/>
+    <item android:id="@+id/action_word_recognition"
+          android:title="@string/word_recognition"
+          android:layout_width="wrap_content"
+          android:orderInCategory="200"
+          android:layout_height="wrap_content"/>
     <item android:id="@+id/action_db"
           android:title="@string/database"
           android:layout_width="wrap_content"

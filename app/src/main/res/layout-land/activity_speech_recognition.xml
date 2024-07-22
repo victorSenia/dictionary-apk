@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:context=".activity.SpeechRecognitionActivity">
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" android:layout_weight="1">
+        <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/details_fragment"
+                android:name="org.leo.dictionary.apk.activity.fragment.DetailsFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/fragment_details" android:layout_weight="1"
+                android:layout_gravity="center_vertical"/>
+        <TextView
+                android:text="error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_result"
+                android:textSize="34sp"
+                android:textAlignment="viewEnd"
+                android:shadowRadius="30"
+                android:shadowColor="@color/error_shadow"
+                android:visibility="gone"
+        />
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+        <Button
+                android:text="@string/action_play_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/play_word"
+                style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                android:drawableLeft="@android:drawable/ic_media_play"
+                android:textSize="0sp"
+                android:layout_gravity="center_horizontal"/>
+        <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+        <ImageButton
+                android:layout_width="@dimen/speech_button_dimension"
+                android:layout_height="@dimen/speech_button_dimension"
+                android:id="@+id/button_speak"
+                android:src="@android:drawable/ic_btn_speak_now"
+                android:layout_gravity="center_horizontal" android:contentDescription="@string/play"
+        />
+        <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+        <Button
+                android:text="@string/next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/action_next"
+                style="@style/Widget.Material3.Button.TonalButton" android:layout_gravity="center_horizontal"/>
+    </LinearLayout>
+</LinearLayout>

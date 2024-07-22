@@ -2,4 +2,5 @@
 <resources>
     <drawable name="word_background">@android:drawable/dialog_holo_light_frame</drawable>
     <color name="selected_background">#CCCCCC</color>
+    <color name="error_shadow">#930001</color>
 </resources>

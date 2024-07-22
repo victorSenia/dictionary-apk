@@ -24,6 +24,5 @@
                 android:text='@{viewModel.data.getFormattedTranslations("\n")}'
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:gravity="center_horizontal" android:textSize="30sp"/>
-
     </LinearLayout>
 </layout>

@@ -31,12 +31,9 @@ public class VoiceSelectorActivity extends AppCompatActivity {
     private static void playTestString(Context activity, String language) {
         AudioService audioService = ((ApplicationWithDI) activity.getApplicationContext()).appComponent.audioService();
         String string = activity.getString(R.string.default_text);
-        if (audioService instanceof AndroidAudioService) {
-            ((AndroidAudioService) audioService).playAsynchronous(language, string);
-        } else {
-            audioService.play(language, string);
-        }
+        ApkModule.playAsynchronousIfPossible(audioService, language, string);
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

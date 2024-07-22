@@ -19,10 +19,8 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.lifecycle.ViewModelProvider;
 import org.leo.dictionary.PlayService;
 import org.leo.dictionary.PlayServiceImpl;
-import org.leo.dictionary.apk.ApkAppComponent;
-import org.leo.dictionary.apk.ApkModule;
-import org.leo.dictionary.apk.ApplicationWithDI;
-import org.leo.dictionary.apk.R;
+import org.leo.dictionary.UiUpdater;
+import org.leo.dictionary.apk.*;
 import org.leo.dictionary.apk.activity.fragment.WordsFragment;
 import org.leo.dictionary.apk.activity.viewmodel.DetailsViewModel;
 import org.leo.dictionary.apk.databinding.ActivityMainBinding;
@@ -50,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
     public static final String POSITION_ID = "positionId";
     public static final String UPDATED_WORD = "updatedWord";
     public static final String WORD_PROVIDER = "wordProvider";
+
+    private UiUpdater uiUpdater;
     private final ActivityResultLauncher<Intent> filterWordsActivityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
@@ -190,6 +190,10 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         binding.changeOrientation.setOnClickListener(v -> setOrientation(true));
+
+        ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) getApplicationContext()).appComponent.uiUpdater();
+        uiUpdater = new ViewModelProvider(this).get(DetailsViewModel.class)::updateWord;
+        apkUiUpdater.addUiUpdater(uiUpdater);
 //        binding.changeOrientation.postDelayed(() -> {
 //            binding.changeOrientation.setVisibility(View.GONE);
 //        }, 5000);
@@ -265,7 +269,13 @@ public class MainActivity extends AppCompatActivity {
             builder.show();
             return true;
         } else if (id == R.id.action_word_matcher) {
+            stopPlayer();
             Intent i = new Intent(this, WordMatcherActivity.class);
+            startActivity(i);
+            return true;
+        } else if (id == R.id.action_word_recognition) {
+            stopPlayer();
+            Intent i = new Intent(this, SpeechRecognitionActivity.class);
             startActivity(i);
             return true;
         } else if (id == R.id.action_add_word) {
@@ -283,6 +293,10 @@ public class MainActivity extends AppCompatActivity {
             importWordsActivityResultLauncher.launch(chooseFile);
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void stopPlayer() {
+        ((ApplicationWithDI) getApplicationContext()).appComponent.playService().pause();
     }
 
     private void prepareForDbUsage() {
@@ -396,6 +410,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) getApplicationContext()).appComponent.uiUpdater();
+        apkUiUpdater.removeUiUpdater(uiUpdater);
+        uiUpdater = null;
         binding = null;
     }
 }

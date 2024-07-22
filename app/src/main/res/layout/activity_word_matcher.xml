@@ -45,7 +45,8 @@
                 android:textSize="0sp"
                 android:visibility="gone"
                 style="@style/Widget.Material3.Button.TonalButton"
-                android:layout_weight="0" android:drawableLeft="@android:drawable/ic_menu_help"
+                android:layout_weight="0"
+                android:drawableLeft="@android:drawable/ic_menu_help"
                 android:layout_gravity="center_vertical"/>
     </LinearLayout>
 </LinearLayout>

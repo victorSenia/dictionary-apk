@@ -22,4 +22,8 @@ public class DetailsViewModel extends ViewModel {
         data.postValue(null);
     }
 
+    public Word getWord() {
+        return data.getValue();
+    }
+
 }

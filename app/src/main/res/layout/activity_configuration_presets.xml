@@ -31,19 +31,23 @@
             <Button
                     android:text="@string/action_create"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/action_create"/>
+                    android:layout_height="wrap_content" android:id="@+id/action_create"
+                    style="@style/Widget.Material3.Button.TonalButton"/>
             <Button
                     android:text="@string/action_update"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/action_edit"/>
+                    android:layout_height="wrap_content" android:id="@+id/action_edit"
+                    style="@style/Widget.Material3.Button.TonalButton"/>
             <Button
                     android:text="@string/action_delete"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/action_delete"/>
+                    android:layout_height="wrap_content" android:id="@+id/action_delete"
+                    style="@style/Widget.Material3.Button.TonalButton"/>
             <Button
                     android:text="@string/action_apply"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/action_apply"/>
+                    android:layout_height="wrap_content" android:id="@+id/action_apply"
+                    style="@style/Widget.Material3.Button.TonalButton"/>
             <TextView
                     android:text="@string/already_created"
                     android:layout_width="wrap_content"

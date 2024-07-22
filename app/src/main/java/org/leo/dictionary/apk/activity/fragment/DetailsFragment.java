@@ -16,7 +16,6 @@ import org.leo.dictionary.apk.databinding.FragmentDetailsBinding;
 
 public class DetailsFragment extends Fragment {
 
-    private UiUpdater uiUpdater;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -24,17 +23,6 @@ public class DetailsFragment extends Fragment {
         DetailsViewModel mViewModel = new ViewModelProvider(requireActivity()).get(DetailsViewModel.class);
         binding.setViewModel(mViewModel);
         binding.setLifecycleOwner(this);
-        ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.uiUpdater();
-        uiUpdater = mViewModel::updateWord;
-        apkUiUpdater.addUiUpdater(uiUpdater);
         return binding.getRoot();
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.uiUpdater();
-        apkUiUpdater.removeUiUpdater(uiUpdater);
-        uiUpdater = null;
     }
 }

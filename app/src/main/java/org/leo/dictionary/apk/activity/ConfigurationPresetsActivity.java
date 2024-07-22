@@ -72,9 +72,13 @@ public class ConfigurationPresetsActivity extends AppCompatActivity {
         PresetsFragment presetsFragment = (PresetsFragment) getSupportFragmentManager().findFragmentById(R.id.presets_names);
         if (presetsFragment != null) {
             presetsFragment.presets.remove(selected);
-            new ViewModelProvider(this).get(LanguageViewModel.class).setSelected("");
+            clearName();
             presetsFragment.filterPresetsInAdapter(selected);
         }
+    }
+
+    private void clearName() {
+        new ViewModelProvider(this).get(LanguageViewModel.class).setSelected("");
     }
 
     private DBWordProvider getDbWordProvider() {
@@ -101,6 +105,7 @@ public class ConfigurationPresetsActivity extends AppCompatActivity {
         if (presetsFragment != null) {
             presetsFragment.presets.add(selected);
             presetsFragment.presets.sort(String::compareTo);
+            clearName();
             presetsFragment.filterPresetsInAdapter(selected);
         }
     }

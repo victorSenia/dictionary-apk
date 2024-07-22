@@ -2,4 +2,5 @@
     <dimen name="text_margin">16dp</dimen>
     <dimen name="fab_margin">10dp</dimen>
     <dimen name="text_size">18sp</dimen>
+    <dimen name="speech_button_dimension">100dp</dimen>
 </resources>

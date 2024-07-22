@@ -52,6 +52,13 @@ public class ApkModule {
         this.application = application;
     }
 
+    public static void playAsynchronousIfPossible(AudioService audioService, String language, String string) {
+        if (audioService instanceof AndroidAudioService) {
+            ((AndroidAudioService) audioService).playAsynchronous(language, string);
+        } else {
+            audioService.play(language, string);
+        }
+    }
     public static WordProvider createAssetsWordProvider(ParseWords configuration, Context context) {
         AssetsWordProvider wordProvider = new AssetsWordProvider();
         wordProvider.setConfiguration(configuration);
