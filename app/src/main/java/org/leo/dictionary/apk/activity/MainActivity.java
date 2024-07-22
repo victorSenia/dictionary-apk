@@ -16,6 +16,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.lifecycle.ViewModelProvider;
 import org.leo.dictionary.PlayService;
 import org.leo.dictionary.PlayServiceImpl;
 import org.leo.dictionary.apk.ApkAppComponent;
@@ -103,8 +104,10 @@ public class MainActivity extends AppCompatActivity {
                 DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
                 String language = words.get(0).getLanguage();
                 if (wordProvider.languageFrom().contains(language)) {
-                    AlertDialog.Builder builder = getConfirmDbCleanupOnImport(language, wordProvider, words);
-                    builder.show();
+                    runOnUiThread(() -> {
+                        AlertDialog.Builder builder = getConfirmDbCleanupOnImport(language, wordProvider, words);
+                        builder.show();
+                    });
                 }
             }
         } catch (IOException e) {
@@ -360,6 +363,7 @@ public class MainActivity extends AppCompatActivity {
             if (wordsFragment != null) {
                 wordsFragment.replaceData(unknownWords);
             }
+            new ViewModelProvider(this).get(DetailsViewModel.class).clearWord();
         });
     }
 

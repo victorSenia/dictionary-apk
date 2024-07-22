@@ -73,6 +73,8 @@ public class DBManager {
         int idIndex = res.getColumnIndexOrThrow(DatabaseHelper.COLUMN_ID);
         int nameIndex = res.getColumnIndexOrThrow(DatabaseHelper.TOPIC_COLUMN_NAME);
         int levelIndex = res.getColumnIndexOrThrow(DatabaseHelper.TOPIC_COLUMN_LEVEL);
+        int rootIndex = res.getColumnIndexOrThrow(DatabaseHelper.TOPIC_COLUMN_ROOT_ID);
+        int languageIndex = res.getColumnIndexOrThrow(DatabaseHelper.COLUMN_LANGUAGE);
         Topic topic;
         while (!res.isAfterLast()) {
             long id = res.getLong(idIndex);
@@ -84,7 +86,14 @@ public class DBManager {
                 topic.setId(id);
                 topic.setName(res.getString(nameIndex));
                 topic.setLevel(res.getInt(levelIndex));
-                topic.setLanguage(language);
+                topic.setLanguage(res.getString(languageIndex));
+                long rootId = res.getLong(rootIndex);
+                if (rootId > 0) {
+                    Topic rootTopic = loadedTopics.get(rootId);
+                    if (rootTopic != null) {
+                        topic.setRoot(rootTopic);
+                    }
+                }
                 topics.add(topic);
                 loadedTopics.put(topic.getId(), topic);
             }
@@ -329,7 +338,7 @@ public class DBManager {
         if (idOnly) {
             columns = new String[]{DatabaseHelper.COLUMN_ID};
         } else {
-            columns = new String[]{DatabaseHelper.COLUMN_ID, DatabaseHelper.TOPIC_COLUMN_NAME, DatabaseHelper.TOPIC_COLUMN_LEVEL};
+            columns = new String[]{DatabaseHelper.COLUMN_ID, DatabaseHelper.COLUMN_LANGUAGE, DatabaseHelper.TOPIC_COLUMN_NAME, DatabaseHelper.TOPIC_COLUMN_LEVEL, DatabaseHelper.TOPIC_COLUMN_ROOT_ID};
         }
         Cursor cursor = database.query(DatabaseHelper.TABLE_NAME_TOPIC,
                 columns, selection,
@@ -342,10 +351,14 @@ public class DBManager {
     public List<Topic> getTopics(String language, String rootName, String level) {
         Topic rootTopic = createRootTopicObject(language, rootName);
         String rootId = rootTopic != null ? Long.toString(getTopicId(rootTopic)) : null;
+        HashMap<Long, Topic> loadedTopics = new HashMap<>();
+        if (rootId != null) {
+            loadedTopics.putAll(getTopics(language, null, "1").stream().collect(Collectors.toMap(Topic::getId, Function.identity())));
+        }
         try (Cursor res = fetchTopics(language, level, false, rootId, null)) {
             List<Topic> topics = new ArrayList<>();
             if (!res.isAfterLast()) {
-                mapTopicsFromCursor(language, res, topics, new HashMap<>());
+                mapTopicsFromCursor(language, res, topics, loadedTopics);
             }
             return topics;
         }
@@ -423,7 +436,7 @@ public class DBManager {
         return getWords(() -> fetchWordsCursor(criteria), criteria.getLanguageTo(), false);
     }
 
-    public List<Word> getWordsForLanguage(String language,String rootTopic) {
+    public List<Word> getWordsForLanguage(String language, String rootTopic) {
         WordCriteria criteria = new WordCriteria();
         criteria.setLanguageFrom(language);
         criteria.setRootTopic(rootTopic);
@@ -449,7 +462,7 @@ public class DBManager {
         }
         words = words.stream().filter(this::hasTranslations).collect(Collectors.toList());
         if (includeTopics && !words.isEmpty()) {
-            Map<Long, Topic> topics = new HashMap<>();
+            Map<Long, Topic> topics = new HashMap<>(getTopics(null, null, "1").stream().collect(Collectors.toMap(Topic::getId, Function.identity())));
             for (Word word : words) {
                 word.setTopics(getTopicsForWord(String.valueOf(word.getId()), word.getLanguage(), "2", topics));//TODO
             }
@@ -536,6 +549,19 @@ public class DBManager {
         contentValues.put(DatabaseHelper.WORD_COLUMN_ARTICLE, word.getArticle());
         contentValues.put(DatabaseHelper.WORD_COLUMN_KNOWLEDGE, word.getKnowledge());
         return database.update(DatabaseHelper.TABLE_NAME_WORD, contentValues, DatabaseHelper.COLUMN_ID + " = ?", new String[]{Long.toString(word.getId())});
+    }
+
+    public int updateTopic(Topic topic) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(DatabaseHelper.COLUMN_LANGUAGE, topic.getLanguage());
+        contentValues.put(DatabaseHelper.TOPIC_COLUMN_LEVEL, topic.getLevel());
+        if (topic.getRoot() != null) {
+            contentValues.put(DatabaseHelper.TOPIC_COLUMN_ROOT_ID, insertTopic(topic.getRoot()));
+        } else {
+            contentValues.put(DatabaseHelper.TOPIC_COLUMN_ROOT_ID, (String) null);
+        }
+        contentValues.put(DatabaseHelper.TOPIC_COLUMN_NAME, topic.getName());
+        return database.update(DatabaseHelper.TABLE_NAME_TOPIC, contentValues, DatabaseHelper.COLUMN_ID + " = ?", new String[]{Long.toString(topic.getId())});
     }
 
     public int updateTranslation(Translation translation) {

@@ -28,6 +28,7 @@ public class EditWordActivity extends AppCompatActivity {
 
     public static final String WORD_ID_TO_EDIT = "WORD_ID_TO_EDIT";
     public static final String TRANSLATION_INDEX_TO_EDIT = "TRANSLATION_INDEX_TO_EDIT";
+    public static final String REQUEST_FOCUS = "REQUEST_FOCUS";
     public static final long DEFAULT_VALUE_OF_WORD_ID = -1L;
     private ActivityEditWordBinding binding;
     private List<Topic> filteredTopics = new ArrayList<>();
@@ -67,10 +68,10 @@ public class EditWordActivity extends AppCompatActivity {
         List<Translation> translations = word.getTranslations();
         binding.buttonAddTranslation.setOnClickListener(v -> {
             translations.add(new Translation());
-            addTranslationUi(translations.size() - 1);
+            addTranslationUi(translations.size() - 1, true);
         });
         for (int index = 0; index < translations.size(); index++) {
-            addTranslationUi(index);
+            addTranslationUi(index, false);
         }
         binding.textTopic.addTextChangedListener(new AbstractTextWatcher() {
             @Override
@@ -175,9 +176,10 @@ public class EditWordActivity extends AppCompatActivity {
         return isValid;
     }
 
-    private void addTranslationUi(int i) {
+    private void addTranslationUi(int i, boolean requestFocus) {
         Bundle bundle = new Bundle();
         bundle.putInt(TRANSLATION_INDEX_TO_EDIT, i);
+        bundle.putBoolean(REQUEST_FOCUS, requestFocus);
         getSupportFragmentManager().beginTransaction().setReorderingAllowed(true).add(R.id.edit_word_translations, EditTranslationFragment.class, bundle).commit();
     }
 

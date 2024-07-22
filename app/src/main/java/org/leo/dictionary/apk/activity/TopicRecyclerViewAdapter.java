@@ -63,6 +63,9 @@ public class TopicRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
         notifyItemRemoved(indexToRemove);
     }
 
+    public void editItem(DeleteViewHolder viewHolder) {
+    }
+
     public void replaceData(List<Topic> filteredList) {
         mValues.clear();
         mValues.addAll(filteredList);
@@ -80,6 +83,7 @@ public class TopicRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
             super(binding.getRoot());
             mTextView = binding.content;
             binding.actionDelete.setOnClickListener(v -> deleteItem(DeleteViewHolder.this));
+            binding.actionEdit.setOnClickListener(v -> editItem(DeleteViewHolder.this));
         }
 
         @Override

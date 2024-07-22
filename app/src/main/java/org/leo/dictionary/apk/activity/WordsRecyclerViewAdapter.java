@@ -14,6 +14,7 @@ import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.databinding.FragmentStringBinding;
 import org.leo.dictionary.apk.databinding.FragmentWordSelectedBinding;
+import org.leo.dictionary.apk.databinding.FragmentWordSelectedDbBinding;
 import org.leo.dictionary.apk.word.provider.DBWordProvider;
 import org.leo.dictionary.entity.Word;
 
@@ -22,6 +23,7 @@ import java.util.List;
 public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecyclerViewAdapter.ViewHolder> {
 
     public static final int SELECTED_WORD_VIEW_TYPE = 1;
+    public static final int SELECTED_WORD_DB_VIEW_TYPE = 2;
     protected final List<Word> words;
     private final Fragment fragment;
 
@@ -44,6 +46,8 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (viewType == SELECTED_WORD_VIEW_TYPE) {
             return new ViewHolder(FragmentWordSelectedBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
+        } else if (viewType == SELECTED_WORD_DB_VIEW_TYPE) {
+            return new ViewHolder(FragmentWordSelectedDbBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
         }
         return new ViewHolder(FragmentStringBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
     }
@@ -51,6 +55,9 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
     @Override
     public int getItemViewType(int position) {
         if (positionId == position) {
+            if (isDBSource()) {
+                return SELECTED_WORD_DB_VIEW_TYPE;
+            }
             return SELECTED_WORD_VIEW_TYPE;
         }
         return super.getItemViewType(position);
@@ -116,7 +123,7 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
             binding.getRoot().setOnClickListener(v -> setSelectedPosition(getAbsoluteAdapterPosition()));
         }
 
-        public ViewHolder(FragmentWordSelectedBinding binding) {
+        public ViewHolder(FragmentWordSelectedDbBinding binding) {
             super(binding.getRoot());
             mContentView = binding.content;
             binding.getRoot().setOnCreateContextMenuListener(fragment);
@@ -135,6 +142,13 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
                     noDBSourceError();
                 }
             });
+        }
+
+        public ViewHolder(FragmentWordSelectedBinding binding) {
+            super(binding.getRoot());
+            mContentView = binding.content;
+            binding.getRoot().setOnCreateContextMenuListener(fragment);
+            binding.playFrom.setOnClickListener(view -> playFromSelected());
         }
 
         @Override

@@ -37,14 +37,14 @@
                     android:text="@={viewmodel.uiState.word}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"
+                    android:inputType="textMultiLine"
                     android:hint="@string/word"
                     android:id="@+id/text_word" android:minHeight="48dp"/>
             <EditText
                     android:text="@={viewmodel.uiState.additionalInformation}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"
+                    android:inputType="textMultiLine"
                     android:hint="@string/additional_information"
                     android:id="@+id/text_additional_information" android:minHeight="48dp"/>
         </LinearLayout>

@@ -16,15 +16,27 @@ import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.word.provider.DBWordProvider;
+import org.leo.dictionary.entity.Topic;
 import org.leo.dictionary.word.provider.WordExporter;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ExportWordsActivity extends AppCompatActivity {
+
+    private final ActivityResultLauncher<Intent> exportWordsActivityResultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == Activity.RESULT_OK && result.getData() != null) {
+                    MainActivity.runAtBackground(() -> writeWordsToFile(result.getData().getData()));
+                    finish();
+                }
+            });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +64,6 @@ public class ExportWordsActivity extends AppCompatActivity {
             findViewById(R.id.language_from_container).setVisibility(View.GONE);
         } else if (languagesFrom.size() == 1) {
             languageViewModel.select(languagesFrom.get(0));
-            findViewById(R.id.language_from_container).setVisibility(View.GONE);
         }
     }
 
@@ -64,15 +75,6 @@ public class ExportWordsActivity extends AppCompatActivity {
         createFile.putExtra(Intent.EXTRA_TITLE, "fileName_de.txt");//TODO not working
         exportWordsActivityResultLauncher.launch(createFile);
     }
-
-    private final ActivityResultLauncher<Intent> exportWordsActivityResultLauncher = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult(),
-            result -> {
-                if (result.getResultCode() == Activity.RESULT_OK && result.getData() != null) {
-                    MainActivity.runAtBackground(() -> writeWordsToFile(result.getData().getData()));
-                    finish();
-                }
-            });
 
     private void writeWordsToFile(Uri uri) {
         try (OutputStream outputStream = getContentResolver().openOutputStream(uri)) {
@@ -87,7 +89,13 @@ public class ExportWordsActivity extends AppCompatActivity {
                     return new BufferedWriter(new OutputStreamWriter(outputStream));
                 }
             };
-            wordExporter.writeWords(wordProvider.getWordsForLanguage(language, rootTopicName), rootTopicName);
+            if (rootTopicName != null && !rootTopicName.isEmpty()) {
+                wordExporter.writeWords(wordProvider.getWordsForLanguage(language, rootTopicName), false,
+                        Collections.singletonList(rootTopicName));
+            } else {
+                wordExporter.writeWords(wordProvider.getWordsForLanguage(language, rootTopicName), true,
+                        wordProvider.findRootTopics(language).stream().map(Topic::getName).collect(Collectors.toList()));
+            }
         } catch (IOException e) {
             MainActivity.logUnhandledException(e);
             showMessage("Error happened. Please check logs");

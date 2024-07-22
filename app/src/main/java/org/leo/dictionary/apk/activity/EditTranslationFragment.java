@@ -25,13 +25,16 @@ public class EditTranslationFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = FragmentEditTranslationBinding.inflate(inflater, container, false);
         int index = getArguments().getInt(EditWordActivity.TRANSLATION_INDEX_TO_EDIT);
+        boolean requestFocus = getArguments().getBoolean(EditWordActivity.REQUEST_FOCUS, false);
         EditTranslationViewModel translationViewModel = new ViewModelProvider(this).get(EditTranslationViewModel.class);
         MutableLiveData<Word> word = new ViewModelProvider(requireActivity()).get(EditWordViewModel.class).getUiState();
         translationViewModel.setTranslation(word.getValue().getTranslations().get(index));
         binding.setViewmodel(translationViewModel);
         binding.playTranslation.setOnClickListener(v -> playTranslation(translationViewModel.getUiState()));
         binding.buttonDeleteTranslation.setOnClickListener(v -> removeTranslation(word, binding.getViewmodel().getUiState()));
-        binding.textLanguage.requestFocus();
+        if (requestFocus) {
+            binding.textLanguage.requestFocus();
+        }
         return binding.getRoot();
     }
 

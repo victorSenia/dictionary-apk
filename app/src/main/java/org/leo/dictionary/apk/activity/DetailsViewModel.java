@@ -18,4 +18,8 @@ public class DetailsViewModel extends ViewModel {
         }
     }
 
+    public void clearWord() {
+        uiState.postValue(null);
+    }
+
 }

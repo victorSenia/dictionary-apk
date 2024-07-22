@@ -73,6 +73,10 @@ public class DBWordProvider implements WordProvider {
         dbManager.updateWord(updatedWord);
     }
 
+    public void updateTopic(Topic topic) {
+        dbManager.updateTopic(topic);
+    }
+
     public void updateWordFully(Word updatedWord) {
         if (updatedWord.getId() == 0) {
             dbManager.executeInTransaction(() -> dbManager.insertFully(updatedWord));

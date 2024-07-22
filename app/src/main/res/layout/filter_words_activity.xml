@@ -43,6 +43,15 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/all_root_topics"
                         style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"/>
+                <EditText
+                        android:id="@+id/text_root_topic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:hint="@string/root_topic"
+                        android:text="" android:minHeight="48dp"
+                        android:drawableStart="@android:drawable/ic_menu_search"
+                        android:layout_gravity="center_vertical"/>
                 <androidx.fragment.app.FragmentContainerView
                         android:id="@+id/root_topics"
                         android:name="org.leo.dictionary.apk.activity.FilterWordsActivity$RootTopicsFragment"
@@ -64,6 +73,15 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/all_topics"
                         style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"/>
+                <EditText
+                        android:id="@+id/text_topic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:hint="@string/title_activity_topics"
+                        android:text="" android:minHeight="48dp"
+                        android:drawableStart="@android:drawable/ic_menu_search"
+                        android:layout_gravity="center_vertical"/>
                 <androidx.fragment.app.FragmentContainerView
                         android:id="@+id/topics"
                         android:name="org.leo.dictionary.apk.activity.FilterWordsActivity$TopicsFragment"
