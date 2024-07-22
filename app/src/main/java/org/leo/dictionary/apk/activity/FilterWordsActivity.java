@@ -13,6 +13,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.RecyclerView;
 import org.leo.dictionary.ExternalWordProvider;
 import org.leo.dictionary.apk.ApkAppComponent;
 import org.leo.dictionary.apk.ApkModule;
@@ -32,8 +33,13 @@ public class FilterWordsActivity extends AppCompatActivity {
     private static List<String> getSelected(StringsFragment strings) {
         if (strings != null && strings.recyclerView.getAdapter() instanceof MultiSelectionStringRecyclerViewAdapter) {
             MultiSelectionStringRecyclerViewAdapter adapter = (MultiSelectionStringRecyclerViewAdapter) strings.recyclerView.getAdapter();
-            if (!adapter.getSelected().isEmpty()) {
-                return adapter.getSelected();
+            if (!adapter.getSelectedList().isEmpty()) {
+                return adapter.getSelectedList();
+            }
+        } else if (strings != null && strings.recyclerView.getAdapter() instanceof StringRecyclerViewAdapter) {
+            StringRecyclerViewAdapter adapter = (StringRecyclerViewAdapter) strings.recyclerView.getAdapter();
+            if (adapter.getSelected() != RecyclerView.NO_POSITION) {
+                return Collections.singletonList(adapter.mValues.get(adapter.getSelected()));
             }
         }
         return null;
@@ -152,13 +158,19 @@ public class FilterWordsActivity extends AppCompatActivity {
         @Override
         protected StringRecyclerViewAdapter createRecyclerViewAdapter() {
             recyclerView.setNestedScrollingEnabled(false);
-            MultiSelectionStringRecyclerViewAdapter adapter = new MultiSelectionStringRecyclerViewAdapter(getStrings(), this);
+            StringRecyclerViewAdapter adapter = new StringRecyclerViewAdapter(getStrings(), this, new StringRecyclerViewAdapter.RememberSelectionOnClickListener() {
+                @Override
+                public void onClick(StringRecyclerViewAdapter.StringViewHolder viewHolder) {
+                    super.onClick(viewHolder);
+                    new ViewModelProvider(requireActivity()).get(LanguageViewModel.class).select(viewHolder.mItem);
+                }
+            });
             if (adapter.mValues.size() == 1) {
-                adapter.setSelected(adapter.mValues);
+                adapter.setSelected(0);
                 new ViewModelProvider(requireActivity()).get(LanguageViewModel.class).select(adapter.mValues.get(0));
             } else {
                 String languageFrom = getWordCriteria(requireActivity()).getLanguageFrom();
-                adapter.setSelected(Collections.singleton(languageFrom));
+                adapter.setSelected(adapter.mValues.indexOf(languageFrom));
                 new ViewModelProvider(requireActivity()).get(LanguageViewModel.class).select(languageFrom);
             }
             return adapter;

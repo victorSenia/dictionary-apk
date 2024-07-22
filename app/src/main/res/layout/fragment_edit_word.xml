@@ -18,7 +18,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:hint="language"
+                android:hint="@string/language"
                 android:text="@={viewmodel.uiState.language}" android:minHeight="48dp" android:layout_weight="0"
                 android:layout_gravity="center_vertical"/>
         <LinearLayout
@@ -31,21 +31,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:hint="article"
+                    android:hint="@string/article"
                     android:id="@+id/text_article" android:minHeight="48dp"/>
             <EditText
                     android:text="@={viewmodel.uiState.word}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:hint="word"
+                    android:hint="@string/word"
                     android:id="@+id/text_word" android:minHeight="48dp"/>
             <EditText
                     android:text="@={viewmodel.uiState.additionalInformation}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:hint="additionalInformation"
+                    android:hint="@string/additional_information"
                     android:id="@+id/text_additional_information" android:minHeight="48dp"/>
         </LinearLayout>
         <Button

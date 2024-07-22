@@ -57,4 +57,14 @@
     <string name="action_delete">Delete</string>
     <string name="clean_db">Clean database</string>
     <string name="change_orientation">Change orientation</string>
+    <string name="add_word">Add word</string>
+    <string name="default_language">en</string>
+    <string name="translations">Translations</string>
+    <string name="add_translation">Add translation</string>
+    <string name="save">Save</string>
+    <string name="language">language</string>
+    <string name="delete_translation">Delete translation</string>
+    <string name="article">article</string>
+    <string name="word">word</string>
+    <string name="additional_information">additional information</string>
 </resources>

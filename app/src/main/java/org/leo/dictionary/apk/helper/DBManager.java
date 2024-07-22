@@ -79,17 +79,21 @@ public class DBManager {
     }
 
     public long insertFully(Word word) {
-        long wordId = insert(word);
-        for (Translation translation : word.getTranslations()) {
-            insert(translation, wordId);
+        long wordId = insertWord(word);
+        if (word.getTranslations() != null) {
+            for (Translation translation : word.getTranslations()) {
+                insertTranslation(translation, wordId);
+            }
         }
-        for (Topic topic : word.getTopics()) {
-            insert(wordId, insert(topic));
+        if (word.getTopics() != null) {
+            for (Topic topic : word.getTopics()) {
+                insertWordTopicLink(wordId, insertTopic(topic));
+            }
         }
         return wordId;
     }
 
-    protected long insert(Word word) {
+    protected long insertWord(Word word) {
         long id = getId(word);
         if (id != -1) {
             return id;
@@ -103,7 +107,7 @@ public class DBManager {
         return database.insert(DatabaseHelper.TABLE_NAME_WORD, null, contentValue);
     }
 
-    protected long insert(Topic topic) {
+    public long insertTopic(Topic topic) {
         if (topic.getId() > 0) {
             return topic.getId();
         }
@@ -170,7 +174,7 @@ public class DBManager {
         return -1;
     }
 
-    public long insert(Translation translation, long wordId) {
+    public long insertTranslation(Translation translation, long wordId) {
         long id = getId(translation, wordId);
         if (id != -1) {
             return id;
@@ -184,7 +188,7 @@ public class DBManager {
         return insertedId;
     }
 
-    protected long insert(long wordId, long topicId) {
+    public long insertWordTopicLink(long wordId, long topicId) {
         long id = getId(DatabaseHelper.TABLE_NAME_WORD_TOPIC,
                 DatabaseHelper.COLUMN_ID + " = ? AND " + DatabaseHelper.TRANSLATION_COLUMN_WORD_ID + " = ?",
                 Long.toString(topicId), Long.toString(wordId));
@@ -195,6 +199,12 @@ public class DBManager {
         contentValue.put(DatabaseHelper.COLUMN_ID, topicId);
         contentValue.put(DatabaseHelper.TRANSLATION_COLUMN_WORD_ID, wordId);
         return database.insert(DatabaseHelper.TABLE_NAME_WORD_TOPIC, null, contentValue);
+    }
+
+    public int deleteWordTopicLink(long wordId, long topicId) {
+        return database.delete(DatabaseHelper.TABLE_NAME_WORD_TOPIC,
+                DatabaseHelper.TRANSLATION_COLUMN_WORD_ID + " = ? AND " + DatabaseHelper.COLUMN_ID + " = ?",
+                new String[]{Long.toString(wordId), Long.toString(topicId)});
     }
 
     protected Cursor fetchWords(WordCriteria criteria) {
@@ -310,11 +320,11 @@ public class DBManager {
         }
     }
 
-    public List<String> languageTo(String language) {//TODO
-        try (Cursor res = database.query(true, DatabaseHelper.TABLE_NAME_TRANSLATION,
-                new String[]{DatabaseHelper.COLUMN_LANGUAGE}, null,
-                null,
-                null, null, null, null)) {
+    public List<String> languageTo(String language) {
+        try (Cursor res = database.rawQuery("SELECT DISTINCT t." + DatabaseHelper.COLUMN_LANGUAGE +
+                " FROM " + DatabaseHelper.TABLE_NAME_TRANSLATION + " t" + " INNER JOIN " + DatabaseHelper.TABLE_NAME_WORD + " w " +
+                "ON w." + DatabaseHelper.COLUMN_ID + " = t." + DatabaseHelper.TRANSLATION_COLUMN_WORD_ID +
+                " AND w." + DatabaseHelper.COLUMN_LANGUAGE + "= ?", new String[]{language})) {
             List<String> languages = new ArrayList<>();
             res.moveToFirst();
             if (!res.isAfterLast()) {

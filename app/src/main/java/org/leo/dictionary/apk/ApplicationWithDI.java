@@ -11,7 +11,7 @@ public class ApplicationWithDI extends Application {
 
     // Reference to the application graph that is used across the whole app
     public ApkAppComponent appComponent;
-    public Map<String, Object> data = new HashMap<>();
+    public final Map<String, Object> data = new HashMap<>();
 
     @Override
     public void onCreate() {

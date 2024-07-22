@@ -28,10 +28,10 @@ import org.leo.dictionary.entity.WordCriteria;
 import org.leo.dictionary.word.provider.WordProvider;
 
 import java.util.List;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
     public static final String POSITION_ID = "positionId";
-    public static final String WORD = "word";
     public static final String UPDATED_WORD = "updatedWord";
     private final ActivityResultLauncher<Intent> filterWordsActivityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -56,16 +56,35 @@ public class MainActivity extends AppCompatActivity {
                     DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
                     Word updatedWord = (Word) ((ApplicationWithDI) getApplicationContext()).data.get(UPDATED_WORD);
                     wordProvider.updateWord(updatedWord);
+
                     PlayService playService = ((ApplicationWithDI) getApplicationContext()).appComponent.playService();
                     Integer positionId = (Integer) ((ApplicationWithDI) getApplicationContext()).data.get(POSITION_ID);
-                    playService.safeUpdate(positionId, updatedWord);
-
                     WordsFragment wordsFragment = (WordsFragment) getSupportFragmentManager().findFragmentById(R.id.words_fragment);
-                    wordsFragment.wordUpdated(positionId);
+                    if (positionId != null) {
+                        if (shouldBeDisplayed(updatedWord)) {
+                            playService.safeUpdate(positionId, updatedWord);
+                            wordsFragment.wordUpdated(positionId);
+                        } else {
+                            playService.safeDelete(positionId);
+                            wordsFragment.wordDeleted(positionId);
+                        }
+                    } else {
+                        if (shouldBeDisplayed(updatedWord)) {
+                            playService.safeAdd(updatedWord);
+                            positionId = playService.getUnknownWords().size() - 1;
+                            wordsFragment.wordAdded(positionId, updatedWord);
+                        }
+                    }
                 }
                 ((ApplicationWithDI) getApplicationContext()).data.clear();
             });
     private ActivityMainBinding binding;
+
+    private boolean shouldBeDisplayed(Word updatedWord) {
+        WordCriteria wordCriteria = ((ApplicationWithDI) getApplicationContext()).appComponent.wordCriteriaProvider().getWordCriteria();
+        //TODO check topics
+        return Objects.equals(updatedWord.getLanguage(), wordCriteria.getLanguageFrom());
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,18 +148,14 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
             return true;
         } else if (id == R.id.action_import_words) {
-            if (ApkModule.isDBSource(((ApplicationWithDI) getApplicationContext()).appComponent.lastState())) {
+            if (isDbSource()) {
                 showMessage("Not possible. Already used source DB");
             } else {
                 importWords(((ApplicationWithDI) getApplicationContext()).appComponent.playService().getUnknownWords());
             }
             return true;
         } else if (id == R.id.action_use_db) {
-            ((ApplicationWithDI) getApplicationContext()).appComponent.lastState().edit().putString(ApkModule.LAST_STATE_SOURCE, ApkModule.DB).apply();
-
-            PlayService playService = ((ApplicationWithDI) getApplicationContext()).appComponent.playService();
-            WordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
-            ((PlayServiceImpl) playService).setWordProvider(wordProvider);
+            prepareForDbUsage();
 
             Intent intent = new Intent(this, FilterWordsActivity.class);
             filterWordsActivityResultLauncher.launch(intent);
@@ -153,8 +168,20 @@ public class MainActivity extends AppCompatActivity {
             Intent i = new Intent(this, WordMatcherActivity.class);
             startActivity(i);
             return true;
+        } else if (id == R.id.action_add_word) {
+            Intent intent = new Intent(this, EditWordActivity.class);
+            editWordActivityResultLauncher.launch(intent);
+            return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void prepareForDbUsage() {
+        ((ApplicationWithDI) getApplicationContext()).appComponent.lastState().edit().putString(ApkModule.LAST_STATE_SOURCE, ApkModule.DB).apply();
+
+        PlayService playService = ((ApplicationWithDI) getApplicationContext()).appComponent.playService();
+        WordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
+        ((PlayServiceImpl) playService).setWordProvider(wordProvider);
     }
 
     private AlertDialog.Builder getOptionsBuilder(Context context) {
@@ -168,13 +195,17 @@ public class MainActivity extends AppCompatActivity {
         return builder;
     }
 
-    final
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        menu.findItem(R.id.action_use_db).setVisible(!ApkModule.isDBSource(((ApplicationWithDI) getApplicationContext()).appComponent.lastState()));
-        menu.findItem(R.id.action_import_words).setVisible(!ApkModule.isDBSource(((ApplicationWithDI) getApplicationContext()).appComponent.lastState()));
-        menu.findItem(R.id.action_clean_db).setVisible(ApkModule.isDBSource(((ApplicationWithDI) getApplicationContext()).appComponent.lastState()));
+        menu.findItem(R.id.action_use_db).setVisible(!isDbSource());
+        menu.findItem(R.id.action_import_words).setVisible(!isDbSource());
+        menu.findItem(R.id.action_clean_db).setVisible(isDbSource());
+        menu.findItem(R.id.action_add_word).setVisible(isDbSource());
         return super.onPrepareOptionsMenu(menu);
+    }
+
+    private boolean isDbSource() {
+        return ApkModule.isDBSource(((ApplicationWithDI) getApplicationContext()).appComponent.lastState());
     }
 
     protected void changeNightMode() {
@@ -212,7 +243,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, EditWordActivity.class);
         intent.putExtra(EditWordActivity.WORD_ID_TO_EDIT, word.getId());
         ((ApplicationWithDI) getApplicationContext()).data.put(POSITION_ID, positionId);
-        ((ApplicationWithDI) getApplicationContext()).data.put(WORD, word);
         editWordActivityResultLauncher.launch(intent);
     }
 

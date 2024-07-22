@@ -24,8 +24,21 @@ public class WordMatcherActivity extends AppCompatActivity {
     public static final int TRANSLATIONS_ARRAY = 1;
     public static final String DEFAULT_LIMIT = "10";
     public static final int NOT_SET = -1;
-    private ActivityWordMatcherBinding binding;
     private final int[] selected = new int[2];
+    private int limit;
+    private ActivityWordMatcherBinding binding;
+
+    private static String getText(Element element) {
+        return element.type == WORDS_ARRAY ? ((Word) element.value).getFullWord() : ((Translation) element.value).getTranslation();
+    }
+
+    private static Translation getTranslation(Word word, Set<String> languageTo, Random random) {
+        List<Translation> translations = word.getTranslations().stream().filter(t -> languageTo.isEmpty() || languageTo.contains(t.getLanguage())).collect(Collectors.toList());
+        if (translations.isEmpty()) {
+            return new Translation();
+        }
+        return translations.get(random.nextInt(translations.size()));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +49,6 @@ public class WordMatcherActivity extends AppCompatActivity {
         clearAndFillWords();
         setContentView(binding.getRoot());
     }
-
-    int limit;
 
     private void clearAndFillWords() {
         removeOldViews();
@@ -71,14 +82,9 @@ public class WordMatcherActivity extends AppCompatActivity {
         button.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         button.setBackground(AppCompatResources.getDrawable(this, R.drawable.word_background));
         button.setAllCaps(false);
-        button.setTextSize(18.F);
         button.setOnClickListener(v -> onClickListener(element, audioService));
         button.setLayoutParams(layoutParams);
         return button;
-    }
-
-    private static String getText(Element element) {
-        return element.type == WORDS_ARRAY ? ((Word) element.value).getFullWord() : ((Translation) element.value).getTranslation();
     }
 
     private int differentType(int type) {
@@ -108,7 +114,7 @@ public class WordMatcherActivity extends AppCompatActivity {
             if (element.type == WORDS_ARRAY) {
                 Word word = (Word) element.value;
                 if (audioService instanceof AndroidAudioService) {
-                    ((AndroidAudioService) audioService).playAynchronous(word.getLanguage(), word.getFullWord());
+                    ((AndroidAudioService) audioService).playAsynchronous(word.getLanguage(), word.getFullWord());
                 } else {
                     audioService.play(word.getLanguage(), word.getFullWord());
                 }
@@ -119,28 +125,6 @@ public class WordMatcherActivity extends AppCompatActivity {
         } catch (InterruptedException e) {
             //ignore
         }
-    }
-
-    private static class Element {
-        private int type;
-        private int current;
-        private int matches;
-        private Object value;
-
-        public Element(int type, int current, int matches, Object value) {
-            this.type = type;
-            this.current = current;
-            this.matches = matches;
-            this.value = value;
-        }
-    }
-
-    private static Translation getTranslation(Word word, Set<String> languageTo, Random random) {
-        List<Translation> translations = word.getTranslations().stream().filter(t -> languageTo.isEmpty() || languageTo.contains(t.getLanguage())).collect(Collectors.toList());
-        if (translations.isEmpty()) {
-            return new Translation();
-        }
-        return translations.get(random.nextInt(translations.size()));
     }
 
     private void fillWordsToMatch(List<Word> unknownWords, List<Word> wordsToMatch, List<Translation> translationsToMatch, Element[][] words) {
@@ -185,5 +169,19 @@ public class WordMatcherActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         binding = null;
+    }
+
+    private static class Element {
+        private final int type;
+        private final int current;
+        private final int matches;
+        private final Object value;
+
+        public Element(int type, int current, int matches, Object value) {
+            this.type = type;
+            this.current = current;
+            this.matches = matches;
+            this.value = value;
+        }
     }
 }

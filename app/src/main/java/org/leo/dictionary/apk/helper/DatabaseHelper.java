@@ -70,7 +70,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public int numberOfRows() {
         SQLiteDatabase db = this.getReadableDatabase();
-        int numRows = (int) DatabaseUtils.queryNumEntries(db, TABLE_NAME_TOPIC);
-        return numRows;
+        return (int) DatabaseUtils.queryNumEntries(db, TABLE_NAME_TOPIC);
     }
 }

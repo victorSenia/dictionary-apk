@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.databinding.FragmentEditTranslationBinding;
+import org.leo.dictionary.apk.helper.ValidationUtils;
 import org.leo.dictionary.entity.Translation;
 import org.leo.dictionary.entity.Word;
 
@@ -29,6 +30,7 @@ public class EditTranslationFragment extends Fragment {
         binding.setViewmodel(viewmodel);
         binding.playTranslation.setOnClickListener(v -> playTranslation(viewmodel.getUiState()));
         binding.buttonDeleteTranslation.setOnClickListener(v -> removeTranslation(word, binding.getViewmodel().getUiState()));
+        binding.textLanguage.requestFocus();
         return binding.getRoot();
     }
 
@@ -38,6 +40,10 @@ public class EditTranslationFragment extends Fragment {
         } catch (InterruptedException e) {
             //ignore
         }
+    }
+
+    public boolean isValid() {
+        return ValidationUtils.isEmptySetEmptyErrorIfNot(binding.textLanguage) & ValidationUtils.isEmptySetEmptyErrorIfNot(binding.textTranslation);
     }
 
     private void removeTranslation(MutableLiveData<Word> word, MutableLiveData<Translation> uiState) {

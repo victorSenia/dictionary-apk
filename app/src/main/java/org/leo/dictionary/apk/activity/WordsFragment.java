@@ -41,8 +41,17 @@ public class WordsFragment extends Fragment {
     }
 
     public void wordUpdated(int index) {
-        RecyclerView.Adapter adapter = recyclerView.getAdapter();
-        adapter.notifyItemChanged(index);
+        recyclerView.getAdapter().notifyItemChanged(index);
+    }
+
+    public void wordAdded(int index, Word word) {
+        ((WordsRecyclerViewAdapter) recyclerView.getAdapter()).words.add(word);
+        recyclerView.getAdapter().notifyItemInserted(index);
+    }
+
+    public void wordDeleted(int index) {
+        ((WordsRecyclerViewAdapter) recyclerView.getAdapter()).words.remove(index);
+        recyclerView.getAdapter().notifyItemRemoved(index);
     }
 
     @Override

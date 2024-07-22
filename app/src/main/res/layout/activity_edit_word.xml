@@ -16,7 +16,7 @@
                 android:layout_height="wrap_content"
                 tools:layout="@layout/fragment_edit_word"/>
         <TextView
-                android:text="Translations"
+                android:text="@string/translations"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/textView" android:textSize="20sp"/>
         <LinearLayout
@@ -26,12 +26,12 @@
                 android:layout_height="wrap_content" android:dividerPadding="6dp">
         </LinearLayout>
         <Button
-                android:text="Add translation"
+                android:text="@string/add_translation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/button_add_translation"
                 style="@style/Widget.Material3.Button.TonalButton"/>
         <Button
-                android:text="Save"
+                android:text="@string/save"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/button_save"
                 style="@style/Widget.Material3.Button.TonalButton"/>

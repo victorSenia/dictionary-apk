@@ -25,6 +25,15 @@ public class DBWordProvider implements WordProvider {
         return null;
     }
 
+    private static Topic findTopicById(Word word, long id) {
+        for (Topic topic : word.getTopics()) {
+            if (topic.getId() == id) {
+                return topic;
+            }
+        }
+        return null;
+    }
+
     @Override
     public List<Word> findWords(WordCriteria wordCriteria) {
         return dbManager.getWords(wordCriteria);
@@ -61,7 +70,7 @@ public class DBWordProvider implements WordProvider {
             }
             for (Translation translation : updatedWord.getTranslations()) {
                 if (translation.getId() == 0) {
-                    dbManager.insert(translation, updatedWord.getId());
+                    dbManager.insertTranslation(translation, updatedWord.getId());
                 } else if (!translation.equals(findTranslationById(oldWord, translation.getId()))) {
                     dbManager.updateTranslation(translation);
                 }
@@ -69,6 +78,18 @@ public class DBWordProvider implements WordProvider {
             for (Translation translation : oldWord.getTranslations()) {
                 if (findTranslationById(updatedWord, translation.getId()) == null) {
                     dbManager.deleteTranslation(translation.getId());
+                }
+            }
+            for (Topic topic : updatedWord.getTopics()) {
+                if (topic.getId() == 0) {
+                    dbManager.insertWordTopicLink(updatedWord.getId(), dbManager.insertTopic(topic));
+                } else if (findTranslationById(oldWord, topic.getId()) == null) {
+                    dbManager.insertWordTopicLink(updatedWord.getId(), topic.getId());
+                }
+            }
+            for (Topic topic : oldWord.getTopics()) {
+                if (findTopicById(updatedWord, topic.getId()) == null) {
+                    dbManager.deleteWordTopicLink(updatedWord.getId(), topic.getId());
                 }
             }
         }

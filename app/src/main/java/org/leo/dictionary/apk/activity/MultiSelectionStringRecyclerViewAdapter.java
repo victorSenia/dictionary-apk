@@ -17,7 +17,7 @@ public class MultiSelectionStringRecyclerViewAdapter extends StringRecyclerViewA
         return ((MultiSelectionOnClickListener) onClickListener).selected.get(holder.getAbsoluteAdapterPosition(), false);
     }
 
-    public List<String> getSelected() {
+    public List<String> getSelectedList() {
         List<String> result = new ArrayList<>();
         for (int i = 0; i < mValues.size(); i++) {
             if (((MultiSelectionOnClickListener) onClickListener).selected.get(i, false)) {

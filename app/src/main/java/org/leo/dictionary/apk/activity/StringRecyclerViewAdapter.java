@@ -21,6 +21,16 @@ public class StringRecyclerViewAdapter extends RecyclerView.Adapter<StringRecycl
         this.onClickListener = onClickListener;
     }
 
+    public int getSelected() {
+        return onClickListener instanceof RememberSelectionOnClickListener ? ((RememberSelectionOnClickListener) onClickListener).selected : RecyclerView.NO_POSITION;
+    }
+
+    public void setSelected(int selected) {
+        if (onClickListener instanceof RememberSelectionOnClickListener) {
+            ((RememberSelectionOnClickListener) onClickListener).setSelected(selected);
+        }
+    }
+
     @Override
     public StringViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new StringViewHolder(FragmentStringBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
@@ -52,12 +62,6 @@ public class StringRecyclerViewAdapter extends RecyclerView.Adapter<StringRecycl
     public void clearSelection() {
         if (onClickListener instanceof RememberSelectionOnClickListener) {
             ((RememberSelectionOnClickListener) onClickListener).clearSelection();
-        }
-    }
-
-    public void setSelected(int selected) {
-        if (onClickListener instanceof RememberSelectionOnClickListener) {
-            ((RememberSelectionOnClickListener) onClickListener).setSelected(selected);
         }
     }
 

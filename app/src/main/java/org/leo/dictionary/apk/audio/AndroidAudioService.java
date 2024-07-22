@@ -77,7 +77,7 @@ public class AndroidAudioService implements AudioService {
         } while (speaking.contains(text));
     }
 
-    public void playAynchronous(String language, String text) {
+    public void playAsynchronous(String language, String text) {
         LOGGER.info(language + " " + text);
         textToSpeech.setSpeechRate(speech.getSpeed());
         textToSpeech.setPitch(speech.getPitch());
