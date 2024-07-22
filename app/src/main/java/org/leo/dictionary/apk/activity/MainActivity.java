@@ -242,6 +242,10 @@ public class MainActivity extends AppCompatActivity {
             Intent i = new Intent(this, VoiceSelectorActivity.class);
             startActivity(i);
             return true;
+        } else if (id == R.id.action_configuration_presets) {
+            Intent i = new Intent(this, ConfigurationPresetsActivity.class);
+            startActivity(i);
+            return true;
         } else if (id == R.id.action_import_words) {
             if (isDbSource()) {
                 showMessage("Not possible. Already used source DB");

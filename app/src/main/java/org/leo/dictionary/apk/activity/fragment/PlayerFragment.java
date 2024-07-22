@@ -5,9 +5,7 @@ import android.media.AudioAttributes;
 import android.media.AudioFocusRequest;
 import android.media.AudioManager;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view.*;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -44,7 +42,17 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
                 isPlayingViewModel.setPaused();
             }
         };
+        isPlayingViewModel.getData().observe(requireActivity(), this::keepScreenOn);
         apkUiUpdater.addUiUpdater(uiUpdater);
+    }
+
+    private void keepScreenOn(Boolean value) {
+        Window window = requireActivity().getWindow();
+        if (Boolean.TRUE.equals(value)) {
+            window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        } else {
+            window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        }
     }
 
     @Override
@@ -119,10 +127,10 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
             return true;
         } else if (AudioManager.AUDIOFOCUS_REQUEST_DELAYED == res) {
             resumeOnFocusGain.set(true);
-            Toast.makeText(requireActivity().getBaseContext(), getString(R.string.audio_delayed), Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireActivity(), getString(R.string.audio_delayed), Toast.LENGTH_SHORT).show();
             return false;
         }
-        Toast.makeText(requireActivity().getBaseContext(), getString(R.string.audio_not_possible), Toast.LENGTH_SHORT).show();
+        Toast.makeText(requireActivity(), getString(R.string.audio_not_possible), Toast.LENGTH_SHORT).show();
         return false;
     }
 

@@ -79,7 +79,12 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
         binding.parseWords.setOnClickListener(v -> {
             if (type != null) {
                 try {
-                    if (ApkModule.ASSET.equals(type)) {//TODO for files URI is not correct; and problems with rights
+                    if (ApkModule.ASSET.equals(type)) {
+                        ((ApplicationWithDI) getApplicationContext()).appComponent.lastState().edit()
+                                .putString(ApkModule.LAST_STATE_SOURCE, type)
+                                .putString(ApkModule.LAST_STATE_URI, uri.toString())
+                                .apply();
+                    } else if (ApkModule.FILE.equals(type)) {//TODO for files URI is not correct; and problems with rights
                         ((ApplicationWithDI) getApplicationContext()).appComponent.lastState().edit()
                                 .putString(ApkModule.LAST_STATE_SOURCE, type)
                                 .putString(ApkModule.LAST_STATE_URI, uri.toString())
@@ -123,9 +128,9 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
     private void updateWordProvider(Object data) throws FileNotFoundException {
         WordProvider wordProvider;
         if (data instanceof Uri) {
-            wordProvider = ApkModule.getInputStreamWordProvider(getApplicationContext(), (Uri) data);
+            wordProvider = ApkModule.createInputStreamWordProvider(getApplicationContext(), (Uri) data);
         } else {
-            wordProvider = ApkModule.createWordProvider(getApplicationContext(), ((ApplicationWithDI) getApplicationContext()).appComponent.lastState());
+            wordProvider = ApkModule.createWordProvider(getApplicationContext(), ((ApplicationWithDI) getApplicationContext()).appComponent.lastState(), ((ApplicationWithDI) getApplicationContext()).appComponent.wordCriteriaProvider());
         }
         PlayService playService = ((ApplicationWithDI) getApplicationContext()).appComponent.playService();
         ((PlayServiceImpl) playService).setWordProvider(wordProvider);

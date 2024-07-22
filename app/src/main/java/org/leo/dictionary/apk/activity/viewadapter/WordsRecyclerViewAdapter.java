@@ -110,7 +110,7 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
     }
 
     private void noDBSourceError() {
-        Toast.makeText(fragment.requireActivity().getBaseContext(), "Can only be used with database", Toast.LENGTH_SHORT).show();
+        Toast.makeText(fragment.requireActivity(), "Can only be used with database", Toast.LENGTH_SHORT).show();
     }
 
     public class WordViewHolder extends RecyclerView.ViewHolder {

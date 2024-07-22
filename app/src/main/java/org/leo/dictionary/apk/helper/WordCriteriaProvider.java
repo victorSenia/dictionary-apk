@@ -13,20 +13,35 @@ public class WordCriteriaProvider {
     private WordCriteria wordCriteria;
 
     public static String serialize(final Object obj) {
+        byte[] bytes = serializeToBytes(obj);
+        if (bytes != null) {
+            return Base64.getEncoder().encodeToString(bytes);
+        }
+        return "";
+    }
+
+    public static byte[] serializeToBytes(final Object obj) {
         try (ByteArrayOutputStream bos = new ByteArrayOutputStream(); ObjectOutputStream out = new ObjectOutputStream(bos)) {
             out.writeObject(obj);
             out.flush();
-            return Base64.getEncoder().encodeToString(bos.toByteArray());
-        } catch (Exception e) {
+            return bos.toByteArray();
+        } catch (IOException e) {
             MainActivity.logUnhandledException(e);
-            return "";
+            return null;
         }
     }
 
-    public static Object deserialize(String string) throws IOException, ClassNotFoundException {
-        try (ByteArrayInputStream bis = new ByteArrayInputStream(Base64.getDecoder().decode(string)); ObjectInput in = new ObjectInputStream(bis)) {
+    public static Object deserialize(String string) {
+        return deserializeBytes(Base64.getDecoder().decode(string));
+    }
+
+    public static Object deserializeBytes(byte[] bytes) {
+        try (ByteArrayInputStream bis = new ByteArrayInputStream(bytes); ObjectInput in = new ObjectInputStream(bis)) {
             return in.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            MainActivity.logUnhandledException(e);
         }
+        return null;
     }
 
     public WordCriteria getWordCriteria() {
@@ -50,12 +65,7 @@ public class WordCriteriaProvider {
 
     public WordCriteria getLastStateWordCriteria() {
         if (lastState != null && lastState.contains(ApkModule.LAST_STATE_WORD_CRITERIA)) {
-            try {
-                return (WordCriteria) deserialize(lastState.getString(ApkModule.LAST_STATE_WORD_CRITERIA, ""));
-            } catch (Exception e) {
-                MainActivity.logUnhandledException(e);
-                return null;
-            }
+            return (WordCriteria) deserialize(lastState.getString(ApkModule.LAST_STATE_WORD_CRITERIA, ""));
         }
         return null;
     }

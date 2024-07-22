@@ -30,11 +30,11 @@ public class VoiceSelectorActivity extends AppCompatActivity {
 
     private static void playTestString(Context activity, String language) {
         AudioService audioService = ((ApplicationWithDI) activity.getApplicationContext()).appComponent.audioService();
-
+        String string = activity.getString(R.string.default_text);
         if (audioService instanceof AndroidAudioService) {
-            ((AndroidAudioService) audioService).playAsynchronous(language, activity.getString(R.string.default_text));
+            ((AndroidAudioService) audioService).playAsynchronous(language, string);
         } else {
-            audioService.play(language, activity.getString(R.string.default_text));
+            audioService.play(language, string);
         }
     }
 
@@ -54,7 +54,7 @@ public class VoiceSelectorActivity extends AppCompatActivity {
             ((ApplicationWithDI) getApplicationContext()).appComponent.lastState().edit()
                     .remove(ApkModule.LAST_STATE_VOICE + language).apply();
             playTestString(this, language);
-            Toast.makeText(getBaseContext(), "Default voice used for " + language, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Default voice used for " + language, Toast.LENGTH_SHORT).show();
         });
     }
 

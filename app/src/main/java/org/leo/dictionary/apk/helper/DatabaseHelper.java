@@ -12,6 +12,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TABLE_NAME_TRANSLATION = "translation";
     public static final String TABLE_NAME_WORD = "word";
     public static final String TABLE_NAME_WORD_TOPIC = "word_topic";
+    public static final String TABLE_NAME_CONFIGURATION_PRESET = "configuration_preset";
     public static final String COLUMN_ID = "id";
     public static final String COLUMN_LANGUAGE = "language";
     public static final String WORD_COLUMN_WORD = "word";
@@ -26,8 +27,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TRANSLATION_COLUMN_WORD_ID = "word_" + COLUMN_ID;
     public static final String TRANSLATION_COLUMN_TRANSLATION = "translation";
 
+    public static final String CONFIGURATION_PRESET_DATA = "data";
+
     // database version
-    static final int DB_VERSION = 1;
+    static final int DB_VERSION = 2;
 
     // Creating table query
 
@@ -40,6 +43,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_TRANSLATION);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_WORD);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_TOPIC);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_CONFIGURATION_PRESET);
     }
 
     @Override
@@ -62,6 +66,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "CONSTRAINT fk_topic FOREIGN KEY (" + TRANSLATION_COLUMN_WORD_ID + ") REFERENCES " + TABLE_NAME_TRANSLATION + "(" + COLUMN_ID + ")," +
                 "CONSTRAINT fk_word FOREIGN KEY (" + COLUMN_ID + ") REFERENCES " + TABLE_NAME_WORD + "(" + COLUMN_ID + ")" +
                 ");");
+        db.execSQL("CREATE TABLE " + TABLE_NAME_CONFIGURATION_PRESET + " (" + COLUMN_ID + " TEXT  PRIMARY KEY, " + CONFIGURATION_PRESET_DATA + " BLOB" + ");");
 
         db.execSQL("CREATE UNIQUE INDEX " + TABLE_NAME_TOPIC + "_unique1 " + " ON " + TABLE_NAME_TOPIC + " (" + COLUMN_LANGUAGE + ", " + TOPIC_COLUMN_LEVEL + ", " + TOPIC_COLUMN_ROOT_ID + ", " + TOPIC_COLUMN_NAME + ");");
         db.execSQL("CREATE UNIQUE INDEX " + TABLE_NAME_WORD + "_unique1 " + " ON " + TABLE_NAME_WORD + " (" + COLUMN_LANGUAGE + ", " + WORD_COLUMN_WORD + ", " + WORD_COLUMN_ARTICLE + ", " + WORD_COLUMN_ADDITIONAL_INFORMATION + ");");

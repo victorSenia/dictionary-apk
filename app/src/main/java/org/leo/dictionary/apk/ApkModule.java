@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.widget.Toast;
 import androidx.preference.PreferenceManager;
 import dagger.Module;
 import dagger.Provides;
@@ -12,7 +13,7 @@ import org.leo.dictionary.apk.activity.MainActivity;
 import org.leo.dictionary.apk.audio.AndroidAudioService;
 import org.leo.dictionary.apk.config.AssetsConfigurationReader;
 import org.leo.dictionary.apk.config.PreferenceConfigurationReader;
-import org.leo.dictionary.apk.helper.DBManager;
+import org.leo.dictionary.apk.helper.DatabaseManager;
 import org.leo.dictionary.apk.helper.WordCriteriaProvider;
 import org.leo.dictionary.apk.word.provider.AssetsWordProvider;
 import org.leo.dictionary.apk.word.provider.DBWordProvider;
@@ -51,7 +52,7 @@ public class ApkModule {
         this.application = application;
     }
 
-    public static WordProvider provideAssetsWordProvider(ParseWords configuration, Context context) {
+    public static WordProvider createAssetsWordProvider(ParseWords configuration, Context context) {
         AssetsWordProvider wordProvider = new AssetsWordProvider();
         wordProvider.setConfiguration(configuration);
         wordProvider.setContext(context);
@@ -62,10 +63,16 @@ public class ApkModule {
     @Provides
     @Singleton
     @Named("dbWordProvider")
-    public static DBWordProvider provideDBWordProvider(Context context) {
+    public static DBWordProvider provideDBWordProvider(DatabaseManager databaseManager) {
         DBWordProvider wordProvider = new DBWordProvider();
-        wordProvider.setDbManager(new DBManager(context));
+        wordProvider.setDbManager(databaseManager);
         return wordProvider;
+    }
+
+    @Provides
+    @Singleton
+    public static DatabaseManager provideDatabaseManager(Context context) {
+        return new DatabaseManager(context);
     }
 
     public static boolean isDBSource(@Named("lastState") SharedPreferences lastState) {
@@ -103,30 +110,37 @@ public class ApkModule {
         return context.getSharedPreferences(context.getPackageName() + LAST_STATE, Context.MODE_PRIVATE);
     }
 
-    @Provides
-    @Singleton
-    public static WordProvider createWordProvider(Context context, @Named("lastState") SharedPreferences lastState) {
+    public static WordProvider createWordProvider(Context context, @Named("lastState") SharedPreferences lastState, WordCriteriaProvider criteriaProvider) {
         String source = getLastStateSource(lastState);
         String uri = lastState.getString(LAST_STATE_URI, null);
         try {
-            if (DB.equals(source)) {
-                return provideDBWordProvider(context);
+            if (FILE.equals(source)) {
+                return createInputStreamWordProvider(context, Uri.parse(uri));
             } else if (ASSET.equals(source)) {
                 ParseWords configuration = provideParseWordsConfiguration(context);
                 if (uri != null && Arrays.asList(context.getAssets().list(AssetsWordProvider.ASSETS_WORDS)).contains(uri)) {
                     configuration.setPath(uri);
                 }
-                return provideAssetsWordProvider(configuration, context);
-            } else {
-                return getInputStreamWordProvider(context, Uri.parse(uri));
+                return createAssetsWordProvider(configuration, context);
             }
         } catch (Exception e) {
             MainActivity.logUnhandledException(e);
-            return provideAssetsWordProvider(provideParseWordsConfiguration(context), context);
         }
+        Toast.makeText(context, "File cannot be accessed.", Toast.LENGTH_SHORT).show();
+        criteriaProvider.setWordCriteria(null);
+        return createAssetsWordProvider(provideParseWordsConfiguration(context), context);
     }
 
-    public static InputStreamWordProvider getInputStreamWordProvider(Context context, Uri data) throws FileNotFoundException {
+    @Provides
+    @Singleton
+    public static WordProvider getOrCreateWordProvider(Context context, @Named("lastState") SharedPreferences lastState, @Named("dbWordProvider") DBWordProvider dbWordProvider, WordCriteriaProvider criteriaProvider) {
+        if (isDBSource(lastState)) {
+            return dbWordProvider;
+        }
+        return createWordProvider(context, lastState, criteriaProvider);
+    }
+
+    public static InputStreamWordProvider createInputStreamWordProvider(Context context, Uri data) throws FileNotFoundException {
         InputStreamWordProvider wordProvider = new InputStreamWordProvider();
         ParseWords parseWords = new ParseWords();
         parseWords.setProperties(new HashMap<>(PreferenceManager.getDefaultSharedPreferences(context).getAll()));

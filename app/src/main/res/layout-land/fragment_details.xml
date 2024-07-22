@@ -13,7 +13,6 @@
                 android:layout_height="wrap_content"
                 tools:context=".activity.fragment.DetailsFragment"
                 android:orientation="vertical"
-                android:keepScreenOn="true"
                 android:visibility="@{viewmodel.data==null?android.view.View.GONE:android.view.View.VISIBLE}"
                 android:layout_gravity="center">
 

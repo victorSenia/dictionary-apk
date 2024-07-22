@@ -25,7 +25,7 @@
             <TextView
                     android:text="@string/used_languages"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/language_from_label"
+                    android:layout_height="wrap_content"
                     style="@style/Widget.AppCompat.TextView.SpinnerItem"
             />
             <androidx.fragment.app.FragmentContainerView

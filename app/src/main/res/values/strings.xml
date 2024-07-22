@@ -51,7 +51,7 @@
     <string name="default_voice">Default voice</string>
     <string name="find_words">Filter words</string>
     <string name="set_mode">Change theme</string>
-    <string name="import_words">Import current words into database</string>
+    <string name="import_words">Import current into database</string>
     <string name="use_db">Use database</string>
     <string name="action_edit">Edit</string>
     <string name="action_delete">Delete</string>
@@ -68,7 +68,7 @@
     <string name="article">article</string>
     <string name="word">word</string>
     <string name="additional_information">additional information</string>
-    <string name="create">Create</string>
+    <string name="action_create">Create</string>
     <string name="export_words_to_file">Export words to file</string>
     <string name="import_words_from_file">Import words from file</string>
     <string name="root_topic">Root topic</string>
@@ -76,4 +76,9 @@
     <string name="hint">Hint</string>
     <string name="database">Database</string>
     <string name="used_languages">Currently used languages</string>
+    <string name="already_created">Already created</string>
+    <string name="action_apply">Apply</string>
+    <string name="preset_name">Preset name</string>
+    <string name="configuration_presets">Settings presets</string>
+    <string name="action_update">Update</string>
 </resources>

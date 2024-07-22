@@ -18,7 +18,7 @@
                 <TextView
                         android:text="@string/language_from"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:id="@+id/language_from_label"
+                        android:layout_height="wrap_content"
                         style="@style/Widget.AppCompat.TextView.SpinnerItem"
                 />
                 <androidx.fragment.app.FragmentContainerView
@@ -35,7 +35,7 @@
                 <TextView
                         android:text="@string/root_topic"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:id="@+id/root_topics_label"
+                        android:layout_height="wrap_content"
                         style="@style/Widget.AppCompat.TextView.SpinnerItem"/>
                 <Button
                         android:text="@string/all_topics"
@@ -65,7 +65,7 @@
                 <TextView
                         android:text="@string/title_activity_topics"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content" android:id="@+id/topics_label"
+                        android:layout_height="wrap_content"
                         style="@style/Widget.AppCompat.TextView.SpinnerItem"/>
                 <Button
                         android:text="@string/all_topics"

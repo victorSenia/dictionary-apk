@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+                name="viewModel"
+                type="org.leo.dictionary.apk.activity.viewmodel.LanguageViewModel"/>
+    </data>
+    <androidx.core.widget.NestedScrollView
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:context=".activity.ConfigurationPresetsActivity" android:orientation="vertical">
+            <TextView
+                    android:hint="@string/preset_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <EditText
+                    android:id="@+id/text_preset_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint="@string/preset_name"
+                    android:text="@{viewModel.data}"
+                    android:onTextChanged="@{(text, start, before, count) -> viewModel.setSelected(text)}"
+                    android:minHeight="48dp"
+                    android:layout_gravity="center_vertical"/>
+            <Button
+                    android:text="@string/action_create"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/action_create"/>
+            <Button
+                    android:text="@string/action_update"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/action_edit"/>
+            <Button
+                    android:text="@string/action_delete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/action_delete"/>
+            <Button
+                    android:text="@string/action_apply"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/action_apply"/>
+            <TextView
+                    android:text="@string/already_created"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/presets_names"
+                    android:name="org.leo.dictionary.apk.activity.ConfigurationPresetsActivity$PresetsFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:layout="@layout/fragment_string"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

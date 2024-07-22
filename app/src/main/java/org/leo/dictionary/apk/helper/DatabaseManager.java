@@ -15,14 +15,14 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
-public class DBManager {
+public class DatabaseManager {
 
     public static final int PAGE_SIZE = 200;
     private final Context context;
     private DatabaseHelper dbHelper;
     private SQLiteDatabase database;
 
-    public DBManager(Context c) {
+    public DatabaseManager(Context c) {
         context = c;
         open();
     }
@@ -101,7 +101,7 @@ public class DBManager {
         }
     }
 
-    protected DBManager open() throws SQLException {
+    protected DatabaseManager open() throws SQLException {
         dbHelper = new DatabaseHelper(context);
         database = dbHelper.getWritableDatabase();
         return this;
@@ -127,13 +127,13 @@ public class DBManager {
     }
 
     public synchronized <T> T executeInTransaction(Supplier<T> supplier) {
-        database.beginTransaction();
+        getDatabase().beginTransaction();
         try {
             T result = supplier.get();
-            database.setTransactionSuccessful();
+            getDatabase().setTransactionSuccessful();
             return result;
         } finally {
-            database.endTransaction();
+            getDatabase().endTransaction();
         }
     }
 
@@ -148,7 +148,7 @@ public class DBManager {
         contentValue.put(DatabaseHelper.WORD_COLUMN_ARTICLE, word.getArticle());
         contentValue.put(DatabaseHelper.WORD_COLUMN_ADDITIONAL_INFORMATION, word.getAdditionalInformation());
         contentValue.put(DatabaseHelper.WORD_COLUMN_KNOWLEDGE, word.getKnowledge());
-        return database.insert(DatabaseHelper.TABLE_NAME_WORD, null, contentValue);
+        return getDatabase().insert(DatabaseHelper.TABLE_NAME_WORD, null, contentValue);
     }
 
     public long insertTopic(Topic topic) {
@@ -166,7 +166,7 @@ public class DBManager {
             contentValue.put(DatabaseHelper.TOPIC_COLUMN_ROOT_ID, insertTopic(topic.getRoot()));
         }
         contentValue.put(DatabaseHelper.TOPIC_COLUMN_NAME, topic.getName());
-        long insertedId = database.insert(DatabaseHelper.TABLE_NAME_TOPIC, null, contentValue);
+        long insertedId = getDatabase().insert(DatabaseHelper.TABLE_NAME_TOPIC, null, contentValue);
         topic.setId(insertedId);
         return insertedId;
     }
@@ -213,7 +213,7 @@ public class DBManager {
     }
 
     protected long getId(String table, String selection, String... selectionArg) {
-        try (Cursor cursor = database.query(true, table,
+        try (Cursor cursor = getDatabase().query(true, table,
                 new String[]{DatabaseHelper.COLUMN_ID}, selection,
                 selectionArg,
                 null, null, null, null)) {
@@ -234,7 +234,7 @@ public class DBManager {
         contentValue.put(DatabaseHelper.TRANSLATION_COLUMN_WORD_ID, wordId);
         contentValue.put(DatabaseHelper.TRANSLATION_COLUMN_TRANSLATION, translation.getTranslation());
         contentValue.put(DatabaseHelper.COLUMN_LANGUAGE, translation.getLanguage());
-        long insertedId = database.insert(DatabaseHelper.TABLE_NAME_TRANSLATION, null, contentValue);
+        long insertedId = getDatabase().insert(DatabaseHelper.TABLE_NAME_TRANSLATION, null, contentValue);
         translation.setId(insertedId);
         return insertedId;
     }
@@ -249,11 +249,11 @@ public class DBManager {
         ContentValues contentValue = new ContentValues();
         contentValue.put(DatabaseHelper.COLUMN_ID, topicId);
         contentValue.put(DatabaseHelper.TRANSLATION_COLUMN_WORD_ID, wordId);
-        return database.insert(DatabaseHelper.TABLE_NAME_WORD_TOPIC, null, contentValue);
+        return getDatabase().insert(DatabaseHelper.TABLE_NAME_WORD_TOPIC, null, contentValue);
     }
 
     public int deleteWordTopicLink(long wordId, long topicId) {
-        return database.delete(DatabaseHelper.TABLE_NAME_WORD_TOPIC,
+        return getDatabase().delete(DatabaseHelper.TABLE_NAME_WORD_TOPIC,
                 DatabaseHelper.TRANSLATION_COLUMN_WORD_ID + " = ? AND " + DatabaseHelper.COLUMN_ID + " = ?",
                 new String[]{Long.toString(wordId), Long.toString(topicId)});
     }
@@ -271,7 +271,7 @@ public class DBManager {
             where += " w." + DatabaseHelper.COLUMN_LANGUAGE + " = ?";
             selectionArgs.add(criteria.getLanguageFrom());
         }
-        Cursor cursor = database.rawQuery(sql + (!where.isEmpty() ? " WHERE " + where : "") + " ORDER BY " + DatabaseHelper.COLUMN_ID, !selectionArgs.isEmpty() ? selectionArgs.toArray(selectionArgs.toArray(new String[0])) : null);
+        Cursor cursor = getDatabase().rawQuery(sql + (!where.isEmpty() ? " WHERE " + where : "") + " ORDER BY " + DatabaseHelper.COLUMN_ID, !selectionArgs.isEmpty() ? selectionArgs.toArray(selectionArgs.toArray(new String[0])) : null);
         cursor.moveToFirst();
         return cursor;
     }
@@ -295,7 +295,7 @@ public class DBManager {
             selectionArgs.addAll(languages);
         }
         String[] columns = new String[]{DatabaseHelper.COLUMN_ID, DatabaseHelper.COLUMN_LANGUAGE, DatabaseHelper.TRANSLATION_COLUMN_WORD_ID, DatabaseHelper.TRANSLATION_COLUMN_TRANSLATION};
-        Cursor cursor = database.query(DatabaseHelper.TABLE_NAME_TRANSLATION,
+        Cursor cursor = getDatabase().query(DatabaseHelper.TABLE_NAME_TRANSLATION,
                 columns, selection,
                 selectionArgs.toArray(selectionArgs.toArray(new String[0])),
                 null, null, DatabaseHelper.TRANSLATION_COLUMN_WORD_ID, null);
@@ -340,7 +340,7 @@ public class DBManager {
         } else {
             columns = new String[]{DatabaseHelper.COLUMN_ID, DatabaseHelper.COLUMN_LANGUAGE, DatabaseHelper.TOPIC_COLUMN_NAME, DatabaseHelper.TOPIC_COLUMN_LEVEL, DatabaseHelper.TOPIC_COLUMN_ROOT_ID};
         }
-        Cursor cursor = database.query(DatabaseHelper.TABLE_NAME_TOPIC,
+        Cursor cursor = getDatabase().query(DatabaseHelper.TABLE_NAME_TOPIC,
                 columns, selection,
                 selectionArgs.toArray(selectionArgs.toArray(new String[0])),
                 null, null, null, null);
@@ -369,7 +369,7 @@ public class DBManager {
     }
 
     public List<Topic> getTopicsForWord(String wordId, String language, String level, Map<Long, Topic> loadedTopics) {
-        try (Cursor res = database.rawQuery("SELECT t.* FROM " + DatabaseHelper.TABLE_NAME_TOPIC + " t " +
+        try (Cursor res = getDatabase().rawQuery("SELECT t.* FROM " + DatabaseHelper.TABLE_NAME_TOPIC + " t " +
                         " INNER JOIN " + DatabaseHelper.TABLE_NAME_WORD_TOPIC + " tw " +
                         " ON t." + DatabaseHelper.COLUMN_ID + " = tw." + DatabaseHelper.COLUMN_ID +
                         " AND tw." + DatabaseHelper.TRANSLATION_COLUMN_WORD_ID + "= ?" +
@@ -386,7 +386,7 @@ public class DBManager {
     }
 
     public List<String> languageFrom() {
-        try (Cursor res = database.query(true, DatabaseHelper.TABLE_NAME_WORD,
+        try (Cursor res = getDatabase().query(true, DatabaseHelper.TABLE_NAME_WORD,
                 new String[]{DatabaseHelper.COLUMN_LANGUAGE}, null,
                 null,
                 null, null, null, null)) {
@@ -420,12 +420,12 @@ public class DBManager {
 
     private Cursor languageToCursor(String language) {
         if (language != null) {
-            return database.rawQuery("SELECT DISTINCT t." + DatabaseHelper.COLUMN_LANGUAGE +
+            return getDatabase().rawQuery("SELECT DISTINCT t." + DatabaseHelper.COLUMN_LANGUAGE +
                     " FROM " + DatabaseHelper.TABLE_NAME_TRANSLATION + " t" + " INNER JOIN " + DatabaseHelper.TABLE_NAME_WORD + " w " +
                     "ON w." + DatabaseHelper.COLUMN_ID + " = t." + DatabaseHelper.TRANSLATION_COLUMN_WORD_ID +
                     " AND w." + DatabaseHelper.COLUMN_LANGUAGE + "= ?", new String[]{language});
         } else {
-            return database.query(true, DatabaseHelper.TABLE_NAME_TRANSLATION,
+            return getDatabase().query(true, DatabaseHelper.TABLE_NAME_TRANSLATION,
                     new String[]{DatabaseHelper.COLUMN_LANGUAGE}, null,
                     null,
                     null, null, null, null);
@@ -487,23 +487,23 @@ public class DBManager {
         for (int fromIndex = 0; fromIndex < wordIds.size(); fromIndex += PAGE_SIZE) {
             deleteWords(wordIds.subList(fromIndex, Math.min(wordIds.size(), fromIndex + PAGE_SIZE)));
         }
-        database.delete(DatabaseHelper.TABLE_NAME_TOPIC, DatabaseHelper.COLUMN_LANGUAGE + "= ?", new String[]{language});
+        getDatabase().delete(DatabaseHelper.TABLE_NAME_TOPIC, DatabaseHelper.COLUMN_LANGUAGE + "= ?", new String[]{language});
         return wordIds.size();
     }
 
     public void vacuum() {
-        database.execSQL("VACUUM");
+        getDatabase().execSQL("VACUUM");
     }
 
     private int deleteWords(List<String> wordIds) {
-        database.delete(DatabaseHelper.TABLE_NAME_WORD, DatabaseHelper.COLUMN_ID + " IN (" + createPlaceholders(wordIds.size()) + ")", wordIds.toArray(new String[0]));
-        database.delete(DatabaseHelper.TABLE_NAME_TRANSLATION, DatabaseHelper.TRANSLATION_COLUMN_WORD_ID + " IN (" + createPlaceholders(wordIds.size()) + ")", wordIds.toArray(new String[0]));
-        database.delete(DatabaseHelper.TABLE_NAME_WORD_TOPIC, DatabaseHelper.TRANSLATION_COLUMN_WORD_ID + " IN (" + createPlaceholders(wordIds.size()) + ")", wordIds.toArray(new String[0]));
+        getDatabase().delete(DatabaseHelper.TABLE_NAME_WORD, DatabaseHelper.COLUMN_ID + " IN (" + createPlaceholders(wordIds.size()) + ")", wordIds.toArray(new String[0]));
+        getDatabase().delete(DatabaseHelper.TABLE_NAME_TRANSLATION, DatabaseHelper.TRANSLATION_COLUMN_WORD_ID + " IN (" + createPlaceholders(wordIds.size()) + ")", wordIds.toArray(new String[0]));
+        getDatabase().delete(DatabaseHelper.TABLE_NAME_WORD_TOPIC, DatabaseHelper.TRANSLATION_COLUMN_WORD_ID + " IN (" + createPlaceholders(wordIds.size()) + ")", wordIds.toArray(new String[0]));
         return wordIds.size();
     }
 
     protected List<String> getWordIdsForLanguage(String language) {
-        try (Cursor res = database.query(true, DatabaseHelper.TABLE_NAME_WORD,
+        try (Cursor res = getDatabase().query(true, DatabaseHelper.TABLE_NAME_WORD,
                 new String[]{DatabaseHelper.COLUMN_ID}, DatabaseHelper.COLUMN_LANGUAGE + "= ?",
                 new String[]{language},
                 null, null, null, null)) {
@@ -529,7 +529,7 @@ public class DBManager {
     }
 
     private Cursor getCursorForWordById(long id) {
-        Cursor cursor = database.query(true, DatabaseHelper.TABLE_NAME_WORD,
+        Cursor cursor = getDatabase().query(true, DatabaseHelper.TABLE_NAME_WORD,
                 new String[]{DatabaseHelper.COLUMN_ID, DatabaseHelper.COLUMN_LANGUAGE,
                         DatabaseHelper.WORD_COLUMN_WORD, DatabaseHelper.WORD_COLUMN_ADDITIONAL_INFORMATION,
                         DatabaseHelper.WORD_COLUMN_ARTICLE},
@@ -548,7 +548,7 @@ public class DBManager {
         contentValues.put(DatabaseHelper.WORD_COLUMN_ADDITIONAL_INFORMATION, word.getAdditionalInformation());
         contentValues.put(DatabaseHelper.WORD_COLUMN_ARTICLE, word.getArticle());
         contentValues.put(DatabaseHelper.WORD_COLUMN_KNOWLEDGE, word.getKnowledge());
-        return database.update(DatabaseHelper.TABLE_NAME_WORD, contentValues, DatabaseHelper.COLUMN_ID + " = ?", new String[]{Long.toString(word.getId())});
+        return getDatabase().update(DatabaseHelper.TABLE_NAME_WORD, contentValues, DatabaseHelper.COLUMN_ID + " = ?", new String[]{Long.toString(word.getId())});
     }
 
     public int updateTopic(Topic topic) {
@@ -561,19 +561,74 @@ public class DBManager {
             contentValues.put(DatabaseHelper.TOPIC_COLUMN_ROOT_ID, (String) null);
         }
         contentValues.put(DatabaseHelper.TOPIC_COLUMN_NAME, topic.getName());
-        return database.update(DatabaseHelper.TABLE_NAME_TOPIC, contentValues, DatabaseHelper.COLUMN_ID + " = ?", new String[]{Long.toString(topic.getId())});
+        return getDatabase().update(DatabaseHelper.TABLE_NAME_TOPIC, contentValues, DatabaseHelper.COLUMN_ID + " = ?", new String[]{Long.toString(topic.getId())});
     }
 
     public int updateTranslation(Translation translation) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(DatabaseHelper.COLUMN_LANGUAGE, translation.getLanguage());
         contentValues.put(DatabaseHelper.TRANSLATION_COLUMN_TRANSLATION, translation.getTranslation());
-        return database.update(DatabaseHelper.TABLE_NAME_TRANSLATION, contentValues, DatabaseHelper.COLUMN_ID + " = ?", new String[]{Long.toString(translation.getId())});
+        return getDatabase().update(DatabaseHelper.TABLE_NAME_TRANSLATION, contentValues, DatabaseHelper.COLUMN_ID + " = ?", new String[]{Long.toString(translation.getId())});
     }
 
     public void deleteTranslation(long id) {
-        database.delete(DatabaseHelper.TABLE_NAME_TRANSLATION, DatabaseHelper.COLUMN_ID + " = ?", new String[]{Long.toString(id)});
+        getDatabase().delete(DatabaseHelper.TABLE_NAME_TRANSLATION, DatabaseHelper.COLUMN_ID + " = ?", new String[]{Long.toString(id)});
+    }
 
+    private SQLiteDatabase getDatabase() {
+        return database;
+    }
+
+    public long insertConfigurationPreset(String name, Map<String, ?> data) {
+        ContentValues contentValue = new ContentValues();
+        contentValue.put(DatabaseHelper.COLUMN_ID, name);
+        contentValue.put(DatabaseHelper.CONFIGURATION_PRESET_DATA, WordCriteriaProvider.serializeToBytes(data));
+        return getDatabase().insert(DatabaseHelper.TABLE_NAME_CONFIGURATION_PRESET, null, contentValue);
+    }
+
+    public int updateConfigurationPreset(String name, Map<String, ?> data) {
+        ContentValues contentValue = new ContentValues();
+        contentValue.put(DatabaseHelper.COLUMN_ID, name);
+        contentValue.put(DatabaseHelper.CONFIGURATION_PRESET_DATA, WordCriteriaProvider.serializeToBytes(data));
+        return getDatabase().update(DatabaseHelper.TABLE_NAME_CONFIGURATION_PRESET, contentValue, DatabaseHelper.COLUMN_ID + " = ?", new String[]{name});
+    }
+
+    public int deleteConfigurationPreset(String name) {
+        return getDatabase().delete(DatabaseHelper.TABLE_NAME_CONFIGURATION_PRESET, DatabaseHelper.COLUMN_ID + " = ?", new String[]{name});
+    }
+
+    public Map<String, ?> getConfigurationPreset(String name) {
+        try (Cursor cursor = getDatabase().query(true, DatabaseHelper.TABLE_NAME_CONFIGURATION_PRESET,
+                new String[]{DatabaseHelper.CONFIGURATION_PRESET_DATA},
+                DatabaseHelper.COLUMN_ID + "= ?",
+                new String[]{name},
+                null, null, null, null)) {
+            cursor.moveToFirst();
+            if (!cursor.isAfterLast()) {
+                int dataIndex = cursor.getColumnIndexOrThrow(DatabaseHelper.CONFIGURATION_PRESET_DATA);
+                if (!cursor.isAfterLast()) {
+                    return (Map<String, ?>) WordCriteriaProvider.deserializeBytes(cursor.getBlob(dataIndex));
+                }
+            }
+        }
+        return null;
+    }
+
+    public List<String> getConfigurationPresetNames() {
+        try (Cursor cursor = getDatabase().query(true, DatabaseHelper.TABLE_NAME_CONFIGURATION_PRESET,
+                new String[]{DatabaseHelper.COLUMN_ID, DatabaseHelper.CONFIGURATION_PRESET_DATA},
+                null, null, null, null, null, null)) {
+            List<String> result = new ArrayList<>();
+            cursor.moveToFirst();
+            if (!cursor.isAfterLast()) {
+                int idIndex = cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_ID);
+                while (!cursor.isAfterLast()) {
+                    result.add(cursor.getString(idIndex));
+                    cursor.moveToNext();
+                }
+            }
+            return result;
+        }
     }
 
     public interface CursorProvider {
