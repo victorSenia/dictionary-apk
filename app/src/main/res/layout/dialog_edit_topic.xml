@@ -1,8 +1,8 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable
-                name="viewmodel"
-                type="org.leo.dictionary.apk.activity.EditTopicFragment.TopicViewModel"/>
+                name="viewModel"
+                type="org.leo.dictionary.apk.activity.viewmodel.TopicViewModel"/>
     </data>
     <LinearLayout
             android:orientation="vertical"
@@ -17,7 +17,7 @@
                 android:inputType="textMultiLine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@={viewmodel.selected.name}"
+                android:text="@={viewModel.data.name}"
                 android:hint="@string/title_activity_topics" android:minHeight="48dp"/>
         <LinearLayout
                 android:orientation="vertical"
@@ -38,7 +38,7 @@
                         android:layout_height="wrap_content"
                         android:layout_width="0dp"
                         android:layout_margin="@dimen/text_margin"
-                        android:text="@{viewmodel.selected.root.name}"
+                        android:text="@{viewModel.data.root.name}"
                         android:textAppearance="?attr/textAppearanceListItem" android:layout_weight="1"
                         android:layout_gravity="center_vertical"/>
                 <Button

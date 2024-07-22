@@ -16,13 +16,13 @@ import org.leo.dictionary.PlayServiceImpl;
 import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
+import org.leo.dictionary.apk.activity.viewadapter.ReturnSelectedStringRecyclerViewAdapter;
 import org.leo.dictionary.apk.databinding.ParseWordsSettingsActivityBinding;
 import org.leo.dictionary.word.provider.WordProvider;
 
 import java.io.FileNotFoundException;
 
 public class ParseWordsSettingsActivity extends AppCompatActivity {
-    private static final int PICK_TXT_FILE = 200;
     private ParseWordsSettingsActivityBinding binding;
     private Object uri;
     private String type;

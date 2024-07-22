@@ -13,6 +13,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
+import org.leo.dictionary.apk.activity.fragment.EditTopicFragment;
+import org.leo.dictionary.apk.activity.fragment.EditTranslationFragment;
+import org.leo.dictionary.apk.activity.fragment.EditWordFragment;
+import org.leo.dictionary.apk.activity.viewadapter.StringRecyclerViewAdapter;
+import org.leo.dictionary.apk.activity.viewadapter.TopicRecyclerViewAdapter;
+import org.leo.dictionary.apk.activity.viewmodel.EditWordViewModel;
+import org.leo.dictionary.apk.activity.viewmodel.LanguageViewModel;
 import org.leo.dictionary.apk.databinding.ActivityEditWordBinding;
 import org.leo.dictionary.apk.word.provider.DBWordProvider;
 import org.leo.dictionary.entity.Topic;
@@ -39,7 +46,7 @@ public class EditWordActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         model = new ViewModelProvider(this).get(EditWordViewModel.class);
-        FilterWordsActivity.LanguageViewModel languageViewModel = new ViewModelProvider(this).get(FilterWordsActivity.LanguageViewModel.class);
+        LanguageViewModel languageViewModel = new ViewModelProvider(this).get(LanguageViewModel.class);
         long id = extrasContainsKey(WORD_ID_TO_EDIT) ? getIntent().getExtras().getLong(WORD_ID_TO_EDIT) : DEFAULT_VALUE_OF_WORD_ID;
         binding = ActivityEditWordBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -52,13 +59,13 @@ public class EditWordActivity extends AppCompatActivity {
         }
         binding.buttonSave.setOnClickListener(v -> {
             if (isValidData()) {
-                Word word = model.getUiState().getValue();
+                Word word = model.getValue();
                 ((ApplicationWithDI) getApplicationContext()).data.put(MainActivity.UPDATED_WORD, word);
                 setResult(Activity.RESULT_OK);
                 finish();
             }
         });
-        Word word = model.getUiState().getValue();
+        Word word = model.getValue();
         if (word.getTranslations() == null) {
             word.setTranslations(new ArrayList<>());
         }
@@ -88,8 +95,8 @@ public class EditWordActivity extends AppCompatActivity {
             }
 
             @Override
-            protected void onClickListener(StringViewHolder viewHolder) {
-                addTopicToWord(viewHolder.mItem);
+            protected void onClickListener(StringRecyclerViewAdapter.StringViewHolder<Topic> viewHolder) {
+                addTopicToWord(viewHolder.item);
             }
         });
         binding.createTopic.setOnClickListener(v -> createAndAddTopicToWord());
@@ -126,7 +133,7 @@ public class EditWordActivity extends AppCompatActivity {
     }
 
     private Word getWord() {
-        return model.getUiState().getValue();
+        return model.getValue();
     }
 
     private void filterTopics(CharSequence input) {

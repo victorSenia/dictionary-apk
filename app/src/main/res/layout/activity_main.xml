@@ -19,7 +19,7 @@
                 android:layout_height="?attr/actionBarSize">
             <androidx.fragment.app.FragmentContainerView
                     android:id="@+id/player_fragment"
-                    android:name="org.leo.dictionary.apk.activity.PlayerFragment"
+                    android:name="org.leo.dictionary.apk.activity.fragment.PlayerFragment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:layout="@layout/fragment_player"
@@ -33,13 +33,13 @@
             android:layout_height="match_parent">
         <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/details_fragment"
-                android:name="org.leo.dictionary.apk.activity.DetailsFragment"
+                android:name="org.leo.dictionary.apk.activity.fragment.DetailsFragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:layout="@layout/fragment_details"/>
         <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/words_fragment"
-                android:name="org.leo.dictionary.apk.activity.WordsFragment"
+                android:name="org.leo.dictionary.apk.activity.fragment.WordsFragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:layout="@layout/fragment_strings_list"/>

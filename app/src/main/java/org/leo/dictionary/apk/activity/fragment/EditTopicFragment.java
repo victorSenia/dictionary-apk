@@ -1,4 +1,4 @@
-package org.leo.dictionary.apk.activity;
+package org.leo.dictionary.apk.activity.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -9,15 +9,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
+import org.leo.dictionary.apk.activity.EditWordActivity;
+import org.leo.dictionary.apk.activity.viewadapter.StringRecyclerViewAdapter;
+import org.leo.dictionary.apk.activity.viewadapter.TopicRecyclerViewAdapter;
+import org.leo.dictionary.apk.activity.viewmodel.EditWordViewModel;
+import org.leo.dictionary.apk.activity.viewmodel.TopicViewModel;
 import org.leo.dictionary.apk.databinding.DialogEditTopicBinding;
 import org.leo.dictionary.apk.word.provider.DBWordProvider;
 import org.leo.dictionary.entity.Topic;
@@ -60,17 +62,17 @@ public class EditTopicFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            MutableLiveData<Word> word = new ViewModelProvider(requireActivity()).get(EditWordViewModel.class).getUiState();
+            Word word = new ViewModelProvider(requireActivity()).get(EditWordViewModel.class).getValue();
             recyclerView.setAdapter(createRecyclerViewAdapter(word));
         }
         return view;
     }
 
-    private TopicRecyclerViewAdapter createRecyclerViewAdapter(MutableLiveData<Word> word) {
-        return new TopicRecyclerViewAdapter(word.getValue().getTopics()) {
+    private TopicRecyclerViewAdapter createRecyclerViewAdapter(Word word) {
+        return new TopicRecyclerViewAdapter(word.getTopics()) {
             @Override
             public void deleteItem(DeleteViewHolder viewHolder) {
-                word.getValue().getTopics().remove(viewHolder.mItem);
+                word.getTopics().remove(viewHolder.mItem);
                 ((EditWordActivity) requireActivity()).filterTopics();
                 super.deleteItem(viewHolder);
             }
@@ -107,12 +109,12 @@ public class EditTopicFragment extends Fragment {
             topics = findTopics(topicToEdit.getLanguage());
             binding = DialogEditTopicBinding.inflate(inflater, container, false);
             TopicViewModel topicViewModel = new ViewModelProvider(this).get(TopicViewModel.class);
-            topicViewModel.select(topicToEdit);
-            binding.setViewmodel(topicViewModel);
+            topicViewModel.setTopic(topicToEdit);
+            binding.setViewModel(topicViewModel);
             binding.setLifecycleOwner(this);
             binding.buttonSave.setOnClickListener(v -> {
                 DBWordProvider wordProvider = ((ApplicationWithDI) getContext().getApplicationContext()).appComponent.dbWordProvider();
-                wordProvider.updateTopic(topicViewModel.selected.getValue());
+                wordProvider.updateTopic(topicViewModel.getTopic());
                 if (onSafeConsumer != null) {
                     onSafeConsumer.run();
                 }
@@ -138,7 +140,7 @@ public class EditTopicFragment extends Fragment {
                     }
 
                     @Override
-                    protected void onClickListener(StringViewHolder viewHolder) {
+                    protected void onClickListener(StringRecyclerViewAdapter.StringViewHolder<Topic> viewHolder) {
                         Topic newRoot = filteredTopics.get(viewHolder.getAbsoluteAdapterPosition());
                         selectNewRoot(newRoot);
                     }
@@ -158,15 +160,15 @@ public class EditTopicFragment extends Fragment {
 
         private void editRoot() {
             TopicViewModel rootTopicViewModel = new ViewModelProvider(this).get(TopicViewModel.class);
-            new EditTopicDialogFragment(topicToEdit.getRoot(), () -> rootTopicViewModel.select(rootTopicViewModel.getSelected().getValue())).show(requireActivity().getSupportFragmentManager(), "EditRootTopic");
+            new EditTopicDialogFragment(topicToEdit.getRoot(), () -> rootTopicViewModel.setTopic(rootTopicViewModel.getTopic())).show(requireActivity().getSupportFragmentManager(), "EditRootTopic");
         }
 
         private void selectNewRoot(Topic newRoot) {
             rootTopicVisibility(newRoot);
             TopicViewModel rootTopicViewModel = new ViewModelProvider(this).get(TopicViewModel.class);
-            rootTopicViewModel.getSelected().getValue().setRoot(newRoot);
+            rootTopicViewModel.getTopic().setRoot(newRoot);
             filterTopics();
-            rootTopicViewModel.select(rootTopicViewModel.getSelected().getValue());
+            rootTopicViewModel.setTopic(rootTopicViewModel.getTopic());
         }
 
         private void rootTopicVisibility(Topic newRoot) {
@@ -182,7 +184,7 @@ public class EditTopicFragment extends Fragment {
             Topic topic = new Topic();
             topic.setName(binding.textTopic.getText().toString());
             topic.setLevel(1);
-            topic.setLanguage(rootTopicViewModel.getSelected().getValue().getLanguage());
+            topic.setLanguage(rootTopicViewModel.getTopic().getLanguage());
             topics.add(topic);
             selectNewRoot(topic);
         }
@@ -199,15 +201,4 @@ public class EditTopicFragment extends Fragment {
         }
     }
 
-    public static class TopicViewModel extends ViewModel {
-        private final MutableLiveData<Topic> selected = new MutableLiveData<>();
-
-        public void select(Topic item) {
-            selected.postValue(item);
-        }
-
-        public LiveData<Topic> getSelected() {
-            return selected;
-        }
-    }
 }

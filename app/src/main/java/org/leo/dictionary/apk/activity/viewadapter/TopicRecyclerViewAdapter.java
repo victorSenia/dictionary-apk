@@ -1,4 +1,4 @@
-package org.leo.dictionary.apk.activity;
+package org.leo.dictionary.apk.activity.viewadapter;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -30,15 +30,20 @@ public class TopicRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
     }
 
     public RecyclerView.ViewHolder createStringViewHolder(ViewGroup parent) {
-        return new StringViewHolder(FragmentStringBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
+        return new TopicStringViewHolder(FragmentStringBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false), new StringRecyclerViewAdapter.OnClickListener<Topic>() {
+            @Override
+            public void onClick(StringRecyclerViewAdapter.StringViewHolder<Topic> viewHolder) {
+                onClickListener(viewHolder);
+            }
+        });
     }
 
     @Override
     public void onBindViewHolder(@NonNull final RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof DeleteViewHolder) {
             onBindDeleteViewHolder((DeleteViewHolder) holder, position);
-        } else if (holder instanceof StringViewHolder) {
-            onBindStringViewHolder((StringViewHolder) holder, position);
+        } else if (holder instanceof TopicStringViewHolder) {
+            onBindStringViewHolder((TopicStringViewHolder) holder, position);
         }
     }
 
@@ -47,9 +52,9 @@ public class TopicRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
         holder.mTextView.setText(holder.mItem.getName());
     }
 
-    protected void onBindStringViewHolder(final StringViewHolder holder, int position) {
-        holder.mItem = mValues.get(position);
-        holder.mTextView.setText(holder.mItem.getName());
+    protected void onBindStringViewHolder(final TopicStringViewHolder holder, int position) {
+        holder.item = mValues.get(position);
+        holder.textView.setText(holder.valueToString());
     }
 
     @Override
@@ -72,7 +77,15 @@ public class TopicRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
         notifyDataSetChanged();
     }
 
-    protected void onClickListener(StringViewHolder viewHolder) {
+    protected void onClickListener(StringRecyclerViewAdapter.StringViewHolder<Topic> viewHolder) {
+    }
+
+    public static class TopicStringViewHolder extends StringRecyclerViewAdapter.StringViewHolder<Topic> {
+
+        public TopicStringViewHolder(FragmentStringBinding binding, StringRecyclerViewAdapter.OnClickListener<Topic> onClickListener) {
+            super(binding, onClickListener, Topic::getName);
+        }
+
     }
 
     public class DeleteViewHolder extends RecyclerView.ViewHolder {
@@ -84,22 +97,6 @@ public class TopicRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
             mTextView = binding.content;
             binding.actionDelete.setOnClickListener(v -> deleteItem(DeleteViewHolder.this));
             binding.actionEdit.setOnClickListener(v -> editItem(DeleteViewHolder.this));
-        }
-
-        @Override
-        public String toString() {
-            return super.toString() + " '" + mTextView.getText() + "'";
-        }
-    }
-
-    public class StringViewHolder extends RecyclerView.ViewHolder {
-        public TextView mTextView;
-        public Topic mItem;
-
-        public StringViewHolder(FragmentStringBinding binding) {
-            super(binding.getRoot());
-            mTextView = binding.content;
-            binding.getRoot().setOnClickListener(v -> onClickListener(StringViewHolder.this));
         }
 
         @Override

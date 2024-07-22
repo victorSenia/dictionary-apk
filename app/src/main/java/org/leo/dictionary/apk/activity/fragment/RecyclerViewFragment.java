@@ -1,4 +1,4 @@
-package org.leo.dictionary.apk.activity;
+package org.leo.dictionary.apk.activity.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -10,16 +10,21 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import org.leo.dictionary.apk.R;
+import org.leo.dictionary.apk.activity.viewadapter.StringRecyclerViewAdapter;
 
 import java.util.Collections;
 import java.util.List;
 
-public class StringsFragment extends Fragment {
+public abstract class RecyclerViewFragment<T> extends Fragment {
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     protected RecyclerView recyclerView;
     // TODO: Customize parameters
     private int mColumnCount = 1;
+
+    public StringRecyclerViewAdapter<T> getRecyclerViewAdapter() {
+        return (StringRecyclerViewAdapter<T>) recyclerView.getAdapter();
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -49,11 +54,11 @@ public class StringsFragment extends Fragment {
         return view;
     }
 
-    protected StringRecyclerViewAdapter createRecyclerViewAdapter() {
-        return new StringRecyclerViewAdapter(getStrings(), this, null);
+    protected StringRecyclerViewAdapter<T> createRecyclerViewAdapter() {
+        return new StringRecyclerViewAdapter<>(getStrings(), this, null);
     }
 
-    protected List<String> getStrings() {
+    protected List<T> getStrings() {
         return Collections.emptyList();
     }
 }

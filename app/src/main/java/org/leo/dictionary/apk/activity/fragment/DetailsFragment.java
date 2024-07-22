@@ -1,4 +1,4 @@
-package org.leo.dictionary.apk.activity;
+package org.leo.dictionary.apk.activity.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider;
 import org.leo.dictionary.UiUpdater;
 import org.leo.dictionary.apk.ApkUiUpdater;
 import org.leo.dictionary.apk.ApplicationWithDI;
+import org.leo.dictionary.apk.activity.viewmodel.DetailsViewModel;
 import org.leo.dictionary.apk.databinding.FragmentDetailsBinding;
 
 public class DetailsFragment extends Fragment {
@@ -21,7 +22,7 @@ public class DetailsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         FragmentDetailsBinding binding = FragmentDetailsBinding.inflate(inflater, container, false);
         DetailsViewModel mViewModel = new ViewModelProvider(requireActivity()).get(DetailsViewModel.class);
-        binding.setViewmodel(mViewModel);
+        binding.setViewModel(mViewModel);
         binding.setLifecycleOwner(this);
         ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.uiUpdater();
         uiUpdater = mViewModel::updateWord;

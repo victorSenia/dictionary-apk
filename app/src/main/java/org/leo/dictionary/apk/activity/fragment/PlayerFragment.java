@@ -1,4 +1,4 @@
-package org.leo.dictionary.apk.activity;
+package org.leo.dictionary.apk.activity.fragment;
 
 import android.content.Context;
 import android.media.AudioAttributes;
@@ -12,8 +12,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import org.leo.dictionary.PlayService;
 import org.leo.dictionary.UiUpdater;
@@ -21,6 +19,7 @@ import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApkUiUpdater;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
+import org.leo.dictionary.apk.activity.viewmodel.IsPlayingViewModel;
 import org.leo.dictionary.apk.databinding.FragmentPlayerBinding;
 
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -72,7 +71,7 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
         binding = FragmentPlayerBinding.inflate(inflater, container, false);
         playService = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.playService();
         audioManager = (AudioManager) requireActivity().getSystemService(Context.AUDIO_SERVICE);
-        isPlayingViewModel.isPlaying.observe(requireActivity(), this::updateButtonUi);
+        isPlayingViewModel.getData().observe(requireActivity(), this::updateButtonUi);
         return binding.getRoot();
     }
 
@@ -150,15 +149,4 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
         }
     }
 
-    public static class IsPlayingViewModel extends ViewModel {
-        private final MutableLiveData<Boolean> isPlaying = new MutableLiveData<>(Boolean.FALSE);
-
-        public void setPlaying() {
-            isPlaying.postValue(true);
-        }
-
-        public void setPaused() {
-            isPlaying.postValue(false);
-        }
-    }
 }

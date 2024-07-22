@@ -15,7 +15,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import org.leo.dictionary.apk.R;
 
 public class SettingsActivity extends AppCompatActivity {
-    int[] tabNames = {R.string.general, R.string.speech, R.string.match_words};
+    private final int[] tabNames = {R.string.general, R.string.speech, R.string.match_words};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

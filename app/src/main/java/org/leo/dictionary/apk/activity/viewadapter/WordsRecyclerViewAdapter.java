@@ -1,4 +1,4 @@
-package org.leo.dictionary.apk.activity;
+package org.leo.dictionary.apk.activity.viewadapter;
 
 import android.app.AlertDialog;
 import android.view.LayoutInflater;
@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.leo.dictionary.PlayService;
 import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApplicationWithDI;
+import org.leo.dictionary.apk.activity.MainActivity;
 import org.leo.dictionary.apk.databinding.FragmentStringBinding;
 import org.leo.dictionary.apk.databinding.FragmentWordSelectedBinding;
 import org.leo.dictionary.apk.databinding.FragmentWordSelectedDbBinding;
@@ -20,11 +21,11 @@ import org.leo.dictionary.entity.Word;
 
 import java.util.List;
 
-public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecyclerViewAdapter.ViewHolder> {
+public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecyclerViewAdapter.WordViewHolder> {
 
     public static final int SELECTED_WORD_VIEW_TYPE = 1;
     public static final int SELECTED_WORD_DB_VIEW_TYPE = 2;
-    protected final List<Word> words;
+    public final List<Word> words;
     private final Fragment fragment;
 
     private int positionId;
@@ -43,13 +44,13 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
 
     @Override
     @NonNull
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public WordViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (viewType == SELECTED_WORD_VIEW_TYPE) {
-            return new ViewHolder(FragmentWordSelectedBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
+            return new WordViewHolder(FragmentWordSelectedBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
         } else if (viewType == SELECTED_WORD_DB_VIEW_TYPE) {
-            return new ViewHolder(FragmentWordSelectedDbBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
+            return new WordViewHolder(FragmentWordSelectedDbBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
         }
-        return new ViewHolder(FragmentStringBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
+        return new WordViewHolder(FragmentStringBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
     }
 
     @Override
@@ -64,7 +65,7 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
+    public void onBindViewHolder(final WordViewHolder holder, int position) {
         holder.mItem = words.get(position);
         holder.mContentView.setText(Word.formatWord(holder.mItem));
     }
@@ -112,18 +113,18 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
         Toast.makeText(fragment.requireActivity().getBaseContext(), "Can only be used with database", Toast.LENGTH_SHORT).show();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class WordViewHolder extends RecyclerView.ViewHolder {
         public TextView mContentView;
         public Word mItem;
 
-        public ViewHolder(FragmentStringBinding binding) {
+        public WordViewHolder(FragmentStringBinding binding) {
             super(binding.getRoot());
             mContentView = binding.content;
             binding.getRoot().setOnCreateContextMenuListener(fragment);
             binding.getRoot().setOnClickListener(v -> setSelectedPosition(getAbsoluteAdapterPosition()));
         }
 
-        public ViewHolder(FragmentWordSelectedDbBinding binding) {
+        public WordViewHolder(FragmentWordSelectedDbBinding binding) {
             super(binding.getRoot());
             mContentView = binding.content;
             binding.getRoot().setOnCreateContextMenuListener(fragment);
@@ -144,7 +145,7 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
             });
         }
 
-        public ViewHolder(FragmentWordSelectedBinding binding) {
+        public WordViewHolder(FragmentWordSelectedBinding binding) {
             super(binding.getRoot());
             mContentView = binding.content;
             binding.getRoot().setOnCreateContextMenuListener(fragment);

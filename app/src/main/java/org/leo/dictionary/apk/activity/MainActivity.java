@@ -23,6 +23,8 @@ import org.leo.dictionary.apk.ApkAppComponent;
 import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
+import org.leo.dictionary.apk.activity.fragment.WordsFragment;
+import org.leo.dictionary.apk.activity.viewmodel.DetailsViewModel;
 import org.leo.dictionary.apk.databinding.ActivityMainBinding;
 import org.leo.dictionary.apk.helper.WordCriteriaProvider;
 import org.leo.dictionary.apk.word.provider.DBWordProvider;

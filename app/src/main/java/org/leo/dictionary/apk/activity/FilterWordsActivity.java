@@ -10,9 +10,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 import org.leo.dictionary.ExternalWordProvider;
@@ -20,6 +17,11 @@ import org.leo.dictionary.apk.ApkAppComponent;
 import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
+import org.leo.dictionary.apk.activity.fragment.RecyclerViewFragment;
+import org.leo.dictionary.apk.activity.viewadapter.MultiSelectionStringRecyclerViewAdapter;
+import org.leo.dictionary.apk.activity.viewadapter.StringRecyclerViewAdapter;
+import org.leo.dictionary.apk.activity.viewmodel.LanguageViewModel;
+import org.leo.dictionary.apk.activity.viewmodel.TopicViewModel;
 import org.leo.dictionary.apk.databinding.FilterWordsActivityBinding;
 import org.leo.dictionary.apk.helper.WordCriteriaProvider;
 import org.leo.dictionary.entity.Topic;
@@ -32,16 +34,16 @@ public class FilterWordsActivity extends AppCompatActivity {
 
     public static final int FILTER_AFTER_SIZE = 10;
 
-    private static List<String> getSelected(StringsFragment strings) {
-        if (strings != null && strings.recyclerView.getAdapter() instanceof MultiSelectionStringRecyclerViewAdapter) {
-            MultiSelectionStringRecyclerViewAdapter adapter = (MultiSelectionStringRecyclerViewAdapter) strings.recyclerView.getAdapter();
+    private static <T> List<T> getSelected(RecyclerViewFragment<T> strings) {
+        if (strings != null && strings.getRecyclerViewAdapter() instanceof MultiSelectionStringRecyclerViewAdapter) {
+            MultiSelectionStringRecyclerViewAdapter<T> adapter = (MultiSelectionStringRecyclerViewAdapter<T>) strings.getRecyclerViewAdapter();
             if (!adapter.getSelectedList().isEmpty()) {
                 return adapter.getSelectedList();
             }
-        } else if (strings != null && strings.recyclerView.getAdapter() instanceof StringRecyclerViewAdapter) {
-            StringRecyclerViewAdapter adapter = (StringRecyclerViewAdapter) strings.recyclerView.getAdapter();
+        } else if (strings != null) {
+            StringRecyclerViewAdapter<T> adapter = strings.getRecyclerViewAdapter();
             if (adapter.getSelected() != RecyclerView.NO_POSITION) {
-                return Collections.singletonList(adapter.mValues.get(adapter.getSelected()));
+                return Collections.singletonList(adapter.values.get(adapter.getSelected()));
             }
         }
         return null;
@@ -56,7 +58,7 @@ public class FilterWordsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         LanguageViewModel languageViewModel = new ViewModelProvider(this).get(LanguageViewModel.class);
-        RootTopicViewModel rootTopicViewModel = new ViewModelProvider(this).get(RootTopicViewModel.class);
+        TopicViewModel rootTopicViewModel = new ViewModelProvider(this).get(TopicViewModel.class);
         FilterWordsActivityBinding binding = FilterWordsActivityBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         ActionBar actionBar = getSupportActionBar();
@@ -74,14 +76,14 @@ public class FilterWordsActivity extends AppCompatActivity {
         binding.allTopics.setOnClickListener(v -> {
             TopicsFragment topics = (TopicsFragment) getSupportFragmentManager().findFragmentById(R.id.topics);
             if (topics != null) {
-                ((MultiSelectionStringRecyclerViewAdapter) topics.recyclerView.getAdapter()).clearSelection();
+                topics.getRecyclerViewAdapter().clearSelection();
             }
         });
         binding.allRootTopics.setOnClickListener(v -> {
             RootTopicsFragment topics = (RootTopicsFragment) getSupportFragmentManager().findFragmentById(R.id.root_topics);
             if (topics != null) {
-                ((StringRecyclerViewAdapter) topics.recyclerView.getAdapter()).clearSelection();
-                rootTopicViewModel.setSelected(null);
+                topics.getRecyclerViewAdapter().clearSelection();
+                rootTopicViewModel.setTopic(null);
             }
         });
         if (getWordCriteria(this).getShuffleRandom() != -1) {
@@ -123,9 +125,9 @@ public class FilterWordsActivity extends AppCompatActivity {
         if (shuffle.isChecked()) {
             criteria.setShuffleRandom(System.currentTimeMillis());
         }
-        List<String> selectedTopics = getSelected(topics);
+        List<Topic> selectedTopics = getSelected(topics);
         if (selectedTopics != null) {
-            criteria.setTopicsOr(selectedTopics);
+            criteria.setTopicsOr(selectedTopics.stream().map(Topic::getName).collect(Collectors.toList()));
         }
         List<String> selectedLanguageTo = getSelected(languageTo);
         if (selectedLanguageTo != null) {
@@ -135,33 +137,37 @@ public class FilterWordsActivity extends AppCompatActivity {
         if (selectedLanguageFrom != null) {
             criteria.setLanguageFrom(selectedLanguageFrom.get(0));
         }
-        List<String> selectedRootTopic = getSelected(rootTopics);
+        List<Topic> selectedRootTopic = getSelected(rootTopics);
         if (selectedRootTopic != null) {
-            criteria.setRootTopic(selectedRootTopic.get(0));
+            criteria.setRootTopic(selectedRootTopic.get(0).getName());
         }
         return criteria;
     }
 
-    public static class RootTopicsFragment extends StringsFragment {
+    public static class RootTopicsFragment extends RecyclerViewFragment<Topic> {
         protected EditText filter;
         protected String language;
-        private List<String> topics;
+        private List<Topic> topics;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            new ViewModelProvider(requireActivity()).get(LanguageViewModel.class).getData().observe(requireActivity(), this::updateListData);
+            getLanguageViewModel().getData().observe(requireActivity(), this::updateListData);
         }
 
-        protected void updateListData(String value) {
-            StringRecyclerViewAdapter adapter = (StringRecyclerViewAdapter) this.recyclerView.getAdapter();
+        protected LanguageViewModel getLanguageViewModel() {
+            return new ViewModelProvider(requireActivity()).get(LanguageViewModel.class);
+        }
+
+        protected void updateListData(Object value) {
+            StringRecyclerViewAdapter<Topic> adapter = getRecyclerViewAdapter();
             if (adapter != null && stateChanged()) {
                 findTopicsHideFilterIfNeeded(value);
                 filterTopicsInAdapter();
             }
         }
 
-        private void findTopicsHideFilterIfNeeded(String value) {
+        private void findTopicsHideFilterIfNeeded(Object value) {
             topics = findTopics(value);
             if (filter != null) {
                 filter.setVisibility(topics.size() < FILTER_AFTER_SIZE ? View.GONE : View.VISIBLE);
@@ -169,12 +175,16 @@ public class FilterWordsActivity extends AppCompatActivity {
         }
 
         protected void filterTopicsInAdapter() {
-            StringRecyclerViewAdapter adapter = (StringRecyclerViewAdapter) this.recyclerView.getAdapter();
+            StringRecyclerViewAdapter<Topic> adapter = getRecyclerViewAdapter();
             if (adapter != null) {
-                adapter.mValues.clear();
-                adapter.mValues.addAll(filterTopics());
-                adapter.clearSelection();
+                adapter.clearAdapter();
+                adapter.values.addAll(filterTopics());
+                setSelectedTopics();
+                adapter.notifyDataSetChanged();
             }
+        }
+
+        protected void setSelectedTopics() {
         }
 
         protected void setFilterView(EditText filterView) {
@@ -187,10 +197,10 @@ public class FilterWordsActivity extends AppCompatActivity {
             });
         }
 
-        protected List<String> filterTopics() {
+        protected List<Topic> filterTopics() {
             if (filter != null && !filter.getText().toString().isEmpty()) {
                 CharSequence filterString = filter.getText().toString();
-                return topics.stream().filter(t -> t.contains(filterString)).collect(Collectors.toList());
+                return topics.stream().filter(t -> t.getName().contains(filterString)).collect(Collectors.toList());
             }
             return topics;
         }
@@ -199,49 +209,59 @@ public class FilterWordsActivity extends AppCompatActivity {
             return !Objects.equals(language, getStateLanguage());
         }
 
-        protected List<String> getStrings() {
+        protected List<Topic> getStrings() {
             findTopicsHideFilterIfNeeded(getStateLanguage());
             return new ArrayList<>(topics);
         }
 
         protected String getStateLanguage() {
-            return new ViewModelProvider(requireActivity()).get(LanguageViewModel.class).getSelected();
+            return getLanguageViewModel().getSelected();
         }
 
-        protected List<String> findTopics(String value) {
+        protected List<Topic> findTopics(Object value) {
             ExternalWordProvider wordProvider = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.externalWordProvider();
             language = getStateLanguage();
-            List<String> result = wordProvider.findTopics(language, 1).stream().map(Topic::getName).sorted().collect(Collectors.toList());
+            List<Topic> result = wordProvider.findTopics(language, 1);
             requireActivity().findViewById(R.id.root_topics_container).setVisibility(result.size() > 1 ? View.VISIBLE : View.GONE);
-            new ViewModelProvider(requireActivity()).get(RootTopicViewModel.class).setSelected(null);
+            getTopicViewModel().setTopic(null);
             return result;
         }
 
         @Override
-        protected StringRecyclerViewAdapter createRecyclerViewAdapter() {
+        protected StringRecyclerViewAdapter<Topic> createRecyclerViewAdapter() {
             recyclerView.setNestedScrollingEnabled(false);
-            StringRecyclerViewAdapter adapter = new StringRecyclerViewAdapter(getStrings(), this,
-                    new StringRecyclerViewAdapter.RememberSelectionOnClickListener(
-                            viewHolder -> new ViewModelProvider(requireActivity()).get(RootTopicViewModel.class).setSelected(viewHolder.mItem)));
-            if (adapter.mValues.size() == 1) {
+            StringRecyclerViewAdapter<Topic> adapter = new StringRecyclerViewAdapter<>(getStrings(), this,
+                    new StringRecyclerViewAdapter.RememberSelectionOnClickListener<>(
+                            (oldSelected, viewHolder) -> getTopicViewModel().setTopic(viewHolder.item)),
+                    Topic::getName);
+            if (adapter.values.size() == 1) {
                 adapter.setSelected(0);
-                new ViewModelProvider(requireActivity()).get(RootTopicViewModel.class).setSelected(adapter.mValues.get(0));
+                getTopicViewModel().setTopic(adapter.values.get(0));
             } else {
-                String rootTopic = getWordCriteria(requireActivity()).getRootTopic();
-                adapter.setSelected(adapter.mValues.indexOf(rootTopic));
-                new ViewModelProvider(requireActivity()).get(RootTopicViewModel.class).setSelected(rootTopic);
+                String rootTopicName = getWordCriteria(requireActivity()).getRootTopic();
+                if (rootTopicName != null && !rootTopicName.isEmpty()) {
+                    Topic rootTopic = adapter.values.stream().filter(t -> rootTopicName.equals(t.getName())).findAny().orElse(null);
+                    if (rootTopic != null) {
+                        adapter.setSelected(adapter.values.indexOf(rootTopic));
+                        getTopicViewModel().setTopic(rootTopic);
+                    }
+                }
             }
             return adapter;
+        }
+
+        protected TopicViewModel getTopicViewModel() {
+            return new ViewModelProvider(requireActivity()).get(TopicViewModel.class);
         }
     }
 
     public static class TopicsFragment extends RootTopicsFragment {
-        protected String rootTopic;
+        protected Topic rootTopic;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            new ViewModelProvider(requireActivity()).get(RootTopicViewModel.class).getData().observe(requireActivity(), this::updateListData);
+            getTopicViewModel().getData().observe(requireActivity(), this::updateListData);
         }
 
         @Override
@@ -249,30 +269,43 @@ public class FilterWordsActivity extends AppCompatActivity {
             return super.stateChanged() || !Objects.equals(rootTopic, getStateRootTopic());
         }
 
-        protected List<String> findTopics(String value) {
+        @Override
+        protected List<Topic> findTopics(Object value) {
             ExternalWordProvider wordProvider = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.externalWordProvider();
             language = getStateLanguage();
             rootTopic = getStateRootTopic();
-            List<String> result = wordProvider.findTopicsWithRoot(language, rootTopic, 2).
-                    stream().map(Topic::getName).sorted().collect(Collectors.toList());
+            List<Topic> result = wordProvider.findTopicsWithRoot(language, rootTopic != null ? rootTopic.getName() : null, 2);
             requireActivity().findViewById(R.id.topics_container).setVisibility(result.size() > 1 ? View.VISIBLE : View.GONE);
             return result;
         }
 
-        private String getStateRootTopic() {
-            return new ViewModelProvider(requireActivity()).get(RootTopicViewModel.class).getSelected();
+        @Override
+        protected void setSelectedTopics() {
+            MultiSelectionStringRecyclerViewAdapter<Topic> adapter = (MultiSelectionStringRecyclerViewAdapter<Topic>) getRecyclerViewAdapter();
+            adapter.setSelected(getTopicsFromCriteria(adapter.values));
+        }
+
+        private Topic getStateRootTopic() {
+            return getTopicViewModel().getTopic();
         }
 
         @Override
-        protected StringRecyclerViewAdapter createRecyclerViewAdapter() {
+        protected StringRecyclerViewAdapter<Topic> createRecyclerViewAdapter() {
             recyclerView.setNestedScrollingEnabled(false);
-            MultiSelectionStringRecyclerViewAdapter adapter = new MultiSelectionStringRecyclerViewAdapter(getStrings(), this);
-            adapter.setSelected(getWordCriteria(requireActivity()).getTopicsOr());
+            List<Topic> topicList = getStrings();
+            MultiSelectionStringRecyclerViewAdapter<Topic> adapter = new MultiSelectionStringRecyclerViewAdapter<>(topicList, this, Topic::getName);
+            List<Topic> selected = getTopicsFromCriteria(topicList);
+            adapter.setSelected(selected);
             return adapter;
+        }
+
+        private List<Topic> getTopicsFromCriteria(List<Topic> topicList) {
+            Set<String> topicsOr = getWordCriteria(requireActivity()).getTopicsOr();
+            return topicsOr != null ? topicList.stream().filter(topic -> topicsOr.contains(topic.getName())).collect(Collectors.toList()) : Collections.emptyList();
         }
     }
 
-    public static class LanguageFromFragment extends StringsFragment {
+    public static class LanguageFromFragment extends RecyclerViewFragment<String> {
         @Override
         protected List<String> getStrings() {
             ExternalWordProvider wordProvider = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.externalWordProvider();
@@ -280,18 +313,18 @@ public class FilterWordsActivity extends AppCompatActivity {
         }
 
         @Override
-        protected StringRecyclerViewAdapter createRecyclerViewAdapter() {
+        protected StringRecyclerViewAdapter<String> createRecyclerViewAdapter() {
             recyclerView.setNestedScrollingEnabled(false);
-            StringRecyclerViewAdapter adapter = new StringRecyclerViewAdapter(getStrings(), this,
-                    new StringRecyclerViewAdapter.RememberSelectionOnClickListener(
-                            viewHolder -> getLanguageViewModel().setSelected(viewHolder.mItem)
+            StringRecyclerViewAdapter<String> adapter = new StringRecyclerViewAdapter<>(getStrings(), this,
+                    new StringRecyclerViewAdapter.RememberSelectionOnClickListener<>(
+                            (oldSelected, viewHolder) -> getLanguageViewModel().setSelected(viewHolder.valueToString())
                     ));
-            if (adapter.mValues.size() == 1) {
+            if (adapter.values.size() == 1) {
                 adapter.setSelected(0);
-                getLanguageViewModel().setSelected(adapter.mValues.get(0));
+                getLanguageViewModel().setSelected(adapter.values.get(0));
             } else {
                 String languageFrom = getWordCriteria(requireActivity()).getLanguageFrom();
-                adapter.setSelected(adapter.mValues.indexOf(languageFrom));
+                adapter.setSelected(adapter.values.indexOf(languageFrom));
                 getLanguageViewModel().setSelected(languageFrom);
             }
             return adapter;
@@ -302,7 +335,7 @@ public class FilterWordsActivity extends AppCompatActivity {
         }
     }
 
-    public static class LanguageToFragment extends StringsFragment {
+    public static class LanguageToFragment extends RecyclerViewFragment<String> {
         protected String language;
 
         @Override
@@ -333,11 +366,11 @@ public class FilterWordsActivity extends AppCompatActivity {
         }
 
         protected void updateListData(String language) {
-            StringRecyclerViewAdapter adapter = (StringRecyclerViewAdapter) this.recyclerView.getAdapter();
+            StringRecyclerViewAdapter<String> adapter = getRecyclerViewAdapter();
             if (adapter != null && stateChanged()) {
-                adapter.mValues.clear();
-                adapter.mValues.addAll(getLanguageTo(language));
-                adapter.clearSelection();
+                adapter.clearAdapter();
+                adapter.values.addAll(getLanguageTo(language));
+                adapter.notifyDataSetChanged();
             }
         }
 
@@ -346,30 +379,12 @@ public class FilterWordsActivity extends AppCompatActivity {
         }
 
         @Override
-        protected StringRecyclerViewAdapter createRecyclerViewAdapter() {
+        protected StringRecyclerViewAdapter<String> createRecyclerViewAdapter() {
             recyclerView.setNestedScrollingEnabled(false);
-            MultiSelectionStringRecyclerViewAdapter adapter = new MultiSelectionStringRecyclerViewAdapter(getStrings(), this);
+            MultiSelectionStringRecyclerViewAdapter<String> adapter = new MultiSelectionStringRecyclerViewAdapter<>(getStrings(), this);
             adapter.setSelected(getWordCriteria(requireActivity()).getLanguageTo());
             return adapter;
         }
     }
 
-    public static class LanguageViewModel extends ViewModel {
-        private final MutableLiveData<String> data = new MutableLiveData<>();
-
-        public LiveData<String> getData() {
-            return data;
-        }
-
-        public String getSelected() {
-            return data.getValue();
-        }
-
-        public void setSelected(String item) {
-            data.setValue(item);
-        }
-    }
-
-    public static class RootTopicViewModel extends LanguageViewModel {
-    }
 }

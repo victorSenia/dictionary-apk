@@ -1,4 +1,4 @@
-package org.leo.dictionary.apk.activity;
+package org.leo.dictionary.apk.activity.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -9,12 +9,15 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import org.jetbrains.annotations.Nullable;
 import org.leo.dictionary.PlayService;
 import org.leo.dictionary.UiUpdater;
 import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApkUiUpdater;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
+import org.leo.dictionary.apk.activity.MainActivity;
+import org.leo.dictionary.apk.activity.viewadapter.WordsRecyclerViewAdapter;
 import org.leo.dictionary.entity.Word;
 
 import java.util.ArrayList;
@@ -38,21 +41,26 @@ public class WordsFragment extends Fragment {
     }
 
     public void replaceData(List<Word> unknownWords) {
-        ((WordsRecyclerViewAdapter) recyclerView.getAdapter()).replaceData(unknownWords);
+        getRecyclerViewAdapter().replaceData(unknownWords);
+    }
+
+    @Nullable
+    private WordsRecyclerViewAdapter getRecyclerViewAdapter() {
+        return (WordsRecyclerViewAdapter) recyclerView.getAdapter();
     }
 
     public void wordUpdated(int index) {
-        recyclerView.getAdapter().notifyItemChanged(index);
+        getRecyclerViewAdapter().notifyItemChanged(index);
     }
 
     public void wordAdded(int index, Word word) {
-        ((WordsRecyclerViewAdapter) recyclerView.getAdapter()).words.add(word);
-        recyclerView.getAdapter().notifyItemInserted(index);
+        getRecyclerViewAdapter().words.add(word);
+        getRecyclerViewAdapter().notifyItemInserted(index);
     }
 
     public void wordDeleted(int index) {
-        ((WordsRecyclerViewAdapter) recyclerView.getAdapter()).words.remove(index);
-        recyclerView.getAdapter().notifyItemRemoved(index);
+        getRecyclerViewAdapter().words.remove(index);
+        getRecyclerViewAdapter().notifyItemRemoved(index);
     }
 
     @Override

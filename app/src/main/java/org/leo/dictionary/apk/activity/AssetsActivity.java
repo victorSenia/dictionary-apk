@@ -4,6 +4,9 @@ import android.os.Bundle;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import org.leo.dictionary.apk.R;
+import org.leo.dictionary.apk.activity.fragment.RecyclerViewFragment;
+import org.leo.dictionary.apk.activity.viewadapter.ReturnSelectedStringRecyclerViewAdapter;
+import org.leo.dictionary.apk.activity.viewadapter.StringRecyclerViewAdapter;
 import org.leo.dictionary.apk.word.provider.AssetsWordProvider;
 
 import java.io.IOException;
@@ -23,7 +26,7 @@ public class AssetsActivity extends AppCompatActivity {
         }
     }
 
-    public static class AssetsFragment extends StringsFragment {
+    public static class AssetsFragment extends RecyclerViewFragment<String> {
         @Override
         protected List<String> getStrings() {
             try {
@@ -35,7 +38,7 @@ public class AssetsActivity extends AppCompatActivity {
         }
 
         @Override
-        protected StringRecyclerViewAdapter createRecyclerViewAdapter() {
+        protected StringRecyclerViewAdapter<String> createRecyclerViewAdapter() {
             return new ReturnSelectedStringRecyclerViewAdapter(getStrings(), this);
         }
     }

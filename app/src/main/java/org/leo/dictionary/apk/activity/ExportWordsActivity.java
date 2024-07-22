@@ -15,6 +15,8 @@ import org.leo.dictionary.apk.ApkAppComponent;
 import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
+import org.leo.dictionary.apk.activity.viewmodel.LanguageViewModel;
+import org.leo.dictionary.apk.activity.viewmodel.TopicViewModel;
 import org.leo.dictionary.apk.word.provider.DBWordProvider;
 import org.leo.dictionary.entity.Topic;
 import org.leo.dictionary.word.provider.WordExporter;
@@ -41,8 +43,8 @@ public class ExportWordsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FilterWordsActivity.LanguageViewModel languageViewModel = new ViewModelProvider(this).get(FilterWordsActivity.LanguageViewModel.class);
-        FilterWordsActivity.RootTopicViewModel rootTopicViewModel = new ViewModelProvider(this).get(FilterWordsActivity.RootTopicViewModel.class);
+        LanguageViewModel languageViewModel = new ViewModelProvider(this).get(LanguageViewModel.class);
+        TopicViewModel rootTopicViewModel = new ViewModelProvider(this).get(TopicViewModel.class);
         setContentView(R.layout.export_words_activity);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -52,8 +54,8 @@ public class ExportWordsActivity extends AppCompatActivity {
         findViewById(R.id.all_root_topics).setOnClickListener(v -> {
             FilterWordsActivity.RootTopicsFragment topics = (FilterWordsActivity.RootTopicsFragment) getSupportFragmentManager().findFragmentById(R.id.root_topics);
             if (topics != null) {
-                ((StringRecyclerViewAdapter) topics.recyclerView.getAdapter()).clearSelection();
-                rootTopicViewModel.setSelected(null);
+                topics.getRecyclerViewAdapter().clearSelection();
+                rootTopicViewModel.setTopic(null);
             }
         });
         ApkAppComponent appComponent = ((ApplicationWithDI) getApplicationContext()).appComponent;
@@ -76,22 +78,22 @@ public class ExportWordsActivity extends AppCompatActivity {
 
     private void writeWordsToFile(Uri uri) {
         try (OutputStream outputStream = getContentResolver().openOutputStream(uri)) {
-            FilterWordsActivity.LanguageViewModel languageViewModel = new ViewModelProvider(this).get(FilterWordsActivity.LanguageViewModel.class);
-            FilterWordsActivity.RootTopicViewModel rootTopicViewModel = new ViewModelProvider(this).get(FilterWordsActivity.RootTopicViewModel.class);
+            LanguageViewModel languageViewModel = new ViewModelProvider(this).get(LanguageViewModel.class);
+            TopicViewModel rootTopicViewModel = new ViewModelProvider(this).get(TopicViewModel.class);
             DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
             String language = languageViewModel.getSelected();
-            String rootTopicName = rootTopicViewModel.getSelected();
+            Topic rootTopic = rootTopicViewModel.getTopic();
             WordExporter wordExporter = new WordExporter() {
                 @Override
                 protected BufferedWriter getBufferedWriter() {
                     return new BufferedWriter(new OutputStreamWriter(outputStream));
                 }
             };
-            if (rootTopicName != null && !rootTopicName.isEmpty()) {
-                wordExporter.writeWords(wordProvider.getWordsForLanguage(language, rootTopicName), false,
-                        Collections.singletonList(rootTopicName));
+            if (rootTopic != null) {
+                wordExporter.writeWords(wordProvider.getWordsForLanguage(language, rootTopic.getName()), false,
+                        Collections.singletonList(rootTopic.getName()));
             } else {
-                wordExporter.writeWords(wordProvider.getWordsForLanguage(language, rootTopicName), true,
+                wordExporter.writeWords(wordProvider.getWordsForLanguage(language, null), true,
                         wordProvider.findRootTopics(language).stream().map(Topic::getName).collect(Collectors.toList()));
             }
         } catch (IOException e) {

@@ -3,14 +3,14 @@
 <layout xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
         <variable
-                name="viewmodel"
-                type="org.leo.dictionary.apk.activity.EditTranslationFragment.EditTranslationViewModel"/>
+                name="viewModel"
+                type="org.leo.dictionary.apk.activity.viewmodel.EditTranslationViewModel"/>
     </data>
     <LinearLayout
             android:id="@+id/edit_word"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".activity.EditTranslationFragment" android:orientation="vertical"
+            tools:context=".activity.fragment.EditTranslationFragment" android:orientation="vertical"
             android:background="@drawable/word_background">
 
         <LinearLayout
@@ -23,10 +23,10 @@
                     android:layout_height="wrap_content"
                     android:inputType="text"
                     android:hint="@string/language"
-                    android:text="@={viewmodel.uiState.language}" android:minHeight="48dp"
+                    android:text="@={viewModel.data.language}" android:minHeight="48dp"
                     android:layout_weight="0" android:layout_gravity="center_vertical"/>
             <EditText
-                    android:text="@={viewmodel.uiState.translation}"
+                    android:text="@={viewModel.data.translation}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="textMultiLine"

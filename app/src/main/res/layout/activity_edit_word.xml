@@ -12,7 +12,7 @@
             tools:context=".activity.EditWordActivity" android:orientation="vertical">
         <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/edit_word_fragment"
-                android:name="org.leo.dictionary.apk.activity.EditWordFragment"
+                android:name="org.leo.dictionary.apk.activity.fragment.EditWordFragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:layout="@layout/fragment_edit_word"/>
@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content" android:textSize="20sp"/>
         <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/edit_word_topics"
-                android:name="org.leo.dictionary.apk.activity.EditTopicFragment"
+                android:name="org.leo.dictionary.apk.activity.fragment.EditTopicFragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:layout="@layout/fragment_edit_topic_list"/>
