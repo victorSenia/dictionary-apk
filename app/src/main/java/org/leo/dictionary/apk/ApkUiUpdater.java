@@ -16,6 +16,7 @@ public class ApkUiUpdater implements UiUpdater {
     public void addUiUpdater(UiUpdater uiUpdater) {
         updaterWeakReference.put(uiUpdater, new Object());
     }
+
     public void removeUiUpdater(UiUpdater uiUpdater) {
         updaterWeakReference.remove(uiUpdater);
     }

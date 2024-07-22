@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import org.leo.dictionary.PlayService;
+import org.leo.dictionary.ExternalVoiceService;
 import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
@@ -38,9 +38,9 @@ public class VoiceSelectorActivity extends AppCompatActivity {
 
     private void updateUiWithWords(String language) {
         if (language.length() == 2) {
-            PlayService playService = ((ApplicationWithDI) getApplicationContext()).appComponent.playService();
-            playService.getVoicesNames(language);
-            updateUiWithNewData(playService.getVoicesNames(language));
+            ExternalVoiceService voiceService = ((ApplicationWithDI) getApplicationContext()).appComponent.externalVoiceService();
+            voiceService.getVoicesNames(language);
+            updateUiWithNewData(voiceService.getVoicesNames(language));
         }
     }
 
@@ -59,19 +59,16 @@ public class VoiceSelectorActivity extends AppCompatActivity {
         }
 
         @Override
-        protected StringRecyclerViewAdapter getRecyclerViewAdapter() {
-            return new StringRecyclerViewAdapter(getStrings(), this) {
+        protected StringRecyclerViewAdapter createRecyclerViewAdapter() {
+            return new StringRecyclerViewAdapter(getStrings(), this, new StringRecyclerViewAdapter.OnClickListener() {
                 @Override
-                protected View.OnClickListener getOnClickListener(ViewHolder viewHolder) {
-                    return v -> {
-                        String language = getLanguage(getView().getRootView());
-                        ApkModule.provideLastState(getActivity().getApplicationContext()).edit()
-                                .putString(ApkModule.LAST_STATE_VOICE + language, viewHolder.mItem).apply();
-                        Toast.makeText(getActivity().getBaseContext(), viewHolder.mItem + " used for " + language, Toast.LENGTH_SHORT).show();
-                    };
+                public void onClick(StringRecyclerViewAdapter.ViewHolder viewHolder) {
+                    String language = getLanguage(getView().getRootView());
+                    ApkModule.provideLastState(getActivity().getApplicationContext()).edit()
+                            .putString(ApkModule.LAST_STATE_VOICE + language, viewHolder.mItem).apply();
+                    Toast.makeText(getActivity().getBaseContext(), viewHolder.mItem + " used for " + language, Toast.LENGTH_SHORT).show();
                 }
-            };
+            });
         }
     }
-
 }

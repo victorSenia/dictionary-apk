@@ -34,7 +34,7 @@ public class AssetsActivity extends AppCompatActivity {
         }
 
         @Override
-        protected ReturnSelectedStringRecyclerViewAdapter getRecyclerViewAdapter() {
+        protected StringRecyclerViewAdapter createRecyclerViewAdapter() {
             return new ReturnSelectedStringRecyclerViewAdapter(getStrings(), this);
         }
     }

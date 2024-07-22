@@ -19,14 +19,18 @@
                 android:id="@+id/word"
                 android:text="@{viewmodel.uiState.fullWord}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:gravity="center_horizontal" android:textSize="34sp"/>
+                android:gravity="bottom|center"
+                android:textSize="64sp"
+                android:layout_weight="1"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/translation"
                 android:text='@{viewmodel.uiState.getFormattedTranslations("\n")}'
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:gravity="center_horizontal" android:textSize="30sp"/>
+                android:gravity="center|top"
+                android:textSize="50sp"
+                android:layout_weight="1"/>
 
     </LinearLayout>
 </layout>

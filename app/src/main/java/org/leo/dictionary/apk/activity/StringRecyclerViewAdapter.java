@@ -1,7 +1,6 @@
 package org.leo.dictionary.apk.activity;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.fragment.app.Fragment;
@@ -13,10 +12,12 @@ import java.util.List;
 public class StringRecyclerViewAdapter extends RecyclerView.Adapter<StringRecyclerViewAdapter.ViewHolder> {
     protected final List<String> mValues;
     protected final Fragment fragment;
+    protected final OnClickListener onClickListener;
 
-    public StringRecyclerViewAdapter(List<String> items, Fragment fragment) {
+    public StringRecyclerViewAdapter(List<String> items, Fragment fragment, OnClickListener onClickListener) {
         mValues = items;
         this.fragment = fragment;
+        this.onClickListener = onClickListener;
     }
 
     @Override
@@ -27,7 +28,7 @@ public class StringRecyclerViewAdapter extends RecyclerView.Adapter<StringRecycl
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mContentView.setText(mValues.get(position));
+        holder.mContentView.setText(holder.mItem);
     }
 
     @Override
@@ -35,8 +36,13 @@ public class StringRecyclerViewAdapter extends RecyclerView.Adapter<StringRecycl
         return mValues.size();
     }
 
-    protected View.OnClickListener getOnClickListener(ViewHolder viewHolder) {
-        return null;
+    public interface OnClickListener {
+        default void onClick(ViewHolder viewHolder) {
+        }
+
+        default boolean onLongClick(ViewHolder viewHolder) {
+            return false;
+        }
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -46,7 +52,19 @@ public class StringRecyclerViewAdapter extends RecyclerView.Adapter<StringRecycl
         public ViewHolder(FragmentStringsBinding binding) {
             super(binding.getRoot());
             mContentView = binding.content;
-            binding.getRoot().setOnClickListener(getOnClickListener(this));
+            if (onClickListener != null) {
+                binding.getRoot().setOnLongClickListener(v -> {
+                    if (onClickListener != null) {
+                        return onClickListener.onLongClick(ViewHolder.this);
+                    }
+                    return false;
+                });
+                binding.getRoot().setOnClickListener(v -> {
+                    if (onClickListener != null) {
+                        onClickListener.onClick(ViewHolder.this);
+                    }
+                });
+            }
         }
 
         @Override

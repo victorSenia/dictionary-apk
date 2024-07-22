@@ -7,9 +7,7 @@ import android.net.Uri;
 import androidx.preference.PreferenceManager;
 import dagger.Module;
 import dagger.Provides;
-import org.leo.dictionary.PlayService;
-import org.leo.dictionary.PlayServiceImpl;
-import org.leo.dictionary.UiUpdater;
+import org.leo.dictionary.*;
 import org.leo.dictionary.apk.audio.AndroidAudioService;
 import org.leo.dictionary.apk.config.AssetsConfigurationReader;
 import org.leo.dictionary.apk.config.PreferenceConfigurationReader;
@@ -40,6 +38,8 @@ public class ApkModule {
     public static final String LAST_STATE_TOPIC = "org.leo.dictionary.apk.config.entity.LastState.topic";
     public static final String LAST_STATE_VOICE = "org.leo.dictionary.apk.config.entity.LastState.voice.";
     public static final String LAST_STATE = "_last_state";
+    public static final String LAST_STATE_IS_PORTRAIT = "org.leo.dictionary.apk.config.entity.LastState.isPortrait";
+    public static final String LAST_STATE_IS_NIGHT_MODE = "org.leo.dictionary.apk.config.entity.LastState.isNightMode";
     private final Application application;
 
     public ApkModule(Application application) {
@@ -103,7 +103,7 @@ public class ApkModule {
 
     @Provides
     @Singleton
-    public AudioService provideAudioService(Context context) {
+    public static AudioService provideAudioService(Context context) {
         AndroidAudioService audioService = new AndroidAudioService();
         audioService.setContext(context);
         audioService.setup();
@@ -112,7 +112,7 @@ public class ApkModule {
 
     @Provides
     @Singleton
-    public ConfigurationService provideConfigurationService(ConfigurationReader configurationReader) {
+    public static ConfigurationService provideConfigurationService(ConfigurationReader configurationReader) {
         ConfigurationService configurationService = new ConfigurationService();
         configurationService.setConfigurationReader(configurationReader);
         return configurationService;
@@ -120,7 +120,7 @@ public class ApkModule {
 
     @Provides
     @Singleton
-    public ConfigurationReader provideConfigurationReader(Context context) {
+    public static ConfigurationReader provideConfigurationReader(Context context) {
         PreferenceConfigurationReader configurationReader = new PreferenceConfigurationReader();
         configurationReader.setContext(context);
         return configurationReader;
@@ -128,8 +128,8 @@ public class ApkModule {
 
     @Provides
     @Singleton
-    public PlayService providePlayService(Context context, ConfigurationService configurationService, AudioService audioService, WordProvider wordProvider,
-                                          UiUpdater uiUpdater, @Named("last_state") SharedPreferences last_state) {
+    public static PlayServiceImpl providePlayServiceImpl(Context context, ConfigurationService configurationService, AudioService audioService, WordProvider wordProvider,
+                                                         UiUpdater uiUpdater, @Named("last_state") SharedPreferences last_state) {
         PlayServiceImpl playService = new PlayServiceImpl();
         playService.setConfigurationService(configurationService);
         playService.setAudioService(audioService);
@@ -147,8 +147,23 @@ public class ApkModule {
     }
 
     @Provides
+    public static PlayService providePlayService(PlayServiceImpl playService) {
+        return playService;
+    }
+
+    @Provides
+    public static ExternalWordProvider provideExternalWordProvider(PlayServiceImpl playService) {
+        return playService;
+    }
+
+    @Provides
+    public static ExternalVoiceService provideExternalVoiceService(PlayServiceImpl playService) {
+        return playService;
+    }
+
+    @Provides
     @Singleton
-    public UiUpdater provideUiUpdater() {
+    public static UiUpdater provideUiUpdater() {
         return new ApkUiUpdater();
     }
 

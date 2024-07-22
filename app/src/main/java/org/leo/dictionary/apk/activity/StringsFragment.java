@@ -44,13 +44,14 @@ public class StringsFragment extends Fragment {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
 
-            recyclerView.setAdapter(getRecyclerViewAdapter());
+            recyclerView.setAdapter(createRecyclerViewAdapter());
+//            recyclerView.addOnItemTouchListener();
         }
         return view;
     }
 
-    protected StringRecyclerViewAdapter getRecyclerViewAdapter() {
-        return new StringRecyclerViewAdapter(getStrings(), this);
+    protected StringRecyclerViewAdapter createRecyclerViewAdapter() {
+        return new StringRecyclerViewAdapter(getStrings(), this, null);
     }
 
     protected List<String> getStrings() {

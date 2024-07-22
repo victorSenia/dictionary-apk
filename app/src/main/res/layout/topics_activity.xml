@@ -3,19 +3,81 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent" android:layout_height="match_parent"
         android:orientation="vertical">
-    <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/topics"
-            android:name="org.leo.dictionary.apk.activity.TopicsActivity$TopicsFragment"
+    <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:layout="@layout/fragment_strings"
-            android:layout_weight="1"/>
+            android:layout_height="0dp" android:layout_weight="1">
+        <LinearLayout
+                android:layout_width="match_parent" android:layout_height="match_parent"
+                android:orientation="vertical">
+            <TextView
+                    android:text="@string/title_activity_topics"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/topics_label"
+                    style="@style/Widget.AppCompat.TextView.SpinnerItem"/>
+            <Button
+                    android:text="@string/all_topics"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/all_topics"
+                    style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"/>
+            <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/topics"
+                    android:name="org.leo.dictionary.apk.activity.TopicsActivity$TopicsFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:layout="@layout/fragment_strings"/>
+            <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"/>
+            <TextView
+                    android:text="@string/language_from"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/language_from_label"
+                    style="@style/Widget.AppCompat.TextView.SpinnerItem"/>
+            <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/language_from"
+                    android:name="org.leo.dictionary.apk.activity.TopicsActivity$LanguageFromFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:layout="@layout/fragment_strings"/>
+            <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"/>
+            <TextView
+                    android:text="@string/languages_to"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/languages_to_label"
+                    style="@style/Widget.AppCompat.TextView.SpinnerItem"/>
+            <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/languages_to"
+                    android:name="org.leo.dictionary.apk.activity.TopicsActivity$LanguageToFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:layout="@layout/fragment_strings"/>
+            <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"/>
+            <TextView
+                    android:text="@string/languages_to_speak"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/languages_to_speak_label"
+                    style="@style/Widget.AppCompat.TextView.SpinnerItem"/>
+            <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/languages_to_speak"
+                    android:name="org.leo.dictionary.apk.activity.TopicsActivity$LanguageToFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:layout="@layout/fragment_strings"
+            />
+            <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"/>
+        </LinearLayout>
+    </ScrollView>
     <Button
-            android:text="@string/all_topics"
+            android:text="@string/find_words"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/all_topics"
-            android:layout_weight="0"
-            style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
-            android:layout_gravity="bottom"/>
+            android:id="@+id/find_words"
+            style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"/>
 </LinearLayout>

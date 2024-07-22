@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
@@ -12,37 +11,36 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:fitsSystemWindows="true"
-    >
+            android:visibility="gone">
         <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize">
-            <androidx.fragment.app.FragmentContainerView
-                    android:id="@+id/player_fragment"
-                    android:name="org.leo.dictionary.apk.activity.PlayerFragment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:layout="@layout/fragment_player"
-                    android:layout_gravity="center"/>
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
     <LinearLayout
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                  android:orientation="vertical"
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent">
-    <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/details_fragment"
-            android:name="org.leo.dictionary.apk.activity.DetailsFragment"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:layout="@layout/fragment_details"/>
-    <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/words_fragment"
-            android:name="org.leo.dictionary.apk.activity.WordsFragment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:layout="@layout/fragment_words_list"/>
+            android:layout_height="match_parent">
+        <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/details_fragment"
+                android:name="org.leo.dictionary.apk.activity.DetailsFragment"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                tools:layout="@layout/fragment_details" android:layout_weight="1"/>
+        <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/player_fragment"
+                android:name="org.leo.dictionary.apk.activity.PlayerFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/fragment_player"
+                android:layout_gravity="center"/>
+        <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/words_fragment"
+                android:name="org.leo.dictionary.apk.activity.WordsFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/fragment_words_list" android:visibility="gone"/>
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -56,4 +54,5 @@
             app:fabSize="mini"
             app:fabCustomSize="40dp"
     />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -6,7 +6,6 @@
     <string name="play">Play</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="action_play_from">Play from</string>
-    <string name="select_for_topic">Select for topic</string>
     <string name="title_activity_topics">Topics</string>
     <string name="title_activity_parse_words_settings">ParseWordsSettingsActivity</string>
     <string name="title_activity_voice_selector">VoiceSelectorActivity</string>
@@ -31,7 +30,8 @@
     <string name="general">General</string>
     <string name="topic_delimiter">Topic delimiter</string>
     <string name="language_from">Language from</string>
-    <string name="language_to">Language to</string>
+    <string name="languages_to">Languages to</string>
+    <string name="languages_to_speak">Languages to speak</string>
     <string name="articles">Articles</string>
     <string name="additional_information_delimiter">Additional information delimiter</string>
     <string name="delimiter">Delimiter</string>
@@ -46,4 +46,6 @@
     <string name="select_voices">Select voices</string>
     <string name="default_voice">Default voice</string>
     <string name="find_voices">Find voices</string>
+    <string name="find_words">Find words</string>
+    <string name="set_mode">Change mode</string>
 </resources>
