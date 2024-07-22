@@ -37,7 +37,7 @@ public class EditWordFragment extends Fragment {
         try {
             ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.audioService().play(uiState.getValue().getLanguage(), uiState.getValue().getFullWord());
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            //ignore
         }
     }
 }

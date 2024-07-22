@@ -13,8 +13,10 @@
     <string name="file">File</string>
     <string name="pitch">Pitch</string>
     <string name="speed">Speed</string>
+    <string name="words">Words</string>
     <string name="letter_delay">Letter delay</string>
     <string name="speech">Speech</string>
+    <string name="match_words">Match words</string>
     <string name="each_time">Each time</string>
     <string name="delay">Delay</string>
     <string name="active">Active</string>
@@ -48,7 +50,7 @@
     <string name="default_voice">Default voice</string>
     <string name="find_voices">Find voices</string>
     <string name="find_words">Filter words</string>
-    <string name="set_mode">Change mode</string>
+    <string name="set_mode">Change theme</string>
     <string name="import_words">Import words</string>
     <string name="use_db">Use database</string>
     <string name="action_edit">Edit</string>

@@ -41,6 +41,7 @@ public class SettingsActivity extends AppCompatActivity {
             setInputTypeNumber("org.leo.dictionary.config.entity.General.knowledgeIncrease");
             setInputTypeNumber("org.leo.dictionary.apk.config.entity.Speech.speed");
             setInputTypeNumber("org.leo.dictionary.apk.config.entity.Speech.pitch");
+            setInputTypeNumber("org.leo.dictionary.apk.config.entity.MatchWords.limit");
         }
 
         private void setInputTypeNumber(String key) {

@@ -54,6 +54,6 @@
             app:fabSize="mini"
             app:fabCustomSize="40dp"
             android:contentDescription="@string/change_orientation"
-    />
+            style="@style/Widget.Material3.Button.TonalButton"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

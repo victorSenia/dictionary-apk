@@ -77,6 +77,19 @@ public class AndroidAudioService implements AudioService {
         } while (speaking.contains(text));
     }
 
+    public void playAynchronous(String language, String text) {
+        LOGGER.info(language + " " + text);
+        textToSpeech.setSpeechRate(speech.getSpeed());
+        textToSpeech.setPitch(speech.getPitch());
+        Voice selectedVoice = getSelectedVoice(language);
+        if (selectedVoice != null) {
+            textToSpeech.setVoice(selectedVoice);
+        } else {
+            textToSpeech.setLanguage(Locale.forLanguageTag(language));
+        }
+        textToSpeech.speak(text, TextToSpeech.QUEUE_ADD, null, text);
+    }
+
     private Voice getSelectedVoice(String language) {
         String voiceName = ApkModule.provideLastState(context).getString(ApkModule.LAST_STATE_VOICE + language, null);
         if (voiceName != null && voicesPerLanguage.get(language) != null) {

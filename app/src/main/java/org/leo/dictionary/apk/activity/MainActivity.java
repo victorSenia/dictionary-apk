@@ -149,6 +149,10 @@ public class MainActivity extends AppCompatActivity {
             AlertDialog.Builder builder = getOptionsBuilder(this);
             builder.show();
             return true;
+        } else if (id == R.id.action_word_matcher) {
+            Intent i = new Intent(this, WordMatcherActivity.class);
+            startActivity(i);
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

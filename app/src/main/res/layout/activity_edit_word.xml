@@ -8,8 +8,7 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".activity.EditWordActivity" android:orientation="vertical"
-    >
+            tools:context=".activity.EditWordActivity" android:orientation="vertical">
         <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/edit_word_fragment"
                 android:name="org.leo.dictionary.apk.activity.EditWordFragment"
