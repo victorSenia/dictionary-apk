@@ -65,7 +65,7 @@ public class WordMatcherActivity extends AppCompatActivity {
             button.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
 //            new Handler(Looper.getMainLooper()).postDelayed(() -> button.setTextSize(0), 1500);
         } else {
-            Toast.makeText(this, "Word is not selected", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.word_not_selected, Toast.LENGTH_SHORT).show();
         }
     }
 

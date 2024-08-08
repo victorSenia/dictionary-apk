@@ -69,7 +69,7 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
         binding.file.setOnClickListener(v -> {
             Intent chooseFile = new Intent(Intent.ACTION_GET_CONTENT);
             chooseFile.setType("text/plain");
-            chooseFile = Intent.createChooser(chooseFile, "Choose a file");
+            chooseFile = Intent.createChooser(chooseFile, getString(R.string.choose_file));
             filesActivityResultLauncher.launch(chooseFile);
         });
         binding.asset.setOnClickListener(v -> {

@@ -3,7 +3,7 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              tools:context=".activity.SpeechRecognitionActivity">
+              tools:context=".activity.SpeechRecognitionActivity" android:baselineAligned="false">
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="0dp"
@@ -12,11 +12,11 @@
                 android:id="@+id/details_fragment"
                 android:name="org.leo.dictionary.apk.activity.fragment.DetailsFragment"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 tools:layout="@layout/fragment_details" android:layout_weight="1"
                 android:layout_gravity="center_vertical"/>
         <TextView
-                android:text="error"
+                android:text="@string/error"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/text_result"

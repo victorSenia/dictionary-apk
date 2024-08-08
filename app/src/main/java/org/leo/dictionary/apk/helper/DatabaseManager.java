@@ -57,6 +57,7 @@ public class DatabaseManager {
         int wordIndex = res.getColumnIndexOrThrow(DatabaseHelper.WORD_COLUMN_WORD);
         int articleIndex = res.getColumnIndexOrThrow(DatabaseHelper.WORD_COLUMN_ARTICLE);
         int additionalInformationIndex = res.getColumnIndexOrThrow(DatabaseHelper.WORD_COLUMN_ADDITIONAL_INFORMATION);
+        int knowledgeIndex = res.getColumnIndexOrThrow(DatabaseHelper.WORD_COLUMN_KNOWLEDGE);
         while (!res.isAfterLast()) {
             word = new Word();
             word.setId(res.getLong(idIndex));
@@ -64,6 +65,7 @@ public class DatabaseManager {
             word.setArticle(res.getString(articleIndex));
             word.setAdditionalInformation(res.getString(additionalInformationIndex));
             word.setLanguage(res.getString(languageIndex));
+            word.setKnowledge(res.getDouble(knowledgeIndex));
             words.add(word);
             res.moveToNext();
         }
@@ -101,10 +103,9 @@ public class DatabaseManager {
         }
     }
 
-    protected DatabaseManager open() throws SQLException {
+    protected void open() throws SQLException {
         dbHelper = new DatabaseHelper(context);
         database = dbHelper.getWritableDatabase();
-        return this;
     }
 
     public void close() {
@@ -261,17 +262,25 @@ public class DatabaseManager {
     protected Cursor fetchWordsCursor(WordCriteria criteria) {
         String sql = "SELECT DISTINCT w.* FROM " + DatabaseHelper.TABLE_NAME_WORD + " w";
         List<String> selectionArgs = new ArrayList<>();
-        String where = "";
+        String where = "WHERE 1=1";
         if ((criteria.getTopicsOr() != null && !criteria.getTopicsOr().isEmpty()) || criteria.getRootTopic() != null) {
             List<String> topicIds = getTopicIds(criteria.getLanguageFrom(), createRootTopicObject(criteria.getLanguageFrom(), criteria.getRootTopic()), criteria.getTopicsOr());
             sql += " INNER JOIN " + DatabaseHelper.TABLE_NAME_WORD_TOPIC + " t ON w." + DatabaseHelper.COLUMN_ID + " = t." + DatabaseHelper.TRANSLATION_COLUMN_WORD_ID + " AND t." + DatabaseHelper.COLUMN_ID + " IN (" + createPlaceholders(topicIds.size()) + ")";
             selectionArgs.addAll(topicIds);
         }
         if (criteria.getLanguageFrom() != null) {
-            where += " w." + DatabaseHelper.COLUMN_LANGUAGE + " = ?";
+            where += " AND w." + DatabaseHelper.COLUMN_LANGUAGE + " = ?";
             selectionArgs.add(criteria.getLanguageFrom());
         }
-        Cursor cursor = getDatabase().rawQuery(sql + (!where.isEmpty() ? " WHERE " + where : "") + " ORDER BY " + DatabaseHelper.COLUMN_ID, !selectionArgs.isEmpty() ? selectionArgs.toArray(selectionArgs.toArray(new String[0])) : null);
+        if (criteria.getKnowledgeFrom() != null) {
+            where += " AND w." + DatabaseHelper.WORD_COLUMN_KNOWLEDGE + " >= ?";
+            selectionArgs.add(criteria.getKnowledgeFrom().toString());
+        }
+        if (criteria.getKnowledgeTo() != null) {
+            where += " AND w." + DatabaseHelper.WORD_COLUMN_KNOWLEDGE + " <= ?";
+            selectionArgs.add(criteria.getKnowledgeTo().toString());
+        }
+        Cursor cursor = getDatabase().rawQuery(sql + where + " ORDER BY " + DatabaseHelper.COLUMN_ID, !selectionArgs.isEmpty() ? selectionArgs.toArray(selectionArgs.toArray(new String[0])) : null);
         cursor.moveToFirst();
         return cursor;
     }

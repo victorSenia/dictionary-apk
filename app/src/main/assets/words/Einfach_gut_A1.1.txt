@@ -1,0 +1,596 @@
+org.leo.dictionary.config.entity.ParseWords:de:en;uk:die+;das+;der+:%5C%7C:%3B:%3B:%5Ct::Einfach+gut+A1.1
+	Wortschatz zu Lektion 1: Hallo! Wie geht‘s?
+der Abend; Abende | evening | вечір
+alles | everything | все
+antworten (Sie antworten) | answer (you answer) | відповідати (ви відповідаєте)
+auch | also; too | також
+auf | on | на
+aus | from | з/із/зі
+die Aussage; Aussagen | statement | висловлювання
+bisschen | a little; a bit | трохи
+bitte | please; thank you | прошу
+danke | thank you | дякую
+dann | then | потім
+das | the (neuter noun) | визначений артикль середнього роду
+der | the (masculine noun) | визначений артикль чоловічого роду
+Deutsch | German | німецький
+der Dialog; Dialoge | Dialogue | діалог
+die | the (feminine noun) | визначений артикль жіночого роду/множини
+dir | (to) you | тобі
+du | you | ти
+ein, eine | a; one | невизначений артикль чоловічого/середнього та жіночого роду
+die Entschuldigung | apology | вибачення
+er | he | він
+es | it | воно
+die Form; Formen | form; type | форма
+die Frage; Fragen | question | запитання
+fragen (Sie fragen) | ask (you ask) | запитувати (ви запитуєте)
+die Frau; Frauen | woman; mrs | жінка
+ganz | quite | повністю
+gehen (es geht) | to do (ok/not ok)(it's going ok) | йти (йдеться)
+die Grammatik | grammar | граматика
+gut | good | добрий
+hallo | hello | привіт
+heißen (ich heiße – du heißt – er heißt) | to be called (my name is – your name is – his name is) | зватися (мене звати - тебе звати - його звати)
+der Herr; Herren | man; mr | пан
+hören (Sie hören) | hear (you hear) | слухати (ви слухаєте)
+ich | I; me | я
+Ihnen | (to) you (formal) | Вам
+ihr | her; their | ваш/її/ви
+im | in | в
+ja | yes | так
+klar | of course | зрозумілий
+kommen (ich komme – du kommst – er kommt) | to come from (I come from – you come from – he comes from) | приходити (я приходжу - ти приходиш - він приходить)
+der Kurs; Kurse | course | курс
+der Kursteilnehmer; Kursteilnehmer | course participant (male) | слухач курсу
+die Kursteilnehmerin; Kursteilnehmerinnen | course participant (female) | слухачка курсу
+das Land; Länder | country | країна
+lesen (Sie lesen) | read (you read) | читати (ви читаєте)
+der Mann; Männer | man | чоловік
+mein, meine | my, mine | мій, моя
+mit | with | з/із/зі
+morgen | tomorrow | завтра
+na | nah | ну
+die Nacht; Nächte | night | ніч
+der Name; Namen | name | ім’я
+nein | no | ні
+neu | new | новий
+nicht | not | не
+oder | or | або
+die Person; Personen | person | особа
+richtig | correct | правильний
+der Satz; Sätze | sentence | речення
+schreiben (Sie schreiben) | write (you write) | писати (ви пишете)
+sehr | very | дуже
+sein (ich bin – du bist – er ist – sie/Sie sind) | (I am – you are – he is – they/you are) | бути (я є - ти є - він є - вони/вони є)
+sie | they | вона
+Sie | you | Ви
+so | so | так
+die Sprache; Sprachen | language | мова
+sprechen (ich spreche – du sprichst – er spricht) | (I speak – you speak – he speaks) | говорити (я говорю - ти говориш - він говорить)
+supergut | very good | дуже добре
+der Tag; Tage | day | день
+Tschüss | bye | бувай
+und | and | і
+was | what | що
+welche | which | котрий
+wer | who | хто
+das Wiedersehen | good bye | до побачення
+wie | how | як
+wissen (ich weiß – du weißt – er weiß) | to know (I know – you know – he knows) | знати (я знаю - ти знаєш - він знає)
+wo | where | де
+woher | where … from | звідки
+das Wort; Wörter | word | слово
+	Wortschatz zu Lektion 2: Meine Familie und ich
+aber | but | але
+die Adresse; Adressen | address | адреса
+alt | old | старий
+anmelden | register | реєструватися
+die Anmeldung | registration | реєстрація
+arbeiten (Sie arbeiten) | work (you work) | працювати (ви працюєте)
+das Bild; Bilder | image; photo | зображення
+der Bruder; Brüder | brother | брат
+buchstabieren | to spell | читати по літерах
+dein, deine | your; yours | твій, твоя
+einmal | once again | один раз
+die Eltern; Pl. | parents | батьки (множина)
+falsch | wrong | неправильний
+die Familie; Familien | family | сім’я
+der Familienname; Familiennamen | surname | прізвище
+der Familienstand | marital status | сімейний стан
+das Formular; Formulare | form | бланк
+geschieden | divorced; separated | розлучений
+die Geschwister; Pl. | siblings | брати та сестри (множина)
+haben (ich habe – du hast – er hat) | to have (I have – you have – he has) | мати (я маю - ти маєш - він має)
+die Handynummer; Handynummern | mobile number | номер мобільного
+die Hausnummer; Hausnummern | house number | номер будинку
+das Heimatland; Heimatländer | home country | батьківщина
+hier | here | тут
+Ihr, Ihre | your (formal); yours (formal) | Ваш, Ваша
+in | in | в
+die Information; Informationen | information | інформація
+das Jahr; Jahre | year | рік
+jetzt | now | зараз
+kein, keine | no; none | жоден, жодна
+das Kind; Kinder | child | дитина
+der Kindergarten; Kindergärten | nursery | дитячий садок
+der Kontakt; Kontakte | contact | контакт
+leben (ich lebe – du lebst – er lebt) | to live (I live – you live – he lives) | жити (я живу - ти живеш - він живе)
+ledig | single | неодружений/незаміжня
+die E-Mail; E-Mails | email | електронна пошта
+möchten (Sie möchten) | to like (you like) | хотіти (ви хочете)
+die Mutter; Mütter | mother | мати
+nach | after | після
+der Nachname; Nachnamen | last name | прізвище
+noch | also | ще
+die Postleitzahl; Postleitzahlen | postcode | поштовий індекс
+die Schwester; Schwestern | sister | сестра
+die Schwägerin | sister-in-law | зовиця
+die Schwiegertochter | step-daughter | невістка
+der Schwiegervater | step-father | свекор
+der Sohn; Söhne | son | син
+die Straße; Straßen | street | вулиця
+die Telefonnummer; Telefonnummern | telephone number | номер телефону
+die Tochter; Töchter | daughter | дочка
+über | about; via; over | над
+der Vater; Väter | father | батько
+vergleichen (Sie vergleichen) | compare (you compare) | порівнювати (ви порівнюєте)
+verheiratet | married | одружений
+verwitwet | widowed | вдівець, вдова
+viel, viele | many | багато
+der Vorname; Vornamen | forename | ім’я
+vorstellen | introduce | представляти
+welcher, welche, welches | which | котрий, котра, котре
+willkommen | welcome | ласкаво просимо
+wir | we | ми
+wohnen (ich wohne – du wohnst – er wohnt) | to live (I live – you live – he lives) | жити (я живу - ти живеш - він живе)
+der Wohnort | place of residence | місце проживання
+die Zahl; Zahlen | number | число
+zu | too | до
+	Wortschatz zu Lektion 3: Im Deutschkurs
+also | well | також
+an | on | на
+andere | other | інші
+benutzen (Sie benutzen) | use (to use) | використовувати (ви використовуєте)
+das Blatt; Blätter | sheet (of paper) | лист
+der Bleistift; Bleistifte | pencil | олівець
+das Buch; Bücher | book | книга
+da | there | там
+der Deutschkurs | German course | курс німецької мови
+der Dienstag | Tuesday | вівторок
+doch | indeed (speech particle, postitive confirmation) | однак
+der Donnerstag | Thursday | четвер
+endlich | finally | нарешті
+erklären (ich erkläre – du erklärst – er erklärt) | to explain (I explain – you explain – he explains) | "пояснювати (я пояснюю - ти пояснюєш - він пояснює)"
+erzählen (Sie erzählen) | to explain (you explain) | розповідати (ви розповідаєте)
+das Familienfoto | family photo | сімейне фото
+der Feiertag; Feiertage | public holiday | свято
+das Fenster | window | вікно
+das Foto | photo | фото
+fragen (ich frage – du fragst – er fragt) | ask (I ask – you ask – he asks) | питати (я питаю - ти питаєш - він питає)
+der Freitag | Friday | п’ятниця
+der Freund; Freunde | friend | друг
+für | for | для
+genau | exactly | точно
+gestern | yesterday | вчора
+groß | big | великий
+der Gruß; Grüße | greeting | привітання
+die Hausaufgabe; Hausaufgaben | homework | домашнє завдання
+das Heft; Hefte | booklet | зошит
+heute | today | сьогодні
+ihr | their; your | ваш/її/ви
+immer | always | завжди
+die Karte; Karten | card; map | карта
+klein | small | малий
+knifflig | tricky | складний
+der Kugelschreiber (Kuli); Kugelschreiber | ball-point pen (biro) | кулькова ручка (ручка)
+das Kursbuch | course book | підручник
+der Kursraum | classroom | кімната для курсів
+die Lampe; Lampen | lamp | лампа
+die Landkarte; Landkarten | map | мапа
+langsam | slowly | повільний
+der Lehrer; Lehrer | teacher (male) | вчитель
+die Lehrerin; Lehrerinnen | teacher (female) | вчителька
+lernen (ich lerne – du lernst – er lernt) | to learn (I learn – you learn – he learns) | вчитися (я вчуся - ти вчишся - він вчиться)
+lesen (ich lese – du liest – er liest – ihr lest) | to read (I read – you read – he reads) | читати (я читаю - ти читаєш - він читає - ви читаєте)
+liebe, lieber | dear | люба, любий
+die Liste; Listen | list | список
+machen (ich mache – du machst – er macht) | to make (I make – you make – he makes) | "робити (я роблю - ти робиш - він робить)"
+mir | (to) me | мені
+der Mittwoch | Wednesday | середа
+der Montag | Monday | понеділок
+natürlich | of course | звичайний
+nett | nice | привабливий
+das Papier | paper | папір
+der Papierkorb | waste paper bin | кошик для макулатури
+die Pause; Pausen | break | перерва
+das Problem; Probleme | problem | проблема
+der Projektor | projector | проектор
+der Radiergummi | eraser | гумка
+der Raum | room | кімната
+der Rucksack | backpack | рюкзак
+die Sache; Sachen | thing | річ
+sagen (ich sage – du sagst – er sagt) | to say (I say – you say – he says) | казати (я кажу - ти кажеш - він каже)
+der Samstag | Saturday | субота
+sehen (Sie sehen) | to see (I see – you see – he sees) | бачити (ви бачите)
+die Seite | page | сторінка
+der Schlüssel; Schlüssel | key | ключ
+schnell | fast | швидкий
+der Sonntag | Sunday | неділя
+der Spaß | fun | розвага
+spielen (Sie spielen) | to play (I play – you play – he plays) | грати (ви граєте)
+der Spitzer | pencil sharpener | точилка
+der Stuhl; Stühle | chair | стілець
+die Tabelle | table | таблиця
+die Tafel | black/white board | дошка
+die Tasche | bag | сумка
+der Text | text | текст
+der Tisch; Tische | table | стіл
+die Tür | door | двері
+übermorgen | the day after tomorrow | післязавтра
+die Übung; Übungen | exercise | вправа
+das Übungsbuch | exercise book | збірка вправ
+das Übungsheft | exercise book | зошит для вправ
+verstehen | to understand | розуміти
+vorgestern | the day before yesterday | позавчора
+die Wand | wall | стіна
+die Woche | week | тиждень
+das Wochenende | weekend | вихідні
+das Wörterbuch; Wörterbücher | dictionary | словник
+zeigen (wir zeigen) | to show (we show) | показувати (ми показуємо)
+der Zettel | Zettel | примітка
+zusammen | together | разом
+	Wortschatz zu Lektion 4: Im Supermarkt
+das Angebot; Angebote | offer | пропозиція
+die Antwort; Antworten | answer | відповідь
+der Apfel; Äpfel | apple | яблуко
+der Apfelsaft | apple juice | яблучний сік
+die Aufgabe; Aufgaben | task | завдання
+die Babynahrung | baby food | дитяче харчування
+die Banane; Bananen | banana | банан
+der Becher; Becher | container | стакан
+das Beispiel; Beispiele | example | приклад
+das Bier | beer | пиво
+die Birne; Birnen | pear | груша
+das Bistro | bistro; café | бістро
+die Blaubeere; Blaubeeren | blueberry | чорниця
+die Bohne; Bohnen | bean | квасоля
+brauchen | to need | потребувати
+das Brot; Brote | bread | хліб
+das Brötchen; Brötchen | bread roll | булочка
+der Cent; Cent | cent | цент
+die Cola; Cola, Colas | cola | кола
+der Couscous | couscous | кускус
+denn | because | бо
+diese, dieser, dieses | this | ця, цей, це
+die Dose; Dosen | jar | банка
+durch | through | через
+das Ei; Eier | egg | яйце
+der Einkaufszettel | shopping list | список покупок
+einige | a few | деякі
+die Erbse; Erbsen | pea | горох
+die Erdbeere; Erdbeeren | strawberry | полуниця
+essen | to eat | їсти
+etwas | something | дещо
+fertig | finished | готовий
+der Fisch; Fische | fish | риба
+die Flasche; Flaschen | bottle | пляшка
+das Fleisch | meat | м’ясо
+frisch | fresh | свіжий
+das Frühstück | breakfast | сніданок
+frühstücken | to breakfast | снідати
+gemeinsam | together | спільно
+das Gemüse | vegetables | овочі
+gern | very much | охоче
+das Getränk; Getränke | drink | напій
+das Glas; Gläser | glass | скло
+gleich | the same | однаковий
+das Gramm; Gramm | gram | грам
+die Himbeere; Himbeeren | raspberry | малина
+der Honig | honey | мед
+der Joghurt; Joghurts | yoghurt | йогурт
+der Kaffee | coffee | кава
+die Kartoffel; Kartoffeln | potato | картопля
+der Käse | cheese | сир
+kaufen | to buy | купувати
+der Keks; Kekse | biscuit | кекс
+die Kichererbse; Kichererbsen | chickpea | нут
+das Kilo; Kilos | kilo | кілограм
+die Kirsche; Kirschen | cherry | вишня
+die Kiwi; Kiwis | kiwi | ківі
+die Kontrolle; Kontrollen | control | контроль
+kosten | to cost | коштувати
+der Kuchen | cake | пиріг
+der Kunde; Kunden | customer (male) | клієнт
+die Kundin; Kundinnen | customer (female) | клієнтка
+kurz | short | короткий
+das Lammfleisch | lamb meat | баранина
+das Lebensmittel; Lebensmittel | groceries | продукт харчування
+die Limonade (Limo); Limonaden (Limos) | lemonade | лимонад
+der Liter; Liter | litre | літр
+man | one; you | безособовий займенник
+die Mandarine; Mandarinen | mandarine | мандарин
+die Mango; Mangos | mango | манго
+der Markt; Märkte | market | ринок
+die Marmelade; Marmeladen | jam | мармелад
+das Mehl | flour | борошно
+meistens | mostly | здебільшого
+die Mengenangabe | amount | кількість
+die Melone; Melonen | melon | диня
+die Milch | milk | молоко
+das Milchprodukt; Milchprodukte | dairy product | молочний продукт
+mögen | to like | любити
+die Möhre; Möhren | carrot | морква
+müssen | to have to | бути повинним
+nehmen | to take | брати
+die Nudel; Nudeln | pasta; noodles | локшина
+nur | only | лише
+das Obst | fruit | фрукти
+der Obstsalat | fruit salad | фруктовий салат
+das Olivenöl | olive oil | оливкова олія
+die Orange; Orangen | orange | помаранчевий
+ordnen | to order | впорядковувати
+die Packung; Packungen | packaging | пакунок
+die Paprika; Paprikas | pepper | паприка
+der Partner; Partner | partner (male) | партнер
+die Partnerin; Partnerinnen | partner (female) | партнерка
+das Pfund | pound | фунт
+der Pilz; Pilze | mushroom | гриб
+planen | to plan | планувати
+der Preis; Preise | price | ціна
+pro | per | на
+der Pudding | pudding | пудинг
+der Reis | rice | рис
+das Rindfleisch | beef | яловичина
+der Saft; Säfte | juice | сік
+die Sahne | cream | вершки
+der Salat; Salate | salad | салат
+das Salz | salt | сіль
+sich | oneself | себе
+schmecken | to taste | смакувати
+die Schokolade | chocolate | шоколад
+schön | beautiful | гарний
+das Schweinefleisch | pork | свинина
+sonst | otherwise | інакше
+stehen | to stand | стояти
+streichen | to paint | фарбувати
+das Stück; Stücke | piece | штука
+die Tasse; Tassen | cup | чашка
+der Tee | tea | чай
+teuer | expensive | дорогий
+der Tipp; Tipps | tip | порада
+die Tomate; Tomaten | tomato | помідор
+die Traube; Trauben | grape | виноград
+trinken | to drink | пити
+unterstreichen | to emphasize | підкреслювати
+verbinden | to connect | поєднувати
+der Verkäufer; Verkäufer | salesperson (male) | продавець
+die Verkäuferin; Verkäuferinnen | salesperson (female) | продавчиня
+von | from | від
+das Wasser | water | вода
+der Wein | wine | вино
+die Zitrone; Zitronen | lemon | лимон
+der Zucker | sugar | цукор
+die Zwiebel; Zwiebeln | onion | цибуля
+	Wortschatz zu Lektion 5: Von morgens bis abends
+abends | in the evenings | ввечері
+der Alltag | everyday | повсякденне життя
+anrufen | to call | телефонувати
+die Arbeit | work | робота
+aufstehen | to get up | вставати
+beginnen | to start | починати
+beide | both | обидва
+das Bett; Betten | bed | ліжко
+bis | until | до
+das Büro; Büros | office | офіс
+der Computer; Computer | computer | комп’ютер
+das Computerspiel; Computerspiele | computer game | комп’ютерна гра
+erst | first | спочатку
+fernsehen | to watch television | дивитися телевізор
+der Film; Filme | film | фільм
+die Freundin; Freundinnen | friend (female) | подруга
+früh | early | рано
+der Fußball | football | футбол
+gehen | to go | ходити
+geöffnet | open | відкрито
+grillen | to grill; to barbeque | смажити на грилі
+halb | half past | половина
+der Hunger | hunger | голод
+die Idee; Ideen | idea | ідея
+das Interview; Interviews | interview | інтерв’ю
+kochen | to cook | варити
+können | to be able to | могти
+lecker | delicious | смачний
+leider | unfortunately | на жаль
+manchmal | sometimes | іноді
+mehr | more | більше
+der Mittag | midday | полудень
+mittags | at midday | опівдні
+die Mittagspause | lunchtime | обідня перерва
+der Morgen | morning | ранок
+morgens | in the mornings | вранці
+müde | tired | втомлений
+die Musik | music | музика
+der Nachmittag | afternoon | день (по обіді)
+nachmittags | in the afternoons | по обіді
+nachts | at night | вночі
+nie | never | ніколи
+der Notizzettel | note | примітка
+oft | often | часто
+die Pizza | pizza | піца
+putzen | to clean | чистити
+schade | shame | жаль
+schlafen | to sleep | спати
+der Schluss | end, end of work | кінець
+die Schule; Schulen | school | школа
+spät | late | пізно
+spazieren | to walk | гуляти
+das Spiel; Spiele | game | гра
+der Sport | sport | спорт
+die Stunde; Stunden | hour | година
+der Stundenplan | schedule | розклад
+der Supermarkt | supermarket | супермаркет
+telefonieren | to telephone | телефонувати
+tun | to do | робити
+die Uhr | clock | година
+die Uhrzeit | time | час
+um | at | о
+der Unterricht | lesson | зайняття
+das Viertel | quarter to | квартал, чверть
+vor | before | перед
+der Vormittag | morning | перша половина дня
+vormittags | in the morning | в першій половині дня
+wann | when | коли
+die Wohnung; Wohnungen | flat | квартира
+zeichnen | to draw | малювати
+die Zeit | time | час
+zu Hause | at home | вдома
+	Wortschatz zu Lektion 6: Auf Wohnungssuche
+ab | from | від
+der Altbau | old building | стара будівля
+die Angabe; Angaben | detail | дані
+die Anzeige; Anzeigen | advert | об’ява
+das Arbeitszimmer | workroom | робоча кімната
+das Bad; Bäder | bathroom | ванна
+baden | to bathe | купатися
+die Badewanne | bathtub | ванна (посудина)
+das Badezimmer | bathroom | ванна кімната
+der Balkon; Balkone | balcony | балкон
+der Bauernhof; Bauernhöfe | farm | подвір’я
+bei | at | під час
+bekommen | to receive | отримувати
+der Besichtigungstermin | appointment | огляд
+besser | better | кращий
+billig | cheap | дешевий
+breit | wide | широкий
+circa | around | приблизно
+dazu | in addition | до того ж
+die Diele | hallway | передпокій
+direkt | direct | прямий
+dort | there | там
+draußen | outside | зовні
+dringend | urgent | терміново
+dunkel | dark | темний
+die Dusche | shower | душ
+das Einfamilienhaus | detached hosue | одноквартирний дім
+einkaufen | to shop | робити покупки
+das Elektrogerät; Elektrogeräte | electronic device | електричний прилад
+das Erdgeschoss | ground floor | перший поверх
+ersetzen | to replace | замінювати
+der Euro; Euros | euro | євро
+der Fernseher; Fernseher | television | телевізор
+finden | to find | знаходити
+die Firma; Firmen | company | компанія
+der Flur; Flure | corridor | коридор
+frei | free | безкоштовний, вільний
+die Garage; Garagen | garage | гараж
+der Garten; Gärten | garden | сад
+der Gast; Gäste | guest | гість
+das Geld; Gelder | money | гроші
+gemütlich | comfortable | зручний
+gepflegt | looked after | доглянутий
+das Gerät; Geräte | appliance | прилад
+das Geschäft; Geschäfte | business | бізнес
+das Gespräch; Gespräche | interview | розмова
+die Größe | size | розмір
+grün | green | зелений
+hängen | to hang | вішати
+hässlich | ugly | потворний
+die Hauptsache | main thing | головне
+das Haus; Häuser | house | будинок
+das Haustier; Haustiere | pet | домашня тварина
+die Heizung | heating | опалення
+helfen | to help | допомагати
+hell | light | яскравий
+der Herd | stove | плита
+die Hilfe | help | допомога
+hinten | behind | позаду
+das Hochhaus | high-rise building | хмарочос
+ihr, ihre | your; yours | її, ваш
+die Immobilie; Immobilien | property | нерухомість
+insgesamt | in total | загалом
+interessant | interesting | цікавий
+jeder, jede, jedes | every | кожен, кожна, кожне
+der Juni | june | червень
+die Kaffeemaschine | coffee machine | кавоварка
+kalt | cold | холодний
+die Kaution | deposit | депозит
+der Keller; Keller | celler | підвал
+das Kinderzimmer | child's room | дитяча кімната
+der Kleiderschrank | wardrobe | гардероб
+die Küche; Küchen | kitchen | кухня
+der Kühlschrank; Kühlschränke | fridge | холодильник
+lang | long | довгий
+lassen | to let | дозволяти
+laut | loud | голосний
+liebsten (am liebsten) | favourite (at best) | найбільш охоче
+liegen | to lie | лежати
+maximal | maximal | максимум
+das Mehrfamilienhaus | apartment building | багатоквартирний будинок
+die Miete | rent | оренда
+mindestens | at least | щонайменше
+die Möbel; Pl. | furniture | меблі (множина)
+möbliert | furnished | мебльований
+modern | modern | сучасний
+der Monat; Monate | month | місяць
+die Monatsmiete; Monatsmieten | monthly rent | щомісячна орендна плата
+der Müll | rubbish | сміття
+neben | next to | поруч
+die Nebenkosten; Nebenkosten | additional costs | додаткові витрати
+ohne | without | без
+das Obergeschoss | upper floor | поверх
+der Ort; Orte | place | місце
+die Pflanze; Pflanzen | plant | рослина
+der Plan; Pläne | plan | план
+der Platz; Plätze | place, space | простір
+der Quadratmeter; Quadratmeter | squaremetre | квадратний метр
+das Regal; Regale | shelves | полиця
+das Reihenhaus | terraced house | дім рядкової забудови
+ruhig | peaceful | спокійний
+schauen | to look | дивитися
+das Schlafzimmer | bedroom | спальня
+schmal | narrow | вузький
+der Schrank; Schränke | cupboard | шафа
+der Sessel; Sessel | chair | крісло
+singen | to sing | співати
+sitzen | to sit | сидіти
+das Sofa; Sofas | sofa | диван
+sofort | straight away | одразу
+sollen | to be supposed to | мусити
+das Sonderangebot; Sonderangebote | special offer | особлива пропозиція
+die Sonne | sun | сонце
+sonstiges | other | інше
+die Sprachschule | language school | мовна школа
+spülen | to rinse | мити
+die Spülmaschine; Spülmaschinen | dishwasher | посудомийна машина
+die Stadt; Städte | city | місто
+suchen | to look for | шукати
+super | super | супер
+der Teppich | carpet | килим
+die Terrasse; Terrassen | terrace | тераса
+die Toilette; Toiletten | toilet | туалет
+toll | great | чудовий
+die Traumwohnung | dream flat | квартира мрії
+unbedingt | definitely | обов’язково
+ungemütlich | uncomfortable | незручний
+unser, unsere | our; ours | наш, наша
+warum | why | чому
+waschen | to wash | прати
+die Waschmaschine | washing machine | пральна машина
+das WC | WC; toilet | туалет
+wegziehen | to move away | відтягувати
+weiter | further | далі
+wenn | if; when | якщо
+werden | to become | буде
+wichtig | important | важливий
+wohnen | to live | проживати
+die Wohnungsanzeige | flat advertisement | оголошення про квартиру
+die Wohnungssuche | search for housing | пошук квартири
+das Wohnzimmer | living room | вітальня
+wunderschön | very beautiful | прекрасний
+wünschen | to wish | бажати
+zahlen | to count | рахувати
+die Zeitung; Zeitungen | newspaper | газета
+das Zentrum | centre | центр
+das Zimmer; Zimmer | room | кімната
+zu Fuß | on foot | пішки

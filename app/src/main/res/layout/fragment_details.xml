@@ -24,5 +24,15 @@
                 android:text='@{viewModel.data.getFormattedTranslations("\n")}'
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:gravity="center_horizontal" android:textSize="30sp"/>
+        <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/knowledgeBar"
+                android:stepSize="1"
+                android:layout_gravity="end"
+                android:isIndicator="false"
+                android:numStars="@{org.leo.dictionary.apk.helper.KnowledgeToRatingConverter.starsCount}"
+                android:rating="@{org.leo.dictionary.apk.helper.KnowledgeToRatingConverter.knowledgeToRating(viewModel.data.knowledge)}"
+                style="@style/Widget.AppCompat.RatingBar.Indicator"/>
     </LinearLayout>
 </layout>

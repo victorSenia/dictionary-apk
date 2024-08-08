@@ -9,6 +9,7 @@ import androidx.appcompat.content.res.AppCompatResources;
 import androidx.lifecycle.ViewModelProvider;
 import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApplicationWithDI;
+import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.activity.viewmodel.DetailsViewModel;
 import org.leo.dictionary.apk.audio.AndroidSpeechRecognitionService;
 import org.leo.dictionary.apk.databinding.ActivitySpeechRecognitionBinding;
@@ -22,7 +23,6 @@ import java.util.stream.Collectors;
 
 public class SpeechRecognitionActivity extends AppCompatActivity {
     private final AndroidSpeechRecognitionService speechRecognitionService = new AndroidSpeechRecognitionService();
-    private final Map<String, String> languagesMapping = new HashMap<>();
     private final AtomicBoolean recoding = new AtomicBoolean(false);
     private ActivitySpeechRecognitionBinding binding;
     private DetailsViewModel detailsViewModel;
@@ -53,10 +53,6 @@ public class SpeechRecognitionActivity extends AppCompatActivity {
     }
 
     private String getLanguage() {
-        String language = languagesMapping.get(detailsViewModel.getWord().getLanguage());
-        if (language != null) {
-            return language;
-        }
         return detailsViewModel.getWord().getLanguage();
     }
 
@@ -83,7 +79,7 @@ public class SpeechRecognitionActivity extends AppCompatActivity {
                 binding.textResult.setVisibility(View.VISIBLE);
                 binding.textResult.setText(result.stream().collect(Collectors.joining(System.lineSeparator())));
             } else {
-                Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.correct, Toast.LENGTH_SHORT).show();
                 nextWord();
             }
         };

@@ -31,11 +31,6 @@
           android:layout_width="wrap_content"
           android:orderInCategory="200"
           android:layout_height="wrap_content"/>
-    <item android:id="@+id/action_use_db"
-          android:title="@string/use_db"
-          android:layout_width="wrap_content"
-          android:orderInCategory="200"
-          android:layout_height="wrap_content"/>
     <item android:id="@+id/action_add_word"
           android:title="@string/add_word"
           android:layout_width="wrap_content"
@@ -57,6 +52,11 @@
           android:orderInCategory="200"
           android:layout_height="wrap_content">
         <menu>
+            <item android:id="@+id/action_use_db"
+                  android:title="@string/use_db"
+                  android:layout_width="wrap_content"
+                  android:orderInCategory="200"
+                  android:layout_height="wrap_content"/>
             <item android:id="@+id/action_import_words"
                   android:title="@string/import_words"
                   android:layout_width="wrap_content"
@@ -64,6 +64,11 @@
                   android:layout_height="wrap_content"/>
             <item android:id="@+id/action_clean_db"
                   android:title="@string/clean_db"
+                  android:layout_width="wrap_content"
+                  android:orderInCategory="200"
+                  android:layout_height="wrap_content"/>
+            <item android:id="@+id/action_set_knowledge"
+                  android:title="@string/action_set_knowledge"
                   android:layout_width="wrap_content"
                   android:orderInCategory="200"
                   android:layout_height="wrap_content"/>

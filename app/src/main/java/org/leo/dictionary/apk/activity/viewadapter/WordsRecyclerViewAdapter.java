@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.leo.dictionary.PlayService;
 import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApplicationWithDI;
+import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.activity.MainActivity;
 import org.leo.dictionary.apk.databinding.FragmentStringBinding;
 import org.leo.dictionary.apk.databinding.FragmentWordSelectedBinding;
@@ -111,7 +112,7 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
     }
 
     private void noDBSourceError() {
-        Toast.makeText(fragment.requireActivity(), "Can only be used with database", Toast.LENGTH_SHORT).show();
+        Toast.makeText(fragment.requireActivity(), R.string.not_database_error, Toast.LENGTH_SHORT).show();
     }
 
     public class WordViewHolder extends RecyclerView.ViewHolder {
@@ -160,10 +161,10 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
 
         private AlertDialog.Builder getDeleteConfirmationBuilder(View view, Word word) {
             AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-            builder.setTitle("Delete confirmation");
+            builder.setTitle(R.string.delete_word_confirmation);
             builder.setIcon(android.R.drawable.ic_dialog_alert);
-            builder.setMessage("Do you really want to delete word '" + word.getFullWord() + "'?");
-            builder.setPositiveButton("Yes", (dialog, which) -> deleteWord(word));
+            builder.setMessage(fragment.getString(R.string.delete_word_confirmation_message, word.getFullWord()));
+            builder.setPositiveButton(R.string.yes, (dialog, which) -> deleteWord(word));
             return builder;
         }
     }

@@ -71,7 +71,7 @@ public class ExportWordsActivity extends AppCompatActivity {
         Intent createFile = new Intent(Intent.ACTION_CREATE_DOCUMENT);
         createFile.setType("text/plain");
         createFile.addCategory(Intent.CATEGORY_OPENABLE);
-        createFile = Intent.createChooser(createFile, "Choose a file");
+        createFile = Intent.createChooser(createFile, getString(R.string.choose_file));
         createFile.putExtra(Intent.EXTRA_TITLE, "fileName_de.txt");//TODO not working
         exportWordsActivityResultLauncher.launch(createFile);
     }
@@ -98,7 +98,7 @@ public class ExportWordsActivity extends AppCompatActivity {
             }
         } catch (IOException e) {
             MainActivity.logUnhandledException(e);
-            showMessage("Error happened. Please check logs");
+            showMessage(getString(R.string.unexpected_error));
         }
     }
 

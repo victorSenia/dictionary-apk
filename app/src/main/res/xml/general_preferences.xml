@@ -33,7 +33,7 @@
                 android:title="@string/knowledge_increase"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:useSimpleSummaryProvider="true" app:isPreferenceVisible="false"/>
+                app:useSimpleSummaryProvider="true"/>
         <SwitchPreference
                 app:key="org.leo.dictionary.config.entity.General.includeArticle"
                 android:defaultValue="true"

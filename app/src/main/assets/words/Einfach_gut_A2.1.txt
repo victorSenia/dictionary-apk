@@ -1,0 +1,508 @@
+org.leo.dictionary.config.entity.ParseWords:de:en;uk:die+;das+;der+:%5C%7C:%3B:%3B:%5Ct::Einfach+gut+A2.1
+	Wortschatz zu Lektion 1: Chatten, mailen, sich informieren
+die Abendkasse | box offce | вечірня каса
+abholen | to collect | забирати
+aktuell | current | поточний
+alle | all | все
+anklicken | to click | натискати
+die App | app | додаток
+aussuchen | to choose | підшукувати
+der Benutzername | user name | ім’я користувача
+bestellen | to order | замовляти
+chatten | to chat | спілкуватися в чаті
+die Datei; Dateien | file | файл
+dich | you | тебе
+diskutieren | to discuss | обговорювати
+drucken | to print | натискати
+der Eintritt; Eintritte | entry | вхід
+empfehlen | to recommend | рекомендувати
+die Empfehlung; Empfehlungen | recommendation | рекомендація
+ﬂirten | to ﬂirt | фліртувати
+der Flohmarkt; Flohmärkte | ﬂea market | блошиний ринок
+das Forum | forum | форум
+funktionieren | to work | форум
+gebraucht | used | необхідний
+googeln | to google | шукати в Google
+herausfnden | to fnd out | дізнаватися
+herunterladen | to download | завантажувати
+hochladen | to upload | вивантажувати
+informieren | to inform | інформувати
+international | international | міжнародний
+das Internet | Internet | Інтернет
+das Kennwort; Kennwörter | password | пароль
+die Kinokarte | cinema ticket | квиток у кіно
+klicken | to click | натискати
+der Kommentar; Kommentare | comment | коментар
+kostenlos | free of charge | безкоштовно
+das Kulturcafé | culture café | культурне кафе
+der Leser | reader | читач
+die Leserin | reader | читачка
+löschen | to delete | видаляти
+mailen | to mail | надсилати поштою
+mich | me | мене
+mitkommen | to come along | супроводжувати
+mitmachen | to participate | долучатися
+nachschauen | to look up | дивитися вслід
+der Neffe | nephew | племінник
+nervös | nervous | знервований
+Newsletter | newsletter | інформаційний бюлетень
+oben | at the top | вище
+die Politik | politics | політика
+prima | great | чудово
+das Programm; Programme | programme | програма
+die Radtour; Radtouren | cycling tour | велосипедний тур
+der Regen | rain | дощ
+der Regenschirm | umbrella | парасолька
+die Reihenfolge | order | послідовність
+reservieren | to book | бронювати
+die Reservierung | booking | бронювання
+die Rolle; Rollen | role | роль
+sinken | to decrease | опускати
+das Smartphone | smartphone | смартфон
+speichern | to save | зберігати
+das Spielzeug | toy | іграшка
+starten | to begin | починати
+die Startseite | homepage | домашня сторінка
+steigen | to increase | піднімати
+das Straßenfest | street party | вуличне свято
+das Symbol; Symbole | symbol | символ
+tauschen | to swap | обмінювати
+die Temperatur; Temperaturen | temperature | температура
+das Theater | theatre | театр
+der Treffpunkt | venue | місце зустрічі
+unternehmen | to undertake | вживати (заходи)
+die Verabredung; Verabredungen | meet up | домовленість
+die Veranstaltung; Veranstaltungen | event | подія
+der Veranstaltungstipp; Veranstaltungstipps | event tip | порада щодо події
+der Vorschlag; Vorschläge | suggestion | пропозиція
+die Welt | world | світ
+die Wettervorhersage | weather forecast | прогноз погоди
+die Wirtschaft | economy | економіка
+das Würstchen | sausage | сосиска
+zeitweise | occasionally | час від часу
+zuhören | to listen | слухати
+zuschauen | to watch | дивитися
+	Wortschatz zu Lektion 2: Mit Bus und Bahn
+abfahren | to depart | від’їжджати
+die Abfahrt; Abfahrten | departure | від’їзд
+ankommen | to arrive | прибувати
+die Ankunft; Ankünfte | arrival | прибуття
+der Anschluss | connection | підключення
+der Anschlusszug; Anschlusszüge | connecting train | стикувальний потяг
+ausblenden | to fade out | приховувати
+ausfallen | to be cancelled | випадати
+aussteigen | to get out | виходити
+das Autofahren | to drive a car | переміщення автомобілем
+der Automat | vending machine | автомат
+das Bahnfahren | rail travel | переміщення потягом
+der Bahnsteig | platform | платформа
+bitten | to ask | просити
+buchen | to book | бронювати
+die Dauer | duration | тривалість
+defekt | defective | несправний
+deshalb | hence | тому
+drehen | to turn | обертати
+drüben | over there | на іншому боці
+die Einfahrt; Einfahrten | entry | в’їзд
+einsteigen | to board | сідати (в транспорт)
+erhalten | to receive | отримувати
+erreichen | to reach | досягати
+der Fahrkartenschalter | ticket office | квиткова каса
+der Fahrplan; Fahrpläne | schedule | розклад руху
+der Fernbus | long-distance bus | міжміський автобус
+fliegen | to fly | літати
+das Flugzeug; Flugzeuge | plane | літак
+der Grund | ground | причина
+der Halt | stop | зупинка
+hin | there | там
+die Hinfahrt; Hinfahrten | journey there | поїздка в один бік
+der Mitarbeiter | employee | колега
+die Mitarbeiterin | employee | колежанка
+mitnehmen | to take with | брати з собою
+nah | close | близько
+nämlich | namely | а саме
+die Nummer | number | номер
+die Option | option | варіант
+passieren | to happen | відбуватися
+das Pech | bad luck | невдача
+planmäßig | on schedule | за графіком
+preiswert | inexpensive | недорогий
+die Reisemöglichkeit; Reisemöglichkeiten | travel option | можливість для подорожі
+das Reiseziel | travel destination | пункт призначення
+die Richtung; Richtungen | direction | напрямок
+die Rückfahrt; Rückfahrten | return journey | зворотна подорож
+der Schaffner | conductor | провідник
+die Schaffnerin | conductor | провідниця
+das Schild; Schilder | sign | табличка
+schwarzfahren | to fare-dodge | їздити без квитка
+schwierig | difficult | важкий
+der Senior | senior | чоловік похилого віку
+die Seniorin | senior | жінка похилого віку
+der Serviceschalter | service counter | вікно обслуговування
+sondern | but | а
+sparen | to save | економити
+die Station | station | станція
+die Störung; Störungen | disruption | несправність
+die Strafe; Strafen | penalty | штраф
+die Strecke; Strecken | route | маршрут
+umsteigen | to change trains | пересідати
+die Umwelt | environment | навколишнє середовище
+unterwegs | en route | у дорозі
+die Verbindung; Verbindungen | connection | з’єднання
+verehrt, verehrte | “dear” | шановний, шановна
+verpassen | to miss | запізнитися
+verschlafen | to oversleep | проспати
+verspätet | late | із запізненням
+die Verspätung; Verspätungen | delay | запізнення
+die Vorsicht | caution | обережність
+wenig | little | мало
+wohl | probably | добре
+die Zeitschrift; Zeitschriften | magazine | журнал
+der Zoo | zoo | зоопарк
+	Wortschatz zu Lektion 3: Unsere neue Wohnung
+ablesen | to read from | зчитувати
+die Ablesung | reading | зчитування 
+abstellen | to park, to put down | відставляти
+afrikanisch | African | африканський
+das Altglas | waste glass | скляні відходи
+aufschließen | to unlock | відкривати
+ausführen | to execute | виконувати
+ausgeben | to spend | видавати
+ausziehen | to move out | знімати
+beachten | to consider | враховувати
+bedeuten | to mean | означати
+der Beinbruch | leg fracture | перелом ноги
+berufstätig | employed | зайнятий на роботі
+die Beschwerde; Beschwerden | complaint | скарга
+besichtigen | to visit | оглядати
+der Bezirk | district | район
+der Biomüll | biowaste | органічні відходи
+die Biotonne | biowaste container | контейнер для органічних відходів
+das Brett | board | дошка
+der Briefkasten; Briefkästen | mailbox | поштовий ящик
+darum | therefore | тому
+dass | that | що
+die Ecke | corner | куток
+die Einbauküche | built-in kitchen | вбудована кухня
+einrichten | to furnish | налаштовувати
+die Einweihungsparty | housewarming party | новосілля
+die Einwurfzeit; Einwurfzeiten | time slot for putting out rubbish | час вкидання
+einziehen | to move in | в’їжджати
+der Einzug | move in | переїзд
+entsorgen | to dispose of | утилізувати
+erfolgen | to take place | відбуватися
+der Fahrradständer | bicycle stand | стійка для паркування велосипеда
+die Fernwärme | remote heating | централізоване опалення
+das Gas | gas | газ
+Gassi gehen | to walk the dog | вигулювати собаку
+gehören | to belong | належати
+gesondert | separate | окремо
+der Glascontainer | bottle bank | бак для скла
+der Hausbewohner | house resident | мешканець
+die Hausbewohnerin | house resident | мешканка
+der Hausmeister | caretaker | комендант будинку
+die Hausmeisterin | caretaker | комендантка будинку
+die Hausordnung | house rules | правила проживання
+die Hausregel; Hausregeln | house rule | правило проживання
+die Hausreinigung | house cleaning | прибирання будинку
+die Hausverwaltung | property management | управління будинком
+herzlich | warm | щирий
+hoch | high | високий
+Hof | yard | двір
+hoffen | to hope | сподіватися
+jemand | someone | хтось
+der Kellerzugang | cellar entrance | доступ до підвалу
+der Kinderwagen | baby buggy | дитяча коляска
+die Kleinmöbel; Pl. | small pieces of furniture | дрібні меблі
+die Kommode | dresser | комод
+kündigen | to terminate | звільняти
+legen | to lay | класти
+leidtun | to be sorry | причиняти біль
+der Lieferant | supplier | постачальник
+die Lieferantin | supplier | постачальниця
+liefern | to supply | доставляти
+der Makler | broker | маклер
+die Maklerin | broker | маклерка
+der Mieter | tenant | орендар
+die Mieterin | tenant | орендарка
+der Mitbewohner | roommate | співмешканець
+die Mitbewohnerin | roommate | співмешканка
+die Mitteilung | notification | повідомлення
+die Müllabfuhr | garbage disposal | вивіз сміття
+die Nachbarschaft | neighbourhood | мікрорайон
+die Nachricht | message | новина
+der Nachtisch | dessert | десерт
+die Nähe | proximity | близькість
+ordnungsgerecht | properly | належним чином
+privat | private | приватний
+reichlich | abundant | рясний
+der Restmüll | residual waste | залишкові відходи
+schließlich | finally | нарешті
+schonen | to treat with care | берегти
+setzen | to sit | садити
+sogar | even | навіть
+sorgen | to care | піклуватися
+sorgfältig | thoroughly | ретельно
+Spaziergang | walk | прогулянка
+der Spiegel | mirror | дзеркало
+der Stellplatz; Stellplätze | parking space | парковка
+die Tiefgarage | underground garage | підземний паркінг
+die Tonne | barrel | бак
+trennen | to separate | відокремлювати
+die Treppe | stairs | сходи
+das Treppenhaus | stairway | сходова клітка
+übernehmen | to assume | брати на себе
+umziehen | to move | переїздити
+der Umzug | move | переїзд
+der Umzugskarton; Umzugskartons | moving box | пакувальний ящик
+die Vase; Vasen | vase | ваза
+der Verbraucherzähler | consumption meter | лічильник споживання
+vereinbaren | to arrange | домовлятися
+der Vermieter | landlord | хазяїн квартири
+die Vermieterin | landlord | хазяйка квартири
+vermieten | to let | здавати в оренду
+vorhanden | available | доступний
+wegen | due to | через те, що
+weil | because | тому що
+weiterhin | still | далі
+die Wohngemeinschaft | flat share | колектив мешканців
+die Wohnungsbesichtigung | flat viewing | огляд квартири
+der Wunsch; Wünsche | wish | бажання
+der Zähler | meter | лічильник
+der Zugang; Zugänge | entry | доступ
+zuletzt | recently | останній
+zuzüglich | plus | плюс
+	Wortschatz zu Lektion 4: Auf dem Amt
+abgeben | to submit | здавати
+ablehnen | to refuse | відхиляти
+abmelden | to deregister | виходити з системи
+die Abmeldung | deregistration | вихід із системи
+ähnlich | similar | схожий
+das Amt | office | урядова установа
+das Amtsdeutsch | official German | офіційна німецька
+ändern | to change | змінювати
+der/die Angehörige; Angehörigen | relative | родичі
+ankreuzen | to mark with a cross | позначати хрестиком
+die Anschrift | address | адреса
+der Antrag; Anträge | application | заявка
+der Antragsteller | applicant | заявник
+die Antragstellerin | applicant | заявниця
+die Arbeitsagentur | employment agency | агентство зайнятості
+die Arbeitserlaubnis | work permit | дозвіл на роботу
+das Arbeitslosengeld | unemployment benefit | допомога по безробіттю
+der Arbeitsplatz; Arbeitsplätze | workplace | робоче місце
+die Arbeitsvermittlung | employment service | посередництво у працевлаштуванні
+der Aufenthalt | stay | перебування
+die Aufenthaltserlaubnis | residence permit | дозвіл на перебування
+aufrufen | to call up | викликати
+der Ausbildungsplatz | training place | місце для освіти
+das Ausländeramt | immigration office | закордонне відомство
+die Ausländerbehörde | immigration authorities | управління в справах іноземців
+der Ausweis | ID (identification document) | посвідчення особи
+beantragen | to apply for | подавати заявку
+bearbeiten | to edit | редагувати
+die Behörde | authorities | установа
+die Berufsberatung | career guidance | консультування щодо працевлаштування
+das Berufsinformationszentrum | career information centre | довідковий центр щодо працевлаштування
+der Cousin | cousin | двоюрідний брат
+die Cousine | cousin | двоюрідна сестра
+dabei | thereby | при цьому
+das Dokument | document | документ
+der Ehepartner | spouse | подружжя
+die Ehepartnerin | spouse | подружжя
+die Eheschließung; Eheschließungen | marriage | укладення шлюбу
+das Einwohnermeldeamt | registration office | офіс реєстрації мешканців
+der Enkel | grandson | онук
+die Enkelin | grandson | онука
+das Enkelkind; Enkelkinder | grandchild | онук/онука
+entschuldigen | to excuse | вибачатися
+das Familienbuch | family register | сімейна книга
+die Familienkasse | family class | сімейна каса
+das Familienmitglied; Familienmitglieder | family member | член сім’ї
+fehlen | to miss | бути відсутнім
+das Finanzamt | tax office | податкова служба
+die Geburt; Geburten | birth | народження
+das Geburtsdatum; Geburtsdaten | date of birth | дата народження
+das Geburtsland | country of birth | країна народження
+der Geburtsname | name at birth | ім’я при народженні
+der Geburtsort | place of birth | місце народження
+die Geburtsurkunde | birth certificate | свідоцтво про народження
+genehmigen | to approve | дозволяти
+das Geschlecht; Geschlechter | gender | стать
+herein | within | в
+hingehen | to go there | іти туди
+die Integration | integration | інтеграція
+der Integrationskurs | integration course | інтеграційний курс
+das Kindergeld | child allowance | допомога на дітей
+der Lebenspartner | life partner | партнер
+die Lebenspartnerin | life partner | партнерка
+der Lichtbildausweis | photo ID | посвідчення особи з фотографією
+losfahren | to drive away | рушати
+männlich | male | чоловічий
+die Nichte; Nichten | niece | племінниця
+notieren | to note | записувати
+der Personalausweis | personal ID | посвідчення особи
+der Reisepass; Reisepässe | passport | закордонний паспорт
+die Schwiegereltern; Pl. | parents-in-law | свати (множ.)
+die Staatsangehörigkeit | nationality | громадянство
+das Team | team | команда
+der Teil | part | частина
+die Unterlagen; Pl. | documents | документи (множ.)
+unterschreiben | to sign | підписувати
+die Urkunde; Urkunden | certificate | документ
+vollständig | complete | повністю
+die Webseite; Webseiten | website | веб-сайт
+weiblich | female | жіночий
+wiederholen | to repeat | повторювати
+die Zulassungsstelle | admission office | орган реєстрації
+zuständig | responsible | відповідальний
+	Wortschatz zu Lektion 5: Schule, und dann?
+das Abitur (Abi) | A-level | атестат зрілості
+ablegen | to take (an exam) | складати
+abschließen | to complete | закінчувати
+der Abschluss; Abschlüsse | degree | закінчення
+anbieten | to offer | пропонувати
+der Anfänger | beginner | початківець
+die Anfängerin | beginner | початківиця
+die Architektur | architecture | архітектура
+das Ausland | abroad | зарубіжні країни
+der Autounfall; Autounfälle | car accident | дорожня пригода
+beenden | to end | закінчувати
+die Beratung | counselling | консультування
+der Bereich | area | область
+die Berufsausbildung | professional training | професійна освіта
+die Berufsschule | vocational college | професійна школа
+besonders | especially | зокрема
+der Bildungsweg | course of education | освітній шлях
+die Büroorganisation | office administration | офісна організація
+das Chaos | chaos | хаос
+die Decke | ceiling | стеля
+das Ende | end | кінець
+die Energie | energy | енергія
+enthalten | to contain | містити
+entscheiden | to decide | вирішувати
+erforderlich | required | необхідний
+die Fitness | fitness | фітнес
+fliehen | to flee | тікати
+fortgeschritten | advanced | просунутий
+der Frisör | hairdresser | перукар
+die Frisörin | hairdresser | перукарка
+genial | great | геніальний
+hoffentlich | hopefully | сподіваюся
+jobben | to do casual/part-time work | працювати
+die Kategorie; Kategorien | category | категорія
+kaufmännisch | business | комерційний
+die Kenntnisse; Pl. | knowledge | знання (множ.)
+die Kommunikation | communication | спілкування
+kompakt | compact | компактний
+kürzen | to shorten | скорочувати
+die Kursgebühr | course fee | вартість курсу
+das Kurzprogramm | short program | коротка програма
+der Lebensweg; Lebenswege | journey through life | життєвий шлях
+die Lehre | apprenticeship | навчання
+das Lehrmaterial | teaching material | навчальний матеріал
+das Material | material | матеріал
+miserabel | miserable | нікчемний
+mittlere | middle | середній
+das Prost | Cheers! | будьмо
+die Prüfung | exam | іспит
+das Prüfungstraining | exam training | підготовка до іспиту
+der Realschulabschluss | secondary school certificate | атестат про закінчення реальної школи
+reisen | to travel | подорожувати
+rhythmisch | rhythmical | ритмічний
+schaffen | to succeed | створювати
+die Schulzeit | school days | шкільні часи
+seit | since | починаючи з
+das Semester; Semester | term | семестр
+separat | separate | окремий
+die Situation; Situationen | situation | ситуація
+städtisch | urban | міський
+die Terminplanung | scheduling | планування строків
+der Test; Tests | test | тест
+das Thema; Themen | topic | тема
+die Theorie | theory | теорія
+trainieren | to train | тренувати
+das Training | training | тренінг
+der Trick; Tricks | trick | трюк
+die Überraschung; Überraschungen | surprise | сюрприз
+die Überschrift; Überschriften | heading | заголовок
+umschreiben | to re-write | переписувати
+verlieben | to fall in love | закохуватися
+verlieren | to lose | втрачати
+Vorbereitung | preparation | підготовка
+die Vorkenntnisse; Pl. | prior knowledge | попередні знання (множ.)
+das Vorstellungsgespräch | interview | співбесіда
+die Weiterbildung; Weiterbildungen | further training | підвищення кваліфікації
+das Yoga | yoga | йога
+das Zeitmanagement | time management | управління часом
+das Zertifikat | certificate | сертифікат
+das Zeugnis | certificate | свідоцтво
+zufrieden | satisfied | задоволений
+	Wortschatz zu Lektion 6: Auf Arbeitssuche
+der Ansprechpartner | contact person | контактна особа
+die Ansprechpartnerin | contact person | контактна особа
+der Aushilfsjob | temporary job | тимчасова робота
+aussehen | to look | виглядати
+der/die Auszubildende (Azubi); Auszubildende | trainee | учень/учениця на виробництві
+der Bäckereifachverkäufer | baker's assistant | продавець хлібобулочних виробів
+die Bäckereifachverkäuferin | baker's assistant | продавчиня хлібобулочних виробів
+bedanken | to thank | дякувати
+bedienen | to serve | обслуговувати
+beeilen | to hurry | поспішати
+begründen | to justify | обґрунтовувати
+das Beratungsgespräch | consultation | консультація
+das Berufsfeld; Berufsfelder | field of work | професійна сфера
+der Bewerber | applicant | претендент на посаду
+die Bewerberin | applicant | претендентка на посаду
+bieten | to offer | пропонувати
+eindecken | to inundate | вкривати
+genug | enough | достатньо
+Grundschule | primary school | початкова школа
+handwerklich | manual | ремісничий
+das Holz | wood | деревина
+der Informatiker | IT technician | комп’ютерний спеціаліст
+die Informatikerin | IT technician | комп’ютерна спеціалістка
+die Kneipe | pub | бар
+kostenfrei | free of charge | безкоштовний
+die Küchenhilfe | kitchen assistant | помічник кухара
+die Laufbahn | career path | кар’єра
+der Lebenslauf; Lebensläufe | CV | резюме
+lückenlos | seamless | без пробілів
+melden | to notify | повідомляти
+die Mittelschule | secondary school | середня школа
+der Modedesigner | fashion designer | модельєр
+die Modedesignerin | fashion designer | модельєрка
+das Muster | pattern | зразок
+nötig | necessary | необхідний
+ob | whether | чи
+persönlich | personal | особистий
+professionell | professional | професійний
+die Reinigungsarbeiten; Pl. | cleaning jobs | прибиральні роботи (множ.)
+die Rente; Renten | retirement | пенсія
+der Restaurantfachmann | restaurant specialist | ресторатор
+die Restaurantfachfrau | restaurant specialist | рестораторка
+spezial | special | особливий
+statt | instead | замість
+die Stelle | position | посада
+das Stellenangebot | job offer | вакансія
+die Stellensuche | job search | пошук роботи
+die Struktur | structure | структура
+sympathisch | kind | симпатичний
+die Teilzeit | part-time | неповний робочий день
+die Teilzeitstelle | part-time position | робота на неповний робочий день
+tippen | to type | натискати
+der Tippfehler | typing error | орфографічна помилка
+der Tischler | carpenter | столяр
+die Tischlerin | carpenter | столярка
+üben | to practice | робити вправи
+die Übersiedlung | relocation | переселення
+unprofessionell | unprofessional | непрофесійний
+unsympathisch | unkind | несимпатичний
+unzufrieden | unsatisfied | незадоволений
+verrückt | crazy | божевільний
+das Volleyball | volleyball | волейбол
+die Vollzeit | full-time | повний робочий день
+die Vollzeitstelle | full-time position | робота на повний робочий день
+die Voraussetzung; Voraussetzungen | requirement | передумова
+die Vorlage; Vorlagen | template | шаблон
+zuverlässig | reliable | надійний

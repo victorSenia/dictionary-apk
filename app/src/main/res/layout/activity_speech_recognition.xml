@@ -27,7 +27,7 @@
                 android:layout_gravity="center_vertical"/>
     </LinearLayout>
     <TextView
-            android:text="error"
+            android:text="@string/error"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/text_result"

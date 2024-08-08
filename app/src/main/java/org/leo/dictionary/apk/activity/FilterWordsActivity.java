@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.material.slider.RangeSlider;
 import org.leo.dictionary.ExternalWordProvider;
 import org.leo.dictionary.apk.ApkAppComponent;
 import org.leo.dictionary.apk.ApkModule;
@@ -23,6 +24,7 @@ import org.leo.dictionary.apk.activity.viewadapter.StringRecyclerViewAdapter;
 import org.leo.dictionary.apk.activity.viewmodel.LanguageViewModel;
 import org.leo.dictionary.apk.activity.viewmodel.TopicViewModel;
 import org.leo.dictionary.apk.databinding.FilterWordsActivityBinding;
+import org.leo.dictionary.apk.helper.KnowledgeToRatingConverter;
 import org.leo.dictionary.apk.helper.WordCriteriaProvider;
 import org.leo.dictionary.entity.Topic;
 import org.leo.dictionary.entity.WordCriteria;
@@ -33,6 +35,8 @@ import java.util.stream.Collectors;
 public class FilterWordsActivity extends AppCompatActivity {
 
     public static final int FILTER_AFTER_SIZE = 10;
+    public static final int RANGE_FROM_INDEX = 0;
+    public static final int RANGE_TO_INDEX = 1;
 
     private static <T> List<T> getSelected(RecyclerViewFragment<T> strings) {
         if (strings != null && strings.getRecyclerViewAdapter() instanceof MultiSelectionStringRecyclerViewAdapter) {
@@ -86,10 +90,14 @@ public class FilterWordsActivity extends AppCompatActivity {
                 rootTopicViewModel.setTopic(null);
             }
         });
-        if (getWordCriteria(this).getShuffleRandom() != -1) {
-            SwitchCompat shuffle = findViewById(R.id.shuffle);
-            shuffle.setChecked(true);
+        WordCriteria wordCriteria = getWordCriteria(this);
+        if (wordCriteria.getShuffleRandom() != -1) {
+            binding.shuffle.setChecked(true);
         }
+        List<Float> knowledgeRange = new ArrayList<>(2);
+        knowledgeRange.add(wordCriteria.getKnowledgeFrom() != null ? KnowledgeToRatingConverter.knowledgeToRating(wordCriteria.getKnowledgeFrom()) : 0.0F);
+        knowledgeRange.add(wordCriteria.getKnowledgeTo() != null ? KnowledgeToRatingConverter.knowledgeToRating(wordCriteria.getKnowledgeTo()) : KnowledgeToRatingConverter.starsCount);
+        binding.knowledgeRangeSlider.setValues(knowledgeRange);
         ApkAppComponent appComponent = ((ApplicationWithDI) getApplicationContext()).appComponent;
         List<String> languagesFrom = appComponent.externalWordProvider().languageFrom();
         if (!ApkModule.isDBSource(appComponent.lastState()) || languagesFrom.isEmpty()) {
@@ -122,6 +130,7 @@ public class FilterWordsActivity extends AppCompatActivity {
         LanguageToFragment languageTo = (LanguageToFragment) getSupportFragmentManager().findFragmentById(R.id.languages_to);
         WordCriteria criteria = new WordCriteria();
         SwitchCompat shuffle = findViewById(R.id.shuffle);
+        RangeSlider knowledgeRange = findViewById(R.id.knowledge_range_slider);
         if (shuffle.isChecked()) {
             criteria.setShuffleRandom(System.currentTimeMillis());
         }
@@ -140,6 +149,15 @@ public class FilterWordsActivity extends AppCompatActivity {
         List<Topic> selectedRootTopic = getSelected(rootTopics);
         if (selectedRootTopic != null) {
             criteria.setRootTopic(selectedRootTopic.get(0).getName());
+        }
+        List<Float> range = knowledgeRange.getValues();
+        double knowledgeFrom = KnowledgeToRatingConverter.ratingToKnowledge(range.get(RANGE_FROM_INDEX));
+        if (knowledgeFrom > 0.00001) {
+            criteria.setKnowledgeFrom(knowledgeFrom);
+        }
+        double knowledgeTo = KnowledgeToRatingConverter.ratingToKnowledge(range.get(RANGE_TO_INDEX));
+        if (knowledgeTo < 0.99999) {
+            criteria.setKnowledgeTo(knowledgeTo);
         }
         return criteria;
     }

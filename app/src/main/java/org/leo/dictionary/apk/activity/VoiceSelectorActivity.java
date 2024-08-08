@@ -50,7 +50,7 @@ public class VoiceSelectorActivity extends AppCompatActivity {
             ((ApplicationWithDI) getApplicationContext()).appComponent.lastState().edit()
                     .remove(ApkModule.LAST_STATE_VOICE + language).apply();
             playTestString(this, language);
-            Toast.makeText(this, "Default voice used for " + language, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.default_voice_usage, language), Toast.LENGTH_SHORT).show();
         });
     }
 
@@ -110,7 +110,7 @@ public class VoiceSelectorActivity extends AppCompatActivity {
                         ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.lastState().edit()
                                 .putString(ApkModule.LAST_STATE_VOICE + language, viewHolder.valueToString()).apply();
                         playTestString(requireActivity(), language);
-                        Toast.makeText(requireActivity().getBaseContext(), viewHolder.valueToString() + " used for " + language, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(requireActivity().getBaseContext(), getString(R.string.voice_usage, viewHolder.valueToString(), language), Toast.LENGTH_SHORT).show();
                     }));
         }
 

@@ -95,11 +95,7 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
             if (!playService.isPlaying()) {
                 if (isAudioFocusGranted()) {
                     int index = ApkModule.getLastStateCurrentIndex(((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.lastState());
-                    if (index != -1) {
-                        playService.playFrom(index);
-                    } else {
-                        playService.play();
-                    }
+                    playService.playFrom(index);
                 }
             } else {
                 playService.pause();

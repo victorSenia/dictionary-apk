@@ -7,9 +7,7 @@ import org.leo.dictionary.entity.Word;
 import org.leo.dictionary.entity.WordCriteria;
 import org.leo.dictionary.word.provider.WordProvider;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.logging.Logger;
 
 public class DBWordProvider implements WordProvider {
@@ -71,7 +69,17 @@ public class DBWordProvider implements WordProvider {
 
     @Override
     public void updateWord(Word updatedWord) {
-        databaseManager.updateWord(updatedWord);
+        updateWord(Collections.singletonList(updatedWord));
+    }
+
+    public void updateWord(Collection<Word> words) {
+        databaseManager.executeInTransaction(() -> {
+                    for (Word updatedWord : words) {
+                        databaseManager.updateWord(updatedWord);
+                    }
+                    return words.size();
+                }
+        );
     }
 
     public void updateTopic(Topic topic) {

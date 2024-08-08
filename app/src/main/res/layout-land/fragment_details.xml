@@ -5,36 +5,58 @@
                 name="viewModel"
                 type="org.leo.dictionary.apk.activity.viewmodel.DetailsViewModel"/>
     </data>
-    <ScrollView
+    <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        <LinearLayout
+        <ScrollView
                 android:layout_width="match_parent"
+                android:layout_height="0dp" android:layout_weight="1">
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:context=".activity.fragment.DetailsFragment"
+                    android:orientation="vertical"
+                    android:visibility="@{viewModel.data==null?android.view.View.GONE:android.view.View.VISIBLE}"
+                    android:layout_gravity="center">
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/word"
+                        android:text="@{viewModel.data.fullWord}"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:gravity="bottom|center"
+                        android:textSize="64sp"
+                        android:layout_weight="1"/>
+                <TextView
+                        android:visibility='@{viewModel.data.additionalInformation==null||viewModel.data.additionalInformation.empty?android.view.View.GONE:android.view.View.VISIBLE}'
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/additional_information"
+                        android:text='@{viewModel.data.additionalInformation}'
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:gravity="center|top"
+                        android:textSize="40sp"
+                        android:layout_weight="1"/>
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/translation"
+                        android:text='@{viewModel.data.getFormattedTranslations("\n")}'
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:gravity="center|top"
+                        android:textSize="50sp"
+                        android:layout_weight="1"/>
+            </LinearLayout>
+        </ScrollView>
+        <RatingBar
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:context=".activity.fragment.DetailsFragment"
-                android:orientation="vertical"
-                android:visibility="@{viewModel.data==null?android.view.View.GONE:android.view.View.VISIBLE}"
-                android:layout_gravity="center">
-
-            <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/word"
-                    android:text="@{viewModel.data.fullWord}"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                    android:gravity="bottom|center"
-                    android:textSize="64sp"
-                    android:layout_weight="1"/>
-            <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/translation"
-                    android:text='@{viewModel.data.getFormattedTranslations("\n")}'
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                    android:gravity="center|top"
-                    android:textSize="50sp"
-                    android:layout_weight="1"/>
-
-        </LinearLayout>
-    </ScrollView>
+                android:id="@+id/knowledgeBar"
+                android:stepSize="1"
+                android:numStars="@{org.leo.dictionary.apk.helper.KnowledgeToRatingConverter.starsCount}"
+                android:rating="@{org.leo.dictionary.apk.helper.KnowledgeToRatingConverter.knowledgeToRating(viewModel.data.knowledge)}"
+                android:layout_gravity="end"
+                android:isIndicator="false"/>
+    </LinearLayout>
 </layout>
