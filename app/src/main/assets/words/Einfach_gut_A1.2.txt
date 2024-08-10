@@ -170,7 +170,7 @@ der Krankenpfleger; Krankenpfleger | nurse | медбрат
 die Krankenschwester; Krankenschwestern | nurse | медсестра
 kreativ | people | креативний
 langweilig | boring | нудний
-die Leute (Pl.) | people | люди (множ.)
+die Leute; Pl. | people | люди (множина)
 die Mathematik | mathematics | математика
 der Mechaniker; Mechaniker | mechanic | механік
 der Mensch; Menschen | person | людина
@@ -221,7 +221,7 @@ der Arm; Arme | arm | рука
 atmen | to breathe | дихати
 das Auge; Augen | eye | око
 der Bauch | stomach | живіт
-die Bauchschmerzen (Pl.) | stomach ache | біль у животі
+die Bauchschmerzen; Pl. | stomach ache | біль у животі
 das Bein; Beine | leg | нога
 der Bescheid | notice (I'll let you know) | інформація
 die Besserung | recovery | покращення
@@ -260,7 +260,7 @@ der Husten | cough | кашель
 Hustensaft | cough syrup | сироп від кашлю
 das Knie; Knie | knee | коліно
 der Kopf; Köpfe | head | голова
-die Kopfschmerzen (Pl.) | headache | головний біль
+die Kopfschmerzen; Pl. | headache | головний біль
 der Körper; Körper | body | тіло
 der Körperteil; Körperteile | body part | частина тіла
 krank | ill | хворий
@@ -398,7 +398,7 @@ die Jeans; Jeans | jeans | джинси
 der Jogginganzug | tracksuit | біговий костюм
 der Kassenbon | receipt | чек
 das Kaufhaus; Kaufhäuser | department store | універмаг
-die Klamotten (Pl.) | clothes | одяг
+die Klamotten; Pl. | clothes | одяг
 klasse | great | чудово
 das Kleid; Kleider | dress | сукня
 die Kleidung; Kleidung | clothing | одяг

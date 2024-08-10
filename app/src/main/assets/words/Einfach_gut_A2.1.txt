@@ -1,4 +1,4 @@
-org.leo.dictionary.config.entity.ParseWords:de:en;uk:die+;das+;der+:%5C%7C:%3B:%3B:%5Ct::Einfach+gut+A2.1
+org.leo.dictionary.config.entity.ParseWords:de:en;uk:die+;das+;der+;der/die+:%5C%7C:%3B:%3B:%5Ct::Einfach+gut+A2.1
 	Wortschatz zu Lektion 1: Chatten, mailen, sich informieren
 die Abendkasse | box offce | вечірня каса
 abholen | to collect | забирати
@@ -314,7 +314,7 @@ die Eheschließung; Eheschließungen | marriage | укладення шлюбу
 das Einwohnermeldeamt | registration office | офіс реєстрації мешканців
 der Enkel | grandson | онук
 die Enkelin | grandson | онука
-das Enkelkind; Enkelkinder | grandchild | онук/онука
+das Enkelkind; Enkelkinder | grandchild | онук; онука
 entschuldigen | to excuse | вибачатися
 das Familienbuch | family register | сімейна книга
 die Familienkasse | family class | сімейна каса
@@ -343,7 +343,7 @@ die Nichte; Nichten | niece | племінниця
 notieren | to note | записувати
 der Personalausweis | personal ID | посвідчення особи
 der Reisepass; Reisepässe | passport | закордонний паспорт
-die Schwiegereltern; Pl. | parents-in-law | свати (множ.)
+die Schwiegereltern; Pl. | parents-in-law | свати (множина)
 die Staatsangehörigkeit | nationality | громадянство
 das Team | team | команда
 der Teil | part | частина

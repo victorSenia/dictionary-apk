@@ -1,6 +1,6 @@
 org.leo.dictionary.config.entity.ParseWords:fr:en;uk:le+;la+;les+;l%27:%5C%7C:%3B:%3B:%5Ct::Collins+French+3000
 
-	 l'essentiel | the essentials
+	l'essentiel | the essentials
 l'essentiel | the essentials | найнеобхідніше
 
 rouge | red | червоний
@@ -49,7 +49,7 @@ D'où venez-vous ? | Where are you from? | Звідки ти родом?
 
 Où habitez-vous ? | Where do you live? | Де ти живеш?
 Je viens... | I'm from... | Я з...
-... du Royaume-Uni. | ... the UK. | ... Сполучене Королівство.
+du Royaume-Uni. | the UK. | Сполучене Королівство.
 J'habite à... | I live in... | Я живу в...
 Je suis... | I'm... | Мені...
 écossais | Scottish | шотландський
@@ -271,8 +271,8 @@ Il est dix heures moins le quart. | It's quarter to ten. | За чверть д�
 Il est dix heures moins cinq. | It's five to ten. | За п'ять десята.
 Il est dix-sept heures trente. | It's 17:30. | Зараз 17:30.
 Quand...? | When...? | Коли...?
-... dans 60 secondes / deux minutes. | ... in 60 seconds / two minutes. | ... за 60 секунд / дві хвилини.
-... dans un quart d'heure / une demiheure / une heure. | ... in quarter of an hour / half an hour / an hour. | ... через чверть години / півгодини / годину.
+dans 60 secondes / deux minutes. | ... in 60 seconds / two minutes. | ... за 60 секунд / дві хвилини.
+dans un quart d'heure / une demiheure / une heure. | ... in quarter of an hour / half an hour / an hour. | ... через чверть години / півгодини / годину.
 tôt | early | рано
 en retard | late | пізно; затримується
 bientôt | soon | скоро

@@ -52,7 +52,7 @@ Ich bin älter / jünger als... | I'm older / younger than... | Я старши�
 Wo kommen Sie her? | Where are you from? | Звідки ти родом?
 Wo wohnen Sie? | Where do you live? | Де ти живеш?
 Ich komme aus... | I'm from... | Я з...
-... dem Vereinigten Königreich. | ... the UK. | ...Сполучене Королівство.
+dem Vereinigten Königreich. | the UK. | Cполучене Королівство.
 Ich wohne in... | I live in... | Я живу в...
 Ich bin... | I'm... | Мені...
 schottisch | Scottish | шотландський
@@ -266,9 +266,9 @@ Es ist zehn Uhr (morgens). | It's 10 a.m. | Зараз десята година
 Es ist fünf Uhr (abends). | It's 5 p.m. | Зараз п'ята година (вечора).
 Es ist siebzehn Uhr dreißig. | It's 17:30. | Зараз 17:30.
 Wann...? | When...? | Коли...?
-... in 60 Sekunden / zwei Minuten. | ... in 60 seconds / two minutes. | ... за 60 секунд / дві хвилини.
-... in einer Stunde / halben Stunde. | ... in an hour / half an hour. | ... через годину / півгодини.
-... in einer Viertelstunde. | ... in quarter of an hour. | ... через чверть години.
+in 60 Sekunden / zwei Minuten. | in 60 seconds / two minutes. | за 60 секунд / дві хвилини.
+in einer Stunde / halben Stunde. | in an hour / half an hour. | через годину / півгодини.
+in einer Viertelstunde. | in quarter of an hour. | через чверть години.
 heute | today | сьогодні
 heute Abend | tonight | сьогодні ввечері
 morgen | tomorrow | завтра

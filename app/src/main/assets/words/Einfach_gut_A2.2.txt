@@ -1,4 +1,4 @@
-org.leo.dictionary.config.entity.ParseWords:de:en;uk:die+;das+;der+:%5C%7C:%3B:%3B:%5Ct::Einfach+gut+A2.2
+org.leo.dictionary.config.entity.ParseWords:de:en;uk:die+;das+;der+;der/die+:%5C%7C:%3B:%3B:%5Ct::Einfach+gut+A2.2
 	Wortschatz zu Lektion 7: Ein Einkaufsbummel
 die Accessoires; Pl. | accessories | аксесуари (множина)
 anhaben | to be wearing | носити
@@ -10,7 +10,7 @@ die Badesachen; Pl. | swimwear | купальні приналежності (м
 der Bart; Bärte | beard | борода
 die Bekleidung | clothing | одяг
 bestimmt | surely | звичайно
-blond | blond | блондин/блондинка
+blond | blond | блондин; блондинка
 braten | to roast | смажити
 bummeln | to stroll | гуляти
 bunt | colourful | барвистий

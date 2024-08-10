@@ -323,11 +323,11 @@ public class MainActivity extends AppCompatActivity {
         DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
         String[] items = wordProvider.languageFrom().toArray(new String[0]);
         if (items.length > 0) {
-            builder.setMessage(R.string.languages_to_delete);
+            builder.setTitle(R.string.languages_to_delete);
             DialogInterface.OnClickListener onClickListener = (dialog, position) -> consumer.accept(items[position]);
             builder.setItems(items, onClickListener);
         } else {
-            builder.setMessage(R.string.no_languages);
+            builder.setTitle(R.string.no_languages);
         }
         return builder;
     }

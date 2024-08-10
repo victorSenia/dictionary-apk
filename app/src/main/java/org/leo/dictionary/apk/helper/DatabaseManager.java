@@ -280,7 +280,8 @@ public class DatabaseManager {
             where += " AND w." + DatabaseHelper.WORD_COLUMN_KNOWLEDGE + " <= ?";
             selectionArgs.add(criteria.getKnowledgeTo().toString());
         }
-        Cursor cursor = getDatabase().rawQuery(sql + where + " ORDER BY " + DatabaseHelper.COLUMN_ID, !selectionArgs.isEmpty() ? selectionArgs.toArray(selectionArgs.toArray(new String[0])) : null);
+        String orderBy = criteria.getShuffleRandom() != -1 ? DatabaseHelper.COLUMN_ID : DatabaseHelper.COLUMN_LANGUAGE + ", " + DatabaseHelper.WORD_COLUMN_WORD;
+        Cursor cursor = getDatabase().rawQuery(sql + where + " ORDER BY " + orderBy, !selectionArgs.isEmpty() ? selectionArgs.toArray(selectionArgs.toArray(new String[0])) : null);
         cursor.moveToFirst();
         return cursor;
     }

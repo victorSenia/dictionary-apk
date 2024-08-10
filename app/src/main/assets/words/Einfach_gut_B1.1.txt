@@ -1,0 +1,612 @@
+org.leo.dictionary.config.entity.ParseWords:de:en;uk:die+;das+;der+;der/die+:%5C%7C:%3B:%3B:%5Ct::Einfach+gut+B1.1
+	Wortschatz zu Lektion 1: Gute Reise!
+der Abfall; Abfälle | rubbish | відходи
+der Abflug | departure | виліт
+die Absage | cancellation | відмова
+aktiv | active | активний
+der Alkohol | alcohol | алкоголь
+angenehm | pleasant | приємний
+annulliert | cancelled | скасований
+die Anzeigetafel; Anzeigetafeln | bulletin board | табло
+der Aufruf | call | виклик
+der Ausgang; Ausgänge | exit | вихід
+die Ausstattung | equipment | оснащення
+der Behälter; Behälter | container | ємність
+betreten | to enter | входити
+der Bewohner; Bewohner | resident | мешканець
+die Bewohnerin; Bewohnerinnen | resident | мешканка
+die Bordkarte | boarding pass | посадковий талон
+der Camper; Camper | camper | кемпер
+die Camperin; Camperinnen | camper | кемперка
+der Campingplatz; Campingplätze | campsite | кемпінг
+der Check-in-Schalter | check-in desk | вікно реєстрації
+der Container; Container | container | контейнер
+die Dienstreise | business trip | відрядження
+das Doppelbett; Doppelbetten | double bed | подвійне ліжко
+das Doppelzimmer (DZ); Doppelzimmer | double room | двомісний номер (DR)
+einchecken | to check-in | реєструватися на вході
+die Einsteigezeit | boarding time | час посадки
+das Einzelzimmer (EZ) | single room | одномісний номер (SR)
+erleben | to experience | переживати
+der Flug; Flüge | flight | політ
+der Flugbegleiter; Flugbegleiter | flight attendant | бортпровідник
+die Flugbegleiterin; Flugbegleiterinnen | flight attendant | бортпровідниця
+der Fluggast; Fluggäste | passenger | пасажир літака
+die Fluggesellschaft; Fluggesellschaften | airline | авіакомпанія
+führen | to lead | вести
+füttern | to feed | годувати
+das Gate | gate | вихід до літака
+das Gepäck | luggage | багаж
+die Gepäckausgabe | baggage reclaim | отримання багажу
+das Gepäckband | luggage belt | конвеєр для видачі багажу
+gestattet sein | to be permitted | бути дозволеним
+die Halbpension (HP) | half-board | напівпансіон (HB)
+das Handgepäck | hand luggage | ручна поклажа
+historisch | historical | історичний
+das Hostel | hostel | хостел
+hygienisch | hygienic | гігієнічний
+das Inlineskaten | inline skating | катання на роликових ковзанах
+die Jugendherberge; Jugendherbergen | youth hostel | молодіжна турбаза
+der Katalog; Kataloge | catalogue | каталог
+klettern | to climb | лазити по скелях
+komfortabel | comfortable | зручний
+die Lage | site | позиція
+das Lagerfeuer | campfire | багаття
+landen | to land | приземлюватися
+der Lärm | noise | шум
+die Lautsprecherdurchsage; Lautsprecherdurchsagen | tannoy announcement | оголошення через гучномовець
+lebhaft | lively | жвавий
+die Leine | rope | мотузка
+der Leuchtturm; Leuchttürme | lighthouse | маяк
+der Meerblick | seaview | вид на море
+mitten | middle | посередині
+der Nebel | fog | туман
+neblig | foggy | туманний
+das Paradies | paradise | рай
+der Passagier; Passagiere | passenger | пасажир
+die Passagierin; Passagierinen| passenger | пасажирка
+die Passkontrolle | passport control | паспортний контроль
+der Pilotenstreik | pilot strike | страйк пілотів
+der Pool | pool | басейн
+rechtzeitig | on time | своєчасний
+das Reisebüro | travel agency | туристичне агентство
+der Reiseplan; Reisepläne | itinerary | маршрут подорожі
+die Reiseplanung | travel planning | планування подорожі
+reiten | to ride | їздити верхи
+die Ruhezeit; Ruhezeiten | rest period | час для відпочинку
+sauber | clean | чистий
+die Sauberkeit | cleanliness | чистота
+der Schalter; Schalter | desk | стійка реєстрації
+die Schlange | snake | черга
+der Sonnenschirm; Sonnenschirme | parasol | пляжна парасолька
+die Sonnenterrasse; Sonnenterrassen | sun terrace | сонячна тераса
+der Sonnenuntergang; Sonnenuntergänge | sunset | захід сонця
+der Stern; Sterne | star | зірка
+stören | to disturb | заважати
+das Streichholz; Streichhölzer | match | сірник
+streiken | to strike | страйкувати
+die Taschenlampe | torch | ліхтарик
+das Taschenmesser | pocket knife | кишеньковий ніж
+traumhaft | wonderful | казковий
+übernachten | to stay overnight | ночувати
+die Übernachtung | overnight stay | ночівля
+die Übernachtung mit Frühstück (ÜF) | overnight stay with breakfast | ночівля зі сніданком (B&B)
+die Umgebung | surroundings | оточення
+umgehend | immediately | негайний
+verärgert | annoyed | роздратований
+verreisen | to travel | рушати в подорож
+verschieben | to postpone | переносити
+der Wanderer | hiker | мандрівник
+die Wandertour; Wandertouren | walking tour | пішохідний тур
+der Waschraum; Waschräume | laundry room | туалет
+der Wohnwagen | caravan | житловий фургон
+das Zelt | tent | палатка
+der Zoll | customs | митниця
+der Zuschlag; Zuschläge | fees | доплата
+	Wortschatz zu Lektion 2: Liebe Nachbarn …
+absprechen | to arrange | домовлятися
+der Abstellplatz; Abstellplätze | parking space | парковка
+akzeptieren | to accept | приймати
+anstreichen | to paint | фарбувати
+der Ärger | trouble | злість
+ärgerlich | annoying | сердитий
+die Aufregung | commotion | збудження
+die Ausnahme | exception | виняток
+das Balkongeländer | balcony railing | балконні перила
+befestigen | to secure | кріпити
+behalten | to keep | залишати собі
+beleidigen | to offend | ображати
+die Beleidigung; Beleidigungen | insult | образа
+berechtigt | justified | виправданий
+beschimpfen | to insult | лаяти
+die Beschimpfung; Beschimpfungen | swear | лайка
+beschweren | to complain | скаржитися
+der Blumentopf; Blumentöpfe | flower pot | горщик для рослин
+bohren | to drill | свердлити
+deswegen | that is why | через це
+dumm | stupid | дурний
+eilig | urgent | поспішливий
+einhalten | to comply | дотримуватися
+einlegen | to insert | вкладати
+einstellen | to set up | налаштовувати
+enden | to end | закінчувати
+die Entscheidung; Entscheidungen | decision | рішення
+entspannend | relaxing | розслаблюючий
+entsprechen | to correspond to | відповідати
+erhöhen | to increase | підвищувати
+erleichtern | to relieve | полегшувати
+erwähnen | to mention | згадувати
+eskalieren | to escalate | повідомляти на вищий рівень
+exotisch | exotic | екзотичний
+fair | fair | справедливий
+festkleben | to stick | приклеювати
+die Freude | joy | радість
+die Frist; Fristen | deadline | кінцевий термін
+fristgerecht | punctual | вчасний
+fristlos | without notice | безстроковий
+der Gemeinschaftsraum; Gemeinschaftsräume | common room | загальна кімната
+gesetzlich | legal | за законом
+hämmern | to hammer | бити молотком
+heizen | to heat | нагрівати
+die Instandhaltung | maintenance | технічне обслуговування
+klug | clever | розумний
+der Konflikt; Konflikte | conflict | конфлікт
+die Kündigung | termination | звільнення
+lüften | to air | провітрювати
+massiv | solid | масивний
+meckern | to whinge | нарікати
+das Meerschweinchen | guinea pig | морська свинка
+die Mieterhöhung | rent increase | підвищення орендної плати
+der Mietspiegel | rent index | таблиця орендної плати
+der Mietvertrag; Mietverträge | rental contract | договір оренди
+die Modernisierung | modernisation | модернізація
+nachsehen | to check | перевіряти
+neugierig | curious | цікавий
+obwohl | although | хоча
+offenbar | obvious | очевидно
+protestieren | to protest | протестувати
+der Richter; Richter | judge | суддя
+die Richterin; Richterinnen | judge | суддя
+die Rücksicht | consideration | повага
+sammeln | to collect | збирати
+sauer | sour | кислий
+der Schaden; Schäden | damages | пошкодження
+schmutzig | dirty | брудний
+selbstverständlich | of course | звичайно
+sinnlos | meaningless | безглуздий
+sinnvoll | meaningful | розумний
+sortieren | to sort | сортувати
+stinken | to stink | смердіти
+streiten | to argue | сперечатися
+total | totally | всього
+treu | faithful | вірний
+überlegen | to think about | роздумувати
+üblich | normal | звичний
+unglaublich | unbelievable | неймовірний
+das Unrecht | unjust | несправедливість
+das Urteil | judgement | вирок
+vergleichbar | comparable | порівнянний
+verpflichten | to compel | зобов’язати
+das Verständnis | understanding | розуміння
+der Verstoß; Verstöße | violation | порушення
+verstoßen | to violate | порушувати
+völlig | completely | повністю
+vorher | before | раніше
+wegräumen | to clear away | прибирати
+der Widerspruch; Widersprüche | contradiction | суперечність
+wütend | angry | розлючений
+der Zeitraum; Zeiträume | time frame | проміжок часу
+ziemlich | rather | доволі
+die Zimmerlautstärke | room volume | помірна гучність
+zugeben | to admit | визнавати
+zurücklassen | to leave behind | залишати
+das Zusammenleben | life together | жити разом
+zustimmen | to agree | згоджуватися
+der Zutritt | access | доступ
+	Wortschatz zu Lektion 3: Ein Schulprojekt zum Umweltschutz
+das Abgas; Abgase | exhaust gas | вихлопні гази
+das Abwasser | sewage | стічні води
+das Altöl | waste oil | відпрацьована олія
+das Altpapier | waste paper | макулатура
+das Aluminium | aluminium | алюміній
+andauernd | lasting | тривалий
+ankündigen | to announce | анонсувати
+anstatt | instead | замість
+die Begleitperson | accompanying person | супутник
+belasten | to pollute | навантажувати
+die Belastung | pollution | навантаження
+beobachten | to observe | спостерігати
+der Beutel; Beutel | bag | сумка
+biologisch | biological | біологічний
+die Chemikalie; Chemikalien | chemicals | хімікат
+der Deckel | lid | кришка
+doof | stupid | нецікавий
+der Eierkarton; Eierkartons | egg box | коробка для яєць
+die Eierschale; Eierschalen | egg shell | яєчна шкаралупа
+einfallen | to occur | приходити на думку
+das Elektroauto | electric car | електромобіль
+das Energiesparhaus | energy efficient house | енергозберігаючий будинок
+die Energiesparlampe | energy efficient bulb | енергозберігаюча лампа
+das Erdbeben | earthquake | землетрус
+die Erde | earth | земля
+die Erderwärmung | global warming | глобальне потепління
+die Erlaubnis | permission | дозвіл
+der Förster; Förster | woodsman | лісничий
+die Försterin; Försterinnen | woodsman | ліснича
+der Gegenstand; Gegenstände | object | предмет
+der Gegenvorschlag; Gegenvorschläge | counterproposal | зустрічна пропозиція
+giftig | toxic | отруйний
+der Haushalt | household | домогосподарство
+das Hochwasser | high-tide | повінь
+der Hörer; Hörer | listener | слухач
+die Hörerin; Hörerinnen | listener | слухачка
+der Kaffeefilter | coffee filter | кавовий фільтр
+das Klima | climate | клімат
+der Klimawandel | climate change | зміна клімату
+die Konservendose | preserving jars | консервна банка
+der Kunststoff; Kunststoffe | synthetic material | пластик
+die Luft | air | повітря
+die Matratze | mattress | матрац
+das Metall | metal | метал
+der Milchkarton | milk carton | молочна коробка
+die Mülltonne | rubbish bin | бак для сміття
+die Mülltrennung | waste separation | сортування сміття
+die Naturkatastrophe | natural disaster | природна катастрофа
+das Naturprodukt; Naturprodukte | natural product | натуральний продукт
+die Obstschale; Obstschalen | fruit skin | миска з фруктами
+der Papiermüll | paper waste | паперові відходи
+die Pappe | cardboard | картон
+das Picknick | picnic | пікнік
+der Planet; Planeten | planet | планета
+das Plastik | plastic | пластик
+recyceln | to recycle | переробляти
+der Sack; Säcke | bag | мішок
+die Sammelstelle | collection point | пункт збору
+schädigen | to damage | шкодити
+schädlich | harmful | шкідливий
+der Schadstoff; Schadstoffe | hazardous substance | забруднювач
+schützen | to protect | захищати
+die Solarenergie | solar energy | сонячна енергія
+der Sondermüll | hazardous waste | небезпечні відходи
+der Sonnenschein | sunshine | сонячне світло
+die Sorge | worry | турбота
+sparsam | economical | економний
+der Sperrmüll | bulky waste | великогабаритні відходи
+stattfinden | to take place | відбуватися
+der Tierschutz | animal protection | захист тварин
+das Trinkwasser | drinking water | питна вода
+trüb | gloomy | непрозорий
+der Tsunami | tsunami | цунамі
+der Turm | tower | вежа
+umdrehen | to turn around | обертати
+umgehen | to go round | обходити
+umweltfreundlich | environmentally friendly | безпечний для довкілля
+der Umweltschutz | environmental protection | охорона навколишнього середовища
+die Umweltverschmutzung | environmental pollution | забруднення навколишнього середовища
+das Unwetter; Unwetter | thunderstorm | непогода
+verändern | to change | змінювати
+verlaufen | to continue | губитися
+verschmutzen | to contaminate | забруднювати
+verschwenden | to disappear | витрачати марно
+die Verschwendung | waste | марнотратство
+versprechen | to promise | обіцяти
+verwerten | to exploit | використовувати повторно
+voraussichtlich | provisionally | очікуваний
+vorhersagen | to predict | прогнозувати
+wahrscheinlich | probably | вірогідний
+wegschmeißen; ugs. | to chuck out | викидати (розмовн.)
+wegwerfen | to throw away | викидати
+der Wertstoff; Wertstoffe | recyclable material | матеріал, придатний для переробки
+der Wind | wind | вітер
+die Windel; Windeln | nappy | пелюшка
+der Wirbelsturm; Wirbelstürme | hurricane | ураган
+die Wolke; Wolken | cloud | хмара
+zerstören | to destroy | руйнувати
+die Zerstörung | destruction | руйнування
+die Zigarettenkippe; Zigarettenkippen | cigarette butts | недопалок
+zurückfahren | to go back | їхати назад
+	Wortschatz zu Lektion 4: Online einkaufen
+AGB (= Allgemeine Geschäftsbedingungen) | General T&C (General terms and conditions) | загальні комерційні умови
+anfassen | to touch | торкатися
+die Anprobe | fitting room | примірка
+anprobieren | to try on | приміряти
+die Art; Arten | type | вид
+die Artikelnummer; Artikelnummern | item number | номер артикулу
+die Atmung | breathing | дихання
+atmungsaktiv | breathable | газопроникний
+aufmerksam | attentive | уважний
+der Auftrag | order | замовлення
+die Auftragsnummer | order number | номер замовлення
+ausliefern | to deliver | доставляти
+die Auswahl | selection | вибір
+der Bankeinzug | direct debit | списання з банківського рахунку
+bereits | already | вже
+beschädigt | damaged | пошкоджений
+die Bestellhotline | order hotline | гаряча лінія для замовлень
+der Betrag; Beträge | sum | сума
+der Bezahlvorgang; Bezahlvorgänge | payment process | процес оплати
+das Callcenter | call centre | колл-центр
+der Datenschutz | data protection | захист даних
+dicht | thick | щільний
+durchlässig | permeable | проникний
+ebenso | as well | також
+eher | rather | скоріше
+das Eigentum | property | власність
+die Ergänzung; Ergänzungen | addition | доповнення
+erhältlich | available | доступний
+eventuell | possible | можливо
+falls | in case | якщо
+der Gutschein | voucher | ваучер
+herstellen | to manufacture | виробляти
+die Herstellung | manufacture | виготовлення
+das Impressum | imprint | вихідні дані
+innerhalb | within | протягом
+irgendwie | somehow | якось
+der Kauf | purchase | покупка
+die Kaufbestätigung | purchase confirmation | підтвердження покупки
+der Käufer; Käufer | customer | покупець
+die Käuferin; Käuferinnen | customer | покупчиня
+der Kaufvertrag | sales contract | договір купівлі-продажу
+die Kosmetik | cosmetics | косметика
+die Kundenbefragung | customer survey | опитування клієнтів
+kundenfreundlich | customer friendly | зручний для клієнтів
+das Lager | warehouse | склад
+lieferbar | in stock | готовий до доставки
+die Lieferbedingung; Lieferbedingungen | delivery conditions | умова доставки
+die Lieferung | delivery | доставка
+luftdurchlässig | breathable | повітропроникний
+die Mehrkosten; Pl. | extra costs | додаткові витрати (множина)
+die Nachnahme | cash on delivery | післяплата
+der Nachteil | disadvantage | недолік
+der Onlineeinkauf | online shopping | онлайн-покупка
+der Onlineshop | online shop | інтернет-магазин
+das Onlineshopping | online shopping | онлайн-шопінг
+das Paket | parcel | пакунок
+der Paketbote | parcel carrier | доставник посилок
+der Paketdienst | parcel service | служба доставки
+das Porto | postage | поштові витрати
+portofrei | postage paid | безкоштовна поштова доставка
+die Portokosten; Pl. | postage | поштові витрати (множина)
+produzieren | to produce | виробляти
+die Qualität | quality | якість
+die Reklamation; Reklamationen | complaint | претензія
+die Retoure; Retouren | return order | повернення товару
+der Retourenschein | return order slip | накладна на повернення
+die Rücksendung | return delivery | зворотне пересилання
+das Shopping | shopping | шопінг
+unverbindlich | non-binding | такий, що не накладає зобов’язань
+der Verbraucher; Verbraucher | consumer | споживач
+die Verbraucherin; Verbraucherinnen | consumer | споживачка
+verpacken | to package | пакувати
+der Versand | shipping | відправлення
+die Versandkosten; Pl. | shipping fee | вартість доставки (множина)
+versandkostenfrei | free of shipping costs | з безкоштовною доставкою
+die Versandkostenpauschale | flat shipping rate | загальна плата за доставку
+versenden | to send | надсилати
+die Ware; Waren | goods | товар
+der Warenkorb | basket | візок
+wasserdicht | waterproof | водонепроникний
+der Werktag; Werktage | working day | робочий день
+wetterfest | waterproof | атмосферостійкий
+widerrufen | disclaimer | відкликати
+das Widerrufsrecht | right of revocation | право на відкликання
+die Zahlung | payment | платіж
+zurückschicken | to send back | надсилати назад
+zurücksenden | to send back | надсилати назад
+zurücktreten | to withdraw | розривати (договір)
+zustellen | to deliver | доставляти
+	Wortschatz zu Lektion 5: Fernsehen und Unterhaltung
+das Alter | age | вік
+anschauen | to look at | дивитися
+der Anstoß | stimulus | удар
+anstrengend | tiring | важкий
+das Autorennen | motor racing | автопробіг
+befragen | to consult | опитувати
+begeistern | to inspire | надихати
+beliebt | popular | популярний
+der Biergarten | beer garden | пивний двір
+das Boxen | boxing | бокс
+die Chips; Pl. | crisps | чіпси (множина)
+demnächst | soon | скоро
+die Detektivgeschichte | detective story | детективна історія
+das Diagramm | diagram | діаграма
+die Diskussion | discussion | обговорення
+die Dokumentation (Doku); Dokumentationen (Dokus) | documentary | документація
+doppelt | doubled | подвійний
+dramatisch | dramatic | драматичний
+der Durchschnitt | average | середнє
+die DVD | DVD | DVD
+ehrlich | honest | чесний
+einschlafen | to fall asleep | заснути
+einsetzen | to use | використовувати
+das Eishockey | ice hockey | хокей
+der Eiskunstlauf | ice skating | фігурне катання
+entstehen | to result | виникати
+das Ereignis; Ereignisse | event | подія
+erfolgreich | successful | успішний
+das Ergebnis; Ergebnisse | result | результат
+der Experte; Experten | expert | експерт
+die Expertin; Expertinnen | expert | експертка
+der Fan; Fans | fan | вентилятор
+der Fußballclub | football club | футбольний клуб
+die Gewohnheit; Gewohnheiten | habit | звичка
+das Golf | golf | гольф
+der Handball | hand ball | гандбол
+das Herz | heart | серце
+der Horrorfilm | horror film | фільм жахів
+der Kandidat; Kandidaten | candidate | кандидат
+die Kandidatin; Kandidatinnen | candidate | кандидатка
+der Kommissar; Kommissare | commissioner | комісар
+die Kommissarin; Kommissarinnen | commissioner | комісарка
+der Kommentator; Kommentatoren | commentator | коментатор
+die Kommentatorin; Kommentatorinnen | commentator | коментаторка
+die Komödie; Komödien | comedy | комедія
+der Krimi; Krimis | crime thriller | кримінал
+kuscheln | to cuddle | обійматися
+die Langeweile | boredom | нудьга
+die Leichtathletik | athletics | легка атлетика
+die Lieblingsbeschäftigung | favourite pastime | хобі
+das Magazin | magazine | журнал
+die Mannschaft | team | команда
+die Mehrheit | majority | більшість
+die Minderheit | minority | меншість
+mitreden | to have a say | підтримувати розмову
+das Mittelfeld | mid-field | центр поля
+die Moderation | presentation | коментування
+der Mord | murder | вбивство
+motiviert | motivated | мотивований
+naschen | to snack | ласувати
+die Niederlage | defeat | поразка
+objektiv | objective | об’єктивний
+die Quizshow | quiz show | вікторина
+das Radrennen | cycling race | велоперегони
+die Rangliste | league table | рейтинг
+das Rätsel; Rätsel | puzzle | загадка
+die Reportage | report | репортаж
+der Reporter; Reporter | reporter | репортер
+die Reporterin; Reporterinnen | reporter | репортерка
+retten | to rescue | рятувати
+romantisch | romantic | романтичний
+die Runde | round | раунд
+schalten | to switch | перемикати
+der Schiedsrichter | referee | спортивний суддя
+schießen | to shoot | стріляти
+die Seifenoper; Seifenopern | soap opera | мильна опера
+die Sendung; Sendungen | programme | передача
+die Serie; Serien | series | серія
+siegen | to win | перемагати
+der Sieger; Sieger | winner | переможець
+die Siegerin; Siegerinnen | winner | переможиця
+der Skisport | ski sport | лижний спорт
+die Soap | soap opera | мило
+spannend | exciting | захоплюючий
+der Spieler; Spieler | player | гравець
+die Spielerin; Spielerinnen | player | гравчиня
+der Spielfilm | feature film | художній фільм
+das Stadion | stadium | стадіон
+die Statistik | statistics | статистика
+der Tagesablauf | daily routine | розпорядок дня
+die Talkshow | talk show | ток-шоу
+das Tor; Tore | goal | гол
+der Torwart | goalee | воротар
+die Torwartin | goalee | воротарка
+der/die Tote; Toten | dead people | покійник
+die Übertragung | transmission | передача
+unentschieden | undecided | нічия
+ungesund | unhealthy | нездоровий
+die Unterhaltung | entertainment | розваги
+der Verlierer; Verlierer | loser | той, хто програв
+die Verliererin; Verliererinnen | loser | та, хто програв
+die Weltmeisterschaft (WM) | World cup | Чемпіонат світу (WM)
+weshalb | which is why | чому
+zappen | to channel surf | перемикати телеканали
+der Zeichentrickfilm | animated film | мультфільм
+die Zeitverschwendung | waste of time | марна трата часу
+der Zuschauer; Zuschauer | viewer | глядач
+die Zuschauerin; Zuschauerinnen | viewer | глядачка
+	Wortschatz zu Lektion 6: So war das damals … 
+der/die Alliierte; Alliierten | allies | союзник
+die Amtssprache; Amtssprachen | official language | ділова мова
+anfangs | initially | спочатку
+anheben | to raise | піднімати
+die Arbeitskraft; Arbeitskräfte | workforce | працівник; працівниця
+die Arbeitslosigkeit | unemployment | безробіття
+der Astronaut; Astronauten | astronaut | космонавт
+die Astronautin; Astronautinnen | astronaut | космонавтка
+das Asyl | asylum | притулок
+aufschreiben | to write down | записувати
+aufteilen | to divide | ділити
+der Auswanderer; Auswanderer | emigrant | емігрант
+die Auswanderung | emigration | еміграція
+die Besatzungszone; Besatzungszonen | occupied zone | зона окупації
+besiegen | to conquer | побороти
+der Bundeskanzler | federal chancellor | канцлер
+die Bundeskanzlerin | federal chancellor | канцлерка
+die Bundesrepublik (BRD) | federal republic (FRG) | Федеративна Республіка Німеччина (ФРН)
+der Bürger; Bürger | citizen | громадянин
+die Bürgerin; Bürgerinnen | citizen | громадянка
+der Bürgerkrieg | civil war | громадянська війна
+die Demokratie | democracy | демократія
+demokratisch | democratic | демократичний
+die Demonstration; Demonstrationen | demonstration | демонстрація
+die Deutsche Demokratische Republik (DDR) | German democratic republic (GDR) | Німецька Демократична Республіка (НДР)
+ehemalig | former | колишній
+einführen | to introduce | ввозити
+einsperren | to confine | ув’язнювати
+die Einwanderung | immigration | імміграція
+emotional | emotional | емоційний
+entwickeln | to develop | розвивати
+erinnern | to remember | згадувати
+die Erinnerung; Erinnerungen | memory | нагадування
+ernähren | to feed | годувати
+die Europäische Union (EU) | European union | Європейський Союз (ЄС)
+die Euroeinführung | introduction of the Euro | введення євро
+der Flüchtling; Flüchtlinge | refugee | біженець
+fördern | to promote | підтримувати фінансово
+die Fremdsprache; Fremdsprachen | foreign language | іноземна мова
+friedlich | peaceful | мирний
+der Gastarbeiter; Gastarbeiter | guest worker | трудовий мігрант
+die Gastarbeiterin; Gastarbeiterinnen | guest worker | трудова мігрантка
+das Gefühl; Gefühle | feeling | відчуття
+der Gegner; Gegner | opponent | суперник
+die Gegnerin; Gegnerinnen | opponent | суперниця
+das Gehalt; Gehälter | salary | зарплата
+das Gewürz; Gewürze | spice | приправа
+die Grenze; Grenzen | border | кордон
+gründen | to establish | засновувати
+hart | hard | важкий
+die Hauptstadt; Hauptstädte | capital city | столиця
+die Heimat | home country | батьківщина
+die Industrie | industry | промисловість
+irgendwann | at some point | колись
+jahrelang | for years | протягом багатьох років
+das Jahrhundert; Jahrhunderte | century | століття
+das Jahrzehnt; Jahrzehnte | decade | десятиліття
+der Jude; Juden | jew | єврей
+die Jüdin; Jüdinnen | jew | єврейка
+kaum | hardly | ледве
+die Kindheit | childhood | дитинство
+der Krieg; Kriege | war | війна
+das Kriegsende | end of war | закінчення війни
+die Krippe; Krippen | crib | колиска
+der Kritiker; Kritiker | critic | критик
+die Kritikerin; Kritikerinnen | critic | критикиня
+die Mauer; Mauern | wall | мур
+der Mauerbau | building of the wall | будування мурів
+der Mauerfall | fall of the Berlin wall | падіння стіни
+die Medizin | medicine | медицина
+merken | to realise | брати до уваги
+die Migration | migration | міграція
+miteinander | together | один з одним
+miterleben | to experience with | переживати разом
+musikalisch | musical | музичний
+die Muttersprache; Muttersprachen | native language | рідна мова
+die Nachkriegszeit | post-war years | післявоєнний період
+der Nationalsozialismus | national socialism | націонал-соціалізм
+die NATO | NATO | НАТО
+die Notunterkunft; Notunterkünfte | emergency accommodation | тимчасовий притулок
+die Öffnung | opening | отвір
+die Phase; Phasen | phase | фаза
+politisch | political | політично
+der Protest; Proteste | protest | протест
+die Regierung; Regierungen | government | уряд
+die Republik; Republiken | republic | республіка
+der/die Russlanddeutsche; Russlanddeutschen | German-Russian | російські німці
+der Staat; Staaten | state | держава
+die Staatsgründung | formation of a state | заснування держави
+das Stipendium; Stipendien | scholarship | стипендія
+tatsächlich | actual | фактично
+die Teilung; Teilungen | division | поділ
+verdrängen | to suppress | витісняти
+vereinigen | to unite | об’єднувати
+verfolgen | to follow | переслідувати
+verhaften | to arrest | брати під арешт
+verlängern | to extend | подовжувати
+verlassen | to leave | залишати
+vermischen | to mix | змішувати
+das Visum; Visa | visa | віза
+das Weltall | space | всесвіт
+wiedervereinigen | to re-unify | возз’єднуватися
+die Wiedervereinigung | reunification | возз’єднання
+zerschlagen | to destroy | розбивати
+zurückkehren | to return | повертати

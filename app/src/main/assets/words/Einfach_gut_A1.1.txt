@@ -5,7 +5,7 @@ alles | everything | все
 antworten (Sie antworten) | answer (you answer) | відповідати (ви відповідаєте)
 auch | also; too | також
 auf | on | на
-aus | from | з/із/зі
+aus | from | з; із; зі
 die Aussage; Aussagen | statement | висловлювання
 bisschen | a little; a bit | трохи
 bitte | please; thank you | прошу
@@ -36,7 +36,7 @@ der Herr; Herren | man; mr | пан
 hören (Sie hören) | hear (you hear) | слухати (ви слухаєте)
 ich | I; me | я
 Ihnen | (to) you (formal) | Вам
-ihr | her; their | ваш/її/ви
+ihr | her; their | ваш; її; ви
 im | in | в
 ja | yes | так
 klar | of course | зрозумілий
@@ -48,7 +48,7 @@ das Land; Länder | country | країна
 lesen (Sie lesen) | read (you read) | читати (ви читаєте)
 der Mann; Männer | man | чоловік
 mein, meine | my, mine | мій, моя
-mit | with | з/із/зі
+mit | with | з; із; зі
 morgen | tomorrow | завтра
 na | nah | ну
 die Nacht; Nächte | night | ніч
@@ -116,7 +116,7 @@ das Kind; Kinder | child | дитина
 der Kindergarten; Kindergärten | nursery | дитячий садок
 der Kontakt; Kontakte | contact | контакт
 leben (ich lebe – du lebst – er lebt) | to live (I live – you live – he lives) | жити (я живу - ти живеш - він живе)
-ledig | single | неодружений/незаміжня
+ledig | single | неодружений; незаміжня
 die E-Mail; E-Mails | email | електронна пошта
 möchten (Sie möchten) | to like (you like) | хотіти (ви хочете)
 die Mutter; Mütter | mother | мати
@@ -178,7 +178,7 @@ der Gruß; Grüße | greeting | привітання
 die Hausaufgabe; Hausaufgaben | homework | домашнє завдання
 das Heft; Hefte | booklet | зошит
 heute | today | сьогодні
-ihr | their; your | ваш/її/ви
+ihr | their; your | ваш; її; ви
 immer | always | завжди
 die Karte; Karten | card; map | карта
 klein | small | малий

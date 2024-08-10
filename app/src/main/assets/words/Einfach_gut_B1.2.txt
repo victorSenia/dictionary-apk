@@ -1,0 +1,441 @@
+org.leo.dictionary.config.entity.ParseWords:de:en;uk:die+;das+;der+;der/die+;das/der+:%5C%7C:%3B:%3B:%5Ct::Einfach+gut+B1.2
+	Wortschatz zu Lektion 7: Deutschland – zweite Heimat?
+abschicken | to submit | надсилати
+die Abwicklung | settlement | завершення
+amtlich | official | офіційний
+anerkennen | to recognise | визнавати
+die Anerkennung | recognition | визнання
+der Anfang; Anfänge | beginning | початок
+ansteckend | infectious | заразний
+ausstellen | to issue | виставляти
+die Bearbeitung | processing | редагування
+beglaubigen | to certify | нотаріально засвідчувати
+die Beglaubigung | certification | нотаріальне засвідчення
+der/die Bekannte; Bekannten | acquaintance | знайомий; знайома
+benötigen | to require | потребувати
+berufen | to appoint | призначати на посаду
+bescheinigen | to certify | засвідчувати
+dran sein | to be for it | бути на черзі
+einreichen | to submit | діставатися
+enttäuschen | to disappoint | розчаровувати
+die Enttäuschung; Enttäuschungen | disappointment | розчарування
+der Erhalt | receipt | отримання
+die Erklärung; Erklärungen | explanation | пояснення
+erkundigen | to enquire | довідуватися
+die Fähigkeit; Fähigkeiten | ability | здатність
+die Fantasie | phantasy | фантазія
+die Formalität; Formalitäten | formality | формальність
+förmlich | formal | формальний
+die Fotokopie; Fotokopien | photocopy | фотокопія
+der Frieden | peace | мир
+das Führungszeugnis | certificate of good conduct | довідка про несудимість
+garantieren | to guarantee | гарантувати
+der Gedanke; Gedanken | thought | думка
+die Geduld | patience | терпіння
+geduldig | patient | терплячий
+die Gemeinsamkeit; Gemeinsamkeiten | common feature | спільність
+der Geruch; Gerüche | smell | запах
+das Gesundheitszeugnis | health certificate | довідка про стан здоров’я
+gewährleisten | to ensure | гарантувати
+häufig | often | частий
+das Heimweh | home sickness | туга за домом
+herkommen | to come from | приходити
+das Herkunftsland; Herkunftsländer | country of origin | країна походження
+hierher | here | сюди
+hilfsbereit | ready to help | готовий допомогти
+inzwischen | meanwhile | тим часом
+die Kopie; Kopien | copy | копія
+die Mentalität; Mentalitäten | mentality | ментальність
+nachdenklich | thoughtful | задумливий
+der Pflegehelfer; Pflegehelfer | nursing assistant | медбрат
+die Pflegehelferin; Pflegehelferinnen | nursing assistant | медсестра
+die Pflegekraft; Pflegekräfte | carer | доглядальник; доглядальниця
+die Reihe | row | рядок
+der Sachbearbeiter; Sachbearbeiter | administrative assistant | діловод
+die Sachbearbeiterin; Sachbearbeiterinnen | administrative assistant | діловодка
+der Sprachnachweis | language certificate | сертифікат про знання мови
+übereinstimmen | to correspond | співпадати
+überglücklich | overjoyed | дуже щасливий
+übersetzen | to translate | перекладати
+die Übersetzung; Übersetzungen | translation | переклад
+das Übersetzungsbüro | translation agency | бюро перекладів
+ungeduldig | impatient | нетерплячий
+vermissen | to miss | сумувати за кимось
+verurteilen | to judge | засуджувати
+wahr | true | дійсний
+weitergehen | to continue | іти далі
+wohlfühlen | to feel comfortable | почуватися добре
+das Ziel; Ziele | aim | мета
+zügig | quick | швидкий
+zusammenstellen | to put together | складати
+	Wortschatz zu Lektion 8: Ein neuer Arbeitsplatz
+abhängig | dependent | залежний
+absolvieren | to complete | закінчувати навчальний заклад
+der Abteilungsleiter; Abteilungsleiter | division manager | начальник відділу
+die Abteilungsleiterin; Abteilungsleiterinnen | division manager | начальниця відділу
+abwechslungsreich | varied | різноманітний
+der Altenpfleger; Altenpfleger | geriatric nurse | медбрат, що доглядає за престарілими
+die Altenpflegerin; Altenpflegerinnen | geriatric nurse | медсестра, що доглядає за престарілими
+die Anlage | system | установка
+die Annahme | acceptance | приймання
+anrechnen | to charge | нараховувати
+die Anstellung | employment | працевлаштування
+die Arbeitsstelle | position | місце роботи
+die Arbeitsweise | working method | принцип роботи
+die Arbeitszeit; Arbeitszeiten | working hours | робочий час
+die Assistenz | assistance | асистування
+die Aufteilung | allocation | поділ
+der Auszug; Auszüge | extract | витяг
+der Bachelor | Bachelor's degree | бакалавр
+beherrschen | to master | оволодівати
+beilegen | to enclose | додавати
+die Berufsbezeichnung | job description | назва посади
+die Berufserfahrung | job experience | досвід роботи
+das Berufsleben | professional life | професійне життя
+die Betriebswirtschaft | business administration | економіка підприємства
+beurteilen | to evaluate | судити
+das Bewerbungsschreiben | letter of application | супровідний лист
+der Bilanzbuchhalter; Bilanzbuchhalter | accountant | бухгалтер
+die Bilanzbuchhalterin; Bilanzbuchhalterinnen | accountant | бухгалтерка
+bisher | until now | до цього часу
+das Briefpapier | letter paper | канцелярський папір
+das Büromaterial | office stationary | офісне приладдя
+die Bürozeit; Bürozeiten | office hours | час роботи
+das Catering | catering | кейтеринг
+daneben | besides | окрім того
+eigenverantwortlich | independent | під власну відповідальність
+eingehen | to enter | увійти
+einschreiben | to inscribe | вписувати
+das Eintrittsdatum | entry date | дата вступу
+der Empfang | reception | прийом
+empfangen | to receive | отримувати
+englischsprachig | in English | англомовний
+entnehmen | to take from | видаляти
+die Erstellung | creation | створення
+färben | to colour | фарбувати
+das Fax | fax | факс
+die Festanstellung | full-time position | постійна зайнятість
+festlegen | to determine | встановлювати
+finanziell | financial | фінансовий
+das Finanzwesen | finance | фінанси
+der Firmensitz | registered office | головний офіс
+fließend | fluent | вільний
+der Föhn | hairdryer | фен
+fordern | to demand | вимагати
+die Formulierung | wording | формулювання
+die Fortbildung | further education | подальше навчання
+die Frisur | hairdresser | зачіска
+die Gehaltsvorstellung | desired salary | очікувана заробітна плата
+der Geschäftsführer; Geschäftsführer | managing director | директор
+die Geschäftsführerin; Geschäftsführerinnen | managing director | директорка
+die Geschäftsführung | management | керівництво
+gleichzeitig | at the same time | одночасний
+die Handlung | conduct | дія
+die Herausforderung | challenge | вимога
+individuell | individual | індивідуальний
+insofern | provided | оскільки
+intern | internal | внутрішній
+die Jobbezeichnung | job description | назва посади
+der Kamm | comb | гребінець
+die Kommunikationsstärke | strong communication skills | навички спілкування
+kommunikativ | communicative | комунікативний
+der Konferenzraum | conference room | кімната для переговорів
+die Kontaktdaten; Pl. | contact details | контактні дані (множина)
+kümmern | to take care of | піклуватися
+leistungsgerecht | performance-based | на основі результатів
+leiten | to lead | керувати
+der Manager; Manager | manager | менеджер
+die Managerin; Managerinnen | manager | менеджерка
+der Maschinenbau | engineering | машинобудування
+meistern | to master | оволодівати
+der Millionär | millionaire | мільйонер
+die Millionärin | millionaire | мільйонерка
+mittelständisch | middle-class | середнього розміру
+nachdem | after | після того як
+das Niveau | level | рівень
+das Original | original | оригінал
+der PC; PCs | PC | ПК
+der Posteingang | inbox | вхідна пошта
+die Probezeit | probationary period | пробний період
+die Qualifikation; Qualifikationen | qualification | кваліфікація
+regeln | to control | регулювати
+der Sales Manager; Sales Manager | sales manager | менеджер з продажу
+die Sales Managerin; Sales Managerinnen | sales manager | менеджерка з продажу
+schneiden | to cut | різати
+das Schreiben | correspondence | лист
+seitdem | since then | відколи
+der/die Selbstständige; Selbstständigen | self-employed person | самозайнятий
+senden | to broadcast | надсилати
+das Seniorenheim | old people's home | будинок престарілих
+soweit | so far as | якщо
+die Speise; Speisen | dish | їжа
+spezialisieren | to specialise | спеціалізуватися
+die Stellenanzeige; Stellenanzeigen | job advertisement | оголошення про роботу
+der Steuerberater | tax consultant | податковий консультант
+das Steuerberatungsbüro | tax consultancy firm | бюро податкових консультацій
+die Teamfähigkeit | ability to work in a team | здатність до командної роботи
+die Telekommunikation | telecommunication | телекомунікація
+der Terminkalender | appointment calendar | діловий календар
+traditionsreich | steeped in tradition | багатий на традиції
+die Überstunde; Überstunden | overtime | понаднормова робота
+der Umgang | handling | поводження
+die Umschulung | re-training | перепідготовка
+unbefristet | indefinite | із необмеженим терміном
+das Unternehmen; Unternehmen | company | підприємство
+der Urlaubstag; Urlaubstage | paid leave | день відпустки
+verabreden | to arrange | домовлятися
+die Vergütung | remuneration | компенсація
+die Verstärkung | enhancement | посилення
+weiterhelfen | to help out | надавати подальшу допомогу
+die Weiterleitung | forwarding | пересилання
+das Werkzeug | work tools | інструмент
+zaubern | to conjure | чаклувати
+zeitlich | on time | часовий
+der Zeitpunkt | point in time | момент часу
+zusätzlich | additional | додатковий
+die Zusatzqualifikation | additional qualifications | додаткова кваліфікація
+die Zuverlässigkeit | reliability | надійність
+	Wortschatz zu Lektion 9: Büroalltag
+abdrehen | to change course | відкручувати
+abheften | to file away | підшивати
+allerdings | however | проте
+anmachen | to turn on | вмикати
+ansehen | to look at | дивитися
+aufdrehen | to open | відкривати відкручуванням
+aufmachen | to open | відчиняти
+ausschalten | to turn off | вимикати
+ausschlafen | to sleep in | висипатися
+das Besprechungszimmer | meeting room | кімната для переговорів
+der Büroalltag | office life | повсякденне офісне життя
+der Büroassistent; Büroassistenten | office assistant | офісний помічник
+die Büroassistentin; Büroassistentinnen | office assistant | офісна помічниця
+der Büroraum; Büroräume | office space | офісне приміщення
+die Dienstleistung; Dienstleistungen | service | послуга
+drinnen | inside | всередині
+einschalten | to turn on | вмикати
+die Energiekosten; Pl. | energy costs | витрати на електроенергію (множина)
+die Energieverschwendung | waste of energy | марна витрата енергії
+der Handwerker; Handwerker | workman | ремісник
+die Handwerkerin; Handwerkerinnen | workman | ремісниця
+die Heizkosten; Pl. | heating costs | витрати на опалення (множина)
+indem | by | між тим як
+kippen | to tilt | перекидатися
+der König; Könige | king | король
+die Königin; Königinnen | king | королева
+der Kopierer; Kopierer | copying machine | копіювальний апарат
+langfristig | long-term | довгостроковий
+mehrmals | multiple times | кілька разів
+die Million; Millionen | million | мільйон
+mitdenken | to follow a thought | стежити за думкою
+offen | open | відчинений
+die Privatnummer | private number | приватний номер
+rasieren | to shave | голитися
+die Reinigungsfirma | cleaning company | клінінгова компанія
+der Reinigungsvertrag | cleaning contract | договір на прибирання
+senken | to reduce | зменшувати
+stinksauer; ugs. | furious | розлючений (розмовн.)
+der Strom | electricity | струм
+der Stromanbieter | electricity provider | постачальник електроенергії
+die Stromkosten; Pl. | electricity costs | витрати на електроенергію (множина)
+tropfen | to drip | крапати
+übergeben | to be sick | передавати
+unnötig | unnecessary | непотрібний
+der Verbrauch | use | споживання
+verschwenden | to waste | витрачати марно
+das Vertragsende | contract end | закінчення договору
+die Vertragsnummer | contract number | номер договору
+die Wärme | warmth | тепло
+der Wasserhahn | tap | водопровідний кран
+die Weise | manner | спосіб
+zudrehen | to turn off | закривати
+zumachen | to close | зачиняти
+die Zusammenarbeit | cooperation | співробітництво
+zusammenarbeiten | to work together | працювати разом
+	Wortschatz zu Lektion 10: Gesunde Ernährung
+abnehmen | to lose weight | знімати
+achten | to be careful | слідкувати
+die Allergie | allergy | алергія
+allergisch | allergic | алергічний
+der Anbau | cultivation | прибудова
+angewöhnen | to get used to | звикати
+auseinandersetzen | to discuss | мати справу з
+ausgewogen | balanced | збалансований
+ausprobieren | to try | спробувати
+bedenklich | questionable | сумнівний
+die Bedingung; Bedingungen | condition | умова
+behaupten | to claim | стверджувати
+die Berufstätigkeit | professional activity | професійна діяльність
+die Bevölkerung | population | населення
+bewusst | conscious | свідомий
+bio (=biologisch) | organic | біо (=органічний)
+das Bioprodukt; Bioprodukte | organic produce | органічний продукт
+bloß | purely | просто
+der Diabetiker; Diabetiker | diabetic | діабетик
+die Diabetikerin; Diabetikerinnen | diabetic | діабетикиня
+der Döner | kebab | шаурма
+durchschnittlich | average | середній
+das Einkommen; Einkommen | income | дохід
+einseitig | one-sided | односторонній
+das Eiweiß | protein | білок
+erkennen | to recognise | виявляти
+die Ernährung | nutrition | харчування
+der Esser; Esser | eater | їдак
+die Esserin; Esserinnen | eater | їдуха
+das Fertiggericht | ready meal | готова страва
+fett | fat | жирний
+fix | quick | фіксований
+fleischfrei | meat-free | без м’яса
+fleischlos | vegetarian | безм’ясний
+der Freundeskreis | circle of friends | коло друзів
+der Frust | frustration | розчарування
+furchtbar | terrible | жахливий
+der Gang; Gänge | course | хода
+der Gemüsehändler; Gemüsehändler | greengrocer | продавець овочів
+die Gemüsehändlerin; Gemüsehändlerinnen | greengrocer | продавчиня овочів
+der Geschmack | taste | смак
+das Getreide | grain | злак
+glutenfrei | gluten-free | безглютеновий
+grundsätzlich | basically | в основному
+der Hartweizen | durum wheat | тверда пшениця
+die Haselnuss; Haselnüsse | hazelnut | фундук
+der Hauptgrund; Hauptgründe | main reason | основна причина
+die Hülsenfrucht; Hülsenfrüchte | pulse | бобові культури
+industriell | industrial | промисловий
+die Institution; Institutionen | institution | установа
+irgendwelche | any | будь-який
+irgendwer | anyone | будь-хто
+das Kochbuch; Kochbücher | cookery book | кулінарна книга
+kulinarisch | culinary | кулінарний
+laktosefrei | lactose-free | безлактозний
+die Laune | mood | настрій
+leiden | to suffer | страждати
+die Massentierhaltung | livestock farming | тваринництво
+der Milchzucker | milk sugar | молочний цукор
+moralisch | morally | моральний
+der Nährstoff; Nährstoffe | nutrient | поживна речовина
+das Nahrungsmittel; Nahrungsmittel | foodstuff | харчовий продукт
+nebenbei | incidentally | поруч
+die Nuss; Nüsse | nut | горіх
+präsentieren | to present | презентувати
+problemlos | unproblematic | безпроблемний
+der Quark | quark | сир
+reduzieren | to reduce | зменшувати
+die Studie | study | вивчення
+die Tiefkühlpizza; Tiefkühlpizzen | frozen pizza | заморожена піца
+tierisch | animalistic | тваринний
+der Trend | trend | тенденція
+überzeugen | to convince | переконувати
+vegan | vegan | веганський
+der Veganer; Veganer | vegan | веган
+die Veganerin; Veganerinnen | vegan | веганка
+vereinbar | compatible | сумісний
+versorgen | to provide for | постачати
+vertragen | to tolerate | терпіти
+der Verzehr | consumption | споживання в їжу
+verzichten | to avoid | відмовлятися
+vorbeigehen | to walk past | проходити повз
+der Wert; Werte | value | значення
+die Wurst; Würste | sausage | ковбаса
+der Zeitmangel | lack of time | нестача часу
+der Zeitungsbericht | report in the newspaper | газетне повідомлення
+zufällig | incidentally | випадковий
+zunehmen | to gain weight | збільшуватися
+der Zusatzstoff; Zusatzstoffe | additives | добавка
+	Wortschatz zu Lektion 11: Gut versichert!
+abdecken | to cover | накривати
+absichtlich | intentional | навмисний
+anfahren | to bump into | під’їжджати
+ärztlich | medical | медичний
+aufkommen | to pay | наближатися
+ausparken | to reverse out | виїжджати з парковки
+der Außenspiegel; Außenspiegel | wing mirror | зовнішнє дзеркало
+der Autofahrer; Autofahrer | car driver | водій автомобіля
+die Autofahrerin; Autofahrerinnen | car driver | водійка автомобіля
+die Automarke | car make | марка автомобіля
+das Autoteil; Autoteile | car part | автомобільна частина
+die Autoversicherung | car insurance | автострахування
+das Benzin | petrol | бензин
+beschädigen | to damage | пошкоджувати
+betrunken | drunk | п’яний
+der Blinker; Blinker | indicator | габаритний ліхтар
+bremsen | to brake | гальмувати
+das Dach | roof | дах
+der Diebstahl | theft | крадіжка
+das Dorf | village | село
+einbrechen | to break in | грабувати
+der Einbrecher; Einbrecher | burglar | грабіжник
+die Einbrecherin; Einbrecherinnen | burglar | грабіжниця
+der Einbruch | burglary | пограбування
+einparken | to pull in | паркуватися
+die Fahrerseite | driver's side | бік водія
+der/die Freiwillige; Freiwilligen | volunteer | доброволец; доброволиця
+frustriert | frustrated | розчарований
+der Gebrauchtwagen; Gebrauchtwagen | used vehicle | вживаний автомобіль
+die Haftpflicht | liability | матеріальна відповідальність
+die Haftpflichtversicherung | liability insurance | страхування матеріальної відповідальності
+der Hagel | hail | град
+der Hügel | hill | пагорб
+die Kaskoversicherung | hull insurance | комплексне страхування
+der Kilometer | kilometre | кілометр
+der Kofferraum | car boot | багажне відділення
+korrekt | correct | правильний
+krachen | to crash | гуркотати
+der Kratzer; Kratzer | scratch | подряпина
+lenken | to steer | керувати
+lohnen | to pay | виправдовувати
+der Motor; Motoren | motor | двигун
+die Motorhaube | bonnet | капот двигуна
+der Motorradfahrer; Motorradfahrer | motocyclist | мотоцикліст
+die Motorradfahrerin; Motorradfahrerinnen | motocyclist | мотоциклістка
+nachdenken | to think about | продумувати
+der Neuwagen; Neuwagen | new vehicle | новий автомобіль
+das Nummernschild; Nummernschilder | number plate | номерний знак
+der Oldtimer | vintage car | вінтажний автомобіль
+optimistisch | optimistic | оптимістичний
+parken | to park | паркувати
+die Parklücke | parking space | вільне місце на парковці
+der Personenschaden; Personenschäden | personal injury | поранення
+PS (= Pferdestärke) | HP (= horsepower) | кс (=кінська сила)
+quietschen | to screech | пищати
+regulieren | to regulate | регулювати
+die Regulierung | regulation | регулювання
+der Reifen; Reifen | tyre | шина
+das Rücklicht; Rücklichter | tail light | задній ліхтар
+die Rückscheibe | rear window | заднє скло
+rückwärts | backwards | назад
+rutschen | to slide | сковзати
+der Sachschaden; Sachschäden | property damage | матеріальний збиток
+der Schadensfall | damage claim | страховий випадок
+die Scheibe; Scheiben | windscreen | диск
+der Scheinwerfer; Scheinwerfer | headlight | фара
+der Schläger | bat | ходовий товар
+schwingen | to swing | гойдати
+der Sinn | meaning | сенс
+der Sportwagen | sports car | спортивна машина
+die Stoßstange | bumper | бампер
+der Straßenrand | roadside | узбіччя
+der Straßenverkehr | traffic | дорожній рух
+der Sturm | storm | шторм
+das/der Sport Utiliy Vehicle (SUV) | sport utility vehicle (SUV) | спортивний позашляховик
+die Teilkaskoversicherung (Teilkasko) | partial coverage insurance | Часткове комплексне страхування (часткове каско)
+überraschen | to surprise | дивувати
+die Überschwemmung | flood | затоплення
+umfallen | to fall over | падати
+umso | all the (more) | тим більше
+der Unfall; Unfälle | accident | нещасний випадок
+die Unfallgefahr | risk of accident | ризик нещасного випадку
+verletzen | to injure | завдавати поранень
+versehentlich | accidental | ненавмисно
+versichern | to insure | запевнювати
+der Versicherungsberater; Versicherungsberater | insurance advisor | страховий консультант
+die Versicherungsberaterin; Versicherungsberaterinnen | insurance advisor | страхова консультантка
+der Versicherungsschutz | insurance cover | страхове покриття
+verursachen | to cause | спричиняти
+die Vollkaskoversicherung (Vollkasko) | full comprehensive insurance | комплексне страхування (повне Каско)
+vorschreiben | to stipulate | наказувати
+vorsichtig | careful | обережний
+wegfahren | to drive away | їхати геть
+die Windschutzscheibe | windscreen | лобове скло
+zulassen | to allow | дозволяти
+zusammenstoßen | to collide | зіткнутися
+die Zusatzversicherung | additional insurance | додаткове страхування
