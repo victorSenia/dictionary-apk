@@ -7,11 +7,11 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="play">Play</string>
-    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_settings" translatable="false">SettingsActivity</string>
     <string name="action_play_from">Play from</string>
     <string name="title_activity_topics">Topics</string>
-    <string name="title_activity_parse_words_settings">ParseWordsSettingsActivity</string>
-    <string name="title_activity_voice_selector">VoiceSelectorActivity</string>
+    <string name="title_activity_parse_words_settings" translatable="false">ParseWordsSettingsActivity</string>
+    <string name="title_activity_voice_selector" translatable="false">VoiceSelectorActivity</string>
     <string name="parse_words">Parse words from file</string>
     <string name="file">File</string>
     <string name="pitch">Pitch</string>
@@ -77,8 +77,8 @@
     <string name="action_set_knowledge">Set knowledge</string>
     <string name="change_orientation">Change orientation</string>
     <string name="add_word">Add word</string>
-    <string name="default_language">en</string>
-    <string name="default_text">1 2 3 4 5</string>
+    <string name="default_language" translatable="false">en</string>
+    <string name="default_text" translatable="false">1 2 3 4 5</string>
     <string name="translations">Translations</string>
     <string name="add_translation">Add translation</string>
     <string name="save">Save</string>
