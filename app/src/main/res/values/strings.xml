@@ -54,6 +54,7 @@
     <string name="default_voice_usage">Default voice used for %s</string>
     <string name="import_started">Import started. It will take few seconds.</string>
     <string name="import_finished">Import took %d ms</string>
+    <string name="found_words">Found %d words</string>
     <string name="articles">Articles</string>
     <string name="additional_information_delimiter">Additional information delimiter</string>
     <string name="delimiter">Delimiter</string>

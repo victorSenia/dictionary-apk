@@ -327,7 +327,7 @@ public class MainActivity extends AppCompatActivity {
             DialogInterface.OnClickListener onClickListener = (dialog, position) -> consumer.accept(items[position]);
             builder.setItems(items, onClickListener);
         } else {
-            builder.setTitle(R.string.no_languages);
+            builder.setMessage(R.string.no_languages);
         }
         return builder;
     }
@@ -396,6 +396,7 @@ public class MainActivity extends AppCompatActivity {
     private void updateUiWithWords(WordCriteria wordCriteria) {
         PlayService playService = ((ApplicationWithDI) getApplicationContext()).appComponent.playService();
         playService.findWords(wordCriteria);
+        showMessage(getString(R.string.found_words, playService.getUnknownWords().size()));
         updateUiWithNewData(playService.getUnknownWords());
     }
 

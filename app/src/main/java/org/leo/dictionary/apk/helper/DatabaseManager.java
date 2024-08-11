@@ -280,7 +280,7 @@ public class DatabaseManager {
             where += " AND w." + DatabaseHelper.WORD_COLUMN_KNOWLEDGE + " <= ?";
             selectionArgs.add(criteria.getKnowledgeTo().toString());
         }
-        String orderBy = criteria.getShuffleRandom() != -1 ? DatabaseHelper.COLUMN_ID : DatabaseHelper.COLUMN_LANGUAGE + ", " + DatabaseHelper.WORD_COLUMN_WORD;
+        String orderBy = criteria.getShuffleRandom() != -1 ? DatabaseHelper.COLUMN_ID : DatabaseHelper.COLUMN_LANGUAGE + ", " + DatabaseHelper.WORD_COLUMN_WORD + " COLLATE NOCASE";
         Cursor cursor = getDatabase().rawQuery(sql + where + " ORDER BY " + orderBy, !selectionArgs.isEmpty() ? selectionArgs.toArray(selectionArgs.toArray(new String[0])) : null);
         cursor.moveToFirst();
         return cursor;
