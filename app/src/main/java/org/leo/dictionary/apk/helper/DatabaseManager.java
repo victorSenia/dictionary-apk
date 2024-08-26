@@ -542,7 +542,7 @@ public class DatabaseManager {
         Cursor cursor = getDatabase().query(true, DatabaseHelper.TABLE_NAME_WORD,
                 new String[]{DatabaseHelper.COLUMN_ID, DatabaseHelper.COLUMN_LANGUAGE,
                         DatabaseHelper.WORD_COLUMN_WORD, DatabaseHelper.WORD_COLUMN_ADDITIONAL_INFORMATION,
-                        DatabaseHelper.WORD_COLUMN_ARTICLE},
+                        DatabaseHelper.WORD_COLUMN_ARTICLE, DatabaseHelper.WORD_COLUMN_KNOWLEDGE},
                 DatabaseHelper.COLUMN_ID + "= ?",
                 new String[]{Long.toString(id)},
                 null, null, null, null);
