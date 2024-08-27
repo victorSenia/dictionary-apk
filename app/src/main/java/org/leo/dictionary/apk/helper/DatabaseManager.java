@@ -262,7 +262,7 @@ public class DatabaseManager {
     protected Cursor fetchWordsCursor(WordCriteria criteria) {
         String sql = "SELECT DISTINCT w.* FROM " + DatabaseHelper.TABLE_NAME_WORD + " w";
         List<String> selectionArgs = new ArrayList<>();
-        String where = "WHERE 1=1";
+        String where = " WHERE 1=1";
         if ((criteria.getTopicsOr() != null && !criteria.getTopicsOr().isEmpty()) || criteria.getRootTopic() != null) {
             List<String> topicIds = getTopicIds(criteria.getLanguageFrom(), createRootTopicObject(criteria.getLanguageFrom(), criteria.getRootTopic()), criteria.getTopicsOr());
             sql += " INNER JOIN " + DatabaseHelper.TABLE_NAME_WORD_TOPIC + " t ON w." + DatabaseHelper.COLUMN_ID + " = t." + DatabaseHelper.TRANSLATION_COLUMN_WORD_ID + " AND t." + DatabaseHelper.COLUMN_ID + " IN (" + createPlaceholders(topicIds.size()) + ")";
