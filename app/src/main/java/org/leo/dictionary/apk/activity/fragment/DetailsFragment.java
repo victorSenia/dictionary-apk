@@ -59,7 +59,7 @@ public class DetailsFragment extends Fragment implements SharedPreferences.OnSha
     public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
         if (fromUser) {
             double knowledge = KnowledgeToRatingConverter.ratingToKnowledge(rating);
-            Word word = new ViewModelProvider(requireActivity()).get(DetailsViewModel.class).getWord();
+            Word word = new ViewModelProvider(requireActivity()).get(DetailsViewModel.class).getValue();
             word.setKnowledge(knowledge);
             ApkAppComponent appComponent = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent;
             appComponent.dbWordProvider().updateWord(word);

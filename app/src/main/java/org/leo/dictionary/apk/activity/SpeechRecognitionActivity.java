@@ -16,7 +16,9 @@ import org.leo.dictionary.apk.databinding.ActivitySpeechRecognitionBinding;
 import org.leo.dictionary.audio.AudioService;
 import org.leo.dictionary.entity.Word;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
@@ -47,13 +49,13 @@ public class SpeechRecognitionActivity extends AppCompatActivity {
         });
         binding.actionNext.setOnClickListener(v -> nextWord());
         binding.playWord.setOnClickListener(v -> playWord());
-        if (detailsViewModel.getWord() == null) {
+        if (detailsViewModel.getValue() == null) {
             nextWord();
         }
     }
 
     private String getLanguage() {
-        return detailsViewModel.getWord().getLanguage();
+        return detailsViewModel.getValue().getLanguage();
     }
 
     private void nextWord() {
@@ -69,13 +71,13 @@ public class SpeechRecognitionActivity extends AppCompatActivity {
 
     private void playWord() {
         AudioService audioService = ((ApplicationWithDI) getApplicationContext()).appComponent.audioService();
-        ApkModule.playAsynchronousIfPossible(audioService, detailsViewModel.getWord().getLanguage(), detailsViewModel.getWord().getFullWord());
+        ApkModule.playAsynchronousIfPossible(audioService, detailsViewModel.getValue().getLanguage(), detailsViewModel.getValue().getFullWord());
     }
 
     private Consumer<ArrayList<String>> resultConsumer() {
         return result -> {
             recordingStoped();
-            if (result.size() != 1 || !result.get(0).equalsIgnoreCase(detailsViewModel.getWord().getFullWord())) {
+            if (result.size() != 1 || !result.get(0).equalsIgnoreCase(detailsViewModel.getValue().getFullWord())) {
                 binding.textResult.setVisibility(View.VISIBLE);
                 binding.textResult.setText(result.stream().collect(Collectors.joining(System.lineSeparator())));
             } else {

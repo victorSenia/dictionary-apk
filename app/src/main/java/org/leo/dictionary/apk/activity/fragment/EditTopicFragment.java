@@ -109,12 +109,12 @@ public class EditTopicFragment extends Fragment {
             topics = findTopics(topicToEdit.getLanguage());
             binding = DialogEditTopicBinding.inflate(inflater, container, false);
             TopicViewModel topicViewModel = new ViewModelProvider(this).get(TopicViewModel.class);
-            topicViewModel.setTopic(topicToEdit);
+            topicViewModel.setValue(topicToEdit);
             binding.setViewModel(topicViewModel);
             binding.setLifecycleOwner(this);
             binding.buttonSave.setOnClickListener(v -> {
                 DBWordProvider wordProvider = ((ApplicationWithDI) getContext().getApplicationContext()).appComponent.dbWordProvider();
-                wordProvider.updateTopic(topicViewModel.getTopic());
+                wordProvider.updateTopic(topicViewModel.getValue());
                 if (onSafeConsumer != null) {
                     onSafeConsumer.run();
                 }
@@ -160,15 +160,15 @@ public class EditTopicFragment extends Fragment {
 
         private void editRoot() {
             TopicViewModel rootTopicViewModel = new ViewModelProvider(this).get(TopicViewModel.class);
-            new EditTopicDialogFragment(topicToEdit.getRoot(), () -> rootTopicViewModel.setTopic(rootTopicViewModel.getTopic())).show(requireActivity().getSupportFragmentManager(), "EditRootTopic");
+            new EditTopicDialogFragment(topicToEdit.getRoot(), () -> rootTopicViewModel.postValue(rootTopicViewModel.getValue())).show(requireActivity().getSupportFragmentManager(), "EditRootTopic");
         }
 
         private void selectNewRoot(Topic newRoot) {
             rootTopicVisibility(newRoot);
             TopicViewModel rootTopicViewModel = new ViewModelProvider(this).get(TopicViewModel.class);
-            rootTopicViewModel.getTopic().setRoot(newRoot);
+            rootTopicViewModel.getValue().setRoot(newRoot);
             filterTopics();
-            rootTopicViewModel.setTopic(rootTopicViewModel.getTopic());
+            rootTopicViewModel.postValue(rootTopicViewModel.getValue());
         }
 
         private void rootTopicVisibility(Topic newRoot) {
@@ -184,7 +184,7 @@ public class EditTopicFragment extends Fragment {
             Topic topic = new Topic();
             topic.setName(binding.textTopic.getText().toString());
             topic.setLevel(1);
-            topic.setLanguage(rootTopicViewModel.getTopic().getLanguage());
+            topic.setLanguage(rootTopicViewModel.getValue().getLanguage());
             topics.add(topic);
             selectNewRoot(topic);
         }

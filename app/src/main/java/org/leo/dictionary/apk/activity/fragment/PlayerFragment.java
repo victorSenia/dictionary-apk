@@ -33,7 +33,10 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        playService = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.playService();
+        audioManager = (AudioManager) requireActivity().getSystemService(Context.AUDIO_SERVICE);
         isPlayingViewModel = new ViewModelProvider(requireActivity()).get(IsPlayingViewModel.class);
+        isPlayingViewModel.setValue(playService.isPlaying());
         ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.uiUpdater();
         uiUpdater = (word, index) -> {
             if (word != null) {
@@ -77,8 +80,6 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentPlayerBinding.inflate(inflater, container, false);
-        playService = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.playService();
-        audioManager = (AudioManager) requireActivity().getSystemService(Context.AUDIO_SERVICE);
         isPlayingViewModel.getData().observe(requireActivity(), this::updateButtonUi);
         return binding.getRoot();
     }

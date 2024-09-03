@@ -39,7 +39,7 @@ public class EditWordActivity extends AppCompatActivity {
     public static final long DEFAULT_VALUE_OF_WORD_ID = -1L;
     private ActivityEditWordBinding binding;
     private List<Topic> filteredTopics = new ArrayList<>();
-    private List<Topic> topics;
+    private List<Topic> topics = new ArrayList<>();
     private EditWordViewModel model;
 
     @Override
@@ -53,9 +53,9 @@ public class EditWordActivity extends AppCompatActivity {
         languageViewModel.getData().observe(this, this::updateTopicListData);
         if (id != DEFAULT_VALUE_OF_WORD_ID) {
             DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
-            model.setWord(wordProvider.findWord(id));
+            model.setValue(wordProvider.findWord(id));
         } else {
-            model.setNewWord();
+            model.setNewObject();
         }
         binding.buttonSave.setOnClickListener(v -> {
             if (isValidData()) {

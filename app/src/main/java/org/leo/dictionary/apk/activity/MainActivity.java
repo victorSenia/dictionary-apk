@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     private final ActivityResultLauncher<Intent> filterWordsActivityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
         if (result.getResultCode() == Activity.RESULT_OK) {
             WordCriteriaProvider criteriaProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.wordCriteriaProvider();
-            runAtBackground(() -> updateWordsAndUi(criteriaProvider.getWordCriteria()));
+            runAtBackground(() -> updateWordsAndUi(criteriaProvider.getObject()));
         } else {
             revertDbUsage();
         }
@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void deleteWordsAndUpdateUi(String language, DBWordProvider wordProvider) {
         wordProvider.deleteWords(language);
-        WordCriteria wordCriteria = ((ApplicationWithDI) getApplicationContext()).appComponent.wordCriteriaProvider().getWordCriteria();
+        WordCriteria wordCriteria = ((ApplicationWithDI) getApplicationContext()).appComponent.wordCriteriaProvider().getObject();
         if (Objects.equals(language, wordCriteria.getLanguageFrom())) {
             updateWordsAndUi(wordCriteria);
         }
@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean shouldBeDisplayed(Word updatedWord) {
-        WordCriteria wordCriteria = ((ApplicationWithDI) getApplicationContext()).appComponent.wordCriteriaProvider().getWordCriteria();
+        WordCriteria wordCriteria = ((ApplicationWithDI) getApplicationContext()).appComponent.wordCriteriaProvider().getObject();
         return Objects.equals(updatedWord.getLanguage(), wordCriteria.getLanguageFrom()) && (wordCriteria.getTopicsOr() == null || wordCriteria.getTopicsOr().isEmpty() || containsAnyOfTopic(wordCriteria.getTopicsOr(), updatedWord.getTopics()));
     }
 
@@ -240,6 +240,10 @@ public class MainActivity extends AppCompatActivity {
             return true;
         } else if (id == R.id.action_configuration_presets) {
             Intent i = new Intent(this, ConfigurationPresetsActivity.class);
+            startActivity(i);
+            return true;
+        } else if (id == R.id.action_grammar_filter) {
+            Intent i = new Intent(this, GrammarFilterActivity.class);
             startActivity(i);
             return true;
         } else if (id == R.id.action_import_words) {
@@ -386,7 +390,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateWordsAndUi(WordCriteria wordCriteria) {
         WordCriteriaProvider wordCriteriaProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.wordCriteriaProvider();
-        wordCriteriaProvider.setWordCriteria(wordCriteria);
+        wordCriteriaProvider.setObject(wordCriteria);
         if (wordCriteria == null) {
             wordCriteria = new WordCriteria();
         }

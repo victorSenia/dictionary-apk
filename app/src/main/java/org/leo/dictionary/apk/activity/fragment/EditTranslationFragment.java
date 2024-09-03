@@ -29,10 +29,10 @@ public class EditTranslationFragment extends Fragment {
         boolean requestFocus = getArguments().getBoolean(EditWordActivity.REQUEST_FOCUS, false);
         EditTranslationViewModel translationViewModel = new ViewModelProvider(this).get(EditTranslationViewModel.class);
         Word word = new ViewModelProvider(requireActivity()).get(EditWordViewModel.class).getValue();
-        translationViewModel.setTranslation(word.getTranslations().get(index));
+        translationViewModel.setValue(word.getTranslations().get(index));
         binding.setViewModel(translationViewModel);
-        binding.playTranslation.setOnClickListener(v -> playTranslation(translationViewModel.getTranslation()));
-        binding.buttonDeleteTranslation.setOnClickListener(v -> removeTranslation(word, binding.getViewModel().getTranslation()));
+        binding.playTranslation.setOnClickListener(v -> playTranslation(translationViewModel.getValue()));
+        binding.buttonDeleteTranslation.setOnClickListener(v -> removeTranslation(word, binding.getViewModel().getValue()));
         if (requestFocus) {
             binding.textLanguage.requestFocus();
         }

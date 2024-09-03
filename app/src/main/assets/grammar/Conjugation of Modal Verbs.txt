@@ -1,0 +1,102 @@
+org.leo.dictionary.config.entity.ParseSentences:de:%5C%7C:___:false:%09_TOPIC_+:%09_HINT_+:Conjugation+of+Modal+Verbs
+
+	_TOPIC_ Conjugation of Modal Verbs
+	_HINT_ können (can, to be able to)
+
+ich ___ | kann
+du ___ | kannst
+er/sie/es ___ | kann
+wir ___ | können
+ihr ___ | könnt
+sie/Sie ___ | können
+
+	_HINT_ müssen (must, to have to)
+
+ich ___ | muss
+du ___ | musst
+er/sie/es ___ | muss
+wir ___ | müssen
+ihr ___ | müsst
+sie/Sie ___ | müssen
+	_HINT_ dürfen (may, to be allowed to)
+
+ich ___ | darf
+du ___ | darfst
+er/sie/es ___ | darf
+wir ___ | dürfen
+ihr ___ | dürft
+sie/Sie ___ | dürfen
+	_HINT_ sollen (should, to be supposed to)
+
+ich ___ | soll
+du ___ | sollst
+er/sie/es ___ | soll
+wir ___ | sollen
+ihr ___ | sollt
+sie/Sie ___ | sollen
+	_HINT_ wollen (want, to want to)
+
+ich ___ | will
+du ___ | willst
+er/sie/es ___ | will
+wir ___ | wollen
+ihr ___ | wollt
+sie/Sie ___ | wollen
+	_HINT_ mögen (to like)
+
+ich ___ | mag
+du ___ | magst
+er/sie/es ___ | mag
+wir ___ | mögen
+ihr ___ | mögt
+sie/Sie ___ | mögen
+
+	_TOPIC_ Conjugation of Modal in Präteritum
+	_HINT_ können (could, was able to)
+
+ich ___ | konnte
+du ___ | konntest
+er/sie/es ___ | konnte
+wir ___ | konnten
+ihr ___ | konntet
+sie/Sie ___ | konnten
+	_HINT_ müssen (had to)
+
+ich ___ | musste
+du ___ | musstest
+er/sie/es ___ | musste
+wir ___ | mussten
+ihr ___ | musstet
+sie/Sie ___ | mussten
+	_HINT_ dürfen (was allowed to)
+
+ich ___ | durfte
+du ___ | durftest
+er/sie/es ___ | durfte
+wir ___ | durften
+ihr ___ | durftet
+sie/Sie ___ | durften
+	_HINT_ sollen (was supposed to)
+
+ich ___ | sollte
+du ___ | solltest
+er/sie/es ___ | sollte
+wir ___ | sollten
+ihr ___ | solltet
+sie/Sie ___ | sollten
+	_HINT_ wollen (wanted to)
+
+ich ___ | wollte
+du ___ | wolltest
+er/sie/es ___ | wollte
+wir ___ | wollten
+ihr ___ | wolltet
+sie/Sie ___ | wollten
+	_HINT_ mögen (liked to)
+
+ich ___ | mochte
+du ___ | mochtest
+er/sie/es ___ | mochte
+wir ___ | mochten
+ihr ___ | mochtet
+sie/Sie ___ | mochten

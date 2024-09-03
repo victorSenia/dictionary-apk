@@ -4,16 +4,17 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.*;
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 public class MultiSelectionStringRecyclerViewAdapter<T> extends StringRecyclerViewAdapter<T> {
 
-    public MultiSelectionStringRecyclerViewAdapter(List<T> items, Fragment fragment) {
-        super(items, fragment, new MultiSelectionOnClickListener<>());
+    public MultiSelectionStringRecyclerViewAdapter(List<T> items, Fragment fragment, Consumer<Collection<T>> additionalOnClickUpdater) {
+        super(items, fragment, new MultiSelectionOnClickListener<>(additionalOnClickUpdater));
     }
 
-    public MultiSelectionStringRecyclerViewAdapter(List<T> items, Fragment fragment, Function<T, String> formatter) {
-        super(items, fragment, new MultiSelectionOnClickListener<>(), formatter);
+    public MultiSelectionStringRecyclerViewAdapter(List<T> items, Fragment fragment, Consumer<Collection<T>> additionalOnClickUpdater, Function<T, String> formatter) {
+        super(items, fragment, new MultiSelectionOnClickListener<>(additionalOnClickUpdater), formatter);
     }
 
     protected boolean isBackgroundColorNeeded(StringViewHolder<T> holder) {
@@ -37,6 +38,9 @@ public class MultiSelectionStringRecyclerViewAdapter<T> extends StringRecyclerVi
             if (onClickListener.selected.size() > 1) {
                 onClickListener.isMultiSelect = true;
             }
+            if (onClickListener.additionalOnClickUpdater != null) {
+                onClickListener.additionalOnClickUpdater.accept(items);
+            }
         }
     }
 
@@ -55,6 +59,11 @@ public class MultiSelectionStringRecyclerViewAdapter<T> extends StringRecyclerVi
     public static class MultiSelectionOnClickListener<T> implements StringRecyclerViewAdapter.OnClickListener<T> {
         private final Map<Integer, T> selected = new HashMap<>();
         private boolean isMultiSelect = false;
+        private Consumer<Collection<T>> additionalOnClickUpdater;
+
+        public MultiSelectionOnClickListener(Consumer<Collection<T>> additionalOnClickUpdater) {
+            this.additionalOnClickUpdater = additionalOnClickUpdater;
+        }
 
         @Override
         public void onClick(StringViewHolder<T> viewHolder) {
@@ -70,6 +79,9 @@ public class MultiSelectionStringRecyclerViewAdapter<T> extends StringRecyclerVi
                 clearAndUpdateUi(viewHolder.getBindingAdapter());
                 selected.put(adapterPosition, viewHolder.item);
                 viewHolder.getBindingAdapter().notifyItemChanged(adapterPosition);
+            }
+            if (additionalOnClickUpdater != null) {
+                additionalOnClickUpdater.accept(selected.values());
             }
         }
 
@@ -90,6 +102,9 @@ public class MultiSelectionStringRecyclerViewAdapter<T> extends StringRecyclerVi
             if (!selected.containsKey(adapterPosition)) {
                 selected.put(adapterPosition, viewHolder.item);
                 viewHolder.getBindingAdapter().notifyItemChanged(adapterPosition);
+            }
+            if (additionalOnClickUpdater != null) {
+                additionalOnClickUpdater.accept(selected.values());
             }
             return true;
         }

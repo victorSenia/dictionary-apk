@@ -38,7 +38,7 @@ public class VoiceSelectorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         LanguageViewModel languageViewModel = new ViewModelProvider(this).get(LanguageViewModel.class);
-        languageViewModel.setSelected(getString(R.string.default_language));
+        languageViewModel.setValue(getString(R.string.default_language));
         binding = ActivityVoiceSelectorBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         languageViewModel.getData().observe(this, this::updateUiWithWords);
@@ -46,7 +46,7 @@ public class VoiceSelectorActivity extends AppCompatActivity {
         binding.setLifecycleOwner(this);
         binding.defaultVoice.setOnClickListener(v -> {
             getStringRecyclerViewAdapter().clearSelection();
-            String language = languageViewModel.getSelected();
+            String language = languageViewModel.getValue();
             ((ApplicationWithDI) getApplicationContext()).appComponent.lastState().edit()
                     .remove(ApkModule.LAST_STATE_VOICE + language).apply();
             playTestString(this, language);
@@ -93,20 +93,20 @@ public class VoiceSelectorActivity extends AppCompatActivity {
         return fragment.getRecyclerViewAdapter();
     }
 
-    public static class VoicesFragment extends RecyclerViewFragment<String> {
+    public static class VoicesFragment extends RecyclerViewFragment<StringRecyclerViewAdapter<String>, String> {
         @Override
-        protected List<String> getStrings() {
+        protected List<String> getValues() {
             return new ArrayList<>();
         }
 
         @Override
-        protected StringRecyclerViewAdapter<String> createRecyclerViewAdapter() {
+        protected StringRecyclerViewAdapter<String> createRecyclerViewAdapter(List<String> values) {
             recyclerView.setNestedScrollingEnabled(false);
-            return new StringRecyclerViewAdapter<>(getStrings(), this,
+            return new StringRecyclerViewAdapter<>(values, this,
                     new StringRecyclerViewAdapter.RememberSelectionOnClickListener<>((oldSelected, viewHolder) ->
                     {
                         LanguageViewModel languageViewModel = new ViewModelProvider(requireActivity()).get(LanguageViewModel.class);
-                        String language = languageViewModel.getSelected();
+                        String language = languageViewModel.getValue();
                         ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.lastState().edit()
                                 .putString(ApkModule.LAST_STATE_VOICE + language, viewHolder.valueToString()).apply();
                         playTestString(requireActivity(), language);
@@ -116,9 +116,9 @@ public class VoiceSelectorActivity extends AppCompatActivity {
 
     }
 
-    public static class LanguagesFragment extends RecyclerViewFragment<String> {
+    public static class LanguagesFragment extends RecyclerViewFragment<StringRecyclerViewAdapter<String>, String> {
         @Override
-        protected List<String> getStrings() {
+        protected List<String> getValues() {
             ApkAppComponent appComponent = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent;
             ExternalWordProvider wordProvider = appComponent.externalWordProvider();
             Set<String> result = new HashSet<>();
@@ -130,11 +130,11 @@ public class VoiceSelectorActivity extends AppCompatActivity {
         }
 
         @Override
-        protected StringRecyclerViewAdapter<String> createRecyclerViewAdapter() {
+        protected StringRecyclerViewAdapter<String> createRecyclerViewAdapter(List<String> values) {
             recyclerView.setNestedScrollingEnabled(false);
-            return new StringRecyclerViewAdapter<>(getStrings(), this,
+            return new StringRecyclerViewAdapter<>(values, this,
                     new StringRecyclerViewAdapter.RememberSelectionOnClickListener<>(
-                            (oldSelected, viewHolder) -> getLanguageViewModel().setSelected(viewHolder.valueToString())
+                            (oldSelected, viewHolder) -> getLanguageViewModel().setValue(viewHolder.valueToString())
                     ));
         }
 

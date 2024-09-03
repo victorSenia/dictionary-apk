@@ -10,17 +10,16 @@ import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.RecyclerView;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
-import org.leo.dictionary.apk.activity.fragment.RecyclerViewFragment;
+import org.leo.dictionary.apk.activity.fragment.FilteredRecyclerViewFragment;
 import org.leo.dictionary.apk.activity.viewadapter.StringRecyclerViewAdapter;
 import org.leo.dictionary.apk.activity.viewmodel.LanguageViewModel;
 import org.leo.dictionary.apk.databinding.ActivityConfigurationPresetsBinding;
 import org.leo.dictionary.apk.word.provider.DBWordProvider;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.function.Function;
 
 public class ConfigurationPresetsActivity extends AppCompatActivity {
     private ActivityConfigurationPresetsBinding binding;
@@ -40,11 +39,14 @@ public class ConfigurationPresetsActivity extends AppCompatActivity {
         binding = ActivityConfigurationPresetsBinding.inflate(getLayoutInflater());
         LanguageViewModel nameViewModel = new ViewModelProvider(this).get(LanguageViewModel.class);
         binding.setViewModel(nameViewModel);
-        binding.actionCreate.setOnClickListener(v -> savePresets(nameViewModel.getSelected()));
-        binding.actionEdit.setOnClickListener(v -> updatePresets(nameViewModel.getSelected()));
-        binding.actionDelete.setOnClickListener(v -> deletePresets(nameViewModel.getSelected()));
-        binding.actionApply.setOnClickListener(v -> applyPresets(nameViewModel.getSelected()));
+        binding.actionCreate.setOnClickListener(v -> savePresets(nameViewModel.getValue()));
+        binding.actionEdit.setOnClickListener(v -> updatePresets(nameViewModel.getValue()));
+        binding.actionDelete.setOnClickListener(v -> deletePresets(nameViewModel.getValue()));
+        binding.actionApply.setOnClickListener(v -> applyPresets(nameViewModel.getValue()));
         binding.setLifecycleOwner(this);
+        PresetsFragment presetsFragment = (PresetsFragment) getSupportFragmentManager().findFragmentById(R.id.presets_names);
+        nameViewModel.getData().observe(this, v -> presetsFragment.setFilterValue(v));
+
         setContentView(binding.getRoot());
     }
 
@@ -71,14 +73,13 @@ public class ConfigurationPresetsActivity extends AppCompatActivity {
         getDbWordProvider().deleteConfigurationPreset(selected);
         PresetsFragment presetsFragment = (PresetsFragment) getSupportFragmentManager().findFragmentById(R.id.presets_names);
         if (presetsFragment != null) {
-            presetsFragment.presets.remove(selected);
+            presetsFragment.getAllValues().remove(selected);
             clearName();
-            presetsFragment.filterPresetsInAdapter(selected);
         }
     }
 
     private void clearName() {
-        new ViewModelProvider(this).get(LanguageViewModel.class).setSelected("");
+        new ViewModelProvider(this).get(LanguageViewModel.class).setValue("");
     }
 
     private DBWordProvider getDbWordProvider() {
@@ -103,69 +104,61 @@ public class ConfigurationPresetsActivity extends AppCompatActivity {
         getDbWordProvider().insertConfigurationPreset(selected, filterSavedData());
         PresetsFragment presetsFragment = (PresetsFragment) getSupportFragmentManager().findFragmentById(R.id.presets_names);
         if (presetsFragment != null) {
-            presetsFragment.presets.add(selected);
-            presetsFragment.presets.sort(String::compareTo);
+            presetsFragment.getAllValues().add(selected);
+            presetsFragment.getAllValues().sort(String::compareTo);
             clearName();
-            presetsFragment.filterPresetsInAdapter(selected);
         }
     }
 
-    public static class PresetsFragment extends RecyclerViewFragment<String> {
-        private List<String> presets;
+    public static class PresetsFragment extends FilteredRecyclerViewFragment<StringRecyclerViewAdapter<String>, String> {
         private boolean presetSelected = false;
 
-        protected void filterPresetsInAdapter(String filterString) {
-            StringRecyclerViewAdapter<String> adapter = getRecyclerViewAdapter();
-            if (adapter != null) {
-                adapter.clearAdapter();
-                adapter.values.addAll(filterPresets(filterString));
-                adapter.setSelected(adapter.values.indexOf(filterString));
-                presetSelected = adapter.getSelected() != RecyclerView.NO_POSITION;
-                updateButtonsVisibility();
-                adapter.notifyDataSetChanged();
-            }
+        List<String> getAllValues() {
+            return allValues;
+        }
+
+        @Override
+        protected void setSelectedValues(StringRecyclerViewAdapter<String> adapter) {
+            adapter.setSelected(adapter.values.indexOf(filter.getText().toString()));
+            presetSelected = adapter.getSelected() != RecyclerView.NO_POSITION;
+            updateButtonsVisibility();
+        }
+
+        @Override
+        protected boolean stateChanged() {
+            return false;
+        }
+
+        @Override
+        protected void setFilterVisibility() {
+            updateButtonsVisibility();
         }
 
         private void updateButtonsVisibility() {
-            requireActivity().findViewById(R.id.action_create).setVisibility(!presetSelected && getNameViewModel().getSelected() != null && !getNameViewModel().getSelected().isEmpty() ? View.VISIBLE : View.GONE);
+            requireActivity().findViewById(R.id.action_create).setVisibility(!presetSelected && !filter.getText().toString().isEmpty() ? View.VISIBLE : View.GONE);
             requireActivity().findViewById(R.id.action_edit).setVisibility(presetSelected ? View.VISIBLE : View.GONE);
             requireActivity().findViewById(R.id.action_delete).setVisibility(presetSelected ? View.VISIBLE : View.GONE);
             requireActivity().findViewById(R.id.action_apply).setVisibility(presetSelected ? View.VISIBLE : View.GONE);
         }
 
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            getNameViewModel().getData().observe(requireActivity(), this::filterPresetsInAdapter);
-        }
-
-        protected List<String> filterPresets(String filterString) {
-            if (!filterString.isEmpty()) {
-                return presets.stream().filter(t -> t.contains(filterString)).collect(Collectors.toList());
-            }
-            return presets;
-        }
-
-        protected List<String> getStrings() {
-            presets = findPresets();
-            updateButtonsVisibility();
-            return new ArrayList<>(presets);
-        }
-
-        protected List<String> findPresets() {
+        protected List<String> findValues() {
             DBWordProvider wordProvider = getDbWordProvider(requireActivity().getApplicationContext());
             return wordProvider.getConfigurationPresetNames();
         }
 
         @Override
-        protected StringRecyclerViewAdapter<String> createRecyclerViewAdapter() {
+        protected StringRecyclerViewAdapter<String> createRecyclerViewAdapter(List<String> values) {
             recyclerView.setNestedScrollingEnabled(false);
-            return new StringRecyclerViewAdapter<>(getStrings(), this,
-                    new StringRecyclerViewAdapter.RememberSelectionOnClickListener<>((oldSelected, viewHolder) -> getNameViewModel().setSelected(viewHolder.item)));
+            return new StringRecyclerViewAdapter<>(values, this,
+                    new StringRecyclerViewAdapter.RememberSelectionOnClickListener<>((oldSelected, viewHolder) -> getNameViewModel().setValue(viewHolder.item)));
         }
 
         private LanguageViewModel getNameViewModel() {
             return new ViewModelProvider(requireActivity()).get(LanguageViewModel.class);
+        }
+
+        public void setFilterValue(String v) {
+            filter.setText(v);
         }
     }
 }

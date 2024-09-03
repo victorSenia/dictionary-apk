@@ -24,28 +24,28 @@ public class AssetsWordProvider extends FileWordProvider {
         return line.startsWith(PARSE_WORDS_CONFIGURATION);
     }
 
-    private static String decode(String string) {
+    public static String decode(String string) {
         if (string == null || string.isEmpty()) {
             return null;
         }
         return WordImporter.decode(string);
     }
 
-    private static List<String> parseListProperty(String configPart) {
+    public static List<String> parseListProperty(String configPart) {
         if (configPart.trim().isEmpty()) {
             return Collections.emptyList();
         }
         return Arrays.stream(configPart.split(WordExporter.PARTS_DIVIDER)).map(AssetsWordProvider::decode).collect(Collectors.toList());
     }
 
-    private static String encode(String string) {
+    public static String encode(String string) {
         if (string == null || string.isEmpty()) {
             return "";
         }
         return WordExporter.encode(string);
     }
 
-    private static String listPropertyToString(List<String> strings) {
+    public static String listPropertyToString(List<String> strings) {
         if (strings == null || strings.isEmpty()) {
             return "";
         }

@@ -166,7 +166,7 @@ public class WordMatcherActivity extends AppCompatActivity {
     }
 
     private Element[][] fillWordsToMatch(List<Word> unknownWords, List<Word> wordsToMatch, List<Translation> translationsToMatch, Element[][] words) {
-        Set<String> languageTo = ((ApplicationWithDI) getApplicationContext()).appComponent.wordCriteriaProvider().getWordCriteria().getLanguageTo();
+        Set<String> languageTo = ((ApplicationWithDI) getApplicationContext()).appComponent.wordCriteriaProvider().getObject().getLanguageTo();
         Random random = new Random();
         int attempt = 0;
         for (int index = 0; index < limit; index++) {

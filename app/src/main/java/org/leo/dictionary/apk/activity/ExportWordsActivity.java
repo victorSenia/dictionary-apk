@@ -55,7 +55,7 @@ public class ExportWordsActivity extends AppCompatActivity {
             FilterWordsActivity.RootTopicsFragment topics = (FilterWordsActivity.RootTopicsFragment) getSupportFragmentManager().findFragmentById(R.id.root_topics);
             if (topics != null) {
                 topics.getRecyclerViewAdapter().clearSelection();
-                rootTopicViewModel.setTopic(null);
+                rootTopicViewModel.postValue(null);
             }
         });
         ApkAppComponent appComponent = ((ApplicationWithDI) getApplicationContext()).appComponent;
@@ -63,7 +63,7 @@ public class ExportWordsActivity extends AppCompatActivity {
         if (!ApkModule.isDBSource(appComponent.lastState()) || languagesFrom.isEmpty()) {
             findViewById(R.id.language_from_container).setVisibility(View.GONE);
         } else if (languagesFrom.size() == 1) {
-            languageViewModel.setSelected(languagesFrom.get(0));
+            languageViewModel.setValue(languagesFrom.get(0));
         }
     }
 
@@ -81,8 +81,8 @@ public class ExportWordsActivity extends AppCompatActivity {
             LanguageViewModel languageViewModel = new ViewModelProvider(this).get(LanguageViewModel.class);
             TopicViewModel rootTopicViewModel = new ViewModelProvider(this).get(TopicViewModel.class);
             DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
-            String language = languageViewModel.getSelected();
-            Topic rootTopic = rootTopicViewModel.getTopic();
+            String language = languageViewModel.getValue();
+            Topic rootTopic = rootTopicViewModel.getValue();
             WordExporter wordExporter = new WordExporter() {
                 @Override
                 protected BufferedWriter getBufferedWriter() {

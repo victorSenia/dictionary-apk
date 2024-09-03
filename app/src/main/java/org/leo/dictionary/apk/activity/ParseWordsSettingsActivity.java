@@ -18,6 +18,7 @@ import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.activity.viewadapter.ReturnSelectedStringRecyclerViewAdapter;
 import org.leo.dictionary.apk.databinding.ParseWordsSettingsActivityBinding;
+import org.leo.dictionary.apk.word.provider.AssetsWordProvider;
 import org.leo.dictionary.word.provider.WordProvider;
 
 import java.io.FileNotFoundException;
@@ -74,6 +75,9 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
         });
         binding.asset.setOnClickListener(v -> {
             Intent intent = new Intent(this, AssetsActivity.class);
+            Bundle b = new Bundle();
+            b.putString(AssetsActivity.FOLDER_NAME, AssetsWordProvider.ASSETS_WORDS);
+            intent.putExtras(b);
             assetsActivityResultLauncher.launch(intent);
         });
         binding.parseWords.setOnClickListener(v -> {

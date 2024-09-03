@@ -6,9 +6,11 @@ import org.leo.dictionary.ExternalVoiceService;
 import org.leo.dictionary.ExternalWordProvider;
 import org.leo.dictionary.PlayService;
 import org.leo.dictionary.UiUpdater;
+import org.leo.dictionary.apk.helper.GrammarCriteriaProvider;
 import org.leo.dictionary.apk.helper.WordCriteriaProvider;
 import org.leo.dictionary.apk.word.provider.DBWordProvider;
 import org.leo.dictionary.audio.AudioService;
+import org.leo.dictionary.grammar.provider.GrammarProvider;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
@@ -27,6 +29,10 @@ public interface ApkAppComponent {
     UiUpdater uiUpdater();
 
     WordCriteriaProvider wordCriteriaProvider();
+
+    GrammarCriteriaProvider grammarCriteriaProvider();
+
+    GrammarProvider externalGrammarProvider();
 
     @Named("lastState")
     SharedPreferences lastState();

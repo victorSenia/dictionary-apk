@@ -1,21 +1,11 @@
 package org.leo.dictionary.apk.activity.viewmodel;
 
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
-
-public class IsPlayingViewModel extends ViewModel {
-    private final MutableLiveData<Boolean> data = new MutableLiveData<>(Boolean.FALSE);
-
-    public LiveData<Boolean> getData() {
-        return data;
-    }
-
+public class IsPlayingViewModel extends ObjectViewModel<Boolean> {
     public void setPlaying() {
-        data.postValue(true);
+        postValue(Boolean.TRUE);
     }
 
     public void setPaused() {
-        data.postValue(false);
+        postValue(Boolean.FALSE);
     }
 }

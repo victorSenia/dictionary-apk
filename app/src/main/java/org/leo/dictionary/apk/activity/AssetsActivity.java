@@ -16,6 +16,16 @@ import java.util.List;
 
 public class AssetsActivity extends AppCompatActivity {
 
+    public static final String FOLDER_NAME = "FOLDER_NAME";
+
+    private String getFolderName() {
+        Bundle b = getIntent().getExtras();
+        if (b != null) {
+            return b.getString(FOLDER_NAME, AssetsWordProvider.ASSETS_WORDS);
+        }
+        return AssetsWordProvider.ASSETS_WORDS;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,11 +36,11 @@ public class AssetsActivity extends AppCompatActivity {
         }
     }
 
-    public static class AssetsFragment extends RecyclerViewFragment<String> {
+    public static class AssetsFragment extends RecyclerViewFragment<StringRecyclerViewAdapter<String>, String> {
         @Override
-        protected List<String> getStrings() {
+        protected List<String> getValues() {
             try {
-                return Arrays.asList(requireActivity().getAssets().list(AssetsWordProvider.ASSETS_WORDS));
+                return Arrays.asList(requireActivity().getAssets().list(((AssetsActivity) requireActivity()).getFolderName()));
             } catch (IOException e) {
                 MainActivity.logUnhandledException(e);
                 return Collections.emptyList();
@@ -38,8 +48,8 @@ public class AssetsActivity extends AppCompatActivity {
         }
 
         @Override
-        protected StringRecyclerViewAdapter<String> createRecyclerViewAdapter() {
-            return new ReturnSelectedStringRecyclerViewAdapter(getStrings(), this);
+        protected StringRecyclerViewAdapter<String> createRecyclerViewAdapter(List<String> values) {
+            return new ReturnSelectedStringRecyclerViewAdapter(values, this);
         }
     }
 }
