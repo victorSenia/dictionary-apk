@@ -71,7 +71,8 @@ public abstract class FilteredRecyclerViewFragment<V extends RecyclerView.Adapte
     protected List<T> filterValues() {
         if (filter != null && !filter.getText().toString().isEmpty()) {
             CharSequence filterString = filter.getText().toString();
-            return allValues.stream().filter(filterPredicate(filterString)).collect(Collectors.toList());
+            Predicate<T> predicate = filterPredicate(filterString);
+            return allValues.stream().filter(predicate).collect(Collectors.toList());
         }
         return allValues;
     }

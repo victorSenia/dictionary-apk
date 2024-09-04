@@ -22,7 +22,6 @@ public class GrammarCheckActivity extends AppCompatActivity {
     public static final int CORRECT_DELAY_MILLIS = 1500;
     public static final int VARIANTS_LIMIT = 5;
     public static final boolean SHOW_VARIANTS = true;
-    public static final String PLACEHOLDER = "         ";
     private List<Sentence> sentences;
     private Sentence sentence;
     private ActivityGrammarCheckBinding binding;
@@ -47,14 +46,18 @@ public class GrammarCheckActivity extends AppCompatActivity {
                 binding.sentence.setText(sentenceToString(sentence));
                 if (sentence.getAnswer().equals(String.valueOf(s))) {
                     binding.imageOk.setVisibility(View.VISIBLE);
-                    if (CORRECT_DELAY_MILLIS > -1) {
+                    if (getCorrectDelayMillis() > -1) {
                         final Handler handler = new Handler(Looper.getMainLooper());
-                        handler.postDelayed(() -> updateUIWithNextSentence(), CORRECT_DELAY_MILLIS);
+                        handler.postDelayed(() -> updateUIWithNextSentence(), getCorrectDelayMillis());
                     }
                 }
             }
         });
         updateUIWithNextSentence();
+    }
+
+    private static int getCorrectDelayMillis() {
+        return CORRECT_DELAY_MILLIS;
     }
 
     private void updateUIWithNextSentence() {

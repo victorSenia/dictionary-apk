@@ -158,11 +158,7 @@ public class WordMatcherActivity extends AppCompatActivity {
             } else {
                 audioService.play(word.getLanguage(), word.getFullWord());
             }
-        } else {
-//                Translation translation = (Translation) element.value;
-//                audioService.play(translation.getLanguage(), translation.getTranslation());
         }
-
     }
 
     private Element[][] fillWordsToMatch(List<Word> unknownWords, List<Word> wordsToMatch, List<Translation> translationsToMatch, Element[][] words) {

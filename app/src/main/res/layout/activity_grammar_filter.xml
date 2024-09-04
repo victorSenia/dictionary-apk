@@ -85,13 +85,13 @@
                     android:layout_width="match_parent" android:layout_height="wrap_content"
                     android:orientation="vertical" android:id="@+id/hints_container">
                 <TextView
-                        android:text="Hints"
+                        android:text="@string/hints"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/sentence_hint"
                         android:gravity="center"/>
                 <Button
-                        android:text="All hints"
+                        android:text="@string/all_hints"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/all_hints"
@@ -111,13 +111,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         <Button
-                android:text="Learn"
+                android:text="@string/learn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/button_learn"
                 style="@style/Widget.Material3.Button.IconButton.Filled.Tonal" android:layout_weight="1"/>
         <Button
-                android:text="Practice"
+                android:text="@string/practice"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/button_practice"

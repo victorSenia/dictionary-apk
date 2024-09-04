@@ -98,4 +98,12 @@
     <string name="word_recognition">Розпізнавання мовлення</string>
     <string name="word_knowledge">Знання</string>
     <string name="error">помилка</string>
+    <string name="search_words">Знайти слова</string>
+    <string name="grammar_filter">Фільтрувати граматику</string>
+    <string name="filter">Фільтрувати</string>
+    <string name="hints">Підказки</string>
+    <string name="all_hints">Всі підказки</string>
+    <string name="learn">Вчити</string>
+    <string name="practice">Перевірка</string>
+    <string name="answer">відповідь</string>
 </resources>

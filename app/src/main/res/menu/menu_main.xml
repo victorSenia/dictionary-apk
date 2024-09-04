@@ -17,9 +17,14 @@
           android:orderInCategory="300"
           android:layout_height="wrap_content"/>
     <item android:id="@+id/action_grammar_filter"
-          android:title="Grammar filter"
+          android:title="@string/grammar_filter"
           android:layout_width="wrap_content"
           android:orderInCategory="300"
+          android:layout_height="wrap_content"/>
+    <item android:id="@+id/action_search_words"
+          android:title="@string/search_words"
+          android:layout_width="wrap_content"
+          android:orderInCategory="200"
           android:layout_height="wrap_content"/>
     <item android:id="@+id/action_select_voices"
           android:title="@string/select_voices"

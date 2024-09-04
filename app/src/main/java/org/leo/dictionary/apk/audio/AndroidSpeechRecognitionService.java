@@ -151,13 +151,4 @@ public class AndroidSpeechRecognitionService {
             ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.RECORD_AUDIO}, RecordAudioRequestCode);
         }
     }
-//
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-//        if (requestCode == RecordAudioRequestCode && grantResults.length > 0) {
-//            if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
-//                Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show();
-//        }
-//    }
 }

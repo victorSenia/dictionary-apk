@@ -19,7 +19,6 @@ import org.leo.dictionary.apk.word.provider.DBWordProvider;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Function;
 
 public class ConfigurationPresetsActivity extends AppCompatActivity {
     private ActivityConfigurationPresetsBinding binding;

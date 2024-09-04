@@ -186,9 +186,6 @@ public class MainActivity extends AppCompatActivity {
         ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) getApplicationContext()).appComponent.uiUpdater();
         uiUpdater = new ViewModelProvider(this).get(DetailsViewModel.class)::updateWord;
         apkUiUpdater.addUiUpdater(uiUpdater);
-//        binding.changeOrientation.postDelayed(() -> {
-//            binding.changeOrientation.setVisibility(View.GONE);
-//        }, 5000);
     }
 
     protected void setOrientation(boolean change) {
@@ -196,14 +193,8 @@ public class MainActivity extends AppCompatActivity {
         boolean isPortrait = preferences.getBoolean(ApkModule.LAST_STATE_IS_PORTRAIT, true);
         if (change ^ !isPortrait) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-//            getWindow().getDecorView().getWindowInsetsController().
-//                    hide(android.view.WindowInsets.Type.statusBars() | android.view.WindowInsets.Type.navigationBars()
-//                    );
         } else {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
-//            getWindow().getDecorView().getWindowInsetsController().
-//                    show(android.view.WindowInsets.Type.statusBars() | android.view.WindowInsets.Type.navigationBars()
-//                    );
         }
         if (change) {
             preferences.edit().putBoolean(ApkModule.LAST_STATE_IS_PORTRAIT, !isPortrait).apply();
@@ -221,6 +212,10 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         if (id == R.id.action_settings) {
             Intent i = new Intent(this, SettingsActivity.class);
+            startActivity(i);
+            return true;
+        } else if (id == R.id.action_search_words) {
+            Intent i = new Intent(this, SearchWordsActivity.class);
             startActivity(i);
             return true;
         } else if (id == R.id.action_filter_words) {

@@ -45,7 +45,9 @@
     <string name="choose_file">Choose a file</string>
     <string name="correct">Correct</string>
     <string name="languages_already_present">Language already present</string>
-    <string name="languages_already_present_question">In database already present some data for language %s.Do you want to delete this data before import?</string>
+    <string name="languages_already_present_question">In database already present some data for language %s.Do you want
+        to delete this data before import?
+    </string>
     <string name="already_database_error">Not possible. Already used source DB</string>
     <string name="not_database_error">Can only be used with database</string>
     <string name="delete_word_confirmation">Delete confirmation</string>
@@ -103,4 +105,12 @@
     <string name="word_recognition">Speech recognition</string>
     <string name="word_knowledge">Knowledge</string>
     <string name="error">error</string>
+    <string name="search_words">Search words</string>
+    <string name="grammar_filter">Grammar filter</string>
+    <string name="filter">Filter</string>
+    <string name="hints">Hints</string>
+    <string name="all_hints">All hints</string>
+    <string name="learn">Learn</string>
+    <string name="practice">Practice</string>
+    <string name="answer">answer</string>
 </resources>

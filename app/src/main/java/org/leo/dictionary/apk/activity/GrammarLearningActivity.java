@@ -1,7 +1,6 @@
 package org.leo.dictionary.apk.activity;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -61,11 +60,10 @@ public class GrammarLearningActivity extends AppCompatActivity {
         @Override
         protected StringRecyclerViewAdapter<Sentence> createRecyclerViewAdapter(List<Sentence> values) {
             recyclerView.setNestedScrollingEnabled(false);
-            StringRecyclerViewAdapter<Sentence> adapter = new StringRecyclerViewAdapter<>(values, this,
+            return new StringRecyclerViewAdapter<>(values, this,
                     new StringRecyclerViewAdapter.RememberSelectionOnClickListener<>(
                             (oldSelected, viewHolder) -> getLanguageViewModel().setValue(viewHolder.valueToString())
                     ), this::sentenceToString);
-            return adapter;
         }
 
         private LanguageViewModel getLanguageViewModel() {

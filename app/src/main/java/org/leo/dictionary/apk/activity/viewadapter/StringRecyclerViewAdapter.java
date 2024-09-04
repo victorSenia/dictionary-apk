@@ -96,7 +96,7 @@ public class StringRecyclerViewAdapter<T> extends RecyclerView.Adapter<StringRec
 
     public static class RememberSelectionOnClickListener<T> implements StringRecyclerViewAdapter.OnClickListener<T> {
         protected int selected = RecyclerView.NO_POSITION;
-        private BiConsumer<Integer, StringViewHolder<T>> additionalOnClickHandling;
+        private final BiConsumer<Integer, StringViewHolder<T>> additionalOnClickHandling;
 
         public RememberSelectionOnClickListener(BiConsumer<Integer, StringViewHolder<T>> additionalOnClickHandling) {
             this.additionalOnClickHandling = additionalOnClickHandling;
