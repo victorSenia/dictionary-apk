@@ -259,14 +259,18 @@ public class DatabaseManager {
                 new String[]{Long.toString(wordId), Long.toString(topicId)});
     }
 
-    protected Cursor fetchWordsCursor(WordCriteria criteria) {
-        String sql = "SELECT DISTINCT w.* FROM " + DatabaseHelper.TABLE_NAME_WORD + " w";
+    protected Cursor fetchWordsCursor(WordCriteria criteria, boolean countOnly) {
+        String sql = "SELECT DISTINCT " + (countOnly ? "COUNT w." + DatabaseHelper.COLUMN_ID : "w.*") + " FROM " + DatabaseHelper.TABLE_NAME_WORD + " w";
         List<String> selectionArgs = new ArrayList<>();
         String where = " WHERE 1=1";
         if ((criteria.getTopicsOr() != null && !criteria.getTopicsOr().isEmpty()) || criteria.getRootTopic() != null) {
             List<String> topicIds = getTopicIds(criteria.getLanguageFrom(), createRootTopicObject(criteria.getLanguageFrom(), criteria.getRootTopic()), criteria.getTopicsOr());
             sql += " INNER JOIN " + DatabaseHelper.TABLE_NAME_WORD_TOPIC + " t ON w." + DatabaseHelper.COLUMN_ID + " = t." + DatabaseHelper.TRANSLATION_COLUMN_WORD_ID + " AND t." + DatabaseHelper.COLUMN_ID + " IN (" + createPlaceholders(topicIds.size()) + ")";
             selectionArgs.addAll(topicIds);
+        }
+        if ((criteria.getLanguageTo() != null && !criteria.getLanguageTo().isEmpty())) {
+            sql += " INNER JOIN " + DatabaseHelper.TABLE_NAME_TRANSLATION + " tr ON w." + DatabaseHelper.COLUMN_ID + " = tr." + DatabaseHelper.TRANSLATION_COLUMN_WORD_ID + " AND tr." + DatabaseHelper.COLUMN_LANGUAGE + " IN (" + createPlaceholders(criteria.getLanguageTo().size()) + ")";
+            selectionArgs.addAll(criteria.getLanguageTo());
         }
         if (criteria.getLanguageFrom() != null) {
             where += " AND w." + DatabaseHelper.COLUMN_LANGUAGE + " = ?";
@@ -443,14 +447,23 @@ public class DatabaseManager {
     }
 
     public List<Word> getWords(WordCriteria criteria) {
-        return getWords(() -> fetchWordsCursor(criteria), criteria.getLanguageTo(), false);
+        return getWords(() -> fetchWordsCursor(criteria, false), criteria.getLanguageTo(), false);
+    }
+
+    public int countWords(WordCriteria criteria) {
+        try (Cursor res = fetchWordsCursor(criteria, true)) {
+            if (!res.isAfterLast()) {
+                res.getInt(0);
+            }
+        }
+        return 0;
     }
 
     public List<Word> getWordsForLanguage(String language, String rootTopic) {
         WordCriteria criteria = new WordCriteria();
         criteria.setLanguageFrom(language);
         criteria.setRootTopic(rootTopic);
-        return getWords(() -> fetchWordsCursor(criteria), null, true);
+        return getWords(() -> fetchWordsCursor(criteria, false), null, true);
     }
 
 

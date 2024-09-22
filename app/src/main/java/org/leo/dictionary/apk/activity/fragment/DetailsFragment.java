@@ -22,7 +22,7 @@ public class DetailsFragment extends Fragment implements SharedPreferences.OnSha
 
     private RatingBar knowledgeBar;
 
-    private static int isVisible(SharedPreferences sharedPreferences) {
+    private int isVisible(SharedPreferences sharedPreferences) {
         return ApkModule.isDBSource(sharedPreferences) ? View.VISIBLE : View.GONE;
     }
 

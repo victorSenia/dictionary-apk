@@ -65,6 +65,7 @@
     <string name="select_voices">Виберіть голоси</string>
     <string name="default_voice">Голос за умовчанням</string>
     <string name="find_words">Фільтрувати слова</string>
+    <string name="find_words_count">Фільтрувати слова (%d)</string>
     <string name="set_mode">Змінити тему</string>
     <string name="import_words">Імпорт поточних в базу даних</string>
     <string name="use_db">Використовувати базу даних</string>

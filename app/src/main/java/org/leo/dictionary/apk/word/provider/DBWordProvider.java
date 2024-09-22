@@ -159,6 +159,11 @@ public class DBWordProvider implements WordProvider {
         return databaseManager.findWord(id);
     }
 
+    @Override
+    public int countWords(WordCriteria wordCriteria) {
+        return databaseManager.countWords(wordCriteria);
+    }
+
     public List<Word> getWordsForLanguage(String language, String rootTopic) {
         return databaseManager.getWordsForLanguage(language, rootTopic);
     }

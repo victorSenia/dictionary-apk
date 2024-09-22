@@ -333,7 +333,6 @@ public class GrammarFilterActivity extends AppCompatActivity {
 
         private Consumer<Collection<Hint>> getOnClickUpdater() {
             return hints -> updateViewModelHints(requireActivity(), new HashSet<>(hints));
-
         }
 
         protected List<Hint> getHintsFromCriteria(List<Hint> hintList) {

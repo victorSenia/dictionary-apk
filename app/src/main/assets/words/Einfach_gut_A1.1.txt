@@ -161,7 +161,7 @@ der Dienstag | Tuesday | вівторок
 doch | indeed (speech particle, postitive confirmation) | однак
 der Donnerstag | Thursday | четвер
 endlich | finally | нарешті
-erklären (ich erkläre – du erklärst – er erklärt) | to explain (I explain – you explain – he explains) | "пояснювати (я пояснюю - ти пояснюєш - він пояснює)"
+erklären (ich erkläre – du erklärst – er erklärt) | to explain (I explain – you explain – he explains) | пояснювати (я пояснюю - ти пояснюєш - він пояснює)
 erzählen (Sie erzählen) | to explain (you explain) | розповідати (ви розповідаєте)
 das Familienfoto | family photo | сімейне фото
 der Feiertag; Feiertage | public holiday | свято
@@ -195,7 +195,7 @@ lernen (ich lerne – du lernst – er lernt) | to learn (I learn – you learn 
 lesen (ich lese – du liest – er liest – ihr lest) | to read (I read – you read – he reads) | читати (я читаю - ти читаєш - він читає - ви читаєте)
 liebe, lieber | dear | люба, любий
 die Liste; Listen | list | список
-machen (ich mache – du machst – er macht) | to make (I make – you make – he makes) | "робити (я роблю - ти робиш - він робить)"
+machen (ich mache – du machst – er macht) | to make (I make – you make – he makes) | робити (я роблю - ти робиш - він робить)
 mir | (to) me | мені
 der Mittwoch | Wednesday | середа
 der Montag | Monday | понеділок

@@ -22,7 +22,6 @@
                 <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/word"
                         android:text="@{viewModel.data.fullWord}"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
                         android:gravity="bottom|center"
@@ -32,7 +31,6 @@
                         android:visibility='@{viewModel.data.additionalInformation==null||viewModel.data.additionalInformation.empty?android.view.View.GONE:android.view.View.VISIBLE}'
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/additional_information"
                         android:text='@{viewModel.data.additionalInformation}'
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:gravity="center|top"
@@ -41,7 +39,6 @@
                 <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/translation"
                         android:text='@{viewModel.data.getFormattedTranslations("\n")}'
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:gravity="center|top"

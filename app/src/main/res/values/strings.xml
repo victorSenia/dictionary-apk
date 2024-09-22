@@ -70,6 +70,7 @@
     <string name="select_voices">Select voices</string>
     <string name="default_voice">Default voice</string>
     <string name="find_words">Filter words</string>
+    <string name="find_words_count">Filter words (%d)</string>
     <string name="set_mode">Change theme</string>
     <string name="import_words">Import current into database</string>
     <string name="use_db">Use database</string>

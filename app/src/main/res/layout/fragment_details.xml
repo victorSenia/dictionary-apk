@@ -19,6 +19,14 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:gravity="center_horizontal" android:textSize="34sp"/>
         <TextView
+                android:visibility='@{viewModel.data.additionalInformation==null||viewModel.data.additionalInformation.empty?android.view.View.GONE:android.view.View.VISIBLE}'
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text='@{viewModel.data.additionalInformation}'
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:gravity="center_horizontal"
+                android:textSize="28sp"/>
+        <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text='@{viewModel.data.getFormattedTranslations("\n")}'
