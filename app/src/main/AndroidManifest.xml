@@ -18,6 +18,14 @@
             android:theme="@style/Theme.DictionaryApk"
             tools:targetApi="31">
         <activity
+                android:name=".activity.SentenceActivity"
+                android:exported="false"/>
+        <activity
+                android:name=".activity.MatchArticleActivity"
+                android:exported="false"
+                android:label="@string/title_activity_match_article"
+                android:theme="@style/Theme.DictionaryApk"/>
+        <activity
                 android:name=".activity.SearchWordsActivity"
                 android:exported="false"/>
         <activity
@@ -28,6 +36,7 @@
                 android:exported="false"/>
         <activity
                 android:name=".activity.GrammarCheckActivity"
+                android:windowSoftInputMode="adjustResize"
                 android:exported="false"/>
         <activity
                 android:name=".activity.ConfigurationPresetsActivity"

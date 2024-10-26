@@ -1,4 +1,4 @@
-org.leo.dictionary.config.entity.ParseSentences:de:%5C%7C:___:false:%09_TOPIC_+:%09_HINT_+:Conjugation+of+Modal+Verbs
+org.leo.dictionary.config.entity.ParseGrammar:de:%5C%7C:___:false:%09_TOPIC_+:%09_HINT_+:Conjugation+of+Modal+Verbs
 
 	_TOPIC_ Conjugation of Modal Verbs
 	_HINT_ können (can, to be able to)

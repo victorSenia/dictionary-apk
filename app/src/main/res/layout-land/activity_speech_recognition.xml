@@ -42,7 +42,7 @@
         <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"/>
         <ImageButton
                 android:layout_width="@dimen/speech_button_dimension"
                 android:layout_height="@dimen/speech_button_dimension"
@@ -53,7 +53,7 @@
         <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"/>
         <Button
                 android:text="@string/next"
                 android:layout_width="wrap_content"

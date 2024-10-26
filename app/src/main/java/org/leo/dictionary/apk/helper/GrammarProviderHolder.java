@@ -1,8 +1,8 @@
 package org.leo.dictionary.apk.helper;
 
+import org.leo.dictionary.entity.GrammarCriteria;
+import org.leo.dictionary.entity.GrammarSentence;
 import org.leo.dictionary.entity.Hint;
-import org.leo.dictionary.entity.Sentence;
-import org.leo.dictionary.entity.SentenceCriteria;
 import org.leo.dictionary.entity.Topic;
 import org.leo.dictionary.grammar.provider.GrammarProvider;
 
@@ -10,14 +10,14 @@ import java.util.List;
 import java.util.Set;
 
 public class GrammarProviderHolder implements GrammarProvider {
+    private GrammarProvider grammarProvider;
+
     public void setGrammarProvider(GrammarProvider grammarProvider) {
         this.grammarProvider = grammarProvider;
     }
 
-    private GrammarProvider grammarProvider;
-
     @Override
-    public List<Sentence> findSentences(SentenceCriteria criteria) {
+    public List<GrammarSentence> findSentences(GrammarCriteria criteria) {
         return grammarProvider.findSentences(criteria);
     }
 

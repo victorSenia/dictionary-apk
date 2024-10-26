@@ -9,8 +9,8 @@ import org.leo.dictionary.apk.activity.fragment.RecyclerViewFragment;
 import org.leo.dictionary.apk.activity.viewadapter.StringRecyclerViewAdapter;
 import org.leo.dictionary.apk.activity.viewmodel.LanguageViewModel;
 import org.leo.dictionary.apk.databinding.ActivityGrammarLearningBinding;
-import org.leo.dictionary.entity.Sentence;
-import org.leo.dictionary.entity.SentenceCriteria;
+import org.leo.dictionary.entity.GrammarCriteria;
+import org.leo.dictionary.entity.GrammarSentence;
 import org.leo.dictionary.grammar.provider.GrammarProvider;
 
 import java.util.List;
@@ -18,7 +18,7 @@ import java.util.List;
 public class GrammarLearningActivity extends AppCompatActivity {
     private ActivityGrammarLearningBinding binding;
 
-    private static SentenceCriteria getGrammarCriteria(Context context) {
+    private static GrammarCriteria getGrammarCriteria(Context context) {
         return ((ApplicationWithDI) context.getApplicationContext()).appComponent.grammarCriteriaProvider().getObject();
     }
 
@@ -35,15 +35,15 @@ public class GrammarLearningActivity extends AppCompatActivity {
         binding = null;
     }
 
-    public static class SentencesFragment extends RecyclerViewFragment<StringRecyclerViewAdapter<Sentence>, Sentence> {
+    public static class SentencesFragment extends RecyclerViewFragment<StringRecyclerViewAdapter<GrammarSentence>, GrammarSentence> {
         @Override
-        protected List<Sentence> getValues() {
+        protected List<GrammarSentence> getValues() {
             GrammarProvider grammarProvider = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.externalGrammarProvider();
-            SentenceCriteria sentenceCriteria = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.grammarCriteriaProvider().getObject();
-            return grammarProvider.findSentences(sentenceCriteria);
+            GrammarCriteria grammarCriteria = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.grammarCriteriaProvider().getObject();
+            return grammarProvider.findSentences(grammarCriteria);
         }
 
-        public String sentenceToString(Sentence s) {
+        public String sentenceToString(GrammarSentence s) {
             StringBuilder builder = new StringBuilder();
             if (!s.getSentencePrefix().isEmpty()) {
                 builder.append(s.getSentencePrefix());
@@ -58,7 +58,7 @@ public class GrammarLearningActivity extends AppCompatActivity {
         }
 
         @Override
-        protected StringRecyclerViewAdapter<Sentence> createRecyclerViewAdapter(List<Sentence> values) {
+        protected StringRecyclerViewAdapter<GrammarSentence> createRecyclerViewAdapter(List<GrammarSentence> values) {
             recyclerView.setNestedScrollingEnabled(false);
             return new StringRecyclerViewAdapter<>(values, this,
                     new StringRecyclerViewAdapter.RememberSelectionOnClickListener<>(

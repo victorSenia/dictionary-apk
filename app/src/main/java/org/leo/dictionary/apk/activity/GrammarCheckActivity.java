@@ -3,12 +3,15 @@ package org.leo.dictionary.apk.activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.databinding.ActivityGrammarCheckBinding;
-import org.leo.dictionary.entity.Sentence;
+import org.leo.dictionary.entity.GrammarSentence;
 import org.leo.dictionary.grammar.provider.GrammarProvider;
 
 import java.util.ArrayList;
@@ -22,12 +25,16 @@ public class GrammarCheckActivity extends AppCompatActivity {
     public static final int CORRECT_DELAY_MILLIS = 1500;
     public static final int VARIANTS_LIMIT = 5;
     public static final boolean SHOW_VARIANTS = true;
-    private List<Sentence> sentences;
-    private Sentence sentence;
+    private List<GrammarSentence> sentences;
+    private GrammarSentence sentence;
     private ActivityGrammarCheckBinding binding;
 
     private static String createPlaceholder(int length) {
         return Stream.generate(() -> " ").limit(length).collect(Collectors.joining());
+    }
+
+    private int getCorrectDelayMillis() {
+        return CORRECT_DELAY_MILLIS;
     }
 
     @Override
@@ -45,6 +52,7 @@ public class GrammarCheckActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 binding.sentence.setText(sentenceToString(sentence));
                 if (sentence.getAnswer().equals(String.valueOf(s))) {
+                    binding.next.requestFocus();
                     binding.imageOk.setVisibility(View.VISIBLE);
                     if (getCorrectDelayMillis() > -1) {
                         final Handler handler = new Handler(Looper.getMainLooper());
@@ -56,23 +64,21 @@ public class GrammarCheckActivity extends AppCompatActivity {
         updateUIWithNextSentence();
     }
 
-    private static int getCorrectDelayMillis() {
-        return CORRECT_DELAY_MILLIS;
-    }
-
     private void updateUIWithNextSentence() {
         updateUI(nextSentence());
     }
 
-    private void updateUI(Sentence sentence) {
+    private void createTextView(String text) {
+        TextView textView = new TextView(this);
+        textView.setText(text);
+        textView.setGravity(Gravity.CENTER_VERTICAL);
+        binding.sentenceContainer.addView(textView);
+    }
+
+    private void updateUI(GrammarSentence sentence) {
         binding.imageOk.setVisibility(View.INVISIBLE);
         binding.sentenceHint.setText(sentence.getHint().getHint());
         binding.sentenceAnswer.setText("");
-        binding.sentencePrefix.setVisibility(sentence.getSentencePrefix().isEmpty() ? View.GONE : View.VISIBLE);
-        binding.sentencePrefix.setText(sentence.getSentencePrefix());
-        binding.sentenceAnswer.setText("");
-        binding.sentenceSuffix.setVisibility(sentence.getSentenceSuffix().isEmpty() ? View.GONE : View.VISIBLE);
-        binding.sentenceSuffix.setText(sentence.getSentenceSuffix());
         if (SHOW_VARIANTS) {
             List<String> variants = fillWrongVariants(sentence.getAnswer(), sentence.getHint().getVariants());
             binding.variantsContainer.removeAllViews();
@@ -83,12 +89,28 @@ public class GrammarCheckActivity extends AppCompatActivity {
             binding.sentence.setVisibility(View.VISIBLE);
             binding.sentence.setText(sentenceToString(sentence));
             binding.sentenceAnswer.setVisibility(View.GONE);
-            binding.sentencePrefix.setVisibility(View.GONE);
-            binding.sentenceSuffix.setVisibility(View.GONE);
+        } else {
+            View answer = binding.sentenceAnswer;
+            ((ViewGroup) answer.getParent()).removeView(answer);
+            binding.sentenceContainer.removeAllViews();
+            putSentencePartsInContainer(sentence.getSentencePrefix());
+            binding.sentenceContainer.addView(answer);
+            createTextView(" ");
+            putSentencePartsInContainer(sentence.getSentenceSuffix());
+            answer.requestFocus();
         }
     }
 
-    public String sentenceToString(Sentence s) {
+    private void putSentencePartsInContainer(String sentence) {
+        if (!sentence.isEmpty()) {
+            for (String part : sentence.split(" ")) {
+                createTextView(part);
+                createTextView(" ");
+            }
+        }
+    }
+
+    public String sentenceToString(GrammarSentence s) {
         StringBuilder builder = new StringBuilder();
         if (!s.getSentencePrefix().isEmpty()) {
             builder.append(s.getSentencePrefix());
@@ -128,7 +150,7 @@ public class GrammarCheckActivity extends AppCompatActivity {
         return button;
     }
 
-    private Sentence nextSentence() {
+    private GrammarSentence nextSentence() {
         sentence = sentences.get(new Random().nextInt(sentences.size()));
         return sentence;
     }

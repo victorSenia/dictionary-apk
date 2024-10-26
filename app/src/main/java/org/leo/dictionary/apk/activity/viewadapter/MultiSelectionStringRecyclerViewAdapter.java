@@ -58,8 +58,8 @@ public class MultiSelectionStringRecyclerViewAdapter<T> extends StringRecyclerVi
 
     public static class MultiSelectionOnClickListener<T> implements StringRecyclerViewAdapter.OnClickListener<T> {
         private final Map<Integer, T> selected = new HashMap<>();
-        private boolean isMultiSelect = false;
         private final Consumer<Collection<T>> additionalOnClickUpdater;
+        private boolean isMultiSelect = false;
 
         public MultiSelectionOnClickListener(Consumer<Collection<T>> additionalOnClickUpdater) {
             this.additionalOnClickUpdater = additionalOnClickUpdater;

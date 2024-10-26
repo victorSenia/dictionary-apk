@@ -11,6 +11,7 @@ import org.leo.dictionary.apk.helper.WordCriteriaProvider;
 import org.leo.dictionary.apk.word.provider.DBWordProvider;
 import org.leo.dictionary.audio.AudioService;
 import org.leo.dictionary.grammar.provider.GrammarProvider;
+import org.leo.dictionary.grammar.provider.SentenceProvider;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
@@ -33,6 +34,8 @@ public interface ApkAppComponent {
     GrammarCriteriaProvider grammarCriteriaProvider();
 
     GrammarProvider externalGrammarProvider();
+
+    SentenceProvider externalSentenceProvider();
 
     @Named("lastState")
     SharedPreferences lastState();

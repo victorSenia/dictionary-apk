@@ -1,12 +1,12 @@
 package org.leo.dictionary.apk.helper;
 
 import org.leo.dictionary.apk.ApkModule;
-import org.leo.dictionary.entity.SentenceCriteria;
+import org.leo.dictionary.entity.GrammarCriteria;
 
-public class GrammarCriteriaProvider extends ObjectInStateProvider<SentenceCriteria> {
+public class GrammarCriteriaProvider extends ObjectInStateProvider<GrammarCriteria> {
     @Override
-    protected SentenceCriteria newObject() {
-        return new SentenceCriteria();
+    protected GrammarCriteria newObject() {
+        return new GrammarCriteria();
     }
 
     @Override

@@ -114,4 +114,7 @@
     <string name="learn">Learn</string>
     <string name="practice">Practice</string>
     <string name="answer">answer</string>
+    <string name="title_activity_match_article" translatable="false">MatchArticleActivity</string>
+    <string name="match_word_article">Match word article</string>
+    <string name="order_words_in_sentence">Order words in sentence</string>
 </resources>

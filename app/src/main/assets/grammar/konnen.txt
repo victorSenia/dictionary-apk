@@ -1,0 +1,42 @@
+org.leo.dictionary.config.entity.ParseGrammar:de:%5C%7C:___:false:%09_TOPIC_+:%09_HINT_+:Conjugation+of+Modal+Verbs
+	_TOPIC_ können
+	_HINT_ Present
+___ Tom französisch? | kann
+___ du Türkisch? | kannst
+Denn ich ___ Chinesisch. | kann
+Ich ___ nicht anders. | kann
+Der Reiseführer ___ nur Englisch. | kann
+Wie viele Fremdsprachen ___ ihr? | könnt
+Jeder tut, was er ___ . | kann
+Ich ___ Portugiesisch, Englisch und Russisch. | kann
+Ich möchte ja, aber ich ___ nicht. | kann
+Wer nur tut, was er ___ , der bleibt, was er ist. | kann
+
+	_HINT_ Imperfect
+Tom ___ alles. | konnte
+Sie ___ fließend Französisch. | konnte
+Du ___ nicht anders. | konntest
+Wir ___ nicht mehr. | konnten
+Ihr ___ das Spiel nicht leiden. | konntet
+Jan rannte so schnell, wie er ___ . | konnte
+Der Marathonläufer ___ nicht mehr und gab auf halber Strecke auf. | konnte
+
+	_HINT_ Present Subj.
+Er sagte, er ___ nirgendwo hin. | könne
+
+	_HINT_ Imperf. Subj.
+Jeder ___ das. | könnte
+___ du uns fotografieren? | könntest
+Wir ___ jetzt dorthin. | könnten
+Ihr ___ sie einfach fragen. | könntet
+___ Sie mir bitte einen Kassenzettel ausstellen? | könnten
+___ Sie mir einen kleinen Gefallen erweisen? | könnten
+
+	_HINT_ Imperative
+-
+
+	_HINT_ Infinitive
+___ Sie mir vielleicht etwas Rabatt einräumen? | können
+
+	_HINT_ Participle
+Das hat noch niemand ___ . | gekonnt

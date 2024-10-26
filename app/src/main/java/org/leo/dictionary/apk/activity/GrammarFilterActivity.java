@@ -23,8 +23,8 @@ import org.leo.dictionary.apk.activity.viewmodel.SentenceCriteriaViewModel;
 import org.leo.dictionary.apk.databinding.ActivityGrammarFilterBinding;
 import org.leo.dictionary.apk.grammar.provider.AssetsGrammarProvider;
 import org.leo.dictionary.apk.helper.GrammarProviderHolder;
+import org.leo.dictionary.entity.GrammarCriteria;
 import org.leo.dictionary.entity.Hint;
-import org.leo.dictionary.entity.SentenceCriteria;
 import org.leo.dictionary.entity.Topic;
 import org.leo.dictionary.grammar.provider.GrammarProvider;
 
@@ -34,7 +34,6 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class GrammarFilterActivity extends AppCompatActivity {
-    public static final String NOT_CHANGED = "NOT_CHANGED";
     private final ActivityResultLauncher<Intent> assetsActivityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
@@ -46,7 +45,9 @@ public class GrammarFilterActivity extends AppCompatActivity {
                     GrammarProviderHolder grammarProviderHolder = (GrammarProviderHolder) ((ApplicationWithDI) getApplicationContext()).appComponent.externalGrammarProvider();
                     GrammarProvider grammarProvider = ApkModule.createAssetsGrammarProvider(string, getApplicationContext());
                     grammarProviderHolder.setGrammarProvider(grammarProvider);
-                    grammarProvider.findSentences(new SentenceCriteria());
+                    grammarProvider.findSentences(new GrammarCriteria());
+                    updateViewModelLanguage(this, null);//to clean UI
+                    updateViewModelLanguage(this, grammarProvider.languages().get(0));
                 }
             });
     private ActivityGrammarFilterBinding binding;
@@ -106,7 +107,7 @@ public class GrammarFilterActivity extends AppCompatActivity {
         return sentenceCriteriaViewModel;
     }
 
-    private static SentenceCriteria getGrammarCriteria(Context context) {
+    private static GrammarCriteria getGrammarCriteria(Context context) {
         return ((ApplicationWithDI) context.getApplicationContext()).appComponent.grammarCriteriaProvider().getObject();
     }
 
@@ -115,7 +116,7 @@ public class GrammarFilterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         GrammarProvider grammarProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.externalGrammarProvider();
-        SentenceCriteria original = getGrammarCriteria(this);
+        GrammarCriteria original = getGrammarCriteria(this);
         grammarProvider.findSentences(original);
 
         SentenceCriteriaViewModel viewModel = new ViewModelProvider(this).get(SentenceCriteriaViewModel.class);
@@ -154,21 +155,21 @@ public class GrammarFilterActivity extends AppCompatActivity {
             }
         });
         binding.buttonLearn.setOnClickListener(v -> {
-            SentenceCriteria criteria = createCriteria();
+            GrammarCriteria criteria = createCriteria();
             ((ApplicationWithDI) this.getApplicationContext()).appComponent.grammarCriteriaProvider().setObject(criteria);
             Intent intent = new Intent(owner, GrammarLearningActivity.class);
             startActivity(intent);
         });
         binding.buttonPractice.setOnClickListener(v -> {
-            SentenceCriteria criteria = createCriteria();
+            GrammarCriteria criteria = createCriteria();
             ((ApplicationWithDI) this.getApplicationContext()).appComponent.grammarCriteriaProvider().setObject(criteria);
             Intent intent = new Intent(this, GrammarCheckActivity.class);
             startActivity(intent);
         });
     }
 
-    private SentenceCriteria createCriteria() {
-        SentenceCriteria criteria = new SentenceCriteria();
+    private GrammarCriteria createCriteria() {
+        GrammarCriteria criteria = new GrammarCriteria();
         SentenceCriteriaViewModel sentenceCriteriaViewModel = getSentenceCriteriaViewModel(this);
         SentenceCriteriaViewModel.SentenceCriteria criteriaModel = sentenceCriteriaViewModel.getValue();
         if (criteriaModel != null) {
@@ -256,6 +257,11 @@ public class GrammarFilterActivity extends AppCompatActivity {
         @Override
         protected void addObservers() {
             getSentenceCriteriaViewModel(requireActivity()).getData().observe(requireActivity(), this::updateListData);
+        }
+
+        @Override
+        protected String getStateLanguage() {
+            return getSentenceCriteriaViewModel(requireActivity()).getValue().getLanguage();
         }
 
         @Override

@@ -38,6 +38,7 @@ def common_version = "1.0.0-SNAPSHOT"
 
 dependencies {
 
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
     implementation "com.google.dagger:dagger:2.28.3"
     annotationProcessor "com.google.dagger:dagger-compiler:2.28.3"
 

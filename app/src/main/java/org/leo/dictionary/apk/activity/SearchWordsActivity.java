@@ -27,6 +27,19 @@ public class SearchWordsActivity extends AppCompatActivity {
 
     public static class FilteredWordsFragment extends FilteredRecyclerViewFragment<StringRecyclerViewAdapter<Word>, Word> {
 
+        @NotNull
+        private static Function<String, Boolean> getFilterFunction(CharSequence filterString) {
+            Function<String, Boolean> predicate;
+            try {
+                Pattern pattern = Pattern.compile(filterString.toString(), Pattern.CASE_INSENSITIVE);
+                predicate = s -> pattern.matcher(s).find();
+            } catch (PatternSyntaxException e) {
+                String filter = filterString.toString();
+                predicate = s -> s.contains(filter);
+            }
+            return predicate;
+        }
+
         protected List<Word> findValues() {
             PlayService playService = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.playService();
             return playService.getUnknownWords();
@@ -54,19 +67,6 @@ public class SearchWordsActivity extends AppCompatActivity {
                 }
                 return false;
             };
-        }
-
-        @NotNull
-        private static Function<String, Boolean> getFilterFunction(CharSequence filterString) {
-            Function<String, Boolean> predicate;
-            try {
-                Pattern pattern = Pattern.compile(filterString.toString(), Pattern.CASE_INSENSITIVE);
-                predicate = s -> pattern.matcher(s).find();
-            } catch (PatternSyntaxException e) {
-                String filter = filterString.toString();
-                predicate = s -> s.contains(filter);
-            }
-            return predicate;
         }
 
         @Override

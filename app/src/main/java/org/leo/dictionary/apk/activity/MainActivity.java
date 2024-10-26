@@ -218,6 +218,14 @@ public class MainActivity extends AppCompatActivity {
             Intent i = new Intent(this, SearchWordsActivity.class);
             startActivity(i);
             return true;
+        } else if (id == R.id.action_order_words_in_sentence) {
+            Intent i = new Intent(this, SentenceActivity.class);
+            startActivity(i);
+            return true;
+        } else if (id == R.id.action_word_article_matcher) {
+            Intent i = new Intent(this, MatchArticleActivity.class);
+            startActivity(i);
+            return true;
         } else if (id == R.id.action_filter_words) {
             Intent intent = new Intent(this, FilterWordsActivity.class);
             filterWordsActivityResultLauncher.launch(intent);

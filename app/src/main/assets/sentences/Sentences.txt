@@ -1,0 +1,252 @@
+org.leo.dictionary.config.entity.ParseSentences:de:en:%5C%7C:%5C%7C:%5Ct:250 sentences
+
+Die Katze schläft auf dem Sofa. | The cat is sleeping on the sofa.
+Wir fahren morgen in den Urlaub. | We are going on vacation tomorrow.
+Der Lehrer erklärt das Thema im Unterricht. | The teacher explains the topic in class.
+Ich gehe heute Abend ins Kino. | I am going to the cinema tonight.
+Sie hat gestern ein neues Buch gekauft. | She bought a new book yesterday.
+Das Wetter ist heute sehr schön. | The weather is very nice today.
+Er hat mir einen Brief geschrieben. | He wrote me a letter.
+Wir treffen uns um acht Uhr. | We are meeting at eight o'clock.
+Die Kinder spielen im Garten Fußball. | The children are playing soccer in the garden.
+Sie wartet schon seit einer Stunde. | She has been waiting for an hour.
+Ich habe das Buch in der Bibliothek gefunden. | I found the book in the library.
+Morgen habe ich eine wichtige Prüfung. | I have an important exam tomorrow.
+Der Hund rennt über das Feld. | The dog is running across the field.
+Er hat den Kuchen alleine gegessen. | He ate the cake by himself.
+Wir fahren am Wochenende nach Berlin. | We are going to Berlin this weekend.
+Sie möchte ein neues Auto kaufen. | She wants to buy a new car.
+Der Zug kommt um fünf Uhr an. | The train arrives at five o'clock.
+Das Baby schläft in seinem Bettchen. | The baby is sleeping in its little bed.
+Er hat das Spiel gewonnen und war glücklich. | He won the game and was happy.
+Wir haben gestern zusammen Abendessen gekocht. | We cooked dinner together yesterday.
+Die Blumen im Garten blühen wunderschön. | The flowers in the garden are blooming beautifully.
+Ich habe das Buch schon dreimal gelesen. | I have already read the book three times.
+Sie spielt jeden Tag Klavier. | She plays the piano every day.
+Der Film war spannend und sehr unterhaltsam. | The movie was exciting and very entertaining.
+Er hat eine gute Note in der Prüfung bekommen. | He got a good grade on the exam.
+Wir haben den ganzen Tag gewandert. | We hiked all day.
+Das Restaurant serviert köstliches Essen. | The restaurant serves delicious food.
+Sie hat sich ein neues Kleid gekauft. | She bought herself a new dress.
+Der Himmel ist heute strahlend blau. | The sky is bright blue today.
+Ich habe gestern ein schönes Bild gemalt. | I painted a beautiful picture yesterday.
+Sie möchte später Ärztin werden. | She wants to become a doctor later.
+Wir gehen heute Abend ins Theater. | We are going to the theater tonight.
+Der Vogel singt ein schönes Lied. | The bird is singing a beautiful song.
+Ich habe ihn seit Jahren nicht gesehen. | I haven’t seen him in years.
+Das Haus ist groß und sehr alt. | The house is big and very old.
+Wir haben gestern eine Party gefeiert. | We had a party yesterday.
+Sie liest gerne Bücher über Geschichte. | She likes to read books about history.
+Der Lehrer hat die Hausaufgaben erklärt. | The teacher explained the homework.
+Er liebt es, durch den Wald zu wandern. | He loves to hike through the forest.
+Ich habe heute viel zu tun. | I have a lot to do today.
+Das Kind malt ein Bild mit vielen Farben. | The child is painting a picture with many colors.
+Wir fahren mit dem Auto ans Meer. | We are driving to the sea.
+Er hat den Tag mit Sport begonnen. | He started the day with sports.
+Die Sonne scheint und es ist warm. | The sun is shining and it's warm.
+Ich gehe heute Abend mit Freunden essen. | I’m going out to eat with friends tonight.
+Der Kaffee ist zu heiß zum Trinken. | The coffee is too hot to drink.
+Wir haben das Museum am Wochenende besucht. | We visited the museum over the weekend.
+Sie hat mir ein Geschenk mitgebracht. | She brought me a gift.
+Das Wasser im See ist sehr klar. | The water in the lake is very clear.
+Ich habe heute viele E-Mails beantwortet. | I answered many emails today.
+Heute habe ich viele Dinge zu erledigen. | Today, I have many things to take care of.
+Das Frühstück ist die wichtigste Mahlzeit des Tages. | Breakfast is the most important meal of the day.
+Sie joggt jeden Morgen im Park. | She jogs in the park every morning.
+Ich gehe normalerweise um zehn Uhr ins Bett. | I usually go to bed at ten o'clock.
+Wir planen einen langen Spaziergang am Strand. | We are planning a long walk on the beach.
+Er nimmt den Bus zur Arbeit jeden Tag. | He takes the bus to work every day.
+Die Kinder stehen jeden Morgen früh auf. | The children wake up early every morning.
+Meine Mutter kocht jeden Abend das Abendessen. | My mother cooks dinner every evening.
+Ich lese vor dem Schlafengehen gerne ein Buch. | I like to read a book before going to sleep.
+Wir haben heute einen entspannten Tag zu Hause. | We are having a relaxed day at home today.
+Wir fahren nächsten Sommer in die Berge. | We are going to the mountains next summer.
+Der Flughafen ist immer sehr voll. | The airport is always very crowded.
+Sie hat viele Städte in Europa besucht. | She has visited many cities in Europe.
+Ich träume davon, nach Australien zu reisen. | I dream of traveling to Australia.
+Das Schloss liegt auf einem hohen Hügel. | The castle is situated on a high hill.
+Wir fahren mit dem Zug durch die Schweiz. | We are traveling through Switzerland by train.
+Der Strand ist am Wochenende oft überfüllt. | The beach is often crowded on weekends.
+Er liebt es, exotische Länder zu besuchen. | He loves visiting exotic countries.
+Ich möchte eines Tages die Pyramiden sehen. | One day, I want to see the pyramids.
+Das Hotel bietet einen wunderbaren Blick aufs Meer. | The hotel offers a wonderful view of the sea.
+Wir essen oft Pasta mit frischen Tomaten. | We often eat pasta with fresh tomatoes.
+Er kann sehr gut backen und kochen. | He is very good at baking and cooking.
+Das Frühstück ist heute besonders lecker. | Breakfast is especially delicious today.
+Meine Schwester liebt süße Desserts. | My sister loves sweet desserts.
+Wir haben gestern einen Kuchen gebacken. | We baked a cake yesterday.
+Sie isst gerne gesundes und frisches Essen. | She likes to eat healthy and fresh food.
+Der Apfelkuchen ist wirklich köstlich. | The apple pie is really delicious.
+Ich habe heute zu viel gegessen. | I ate too much today.
+Das Restaurant serviert die besten Steaks. | The restaurant serves the best steaks.
+Er trinkt jeden Morgen eine Tasse Kaffee. | He drinks a cup of coffee every morning.
+Meine Familie kommt am Wochenende zu Besuch. | My family is coming to visit this weekend.
+Sie haben zwei Kinder und einen Hund. | They have two children and a dog.
+Ich liebe es, Zeit mit meiner Familie zu verbringen. | I love spending time with my family.
+Mein Bruder und ich verstehen uns gut. | My brother and I get along well.
+Die Großeltern besuchen uns oft. | The grandparents visit us often.
+Ich habe eine sehr gute Beziehung zu meiner Schwester. | I have a very good relationship with my sister.
+Wir feiern Weihnachten immer zusammen. | We always celebrate Christmas together.
+Er hilft seinem Vater im Garten. | He helps his father in the garden.
+Meine Eltern sind sehr stolz auf mich. | My parents are very proud of me.
+Wir haben eine große Familienfeier geplant. | We have planned a big family celebration.
+Heute ist das Wetter sonnig und warm. | The weather is sunny and warm today.
+Der Herbst bringt schöne Farben in die Natur. | Autumn brings beautiful colors to nature.
+Wir haben einen großen Baum im Garten. | We have a large tree in the garden.
+Im Frühling blühen viele Blumen. | Many flowers bloom in the spring.
+Die Vögel singen am Morgen sehr schön. | The birds sing beautifully in the morning.
+Im Winter schneit es oft hier. | It often snows here in the winter.
+Der Regen hat die Straßen nass gemacht. | The rain has made the streets wet.
+Wir machen ein Picknick im Park. | We are having a picnic in the park.
+Der Himmel ist heute bewölkt und grau. | The sky is cloudy and gray today.
+Ein starker Wind weht durch die Bäume. | A strong wind is blowing through the trees.
+Ich spiele am Wochenende gerne Gitarre. | I like to play guitar on weekends.
+Sie malt in ihrer Freizeit wunderschöne Bilder. | She paints beautiful pictures in her free time.
+Wir gehen oft im Wald spazieren. | We often go for walks in the forest.
+Mein Bruder spielt gerne Schach. | My brother likes to play chess.
+Ich habe eine Leidenschaft für Fotografie entwickelt. | I have developed a passion for photography.
+Sie liebt es, in ihrer Freizeit zu lesen. | She loves to read in her free time.
+Er sammelt alte Briefmarken aus verschiedenen Ländern. | He collects old stamps from different countries.
+Ich schreibe gerne Gedichte und Geschichten. | I like to write poems and stories.
+Wir besuchen oft Kunstausstellungen in der Stadt. | We often visit art exhibitions in the city.
+Er trainiert jeden Tag im Fitnessstudio. | He works out at the gym every day.
+Ich habe heute viel für die Prüfung gelernt. | I studied a lot for the exam today.
+Sie besucht die Universität und studiert Geschichte. | She attends university and studies history.
+Der Lehrer erklärt das Thema sehr gut. | The teacher explains the topic very well.
+Wir haben heute ein interessantes Experiment gemacht. | We did an interesting experiment today.
+Ich möchte gerne eine neue Sprache lernen. | I would like to learn a new language.
+Die Bibliothek hat viele interessante Bücher. | The library has many interesting books.
+Er lernt jeden Tag eine Stunde Mathe. | He studies math for an hour every day.
+Ich habe eine sehr gute Note in Englisch bekommen. | I got a very good grade in English.
+Die Schule beginnt jeden Morgen um acht Uhr. | School starts at eight o'clock every morning.
+Wir haben viele Hausaufgaben für das Wochenende bekommen. | We got a lot of homework for the weekend.
+Mein Vater arbeitet in einem großen Unternehmen. | My father works in a large company.
+Sie hat eine interessante Karriere im Marketing. | She has an interesting career in marketing.
+Ich habe einen neuen Job als Lehrer gefunden. | I found a new job as a teacher.
+Wir haben heute eine wichtige Besprechung. | We have an important meeting today.
+Der Chef ist sehr zufrieden mit unserer Arbeit. | The boss is very pleased with our work.
+Er arbeitet oft spät in die Nacht. | He often works late into the night.
+Sie plant, bald ein eigenes Unternehmen zu gründen. | She plans to start her own company soon.
+Die Kollegen sind alle sehr freundlich. | All the colleagues are very friendly.
+Wir arbeiten hart an diesem neuen Projekt. | We are working hard on this new project.
+Er wurde kürzlich befördert und ist jetzt Manager. | He was recently promoted and is now a manager.
+Ich spiele jeden Samstag Fußball mit Freunden. | I play soccer with friends every Saturday.
+Er geht jeden Morgen joggen, um fit zu bleiben. | He jogs every morning to stay fit.
+Wir trainieren für den kommenden Marathon. | We are training for the upcoming marathon.
+Sie hat eine Leidenschaft für das Schwimmen entwickelt. | She has developed a passion for swimming.
+Mein Bruder spielt sehr gut Tennis. | My brother plays tennis very well.
+Ich gehe zweimal pro Woche ins Fitnessstudio. | I go to the gym twice a week.
+Er interessiert sich für Kampfsportarten wie Karate. | He is interested in martial arts like karate.
+Wir schauen uns gerne Fußballspiele im Fernsehen an. | We like to watch soccer games on television.
+Sie möchte an einem Triathlon teilnehmen. | She wants to participate in a triathlon.
+Das Team trainiert hart für das nächste Spiel. | The team is training hard for the next game.
+Er interessiert sich sehr für Computertechnologie. | He is very interested in computer technology.
+Wir haben heute etwas Neues über das Universum gelernt. | We learned something new about the universe today.
+Sie liest gerne Artikel über wissenschaftliche Entdeckungen. | She likes reading articles about scientific discoveries.
+Ich habe einen neuen Laptop für die Arbeit gekauft. | I bought a new laptop for work.
+Er programmiert in seiner Freizeit einfache Spiele. | He programs simple games in his free time.
+Wir haben heute ein Experiment im Labor gemacht. | We conducted an experiment in the lab today.
+Sie interessiert sich für die Entwicklung von Robotern. | She is interested in the development of robots.
+Das Internet hat viele Dinge verändert. | The internet has changed many things.
+Er liest gerne über die neuesten Technologietrends. | He likes to read about the latest technology trends.
+Ich habe eine App heruntergeladen, um Deutsch zu lernen. | I downloaded an app to learn German.
+Ich fühle mich heute sehr glücklich. | I feel very happy today.
+Sie ist nervös vor der großen Prüfung. | She is nervous about the big exam.
+Er war traurig, als er die Nachricht hörte. | He was sad when he heard the news.
+Wir waren alle sehr aufgeregt über den Urlaub. | We were all very excited about the vacation.
+Sie ist stolz auf ihre Arbeit und ihren Erfolg. | She is proud of her work and success.
+Ich fühle mich entspannt, wenn ich Musik höre. | I feel relaxed when I listen to music.
+Er war enttäuscht, dass das Spiel abgesagt wurde. | He was disappointed that the game was canceled.
+Wir sind begeistert von unserem neuen Haus. | We are thrilled about our new house.
+Sie war überrascht, ihn in der Stadt zu sehen. | She was surprised to see him in the city.
+Ich freue mich auf das Wochenende. | I am looking forward to the weekend.
+Ich trinke jeden Tag viel Wasser, um gesund zu bleiben. | I drink a lot of water every day to stay healthy.
+Sie achtet auf ihre Ernährung und isst viel Gemüse. | She pays attention to her diet and eats a lot of vegetables.
+Er macht jeden Morgen Yoga zur Entspannung. | He does yoga every morning for relaxation.
+Ich gehe regelmäßig zum Arzt zur Vorsorgeuntersuchung. | I regularly go to the doctor for a check-up.
+Wir versuchen, genug Schlaf zu bekommen, um fit zu bleiben. | We try to get enough sleep to stay fit.
+Sie nimmt täglich Vitamine für ihre Gesundheit. | She takes vitamins daily for her health.
+Ich habe Kopfschmerzen und brauche Ruhe. | I have a headache and need rest.
+Er hat mit dem Rauchen aufgehört, um gesünder zu leben. | He quit smoking to live a healthier life.
+Wir gehen oft spazieren, um uns zu entspannen. | We often go for walks to relax.
+Sie hat heute eine Yoga-Stunde besucht. | She attended a yoga class today.
+Wir haben lange über das Thema diskutiert. | We had a long discussion about the topic.
+Ich telefoniere jeden Abend mit meinen Eltern. | I call my parents every evening.
+Sie schreibt oft Briefe an ihre Freunde. | She often writes letters to her friends.
+Er hat mir eine Nachricht auf dem Handy geschickt. | He sent me a message on my phone.
+Wir haben uns über viele Dinge unterhalten. | We talked about many things.
+Sie hat ihm eine E-Mail mit den Details geschickt. | She sent him an email with the details.
+Ich spreche gerne über Kunst und Musik. | I like to talk about art and music.
+Er hört gerne zu und gibt gute Ratschläge. | He likes to listen and gives good advice.
+Wir haben das Problem gemeinsam besprochen. | We discussed the problem together.
+Sie schreibt täglich in ihr Tagebuch. | She writes in her diary every day.
+Ich habe mir ein neues Paar Schuhe gekauft. | I bought myself a new pair of shoes.
+Sie spart Geld für ihre nächste Reise. | She is saving money for her next trip.
+Wir gehen heute in das Einkaufszentrum. | We are going to the shopping mall today.
+Er hat viele Schnäppchen beim Ausverkauf gefunden. | He found many bargains at the sale.
+Ich bezahle meistens mit meiner Kreditkarte. | I usually pay with my credit card.
+Sie plant, eine neue Wohnung zu kaufen. | She is planning to buy a new apartment.
+Wir haben eine Liste mit Dingen, die wir brauchen. | We have a list of things we need.
+Er arbeitet, um sich ein neues Auto leisten zu können. | He works to afford a new car.
+Ich habe gestern online eingekauft. | I shopped online yesterday.
+Sie liebt es, kleine Geschenke für Freunde zu kaufen. | She loves buying small gifts for friends.
+Wir feiern Weihnachten jedes Jahr mit der Familie. | We celebrate Christmas with the family every year.
+Sie haben eine große Geburtstagsparty geplant. | They planned a big birthday party.
+Der Karneval in der Stadt ist immer bunt und lebendig. | The carnival in the city is always colorful and lively.
+Er hat zum ersten Mal Silvester gefeiert. | He celebrated New Year's Eve for the first time.
+Wir haben am Wochenende ein großes Fest organisiert. | We organized a big celebration over the weekend.
+Sie hat ein tolles Geschenk zum Geburtstag bekommen. | She received a great gift for her birthday.
+Wir genießen es, zusammen zu feiern und zu tanzen. | We enjoy celebrating and dancing together.
+Er backt einen Kuchen für das Jubiläum seiner Eltern. | He is baking a cake for his parents' anniversary.
+Die Stadt ist zur Weihnachtszeit wunderschön geschmückt. | The city is beautifully decorated during Christmas time.
+Wir haben gestern ein Feuerwerk gesehen. | We saw fireworks yesterday.
+Ich bin sehr dankbar für meine Freunde. | I am very grateful for my friends.
+Sie ist begeistert von ihrem neuen Job. | She is excited about her new job.
+Er war erstaunt, wie schnell die Zeit vergeht. | He was amazed at how quickly time flies.
+Ich fühle mich heute besonders motiviert. | I feel especially motivated today.
+Wir sind froh, dass du hier bist. | We are happy that you are here.
+Sie fühlt sich manchmal sehr gestresst. | She sometimes feels very stressed.
+Er ist stolz auf seine Leistungen. | He is proud of his achievements.
+Ich habe das Gefühl, dass alles gut wird. | I have the feeling that everything will be fine.
+Sie war überwältigt von der Freundlichkeit der Menschen. | She was overwhelmed by the kindness of the people.
+Wir sind alle sehr gespannt auf die Neuigkeiten. | We are all very excited about the news.
+Wir versuchen, weniger Plastik zu verwenden. | We try to use less plastic.
+Er interessiert sich für den Schutz der Umwelt. | He is interested in protecting the environment.
+Sie arbeitet in einer Organisation für Tierschutz. | She works in an animal protection organization.
+Ich habe angefangen, meinen Müll zu trennen. | I have started separating my trash.
+Die Natur ist wichtig für unser Leben. | Nature is important for our lives.
+Wir wollen die Wälder für zukünftige Generationen erhalten. | We want to preserve the forests for future generations.
+Er setzt sich für saubere Energie ein. | He advocates for clean energy.
+Sie pflanzt jedes Jahr neue Bäume. | She plants new trees every year.
+Wir sollten mehr Fahrrad fahren, um die Umwelt zu schützen. | We should ride bicycles more to protect the environment.
+Er achtet darauf, Wasser zu sparen. | He is careful to save water.
+Ich habe gestern eine interessante Dokumentation gesehen. | I watched an interesting documentary yesterday.
+Er hat sich ein neues Hobby gesucht. | He found a new hobby.
+Sie interessiert sich für die Architektur alter Gebäude. | She is interested in the architecture of old buildings.
+Wir haben ein neues Café in der Stadt entdeckt. | We discovered a new café in the city.
+Er genießt es, Musik zu hören, wenn er arbeitet. | He enjoys listening to music while he works.
+Ich habe heute ein lustiges Video gesehen. | I saw a funny video today.
+Sie liebt es, neue Kulturen zu entdecken. | She loves discovering new cultures.
+Er sammelt alte Münzen aus verschiedenen Ländern. | He collects old coins from different countries.
+Wir haben ein schönes Museum besucht. | We visited a beautiful museum.
+Er hat einen interessanten Artikel gelesen. | He read an interesting article.
+Ich stehe jeden Morgen um sieben Uhr auf. | I get up every morning at seven o'clock.
+Sie trinkt jeden Tag einen Kaffee zum Frühstück. | She drinks a coffee every day for breakfast.
+Er liest gerne die Nachrichten, bevor er zur Arbeit geht. | He likes to read the news before going to work.
+Wir machen jeden Abend einen kurzen Spaziergang. | We take a short walk every evening.
+Sie schreibt ihre To-Do-Liste für den nächsten Tag. | She writes her to-do list for the next day.
+Er geht jeden Dienstag und Donnerstag ins Fitnessstudio. | He goes to the gym every Tuesday and Thursday.
+Ich bereite mein Mittagessen immer am Vorabend vor. | I always prepare my lunch the night before.
+Sie meditiert jeden Morgen für zehn Minuten. | She meditates for ten minutes every morning.
+Wir schauen am Wochenende gerne Filme zusammen. | We like to watch movies together on weekends.
+Er geht immer früh ins Bett, um genug Schlaf zu bekommen. | He always goes to bed early to get enough sleep.
+Es regnet heute den ganzen Tag. | It is raining all day today.
+Der Winter ist meine liebste Jahreszeit. | Winter is my favorite season.
+Es wird langsam wärmer, weil der Frühling kommt. | It is slowly getting warmer because spring is coming.
+Im Sommer genießen wir die warmen Sonnenstrahlen. | In summer, we enjoy the warm sunshine.
+Sie liebt es, im Herbst durch die bunten Blätter zu spazieren. | She loves to walk through the colorful leaves in autumn.
+Es war heute morgen sehr neblig draußen. | It was very foggy outside this morning.
+Im Winter schneit es oft in den Bergen. | In winter, it often snows in the mountains.
+Der Sommer dieses Jahres ist besonders heiß. | This year's summer is especially hot.
+Im Frühling blühen die Blumen überall. | In spring, flowers bloom everywhere.
+Es weht ein kühler Wind an diesem Herbsttag. | A cool wind is blowing on this autumn day.

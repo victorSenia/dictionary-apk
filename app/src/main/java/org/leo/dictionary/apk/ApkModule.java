@@ -14,10 +14,8 @@ import org.leo.dictionary.apk.audio.AndroidAudioService;
 import org.leo.dictionary.apk.config.AssetsConfigurationReader;
 import org.leo.dictionary.apk.config.PreferenceConfigurationReader;
 import org.leo.dictionary.apk.grammar.provider.AssetsGrammarProvider;
-import org.leo.dictionary.apk.helper.DatabaseManager;
-import org.leo.dictionary.apk.helper.GrammarCriteriaProvider;
-import org.leo.dictionary.apk.helper.GrammarProviderHolder;
-import org.leo.dictionary.apk.helper.WordCriteriaProvider;
+import org.leo.dictionary.apk.grammar.provider.AssetsSentenceProvider;
+import org.leo.dictionary.apk.helper.*;
 import org.leo.dictionary.apk.word.provider.AssetsWordProvider;
 import org.leo.dictionary.apk.word.provider.DBWordProvider;
 import org.leo.dictionary.apk.word.provider.InputStreamWordProvider;
@@ -25,15 +23,19 @@ import org.leo.dictionary.audio.AudioService;
 import org.leo.dictionary.config.ConfigParser;
 import org.leo.dictionary.config.ConfigurationReader;
 import org.leo.dictionary.config.ConfigurationService;
+import org.leo.dictionary.config.entity.ParseGrammar;
 import org.leo.dictionary.config.entity.ParseSentences;
 import org.leo.dictionary.config.entity.ParseWords;
 import org.leo.dictionary.grammar.provider.GrammarProvider;
+import org.leo.dictionary.grammar.provider.SentenceProvider;
 import org.leo.dictionary.word.provider.WordProvider;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 @Module
 public class ApkModule {
@@ -45,6 +47,8 @@ public class ApkModule {
     public static final String LAST_STATE_URI = "org.leo.dictionary.apk.config.entity.LastState.uri";
     public static final String LAST_STATE_GRAMMAR_SOURCE = "org.leo.dictionary.apk.config.entity.LastState.grammarSource";
     public static final String LAST_STATE_GRAMMAR_URI = "org.leo.dictionary.apk.config.entity.LastState.grammarUri";
+    public static final String LAST_STATE_SENTENCE_SOURCE = "org.leo.dictionary.apk.config.entity.LastState.sentenceSource";
+    public static final String LAST_STATE_SENTENCE_URI = "org.leo.dictionary.apk.config.entity.LastState.sentenceUri";
     public static final String LAST_STATE_VOICE = "org.leo.dictionary.apk.config.entity.LastState.voice.";
     public static final String LAST_STATE = "_last_state";
     public static final String LAST_STATE_IS_PORTRAIT = "org.leo.dictionary.apk.config.entity.LastState.isPortrait";
@@ -74,7 +78,7 @@ public class ApkModule {
         return wordProvider;
     }
 
-    public static GrammarProvider createAssetsGrammarProvider(ParseSentences configuration, Context context) {
+    public static GrammarProvider createAssetsGrammarProvider(ParseGrammar configuration, Context context) {
         AssetsGrammarProvider grammarProvider = new AssetsGrammarProvider();
         grammarProvider.setConfiguration(configuration);
         grammarProvider.setContext(context);
@@ -83,10 +87,35 @@ public class ApkModule {
     }
 
     public static GrammarProvider createAssetsGrammarProvider(String name, Context context) {
-        ParseSentences configuration = new ParseSentences();
+        ParseGrammar configuration = new ParseGrammar();
         configuration.setProperties(new HashMap<>());
         configuration.setPath(name);
         return createAssetsGrammarProvider(configuration, context);
+    }
+
+    public static SentenceProvider createAssetsSentenceProvider(String name, Context context) {
+        ParseSentences configuration = new ParseSentences();
+        configuration.setProperties(new HashMap<>());
+        configuration.setPath(name);
+        return createAssetsSentenceProvider(configuration, context);
+    }
+
+    public static SentenceProvider createAssetsSentenceProvider(ParseSentences configuration, Context context) {
+        AssetsSentenceProvider grammarProvider = new AssetsSentenceProvider();
+        grammarProvider.setConfiguration(configuration);
+        grammarProvider.setContext(context);
+        grammarProvider.parseAndUpdateConfiguration();
+        return grammarProvider;
+    }
+
+    @Provides
+    @Singleton
+    public static SentenceProvider getOrCreateSentenceProvider(Context context, @Named("lastState") SharedPreferences lastState) {
+//        criteriaProvider.setObject(null);
+        SentenceProvider provider = createAssetsSentenceProvider(lastState.getString(LAST_STATE_SENTENCE_URI, "Sentences.txt"), context);
+        SentenceProviderHolder providerHolder = new SentenceProviderHolder();
+        providerHolder.setSentenceProvider(provider);
+        return providerHolder;
     }
 
     @Provides
@@ -164,8 +193,8 @@ public class ApkModule {
     @Singleton
     public static GrammarProvider getOrCreateGrammarProvider(Context context, @Named("lastState") SharedPreferences lastState, GrammarCriteriaProvider criteriaProvider) {
 //        criteriaProvider.setObject(null);
-        lastState.getString(LAST_STATE_GRAMMAR_URI, "Conjugation of Modal Verbs.txt");
-        GrammarProvider provider = createAssetsGrammarProvider(lastState.getString(LAST_STATE_GRAMMAR_URI, "Conjugation of Modal Verbs.txt"), context);
+//        GrammarProvider provider = createAssetsGrammarProvider(lastState.getString(LAST_STATE_GRAMMAR_URI, "Conjugation of Modal Verbs.txt"), context);
+        GrammarProvider provider = createAssetsGrammarProvider(lastState.getString(LAST_STATE_GRAMMAR_URI, "konnen.txt"), context);
         GrammarProviderHolder providerHolder = new GrammarProviderHolder();
         providerHolder.setGrammarProvider(provider);
         return providerHolder;

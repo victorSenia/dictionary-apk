@@ -51,6 +51,16 @@
           android:layout_width="wrap_content"
           android:orderInCategory="200"
           android:layout_height="wrap_content"/>
+    <item android:id="@+id/action_word_article_matcher"
+          android:title="@string/match_word_article"
+          android:layout_width="wrap_content"
+          android:orderInCategory="200"
+          android:layout_height="wrap_content"/>
+    <item android:id="@+id/action_order_words_in_sentence"
+          android:title="@string/order_words_in_sentence"
+          android:layout_width="wrap_content"
+          android:orderInCategory="200"
+          android:layout_height="wrap_content"/>
     <item android:id="@+id/action_word_recognition"
           android:title="@string/word_recognition"
           android:layout_width="wrap_content"

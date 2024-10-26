@@ -1,9 +1,7 @@
 package org.leo.dictionary.apk.activity.viewmodel;
 
 
-import org.leo.dictionary.entity.Hint;
 import org.leo.dictionary.entity.Topic;
-import org.leo.dictionary.entity.WordCriteria;
 
 import java.util.List;
 import java.util.Set;
