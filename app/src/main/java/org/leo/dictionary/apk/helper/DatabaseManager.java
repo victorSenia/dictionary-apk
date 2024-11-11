@@ -260,7 +260,7 @@ public class DatabaseManager {
     }
 
     protected Cursor fetchWordsCursor(WordCriteria criteria, boolean countOnly) {
-        String sql = "SELECT DISTINCT " + (countOnly ? "COUNT w." + DatabaseHelper.COLUMN_ID : "w.*") + " FROM " + DatabaseHelper.TABLE_NAME_WORD + " w";
+        String sql = "SELECT " + (countOnly ? "COUNT (DISTINCT w." + DatabaseHelper.COLUMN_ID + ")" : "DISTINCT w.*") + " FROM " + DatabaseHelper.TABLE_NAME_WORD + " w";
         List<String> selectionArgs = new ArrayList<>();
         String where = " WHERE 1=1";
         if ((criteria.getTopicsOr() != null && !criteria.getTopicsOr().isEmpty()) || criteria.getRootTopic() != null) {
@@ -284,8 +284,9 @@ public class DatabaseManager {
             where += " AND w." + DatabaseHelper.WORD_COLUMN_KNOWLEDGE + " <= ?";
             selectionArgs.add(criteria.getKnowledgeTo().toString());
         }
-        String orderBy = criteria.getShuffleRandom() != -1 ? DatabaseHelper.COLUMN_ID : DatabaseHelper.COLUMN_LANGUAGE + ", " + DatabaseHelper.WORD_COLUMN_WORD + " COLLATE NOCASE";
-        Cursor cursor = getDatabase().rawQuery(sql + where + " ORDER BY " + orderBy, !selectionArgs.isEmpty() ? selectionArgs.toArray(selectionArgs.toArray(new String[0])) : null);
+        String orderBy = criteria.getShuffleRandom() != -1 ? "w." + DatabaseHelper.COLUMN_ID : "w." + DatabaseHelper.COLUMN_LANGUAGE + ", w." + DatabaseHelper.WORD_COLUMN_WORD + " COLLATE NOCASE";
+        String fullSql = sql + where + (countOnly ? "" : " ORDER BY " + orderBy);
+        Cursor cursor = getDatabase().rawQuery(fullSql, !selectionArgs.isEmpty() ? selectionArgs.toArray(selectionArgs.toArray(new String[0])) : null);
         cursor.moveToFirst();
         return cursor;
     }
@@ -453,7 +454,7 @@ public class DatabaseManager {
     public int countWords(WordCriteria criteria) {
         try (Cursor res = fetchWordsCursor(criteria, true)) {
             if (!res.isAfterLast()) {
-                res.getInt(0);
+                return res.getInt(0);
             }
         }
         return 0;

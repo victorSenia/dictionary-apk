@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".activity.SentenceActivity" app:layoutDescription="@xml/activity_sentence_scene"
+        tools:context=".activity.SentenceActivity"
         android:orientation="vertical">
 
     <TextView
@@ -23,8 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/sentence_container"
             app:flexWrap="wrap"
-            app:alignItems="stretch"
-            app:alignContent="stretch"/>
+            app:justifyContent="space_around"/>
     <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,10 +32,10 @@
     <com.google.android.flexbox.FlexboxLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:id="@+id/words_container"
+            android:layout_height="wrap_content"
+            android:id="@+id/words_container"
             app:flexWrap="wrap"
-            app:alignItems="stretch"
-            app:alignContent="space_around"/>
+            app:justifyContent="space_around"/>
     <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:layout_weight="1"/>

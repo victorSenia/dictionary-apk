@@ -59,7 +59,7 @@ public class SpeechRecognitionActivity extends AppCompatActivity {
     }
 
     private void nextWord() {
-        List<Word> words = ((ApplicationWithDI) getApplicationContext()).appComponent.playService().getUnknownWords();
+        List<Word> words = ApkModule.getWords(this);
         if (!words.isEmpty()) {
             recordingStoped();
             Random random = new Random();

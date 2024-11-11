@@ -9,6 +9,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.preference.PreferenceManager;
+import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.audio.AndroidAudioService;
@@ -72,7 +73,7 @@ public class WordMatcherActivity extends AppCompatActivity {
     private void clearAndFillWords() {
         removeOldViews();
         clearSelection();
-        List<Word> unknownWords = ((ApplicationWithDI) getApplicationContext()).appComponent.playService().getUnknownWords();
+        List<Word> unknownWords = ApkModule.getWords(this);
         AudioService audioService = ((ApplicationWithDI) getApplicationContext()).appComponent.audioService();
         int limitFromConfiguration = Integer.parseInt(PreferenceManager.getDefaultSharedPreferences(this).getString("org.leo.dictionary.apk.config.entity.MatchWords.limit", DEFAULT_LIMIT));
         limit = Math.min(limitFromConfiguration, unknownWords.size());

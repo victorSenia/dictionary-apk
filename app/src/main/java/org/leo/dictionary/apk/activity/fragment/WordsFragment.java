@@ -9,26 +9,41 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import org.leo.dictionary.PlayService;
 import org.leo.dictionary.UiUpdater;
 import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApkUiUpdater;
 import org.leo.dictionary.apk.ApplicationWithDI;
-import org.leo.dictionary.apk.activity.MainActivity;
 import org.leo.dictionary.apk.activity.viewadapter.WordsRecyclerViewAdapter;
+import org.leo.dictionary.entity.Translation;
 import org.leo.dictionary.entity.Word;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 
-public class WordsFragment extends RecyclerViewFragment<WordsRecyclerViewAdapter, Word> {
+public class WordsFragment extends FilteredRecyclerViewFragment<WordsRecyclerViewAdapter, Word> {
 
     public static final long INACTIVITY_TIMEOUT = 3000;
     private final AtomicBoolean scrollAllowed = new AtomicBoolean(true);
     private final Runnable scrollAllowedRunnable = () -> scrollAllowed.set(true);
     private UiUpdater uiUpdater;
     private Handler mHandler;
+
+    private static Function<String, Boolean> getFilterFunction(CharSequence filterString) {
+        Function<String, Boolean> predicate;
+        try {
+            Pattern pattern = Pattern.compile(filterString.toString(), Pattern.CASE_INSENSITIVE);
+            predicate = s -> pattern.matcher(s).find();
+        } catch (PatternSyntaxException e) {
+            String filter = filterString.toString();
+            predicate = s -> s.contains(filter);
+        }
+        return predicate;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,11 +57,9 @@ public class WordsFragment extends RecyclerViewFragment<WordsRecyclerViewAdapter
         super.onDestroy();
     }
 
-    public void replaceData(List<Word> unknownWords) {
-        getRecyclerViewAdapter().replaceData(unknownWords);
-        if (!unknownWords.isEmpty()) {
-            recyclerView.scrollToPosition(0);
-        }
+    public void replaceData() {
+        updateListData(null);
+        recyclerView.scrollToPosition(0);
     }
 
     public void wordUpdated(int index) {
@@ -54,12 +67,12 @@ public class WordsFragment extends RecyclerViewFragment<WordsRecyclerViewAdapter
     }
 
     public void wordAdded(int index, Word word) {
-        getRecyclerViewAdapter().words.add(word);
+        getRecyclerViewAdapter().values.add(word);
         getRecyclerViewAdapter().notifyItemInserted(index);
     }
 
     public void wordDeleted(int index) {
-        getRecyclerViewAdapter().words.remove(index);
+        getRecyclerViewAdapter().values.remove(index);
         getRecyclerViewAdapter().notifyItemRemoved(index);
     }
 
@@ -89,19 +102,49 @@ public class WordsFragment extends RecyclerViewFragment<WordsRecyclerViewAdapter
         };
         apkUiUpdater.addUiUpdater(uiUpdater);
 
-        MainActivity.runAtBackground(() -> {
-            getRecyclerViewAdapter().words.addAll(findValues());
-            requireActivity().runOnUiThread(() -> {
-                getRecyclerViewAdapter().notifyDataSetChanged();
-                recyclerView.scrollToPosition(getCurrentIndex());
-            });
-        });
+        replaceData();
+        recyclerView.scrollToPosition(getCurrentIndex());
         return view;
     }
 
+    @Override
+    protected Predicate<Word> filterPredicate(CharSequence filterString) {
+        Function<String, Boolean> filterFunction = getFilterFunction(filterString);
+        return w -> {
+            if (filterFunction.apply(w.getWord())) {
+                return true;
+            }
+            for (Translation t : w.getTranslations()) {
+                if (filterFunction.apply(t.getTranslation())) {
+                    return true;
+                }
+            }
+            return false;
+        };
+    }
+
+    @Override
+    protected void filterValuesInAdapter() {
+        List<Word> words = filterValues();
+        ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.playService().setWords(words);
+        WordsRecyclerViewAdapter adapter = getRecyclerViewAdapter();
+        adapter.values.clear();
+        adapter.values.addAll(words);
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    protected Function<Word, String> getFormatter() {
+        return Word::formatWord;
+    }
+
+    @Override
+    protected boolean stateChanged() {
+        return true;
+    }
+
     protected List<Word> findValues() {
-        PlayService playService = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.playService();
-        return playService.getUnknownWords();
+        return ApkModule.getWords(requireActivity());
     }
 
     @Override

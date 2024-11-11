@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
-import org.leo.dictionary.apk.ApplicationWithDI;
+import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.activity.viewmodel.EditWordViewModel;
 import org.leo.dictionary.apk.databinding.ActivityMatchArticleBinding;
 import org.leo.dictionary.entity.Word;
@@ -36,7 +36,7 @@ public class MatchArticleActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         EditWordViewModel model = new ViewModelProvider(this).get(EditWordViewModel.class);
         if (words == null || articles == null) {
-            List<Word> unknownWords = ((ApplicationWithDI) getApplicationContext()).appComponent.playService().getUnknownWords();
+            List<Word> unknownWords = ApkModule.getWords(this);
             unknownWords = unknownWords.stream().filter(w -> w.getArticle() != null && !w.getArticle().isEmpty()).collect(Collectors.toList());
             Collections.shuffle(unknownWords);
             words = unknownWords;

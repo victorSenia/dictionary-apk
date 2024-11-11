@@ -26,20 +26,20 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
 
     public static final int SELECTED_WORD_VIEW_TYPE = 1;
     public static final int SELECTED_WORD_DB_VIEW_TYPE = 2;
-    public final List<Word> words;
+    public final List<Word> values;
     private final Fragment fragment;
 
     private int positionId;
 
-    public WordsRecyclerViewAdapter(List<Word> words, Fragment fragment, int currentIndex) {
-        this.words = words;
+    public WordsRecyclerViewAdapter(List<Word> values, Fragment fragment, int currentIndex) {
+        this.values = values;
         this.fragment = fragment;
         this.positionId = currentIndex;
     }
 
-    public void replaceData(List<Word> words) {
-        this.words.clear();
-        this.words.addAll(words);
+    public void replaceData(List<Word> values) {
+        this.values.clear();
+        this.values.addAll(values);
         this.positionId = RecyclerView.NO_POSITION;
         notifyDataSetChanged();
     }
@@ -68,28 +68,32 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
 
     @Override
     public void onBindViewHolder(final WordViewHolder holder, int position) {
-        holder.mItem = words.get(position);
+        holder.mItem = values.get(position);
         holder.mContentView.setText(Word.formatWord(holder.mItem));
     }
 
     @Override
     public int getItemCount() {
-        return words.size();
+        return values.size();
     }
 
     private void deleteWord(Word word) {
+        PlayService playService = getPlayService();
+        playService.pause();
         DBWordProvider wordProvider = ((ApplicationWithDI) fragment.requireActivity().getApplicationContext()).appComponent.dbWordProvider();
         wordProvider.deleteWord(word.getId());
-        words.remove(positionId);
+        values.remove(positionId);
         notifyItemRemoved(positionId);
-
-        PlayService playService = ((ApplicationWithDI) fragment.requireActivity().getApplicationContext()).appComponent.playService();
-        playService.safeDelete(positionId);
+        playService.setWords(values);
     }
 
     private void playFromSelected() {
-        PlayService playService = ((ApplicationWithDI) fragment.requireActivity().getApplicationContext()).appComponent.playService();
+        PlayService playService = getPlayService();
         playService.playFrom(positionId);
+    }
+
+    private PlayService getPlayService() {
+        return ((ApplicationWithDI) fragment.requireActivity().getApplicationContext()).appComponent.playService();
     }
 
     private void editWord(Word word) {

@@ -11,14 +11,13 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceFragmentCompat;
-import org.leo.dictionary.PlayService;
-import org.leo.dictionary.PlayServiceImpl;
 import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.activity.viewadapter.ReturnSelectedStringRecyclerViewAdapter;
 import org.leo.dictionary.apk.databinding.ParseWordsSettingsActivityBinding;
 import org.leo.dictionary.apk.word.provider.AssetsWordProvider;
+import org.leo.dictionary.apk.word.provider.WordProviderDelegate;
 import org.leo.dictionary.word.provider.WordProvider;
 
 import java.io.FileNotFoundException;
@@ -136,8 +135,8 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
         } else {
             wordProvider = ApkModule.createWordProvider(getApplicationContext(), ((ApplicationWithDI) getApplicationContext()).appComponent.lastState(), ((ApplicationWithDI) getApplicationContext()).appComponent.wordCriteriaProvider());
         }
-        PlayService playService = ((ApplicationWithDI) getApplicationContext()).appComponent.playService();
-        ((PlayServiceImpl) playService).setWordProvider(wordProvider);
+        WordProviderDelegate wordProviderDelegate = (WordProviderDelegate) ((ApplicationWithDI) getApplicationContext()).appComponent.externalWordProvider();
+        wordProviderDelegate.setWordProvider(wordProvider);
     }
 
     public static class SettingsFragment extends PreferenceFragmentCompat {

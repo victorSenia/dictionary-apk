@@ -8,7 +8,9 @@ import android.widget.Toast;
 import androidx.preference.PreferenceManager;
 import dagger.Module;
 import dagger.Provides;
-import org.leo.dictionary.*;
+import org.leo.dictionary.PlayService;
+import org.leo.dictionary.PlayServiceImpl;
+import org.leo.dictionary.UiUpdater;
 import org.leo.dictionary.apk.activity.MainActivity;
 import org.leo.dictionary.apk.audio.AndroidAudioService;
 import org.leo.dictionary.apk.config.AssetsConfigurationReader;
@@ -19,6 +21,7 @@ import org.leo.dictionary.apk.helper.*;
 import org.leo.dictionary.apk.word.provider.AssetsWordProvider;
 import org.leo.dictionary.apk.word.provider.DBWordProvider;
 import org.leo.dictionary.apk.word.provider.InputStreamWordProvider;
+import org.leo.dictionary.apk.word.provider.WordProviderDelegate;
 import org.leo.dictionary.audio.AudioService;
 import org.leo.dictionary.config.ConfigParser;
 import org.leo.dictionary.config.ConfigurationReader;
@@ -26,6 +29,8 @@ import org.leo.dictionary.config.ConfigurationService;
 import org.leo.dictionary.config.entity.ParseGrammar;
 import org.leo.dictionary.config.entity.ParseSentences;
 import org.leo.dictionary.config.entity.ParseWords;
+import org.leo.dictionary.entity.Word;
+import org.leo.dictionary.entity.WordCriteria;
 import org.leo.dictionary.grammar.provider.GrammarProvider;
 import org.leo.dictionary.grammar.provider.SentenceProvider;
 import org.leo.dictionary.word.provider.WordProvider;
@@ -35,6 +40,7 @@ import javax.inject.Singleton;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Module
@@ -203,10 +209,13 @@ public class ApkModule {
     @Provides
     @Singleton
     public static WordProvider getOrCreateWordProvider(Context context, @Named("lastState") SharedPreferences lastState, @Named("dbWordProvider") DBWordProvider dbWordProvider, WordCriteriaProvider criteriaProvider) {
+        WordProviderDelegate wordProvider = new WordProviderDelegate();
         if (isDBSource(lastState)) {
-            return dbWordProvider;
+            wordProvider.setWordProvider(dbWordProvider);
+        } else {
+            wordProvider.setWordProvider(createWordProvider(context, lastState, criteriaProvider));
         }
-        return createWordProvider(context, lastState, criteriaProvider);
+        return wordProvider;
     }
 
     public static InputStreamWordProvider createInputStreamWordProvider(Context context, Uri data) throws FileNotFoundException {
@@ -216,6 +225,11 @@ public class ApkModule {
         wordProvider.setConfiguration(parseWords);
         wordProvider.setInputStream(context.getContentResolver().openInputStream(data));
         return wordProvider;
+    }
+
+    public static List<Word> getWords(Context context) {
+        ApkAppComponent appComponent = ((ApplicationWithDI) context.getApplicationContext()).appComponent;
+        return appComponent.externalWordProvider().findWords(appComponent.wordCriteriaProvider().getObject());
     }
 
     @Provides
@@ -252,7 +266,8 @@ public class ApkModule {
         playService.setAudioService(audioService);
         playService.setWordProvider(wordProvider);
         playService.setUiUpdater(uiUpdater);
-        playService.findWords(criteriaProvider.getObject());
+        WordCriteria criteria = criteriaProvider.getObject();
+        playService.setPlayTranslationFor(criteria.getPlayTranslationFor());
         return playService;
     }
 
@@ -273,17 +288,8 @@ public class ApkModule {
     }
 
     @Provides
+    @Singleton
     public static PlayService providePlayService(PlayServiceImpl playService) {
-        return playService;
-    }
-
-    @Provides
-    public static ExternalWordProvider provideExternalWordProvider(PlayServiceImpl playService) {
-        return playService;
-    }
-
-    @Provides
-    public static ExternalVoiceService provideExternalVoiceService(PlayServiceImpl playService) {
         return playService;
     }
 

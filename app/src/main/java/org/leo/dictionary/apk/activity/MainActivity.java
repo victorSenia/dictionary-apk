@@ -29,6 +29,7 @@ import org.leo.dictionary.apk.databinding.ActivityMainBinding;
 import org.leo.dictionary.apk.helper.KnowledgeToRatingConverter;
 import org.leo.dictionary.apk.helper.WordCriteriaProvider;
 import org.leo.dictionary.apk.word.provider.DBWordProvider;
+import org.leo.dictionary.apk.word.provider.WordProviderDelegate;
 import org.leo.dictionary.entity.Topic;
 import org.leo.dictionary.entity.Word;
 import org.leo.dictionary.entity.WordCriteria;
@@ -143,25 +144,35 @@ public class MainActivity extends AppCompatActivity {
         DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();
         wordProvider.updateWordFully(updatedWord);
 
-        PlayService playService = ((ApplicationWithDI) getApplicationContext()).appComponent.playService();
+        PlayService playService = getPlayService();
         WordsFragment wordsFragment = (WordsFragment) getSupportFragmentManager().findFragmentById(R.id.words_fragment);
         if (wordsFragment != null) {
+            List<Word> words = wordsFragment.getRecyclerViewAdapter().values;
             if (positionId != null) {
+                int positionIdInt = positionId;
                 if (shouldBeDisplayed(updatedWord)) {
-                    playService.safeUpdate(positionId, updatedWord);
-                    runOnUiThread(() -> wordsFragment.wordUpdated(positionId));
+                    WordCriteria wordCriteria = ((ApplicationWithDI) getApplicationContext()).appComponent.wordCriteriaProvider().getObject();
+                    words.get(positionIdInt).updateWord(updatedWord, wordCriteria.getLanguageTo());
+                    playService.setWords(words);
+                    runOnUiThread(() -> wordsFragment.wordUpdated(positionIdInt));
                 } else {
-                    playService.safeDelete(positionId);
-                    runOnUiThread(() -> wordsFragment.wordDeleted(positionId));
+                    words.remove(positionIdInt);
+                    playService.setWords(words);
+                    runOnUiThread(() -> wordsFragment.wordDeleted(positionIdInt));
                 }
             } else {
                 if (shouldBeDisplayed(updatedWord)) {
-                    playService.safeAdd(updatedWord);
-                    int newPositionId = playService.getUnknownWords().size() - 1;
+                    words.add(updatedWord);
+                    playService.setWords(words);
+                    int newPositionId = words.size() - 1;
                     runOnUiThread(() -> wordsFragment.wordAdded(newPositionId, updatedWord));
                 }
             }
         }
+    }
+
+    private PlayService getPlayService() {
+        return ((ApplicationWithDI) getApplicationContext()).appComponent.playService();
     }
 
     private boolean shouldBeDisplayed(Word updatedWord) {
@@ -214,10 +225,6 @@ public class MainActivity extends AppCompatActivity {
             Intent i = new Intent(this, SettingsActivity.class);
             startActivity(i);
             return true;
-        } else if (id == R.id.action_search_words) {
-            Intent i = new Intent(this, SearchWordsActivity.class);
-            startActivity(i);
-            return true;
         } else if (id == R.id.action_order_words_in_sentence) {
             Intent i = new Intent(this, SentenceActivity.class);
             startActivity(i);
@@ -253,7 +260,7 @@ public class MainActivity extends AppCompatActivity {
             if (isDbSource()) {
                 showMessage(getString(R.string.already_database_error));
             } else {
-                runAtBackground(() -> importWords(((ApplicationWithDI) getApplicationContext()).appComponent.playService().getUnknownWords()));
+                runAtBackground(() -> importWords(ApkModule.getWords(this)));
             }
             return true;
         } else if (id == R.id.action_use_db) {
@@ -280,6 +287,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
             return true;
         } else if (id == R.id.action_add_word) {
+            stopPlayer();
             Intent intent = new Intent(this, EditWordActivity.class);
             editWordActivityResultLauncher.launch(intent);
             return true;
@@ -297,7 +305,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void stopPlayer() {
-        ((ApplicationWithDI) getApplicationContext()).appComponent.playService().pause();
+        getPlayService().pause();
     }
 
     private void prepareForDbUsage() {
@@ -308,19 +316,20 @@ public class MainActivity extends AppCompatActivity {
 
         lastState.edit().putString(ApkModule.LAST_STATE_SOURCE, ApkModule.DB).apply();
 
-        PlayService playService = appComponent.playService();
-        applicationContext.data.put(WORD_PROVIDER, ((PlayServiceImpl) playService).getWordProvider());
+        WordProviderDelegate wordProviderDelegate = (WordProviderDelegate) appComponent.externalWordProvider();
+        applicationContext.data.put(WORD_PROVIDER, wordProviderDelegate.getDelegate());
         WordProvider wordProvider = appComponent.dbWordProvider();
-        ((PlayServiceImpl) playService).setWordProvider(wordProvider);
+        wordProviderDelegate.setWordProvider(wordProvider);
     }
 
     private void revertDbUsage() {
         ApplicationWithDI applicationContext = (ApplicationWithDI) getApplicationContext();
         if (applicationContext.data.containsKey(ApkModule.LAST_STATE_SOURCE)) {
-            applicationContext.appComponent.lastState().edit().putString(ApkModule.LAST_STATE_SOURCE, (String) applicationContext.data.get(ApkModule.LAST_STATE_SOURCE)).apply();
-            PlayService playService = applicationContext.appComponent.playService();
+            ApkAppComponent appComponent = applicationContext.appComponent;
+            appComponent.lastState().edit().putString(ApkModule.LAST_STATE_SOURCE, (String) applicationContext.data.get(ApkModule.LAST_STATE_SOURCE)).apply();
             WordProvider wordProvider = (WordProvider) applicationContext.data.get(WORD_PROVIDER);
-            ((PlayServiceImpl) playService).setWordProvider(wordProvider);
+            ((WordProviderDelegate) appComponent.externalWordProvider()).setWordProvider(wordProvider);
+            ((PlayServiceImpl) appComponent.playService()).setWordProvider(wordProvider);
         }
         applicationContext.data.clear();
     }
@@ -355,8 +364,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setKnowledgeInDatabase(double knowledge) {
         ApplicationWithDI applicationContext = (ApplicationWithDI) getApplicationContext();
-        PlayService playService = applicationContext.appComponent.playService();
-        List<Word> words = playService.getUnknownWords();
+        List<Word> words = ApkModule.getWords(this);
         for (Word word : words) {
             word.setKnowledge(knowledge);
         }
@@ -401,23 +409,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateUiWithWords(WordCriteria wordCriteria) {
-        PlayService playService = ((ApplicationWithDI) getApplicationContext()).appComponent.playService();
-        playService.findWords(wordCriteria);
-        showMessage(getString(R.string.found_words, playService.getUnknownWords().size()));
-        updateUiWithNewData(playService.getUnknownWords());
+        PlayService playService = getPlayService();
+        WordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.externalWordProvider();
+        playService.setPlayTranslationFor(wordCriteria.getPlayTranslationFor());
+        ((PlayServiceImpl) playService).setWordProvider(wordProvider);
+        updateUiWithNewData();
     }
 
-    private void updateUiWithNewData(List<Word> unknownWords) {
+    private void updateUiWithNewData() {
         runOnUiThread(() -> {
             WordsFragment wordsFragment = (WordsFragment) getSupportFragmentManager().findFragmentById(R.id.words_fragment);
             if (wordsFragment != null) {
-                wordsFragment.replaceData(unknownWords);
+                wordsFragment.replaceData();
             }
             new ViewModelProvider(this).get(DetailsViewModel.class).clearWord();
         });
     }
 
     public void editWord(int positionId, Word word) {
+        stopPlayer();
         Intent intent = new Intent(this, EditWordActivity.class);
         intent.putExtra(EditWordActivity.WORD_ID_TO_EDIT, word.getId());
         ((ApplicationWithDI) getApplicationContext()).data.put(POSITION_ID, positionId);

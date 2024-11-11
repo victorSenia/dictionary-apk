@@ -2,8 +2,6 @@ package org.leo.dictionary.apk;
 
 import android.content.SharedPreferences;
 import dagger.Component;
-import org.leo.dictionary.ExternalVoiceService;
-import org.leo.dictionary.ExternalWordProvider;
 import org.leo.dictionary.PlayService;
 import org.leo.dictionary.UiUpdater;
 import org.leo.dictionary.apk.helper.GrammarCriteriaProvider;
@@ -12,6 +10,7 @@ import org.leo.dictionary.apk.word.provider.DBWordProvider;
 import org.leo.dictionary.audio.AudioService;
 import org.leo.dictionary.grammar.provider.GrammarProvider;
 import org.leo.dictionary.grammar.provider.SentenceProvider;
+import org.leo.dictionary.word.provider.WordProvider;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
@@ -23,9 +22,9 @@ public interface ApkAppComponent {
 
     AudioService audioService();
 
-    ExternalWordProvider externalWordProvider();
+    WordProvider externalWordProvider();
 
-    ExternalVoiceService externalVoiceService();
+    AudioService externalVoiceService();
 
     UiUpdater uiUpdater();
 

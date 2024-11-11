@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
-import org.leo.dictionary.ExternalVoiceService;
 import org.leo.dictionary.ExternalWordProvider;
 import org.leo.dictionary.apk.ApkAppComponent;
 import org.leo.dictionary.apk.ApkModule;
@@ -62,7 +61,7 @@ public class VoiceSelectorActivity extends AppCompatActivity {
 
     private void updateUiWithWords(String language) {
         if (language.length() == 2) {
-            ExternalVoiceService voiceService = ((ApplicationWithDI) getApplicationContext()).appComponent.externalVoiceService();
+            AudioService voiceService = ((ApplicationWithDI) getApplicationContext()).appComponent.externalVoiceService();
             voiceService.getVoicesNames(language);
             updateUiWithNewData(language, voiceService.getVoicesNames(language));
             binding.defaultVoice.setVisibility(View.VISIBLE);

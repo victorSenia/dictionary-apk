@@ -56,7 +56,6 @@
     <string name="default_voice_usage">Default voice used for %s</string>
     <string name="import_started">Import started. It will take few seconds.</string>
     <string name="import_finished">Import took %d ms</string>
-    <string name="found_words">Found %d words</string>
     <string name="articles">Articles</string>
     <string name="additional_information_delimiter">Additional information delimiter</string>
     <string name="delimiter">Delimiter</string>
@@ -106,7 +105,6 @@
     <string name="word_recognition">Speech recognition</string>
     <string name="word_knowledge">Knowledge</string>
     <string name="error">error</string>
-    <string name="search_words">Search words</string>
     <string name="grammar_filter">Grammar filter</string>
     <string name="filter">Filter</string>
     <string name="hints">Hints</string>

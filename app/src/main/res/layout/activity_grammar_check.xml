@@ -18,9 +18,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/sentence_container"
             app:flexWrap="wrap"
-            app:alignItems="stretch"
-            app:alignContent="stretch" app:layout_constraintTop_toBottomOf="@+id/sentence_hint"
-            app:layout_constraintBottom_toTopOf="@+id/variants_container" app:layout_constraintEnd_toEndOf="parent"
+            app:justifyContent="space_around"
+            app:layout_constraintTop_toBottomOf="@+id/sentence_hint"
+            app:layout_constraintBottom_toTopOf="@+id/variants_container"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
     <TextView
             android:layout_width="match_parent"
@@ -48,9 +49,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/variants_container"
             app:flexWrap="wrap"
-            app:alignItems="stretch"
-            app:alignContent="stretch" app:layout_constraintBottom_toTopOf="@+id/image_ok"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"/>
+            app:justifyContent="space_around"
+            app:layout_constraintBottom_toTopOf="@+id/image_ok"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
     <ImageView
             android:layout_width="@dimen/speech_button_dimension"
             android:layout_height="@dimen/speech_button_dimension"

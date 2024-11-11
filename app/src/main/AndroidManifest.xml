@@ -26,9 +26,6 @@
                 android:label="@string/title_activity_match_article"
                 android:theme="@style/Theme.DictionaryApk"/>
         <activity
-                android:name=".activity.SearchWordsActivity"
-                android:exported="false"/>
-        <activity
                 android:name=".activity.GrammarLearningActivity"
                 android:exported="false"/>
         <activity
