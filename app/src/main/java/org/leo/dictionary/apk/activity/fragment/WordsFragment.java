@@ -8,12 +8,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 import org.leo.dictionary.UiUpdater;
 import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApkUiUpdater;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.activity.viewadapter.WordsRecyclerViewAdapter;
+import org.leo.dictionary.apk.activity.viewmodel.IsPlayingViewModel;
 import org.leo.dictionary.entity.Translation;
 import org.leo.dictionary.entity.Word;
 
@@ -43,6 +45,13 @@ public class WordsFragment extends FilteredRecyclerViewFragment<WordsRecyclerVie
             predicate = s -> s.contains(filter);
         }
         return predicate;
+    }
+
+    @Override
+    protected void addObservers() {
+        super.addObservers();
+        new ViewModelProvider(requireActivity()).get(IsPlayingViewModel.class).getData().
+                observe(requireActivity(), b -> setFilterVisibility());
     }
 
     @Override
@@ -173,6 +182,11 @@ public class WordsFragment extends FilteredRecyclerViewFragment<WordsRecyclerVie
         apkUiUpdater.removeUiUpdater(uiUpdater);
     }
 
+    @Override
+    protected boolean isFilterVisible() {
+        return !new ViewModelProvider(requireActivity()).get(IsPlayingViewModel.class).getValue()
+                && super.isFilterVisible();
+    }
 
     private void startHandler() {
         mHandler.postDelayed(scrollAllowedRunnable, INACTIVITY_TIMEOUT);
@@ -182,5 +196,4 @@ public class WordsFragment extends FilteredRecyclerViewFragment<WordsRecyclerVie
         scrollAllowed.set(false);
         mHandler.removeCallbacks(scrollAllowedRunnable);
     }
-
 }

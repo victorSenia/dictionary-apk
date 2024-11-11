@@ -50,8 +50,12 @@ public abstract class FilteredRecyclerViewFragment<V extends RecyclerView.Adapte
 
     protected void setFilterVisibility() {
         if (filter != null) {
-            filter.setVisibility(allValues.size() < FILTER_AFTER_SIZE ? View.GONE : View.VISIBLE);
+            filter.setVisibility(isFilterVisible() ? View.VISIBLE : View.GONE);
         }
+    }
+
+    protected boolean isFilterVisible() {
+        return !(allValues.size() < FILTER_AFTER_SIZE);
     }
 
     protected void setContainerVisibility(int containerId, List<T> result) {
