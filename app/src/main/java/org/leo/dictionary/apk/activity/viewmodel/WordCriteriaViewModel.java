@@ -15,7 +15,7 @@ public class WordCriteriaViewModel extends ObjectViewModel<WordCriteriaViewModel
     public static class WordCriteria {
         private List<Float> knowledge;
         private Set<Topic> topicsOr;
-        private Topic rootTopic;
+        private Set<Topic> rootTopic;
         private String languageFrom;
         private Set<String> languageTo;
 
@@ -35,11 +35,11 @@ public class WordCriteriaViewModel extends ObjectViewModel<WordCriteriaViewModel
             this.topicsOr = topicsOr;
         }
 
-        public Topic getRootTopic() {
+        public Set<Topic> getRootTopic() {
             return rootTopic;
         }
 
-        public void setRootTopic(Topic rootTopic) {
+        public void setRootTopic(Set<Topic> rootTopic) {
             this.rootTopic = rootTopic;
         }
 

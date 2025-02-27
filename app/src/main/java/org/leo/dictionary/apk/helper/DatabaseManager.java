@@ -263,8 +263,9 @@ public class DatabaseManager {
         String sql = "SELECT " + (countOnly ? "COUNT (DISTINCT w." + DatabaseHelper.COLUMN_ID + ")" : "DISTINCT w.*") + " FROM " + DatabaseHelper.TABLE_NAME_WORD + " w";
         List<String> selectionArgs = new ArrayList<>();
         String where = " WHERE 1=1";
-        if ((criteria.getTopicsOr() != null && !criteria.getTopicsOr().isEmpty()) || criteria.getRootTopic() != null) {
-            List<String> topicIds = getTopicIds(criteria.getLanguageFrom(), createRootTopicObject(criteria.getLanguageFrom(), criteria.getRootTopic()), criteria.getTopicsOr());
+        if ((criteria.getTopicsOr() != null && !criteria.getTopicsOr().isEmpty()) ||
+                (criteria.getRootTopics() != null && !criteria.getRootTopics().isEmpty())) {
+            Set<String> topicIds = getTopicIds(criteria.getLanguageFrom(), criteria.getRootTopics(), criteria.getTopicsOr());
             sql += " INNER JOIN " + DatabaseHelper.TABLE_NAME_WORD_TOPIC + " t ON w." + DatabaseHelper.COLUMN_ID + " = t." + DatabaseHelper.TRANSLATION_COLUMN_WORD_ID + " AND t." + DatabaseHelper.COLUMN_ID + " IN (" + createPlaceholders(topicIds.size()) + ")";
             selectionArgs.addAll(topicIds);
         }
@@ -291,17 +292,6 @@ public class DatabaseManager {
         return cursor;
     }
 
-    protected Topic createRootTopicObject(String language, String name) {
-        if (name != null) {
-            Topic rootTopic = new Topic();
-            rootTopic.setLevel(1);
-            rootTopic.setName(name);
-            rootTopic.setLanguage(language);
-            return rootTopic;
-        }
-        return null;
-    }
-
     protected Cursor fetchTranslationsCursor(Set<String> languages, List<String> wordIds) {
         String selection = DatabaseHelper.TRANSLATION_COLUMN_WORD_ID + " IN (" + createPlaceholders(wordIds.size()) + ")";
         List<String> selectionArgs = new ArrayList<>(wordIds);
@@ -318,10 +308,12 @@ public class DatabaseManager {
         return cursor;
     }
 
-    protected List<String> getTopicIds(String languageFrom, Topic rootTopic, Set<String> topicsOr) {
-        String rootId = rootTopic != null ? Long.toString(getTopicId(rootTopic)) : null;
-        try (Cursor res = fetchTopics(languageFrom, null, true, rootId, topicsOr)) {
-            List<String> ids = new ArrayList<>();
+    protected Set<String> getTopicIds(String languageFrom, Set<Topic> rootTopic, Set<Topic> topicsOr) {
+        if (topicsOr != null && !topicsOr.isEmpty()) {
+            return topicsOr.stream().map(topic -> Long.toString(topic.getId())).collect(Collectors.toSet());
+        }
+        try (Cursor res = fetchTopics(languageFrom, null, true, rootTopic.stream().map(topic -> Long.toString(topic.getId())).collect(Collectors.toSet()))) {
+            Set<String> ids = new HashSet<>();
             while (!res.isAfterLast()) {
                 ids.add(res.getString(0));
                 res.moveToNext();
@@ -330,7 +322,7 @@ public class DatabaseManager {
         }
     }
 
-    protected Cursor fetchTopics(String language, String level, boolean idOnly, String rootId, Set<String> names) {
+    protected Cursor fetchTopics(String language, String level, boolean idOnly, Set<String> rootId) {
         String selection = " 1 = 1";
         List<String> selectionArgs = new ArrayList<>();
         if (language != null) {
@@ -341,13 +333,9 @@ public class DatabaseManager {
             selection += " AND " + DatabaseHelper.TOPIC_COLUMN_LEVEL + "= ?";
             selectionArgs.add(level);
         }
-        if (rootId != null) {
-            selection += " AND " + DatabaseHelper.TOPIC_COLUMN_ROOT_ID + "= ?";
-            selectionArgs.add(rootId);
-        }
-        if (names != null && !names.isEmpty()) {
-            selection += " AND " + DatabaseHelper.TOPIC_COLUMN_NAME + " IN (" + createPlaceholders(names.size()) + ")";
-            selectionArgs.addAll(names);
+        if (rootId != null && !rootId.isEmpty()) {
+            selection += " AND " + DatabaseHelper.TOPIC_COLUMN_ROOT_ID + " IN (" + createPlaceholders(rootId.size()) + ")";
+            selectionArgs.addAll(rootId);
         }
         String[] columns;
         if (idOnly) {
@@ -363,14 +351,12 @@ public class DatabaseManager {
         return cursor;
     }
 
-    public List<Topic> getTopics(String language, String rootName, String level) {
-        Topic rootTopic = createRootTopicObject(language, rootName);
-        String rootId = rootTopic != null ? Long.toString(getTopicId(rootTopic)) : null;
+    public List<Topic> getTopics(String language, Set<Long> rootIds, String level) {
         HashMap<Long, Topic> loadedTopics = new HashMap<>();
-        if (rootId != null) {
-            loadedTopics.putAll(getTopics(language, null, "1").stream().collect(Collectors.toMap(Topic::getId, Function.identity())));
+        if (rootIds != null) {
+            loadedTopics.putAll(findRootTopics(language).stream().collect(Collectors.toMap(Topic::getId, Function.identity())));
         }
-        try (Cursor res = fetchTopics(language, level, false, rootId, null)) {
+        try (Cursor res = fetchTopics(language, level, false, rootIds != null ? rootIds.stream().map(Object::toString).collect(Collectors.toSet()) : null)) {
             List<Topic> topics = new ArrayList<>();
             if (!res.isAfterLast()) {
                 mapTopicsFromCursor(language, res, topics, loadedTopics);
@@ -460,10 +446,10 @@ public class DatabaseManager {
         return 0;
     }
 
-    public List<Word> getWordsForLanguage(String language, String rootTopic) {
+    public List<Word> getWordsForLanguage(String language, Set<Topic> rootTopics) {
         WordCriteria criteria = new WordCriteria();
         criteria.setLanguageFrom(language);
-        criteria.setRootTopic(rootTopic);
+        criteria.setRootTopics(rootTopics);
         return getWords(() -> fetchWordsCursor(criteria, false), null, true);
     }
 
@@ -486,7 +472,7 @@ public class DatabaseManager {
         }
         words = words.stream().filter(this::hasTranslations).collect(Collectors.toList());
         if (includeTopics && !words.isEmpty()) {
-            Map<Long, Topic> topics = new HashMap<>(getTopics(null, null, "1").stream().collect(Collectors.toMap(Topic::getId, Function.identity())));
+            Map<Long, Topic> topics = new HashMap<>(getTopics(null, (Set<Long>) null, "1").stream().collect(Collectors.toMap(Topic::getId, Function.identity())));
             for (Word word : words) {
                 word.setTopics(getTopicsForWord(String.valueOf(word.getId()), word.getLanguage(), "2", topics));//TODO
             }

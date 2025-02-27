@@ -138,7 +138,7 @@ public class FilterWordsActivity extends AppCompatActivity {
         }
         Set<Topic> selectedTopics = criteriaModel.getTopicsOr();
         if (selectedTopics != null) {
-            criteria.setTopicsOr(selectedTopics.stream().map(Topic::getName).collect(Collectors.toList()));
+            criteria.setTopicsOr(selectedTopics);
         }
         Set<String> selectedLanguageTo = criteriaModel.getLanguageTo();
         if (selectedLanguageTo != null) {
@@ -148,12 +148,12 @@ public class FilterWordsActivity extends AppCompatActivity {
         if (selectedLanguageFrom != null) {
             criteria.setLanguageFrom(selectedLanguageFrom);
         }
-        Topic selectedRootTopic = criteriaModel.getRootTopic();
+        Set<Topic> selectedRootTopic = criteriaModel.getRootTopic();
         if (selectedRootTopic != null) {
-            if (criteria.getLanguageFrom() == null) {
-                criteria.setLanguageFrom(selectedRootTopic.getLanguage());
+            if (criteria.getLanguageFrom() == null && selectedRootTopic.size() == 1) {
+                criteria.setLanguageFrom(selectedRootTopic.iterator().next().getLanguage());
             }
-            criteria.setRootTopic(selectedRootTopic.getName());
+            criteria.setRootTopics(selectedRootTopic);
         }
         List<Float> range = criteriaModel.getKnowledge();
         double knowledgeFrom = KnowledgeToRatingConverter.ratingToKnowledge(range.get(RANGE_FROM_INDEX));
@@ -179,32 +179,33 @@ public class FilterWordsActivity extends AppCompatActivity {
         }
 
         protected void setTopicValue(Topic rootTopic) {
-            getWordCriteriaViewModel().getValue().setRootTopic(rootTopic);
-            getWordCriteriaViewModel().getValue().setTopicsOr(null);
-            getWordCriteriaViewModel().triggerUpdate();
+            if (rootTopic != null) {
+                getWordCriteriaViewModel().getValue().setRootTopic(Collections.singleton(rootTopic));
+                getWordCriteriaViewModel().getValue().setTopicsOr(null);
+                getWordCriteriaViewModel().triggerUpdate();
+            }
         }
 
         @Override
         protected StringRecyclerViewAdapter<Topic> createRecyclerViewAdapter(List<Topic> values) {
             recyclerView.setNestedScrollingEnabled(false);
-            StringRecyclerViewAdapter<Topic> adapter = new StringRecyclerViewAdapter<>(values, this,
-                    new StringRecyclerViewAdapter.RememberSelectionOnClickListener<>(
-                            (oldSelected, viewHolder) -> setTopicValue(viewHolder.item)),
-                    getFormatter());
-            if (adapter.values.size() == 1) {
-                adapter.setSelected(0);
-                setTopicValue(adapter.values.get(0));
-            } else {
-                String rootTopicName = getWordCriteria(requireActivity()).getRootTopic();
-                if (rootTopicName != null && !rootTopicName.isEmpty()) {
-                    Topic rootTopic = adapter.values.stream().filter(t -> rootTopicName.equals(t.getName())).findAny().orElse(null);
-                    if (rootTopic != null) {
-                        adapter.setSelected(adapter.values.indexOf(rootTopic));
-                        setTopicValue(rootTopic);
-                    }
-                }
-            }
+            MultiSelectionStringRecyclerViewAdapter<Topic> adapter = new MultiSelectionStringRecyclerViewAdapter<>(values, this, getOnClickUpdater(), getFormatter());
+            List<Topic> selected = getTopicsFromCriteria(values);
+            adapter.setSelected(selected);
             return adapter;
+        }
+
+        protected Consumer<Collection<Topic>> getOnClickUpdater() {
+            return topics -> {
+                getWordCriteriaViewModel().getValue().setRootTopic(new HashSet<>(topics));
+                getWordCriteriaViewModel().getValue().setTopicsOr(null);
+                getWordCriteriaViewModel().triggerUpdate();
+            };
+        }
+
+        protected List<Topic> getTopicsFromCriteria(List<Topic> topicList) {
+            Set<Long> topicIds = MainActivity.getTopicIds(getWordCriteria(requireActivity()).getRootTopics());
+            return topicIds != null ? topicList.stream().filter(topic -> topicIds.contains(topic.getId())).collect(Collectors.toList()) : Collections.emptyList();
         }
 
         @Override
@@ -234,7 +235,7 @@ public class FilterWordsActivity extends AppCompatActivity {
     }
 
     public static class TopicsFragment extends RootTopicsFragment {
-        protected Topic rootTopic;
+        protected Set<Topic> rootTopic;
 
         @Override
         protected boolean stateChanged() {
@@ -246,10 +247,10 @@ public class FilterWordsActivity extends AppCompatActivity {
             ExternalWordProvider wordProvider = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.externalWordProvider();
             language = getStateLanguage();
             rootTopic = getStateRootTopic();
-            if (language == null && rootTopic != null) {
-                language = rootTopic.getLanguage();
+            if (language == null && rootTopic != null && rootTopic.size() == 1) {
+                language = rootTopic.iterator().next().getLanguage();
             }
-            List<Topic> result = wordProvider.findTopicsWithRoot(language, rootTopic != null ? rootTopic.getName() : null, 2);
+            List<Topic> result = wordProvider.findTopicsWithRoot(language, rootTopic, 2);
             setContainerVisibility(R.id.topics_container, result);
             return result;
         }
@@ -259,7 +260,7 @@ public class FilterWordsActivity extends AppCompatActivity {
             ((MultiSelectionStringRecyclerViewAdapter<Topic>) adapter).setSelected(getTopicsFromCriteria(adapter.values));
         }
 
-        protected Topic getStateRootTopic() {
+        protected Set<Topic> getStateRootTopic() {
             return getWordCriteriaViewModel().getValue().getRootTopic();
         }
 
@@ -281,8 +282,8 @@ public class FilterWordsActivity extends AppCompatActivity {
 
 
         protected List<Topic> getTopicsFromCriteria(List<Topic> topicList) {
-            Set<String> topicsOr = getWordCriteria(requireActivity()).getTopicsOr();
-            return topicsOr != null ? topicList.stream().filter(topic -> topicsOr.contains(topic.getName())).collect(Collectors.toList()) : Collections.emptyList();
+            Set<Long> topicsOr = MainActivity.getTopicIds(getWordCriteria(requireActivity()).getTopicsOr());
+            return topicsOr != null ? topicList.stream().filter(topic -> topicsOr.contains(topic.getId())).collect(Collectors.toList()) : Collections.emptyList();
         }
     }
 

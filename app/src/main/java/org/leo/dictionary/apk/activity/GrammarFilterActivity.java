@@ -59,7 +59,7 @@ public class GrammarFilterActivity extends AppCompatActivity {
             criteria = new SentenceCriteriaViewModel.SentenceCriteria();
         }
         criteria.setLanguage(language);
-        criteria.setRootTopic(null);
+        criteria.setRootTopics((Set<Topic>) null);
         criteria.setTopicsOr(null);
         criteria.setHints(null);
         sentenceCriteriaViewModel.setValue(criteria);
@@ -134,23 +134,23 @@ public class GrammarFilterActivity extends AppCompatActivity {
         });
 
         binding.allRootTopics.setOnClickListener(v -> {
-            FilterWordsActivity.RootTopicsFragment topics = (FilterWordsActivity.RootTopicsFragment) getSupportFragmentManager().findFragmentById(R.id.root_topics);
+            GrammarFilterActivity.RootTopicsFragment topics = (GrammarFilterActivity.RootTopicsFragment) getSupportFragmentManager().findFragmentById(R.id.root_topics);
             if (topics != null) {
                 topics.getRecyclerViewAdapter().clearSelection();
                 updateViewModelRootTopic(owner, null);
             }
         });
         binding.allTopics.setOnClickListener(v -> {
-            FilterWordsActivity.TopicsFragment topics = (FilterWordsActivity.TopicsFragment) getSupportFragmentManager().findFragmentById(R.id.topics);
+            GrammarFilterActivity.TopicsFragment topics = (GrammarFilterActivity.TopicsFragment) getSupportFragmentManager().findFragmentById(R.id.topics);
             if (topics != null) {
                 topics.getRecyclerViewAdapter().clearSelection();
                 updateViewModelTopics(owner, new HashSet<>());
             }
         });
         binding.allHints.setOnClickListener(v -> {
-            FilterWordsActivity.RootTopicsFragment topics = (FilterWordsActivity.RootTopicsFragment) getSupportFragmentManager().findFragmentById(R.id.root_topics);
-            if (topics != null) {
-                topics.getRecyclerViewAdapter().clearSelection();
+            GrammarFilterActivity.HintsFragment hints = (GrammarFilterActivity.HintsFragment) getSupportFragmentManager().findFragmentById(R.id.hints);
+            if (hints != null) {
+                hints.getRecyclerViewAdapter().clearSelection();
                 updateViewModelHints(owner, new HashSet<>());
             }
         });
@@ -176,14 +176,14 @@ public class GrammarFilterActivity extends AppCompatActivity {
             if (criteriaModel.getLanguage() != null) {
                 criteria.setLanguage(criteriaModel.getLanguage());
             }
-            if (criteriaModel.getRootTopic() != null) {
-                criteria.setRootTopic(criteriaModel.getRootTopic().getName());
+            if (criteriaModel.getRootTopics() != null) {
+                criteria.setRootTopics(criteriaModel.getRootTopics());
             }
             if (criteriaModel.getTopicsOr() != null) {
-                criteria.setTopicsOr(criteriaModel.getTopicsOr().stream().map(Topic::getName).collect(Collectors.toSet()));
+                criteria.setTopicsOr(criteriaModel.getTopicsOr());
             }
             if (criteriaModel.getHints() != null) {
-                criteria.setHints(criteriaModel.getHints().stream().map(Hint::getHint).collect(Collectors.toSet()));
+                criteria.setHints(criteriaModel.getHints());
             }
         }
         return criteria;
@@ -236,7 +236,7 @@ public class GrammarFilterActivity extends AppCompatActivity {
         protected List<Topic> findValues() {
             GrammarProvider grammarProvider = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.externalGrammarProvider();
             language = getStateLanguage();
-            List<Topic> result = grammarProvider.findTopics(language, null, 1);
+            List<Topic> result = grammarProvider.findTopics(language, (Set<Topic>) null, 1);
             setContainerVisibility(R.id.root_topics_container, result);
             setTopicValue(null);
             return result;
@@ -269,14 +269,14 @@ public class GrammarFilterActivity extends AppCompatActivity {
             GrammarProvider wordProvider = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.externalGrammarProvider();
             language = getStateLanguage();
             rootTopic = getStateRootTopic();
-            List<Topic> result = wordProvider.findTopics(language, rootTopic != null ? rootTopic.getName() : null, 2);
+            List<Topic> result = wordProvider.findTopics(language, rootTopic, 2);
             setContainerVisibility(R.id.topics_container, result);
             return result;
         }
 
         @Override
-        protected Topic getStateRootTopic() {
-            return getSentenceCriteriaViewModel(requireActivity()).getValue().getRootTopic();
+        protected Set<Topic> getStateRootTopic() {
+            return getSentenceCriteriaViewModel(requireActivity()).getValue().getRootTopics();
         }
 
         @Override
@@ -287,8 +287,8 @@ public class GrammarFilterActivity extends AppCompatActivity {
 
         @Override
         protected List<Topic> getTopicsFromCriteria(List<Topic> topicList) {
-            Set<String> topicsOr = getGrammarCriteria(requireActivity()).getTopicsOr();
-            return topicsOr != null ? topicList.stream().filter(topic -> topicsOr.contains(topic.getName())).collect(Collectors.toList()) : Collections.emptyList();
+            Set<Long> topicsOr = MainActivity.getTopicIds(getGrammarCriteria(requireActivity()).getTopicsOr());
+            return topicsOr != null ? topicList.stream().filter(topic -> topicsOr.contains(topic.getId())).collect(Collectors.toList()) : Collections.emptyList();
         }
 
         @Override
@@ -299,7 +299,7 @@ public class GrammarFilterActivity extends AppCompatActivity {
 
     public static class HintsFragment extends FilteredRecyclerViewFragment<StringRecyclerViewAdapter<Hint>, Hint> {
         protected String language;
-        protected Topic rootTopic;
+        protected Set<Topic> rootTopic;
         private Set<Topic> topics;
 
         @Override
@@ -323,7 +323,7 @@ public class GrammarFilterActivity extends AppCompatActivity {
             language = getStateLanguage();
             rootTopic = getStateRootTopic();
             topics = getStateTopics();
-            List<Hint> result = grammarProvider.findHints(language, rootTopic == null ? null : rootTopic.getName(), topics == null ? null : topics.stream().map(Topic::getName).collect(Collectors.toSet()));
+            List<Hint> result = grammarProvider.findHints(language, rootTopic, topics);
             setContainerVisibility(R.id.hints_container, result);
             return result;
         }
@@ -342,8 +342,9 @@ public class GrammarFilterActivity extends AppCompatActivity {
         }
 
         protected List<Hint> getHintsFromCriteria(List<Hint> hintList) {
-            Set<String> hints = getGrammarCriteria(requireActivity()).getHints();
-            return hints != null ? hintList.stream().filter(hint -> hints.contains(hint.getHint())).collect(Collectors.toList()) : Collections.emptyList();
+            Set<Hint> hints = getGrammarCriteria(requireActivity()).getHints();
+            Set<String> hintIds = hints != null ? hints.stream().map(Hint::getHint).collect(Collectors.toSet()) : null;
+            return hints != null ? hintList.stream().filter(hint -> hintIds.contains(hint.getHint())).collect(Collectors.toList()) : Collections.emptyList();
         }
 
 
@@ -351,8 +352,8 @@ public class GrammarFilterActivity extends AppCompatActivity {
             return getSentenceCriteriaViewModel(requireActivity()).getValue().getLanguage();
         }
 
-        protected Topic getStateRootTopic() {
-            return getSentenceCriteriaViewModel(requireActivity()).getValue().getRootTopic();
+        protected Set<Topic> getStateRootTopic() {
+            return getSentenceCriteriaViewModel(requireActivity()).getValue().getRootTopics();
         }
 
         protected Set<Topic> getStateTopics() {

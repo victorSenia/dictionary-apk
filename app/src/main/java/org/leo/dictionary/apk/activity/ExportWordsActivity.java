@@ -27,6 +27,7 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class ExportWordsActivity extends AppCompatActivity {
@@ -90,10 +91,10 @@ public class ExportWordsActivity extends AppCompatActivity {
                 }
             };
             if (rootTopic != null) {
-                wordExporter.writeWords(wordProvider.getWordsForLanguage(language, rootTopic.getName()), false,
+                wordExporter.writeWords(wordProvider.getWordsForLanguage(language, rootTopic), false,
                         Collections.singletonList(rootTopic.getName()));
             } else {
-                wordExporter.writeWords(wordProvider.getWordsForLanguage(language, null), true,
+                wordExporter.writeWords(wordProvider.getWordsForLanguage(language, (Set<Topic>) null), true,
                         wordProvider.findRootTopics(language).stream().map(Topic::getName).collect(Collectors.toList()));
             }
         } catch (IOException e) {

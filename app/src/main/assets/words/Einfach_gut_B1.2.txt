@@ -11,7 +11,8 @@ ausstellen | to issue | виставляти
 die Bearbeitung | processing | редагування
 beglaubigen | to certify | нотаріально засвідчувати
 die Beglaubigung | certification | нотаріальне засвідчення
-der/die Bekannte; Bekannten | acquaintance | знайомий; знайома
+der Bekannte; Bekannten | acquaintance | знайомий
+die Bekannte; Bekannten | acquaintance | знайома
 benötigen | to require | потребувати
 berufen | to appoint | призначати на посаду
 bescheinigen | to certify | засвідчувати
@@ -164,7 +165,8 @@ die Sales Managerin; Sales Managerinnen | sales manager | менеджерка �
 schneiden | to cut | різати
 das Schreiben | correspondence | лист
 seitdem | since then | відколи
-der/die Selbstständige; Selbstständigen | self-employed person | самозайнятий
+der Selbstständige; Selbstständigen | self-employed person | самозайнятий
+die Selbstständige; Selbstständigen | self-employed person | самозайнятий
 senden | to broadcast | надсилати
 das Seniorenheim | old people's home | будинок престарілих
 soweit | so far as | якщо
@@ -368,7 +370,8 @@ die Einbrecherin; Einbrecherinnen | burglar | грабіжниця
 der Einbruch | burglary | пограбування
 einparken | to pull in | паркуватися
 die Fahrerseite | driver's side | бік водія
-der/die Freiwillige; Freiwilligen | volunteer | доброволец; доброволиця
+der Freiwillige; Freiwilligen | volunteer | доброволец
+die Freiwillige; Freiwilligen | volunteer | доброволиця
 frustriert | frustrated | розчарований
 der Gebrauchtwagen; Gebrauchtwagen | used vehicle | вживаний автомобіль
 die Haftpflicht | liability | матеріальна відповідальність
@@ -416,7 +419,8 @@ die Stoßstange | bumper | бампер
 der Straßenrand | roadside | узбіччя
 der Straßenverkehr | traffic | дорожній рух
 der Sturm | storm | шторм
-das/der Sport Utiliy Vehicle (SUV) | sport utility vehicle (SUV) | спортивний позашляховик
+das Sport Utiliy Vehicle (SUV) | sport utility vehicle (SUV) | спортивний позашляховик
+der Sport Utiliy Vehicle (SUV) | sport utility vehicle (SUV) | спортивний позашляховик
 die Teilkaskoversicherung (Teilkasko) | partial coverage insurance | Часткове комплексне страхування (часткове каско)
 überraschen | to surprise | дивувати
 die Überschwemmung | flood | затоплення

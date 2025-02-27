@@ -40,12 +40,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 import java.util.function.Consumer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 public class MainActivity extends AppCompatActivity {
     public final static Logger LOGGER = Logger.getLogger(MainActivity.class.getName());
@@ -177,11 +176,17 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean shouldBeDisplayed(Word updatedWord) {
         WordCriteria wordCriteria = ((ApplicationWithDI) getApplicationContext()).appComponent.wordCriteriaProvider().getObject();
-        return Objects.equals(updatedWord.getLanguage(), wordCriteria.getLanguageFrom()) && (wordCriteria.getTopicsOr() == null || wordCriteria.getTopicsOr().isEmpty() || containsAnyOfTopic(wordCriteria.getTopicsOr(), updatedWord.getTopics()));
+        return Objects.equals(updatedWord.getLanguage(), wordCriteria.getLanguageFrom()) &&
+                (wordCriteria.getTopicsOr() == null || wordCriteria.getTopicsOr().isEmpty() || containsAnyOfTopic(wordCriteria.getTopicsOr(), updatedWord.getTopics()));
     }
 
-    private boolean containsAnyOfTopic(Set<String> topicsOr, List<Topic> topics) {
-        return topics.stream().map(Topic::getName).anyMatch(topicsOr::contains);
+    public static Set<Long> getTopicIds(Collection<Topic> topics) {
+        return topics != null ? topics.stream().map(Topic::getId).collect(Collectors.toSet()) : Collections.emptySet();
+    }
+
+    private boolean containsAnyOfTopic(Set<Topic> topicsOr, List<Topic> topics) {
+        Set<Long> topicsIds = getTopicIds(topicsOr);
+        return topics.stream().map(Topic::getId).anyMatch(topicsIds::contains);
     }
 
     @Override
@@ -369,6 +374,11 @@ public class MainActivity extends AppCompatActivity {
             word.setKnowledge(knowledge);
         }
         applicationContext.appComponent.dbWordProvider().updateWord(words);
+
+        WordsFragment wordsFragment = (WordsFragment) getSupportFragmentManager().findFragmentById(R.id.words_fragment);
+        if (wordsFragment != null) {
+            wordsFragment.updateKnowledge(knowledge);
+        }
     }
 
     @Override

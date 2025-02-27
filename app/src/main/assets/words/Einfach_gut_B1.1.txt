@@ -490,7 +490,8 @@ die Talkshow | talk show | ток-шоу
 das Tor; Tore | goal | гол
 der Torwart | goalee | воротар
 die Torwartin | goalee | воротарка
-der/die Tote; Toten | dead people | покійник
+der Tote; Toten | dead people | покійник
+die Tote; Toten | dead people | покійник
 die Übertragung | transmission | передача
 unentschieden | undecided | нічия
 ungesund | unhealthy | нездоровий
@@ -505,7 +506,8 @@ die Zeitverschwendung | waste of time | марна трата часу
 der Zuschauer; Zuschauer | viewer | глядач
 die Zuschauerin; Zuschauerinnen | viewer | глядачка
 	Wortschatz zu Lektion 6: So war das damals … 
-der/die Alliierte; Alliierten | allies | союзник
+der Alliierte; Alliierten | allies | союзник
+die Alliierte; Alliierten | allies | союзник
 die Amtssprache; Amtssprachen | official language | ділова мова
 anfangs | initially | спочатку
 anheben | to raise | піднімати
@@ -591,7 +593,8 @@ politisch | political | політично
 der Protest; Proteste | protest | протест
 die Regierung; Regierungen | government | уряд
 die Republik; Republiken | republic | республіка
-der/die Russlanddeutsche; Russlanddeutschen | German-Russian | російські німці
+der Russlanddeutsche; Russlanddeutschen | German-Russian | російські німці
+die Russlanddeutsche; Russlanddeutschen | German-Russian | російські німці
 der Staat; Staaten | state | держава
 die Staatsgründung | formation of a state | заснування держави
 das Stipendium; Stipendien | scholarship | стипендія

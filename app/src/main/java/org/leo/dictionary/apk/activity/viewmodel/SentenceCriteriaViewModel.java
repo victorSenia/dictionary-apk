@@ -4,13 +4,15 @@ package org.leo.dictionary.apk.activity.viewmodel;
 import org.leo.dictionary.entity.Hint;
 import org.leo.dictionary.entity.Topic;
 
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.Set;
 
 public class SentenceCriteriaViewModel extends ObjectViewModel<SentenceCriteriaViewModel.SentenceCriteria> {
 
     public static class SentenceCriteria {
         private String language;
-        private Topic rootTopic;
+        private Set<Topic> rootTopics;
         private Set<Hint> hints;
         private Set<Topic> topicsOr;
 
@@ -22,12 +24,20 @@ public class SentenceCriteriaViewModel extends ObjectViewModel<SentenceCriteriaV
             this.language = language;
         }
 
-        public Topic getRootTopic() {
-            return rootTopic;
+        public Set<Topic> getRootTopics() {
+            return rootTopics;
+        }
+
+        public void setRootTopics(Set<Topic> rootTopics) {
+            this.rootTopics = rootTopics;
         }
 
         public void setRootTopic(Topic rootTopic) {
-            this.rootTopic = rootTopic;
+            if (rootTopic != null) {
+                this.rootTopics = Collections.singleton(rootTopic);
+            } else {
+                this.rootTopics = new HashSet<>();
+            }
         }
 
         public Set<Hint> getHints() {

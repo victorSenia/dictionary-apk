@@ -257,7 +257,8 @@ das Halbjahr | half-year | півріччя
 die Hauptschule | secondary school | загальноосвітня школа
 hinfallen | to fall over | падати
 der Integrationsverein | integration association | інтеграційна асоціація
-der/die Jugendliche; Jugendlichen | youth | підліток
+der Jugendliche; Jugendlichen | youth | підліток
+die Jugendliche; Jugendlichen | youth | підліток
 der Junge | boy | хлопець
 die Kindertagesstätte (Kita); Kindertagesstätten (Kitas) | nursery school | дитячий садок
 die Klasse | class | клас

@@ -10,6 +10,7 @@ import org.leo.dictionary.apk.activity.viewadapter.StringRecyclerViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -28,9 +29,14 @@ public abstract class FilteredRecyclerViewFragment<V extends RecyclerView.Adapte
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = super.onCreateView(inflater, container, savedInstanceState);
         filter.addTextChangedListener(new EditWordActivity.AbstractTextWatcher() {
+            private String previous;
+
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                filterValuesInAdapter();
+                if ((previous != null && !previous.equals(s.toString())) || (previous == null && s.length() != 0)) {
+                    filterValuesInAdapter();
+                }
+                previous = s.toString();
             }
         });
         return view;

@@ -281,7 +281,8 @@ die Abmeldung | deregistration | вихід із системи
 das Amt | office | урядова установа
 das Amtsdeutsch | official German | офіційна німецька
 ändern | to change | змінювати
-der/die Angehörige; Angehörigen | relative | родичі
+der Angehörige; Angehörigen | relative | родичі
+die Angehörige; Angehörigen | relative | родичі
 ankreuzen | to mark with a cross | позначати хрестиком
 die Anschrift | address | адреса
 der Antrag; Anträge | application | заявка
@@ -443,7 +444,8 @@ der Ansprechpartner | contact person | контактна особа
 die Ansprechpartnerin | contact person | контактна особа
 der Aushilfsjob | temporary job | тимчасова робота
 aussehen | to look | виглядати
-der/die Auszubildende (Azubi); Auszubildende | trainee | учень/учениця на виробництві
+der Auszubildende (Azubi); Auszubildende | trainee | учень на виробництві
+die Auszubildende (Azubi); Auszubildende | trainee | учениця на виробництві
 der Bäckereifachverkäufer | baker's assistant | продавець хлібобулочних виробів
 die Bäckereifachverkäuferin | baker's assistant | продавчиня хлібобулочних виробів
 bedanken | to thank | дякувати

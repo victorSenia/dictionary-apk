@@ -1,26 +1,24 @@
 package org.leo.dictionary.apk.activity;
 
-import android.content.Context;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.activity.fragment.RecyclerViewFragment;
 import org.leo.dictionary.apk.activity.viewadapter.StringRecyclerViewAdapter;
 import org.leo.dictionary.apk.activity.viewmodel.LanguageViewModel;
 import org.leo.dictionary.apk.databinding.ActivityGrammarLearningBinding;
+import org.leo.dictionary.audio.AudioService;
 import org.leo.dictionary.entity.GrammarCriteria;
 import org.leo.dictionary.entity.GrammarSentence;
 import org.leo.dictionary.grammar.provider.GrammarProvider;
 
 import java.util.List;
+import java.util.function.BiConsumer;
 
 public class GrammarLearningActivity extends AppCompatActivity {
     private ActivityGrammarLearningBinding binding;
-
-    private static GrammarCriteria getGrammarCriteria(Context context) {
-        return ((ApplicationWithDI) context.getApplicationContext()).appComponent.grammarCriteriaProvider().getObject();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,16 +52,23 @@ public class GrammarLearningActivity extends AppCompatActivity {
                 builder.append(' ');
                 builder.append(s.getSentenceSuffix());
             }
+            builder.setCharAt(0, Character.toUpperCase(builder.charAt(0)));
             return builder.toString();
         }
 
         @Override
         protected StringRecyclerViewAdapter<GrammarSentence> createRecyclerViewAdapter(List<GrammarSentence> values) {
             recyclerView.setNestedScrollingEnabled(false);
+            BiConsumer<Integer, StringRecyclerViewAdapter.StringViewHolder<GrammarSentence>> additionalOnClickHandling =
+                    (oldSelected, viewHolder) -> {
+                        String string = viewHolder.valueToString();
+                        getLanguageViewModel().setValue(string);
+                        String language = viewHolder.item.getLanguage();
+                        AudioService audioService = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.audioService();
+                        ApkModule.playAsynchronousIfPossible(audioService, language, string);
+                    };
             return new StringRecyclerViewAdapter<>(values, this,
-                    new StringRecyclerViewAdapter.RememberSelectionOnClickListener<>(
-                            (oldSelected, viewHolder) -> getLanguageViewModel().setValue(viewHolder.valueToString())
-                    ), this::sentenceToString);
+                    new StringRecyclerViewAdapter.RememberSelectionOnClickListener<>(additionalOnClickHandling), this::sentenceToString);
         }
 
         private LanguageViewModel getLanguageViewModel() {

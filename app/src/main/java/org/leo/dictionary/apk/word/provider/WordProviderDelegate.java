@@ -6,6 +6,7 @@ import org.leo.dictionary.entity.WordCriteria;
 import org.leo.dictionary.word.provider.WordProvider;
 
 import java.util.List;
+import java.util.Set;
 
 public class WordProviderDelegate implements WordProvider {
     private WordProvider delegate;
@@ -41,8 +42,13 @@ public class WordProviderDelegate implements WordProvider {
     }
 
     @Override
-    public List<Topic> findTopicsWithRoot(String language, String rootTopic, int upToLevel) {
+    public List<Topic> findTopicsWithRoot(String language, Topic rootTopic, int upToLevel) {
         return delegate.findTopicsWithRoot(language, rootTopic, upToLevel);
+    }
+
+    @Override
+    public List<Topic> findTopicsWithRoot(String language, Set<Topic> rootTopics, int upToLevel) {
+        return delegate.findTopicsWithRoot(language, rootTopics, upToLevel);
     }
 
     @Override

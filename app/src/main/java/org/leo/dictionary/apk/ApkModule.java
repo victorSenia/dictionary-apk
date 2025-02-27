@@ -149,7 +149,7 @@ public class ApkModule {
     }
 
     public static int getLastStateCurrentIndex(SharedPreferences lastState) {
-        int defaultIndex = -1;
+        int defaultIndex = 0;
         if (lastState.contains(LAST_STATE_CURRENT_INDEX)) {
             return lastState.getInt(LAST_STATE_CURRENT_INDEX, defaultIndex);
         }

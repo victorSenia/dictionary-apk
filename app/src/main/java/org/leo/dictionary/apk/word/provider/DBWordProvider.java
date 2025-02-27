@@ -9,6 +9,7 @@ import org.leo.dictionary.word.provider.WordProvider;
 
 import java.util.*;
 import java.util.logging.Logger;
+import java.util.stream.Collectors;
 
 public class DBWordProvider implements WordProvider {
 
@@ -40,12 +41,17 @@ public class DBWordProvider implements WordProvider {
 
     @Override
     public List<Topic> findTopics(String language, int level) {
-        return databaseManager.getTopics(language, null, Integer.toString(level));
+        return databaseManager.getTopics(language, (Set<Long>) null, Integer.toString(level));
     }
 
     @Override
-    public List<Topic> findTopicsWithRoot(String language, String rootName, int level) {
-        return databaseManager.getTopics(language, rootName, Integer.toString(level));
+    public List<Topic> findTopicsWithRoot(String language, Topic rootName, int level) {
+        return databaseManager.getTopics(language, Collections.singleton(rootName.getId()), Integer.toString(level));
+    }
+
+    @Override
+    public List<Topic> findTopicsWithRoot(String language, Set<Topic> rootIds, int level) {
+        return databaseManager.getTopics(language, rootIds != null ? rootIds.stream().map(Topic::getId).collect(Collectors.toSet()) : null, Integer.toString(level));
     }
 
     public List<Topic> findRootTopics(String language) {
@@ -164,8 +170,12 @@ public class DBWordProvider implements WordProvider {
         return databaseManager.countWords(wordCriteria);
     }
 
-    public List<Word> getWordsForLanguage(String language, String rootTopic) {
+    public List<Word> getWordsForLanguage(String language, Set<Topic> rootTopic) {
         return databaseManager.getWordsForLanguage(language, rootTopic);
+    }
+
+    public List<Word> getWordsForLanguage(String language, Topic rootTopic) {
+        return databaseManager.getWordsForLanguage(language, Collections.singleton(rootTopic));
     }
 
     public void deleteWords(String language) {

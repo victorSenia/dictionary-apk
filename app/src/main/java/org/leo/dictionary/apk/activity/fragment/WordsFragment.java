@@ -34,6 +34,7 @@ public class WordsFragment extends FilteredRecyclerViewFragment<WordsRecyclerVie
     private final Runnable scrollAllowedRunnable = () -> scrollAllowed.set(true);
     private UiUpdater uiUpdater;
     private Handler mHandler;
+    private boolean updatePlayer = true;
 
     private static Function<String, Boolean> getFilterFunction(CharSequence filterString) {
         Function<String, Boolean> predicate;
@@ -110,32 +111,56 @@ public class WordsFragment extends FilteredRecyclerViewFragment<WordsRecyclerVie
             }
         };
         apkUiUpdater.addUiUpdater(uiUpdater);
-
-        replaceData();
+        if (savedInstanceState == null) {
+            replaceData();
+        } else {
+            updatePlayer = false;
+            replaceData();
+            updatePlayer = true;
+        }
         recyclerView.scrollToPosition(getCurrentIndex());
         return view;
     }
 
     @Override
     protected Predicate<Word> filterPredicate(CharSequence filterString) {
-        Function<String, Boolean> filterFunction = getFilterFunction(filterString);
+        String suffix = "\\t";
+        int articleSuffixIndex = filterString.toString().indexOf(suffix);
+        boolean article = articleSuffixIndex != -1;
+        CharSequence articleSequence = !article ? "" : filterString.subSequence(0, articleSuffixIndex);
+        CharSequence sequence = !article ? filterString : filterString.subSequence(articleSuffixIndex + suffix.length(), filterString.length());
+        Function<String, Boolean> filterFunction = getFilterFunction(sequence);
+        Function<String, Boolean> articleFilterFunction = getFilterFunction(articleSequence);
         return w -> {
-            if (filterFunction.apply(w.getWord())) {
+            if (article) {
+                if (articleSequence.length() == 0) {
+                    return (w.getArticle() == null || w.getArticle().isEmpty()) && (sequence.length() == 0 || wordOrTranslationMatch(filterFunction, w));
+                }
+                String s = w.getArticle() == null ? "" : w.getArticle();
+                return articleFilterFunction.apply(s) && (sequence.length() == 0 || wordOrTranslationMatch(filterFunction, w));
+            }
+            return wordOrTranslationMatch(filterFunction, w);
+        };
+    }
+
+    private static boolean wordOrTranslationMatch(Function<String, Boolean> filterFunction, Word w) {
+        if (filterFunction.apply(w.getWord())) {
+            return true;
+        }
+        for (Translation t : w.getTranslations()) {
+            if (filterFunction.apply(t.getTranslation())) {
                 return true;
             }
-            for (Translation t : w.getTranslations()) {
-                if (filterFunction.apply(t.getTranslation())) {
-                    return true;
-                }
-            }
-            return false;
-        };
+        }
+        return false;
     }
 
     @Override
     protected void filterValuesInAdapter() {
         List<Word> words = filterValues();
-        ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.playService().setWords(words);
+        if (updatePlayer) {
+            ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.playService().setWords(words);
+        }
         WordsRecyclerViewAdapter adapter = getRecyclerViewAdapter();
         adapter.values.clear();
         adapter.values.addAll(words);
@@ -173,6 +198,10 @@ public class WordsFragment extends FilteredRecyclerViewFragment<WordsRecyclerVie
     private void stopStartHandler() {
         stopHandler();
         startHandler();
+    }
+
+    public void updateKnowledge(double knowledge) {
+        allValues.forEach(word -> word.setKnowledge(knowledge));
     }
 
     @Override
