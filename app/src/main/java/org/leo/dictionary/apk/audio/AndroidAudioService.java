@@ -111,8 +111,9 @@ public class AndroidAudioService implements AudioService {
 
     @Override
     public List<String> getVoicesNames(String language) {
-        if (voicesPerLanguage.get(language) != null) {
-            return voicesPerLanguage.get(language).stream().map(Voice::getName).collect(Collectors.toList());
+        List<Voice> voices = voicesPerLanguage.get(language);
+        if (voices != null) {
+            return voices.stream().map(Voice::getName).collect(Collectors.toList());
         }
         return Collections.emptyList();
     }

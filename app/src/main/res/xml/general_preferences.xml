@@ -97,6 +97,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:dependency="org.leo.dictionary.config.entity.Translation.active"/>
+        <SwitchPreference
+                app:key="org.leo.dictionary.config.entity.Translation.allTranslations"
+                android:defaultValue="false"
+                android:title="@string/all_translations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:dependency="org.leo.dictionary.config.entity.Translation.active"/>
 
     </PreferenceCategory>
 

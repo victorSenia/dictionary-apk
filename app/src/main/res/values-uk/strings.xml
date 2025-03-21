@@ -107,6 +107,7 @@
     <string name="learn">Вчити</string>
     <string name="practice">Перевірка</string>
     <string name="answer">відповідь</string>
-    <string name="match_word_article">Match word article</string>
-    <string name="order_words_in_sentence">Order words in sentence</string>
+    <string name="match_word_article">Відповідність артикля до слова</string>
+    <string name="order_words_in_sentence">Порядок слів у реченні</string>
+    <string name="all_translations">Програвати всі переклади</string>
 </resources>

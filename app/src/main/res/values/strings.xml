@@ -115,4 +115,5 @@
     <string name="title_activity_match_article" translatable="false">MatchArticleActivity</string>
     <string name="match_word_article">Match word article</string>
     <string name="order_words_in_sentence">Order words in sentence</string>
+    <string name="all_translations">Play all translations</string>
 </resources>
