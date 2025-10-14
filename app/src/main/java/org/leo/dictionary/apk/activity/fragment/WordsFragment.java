@@ -111,7 +111,7 @@ public class WordsFragment extends FilteredRecyclerViewFragment<WordsRecyclerVie
             }
         };
         apkUiUpdater.addUiUpdater(uiUpdater);
-        if (savedInstanceState == null) {
+        if (savedInstanceState == null && !isPlaying()) {
             replaceData();
         } else {
             updatePlayer = false;
@@ -120,6 +120,10 @@ public class WordsFragment extends FilteredRecyclerViewFragment<WordsRecyclerVie
         }
         recyclerView.scrollToPosition(getCurrentIndex());
         return view;
+    }
+
+    private boolean isPlaying() {
+        return ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.playService().isPlaying();
     }
 
     @Override

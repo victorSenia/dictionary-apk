@@ -7,6 +7,7 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="play">Play</string>
+    <string name="pause">Pause</string>
     <string name="title_activity_settings" translatable="false">SettingsActivity</string>
     <string name="action_play_from">Play from</string>
     <string name="title_activity_topics">Topics</string>
@@ -116,4 +117,7 @@
     <string name="match_word_article">Match word article</string>
     <string name="order_words_in_sentence">Order words in sentence</string>
     <string name="all_translations">Play all translations</string>
+    <string name="example_language_recognition">Example de-DE</string>
+    <string name="default_language_recognition" translatable="false">de-DE</string>
+    <string name="reload">Reload</string>
 </resources>

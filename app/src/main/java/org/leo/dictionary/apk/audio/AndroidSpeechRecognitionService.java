@@ -4,7 +4,6 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
@@ -49,27 +48,27 @@ public class AndroidSpeechRecognitionService {
         return new RecognitionListener() {
             @Override
             public void onReadyForSpeech(Bundle bundle) {
-                LOGGER.info("onReadyForSpeech");
+                LOGGER.fine("onReadyForSpeech");
             }
 
             @Override
             public void onBeginningOfSpeech() {
-                LOGGER.info("onBeginningOfSpeech");
+                LOGGER.fine("onBeginningOfSpeech");
             }
 
             @Override
             public void onRmsChanged(float v) {
-                LOGGER.info("onRmsChanged");
+                LOGGER.fine("onRmsChanged");
             }
 
             @Override
             public void onBufferReceived(byte[] bytes) {
-                LOGGER.info("onBufferReceived");
+                LOGGER.fine("onBufferReceived");
             }
 
             @Override
             public void onEndOfSpeech() {
-                LOGGER.info("onEndOfSpeech");
+                LOGGER.fine("onEndOfSpeech");
             }
 
             @Override
@@ -80,20 +79,20 @@ public class AndroidSpeechRecognitionService {
 
             @Override
             public void onResults(Bundle bundle) {
-                LOGGER.info("onResults");
                 ArrayList<String> data = bundle.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
+                LOGGER.fine("onResults " + data);
                 resultConsumer.accept(data);
                 destroy();
             }
 
             @Override
             public void onPartialResults(Bundle bundle) {
-                LOGGER.info("onPartialResults");
+                LOGGER.fine("onPartialResults");
             }
 
             @Override
             public void onEvent(int i, Bundle bundle) {
-                LOGGER.info("onEvent");
+                LOGGER.fine("onEvent");
             }
         };
     }
@@ -144,11 +143,10 @@ public class AndroidSpeechRecognitionService {
             speechRecognizer.destroy();
         }
         resultConsumer = null;
+        onErrorConsumer = null;
     }
 
     protected void checkPermission(Activity activity) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.RECORD_AUDIO}, RecordAudioRequestCode);
-        }
+        ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.RECORD_AUDIO}, RecordAudioRequestCode);
     }
 }

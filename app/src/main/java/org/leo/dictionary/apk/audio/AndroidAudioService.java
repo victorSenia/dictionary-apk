@@ -11,7 +11,7 @@ import org.leo.dictionary.apk.config.entity.Speech;
 import org.leo.dictionary.audio.AudioService;
 
 import java.util.*;
-import java.util.concurrent.ConcurrentSkipListSet;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
@@ -19,7 +19,8 @@ public class AndroidAudioService implements AudioService {
     private final static Logger LOGGER = Logger.getLogger(AndroidAudioService.class.getName());
 
     private TextToSpeech textToSpeech;
-    private ConcurrentSkipListSet<String> speaking;
+    private final Object lock = new Object();
+    private boolean isSpeaking;
     private Context context;
     private Speech speech;
     private Map<String, List<Voice>> voicesPerLanguage;
@@ -34,8 +35,10 @@ public class AndroidAudioService implements AudioService {
         PreferenceManager.getDefaultSharedPreferences(context).registerOnSharedPreferenceChangeListener(changeListener);
         speech = new Speech();
         speech.setProperties(properties);
+        initTTS();
+    }
 
-        speaking = new ConcurrentSkipListSet<>();
+    private void initTTS() {
         textToSpeech = new TextToSpeech(context, status -> {
             if (status != TextToSpeech.ERROR) {
                 Set<Voice> voices = textToSpeech.getVoices();
@@ -49,7 +52,7 @@ public class AndroidAudioService implements AudioService {
 
             @Override
             public void onDone(String utteranceId) {
-                speaking.remove(utteranceId);
+                notifyPlayer();
             }
 
             @Override
@@ -60,38 +63,57 @@ public class AndroidAudioService implements AudioService {
             @Override
             public void onError(String utteranceId, int errorCode) {
                 LOGGER.severe("Text '" + utteranceId + "' finished with error " + errorCode);
-                speaking.remove(utteranceId);
             }
         });
+    }
+
+    private void notifyPlayer() {
+        synchronized (lock) {
+            isSpeaking = false;
+            lock.notifyAll();
+        }
     }
 
     @Override
     public void play(String language, String text) {
         LOGGER.info(language + " " + text);
-        textToSpeech.setSpeechRate(speech.getSpeed());
-        textToSpeech.setPitch(speech.getPitch());
+        setTTS(true);
         Voice selectedVoice = getSelectedVoice(language);
         if (selectedVoice != null) {
             textToSpeech.setVoice(selectedVoice);
         } else {
             textToSpeech.setLanguage(Locale.forLanguageTag(language));
         }
-        speaking.add(text);
+        isSpeaking = true;
         textToSpeech.speak(text, TextToSpeech.QUEUE_ADD, null, text);
-        long startTime = System.currentTimeMillis();
-        int loggingTimeout = 1000;
-        do {
-            if (startTime + loggingTimeout < System.currentTimeMillis()) {
-                LOGGER.info("Still speaking text '" + text + "'");
-                startTime += loggingTimeout;
+        synchronized (lock) {
+            while (isSpeaking) {
+                try {
+                    lock.wait();
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
-        } while (speaking.contains(text));
+        }
     }
+
+    private void setTTS(boolean retry) {
+        try {
+            textToSpeech.setSpeechRate(speech.getSpeed());
+            textToSpeech.setPitch(speech.getPitch());
+        } catch (Exception e) {
+            LOGGER.info("TTS error '" + e + "'");
+            if (retry) {
+                initTTS();
+                setTTS(false);
+            }
+        }
+    }
+
 
     public void playAsynchronous(String language, String text) {
         LOGGER.info(language + " " + text);
-        textToSpeech.setSpeechRate(speech.getSpeed());
-        textToSpeech.setPitch(speech.getPitch());
+        setTTS(true);
         Voice selectedVoice = getSelectedVoice(language);
         if (selectedVoice != null) {
             textToSpeech.setVoice(selectedVoice);
@@ -120,7 +142,7 @@ public class AndroidAudioService implements AudioService {
 
     @Override
     public void abort() {
-        speaking.clear();
+        isSpeaking = false;
         if (textToSpeech != null) {
             textToSpeech.stop();
             LOGGER.info("abort");
@@ -129,7 +151,7 @@ public class AndroidAudioService implements AudioService {
 
     @Override
     public void shutdown() {
-        speaking.clear();
+        isSpeaking = false;
         if (textToSpeech != null) {
             textToSpeech.shutdown();
         }

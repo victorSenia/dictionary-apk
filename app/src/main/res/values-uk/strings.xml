@@ -110,4 +110,7 @@
     <string name="match_word_article">Відповідність артикля до слова</string>
     <string name="order_words_in_sentence">Порядок слів у реченні</string>
     <string name="all_translations">Програвати всі переклади</string>
+    <string name="example_language_recognition">Приклад de-DE</string>
+    <string name="reload">Перезавантажити</string>
+    <string name="pause">Пауза</string>
 </resources>

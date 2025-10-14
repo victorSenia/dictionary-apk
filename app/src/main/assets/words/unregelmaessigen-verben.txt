@@ -1,193 +1,193 @@
 org.leo.dictionary.config.entity.ParseWords:de:de;en;uk::%5Ct:%3B:%3B:::Unregelmäßige+und+starke+Verben
-	Infinitiv + Ergänzung	3. Person Präsens. | 3. Person Präteritum. | Hilfsverb + Partizip II
-backen; (Dat) Akk	backt. / bäckt. | backte. / buk. | hat gebacken	to bake	пекти
-befehlen; Dat Akk / Inf.	befiehlt. | befahl. | hat befohlen	to command	наказувати
-beginnen; mit / Inf.	beginnt. | begann. | hat begonnen	to begin	починати
-beißen; Akk	beißt. | biss. | hat gebissen	to bite	кусати
-bergen; Akk	birgt. | barg. | hat geborgen	to rescue; to salvage	рятувати; ховати
-bersten	birst. | barst. | ist geborsten	to burst	вибухати; лускати
-betrügen; Akk	betrügt. | betrog. | hat betrogen	to deceive; to cheat	обманювати
-bewegen	bewegt. | bewog. | hat bewegt	to move; to induce	рухати; спонукати
-biegen; Akk	biegt. | bog. | hat gebogen	to bend	гнути
-bieten; Dat Akk	bietet. | bot. | hat geboten	to offer	пропонувати
-binden; Akk	bindet. | band. | hat gebunden	to bind	зв'язувати
-bitten; Akk	bittet. | bat. | hat gebeten	to ask; to request	просити
-blasen	bläst. | blies. | hat geblasen	to blow	дути
-bleiben; Situativ-Erg.	bleibt. | blieb. | ist geblieben	to stay; to remain	залишатися
-bleichen	bleicht. | blich. | hat gebleicht	to bleach	вибілювати
-braten; (Dat) Akk	brät. | briet. | hat gebraten	to roast; to fry	смажити
-brechen; (Dat) Akk	bricht. | brach. | hat gebrochen	to break	ламати
-brennen	brennt. | brannte. | hat gebrannt	to burn	горіти; палити
-bringen; Dat Akk	bringt. | brachte. | hat gebracht	to bring	приносити
-denken; an / über	denkt. | dachte. | hat gedacht	to think	думати
-dingen	dingt. | dang. | hat gedungen	to hire (archaic)	наймати
-dreschen	drischt. | drosch. | hat gedroschen	to thresh	молотити
-dürfen	darf. | durfte. | hat gedurft	to be allowed to	мати дозвіл
-ein|dringen in + Akk	dringt ... ein. | drang ... ein. | ist eingedrungen	to penetrate; to invade	проникати
-empfangen; Akk	empfängt. | empfing. | hat empfangen	to receive	отримувати
-empfehlen; Dat Akk / Inf.	empfiehlt. | empfahl. | hat empfohlen	to recommend	рекомендувати
-empfinden; Akk	empfindet. | empfand. | hat empfunden	to feel; to perceive	відчувати
-erlöschen	erlischt. | erlosch. | ist erloschen	to extinguish; to go out	гаснути
-erschrecken; (intr.)	erschrickt. | erschrak. | ist erschrocken	to be frightened	лякатися
-erwägen; Akk / Inf.	erwägt. | erwog. | hat erwogen	to consider	розглядати; обдумувати
-essen; Akk	isst. | aß. | hat gegessen	to eat	їсти
-fahren; Dir.-Erg./(Akk)/mit	fährt. | fuhr. | ist (hat) gefahren	to drive; to travel	їхати; керувати
-fallen; (Dir.-Erg.)	fällt. | fiel. | ist gefallen	to fall	падати
-fangen; Akk	fängt. | fing. | hat gefangen	to catch	ловити
-fechten	ficht. | focht. | hat gefochten	to fence; to fight	фехтувати; битися
-finden; Akk	findet. | fand. | hat gefunden	to find	знаходити
-flechten	flicht. | flocht. | hat geflochten	to braid; to weave	плести
-fliegen; (Dir.-Erg.) / (Akk)	fliegt. | flog. | ist / (hat) geflogen	to fly	літати
-fliehen; vor	flieht. | floh. | ist geflohen	to flee; to escape	втікати
-fließen; Dir.-Erg.	fließt. | floss. | ist geflossen	to flow	текти
-fressen; Akk	frisst. | fraß. | hat gefressen	to devour; to eat (animals)	жерти
-frieren; Akk	friert. | fror. | hat gefroren	to freeze	замерзати
-gären	gärt. | gor. | hat gegärt	to ferment	бродити
-gebären; Akk	gebärt (gebiert). | gebar. | (ist) hat geboren	to give birth	народжувати
-geben; Dat Akk	gibt. | gab. | hat gegeben	to give	давати
-gedeihen	gedeiht. | gedieh. | ist gediehen	to thrive	процвітати
-gehen; Dir.-Erg.	geht. | ging. | ist gegangen	to go	йти
-gelingen; Dat (Inf.)	gelingt. | gelang. | ist gelungen	to succeed	вдаватися
-gelten	gilt. | galt. | hat gegolten	to be valid; to apply	діяти; мати силу
-genesen	genest. | genas. | ist genesen	to recover	одужувати
-genießen; Akk (Inf.)	genießt. | genoss. | hat genossen	to enjoy	насолоджуватися
-geraten; in + Akk	gerät. | geriet. | ist geraten	to get into; to fall into	потрапити
-geschehen; Dat Akk	geschieht. | geschah. | ist geschehen	to happen	траплятися
-gewinnen; (Akk)	gewinnt. | gewann. | hat gewonnen	to win	вигравати
-gießen; Akk	gießt. | goss. | hat gegossen	to pour; to water	лити; поливати
-gleichen; Dat	gleicht. | glich. | hat geglichen	to resemble	бути схожим
-gleiten	gleitet. | glitt. | ist geglitten	to glide	ковзати
-glimmen	glimmt. | glomm. | hat geglimmt	to smolder; to glow faintly	жевріти
-graben; Akk	gräbt. | grub. | hat gegraben	to dig	копати
-greifen; (Dat) Akk	greift. | griff. | hat gegriffen	to grab; to seize	хапати
-haben; Akk	hat. | hatte. | hat gehabt	to have	мати
-halten; Akk	hält. | hielt. | hat gehalten	to hold; to stop	тримати; зупинятися
-hängen; Akk Dir.-Erg.	hängt. | hängte. | hat gehängt	to hang	висіти; вішати
-hängen; Situativ-Erg.	hängt. | hing. | hat gehangen	to hang	висіти; вішати
-hauen	haut. | hieb. / haute. | hat gehauen	to hit; to chop	рубати; бити
-heben; Akk	hebt. | hob. | hat gehoben	to lift; to raise	піднімати
-heißen; (2 x Nom.-Erg.!)	heißt. | hieß. | hat geheißen	to be called	називатися
-helfen; Dat	hilft. | half. | hat geholfen	to help	допомагати
-kennen; Akk	kennt. | kannte. | hat gekannt	to know	знати
-klimmen	klimmt. | klomm. | ist geklimmt	to climb	дертися
-klingen	klingt. | klang. | hat geklungen	to sound	звучати
-kneifen; (Akk)	kneift. | kniff. | hat gekniffen	to pinch	щипати
-kommen; Dir.Erg.	kommt. | kam. | ist gekommen	to come	приходити
-können	kann. | konnte. | hat gekonnt	to can; to be able to	могти
-kriechen; (Dir.-Erg.)	kriecht. | kroch. | ist gekrochen	to crawl	повзти
-laden; Akk	lädt. | lud. | hat geladen	to load; to invite	завантажувати; запрошувати
-lassen; Akk	lässt. | ließ. | hat gelassen	to let; to leave	дозволяти; залишати
-laufen; (Dir.-Erg.)	läuft. | lief. | ist gelaufen	to run	бігти
-leiden; an / unter	leidet. | litt. | hat gelitten	to suffer	страждати
-leihen; Dat Akk	leiht. | lieh. | hat geliehen	to lend	позичати
-lesen; Akk	liest. | las. | hat gelesen	to read	читати
-liegen; Situativ-Erg.	liegt. | lag. | hat gelegen	to lie down	лежати
-lügen	lügt. | log. | hat gelogen	to lie (tell untruth)	брехати
-mahlen	mahlt. | mahlte. | hat gemahlen	to grind; to mill	молоти
-meiden; Akk	meidet. | mied. | hat gemieden	to avoid	уникати
-melken	melkt. | molk. | hat gemolken	to milk	доїти
-messen; Akk	misst. | maß. | hat gemessen	to measure	вимірювати
-misslingen; Dat (Inf.)	misslingt. | misslang. | ist misslungen	to fail	зазнавати невдачі
-mögen	mag. | mochte. | hat gemocht	to like; to may	любити; хотіти
-müssen	muss. | musste. | hat gemusst	to must; to have to	мусити; бути зобов’язаним
-nehmen; (Dat) Akk	nimmt. | nahm. | hat genommen	to take	брати
-nennen; (Dat) Akk	nennt. | nannte. | hat genannt	to name; to call	називати
-pfeifen; (Akk)	pfeift. | pfiff. | hat gepfiffen	to whistle	свистіти
-pflegen	pflegt. | pflog. | hat gepflegt	to care for; to maintain	доглядати
-preisen; Akk	preist. | pries. | hat gepriesen	to praise	вихваляти
-quellen	quillt. | quoll. | ist gequollen	to gush; to spring	бити (про джерело)
-raten; Dat Akk / Inf.	rät. | riet. | hat geraten	to advise; to guess	радити; вгадувати
-reiben; Akk	reibt. | rieb. | hat gerieben	to rub	терти
-reißen; Akk (in/an + Akk)	reißt. | riss. | hat gerissen	to tear; to rip	рвати
-reiten; (Akk)	reitet. | ritt. | ist (hat) geritten	to ride (a horse)	їздити верхи
-rennen; Dir.-Erg.	rennt. | rannte. | ist gerannt	to run	бігти
-riechen; (Akk)	riecht. | roch. | hat gerochen	to smell	нюхати; пахнути
-ringen; Akk	ringt. | rang. | hat gerungen	to wrestle	боротися
-rinnen; Dir.-Erg.	rinnt. | rann. | ist geronnen	to trickle; to flow	текти
-rufen; Akk	ruft. | rief. | hat gerufen	to call; to shout	кликати; кричати
-s. schinden	schindet. | schund. | hat geschunden	to mistreat; flay; to torment	мучити; знущатися; здирати шкіру
-s. streiten; mit	streitet. | stritt. | hat gestritten	to argue; to fight with	сперечатися; сваритися з
-salzen	salzt. | salzte. | hat gesalzen	to salt	солити
-saufen; (Akk)	säuft. | soff. | hat gesoffen	to guzzle; to drink (alcohol)	пиячити; хлестати
-saugen	saugt. | sog. | hat gesogen	to suck; to vacuum	смоктати; всмоктувати
-schaffen; Akk (Inf.)	schafft. | schuf. | hat geschaffen	to create; to accomplish	створювати; досягати
-scheiden	scheidet. | schied. | hat geschieden	to separate; to divorce	розлучати; відділяти
-scheinen	scheint. | schien. | hat geschienen	to shine; to seem	світити; здаватися
-scheißen	scheißt. | schiss. | hat geschissen	to defecate (vulgar)	какати (грубо)
-schelten	schilt. | schalt. | hat gescholten	to scold; to chide	сварити; докоряти
-scheren; Akk	schert. | schor. | hat geschoren	to shear; to cut	стригти
-schieben; Akk Dir.-Erg.	schiebt. | schob. | hat geschoben	to push; to shove	штовхати; пересувати
-schießen; (Akk)	schießt. | schoss. | hat geschossen	to shoot	стріляти
-schlafen; (Situativ-Erg.)	schläft. | schlief. | hat geschlafen	to sleep	спати
-schlagen; Akk	schlägt. | schlug. | hat geschlagen	to hit; to strike	бити; вдаряти
-schleichen	schleicht. | schlich. | ist geschlichen	to sneak; to creep	крастися
-schleifen	schleift. | schliff. | hat geschliffen	to grind; drag; to sharpen	точити; волочити
-schließen; Akk	schließt. | schloss. | hat geschlossen	to close; to shut	закривати
-schlingen; Akk	schlingt. | schlang. | hat geschlungen	to loop; to gulp down	обвивати; ковтати
-schmeißen; Akk (Dir.-Erg.)	schmeißt. | schmiss. | hat geschmissen	to throw; to chuck	кидати; шпурляти
-schmelzen	schmilzt. | schmolz. | ist/hat geschmolzen	to melt	танути; плавитися
-schnauben	schnaubt. | schnob. | hat geschnaugt	to snort; to puff	фиркати
-schneiden; (Dat) Akk	schneidet. | schnitt. | hat geschnitten	to cut	різати
-schreiben; (Dat) Akk	schreibt. | schrieb. | hat geschrieben	to write	писати
-schreien	schreit. | schrie. | hat geschrien	to scream; to shout	кричати
-schreiten	schreitet. | schritt. | ist geschritten	to stride; to proceed	крокувати; рушати
-schweigen	schweigt. | schwieg. | hat geschwiegen	to be silent; to keep quiet	мовчати
-schwellen	schwillt. | schwoll. | ist geschwollen	to swell	набрякати
-schwimmen	schwimmt. | schwamm. | ist geschwommen	to swim	плавати
-schwinden; (Dat / Akk)	schwindet. | schwand. | ist geschwunden	to dwindle; to decrease	зменшуватися; зникати
-schwingen	schwingt. | schwang. | hat geschwungen	to swing	гойдатися
-schwören; Dat Akk	schwört. | schwor. | hat geschworen	to swear; to vow	присягатися; клястися
-sehen; Akk	sieht. | sah. | hat gesehen	to see	бачити
-sein; Situativ-Erg.	ist. | war. | ist gewesen	to be	бути
-senden; Dat Akk	sendet. | sandte. | hat gesandt	to send	надсилати
-sieden	siedet. | sott. | hat gesieden	to boil	кип’ятити; варити
-singen; (Dat) Akk	singt. | sang. | hat gesungen	to sing	співати
-sinken	sinkt. | sank. | ist gesunken	to sink	тонути; занурюватися
-sinnen; Dat nach + Dat	sinnt. | sann. | hat gesonnen;	to ponder; to reflect	роздумувати; замислюватися
-sitzen; Situativ-Erg.	sitzt. | saß. | hat gesessen	to sit	сидіти
-sollen	soll. | sollte. | hat gesollt	to should; to ought to	повинен; слід
-spalten	spaltet. | spaltete. | hat gespalten	to split; to cleave	розколювати; ділити
-speien	speit. | spie. | hat gespien	to spit; to vomit	плювати; блювати
-spinnen; (Akk)	spinnt. | spann. | hat gesponnen	to spin; to be crazy	прясти; божеволіти
-sprechen; mit + Dat	spricht. | sprach. | hat gesprochen	to speak with	говорити з
-sprießen	sprießt. | spross. | ist gesprossen	to sprout; to germinate	проростати
-springen; Dir.Erg.	springt. | sprang. | ist gesprungen	to jump	стрибати
-stechen; Akk	sticht. | stach. | hat gestochen	to sting; to stab	жалити; колоти
-stehen; Situativ-Erg.	steht. | stand. | hat gestanden	to stand	стояти
-stehlen; (Dat) Akk	stiehlt. | stahl. | hat gestohlen	to steal	красти
-steigen; Dir.-Erg.	steigt. | stieg. | ist gestiegen	to rise; to climb	підніматися; зростати
-sterben; an	stirbt. | starb. | ist gestorben	to die from	помирати від
-stieben	stiebt. | stob. | ist gestoben	to scatter; to spray	розлітатися; розсипатися
-stinken; (nach + Dat)	stinkt. | stank. | hat gestunken	to stink	смердіти
-stoßen	stößt. | stieß. | hat gestoßen	to push; to bump	штовхати; натикатися
-streichen; Akk	streicht. | strich. | hat gestrichen	to paint; to cancel	фарбувати; викреслювати
-tragen; Akk	trägt. | trug. | hat getragen	to carry; to wear	нести; носити
-treffen; Akk	trifft. | traf. | hat getroffen	to meet; to hit	зустрічати; влучати
-treiben; Situativ-Erg.	treibt. | trieb. | hat getrieben	to drive; to float	гнати; займатися
-treten; Akk	tritt. | trat. | hat getreten	to step; to kick	ступати; бити ногою
-triefen	trieft. | troff. | hat getrieft	to drip; to ooze	капати; стікати
-trinken; Akk	trinkt. | trank. | hat getrunken	to drink	пити
-trügen	trügt. | trog. | hat getrogen	to deceive	обманювати
-tun; (Dat) Akk	tut. | tat. | hat getan	to do; to put	робити; класти
-verderben; (Dat) Akk	verdirbt. | verdarb. | hat verdorben	to spoil; to ruin	псувати
-verdrießen	verdrießen. | verdross. | hat verdrossen	to annoy; to vex	дратувати; засмучувати
-vergessen; Dat Akk / Inf.	vergisst. | vergaß. | hat vergessen	to forget	забувати
-verlieren; Akk / gegen	verliert. | verlor. | hat verloren	to lose	втрачати; програвати
-verzeihen	verzeiht. | verzieh. | hat verziehen	to forgive	пробачати
-wachsen	wächst. | wuchs. | ist gewachsen	to grow	рости
-wägen	wägt. | wog. | hat gewogen	to weigh; to consider	зважувати; обдумувати
-waschen; (Dat) Akk	wäscht. | wusch. | hat gewaschen	to wash	мити
-weben	webt. | wob. | hat gewoben	to weave	ткати
-weichen; von + Dat	weicht. | wich. | ist gewichen	to yield; to retreat	поступатися; відступати
-weisen; Dat Akk	weist. | wies. | hat gewiesen	to show; to point out	показувати; вказувати
-wenden	wendet. | wandte. | hat gewendt	to turn; to reverse	повертати
-werben; um + Akk	wirbt. | warb. | hat geworben	to advertise; to woo	рекламувати; добиватися
-werden; (2 x Nominativ!)	wird. | wurde. | ist geworden	to become	ставати
-werfen; Akk	wirft. | warf. | hat geworfen	to throw	кидати
-wiegen	wiegt. | wog. | hat gewogen	to weigh; to rock (a baby)	важити; колихати
-winden	windet. | wand. | hat gewunden	to wind; to twist	крутити; обвивати
-wissen; Akk	weiß. | wusste. | hat gewusst	to know	знати
-wollen	will. | wollte. | hat gewollt	to want; to intend	хотіти
-wringen	wringt. | wrang. | hat gewrungen	to wring; to squeeze	викручувати
-ziehen; (Dat) Akk	zieht. | zog. | hat gezogen	to pull; to draw	тягнути; витягати
-zwingen; Akk zu + Dat	zwingt. | zwang. | hat gezwungen	to force; to compel	примушувати
+	Infinitiv + Ergänzung  3. Person Präsens. | 3. Person Präteritum. | Hilfsverb + Partizip II
+backen; (Dat) Akk	er backt. / er er bäckt. | backte. / buk. | er hat gebacken	to bake	пекти
+befehlen; Dat Akk / Inf.	er befiehlt. | befahl. | er hat befohlen	to command	наказувати
+beginnen; mit / Inf.	er beginnt. | begann. | er hat begonnen	to begin	починати
+beißen; Akk	er beißt. | biss. | er hat gebissen	to bite	кусати
+bergen; Akk	er birgt. | barg. | er hat geborgen	to rescue; to salvage	рятувати; ховати
+bersten	er birst. | barst. | er ist geborsten	to burst	вибухати; лускати
+betrügen; Akk	er betrügt. | betrog. | er hat betrogen	to deceive; to cheat	обманювати
+bewegen	er bewegt. | bewog. | er hat bewegt	to move; to induce	рухати; спонукати
+biegen; Akk	er biegt. | bog. | er hat gebogen	to bend	гнути
+bieten; Dat Akk	er bietet. | bot. | er hat geboten	to offer	пропонувати
+binden; Akk	er bindet. | band. | er hat gebunden	to bind	зв'язувати
+bitten; Akk	er bittet. | bat. | er hat gebeten	to ask; to request	просити
+blasen	er bläst. | blies. | er hat geblasen	to blow	дути
+bleiben; Situativ-Erg.	er bleibt. | blieb. | er ist geblieben	to stay; to remain	залишатися
+bleichen	er bleicht. | blich. | er hat gebleicht	to bleach	вибілювати
+braten; (Dat) Akk	er brät. | briet. | er hat gebraten	to roast; to fry	смажити
+brechen; (Dat) Akk	er bricht. | brach. | er hat gebrochen	to break	ламати
+brennen	er brennt. | brannte. | er hat gebrannt	to burn	горіти; палити
+bringen; Dat Akk	er bringt. | brachte. | er hat gebracht	to bring	приносити
+denken; an / über	er denkt. | dachte. | er hat gedacht	to think	думати
+dingen	er dingt. | dang. | er hat gedungen	to hire (archaic)	наймати
+dreschen	er drischt. | drosch. | er hat gedroschen	to thresh	молотити
+dürfen	er darf. | durfte. | er hat gedurft	to be allowed to	мати дозвіл
+ein|dringen in + Akk	er dringt ... ein. | drang ... ein. | er ist eingedrungen	to penetrate; to invade	проникати
+empfangen; Akk	er empfängt. | empfing. | er hat empfangen	to receive	отримувати
+empfehlen; Dat Akk / Inf.	er empfiehlt. | empfahl. | er hat empfohlen	to recommend	рекомендувати
+empfinden; Akk	er empfindet. | empfand. | er hat empfunden	to feel; to perceive	відчувати
+erlöschen	er erlischt. | erlosch. | er ist erloschen	to extinguish; to go out	гаснути
+erschrecken; (intr.)	er erschrickt. | erschrak. | er ist erschrocken	to be frightened	лякатися
+erwägen; Akk / Inf.	er erwägt. | erwog. | er hat erwogen	to consider	розглядати; обдумувати
+essen; Akk	er isst. | aß. | er hat gegessen	to eat	їсти
+fahren; Dir.-Erg./(Akk)/mit	er fährt. | fuhr. | er ist (hat) gefahren	to drive; to travel	їхати; керувати
+fallen; (Dir.-Erg.)	er fällt. | fiel. | er ist gefallen	to fall	падати
+fangen; Akk	er fängt. | fing. | er hat gefangen	to catch	ловити
+fechten	er ficht. | focht. | er hat gefochten	to fence; to fight	фехтувати; битися
+finden; Akk	er findet. | fand. | er hat gefunden	to find	знаходити
+flechten	er flicht. | flocht. | er hat geflochten	to braid; to weave	плести
+fliegen; (Dir.-Erg.) / (Akk)	er fliegt. | flog. | er ist / (hat) geflogen	to fly	літати
+fliehen; vor	er flieht. | floh. | er ist geflohen	to flee; to escape	втікати
+fließen; Dir.-Erg.	er fließt. | floss. | er ist geflossen	to flow	текти
+fressen; Akk	er frisst. | fraß. | er hat gefressen	to devour; to eat (animals)	жерти
+frieren; Akk	er friert. | fror. | er hat gefroren	to freeze	замерзати
+gären	er gärt. | gor. | er hat gegärt	to ferment	бродити
+gebären; Akk	er gebärt (gebiert). | gebar. | er (ist) hat geboren	to give birth	народжувати
+geben; Dat Akk	er gibt. | gab. | er hat gegeben	to give	давати
+gedeihen	er gedeiht. | gedieh. | er ist gediehen	to thrive	процвітати
+gehen; Dir.-Erg.	er geht. | ging. | er ist gegangen	to go	йти
+gelingen; Dat (Inf.)	er gelingt. | gelang. | er ist gelungen	to succeed	вдаватися
+gelten	er gilt. | galt. | er hat gegolten	to be valid; to apply	діяти; мати силу
+genesen	er genest. | genas. | er ist genesen	to recover	одужувати
+genießen; Akk (Inf.)	er genießt. | genoss. | er hat genossen	to enjoy	насолоджуватися
+geraten; in + Akk	er gerät. | geriet. | er ist geraten	to get into; to fall into	потрапити
+geschehen; Dat Akk	er geschieht. | geschah. | er ist geschehen	to happen	траплятися
+gewinnen; (Akk)	er gewinnt. | gewann. | er hat gewonnen	to win	вигравати
+gießen; Akk	er gießt. | goss. | er hat gegossen	to pour; to water	лити; поливати
+gleichen; Dat	er gleicht. | glich. | er hat geglichen	to resemble	бути схожим
+gleiten	er gleitet. | glitt. | er ist geglitten	to glide	ковзати
+glimmen	er glimmt. | glomm. | er hat geglimmt	to smolder; to glow faintly	жевріти
+graben; Akk	er gräbt. | grub. | er hat gegraben	to dig	копати
+greifen; (Dat) Akk	er greift. | griff. | er hat gegriffen	to grab; to seize	хапати
+haben; Akk	er hat. | hatte. | er hat gehabt	to have	мати
+halten; Akk	er hält. | hielt. | er hat gehalten	to hold; to stop	тримати; зупинятися
+hängen; Akk Dir.-Erg.	er hängt. | hängte. | er hat gehängt	to hang	висіти; вішати
+hängen; Situativ-Erg.	er hängt. | hing. | er hat gehangen	to hang	висіти; вішати
+hauen	er haut. | hieb. / haute. | er hat gehauen	to hit; to chop	рубати; бити
+heben; Akk	er hebt. | hob. | er hat gehoben	to lift; to raise	піднімати
+heißen; (2 x Nom.-Erg.!)	er heißt. | hieß. | er hat geheißen	to be called	називатися
+helfen; Dat	er hilft. | half. | er hat geholfen	to help	допомагати
+kennen; Akk	er kennt. | kannte. | er hat gekannt	to know	знати
+klimmen	er klimmt. | klomm. | er ist geklimmt	to climb	дертися
+klingen	er klingt. | klang. | er hat geklungen	to sound	звучати
+kneifen; (Akk)	er kneift. | kniff. | er hat gekniffen	to pinch	щипати
+kommen; Dir.Erg.	er kommt. | kam. | er ist gekommen	to come	приходити
+können	er kann. | konnte. | er hat gekonnt	to can; to be able to	могти
+kriechen; (Dir.-Erg.)	er kriecht. | kroch. | er ist gekrochen	to crawl	повзти
+laden; Akk	er lädt. | lud. | er hat geladen	to load; to invite	завантажувати; запрошувати
+lassen; Akk	er lässt. | ließ. | er hat gelassen	to let; to leave	дозволяти; залишати
+laufen; (Dir.-Erg.)	er läuft. | lief. | er ist gelaufen	to run	бігти
+leiden; an / unter	er leidet. | litt. | er hat gelitten	to suffer	страждати
+leihen; Dat Akk	er leiht. | lieh. | er hat geliehen	to lend	позичати
+lesen; Akk	er liest. | las. | er hat gelesen	to read	читати
+liegen; Situativ-Erg.	er liegt. | lag. | er hat gelegen	to lie down	лежати
+lügen	er lügt. | log. | er hat gelogen	to lie (tell untruth)	брехати
+mahlen	er mahlt. | mahlte. | er hat gemahlen	to grind; to mill	молоти
+meiden; Akk	er meidet. | mied. | er hat gemieden	to avoid	уникати
+melken	er melkt. | molk. | er hat gemolken	to milk	доїти
+messen; Akk	er misst. | maß. | er hat gemessen	to measure	вимірювати
+misslingen; Dat (Inf.)	er misslingt. | misslang. | er ist misslungen	to fail	зазнавати невдачі
+mögen	er mag. | mochte. | er hat gemocht	to like; to may	любити; хотіти
+müssen	er muss. | musste. | er hat gemusst	to must; to have to	мусити; бути зобов’язаним
+nehmen; (Dat) Akk	er nimmt. | nahm. | er hat genommen	to take	брати
+nennen; (Dat) Akk	er nennt. | nannte. | er hat genannt	to name; to call	називати
+pfeifen; (Akk)	er pfeift. | pfiff. | er hat gepfiffen	to whistle	свистіти
+pflegen	er pflegt. | pflog. | er hat gepflegt	to care for; to maintain	доглядати
+preisen; Akk	er preist. | pries. | er hat gepriesen	to praise	вихваляти
+quellen	er quillt. | quoll. | er ist gequollen	to gush; to spring	бити (про джерело)
+raten; Dat Akk / Inf.	er rät. | riet. | er hat geraten	to advise; to guess	радити; вгадувати
+reiben; Akk	er reibt. | rieb. | er hat gerieben	to rub	терти
+reißen; Akk (in/an + Akk)	er reißt. | riss. | er hat gerissen	to tear; to rip	рвати
+reiten; (Akk)	er reitet. | ritt. | er ist (hat) geritten	to ride (a horse)	їздити верхи
+rennen; Dir.-Erg.	er rennt. | rannte. | er ist gerannt	to run	бігти
+riechen; (Akk)	er riecht. | roch. | er hat gerochen	to smell	нюхати; пахнути
+ringen; Akk	er ringt. | rang. | er hat gerungen	to wrestle	боротися
+rinnen; Dir.-Erg.	er rinnt. | rann. | er ist geronnen	to trickle; to flow	текти
+rufen; Akk	er ruft. | rief. | er hat gerufen	to call; to shout	кликати; кричати
+s. schinden	er schindet. | schund. | er hat geschunden	to mistreat; flay; to torment	мучити; знущатися; здирати шкіру
+s. streiten; mit	er streitet. | stritt. | er hat gestritten	to argue; to fight with	сперечатися; сваритися з
+salzen	er salzt. | salzte. | er hat gesalzen	to salt	солити
+saufen; (Akk)	er säuft. | soff. | er hat gesoffen	to guzzle; to drink (alcohol)	пиячити; хлестати
+saugen	er saugt. | sog. | er hat gesogen	to suck; to vacuum	смоктати; всмоктувати
+schaffen; Akk (Inf.)	er schafft. | schuf. | er hat geschaffen	to create; to accomplish	створювати; досягати
+scheiden	er scheidet. | schied. | er hat geschieden	to separate; to divorce	розлучати; відділяти
+scheinen	er scheint. | schien. | er hat geschienen	to shine; to seem	світити; здаватися
+scheißen	er scheißt. | schiss. | er hat geschissen	to defecate (vulgar)	какати (грубо)
+schelten	er schilt. | schalt. | er hat gescholten	to scold; to chide	сварити; докоряти
+scheren; Akk	er schert. | schor. | er hat geschoren	to shear; to cut	стригти
+schieben; Akk Dir.-Erg.	er schiebt. | schob. | er hat geschoben	to push; to shove	штовхати; пересувати
+schießen; (Akk)	er schießt. | schoss. | er hat geschossen	to shoot	стріляти
+schlafen; (Situativ-Erg.)	er schläft. | schlief. | er hat geschlafen	to sleep	спати
+schlagen; Akk	er schlägt. | schlug. | er hat geschlagen	to hit; to strike	бити; вдаряти
+schleichen	er schleicht. | schlich. | er ist geschlichen	to sneak; to creep	крастися
+schleifen	er schleift. | schliff. | er hat geschliffen	to grind; drag; to sharpen	точити; волочити
+schließen; Akk	er schließt. | schloss. | er hat geschlossen	to close; to shut	закривати
+schlingen; Akk	er schlingt. | schlang. | er hat geschlungen	to loop; to gulp down	обвивати; ковтати
+schmeißen; Akk (Dir.-Erg.)	er schmeißt. | schmiss. | er hat geschmissen	to throw; to chuck	кидати; шпурляти
+schmelzen	er schmilzt. | schmolz. | er ist / hat geschmolzen	to melt	танути; плавитися
+schnauben	er schnaubt. | schnob. | er hat geschnaugt	to snort; to puff	фиркати
+schneiden; (Dat) Akk	er schneidet. | schnitt. | er hat geschnitten	to cut	різати
+schreiben; (Dat) Akk	er schreibt. | schrieb. | er hat geschrieben	to write	писати
+schreien	er schreit. | schrie. | er hat geschrien	to scream; to shout	кричати
+schreiten	er schreitet. | schritt. | er ist geschritten	to stride; to proceed	крокувати; рушати
+schweigen	er schweigt. | schwieg. | er hat geschwiegen	to be silent; to keep quiet	мовчати
+schwellen	er schwillt. | schwoll. | er ist geschwollen	to swell	набрякати
+schwimmen	er schwimmt. | schwamm. | er ist geschwommen	to swim	плавати
+schwinden; (Dat / Akk)	er schwindet. | schwand. | er ist geschwunden	to dwindle; to decrease	зменшуватися; зникати
+schwingen	er schwingt. | schwang. | er hat geschwungen	to swing	гойдатися
+schwören; Dat Akk	er schwört. | schwor. | er hat geschworen	to swear; to vow	присягатися; клястися
+sehen; Akk	er sieht. | sah. | er hat gesehen	to see	бачити
+sein; Situativ-Erg.	er ist. | war. | er ist gewesen	to be	бути
+senden; Dat Akk	er sendet. | sandte. | er hat gesandt	to send	надсилати
+sieden	er siedet. | sott. | er hat gesieden	to boil	кип’ятити; варити
+singen; (Dat) Akk	er singt. | sang. | er hat gesungen	to sing	співати
+sinken	er sinkt. | sank. | er ist gesunken	to sink	тонути; занурюватися
+sinnen; Dat nach + Dat	er sinnt. | sann. | er hat gesonnen;	to ponder; to reflect	роздумувати; замислюватися
+sitzen; Situativ-Erg.	er sitzt. | saß. | er hat gesessen	to sit	сидіти
+sollen	er soll. | sollte. | er hat gesollt	to should; to ought to	повинен; слід
+spalten	er spaltet. | spaltete. | er hat gespalten	to split; to cleave	розколювати; ділити
+speien	er speit. | spie. | er hat gespien	to spit; to vomit	плювати; блювати
+spinnen; (Akk)	er spinnt. | spann. | er hat gesponnen	to spin; to be crazy	прясти; божеволіти
+sprechen; mit + Dat	er spricht. | sprach. | er hat gesprochen	to speak with	говорити з
+sprießen	er sprießt. | spross. | er ist gesprossen	to sprout; to germinate	проростати
+springen; Dir.Erg.	er springt. | sprang. | er ist gesprungen	to jump	стрибати
+stechen; Akk	er sticht. | stach. | er hat gestochen	to sting; to stab	жалити; колоти
+stehen; Situativ-Erg.	er steht. | stand. | er hat gestanden	to stand	стояти
+stehlen; (Dat) Akk	er stiehlt. | stahl. | er hat gestohlen	to steal	красти
+steigen; Dir.-Erg.	er steigt. | stieg. | er ist gestiegen	to rise; to climb	підніматися; зростати
+sterben; an	er stirbt. | starb. | er ist gestorben	to die from	помирати від
+stieben	er stiebt. | stob. | er ist gestoben	to scatter; to spray	розлітатися; розсипатися
+stinken; (nach + Dat)	er stinkt. | stank. | er hat gestunken	to stink	смердіти
+stoßen	er stößt. | stieß. | er hat gestoßen	to push; to bump	штовхати; натикатися
+streichen; Akk	er streicht. | strich. | er hat gestrichen	to paint; to cancel	фарбувати; викреслювати
+tragen; Akk	er trägt. | trug. | er hat getragen	to carry; to wear	нести; носити
+treffen; Akk	er trifft. | traf. | er hat getroffen	to meet; to hit	зустрічати; влучати
+treiben; Situativ-Erg.	er treibt. | trieb. | er hat getrieben	to drive; to float	гнати; займатися
+treten; Akk	er tritt. | trat. | er hat getreten	to step; to kick	ступати; бити ногою
+triefen	er trieft. | troff. | er hat getrieft	to drip; to ooze	капати; стікати
+trinken; Akk	er trinkt. | trank. | er hat getrunken	to drink	пити
+trügen	er trügt. | trog. | er hat getrogen	to deceive	обманювати
+tun; (Dat) Akk	er tut. | tat. | er hat getan	to do; to put	робити; класти
+verderben; (Dat) Akk	er verdirbt. | verdarb. | er hat verdorben	to spoil; to ruin	псувати
+verdrießen	er verdrießen. | verdross. | er hat verdrossen	to annoy; to vex	дратувати; засмучувати
+vergessen; Dat Akk / Inf.	er vergisst. | vergaß. | er hat vergessen	to forget	забувати
+verlieren; Akk / gegen	er verliert. | verlor. | er hat verloren	to lose	втрачати; програвати
+verzeihen	er verzeiht. | verzieh. | er hat verziehen	to forgive	пробачати
+wachsen	er wächst. | wuchs. | er ist gewachsen	to grow	рости
+wägen	er wägt. | wog. | er hat gewogen	to weigh; to consider	зважувати; обдумувати
+waschen; (Dat) Akk	er wäscht. | wusch. | er hat gewaschen	to wash	мити
+weben	er webt. | wob. | er hat gewoben	to weave	ткати
+weichen; von + Dat	er weicht. | wich. | er ist gewichen	to yield; to retreat	поступатися; відступати
+weisen; Dat Akk	er weist. | wies. | er hat gewiesen	to show; to point out	показувати; вказувати
+wenden	er wendet. | wandte. | er hat gewendt	to turn; to reverse	повертати
+werben; um + Akk	er wirbt. | warb. | er hat geworben	to advertise; to woo	рекламувати; добиватися
+werden; (2 x Nominativ!)	er wird. | wurde. | er ist geworden	to become	ставати
+werfen; Akk	er wirft. | warf. | er hat geworfen	to throw	кидати
+wiegen	er wiegt. | wog. | er hat gewogen	to weigh; to rock (a baby)	важити; колихати
+winden	er windet. | wand. | er hat gewunden	to wind; to twist	крутити; обвивати
+wissen; Akk	er weiß. | wusste. | er hat gewusst	to know	знати
+wollen	er will. | wollte. | er hat gewollt	to want; to intend	хотіти
+wringen	er wringt. | wrang. | er hat gewrungen	to wring; to squeeze	викручувати
+ziehen; (Dat) Akk	er zieht. | zog. | er hat gezogen	to pull; to draw	тягнути; витягати
+zwingen; Akk zu + Dat	er zwingt. | zwang. | er hat gezwungen	to force; to compel	примушувати

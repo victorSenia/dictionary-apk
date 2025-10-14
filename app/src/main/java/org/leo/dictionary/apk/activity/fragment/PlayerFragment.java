@@ -22,11 +22,9 @@ import org.leo.dictionary.apk.databinding.FragmentPlayerBinding;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocusChangeListener {
-    private final AtomicBoolean resumeOnFocusGain = new AtomicBoolean(false);
+public class PlayerFragment extends Fragment {
     private FragmentPlayerBinding binding;
     private PlayService playService;
-    private AudioManager audioManager;
     private IsPlayingViewModel isPlayingViewModel;
     private UiUpdater uiUpdater;
 
@@ -34,7 +32,6 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         playService = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.playService();
-        audioManager = (AudioManager) requireActivity().getSystemService(Context.AUDIO_SERVICE);
         isPlayingViewModel = new ViewModelProvider(requireActivity()).get(IsPlayingViewModel.class);
         isPlayingViewModel.setValue(playService.isPlaying());
         ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.uiUpdater();
@@ -66,7 +63,6 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
         uiUpdater = null;
         binding = null;
         playService = null;
-        audioManager = null;
     }
 
     public void updateButtonUi(Boolean isPlaying) {
@@ -87,74 +83,21 @@ public class PlayerFragment extends Fragment implements AudioManager.OnAudioFocu
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         binding.buttonNext.setOnClickListener(v -> {
-            if (isAudioFocusGranted()) {
-                playService.next();
-                isPlayingViewModel.setPlaying();
-            }
+            playService.next();
+            isPlayingViewModel.setPlaying();
         });
         binding.buttonPlay.setOnClickListener(v -> {
             if (!playService.isPlaying()) {
-                if (isAudioFocusGranted()) {
-                    int index = ApkModule.getLastStateCurrentIndex(((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.lastState());
-                    playService.playFrom(index);
-                }
+                int index = ApkModule.getLastStateCurrentIndex(((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.lastState());
+                playService.playFrom(index);
             } else {
                 playService.pause();
             }
         });
         binding.buttonPrevious.setOnClickListener(v -> {
-            if (isAudioFocusGranted()) {
-                playService.previous();
-            }
+            playService.previous();
         });
     }
 
-    private boolean isAudioFocusGranted() {
-        AudioAttributes playbackAttributes = new AudioAttributes.Builder()
-                .setUsage(AudioAttributes.USAGE_MEDIA)
-                .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
-                .build();
-        AudioFocusRequest focusRequest = new AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN)
-                .setAudioAttributes(playbackAttributes)
-                .setAcceptsDelayedFocusGain(true)
-                .setOnAudioFocusChangeListener(this)
-                .build();
-        int res = audioManager.requestAudioFocus(focusRequest);
-        if (AudioManager.AUDIOFOCUS_REQUEST_GRANTED == res) {
-            return true;
-        } else if (AudioManager.AUDIOFOCUS_REQUEST_DELAYED == res) {
-            resumeOnFocusGain.set(true);
-            Toast.makeText(requireActivity(), getString(R.string.audio_delayed), Toast.LENGTH_SHORT).show();
-            return false;
-        }
-        Toast.makeText(requireActivity(), getString(R.string.audio_not_possible), Toast.LENGTH_SHORT).show();
-        return false;
-    }
-
-
-    @Override
-    public void onAudioFocusChange(int focusChange) {
-        if (playService != null) {
-            switch (focusChange) {
-                case AudioManager.AUDIOFOCUS_LOSS:
-                    if (playService.isPlaying()) {
-                        playService.pause();
-                    }
-                    break;
-                case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT:
-                case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK:
-                    if (playService.isPlaying()) {
-                        resumeOnFocusGain.set(true);
-                        playService.pause();
-                    }
-                    break;
-                case AudioManager.AUDIOFOCUS_GAIN:
-                    if (resumeOnFocusGain.get()) {
-                        resumeOnFocusGain.set(false);
-                        playService.play();
-                    }
-            }
-        }
-    }
 
 }

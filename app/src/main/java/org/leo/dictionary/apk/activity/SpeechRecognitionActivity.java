@@ -55,13 +55,13 @@ public class SpeechRecognitionActivity extends AppCompatActivity {
     }
 
     private String getLanguage() {
-        return detailsViewModel.getValue().getLanguage();
+        return binding.language.getText().toString();
     }
 
     private void nextWord() {
         List<Word> words = ApkModule.getWords(this);
         if (!words.isEmpty()) {
-            recordingStoped();
+            recordingStopped();
             Random random = new Random();
             Word word = words.get(random.nextInt(words.size()));
             detailsViewModel.updateWord(word, 0);
@@ -76,7 +76,7 @@ public class SpeechRecognitionActivity extends AppCompatActivity {
 
     private Consumer<ArrayList<String>> resultConsumer() {
         return result -> {
-            recordingStoped();
+            recordingStopped();
             if (result.size() != 1 || !result.get(0).equalsIgnoreCase(detailsViewModel.getValue().getFullWord())) {
                 binding.textResult.setVisibility(View.VISIBLE);
                 binding.textResult.setText(result.stream().collect(Collectors.joining(System.lineSeparator())));
@@ -87,14 +87,14 @@ public class SpeechRecognitionActivity extends AppCompatActivity {
         };
     }
 
-    private void recordingStoped() {
+    private void recordingStopped() {
         binding.buttonSpeak.setImageDrawable(AppCompatResources.getDrawable(this, drawable.ic_btn_speak_now));
         recoding.set(false);
     }
 
     private Consumer<String> errorConsumer() {
         return result -> {
-            recordingStoped();
+            recordingStopped();
             Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
         };
     }

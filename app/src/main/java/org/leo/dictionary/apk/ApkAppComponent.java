@@ -5,6 +5,7 @@ import dagger.Component;
 import org.leo.dictionary.PlayService;
 import org.leo.dictionary.UiUpdater;
 import org.leo.dictionary.apk.helper.GrammarCriteriaProvider;
+import org.leo.dictionary.apk.helper.PlayServiceService;
 import org.leo.dictionary.apk.helper.WordCriteriaProvider;
 import org.leo.dictionary.apk.word.provider.DBWordProvider;
 import org.leo.dictionary.audio.AudioService;
@@ -41,4 +42,6 @@ public interface ApkAppComponent {
 
     @Named("dbWordProvider")
     DBWordProvider dbWordProvider();
+
+    void inject(PlayServiceService service);
 }

@@ -287,9 +287,16 @@ public class ApkModule {
         return criteriaProvider;
     }
 
+
     @Provides
     @Singleton
-    public static PlayService providePlayService(PlayServiceImpl playService) {
+    public static PlayServiceAdapter providePlayServiceWrapper(Context context, PlayServiceImpl playService) {
+        return new PlayServiceAdapter(context, playService);
+    }
+
+    @Provides
+    @Singleton
+    public static PlayService providePlayService(PlayServiceAdapter playService) {
         return playService;
     }
 

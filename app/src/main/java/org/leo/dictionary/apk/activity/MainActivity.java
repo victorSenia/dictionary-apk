@@ -20,13 +20,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.lifecycle.ViewModelProvider;
 import org.leo.dictionary.PlayService;
-import org.leo.dictionary.PlayServiceImpl;
 import org.leo.dictionary.UiUpdater;
 import org.leo.dictionary.apk.*;
 import org.leo.dictionary.apk.activity.fragment.WordsFragment;
 import org.leo.dictionary.apk.activity.viewmodel.DetailsViewModel;
 import org.leo.dictionary.apk.databinding.ActivityMainBinding;
 import org.leo.dictionary.apk.helper.KnowledgeToRatingConverter;
+import org.leo.dictionary.apk.helper.PlayServiceAdapter;
 import org.leo.dictionary.apk.helper.WordCriteriaProvider;
 import org.leo.dictionary.apk.word.provider.DBWordProvider;
 import org.leo.dictionary.apk.word.provider.WordProviderDelegate;
@@ -334,9 +334,13 @@ public class MainActivity extends AppCompatActivity {
             appComponent.lastState().edit().putString(ApkModule.LAST_STATE_SOURCE, (String) applicationContext.data.get(ApkModule.LAST_STATE_SOURCE)).apply();
             WordProvider wordProvider = (WordProvider) applicationContext.data.get(WORD_PROVIDER);
             ((WordProviderDelegate) appComponent.externalWordProvider()).setWordProvider(wordProvider);
-            ((PlayServiceImpl) appComponent.playService()).setWordProvider(wordProvider);
+            setPlayServiceWordProvider(appComponent.playService(), wordProvider);
         }
         applicationContext.data.clear();
+    }
+
+    private static void setPlayServiceWordProvider(PlayService playService, WordProvider wordProvider) {
+        ((PlayServiceAdapter) playService).setWordProvider(wordProvider);
     }
 
     private AlertDialog.Builder getLanguageChooserBuilder(Context context, Consumer<String> consumer) {
@@ -422,7 +426,7 @@ public class MainActivity extends AppCompatActivity {
         PlayService playService = getPlayService();
         WordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.externalWordProvider();
         playService.setPlayTranslationFor(wordCriteria.getPlayTranslationFor());
-        ((PlayServiceImpl) playService).setWordProvider(wordProvider);
+        setPlayServiceWordProvider(playService, wordProvider);
         updateUiWithNewData();
     }
 
