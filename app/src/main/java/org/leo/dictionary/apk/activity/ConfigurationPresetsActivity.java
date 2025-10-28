@@ -14,7 +14,7 @@ import org.leo.dictionary.apk.activity.fragment.FilteredRecyclerViewFragment;
 import org.leo.dictionary.apk.activity.viewadapter.StringRecyclerViewAdapter;
 import org.leo.dictionary.apk.activity.viewmodel.LanguageViewModel;
 import org.leo.dictionary.apk.databinding.ActivityConfigurationPresetsBinding;
-import org.leo.dictionary.apk.word.provider.DBWordProvider;
+import org.leo.dictionary.word.provider.DBWordProvider;
 
 import java.util.HashMap;
 import java.util.List;

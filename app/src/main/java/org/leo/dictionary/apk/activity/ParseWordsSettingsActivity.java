@@ -17,8 +17,8 @@ import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.activity.viewadapter.ReturnSelectedStringRecyclerViewAdapter;
 import org.leo.dictionary.apk.databinding.ParseWordsSettingsActivityBinding;
 import org.leo.dictionary.apk.word.provider.AssetsWordProvider;
-import org.leo.dictionary.apk.word.provider.WordProviderDelegate;
 import org.leo.dictionary.word.provider.WordProvider;
+import org.leo.dictionary.word.provider.WordProviderDelegate;
 
 import java.io.FileNotFoundException;
 

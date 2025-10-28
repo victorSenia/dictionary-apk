@@ -17,8 +17,8 @@ import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.activity.viewmodel.LanguageViewModel;
 import org.leo.dictionary.apk.activity.viewmodel.TopicViewModel;
-import org.leo.dictionary.apk.word.provider.DBWordProvider;
 import org.leo.dictionary.entity.Topic;
+import org.leo.dictionary.word.provider.DBWordProvider;
 import org.leo.dictionary.word.provider.WordExporter;
 
 import java.io.BufferedWriter;

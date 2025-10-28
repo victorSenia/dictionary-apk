@@ -21,10 +21,10 @@ import org.leo.dictionary.apk.activity.viewadapter.TopicRecyclerViewAdapter;
 import org.leo.dictionary.apk.activity.viewmodel.EditWordViewModel;
 import org.leo.dictionary.apk.activity.viewmodel.LanguageViewModel;
 import org.leo.dictionary.apk.databinding.ActivityEditWordBinding;
-import org.leo.dictionary.apk.word.provider.DBWordProvider;
 import org.leo.dictionary.entity.Topic;
 import org.leo.dictionary.entity.Translation;
 import org.leo.dictionary.entity.Word;
+import org.leo.dictionary.word.provider.DBWordProvider;
 
 import java.util.ArrayList;
 import java.util.List;

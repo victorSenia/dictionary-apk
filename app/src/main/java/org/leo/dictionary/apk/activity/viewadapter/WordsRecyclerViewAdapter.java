@@ -17,8 +17,8 @@ import org.leo.dictionary.apk.activity.MainActivity;
 import org.leo.dictionary.apk.databinding.FragmentStringBinding;
 import org.leo.dictionary.apk.databinding.FragmentWordSelectedBinding;
 import org.leo.dictionary.apk.databinding.FragmentWordSelectedDbBinding;
-import org.leo.dictionary.apk.word.provider.DBWordProvider;
 import org.leo.dictionary.entity.Word;
+import org.leo.dictionary.word.provider.DBWordProvider;
 
 import java.util.List;
 

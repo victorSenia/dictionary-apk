@@ -28,13 +28,13 @@ import org.leo.dictionary.apk.databinding.ActivityMainBinding;
 import org.leo.dictionary.apk.helper.KnowledgeToRatingConverter;
 import org.leo.dictionary.apk.helper.PlayServiceAdapter;
 import org.leo.dictionary.apk.helper.WordCriteriaProvider;
-import org.leo.dictionary.apk.word.provider.DBWordProvider;
-import org.leo.dictionary.apk.word.provider.WordProviderDelegate;
 import org.leo.dictionary.entity.Topic;
 import org.leo.dictionary.entity.Word;
 import org.leo.dictionary.entity.WordCriteria;
+import org.leo.dictionary.word.provider.DBWordProvider;
 import org.leo.dictionary.word.provider.WordImporter;
 import org.leo.dictionary.word.provider.WordProvider;
+import org.leo.dictionary.word.provider.WordProviderDelegate;
 
 import java.io.BufferedReader;
 import java.io.IOException;

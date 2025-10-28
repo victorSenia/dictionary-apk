@@ -19,9 +19,7 @@ import org.leo.dictionary.apk.grammar.provider.AssetsGrammarProvider;
 import org.leo.dictionary.apk.grammar.provider.AssetsSentenceProvider;
 import org.leo.dictionary.apk.helper.*;
 import org.leo.dictionary.apk.word.provider.AssetsWordProvider;
-import org.leo.dictionary.apk.word.provider.DBWordProvider;
 import org.leo.dictionary.apk.word.provider.InputStreamWordProvider;
-import org.leo.dictionary.apk.word.provider.WordProviderDelegate;
 import org.leo.dictionary.audio.AudioService;
 import org.leo.dictionary.config.ConfigParser;
 import org.leo.dictionary.config.ConfigurationReader;
@@ -33,7 +31,9 @@ import org.leo.dictionary.entity.Word;
 import org.leo.dictionary.entity.WordCriteria;
 import org.leo.dictionary.grammar.provider.GrammarProvider;
 import org.leo.dictionary.grammar.provider.SentenceProvider;
+import org.leo.dictionary.word.provider.DBWordProvider;
 import org.leo.dictionary.word.provider.WordProvider;
+import org.leo.dictionary.word.provider.WordProviderDelegate;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
@@ -135,8 +135,14 @@ public class ApkModule {
 
     @Provides
     @Singleton
-    public static DatabaseManager provideDatabaseManager(Context context) {
-        return new DatabaseManager(context);
+    public static DatabaseHelper provideDatabaseHelper(Context context) {
+        return new DatabaseHelper(context);
+    }
+
+    @Provides
+    @Singleton
+    public static DatabaseManager provideDatabaseManager(DatabaseHelper databaseHelper) {
+        return new DatabaseManager(databaseHelper);
     }
 
     public static boolean isDBSource(@Named("lastState") SharedPreferences lastState) {

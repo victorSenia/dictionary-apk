@@ -21,9 +21,9 @@ import org.leo.dictionary.apk.activity.viewadapter.TopicRecyclerViewAdapter;
 import org.leo.dictionary.apk.activity.viewmodel.EditWordViewModel;
 import org.leo.dictionary.apk.activity.viewmodel.TopicViewModel;
 import org.leo.dictionary.apk.databinding.DialogEditTopicBinding;
-import org.leo.dictionary.apk.word.provider.DBWordProvider;
 import org.leo.dictionary.entity.Topic;
 import org.leo.dictionary.entity.Word;
+import org.leo.dictionary.word.provider.DBWordProvider;
 
 import java.util.ArrayList;
 import java.util.List;
