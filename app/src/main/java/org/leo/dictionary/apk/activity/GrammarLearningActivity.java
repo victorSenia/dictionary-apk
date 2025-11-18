@@ -1,6 +1,7 @@
 package org.leo.dictionary.apk.activity;
 
 import android.os.Bundle;
+import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import org.leo.dictionary.apk.ApkModule;
@@ -24,7 +25,9 @@ public class GrammarLearningActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityGrammarLearningBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        View root = binding.getRoot();
+        setContentView(root);
+        ActivityUtils.setFullScreen(this, root);
     }
 
     @Override

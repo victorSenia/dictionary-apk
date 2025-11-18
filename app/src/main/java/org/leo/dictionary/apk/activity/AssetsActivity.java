@@ -1,6 +1,7 @@
 package org.leo.dictionary.apk.activity;
 
 import android.os.Bundle;
+import android.view.View;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import org.leo.dictionary.apk.R;
@@ -30,6 +31,8 @@ public class AssetsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.assets_activity);
+        View root = findViewById(android.R.id.content);
+        ActivityUtils.setFullScreen(this, root);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -42,7 +45,7 @@ public class AssetsActivity extends AppCompatActivity {
             try {
                 return Arrays.asList(requireActivity().getAssets().list(((AssetsActivity) requireActivity()).getFolderName()));
             } catch (IOException e) {
-                MainActivity.logUnhandledException(e);
+                ActivityUtils.logUnhandledException(e);
                 return Collections.emptyList();
             }
         }

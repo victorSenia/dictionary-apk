@@ -57,7 +57,9 @@ public class WordMatcherActivity extends AppCompatActivity {
             binding.actionHint.setOnClickListener(v -> hintClicked());
         }
         clearAndFillWords();
-        setContentView(binding.getRoot());
+        View root = binding.getRoot();
+        setContentView(root);
+        ActivityUtils.setFullScreen(this, root);
     }
 
     private void hintClicked() {

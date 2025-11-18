@@ -36,7 +36,7 @@ public class ExportWordsActivity extends AppCompatActivity {
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
                 if (result.getResultCode() == Activity.RESULT_OK && result.getData() != null) {
-                    MainActivity.runAtBackground(() -> writeWordsToFile(result.getData().getData()));
+                    ActivityUtils.runAtBackground(() -> writeWordsToFile(result.getData().getData()));
                     finish();
                 }
             });
@@ -47,6 +47,8 @@ public class ExportWordsActivity extends AppCompatActivity {
         LanguageViewModel languageViewModel = new ViewModelProvider(this).get(LanguageViewModel.class);
         TopicViewModel rootTopicViewModel = new ViewModelProvider(this).get(TopicViewModel.class);
         setContentView(R.layout.export_words_activity);
+        View root = findViewById(android.R.id.content);
+        ActivityUtils.setFullScreen(this, root);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -98,7 +100,7 @@ public class ExportWordsActivity extends AppCompatActivity {
                         wordProvider.findRootTopics(language).stream().map(Topic::getName).collect(Collectors.toList()));
             }
         } catch (IOException e) {
-            MainActivity.logUnhandledException(e);
+            ActivityUtils.logUnhandledException(e);
             showMessage(getString(R.string.unexpected_error));
         }
     }

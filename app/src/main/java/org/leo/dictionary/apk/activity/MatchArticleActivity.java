@@ -33,7 +33,9 @@ public class MatchArticleActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMatchArticleBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        View root = binding.getRoot();
+        setContentView(root);
+        ActivityUtils.setFullScreen(this, root);
         EditWordViewModel model = new ViewModelProvider(this).get(EditWordViewModel.class);
         if (words == null || articles == null) {
             List<Word> unknownWords = ApkModule.getWords(this);

@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.Toast;
@@ -40,14 +41,14 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.*;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 import java.util.function.Consumer;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.stream.Collectors;
+
+import static org.leo.dictionary.apk.activity.ActivityUtils.*;
 
 public class MainActivity extends AppCompatActivity {
-    public final static Logger LOGGER = Logger.getLogger(MainActivity.class.getName());
     public static final String POSITION_ID = "positionId";
     public static final String UPDATED_WORD = "updatedWord";
     public static final String WORD_PROVIDER = "wordProvider";
@@ -79,14 +80,6 @@ public class MainActivity extends AppCompatActivity {
     });
     private UiUpdater uiUpdater;
     private ActivityMainBinding binding;
-
-    public static void runAtBackground(Runnable runnable) {
-        new Thread(runnable).start();
-    }
-
-    public static void logUnhandledException(Exception e) {
-        LOGGER.log(Level.SEVERE, e.getMessage(), e);
-    }
 
     private void readWordsFromFile(Uri data) {
         try (InputStream inputStream = getContentResolver().openInputStream(data)) {
@@ -180,10 +173,6 @@ public class MainActivity extends AppCompatActivity {
                 (wordCriteria.getTopicsOr() == null || wordCriteria.getTopicsOr().isEmpty() || containsAnyOfTopic(wordCriteria.getTopicsOr(), updatedWord.getTopics()));
     }
 
-    public static Set<Long> getTopicIds(Collection<Topic> topics) {
-        return topics != null ? topics.stream().map(Topic::getId).collect(Collectors.toSet()) : Collections.emptySet();
-    }
-
     private boolean containsAnyOfTopic(Set<Topic> topicsOr, List<Topic> topics) {
         Set<Long> topicsIds = getTopicIds(topicsOr);
         return topics.stream().map(Topic::getId).anyMatch(topicsIds::contains);
@@ -194,11 +183,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setOrientation(false);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        View root = binding.getRoot();
+        setContentView(root);
+        setFullScreen(this, root);
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         binding.changeOrientation.setOnClickListener(v -> setOrientation(true));
-
         ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) getApplicationContext()).appComponent.uiUpdater();
         uiUpdater = new ViewModelProvider(this).get(DetailsViewModel.class)::updateWord;
         apkUiUpdater.addUiUpdater(uiUpdater);

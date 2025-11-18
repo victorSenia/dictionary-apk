@@ -124,7 +124,9 @@ public class GrammarFilterActivity extends AppCompatActivity {
 //        updateViewModel(owner, original.getLanguage(), null, null, null);//TODO fill topics and hints
 
         binding = ActivityGrammarFilterBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        View root = binding.getRoot();
+        setContentView(root);
+        ActivityUtils.setFullScreen(this, root);
         binding.buttonAsset.setOnClickListener(e -> {
             Intent intent = new Intent(owner, AssetsActivity.class);
             Bundle b = new Bundle();
@@ -287,7 +289,7 @@ public class GrammarFilterActivity extends AppCompatActivity {
 
         @Override
         protected List<Topic> getTopicsFromCriteria(List<Topic> topicList) {
-            Set<Long> topicsOr = MainActivity.getTopicIds(getGrammarCriteria(requireActivity()).getTopicsOr());
+            Set<Long> topicsOr = ActivityUtils.getTopicIds(getGrammarCriteria(requireActivity()).getTopicsOr());
             return topicsOr != null ? topicList.stream().filter(topic -> topicsOr.contains(topic.getId())).collect(Collectors.toList()) : Collections.emptyList();
         }
 

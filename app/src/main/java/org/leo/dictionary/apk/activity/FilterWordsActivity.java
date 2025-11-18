@@ -58,7 +58,11 @@ public class FilterWordsActivity extends AppCompatActivity {
         WordCriteriaViewModel wordCriteriaViewModel = new ViewModelProvider(this).get(WordCriteriaViewModel.class);
         wordCriteriaViewModel.getData().observe(this, this::updateCount);
         FilterWordsActivityBinding binding = FilterWordsActivityBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+
+        View root = binding.getRoot();
+        setContentView(root);
+        ActivityUtils.setFullScreen(this, root);
+
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -204,7 +208,7 @@ public class FilterWordsActivity extends AppCompatActivity {
         }
 
         protected List<Topic> getTopicsFromCriteria(List<Topic> topicList) {
-            Set<Long> topicIds = MainActivity.getTopicIds(getWordCriteria(requireActivity()).getRootTopics());
+            Set<Long> topicIds = ActivityUtils.getTopicIds(getWordCriteria(requireActivity()).getRootTopics());
             return topicIds != null ? topicList.stream().filter(topic -> topicIds.contains(topic.getId())).collect(Collectors.toList()) : Collections.emptyList();
         }
 
@@ -282,7 +286,7 @@ public class FilterWordsActivity extends AppCompatActivity {
 
 
         protected List<Topic> getTopicsFromCriteria(List<Topic> topicList) {
-            Set<Long> topicsOr = MainActivity.getTopicIds(getWordCriteria(requireActivity()).getTopicsOr());
+            Set<Long> topicsOr = ActivityUtils.getTopicIds(getWordCriteria(requireActivity()).getTopicsOr());
             return topicsOr != null ? topicList.stream().filter(topic -> topicsOr.contains(topic.getId())).collect(Collectors.toList()) : Collections.emptyList();
         }
     }

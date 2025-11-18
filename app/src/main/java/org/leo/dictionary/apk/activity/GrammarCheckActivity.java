@@ -45,7 +45,9 @@ public class GrammarCheckActivity extends AppCompatActivity {
             sentences = grammarProvider.findSentences(((ApplicationWithDI) getApplicationContext()).appComponent.grammarCriteriaProvider().getObject());
         }
         binding = ActivityGrammarCheckBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        View root = binding.getRoot();
+        setContentView(root);
+        ActivityUtils.setFullScreen(this, root);
         binding.next.setOnClickListener(e -> updateUIWithNextSentence());
         binding.sentenceAnswer.addTextChangedListener(new EditWordActivity.AbstractTextWatcher() {
             @Override

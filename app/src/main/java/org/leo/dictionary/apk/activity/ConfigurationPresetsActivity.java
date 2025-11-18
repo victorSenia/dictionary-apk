@@ -46,7 +46,9 @@ public class ConfigurationPresetsActivity extends AppCompatActivity {
         PresetsFragment presetsFragment = (PresetsFragment) getSupportFragmentManager().findFragmentById(R.id.presets_names);
         nameViewModel.getData().observe(this, v -> presetsFragment.setFilterValue(v));
 
-        setContentView(binding.getRoot());
+        View root = binding.getRoot();
+        setContentView(root);
+        ActivityUtils.setFullScreen(this, root);
     }
 
     private void applyPresets(String selected) {

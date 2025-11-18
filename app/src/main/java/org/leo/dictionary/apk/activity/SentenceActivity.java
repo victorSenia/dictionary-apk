@@ -34,7 +34,9 @@ public class SentenceActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivitySentenceBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        View root = binding.getRoot();
+        setContentView(root);
+        ActivityUtils.setFullScreen(this, root);
         if (sentences == null) {
             sentences = ((ApplicationWithDI) getApplicationContext()).appComponent.externalSentenceProvider().findSentences(new SentenceCriteria());
         }

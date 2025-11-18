@@ -11,6 +11,7 @@ import dagger.Provides;
 import org.leo.dictionary.PlayService;
 import org.leo.dictionary.PlayServiceImpl;
 import org.leo.dictionary.UiUpdater;
+import org.leo.dictionary.apk.activity.ActivityUtils;
 import org.leo.dictionary.apk.activity.MainActivity;
 import org.leo.dictionary.apk.audio.AndroidAudioService;
 import org.leo.dictionary.apk.config.AssetsConfigurationReader;
@@ -194,7 +195,7 @@ public class ApkModule {
                 return createAssetsWordProvider(configuration, context);
             }
         } catch (Exception e) {
-            MainActivity.logUnhandledException(e);
+            ActivityUtils.logUnhandledException(e);
         }
         Toast.makeText(context, "File cannot be accessed.", Toast.LENGTH_SHORT).show();
         criteriaProvider.setObject(null);

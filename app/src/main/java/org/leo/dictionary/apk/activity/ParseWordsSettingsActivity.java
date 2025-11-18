@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.OpenableColumns;
+import android.view.View;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.ActionBar;
@@ -59,7 +60,9 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
                     .replace(R.id.settings, new SettingsFragment())
                     .commit();
         }
-        setContentView(binding.getRoot());
+        View root = binding.getRoot();
+        setContentView(root);
+        ActivityUtils.setFullScreen(this, root);
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -100,7 +103,7 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
                     setResult(Activity.RESULT_OK, intent);
                     finish();
                 } catch (FileNotFoundException e) {
-                    MainActivity.logUnhandledException(e);
+                    ActivityUtils.logUnhandledException(e);
                     throw new RuntimeException(e);
                 }
             }
@@ -122,7 +125,7 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
                 }
             }
         } catch (Exception e) {
-            MainActivity.logUnhandledException(e);
+            ActivityUtils.logUnhandledException(e);
             return "";
         }
         return "";

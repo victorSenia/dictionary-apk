@@ -1,0 +1,1262 @@
+org.leo.dictionary.config.entity.ParseWords:de:en;uk:die+;das+;der+:%5C%7C:%3B:%3B:%5Ct::Linie+1+Beruf+B2
+
+	Kapitel 1 Hier arbeite ich
+		1 Arbeitsräume
+die Klimaanlage; -n | air conditioning | кондиціонер
+die Leiter; - | ladder | драбина
+die Werkbank; -e | workbench | верстак
+der Werkzeugkasten; - | toolbox | ящик для інструментів
+der Schutzhelm; -e | safety helmet | захисний шолом
+sanitäre Anlagen installieren | install sanitary facilities | встановлювати сантехнічні установки
+verstopfte Rohre reinigen | clean blocked pipes | очищати засмічені труби
+		2 Unsere neuen Arbeitsräume
+die Mieterhöhung; -en | rent increase | підвищення оренди
+die Zusage; -n | commitment / confirmation | підтвердження
+stundenlang | for hours | годинами
+das Onlineportal; -e | online portal | онлайн-портал
+das Objekt; -e | property / object | об’єкт
+der Grundriss; -e | floor plan | план приміщення
+jdn. (über etwas) auf dem Laufenden halten | keep someone informed (about something) | тримати когось у курсі
+der Interessent; -en | interested party (male) | зацікавлена особа (чоловік)
+die Interessentin; -nen | interested party (female) | зацікавлена особа (жінка)
+die Altbauwohnung; -en | old building apartment | квартира в старому будинку
+die Einbauküche; -n | fitted kitchen | вбудована кухня
+der Fahrstuhl; -e | elevator | ліфт
+das Erfolgserlebnis; -se | sense of achievement | відчуття успіху
+die Werkstatt; -en | workshop | майстерня
+die Hausverwaltung; -en | property management | керування будинком
+die Daumen drücken | keep one’s fingers crossed | тримати кулаки
+sich vormerken lassen | put oneself on a waiting list | записатися заздалегідь
+der Auszug; -e | moving out | виселення
+sanieren | renovate | ремонтувати / реконструювати
+abschleifen | sand / grind down | шліфувати
+anschließen | connect | підключати
+die Leitung; -en | pipe / line / management | трубопровід / керівництво
+die Spedition; -en | shipping company | транспортна компанія
+aus Sicherheitsgründen | for safety reasons | з міркувань безпеки
+der Nachsendeantrag; -e | mail forwarding application | заявка на переадресацію пошти
+einen Nachsendeantrag stellen | submit a mail forwarding request | подати заявку на переадресацію
+der Umzugskarton; -s | moving box | коробка для переїзду
+der Einkommensnachweis; -e | proof of income | підтвердження доходу
+das Maklerbüro; -s | real estate agency | бюро нерухомості
+sich ummelden | register/change address | змінити місце реєстрації
+die Kaution; -en | deposit | депозит
+eine Kaution hinterlegen | pay a deposit | внести депозит
+der Besichtigungstermin; -e | viewing appointment | зустріч для огляду
+die Praxis, Praxen | practice | практика / кабінет
+sich kümmern (um + A.) | take care of | піклуватися про
+die Branche; -n | sector / industry | галузь
+das/der Start-up; -s | start-up | стартап
+die Checkliste; -n | checklist | контрольний список
+der Gewerberaum; -räume | commercial space | комерційне приміщення
+die Hygieneanforderung; -en | hygiene requirement | гігієнічна вимога
+die Flexibilität (Sg.) | flexibility | гнучкість
+untervermieten | sublet | здавати в суборенду
+die Übergabe; -n | handover | передача
+das Übergabeprotokoll; -e | handover protocol | протокол передачі
+		3 Der Umzug
+ein Angebot einholen (für + A.) | get a quote (for) | отримати пропозицію
+flexibel (bezüglich + G.) | flexible (regarding) | гнучкий (щодо)
+noch etwas Spielraum haben (bei + D.) | have some leeway (with) | мати певний запас
+ausgebucht (bis + A.) | fully booked (until) | повністю заброньовано
+jdm. (bei etwas) entgegenkommen | accommodate someone (in something) | піти назустріч
+der Fixpreis; -e | fixed price | фіксована ціна
+		4 Adils neuer Job
+mutig sein | be brave | бути сміливим
+spontan | spontaneous | спонтанний
+mittelgroß | medium-sized | середнього зросту / розміру
+Menschen mit Behinderungen | people with disabilities | люди з інвалідністю
+für etwas verantwortlich sein | be responsible for something | бути відповідальним за
+selbstständig arbeiten | work independently | працювати самостійно
+Kontakt bekommen | make contact | встановити контакт
+der Betriebsausflug; -ausflüge | company outing | корпоративна поїздка
+		5 Es gibt da ein Problem
+in Ordnung sein | be fine / all right | бути в порядку
+sich wohlfühlen | feel comfortable | почуватися добре
+die Kaffeeküche; -n | coffee kitchen | кухонька для кави
+der Küchenboden; - | kitchen floor | підлога на кухні
+der Riss; -e | crack | тріщина
+sich um etwas kümmern | take care of something | піклуватися про щось
+einen Handwerker bestellen | call a craftsman | замовити майстра
+sich ein Problem ansehen | look at a problem | розглянути проблему
+		6 Eine E-Mail an die Hausverwaltung
+die Schilderung des Problems | description of the problem | опис проблеми
+ein Problem schildern | describe a problem | описувати проблему
+die Erledigung (Sg.) | completion / handling | виконання
+die Erreichbarkeit; -en | availability | доступність
+die verantwortliche Firma | responsible company | відповідальна компанія
+einen Schaden beheben | fix damage | усунути шкоду
+sich auf etwas beziehen | refer to something | посилатися на щось
+mittlerweile | meanwhile | тим часом
+die entstandenen Unannehmlichkeiten | resulting inconveniences | виниклі незручності
+der Reparaturauftrag; -aufträge | repair order | замовлення на ремонт
+mindern (um + A.) | reduce (by) | зменшувати (на)
+	Kapitel 2 Mein eigener Laden
+		1 Mehmets Kiosk
+der Kiosk; -e | kiosk | кіоск
+der Lieferant; -en / die Lieferantin; -nen | supplier | постачальник / постачальниця
+die Tiefkühlkost (Sg.) | frozen food | заморожені продукти
+liefern | deliver | доставляти
+		2 Warum ich die Spätis liebe
+das Warenangebot; -e | product range | асортимент товарів
+die Öffnungszeit; -en | opening hours | години роботи
+rund um die Uhr | 24/7 | цілодобово
+die Auswahl (Sg.) | selection | вибір
+begehren | desire | бажати
+die Besorgung; -en | errand | закупка
+der/die Einheimische; -n | local resident | місцевий житель / місцева жителька
+miteinander | together / with each other | разом
+das Zuhause (Sg.) | home | дім
+ein offenes Ohr für jemanden haben | lend someone a sympathetic ear | вислухати когось
+die Entdeckung; -en | discovery | відкриття
+hetzen | rush / hurry | поспішати
+freiberuflich | freelance | фрілансер
+sich etwas einteilen | organize one’s time | розподіляти час
+der Auftrag; -e | order / assignment | замовлення / завдання
+zufällig | by chance / accidental | випадково
+die Gleitzeit (Sg.) | flexible working hours | гнучкий графік
+der Schichtdienst; -e | shift work | робота по змінах
+die Schuld (Sg.) | fault / blame | вина
+Das ist nicht seine Schuld. | That’s not his fault | Це не його вина
+der Feierabend; -e | end of workday | кінець робочого дня
+die Frühschicht; -en | early shift | рання зміна
+der Kioskbesitzer; - / die Kioskbesitzerin; -nen | kiosk owner | власник / власниця кіоску
+die Spätschicht; -en | late shift | пізня зміна
+die Redaktion; -en | editorial office | редакція
+Besorgungen machen | run errands | виконувати справи
+		3 Ein Gespräch mit Mehmet
+einen Kiosk betreiben | run a kiosk | керувати кіоском
+die Buchführung (Sg.) | accounting | бухгалтерія
+der Pachtvertrag; -e | lease contract | договір оренди
+das Sortiment; -e | product range | асортимент
+die Lage (Sg.) | location | розташування
+finanzielle Rücklagen | financial reserves | фінансові резерви
+eröffnen | open | відкривати
+der Besitzer; - / die Besitzerin; -nen | owner | власник / власниця
+gewerblich | commercial | комерційний
+die Reserve; -n | reserve | резерв
+die Einnahme; -n | income | дохід
+die Ausgabe; -n | expense | витрати
+die Verwirklichung (Sg.) | realization | реалізація
+profitieren (von + D.) | benefit (from) | користуватися
+selbstständig | independent | самостійний
+die Versicherung; -en | insurance | страховка
+das Existenzgründerseminar; -e | start-up seminar | семінар для підприємців
+die Geschäftsidee; -n | business idea | бізнес-ідея
+der Familienbetrieb; -e | family business | сімейний бізнес
+der Konzern; -e | corporation | корпорація
+der/die Vorgesetzte; -n | supervisor | керівник
+die Lieferung; -en | delivery | доставка
+die Rücksendung; -en | return | повернення
+die Logistik (Sg.) | logistics | логістика
+		4 Beiträge im Gründerforum
+die Nachfrage (Sg.) | demand | попит
+klappen | work out / succeed | виходити
+die Pleite; -n | bankruptcy | банкрутство
+pleitegehen | go bankrupt | банкрутувати
+der Kredit; -e | loan | кредит
+einen Kredit aufnehmen | take out a loan | взяти кредит
+niedergeschlagen | downcast / discouraged | пригнічений
+gründen | found / start | заснувати
+die Gewerbefläche; -n | commercial space | комерційна площа
+der Existenzgründer; - / die Existenzgründerin; -nen | start-up founder | підприємець / підприємиця
+günstig | cheap / favorable | вигідний
+der Zuschuss; -e | subsidy | субсидія
+		5 Alltag im Späti – der Dienstplan
+der Dienstplan; -e | duty roster / schedule | графік роботи
+etwas übernehmen | take over something | брати на себе
+etwas einhalten | comply with / adhere to | дотримуватися
+ausnahmsweise | exceptionally | винятково
+der Umstand; -e | circumstance | обставина
+		6 Arbeitsaufträge
+die Lieferung; -en | delivery | доставка
+unbedingt | absolutely / definitely | обов’язково
+dringend | urgent | терміново
+der Karton; -s | box | коробка
+der Arbeitsauftrag; -e | work assignment | робоче завдання
+das Telefon abnehmen | answer the phone | підняти слухавку
+zuständig | responsible | відповідальний
+die Nachbestellung; -en | reorder | повторне замовлення
+	Kapitel 3 Arbeit im Team
+		1 Teamarbeit
+die Teamarbeit (Sg.) | teamwork | командна робота
+das Zusammenspiel (Sg.) | interaction / cooperation | взаємодія
+sich anstrengen (bei + D. / mit + D.) | make an effort (with / in) | старатися
+weiterkommen | make progress | просуватися вперед
+verteilen | distribute | розподіляти
+die Mannschaft; -en | team / crew | команда
+		2 Sofia Adu ist neu beim Partyservice Fein
+Kritik üben/äußern (an + D.) | give criticism (about) | критикувати
+die Rundmail; -s | circular email | розсилка
+souverän | confident / poised | впевнено
+die Absprache; -n | agreement / arrangement | домовленість
+unvoreingenommen | unbiased | необ’єктивний
+das Verhalten (Sg.) | behavior | поведінка
+überlastet sein | be overloaded | бути перевантаженим
+der Verbesserungsvorschlag; -e | suggestion for improvement | пропозиція щодо покращення
+sich unbeliebt machen (bei + D.) | make oneself unpopular | зробити себе непопулярним
+einen schlechten Eindruck hinterlassen (bei + D.) | leave a bad impression | залишити погане враження
+die Ehrlichkeit (Sg.) | honesty | чесність
+jdn. loben (für + A.) | praise someone (for) | хвалити когось
+etwas vertuschen | cover something up | приховувати
+überfordert | overwhelmed | перевантажений
+das Gerücht; -e | rumor | чутка
+der/die IT-Beauftragte; -n | IT officer | відповідальний за ІТ
+verhindern | prevent | запобігати
+gelassen | calm / composed | спокійний
+das Vorurteil; -e | prejudice | упередження
+umgehen (mit + D.) | deal with | справлятися з
+eine Entscheidung treffen | make a decision | приймати рішення
+der Abteilungsleiter; - / die Abteilungsleiterin; -nen | department manager | керівник відділу
+Verhandlungen führen (mit + D.) | conduct negotiations | вести переговори
+einen Auftrag vergeben/annehmen | assign / accept an order | давати / приймати замовлення
+		3 Ich möchte mich vorstellen
+die Buchhaltung (Sg.) | accounting | бухгалтерія
+auf jdn. zukommen | approach someone | звертатися до когось
+der Personalchef; -s / die Personalchefin; -nen | HR manager | керівник персоналу
+die Fachhochschule; -n (FH) | university of applied sciences | університет прикладних наук
+der Versand (Sg.) | shipping | відправлення
+das Personal (Sg.) | staff | персонал
+		4 Das Protokoll
+das Protokoll; -e | minutes / protocol | протокол
+der Tagesordnungspunkt; -e (der TOP; -s) | agenda item | пункт порядку денного
+das Buffet; -s | buffet | шведський стіл
+die Servicekraft; -e | service staff | обслуговуючий персонал
+präzise | precise | точний
+sachlich | objective / factual | об’єктивний
+neutral | neutral | нейтральний
+ausschließlich | exclusively | виключно
+das Gerücht; -e | rumor | чутка
+die Sitzung; -en | meeting | засідання
+mithilfe (von + D.) | with the help of | за допомогою
+der Entwurf; -e | draft | проект
+einen Entwurf erstellen | create a draft | створювати проект
+der Flyer; - | flyer | листівка
+die Visitenkarte; -n | business card | візитка
+die Aushilfskraft; -e | temporary worker | тимчасовий працівник
+die Sommersaison (Sg.) | summer season | літній сезон
+		5 Ein Teamgespräch führen
+abstimmen (über + A.) | coordinate / vote on | узгоджувати
+problematisch | problematic | проблемний
+		6 Welche Teamrolle haben Sie?
+das Ganze (Sg.) | the whole | ціле
+ausmachen | make up / determine | визначати
+die Schulung; -en | training | навчання
+sich aufteilen (in + D.) | divide into | ділитися на
+komplex | complex | складний
+per Zufall | by chance | випадково
+ein Ergebnis erzielen | achieve a result | досягати результату
+die Kompetenz; -en | competence | компетенція
+der Macher; - / die Macherin; -nen | doer / go-getter | людина, що робить
+ohne Rücksicht auf Verluste | regardless of losses | не зважаючи на втрати
+die Abwechslung; -en | variety | різноманітність
+sich festlegen lassen (auf + A.) | commit to | брати на себе зобов’язання
+improvisieren | improvise | імпровізувати
+die Flexibilität (Sg.) | flexibility | гнучкість
+die Experimentierfreude (Sg.) | willingness to experiment | прагнення експериментувати
+der/die Konservative; -n | conservative | консервативний
+über Bord werfen | throw overboard | відмовитися
+die Ausdauer (Sg.) | perseverance | витривалість
+die Treue (Sg.) | loyalty | вірність
+einen Gegenpol bilden (zu + D.) | form a counterbalance (to) | формувати противагу
+etwas in die Tat umsetzen | put something into practice | реалізувати
+systematisch | systematic | систематичний
+das Faktenwissen (Sg.) | factual knowledge | фактичні знання
+die Statistik; -en | statistics | статистика
+detailliert | detailed | детальний
+fasziniert (von + D.) | fascinated (by) | захоплений
+die Realität aus den Augen verlieren | lose sight of reality | втратити зв’язок з реальністю
+formal | formal | формальний
+die Vorgabe; -n | specification | вимога
+ignorieren | ignore | ігнорувати
+die Neugier (Sg.) | curiosity | допитливість
+die Innovation; -en | innovation | інновація
+das Wachstum (Sg.) | growth | ріст
+konstruktiv – destruktiv | constructive – destructive | конструктивний – деструктивний
+chaotisch – strukturiert | chaotic – structured | хаотичний – структурований
+traditionell – innovativ | traditional – innovative | традиційний – інноваційний
+gefühlsbetont – rational | emotional – rational | емоційний – раціональний
+voreilig | hasty | поспішний
+motivierend – demotivierend | motivating – demotivating | мотивуючий – демотивуючий
+provozierend – ausgleichend | provocative – balancing | провокативний – врівноважуючий
+pessimistisch – optimistisch | pessimistic – optimistic | песимістичний – оптимістичний
+einen Einblick bekommen (in + A.) | get an insight (into) | отримати уявлення
+jdn. freistellen (für + A.) | exempt someone (for) | звільнити від роботи
+	Kapitel 4 Tourismus
+		1 Kundenwünsche
+die Pauschalreise; -n | package tour | пакетний тур
+die Vollpension (Sg.) | full board | повний пансіон
+alles inklusive | all-inclusive | усе включено
+die Hotelanlage; -n | hotel complex | готельний комплекс
+die Reisegruppe; -n | tour group | туристична група
+		2 Reiseangebote
+das Angebot; -e | offer / deal | пропозиція
+sich erholen | relax / recuperate | відпочивати
+der Frühbucherrabatt; -e | early booking discount | знижка за раннє бронювання
+sich entscheiden | decide | вирішувати
+die Halbpension (Sg.) | half board | півпансіон
+das Erlebnis; -se | experience | враження
+sensationell | sensational | сенсаційний
+der Haken; - | hook / drawback | застереження
+die Gebühr; -en | fee | плата
+versteckte Gebühren | hidden fees | приховані платежі
+die Anzahlung; -en | deposit | аванс
+Ich wäre Ihnen dankbar … | I would be grateful … | Я був би вдячний …
+erreichbar | reachable / available | доступний
+		3 Verträge sind wichtig
+die Reiserücktrittsversicherung; -en | travel cancellation insurance | страховка від скасування поїздки
+eine Versicherung abschließen | take out insurance | оформляти страховку
+die Kosten (Pl.) | costs | витрати
+für die Kosten aufkommen | cover the costs | покривати витрати
+die allgemeinen Geschäftsbedingungen (AGBs) | general terms and conditions | загальні умови
+(eine Reise) stornieren | cancel (a trip) | скасувати поїздку
+buchen | book | бронювати
+im Krankheitsfall | in case of illness | у разі хвороби
+		4 Arbeiten, wenn andere Urlaub machen
+aufwachsen (in + D.) | grow up (in) | рости
+der Master; - | master’s degree | магістратура
+sich spezialisieren (auf + A.) | specialize (in) | спеціалізуватися
+betreuen | supervise / look after | доглядати / супроводжувати
+unterwegs sein | be on the move | бути в дорозі
+zur Verfügung stehen | be available | бути у розпорядженні
+anspruchsvoll | demanding | вимогливий
+das feste Einkommen | fixed income | стабільний дохід
+die Geschäftsleitung; -en | management | керівництво
+reibungslos | smooth / seamless | безперешкодний
+das Check-in/out | check-in/out | реєстрація / виїзд
+die Koordination (Sg.) | coordination | координація
+abwechslungsreich | varied / diverse | різноманітний
+begeistert | enthusiastic | захоплений
+die Begeisterung (Sg.) | enthusiasm | захоплення
+das Grundgehalt; -er | base salary | базова зарплата
+die Aufstiegsmöglichkeit; -en | promotion opportunity | можливість підвищення
+die Kreativität (Sg.) | creativity | креативність
+die Anerkennung (Sg.) | recognition | визнання
+todmüde | dead tired | дуже втомлений
+die Bezahlung (Sg.) | payment | оплата
+		5 Faris will beruflich weiterkommen
+die Anforderung; -en | requirement | вимога
+die Team- und Kommunikationsfähigkeit | team and communication skills | командні та комунікаційні навички
+die Bewerbungsunterlagen (Pl.) | application documents | документи для подачі на роботу
+vollständig | complete | повний
+		6 Berufsbild Reiseleiter/in – eine Satire
+das Berufsbild; -er | job profile | опис професії
+die Satire; -n | satire | сатира
+die Umbuchung; -en | rebooking | зміна бронювання
+selbstverständlich | of course / naturally | звичайно
+ausgebucht | fully booked | повністю заброньовано
+hoffnungslos | hopeless | безнадійний
+überbucht | overbooked | перевищена бронь
+zaubern | do magic | чарувати
+in der Lage sein | be able to | бути здатним
+die Rückkehr (Sg.) | return | повернення
+die Presse (Sg.) | press | преса
+körperlich | physical | фізичний
+psychisch | psychological | психічний
+therapeutisch | therapeutic | терапевтичний
+alles im Griff haben | have everything under control | мати все під контролем
+der Sinn des Lebens | meaning of life | сенс життя
+dienen | serve | служити
+gut umgehen können (mit + D.) | be able to handle well | вміти добре справлятися
+die Präsentation; -en | presentation | презентація
+der Vortrag; -e | lecture / talk | доповідь
+sicherlich | certainly | безумовно
+abschließend | finally / concluding | підсумково
+die Aufmerksamkeit | attention | увага
+sich lohnen | be worthwhile | варто
+verzweifelt | desperate | відчайдушний
+die Verspätung; -en | delay | затримка
+der Anschlusszug; -e | connecting train | поїзд-пересадка
+die Kündigungsfrist; -en | notice period | строк попередження про звільнення
+die Arbeitsbedingungen (Pl.) | working conditions | умови праці
+die Gewerkschaft; -en | trade union | профспілка
+beitreten, trat bei, ist beigetreten | join | вступати
+jmd. beraten | advise someone | консультувати
+	Kapitel 5 Aktiv im Handwerk
+		1 Handwerkliche Berufe
+(Boden/Stromleitungen) verlegen | lay (floor / electrical lines) | укладати (підлогу / електропроводку)
+nähen | sew | шити
+die Dichtung; -en | seal / gasket | ущільнення
+auswechseln | replace | замінювати
+(eine Steckdose) anbringen | install (a socket) | встановлювати (розетку)
+tapezieren | wallpaper | клеїти шпалери
+der Schraubenzieher; - | screwdriver | викрутка
+Metallstücke zusammenschweißen | weld metal pieces together | зварювати металеві деталі
+das Dach decken | roof | накривати дах
+Waschbecken montieren | install sink | встановлювати умивальник
+die Nadel; -n | needle | голка
+der Faden; - | thread | нитка
+der Stoff; -e | fabric | тканина
+das Maßband; -er | measuring tape | рулетка
+defekt | defective | несправний
+das Abflussrohr; -e | drainpipe | водостічна труба
+		2 Im Baumarkt
+der Baumarkt; -e | DIY store | будівельний магазин
+der Umgang (mit + D.) | handling (with) | поводження
+speziell (für + A.) | specially (for) | спеціально
+das Konzept; -e | concept | концепція
+für sich sprechen | speak for itself | говорити саме за себе
+sich fest etablieren | establish oneself | утвердитися
+sich eintragen (für + A.) | register for | зареєструватися
+etwas zur Verfügung stellen | provide something | надавати щось
+das Niveau; -s | level | рівень
+der Fortbildungsbedarf; -e | need for further training | потреба у підвищенні кваліфікації
+		3 Das ist schon erledigt!
+den Teppich reinigen | clean the carpet | чистити килим
+zuschneiden, schnitt zu, hat zugeschnitten | cut | вирізати
+das Preisschild; -er | price tag | цінник
+erneuern | renew | оновлювати
+(einen Fleck) entfernen | remove (a stain) | видаляти (пляму)
+		4 Können Sie mir helfen?
+der Heimwerker; - / die Heimwerkerin; -nen | DIY enthusiast | майстер-любитель
+der Notdienst; -e | emergency service | аварійна служба
+(Hilfe) benötigen | need (help) | потребувати (допомоги)
+die Montage (Sg.) | assembly / installation | монтаж
+die Montageanleitung; -en | installation manual | інструкція монтажу
+der Geldbeutel; - (Süddeutsch) | wallet | гаманець
+allein klarkommen, kam klar, ist klargekommen | manage on one’s own | справлятися самостійно
+der Haupthahn; -e | main valve | головний кран
+zudrehen | turn off | закривати
+(Wasser) ablassen | drain (water) | зливати воду
+das Ventil; -e | valve | клапан
+(ein Baby) wickeln | change (a baby’s) diaper | міняти підгузок
+abdecken | cover | накривати
+die Klappe; -n | flap / hatch | кришка
+		5 Das kann man besser machen
+die Grundlage legen (für + A.) | lay the foundation (for) | закладати основу
+intern – extern | internal – external | внутрішній – зовнішній
+der Arbeitsbereich; -e | work area | робоча зона
+das Mobbing (Sg.) | bullying | цькування
+ausgerechnet dann, wenn … | of all times, when … | саме тоді, коли …
+vor Ort | on site | на місці
+vereinfachen | simplify | спрощувати
+verbilligen | reduce the cost | здешевлювати
+die Instandhaltung (Sg.) | maintenance | обслуговування
+die Wartung (Sg.) | servicing | технічне обслуговування
+senken | reduce | знижувати
+die Eingangsbestätigung; -en | confirmation of receipt | підтвердження отримання
+sorgfältig | carefully | ретельно
+(einen Vorschlag) umsetzen | implement (a proposal) | реалізувати пропозицію
+		6 Die Zukunft des Handwerks
+unterkommen (in + D.) | find accommodation / get a place (in) | розміститися
+unternehmen, unternahm, hat unternommen | undertake | здійснювати
+sich fit machen (für + A.) | prepare oneself (for) | готувати себе
+die duale Ausbildung | dual training / apprenticeship | дуальна освіта
+durchlaufen, durchlief, hat durchlaufen | go through | проходити
+einen guten Ruf haben | have a good reputation | мати хорошу репутацію
+der Ausbildungsbetrieb; -e | training company | навчальне підприємство
+die Berufsschule; -n | vocational school | професійна школа
+der Schulabgänger; - / die Schulabgängerin; -nen | school leaver | випускник школи
+durchführen | carry out / execute | проводити
+etwas überdenken | reconsider something | переглядати
+sich überzeugen (von + D.) | convince oneself | переконатися
+der/die Geflüchtete; -n | refugee | біженець
+jdm. etwas ermöglichen | enable someone to do something | давати можливість
+nachhaltig | sustainable | стійкий / сталий
+sanieren | renovate / refurbish | ремонтувати
+umgehen (mit + D.). ging um, ist umgegangen | handle / deal with | поводитися з
+eingeschränkt | limited | обмежений
+überlaufen, lief über, ist übergelaufen | overflow | переливатися
+unpraktisch | impractical | непрактичний
+digital | digital | цифровий
+etw. umgehen, umging, hat umgangen | bypass something | обходити
+die Messung; -en | measurement | вимірювання
+die Auswirkung; -en | effect / impact | вплив
+Auswirkungen haben (auf + A.) | have effects (on) | мати вплив на
+widersprechen, widersprach, hat widersprochen | contradict | заперечувати
+jdn. unter Druck setzen | put someone under pressure | тиснути на когось
+das Design; -s | design | дизайн
+umarmen | hug / embrace | обіймати
+die Kosten überschlagen (für + A.) | estimate costs (for) | підраховувати витрати
+	Kapitel 6 Arbeit in der Metropolregion
+		1 Eine Region in Südwestdeutschland
+die Region; -en | region | регіон
+das Industrieunternehmen; - | industrial company | промислове підприємство
+der öffentliche Nahverkehr (Sg.) | public transport | громадський транспорт
+der Aspekt; -e | aspect | аспект
+die Werkstatt; -en | workshop | майстерня
+das Rathaus; -er | town hall | ратуша
+		2 Eine Reportage
+der Lottogewinn; -e | lottery win | виграш у лотерею
+wirtschaftlich | economic | економічний
+sich Gedanken machen (über + A.) | think about | думати про
+demografisch | demographic | демографічний
+die Entwicklung; -en | development | розвиток
+einheimisch | native / local | місцевий
+die Bevölkerung; -en | population | населення
+die Zuwanderung; -en | immigration | імміграція
+die duale Hochschule; -en | dual university | дуальний університет
+die Fahrzeit; -en | travel time | час у дорозі
+in Kauf nehmen | accept / put up with | погоджуватися на
+das Freibad; -er | outdoor swimming pool | відкритий басейн
+vielfältig | diverse | різноманітний
+das Freizeitangebot; -e | leisure facilities / activities | пропозиції для відпочинку
+knapp sein/werden | be scarce / become scarce | бути обмеженим
+die Kosten tragen (für + A.) | bear the costs (for) | покривати витрати
+Einfluss nehmen (auf + A.) | exert influence (on) | впливати на
+jmd. Hilfe leisten | provide someone with help | надавати допомогу
+etwas kostet Zeit und Kraft | something costs time and effort | щось потребує часу та сил
+jmd. unterstützen | support someone | підтримувати когось
+ein Gespräch führen | conduct a conversation | вести розмову
+die Studiengebühren (Pl.) | tuition fees | плата за навчання
+der Arbeitsmarkt; -e | labor market | ринок праці
+		3 Haki Jelimo bewirbt sich
+das duale Studium | dual study program | дуальне навчання
+die Ausbildungsdauer (Sg.) | duration of training | тривалість навчання
+mithilfe von | with the help of | за допомогою
+überzeugt (von + D.) | convinced (of) | переконаний
+beiliegende Zeugnisse | attached certificates | додані свідоцтва
+der Schwerpunkt; -e | focus / emphasis | спеціалізація
+die Semesterferien (Pl.) | semester holidays | семестрові канікули
+der Bereich; -e | area / field | сфера
+der Bedarf (Sg.) | need / demand | потреба
+der Markt; -e | market | ринок
+beruflich/ehrenamtlich tätig sein | work professionally / voluntarily | працювати професійно / добровільно
+überdurchschnittlich – unterdurchschnittlich | above average – below average | вище середнього – нижче середнього
+		4 Haki hat die Stelle bekommen!
+der Arbeitsvertrag; -e | employment contract | трудовий договір
+die Laufzeit; -en | duration / term | строк
+die Laufzeit des Vertrags | contract term | термін дії договору
+der Vertragsbeginn (Sg.) | start of contract | початок дії договору
+innerhalb – außerhalb | within – outside | всередині – поза
+die Vergütung; -en | remuneration / pay | винагорода
+betragen, betrug, hat betragen | amount to | становити
+betrieblich | operational / company-related | виробничий / корпоративний
+sich verpflichten (zu +D.) | commit oneself (to) | зобов’язуватися
+das Ausscheiden (Sg.) | leaving / termination | вихід / завершення
+die Bescheinigung; -en | certificate | довідка
+die Änderung; -en | change / amendment | зміна
+		5 Haki lernt die Region kennen
+die Körperpflege (Sg.) | personal hygiene | догляд за тілом
+wetterfest | weatherproof | захищений від погоди
+geheimnisvoll | mysterious | таємничий
+weltberühmt | world-famous | всесвітньо відомий
+die Ruine | ruin | руїна
+altersmäßig | regarding age | за віком
+die Begrenzung; -en | limitation / boundary | обмеження
+sich richten (an + A.) | be aimed at | орієнтуватися на
+die Überbrückung; -en | bridging / interim | тимчасове вирішення
+der Druck (Sg.) | pressure | тиск
+das Motiv; -e | motive | мотив
+die Methode; -n | method | метод
+wertvoll – wertlos | valuable – worthless | цінний – безцінний
+	Kapitel 7 Berufe im Gesundheitswesen
+		1 Was bedeutet für Sie Gesundheit?
+die Grippe (Sg.) | flu / influenza | грип
+der Durchfall (Sg.) | diarrhea | діарея
+der Krebs (Sg.) | cancer | рак
+die Arznei; -en | medicine | ліки
+die Kapsel; -n | capsule | капсула
+das Antibiotikum, Antibiotika | antibiotic | антибіотик
+der Masseur; -e / die Masseurin; -nen | masseur / masseuse | масажист / масажистка
+der Logopäde; -n / die Logopädin; -nen | speech therapist | логопед
+der Orthopäde; -en / die Orthopädin; -nen | orthopedist | ортопед
+die Diagnose; -n | diagnosis | діагноз
+jemandem assistieren | assist someone | допомагати комусь
+anleiten | instruct / guide | керувати / наставляти
+jemandem etwas verschreiben | prescribe something to someone | призначати комусь
+		2 Die Pflegerin Wanda Semionova hat Rückenschmerzen. Was kann sie tun?
+fördern | promote / support | сприяти
+ansteckend | contagious | заразний
+die Früherkennung (Sg.) | early detection | раннє виявлення
+der Gesundheitscheck; -s | health check | медичний огляд
+der Impfpass; -e | vaccination card | картка щеплень
+die Vorsorge (Sg.) | preventive care | профілактика
+die Übertreibung; -en | exaggeration | перебільшення
+psychisch | psychological | психічний
+das Gleichgewicht (Sg.) | balance | рівновага
+die Basis (Sg.) | basis / foundation | основа
+		3 Ein Interview mit einem Krankenpfleger
+akut | acute | гострий
+ambulant | outpatient | амбулаторний
+stationär | inpatient | стаціонарний
+die Lungenentzündung; -en | pneumonia | пневмонія
+der Pflegebericht; -e | care report | звіт про догляд
+die Übergabe; -n | handover | передача
+das Hospiz; -e | hospice | хоспіс
+angewiesen sein (auf + A.) | be dependent (on) | бути залежним
+verpflichtend | mandatory | обов’язковий
+beabsichtigen | intend | мати намір
+befürchten | fear | боятися
+bedauern | regret | шкодувати
+liebevoll | loving / caring | турботливий
+Wert legen (auf + A.) | value (something) | надавати значення
+		4 Ein Arbeitstag in der Pflege
+die Tour; -en | round / shift | обхід / зміна
+der Kreislauf (Sg.) | circulation | кровообіг
+der Blutdruck (Sg.) | blood pressure | кров’яний тиск
+der Puls (Sg.) | pulse | пульс
+der Vorrat; -e | supply | запас
+aggressiv | aggressive | агресивний
+die Pflegekraft; -e | caregiver / nurse | медсестра / доглядальник
+etwas in den Griff bekommen | get something under control | справитися з чимось
+		5 Der Pflegebericht
+die Fakten (Pl.) | facts | факти
+subjektiv ≠ objektiv | subjective ≠ objective | суб’єктивний ≠ об’єктивний
+die Einschätzung; -en | assessment | оцінка
+jemanden antreffen | meet someone | зустріти когось
+klagen (über + A.) | complain (about) | скаржитися
+der Schwindel (Sg.) | dizziness | запаморочення
+jemanden verständigen | inform someone | повідомити когось
+eintreffen | arrive | прибувати
+jemanden motivieren (zu + D.) | motivate someone (to) | мотивувати когось
+		6 Vereinfache dein Leben
+die Stufe; -n | step / level | рівень / щабель
+durchschnittlich | average | середній
+die Klarheit (Sg.) | clarity | ясність
+das Durcheinander (Sg.) | mess / confusion | безлад
+der Kontostand; -e | account balance | баланс рахунку
+die Schulden (Pl.) | debts | борги
+das Darlehen; - | loan | пози́ка
+sich drehen (um + A.) | revolve around | обертатися навколо
+verdrängen | suppress | витісняти
+langfristig | long-term | довгостроковий
+der Streit (Sg.) | quarrel | сварка
+der Neid (Sg.) | envy | заздрість
+die Überzeugung; -en | conviction | переконання
+jemandem begegnen | encounter someone | зустрітися з кимось
+die Feststellung; -en | finding / observation | висновок
+zwangsläufig | inevitable | неминучий
+die Belastung; -en | strain / burden | навантаження
+das Prinzip; -ien | principle | принцип
+die Beschleunigung (Sg.) | acceleration | прискорення
+die Entschleunigung (Sg.) | deceleration / slowing down | уповільнення
+die Einstellung; -en (zu + D.) | attitude (towards) | ставлення
+unnötig | unnecessary | непотрібний
+die Podiumsdiskussion; -en | panel discussion | панельна дискусія
+der Vertreter; - / die Vertreterin; -nen | representative | представник / представниця
+sich beschränken (auf + A.) | limit oneself (to) | обмежуватися
+die Work-Life-Balance (Sg.) | work-life balance | баланс роботи та життя
+grundlegend | fundamental | базовий
+die Revolution; -en | revolution | революція
+zum Ausgleich | for balance | для врівноваження
+etwas als … betrachten | consider something as … | вважати щось …
+permanent | permanent | постійний
+überlastet sein | be overworked / overwhelmed | бути перевантаженим
+das Homeoffice; -s | home office | домашній офіс
+sich eine Existenz aufbauen | build a livelihood | будувати життя
+aus meiner Sicht | from my perspective | на мою думку
+	Kapitel 8 In der Gastronomie
+		1 Kochen und essen
+das Gericht; -e | dish | страва
+mild ≠ scharf | mild ≠ spicy | м’який ≠ гострий
+		2 Vielfalt des Angebots
+die silberne Hochzeit; -en | silver wedding anniversary | срібне весілля
+gewürzt | seasoned | приправлений
+kompetent | competent | компетентний
+die Sorgfalt (Sg.) | care / diligence | уважність
+vegan | vegan | веганський
+der Allergiker; - / die Allergikerin; -nen | allergy sufferer | алергік
+der Liebhaber; - / die Liebhaberin; -nen | enthusiast / lover | любитель
+erstklassig | first-class / excellent | першокласний
+die Zutat; -en | ingredient | інгредієнт
+umfangreich | extensive | широкий / різноманітний
+der Genuss; -e | enjoyment | насолода
+zeitgemäß | contemporary | сучасний
+der Trend; -s | trend | тенденція
+knusprig | crispy | хрусткий
+cremig | creamy | кремовий
+reichhaltig | rich / substantial | поживний / насичений
+bewährt | proven | перевірений
+würzig | flavorful / spicy | пряний
+das Ambiente (Sg.) | ambiance | атмосфера
+der Speisesaal; -e | dining hall | їдальня
+bewerten | evaluate / rate | оцінювати
+die Bewertung; -en | evaluation / rating | оцінка
+der Pluspunkt; -e | advantage / plus point | перевага
+aromatisch | aromatic | ароматний
+sich etwas gönnen | treat oneself to something | дозволити собі щось
+abwechslungsreich | varied | різноманітний
+die Portion; -en | portion | порція
+der Gang; -e | course (meal) | страва (під час трапези)
+zuverlässig | reliable | надійний
+schwören (auf + A.) | swear by | покладатися на
+		3 Im Kochkurs
+der Topf; -e | pot | каструля
+die Pfanne; -n | pan | сковорода
+das Backblech; -e | baking tray | деко
+die Schüssel; -n | bowl | миска
+das Sieb; -e | sieve / strainer | сито
+die Waage; -n | scale | ваги
+die Pfeffermühle; -n | pepper mill | млинок для перцю
+der Salzstreuer; - | salt shaker | солонка
+die Knoblauchpresse; -n | garlic press | прес для часнику
+der Mixer; - | blender | міксер
+abwiegen | weigh | відважувати
+reiben | grate / rub | терти
+rühren | stir | перемішувати
+braten | fry / roast | смажити
+schälen | peel | чистити
+zäh | tough | жорсткий
+die Schürze; -n | apron | фартух
+		4 Berufe rund ums Essen
+etwas vermitteln | convey something | передавати
+vorausdenken | think ahead | передбачати
+verantwortungsvoll | responsible | відповідальний
+erfahren | experienced | досвідчений
+eigenverantwortlich | self-responsible | самостійний
+serviceorientiert | service-oriented | орієнтований на обслуговування
+engagiert | committed | залучений
+belastbar | resilient | витривалий
+die Flexibilität (Sg.) | flexibility | гнучкість
+die Teamfähigkeit (Sg.) | teamwork ability | здатність працювати в команді
+die Geschicklichkeit (Sg.) | dexterity / skill | вправність
+das Durchsetzungsvermögen (Sg.) | assertiveness | наполегливість
+die Vollständigkeit (Sg.) | completeness | повнота
+der Verbrauch (Sg.) | consumption | споживання
+die Instandhaltung (Sg.) | maintenance | обслуговування
+durchführen | carry out / perform | виконувати
+zuständig sein (für + A.) | be responsible (for) | відповідати за
+achten (auf + A.) | pay attention to | звертати увагу на
+umgehen (mit + D.) | deal with | поводитися з
+Ruhe bewahren | keep calm | зберігати спокій
+die Kompetenz; -en | competence | компетентність
+einen Beruf ausüben | practice a profession | виконувати професію
+eröffnen | open / start | відкривати
+der Einzelhandel (Sg.) | retail trade | роздрібна торгівля
+aussagekräftig | meaningful / expressive | змістовний
+seither | since then | з тих пір
+aufgeschlossen | open-minded | відкритий
+verderben | spoil | псувати
+vorrätig sein | be in stock | бути в наявності
+		5 Die Lieferung
+die Lieferung; -en | delivery | доставка
+die Bestellung; -en | order | замовлення
+prüfen | check / verify | перевіряти
+vereinbaren | agree on / arrange | домовлятися
+akzeptabel | acceptable | прийнятний
+der Lieferschein; -e | delivery note | накладна
+vermerken | note / record | відзначати
+stattdessen | instead | замість цього
+auf den Markt kommen | come to market | виходити на ринок
+benötigen | need / require | потребувати
+die Lieferzeit; -en | delivery time | час доставки
+der Vertriebsleiter; - / die Vertriebsleiterin; -nen | head of sales | керівник відділу продажів
+		6 Erfolgreich verhandeln
+erfolgreich | successful | успішний
+der Verhandlungspartner; - / die Verhandlungspartnerin; -nen | negotiation partner | партнер по переговорах
+der Konflikt; -e | conflict | конфлікт
+ausweichen | avoid | уникати
+die Forderung; -en | demand | вимога
+fordern | demand | вимагати
+bestehen (in + D.) | consist (in) | складатися в
+unglaubwürdig | unbelievable / unreliable | неправдоподібний
+das Selbstbewusstsein (Sg.) | self-confidence | самовпевненість
+schweigen | be silent | мовчати
+Stellung beziehen | take a position | зайняти позицію
+der Standpunkt; -e | standpoint | точка зору
+jemanden in eine Rolle drängen | push someone into a role | штовхати когось у роль
+die Ausdauer (Sg.) | perseverance | витривалість
+nachgeben | give in | поступатися
+sich einstellen (auf + A.) | adjust / adapt | пристосовуватися
+nachfragen | inquire / ask | уточнювати
+sich erkundigen | inquire | дізнаватися
+	Kapitel 9 Handel international
+		1 Handel früher und heute
+die Dienstleistung; -en | service | послуга
+expandieren | expand | розширюватися
+der Export; -e | export | експорт
+exportieren | export | експортувати
+global ≠ lokal | global ≠ local | глобальний ≠ локальний
+der Großhandel (Sg.) | wholesale | оптова торгівля
+die Kundenorientierung (Sg.) | customer orientation | орієнтація на клієнта
+der Markt; -e | market | ринок
+die Marktlücke; -n | market gap | ніша на ринку
+die Nachfrage (Sg.) | demand | попит
+die Nachhaltigkeit (Sg.) | sustainability | стійкість
+online ≠ offline | online ≠ offline | онлайн ≠ офлайн
+die Produktion (Sg.) | production | виробництво
+der Umsatz; -e | turnover / sales | обсяг продажів
+der Umweltstandard; -s | environmental standard | екологічний стандарт
+die Währung; -en | currency | валюта
+der Wechselkurs; -e | exchange rate | валютний курс
+die Zielgruppe; -n | target group | цільова аудиторія
+		2 Handel im Netz
+die Mimik (Sg.) | facial expression | міміка
+die Gestik (Sg.) | gestures | жести
+der Webauftritt; -e | web presence | веб-присутність
+etwas/jemanden schätzen | value something / someone | цінувати
+gut ankommen | be well received | добре сприйматися
+indem | by (doing) | шляхом
+universell | universal | універсальний
+ohne … dass | without … that | без того, щоб
+potenziell | potential | потенційний
+etwas ausgleichen | balance something | компенсувати
+visuell | visual | візуальний
+der Effekt; -e | effect | ефект
+freizügig | liberal / revealing | вільний / відкритий
+provozieren | provoke | провокувати
+die Geste; -n | gesture | жест
+die Beleidigung; -en | insult | образа
+ohne zu … | without …ing | без …
+recherchieren | research | досліджувати
+vertikal ≠ horizontal | vertical ≠ horizontal | вертикально ≠ горизонтально
+sich zurechtfinden | find one's way | орієнтуватися
+freischalten | activate / enable | активувати
+etwas herausfinden | find out something | дізнатися
+der Faktor; -en | factor | фактор
+bewusst | conscious / deliberate | свідомий
+berücksichtigen | consider / take into account | враховувати
+anpassungsfähig | adaptable | здатний адаптуватися
+etwas umsetzen | implement / carry out | реалізовувати
+der Konsument; -en / die Konsumentin; -nen | consumer | споживач
+die Zuwachsrate; -n | growth rate | темп зростання
+		3 Telefonat mit IQ-Web
+das Bauteil; -e | component / part | компонент
+die Wunschliste; -n | wish list | список побажань
+(eine Ware) vertreiben | distribute (goods) | розповсюджувати товар
+das Budget; -s | budget | бюджет
+		4 Das war nicht optimal
+installieren | install | встановлювати
+der Mangel; - | defect / shortage | дефект / нестача
+einen Ablauf darstellen | illustrate a process | показати процес
+die Grundlage; -n | basis / foundation | основа
+etwas festlegen | set / determine something | визначати
+einen Entwurf erstellen | create a draft | скласти проєкт
+kommentieren | comment | коментувати
+überarbeiten | revise | переглядати
+korrigieren | correct | виправляти
+die Überarbeitung; -en | revision | редагування
+die Benutzerfreundlichkeit (Sg.) | user-friendliness | зручність для користувача
+die Lesbarkeit (Sg.) | readability | читабельність
+vollständig | complete | повний
+(einen Fehler) beseitigen | eliminate (a mistake) | усувати помилку
+die Erprobungsphase; -n | testing phase | фаза тестування
+einen Termin halten | keep an appointment | дотримуватися терміну
+gelten | apply / be valid | застосовуватися
+jemanden auffordern | request / ask someone | просити когось
+		5 Wir über uns
+vor Ort | on site | на місці
+montieren | assemble | монтувати
+ausliefern | deliver | доставляти
+vernetzen | network / connect | з’єднувати
+untereinander vernetzt | interconnected | взаємопов’язаний
+einzigartig | unique | унікальний
+nachhaltig | sustainable | стійкий
+beliefern | supply / deliver | постачати
+kontinuierlich | continuously | безперервно
+gründlich | thoroughly | ґрунтовно
+der Einsatz; -e | effort / use | застосування / витрати
+die Zuständigkeit; -en | responsibility / competence | відповідальність
+basieren (auf + D.) | be based on | базуватися на
+der gemeinsame Nenner | common denominator | спільна основа
+das Bedürfnis; -se | need / requirement | потреба
+ineinander greifen | interlock / coordinate | взаємодіяти
+der Energieverbrauch (Sg.) | energy consumption | енергоспоживання
+die Haltbarkeit (Sg.) | durability | довговічність
+die Geschäftsführung; -en | management | керівництво
+die Steuerung; -en | control / management | керування
+die Forschung; -en | research | дослідження
+der Datenschutz (Sg.) | data protection | захист даних
+die Gleichstellung (Sg.) | equality | рівність
+der Arbeitsschutz (Sg.) | occupational safety | охорона праці
+die Finanzen (Pl.) | finances | фінанси
+	Kapitel 10 Rechte und Pflichten
+		1 Eine neue Arbeitsstelle – viele Fragen
+das Homeoffice (Sg.) | home office | робота з дому
+die Kernzeit (Sg.) | core working hours | основний робочий час
+die Gleitzeit (Sg.) | flexitime | гнучкий робочий час
+die Teilzeit (Sg.) | part-time | неповний робочий день
+die Vollzeit (Sg.) | full-time | повний робочий день
+der Notfall; -e | emergency | надзвичайна ситуація
+etwas frei wählen | choose something freely | вибирати щось самостійно
+übrigbleiben (von + D.) | remain / be left over | залишатися
+brutto | gross | брутто
+netto | net | нетто
+die Personalabteilung; -en | HR department | відділ кадрів
+der Versicherungsbeitrag; -beiträge | insurance contribution | страховий внесок
+der Hort; -e | daycare / after-school care | дитячий садок
+		2 Davi Fendelas Arbeitsvertrag
+der Arbeitgeber; - | employer | роботодавець
+die Arbeitgeberin; -nen | employer (f.) | роботодавиця
+der Arbeitnehmer; - | employee | працівник
+die Arbeitnehmerin; -nen | employee (f.) | працівниця
+das Arbeitsverhältnis; -se | employment relationship | трудові відносини
+die Probezeit; -en | probationary period | випробувальний термін
+die Frist; -en | deadline / period | термін
+kündigen | terminate / resign | звільнитися / розірвати
+zumutbar | reasonable / acceptable | прийнятний
+die Vergütung; -en | remuneration | оплата праці
+die Bruttovergütung; -en | gross salary | брутто-зарплата
+die Berücksichtigung (Sg.) | consideration | врахування
+Anspruch haben auf | be entitled to | мати право на
+(sich/etwas) abstimmen (mit + D.) | coordinate / align with | погоджуватися
+(sich/etwas) absprechen (mit + D.) | agree / arrange with | домовлятися
+die Phase; -n | phase | етап
+vertraglich geregelt | contractually regulated | регульований контрактом
+die Tätigkeit; -en | activity / task | діяльність
+		3 Vertragssprache
+das Gesetz; -e | law | закон
+der Tarifvertrag; -e | collective agreement | колективний договір
+die Betriebsvereinbarung; -en | company agreement | угода підприємства
+etwas regeln | regulate something | врегульовувати
+die Vereinbarung; -en | agreement | домовленість
+die Branche; -n | industry / sector | галузь
+der Betriebsrat; -e | works council | рада підприємства
+die Nebentätigkeit; -en | secondary activity / side job | підробіток
+die Kündigung; -en | termination / dismissal | звільнення
+jemanden einstellen | hire someone | приймати на роботу
+regulär | regular | звичайний
+etwas anordnen | order / instruct | наказувати
+verpflichtet sein | be obliged | бути зобов’язаним
+spätestens | at the latest | не пізніше
+die Vertragsdauer (Sg.) | contract duration | тривалість контракту
+der Arbeitsvertrag; -e | employment contract | трудовий контракт
+		4 Regeln im Betrieb
+der Gruppenleiter; - | group leader | керівник групи
+die Gruppenleiterin; -nen | group leader (f.) | керівниця групи
+pünktlich erscheinen | arrive on time | приходити вчасно
+eine Lösung finden | find a solution | знайти рішення
+sich etwas (nicht) gefallen lassen | (not) tolerate something | (не) терпіти щось
+die Personalakte; -n | personnel file | особова справа
+wegen (+ G.) | because of | через
+der Gewissenskonflikt; -e | conflict of conscience | конфлікт сумління
+die Auftragslage (Sg.) | order situation | ситуація з замовленнями
+etwas selbst bestimmen | determine something oneself | вирішувати самостійно
+die Dienstbekleidung; -en | work clothing / uniform | робочий одяг
+innerhalb (+ G.) | within | протягом
+außerhalb (+ G.) | outside | поза
+anstelle von (+ D.) | instead of | замість
+anlässlich (+ G.) | on the occasion of | з нагоди
+trotz (+ G.) | despite | незважаючи на
+der/das Startup; -s | startup | стартап
+verpachten | lease out | передавати в оренду
+		5 Gespräche mit Vorgesetzten
+die Arbeitsbedingungen (Pl.) | working conditions | умови праці
+die Gruppenleitung; -en | team management | керівництво групою
+der Gehaltswunsch; -e | desired salary | бажана зарплата
+die Arbeitsbelastung; -en | workload | робоче навантаження
+der Tarif; -e | pay scale / tariff | тариф
+über/unter Tarif bezahlen | pay above/below tariff | платити вище/нижче тарифу
+Urlaub nehmen | take vacation | брати відпустку
+		6 Kündigung
+jemandem droht die Kündigung | someone faces dismissal | комусь загрожує звільнення
+das Mobbing (Sg.) | bullying / harassment | цькування
+die Diskriminierung (Sg.) | discrimination | дискримінація
+jemanden entlassen | dismiss someone | звільнити когось
+die Kündigungsfrist; -en | notice period | строк попередження про звільнення
+stehlen | steal | красти
+die Belästigung; -en | harassment | домагання
+sexuell | sexual | сексуальний
+jemanden mobben | bully someone | цькувати когось
+die Betriebsversammlung; -en | company meeting | збори підприємства
+sich schonen | take it easy / rest | берегти себе
+		7 Arbeitsschutz
+schwanger sein | be pregnant | бути вагітною
+das Mutterschaftsgeld (Sg.) | maternity pay | допомога по вагітності
+Zeitungen austragen | deliver newspapers | розносити газети
+die Kinderarbeit (Sg.) | child labor | дитяча праця
+die Schwerarbeit (Sg.) | heavy work | важка праця
+der Gesundheitsschutz (Sg.) | health protection | охорона здоров’я
+die Ruhezeit; -en | rest period | час відпочинку
+die Gewerkschaft; -en | labor union | профспілка
+übermäßig | excessive | надмірний
+ätzend | caustic / unpleasant | різкий / неприємний
+die Schutzbrille; -n | safety glasses | захисні окуляри
+die Einmalhandschuhe (Pl.) | disposable gloves | одноразові рукавички
+die Hygiene (Sg.) | hygiene | гігієна
+desinfizieren | disinfect | дезінфікувати
+der Beitrag; -e | contribution / post | внесок
+	Kapitel 11 Arbeit und neue Medien
+		1 Alles digital
+digital | digital | цифровий
+anklicken | click | натискати
+herunterladen | download | завантажувати
+hochfahren | boot up / start up | запускати
+posten | post | публікувати
+twittern | tweet | твітити
+speichern | save | зберігати
+		2 Einen Monat offline
+verzichten (auf + A.) | do without / give up | відмовлятися від
+schwerfallen | be difficult / hard | даватися важко
+kommunizieren (mit + D.) | communicate (with) | спілкуватися
+je … desto / umso … | the … the … | чим … тим …
+zurückkehren | return | повертатися
+deuten | interpret / indicate | тлумачити
+sich blamieren | embarrass oneself | потрапити в незручну ситуацію
+lauschen | listen in / eavesdrop | підслуховувати
+vibrieren | vibrate | вібрувати
+übertragen | transmit / broadcast | передавати
+auf sich selbst gestellt sein | be on one’s own | бути сам на сам
+kurzfristig | short-term / short notice | короткостроково
+sich etwas zulegen | get oneself something | придбати щось
+scheitern | fail | зазнати невдачі
+in Betrieb nehmen | put into operation | запускати в експлуатацію
+sich rechtfertigen | justify oneself | виправдовуватися
+überprüfen | check / verify | перевіряти
+vernetzt | networked | взаємопов’язаний
+vertraut sein (mit + D.) | be familiar with | бути знайомим з
+		3 Mediennutzung
+stammen (aus/von + D.) | come from / originate | походити з
+die Untersuchung; -en | study / investigation | дослідження
+der/die Befragte; -n | respondent | респондент
+die Hälfte; -n | half | половина
+das Drittel; - | third | третина
+an erster/letzter Stelle stehen | be in first/last place | стояти на першому/останньому місці
+sich etwas vornehmen, nahm… vor, hat … vorgenommen | plan / set out to do something | планувати щось
+etwas durchhalten | persevere / endure | витримувати
+bewusst | conscious / deliberate | свідомий
+die Umfrage; -n | survey | опитування
+		4 Dana und der Drucker
+reklamieren | complain / claim | пред’являти претензію
+die Reklamation; -en | complaint | рекламація
+die Voraussetzung; -en | requirement / prerequisite | умова / передумова
+die Abholung; -en | pickup / collection | забір / отримання
+Bezug nehmen (auf + A.) | refer to | посилатися на
+in Erfahrung bringen | find out / learn | дізнаватися
+in Anspruch nehmen | make use of / utilize | користуватися
+einen Auftrag erteilen | place an order | давати доручення
+einen Fehler beheben | fix / correct a mistake | усувати помилку
+sich in Verbindung setzen (mit + D.) | get in touch with | зв’язатися з
+in Betracht kommen | come into consideration | брати до уваги
+bestätigen | confirm | підтверджувати
+benachrichtigen | notify | повідомляти
+defekt | defective / broken | несправний
+einwandfrei | flawless / perfect | бездоганний
+bedauern | regret | шкодувати
+die Sendung; -en | shipment / broadcast | посилка / передача
+umgehend | immediately | негайно
+der Kostenvoranschlag; -e | cost estimate | кошторис
+andernfalls | otherwise | інакше
+der Versandhandel (Sg.) | mail order | поштовий продаж
+		5 Gut vernetzt
+mithilfe | with the help of | за допомогою
+fest angestellt | permanently employed | постійно працевлаштований
+die Initiativ-Bewerbung; -en | speculative application | ініціативна заявка
+das Netzwerk; -e | network | мережа
+gezielt | targeted | цілеспрямований
+der Aufwand (Sg.) | effort / expenditure | витрати / зусилля
+optimieren | optimize | оптимізувати
+in Kontakt bleiben (mit +D.) | stay in contact | підтримувати контакт
+veröffentlichen | publish | публікувати
+zugehen (auf + A.) | approach / reach out to | наближатися / звертатися
+die Gemeinsamkeit; -en | commonality | спільне
+der Eindruck; -e | impression | враження
+die Überwindung (Sg.) | overcoming / conquering | подолання
+sich lohnen | be worthwhile | бути варто
+die Umsetzung; -en | implementation | реалізація
+vermischen | mix / blend | змішувати
+jemanden von einem Plan abbringen | dissuade someone from a plan | відговорити від плану
+	Kapitel 12 Global arbeiten und leben
+		1 Aspekte der Globalisierung
+der Krieg; -e ≠ der Frieden (Sg.) | war ≠ peace | війна ≠ мир
+die Verständigung (Sg.) | understanding / communication | взаєморозуміння
+die Identität; -en | identity | ідентичність
+die Armut (Sg.) ≠ der Reichtum (Sg.) | poverty ≠ wealth | бідність ≠ багатство
+der Klimawandel (Sg.) | climate change | зміна клімату
+die Sprachbarriere; -n | language barrier | мовний бар’єр
+das Menschenrecht; -e | human right | право людини
+der Austausch (Sg.) | exchange | обмін
+die Hautfarbe; -n | skin color | колір шкіри
+der Rassismus (Sg.) | racism | расизм
+die Zerstörung; -en | destruction | руйнування
+die Tradition; -en | tradition | традиція
+das Risiko, Risiken | risk | ризик
+der Prozess; -e | process | процес
+die Vernetzung; -en | networking | мережування
+die Kapazität; -en | capacity | потужність / місткість
+die Effizienz (Sg.) | efficiency | ефективність
+zur Verfügung stehen | be available | бути у розпорядженні
+der Bruchteil; -e | fraction / tiny part | частка
+das Phänomen; -e | phenomenon | феномен
+		2 Willkommen bei WTC
+das Material; -ien | material | матеріал
+Interesse an … haben | be interested in | цікавитися
+sodass | so that | так що
+die Anstrengung; -en | effort | зусилля
+etwas erarbeiten | work something out | розробляти щось
+der Unfallschutz (Sg.) | accident protection | захист від нещасних випадків
+der Mentor; -en / die Mentorin; -nen | mentor | наставник / наставниця
+sich (nicht) scheuen | (not) hesitate | не вагатися
+weiterkommen (bei + D.) | make progress (with) | просуватися вперед
+der Verbesserungsvorschlag; -e | suggestion for improvement | пропозиція щодо покращення
+dankbar (für + A.) | grateful (for) | вдячний за
+		3 Manches ähnlich – vieles neu
+die Arbeitsbedingungen (Pl.) | working conditions | умови праці
+die Urlaubsplanung; -en | holiday planning | планування відпустки
+die Bürokratie; -n | bureaucracy | бюрократія
+die Körpersprache; -n | body language | мова тіла
+improvisieren | improvise | імпровізувати
+		4 Kommunikation im Betrieb
+das Mobbing (Sg.) | bullying / harassment | цькування
+der Betriebsrat; -e | works council | рада підприємства
+einen Termin verschieben/vereinbaren/freihalten/notieren | reschedule / arrange / reserve / note an appointment | перенести / домовитися / зарезервувати / записати зустріч
+die Vorbereitung; -en (auf + A.) | preparation (for) | підготовка
+das Detail; -s | detail | деталь
+das Gespräch (mit + D. / über + A.) | conversation / meeting | розмова
+erstaunt | astonished | здивований
+ärgerlich | annoyed / irritating | роздратований
+sich etwas ausdenken | invent / think of something | вигадувати
+die Betriebsversammlung; -en | company meeting | збори підприємства
+die Stellungnahme; -n | statement / position | заява / позиція
+die Gewerkschaft; -en | labor union | профспілка
+vergüten | remunerate | оплачувати
+etwas ankündigen | announce something | оголошувати
+das Potenzial; -e | potential | потенціал
+jemandem danken (für + A.) | thank someone (for) | дякувати
+		5 Persönliche Beziehungen in einer globalisierten Welt
+das Zeitalter; - | age / era | епоха
+die Migration (Sg.) | migration | міграція
+die Trennung; -en | separation | розлука / розрив
+ganz zu schweigen von | not to mention | не кажучи вже про
+auseinanderreißen | tear apart | розривати
+die Schätzung; -en | estimate | оцінка
+belastend | stressful / burdensome | обтяжливий
+etwas investieren | invest something | інвестувати
+getrennt leben | live separately | жити окремо
+der Freiraum; -e | freedom / personal space | свобода / особистий простір
+leiden (unter + D.) | suffer (from) | страждати
+sich gegenseitig anregen | inspire each other | надихати один одного
+etwas erschweren | make something more difficult | ускладнювати
+die Scheinehe; -n | sham marriage | фіктивний шлюб
+tendenziell | tendentially | тенденційно
+dominant | dominant | домінуючий
+finanziell abhängig/unabhängig | financially dependent/independent | фінансово залежний/незалежний
+folglich | consequently | отже
+infolgedessen | as a result | внаслідок
+vielfältig | diverse | різноманітний
+die Epoche; -n | epoch | епоха
+	Kapitel 13 Konflikte lösen
+		1 Probleme im Arbeitsalltag
+alleinerziehend | single parent | одинокий батько / одна мати
+in Schicht arbeiten | work in shifts | працювати по змінах
+die Kundenbeschwerde; -n | customer complaint | скарга клієнта
+die Aufstiegsmöglichkeit; -en | promotion opportunity | можливість підвищення
+die Babypause; -n | maternity/paternity break | відпустка по догляду за дитиною
+der Mutterschutz (Sg.) | maternity protection | охорона праці для вагітних
+die Elternzeit (Sg.) | parental leave | батьківська відпустка
+der Meisterkurs; -e | master course | курс для майстра
+Teilzeit arbeiten | work part-time | працювати неповний день
+		2 Das finde ich nicht in Ordnung!
+die Messe; -n | trade fair / exhibition | ярмарок / виставка
+sich/jemanden beruhigen | calm down / calm someone | заспокоюватися / заспокоювати когось
+		3 Gemeinsam Lösungen finden
+Respekt voreinander haben | have respect for each other | поважати один одного
+ausreden | finish speaking / talk through | висловлюватися
+jemanden einschalten | involve someone | залучати когось
+Meinungsunterschiede offen austragen | openly discuss differences of opinion | відкрито обговорювати різні думки
+sich etwas bewusst machen | make oneself aware of something | усвідомлювати
+nachtragend sein | be resentful | мати образу
+wagen | dare | наважуватися
+jemanden beschäftigen | occupy / employ someone | займати / працевлаштовувати
+das Großraumbüro; -s | open-plan office | офіс відкритого планування
+der Schichtplan; -e | shift schedule | графік змін
+der Anlass; -e | occasion / reason | привід
+jemandem etwas in die Schuhe schieben | blame someone for something | перекладати провину на когось
+ankündigen | announce | оголошувати
+		4 Berufliche Telefongespräche führen
+Notizen durchlesen/vervollständigen | read/complete notes | переглядати/доповнювати нотатки
+gelassen bleiben | stay calm | зберігати спокій
+bei Bedarf | if needed / as required | у разі потреби
+		5 Wenn ich das gewusst hätte …
+unter Druck sein | be under pressure | бути під тиском
+etwas an eine Mail anhängen | attach something to an email | додавати до листа
+die Rückfrage; -n | follow-up question | уточнююче запитання
+		6 Veränderte Rollen in Beruf, Partnerschaft und Familie
+etwas nachvollziehen können | be able to understand something | мати змогу зрозуміти
+in einer Krise stecken | be in a crisis | бути в кризі
+extrem | extreme | крайній
+die Abschlussnote; -n | final grade | підсумкова оцінка
+gleichaltrig | same age | одноліток
+jemandem Chancen verschaffen | provide someone with opportunities | надавати комусь можливості
+Wirkung zeigen | show effect / impact | демонструвати ефект
+Führungsaufgaben übernehmen | take on leadership tasks | брати на себе керівні обов’язки
+bewusst miterleben | consciously experience | свідомо переживати
+der Nachwuchs (Sg.) | junior staff / offspring | молодше покоління / нащадки
+die Belastungsprobe; -n | stress test | перевірка на стійкість
+jemanden vor große Herausforderungen stellen | challenge someone | ставити когось перед великими викликами
+etwas aushandeln | negotiate something | домовлятися
+der Faktor, Faktoren | factor | фактор
+die Trendwende; -n | turning point / trend reversal | перелом тенденції
+das Modell; -e | model | модель
+angewiesen sein (auf + A.) | be dependent on | бути залежним від
+sich qualifizieren (für + A.) | qualify for | кваліфікуватися для
+die Nachwuchskraft; -e | junior employee | молодий працівник
+verteidigen | defend | захищати
+jemandem blind vertrauen | trust someone blindly | довіряти комусь сліпо
+sich verwirklichen | realize oneself / fulfill oneself | реалізовувати себе
+	Kapitel 14 Weiterbildung
+		1 Bildungsgeschichten
+die Umschulung; -en | retraining | перенавчання
+die Pubertät (Sg.) | puberty | пубертат
+die Schwangerschaft; -en | pregnancy | вагітність
+die Weiterbildung; -en | further education | підвищення кваліфікації
+die Gesellenprüfung; -en | journeyman exam | екзамен на майстра
+die Ausbildungsvergütung; -en | training allowance | стипендія / зарплата під час навчання
+		2 Man lernt nie aus
+mehr als genug | more than enough | більш ніж достатньо
+sich weiterbilden | continue one’s education | підвищувати кваліфікацію
+das Weiterbildungsangebot; -e | continuing education offer | пропозиція курсів підвищення кваліфікації
+etwas erkennen | recognize / realize something | розпізнавати / усвідомлювати
+sich (geistig) fit fühlen | feel mentally fit | почуватися розумово бадьорим
+offensichtlich | obvious / apparent | очевидно
+erhalten bleiben | remain preserved | залишатися незмінним
+der Rollstuhl; -e | wheelchair | інвалідний візок
+etwas betonen | emphasize something | підкреслювати
+Kontakte knüpfen | make contacts / network | встановлювати контакти
+diszipliniert ≠ disziplinlos | disciplined ≠ undisciplined | дисциплінований ≠ недисциплінований
+sozial | social | соціальний
+tolerant ≠ intolerant | tolerant ≠ intolerant | толерантний ≠ нетолерантний
+kämpferisch | combative / determined | бойовий / рішучий
+kollegial ≠ unkollegial | collegial ≠ uncollegial | колегіальний ≠ неколегіальний
+mobil | mobile | мобільний
+selbstständig ≠ unselbständig | independent ≠ dependent | самостійний ≠ залежний
+temperamentvoll | spirited / lively | темпераментний
+verantwortungsbewusst ≠ verantwortungslos | responsible ≠ irresponsible | відповідальний ≠ безвідповідальний
+zäh | tough / persistent | витривалий
+zielstrebig ≠ ziellos | determined ≠ aimless | цілеспрямований ≠ безцільний
+stellvertretend (für + A.) | representative (for) | представницький / від імені
+etwas versäumen | miss / neglect something | пропускати / упускати
+		3 Hilfen für die berufliche Entwicklung
+erwerbstätig | employed | працюючий
+das Jahreseinkommen; - | annual income | річний дохід
+versteuern | declare / pay taxes on | оподатковувати
+übersteigen | exceed | перевищувати
+das Anerkennungsverfahren; - | recognition procedure | процедура визнання
+entsprechen | correspond / meet requirements | відповідати
+Unterstützung erhalten | receive support | отримувати підтримку
+promovieren | pursue a doctorate | захищати дисертацію
+forschen | research | проводити дослідження
+das Stipendium, Stipendien | scholarship | стипендія
+drohen | threaten | загрожувати
+etwas nachweisen | prove / provide evidence of something | підтверджувати
+sich beraten lassen | seek advice | консультуватися
+		4 Luka möchte eine Weiterbildung machen
+zunehmen ≠ abnehmen | gain ≠ lose (weight) | набирати ≠ втрачати
+das Berufsbild; -er | occupational profile | професійний профіль
+sich grundlegend ändern | fundamentally change | змінюватися кардинально
+sich wenden (an + A) | turn to / approach | звертатися до
+Grundkenntnisse erwerben | acquire basic knowledge | здобувати базові знання
+das Arbeitsfeld; -er | field of work | сфера діяльності
+die Fachkraft; -e | specialist / skilled worker | фахівець
+die zuständigen Stellen | responsible authorities | відповідні органи
+beantragen | apply for | подавати заявку
+offene Fragen klären | clarify open questions | з’ясовувати нез’ясовані питання
+die Anreise; -n | arrival / travel | прибуття / подорож
+der Anmeldeschluss (Sg.) | registration deadline | термін подання заявки
+die erste/zweite Jahreshälfte (Sg.) | first/second half of the year | перша/друга половина року
+aufmerksam machen (auf + A.) | draw attention to | звертати увагу на
+ausgleichen | balance / compensate | компенсувати
+		5 Was beim Lernen hilft
+der Einfluss; -e (auf + A.) | influence / impact (on) | вплив
+blockieren | block | блокувати
+intensiv | intensive | інтенсивний
+die Ergebnisse belegen/zeigen | demonstrate / show results | підтверджувати результати
+verknüpfen (mit + D.) | link / connect with | пов’язувати з
+einschränken | limit / restrict | обмежувати
+differenzieren (zwischen + D.) | differentiate (between) | розрізняти
+signalisieren | signal | сигналізувати
+etwas senken/steigern | decrease / increase something | зменшувати / збільшувати
+messbar | measurable | вимірюваний
+etwas verursachen | cause something | спричиняти
+einen Abschluss nachholen | catch up on a degree | надолужувати освіту / завершувати навчання
+sich fühlen, als ob/wenn | feel as if / when | почуватися так, ніби
+der Wettkampf; -e | competition | змагання
+innerhalb kürzester Zeit | in a very short time | у найкоротші терміни
+enorm viel | enormously much | надзвичайно багато
+der Nutzen (Sg.) | benefit / advantage | користь
+Nutzen ziehen aus | benefit from | отримувати користь від
+das Durchhaltevermögen (Sg.) | perseverance | витривалість
+das Mitgefühl (Sg.) | compassion / empathy | співчуття
+wirken | have an effect / work | діяти
+depressiv sein/werden | be / become depressed | бути / ставати депресивним

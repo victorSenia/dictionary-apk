@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -49,7 +50,9 @@ public class EditWordActivity extends AppCompatActivity {
         LanguageViewModel languageViewModel = new ViewModelProvider(this).get(LanguageViewModel.class);
         long id = extrasContainsKey(WORD_ID_TO_EDIT) ? getIntent().getExtras().getLong(WORD_ID_TO_EDIT) : DEFAULT_VALUE_OF_WORD_ID;
         binding = ActivityEditWordBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        View root = binding.getRoot();
+        setContentView(root);
+        ActivityUtils.setFullScreen(this, root);
         languageViewModel.getData().observe(this, this::updateTopicListData);
         if (id != DEFAULT_VALUE_OF_WORD_ID) {
             DBWordProvider wordProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.dbWordProvider();

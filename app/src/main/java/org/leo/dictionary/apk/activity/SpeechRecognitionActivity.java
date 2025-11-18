@@ -33,7 +33,9 @@ public class SpeechRecognitionActivity extends AppCompatActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivitySpeechRecognitionBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        View root = binding.getRoot();
+        setContentView(root);
+        ActivityUtils.setFullScreen(this, root);
         detailsViewModel = new ViewModelProvider(this).get(DetailsViewModel.class);
         detailsViewModel.getData().observe(this, w -> binding.buttonSpeak.setEnabled(w != null));
         binding.buttonSpeak.setOnClickListener(buttonView -> {

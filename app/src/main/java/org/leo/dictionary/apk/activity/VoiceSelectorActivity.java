@@ -39,7 +39,9 @@ public class VoiceSelectorActivity extends AppCompatActivity {
         LanguageViewModel languageViewModel = new ViewModelProvider(this).get(LanguageViewModel.class);
         languageViewModel.setValue(getString(R.string.default_language));
         binding = ActivityVoiceSelectorBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        View root = binding.getRoot();
+        setContentView(root);
+        ActivityUtils.setFullScreen(this, root);
         languageViewModel.getData().observe(this, this::updateUiWithWords);
         binding.setViewModel(languageViewModel);
         binding.setLifecycleOwner(this);

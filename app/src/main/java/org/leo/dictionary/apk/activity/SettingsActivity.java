@@ -2,6 +2,7 @@ package org.leo.dictionary.apk.activity;
 
 import android.os.Bundle;
 import android.text.InputType;
+import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -21,6 +22,8 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
+        View root = findViewById(android.R.id.content);
+        ActivityUtils.setFullScreen(this, root);
         ScreenSlidePagerAdapter screenSlidePagerAdapter = new ScreenSlidePagerAdapter(this);
         ViewPager2 viewPager = findViewById(R.id.pager);
         viewPager.setAdapter(screenSlidePagerAdapter);
