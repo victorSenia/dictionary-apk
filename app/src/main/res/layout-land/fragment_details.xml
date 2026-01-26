@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
     <data>
         <variable
                 name="viewModel"
@@ -11,45 +13,52 @@
             android:layout_height="match_parent">
         <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="0dp" android:layout_weight="1">
-            <LinearLayout
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:fillViewport="true">
+
+            <!-- ONLY added wrapper to allow centering without breaking scroll -->
+            <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:context=".activity.fragment.DetailsFragment"
-                    android:orientation="vertical"
-                    android:visibility="@{viewModel.data==null?android.view.View.GONE:android.view.View.VISIBLE}"
-                    android:layout_gravity="center">
-                <TextView
+                    android:layout_height="match_parent">
+
+                <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@{viewModel.data.fullWord}"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:gravity="bottom|center"
-                        android:textSize="64sp"
-                        android:layout_weight="1"/>
-                <TextView
-                        android:visibility='@{viewModel.data.additionalInformation==null||viewModel.data.additionalInformation.empty?android.view.View.GONE:android.view.View.VISIBLE}'
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text='@{viewModel.data.additionalInformation}'
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:gravity="center|top"
-                        android:textSize="40sp"
-                        android:layout_weight="1"/>
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text='@{viewModel.data.getFormattedTranslations("\n")}'
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:gravity="center|top"
-                        android:textSize="50sp"
-                        android:layout_weight="1"/>
-            </LinearLayout>
+                        tools:context=".activity.fragment.DetailsFragment"
+                        android:orientation="vertical"
+                        android:visibility="@{viewModel.data==null?android.view.View.GONE:android.view.View.VISIBLE}"
+                        android:layout_gravity="center">
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.data.fullWord}"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                            android:gravity="bottom|center"
+                            android:textSize="64sp"/>
+                    <TextView
+                            android:visibility='@{viewModel.data.additionalInformation==null||viewModel.data.additionalInformation.empty?android.view.View.GONE:android.view.View.VISIBLE}'
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text='@{viewModel.data.additionalInformation}'
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:gravity="center|top"
+                            android:textSize="40sp"/>
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text='@{viewModel.data.getFormattedTranslations("\n")}'
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:gravity="center|top"
+                            android:textSize="50sp"/>
+                </LinearLayout>
+            </FrameLayout>
         </ScrollView>
         <RatingBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/knowledgeBar"
+                android:visibility="@{viewModel.data==null?android.view.View.GONE:android.view.View.VISIBLE}"
                 android:stepSize="1"
                 android:numStars="@{org.leo.dictionary.apk.helper.KnowledgeToRatingConverter.starsCount}"
                 android:rating="@{org.leo.dictionary.apk.helper.KnowledgeToRatingConverter.knowledgeToRating(viewModel.data.knowledge)}"

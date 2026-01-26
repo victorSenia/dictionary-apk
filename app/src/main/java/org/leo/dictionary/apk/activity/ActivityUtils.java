@@ -37,10 +37,10 @@ public abstract class ActivityUtils {
             Insets systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             // apply padding using Insets
             v.setPadding(
-                    v.getPaddingLeft(),
+                    systemBarsInsets.left,
                     systemBarsInsets.top,
-                    v.getPaddingRight(),
-                    systemBarsInsets.bottom  // bottom navigation bar
+                    systemBarsInsets.right,
+                    systemBarsInsets.bottom
             );
             return insets; // must return insets
         });

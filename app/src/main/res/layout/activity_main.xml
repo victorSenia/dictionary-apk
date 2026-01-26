@@ -29,17 +29,22 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/details_fragment"
-                android:name="org.leo.dictionary.apk.activity.fragment.DetailsFragment"
+        <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:layout="@layout/fragment_details"/>
+                android:fillViewport="true">
+            <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/details_fragment"
+                    android:name="org.leo.dictionary.apk.activity.fragment.DetailsFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:layout="@layout/fragment_details"/>
+        </ScrollView>
         <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/words_fragment"
                 android:name="org.leo.dictionary.apk.activity.fragment.WordsFragment"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 tools:layout="@layout/fragment_strings_list"/>
     </LinearLayout>
 

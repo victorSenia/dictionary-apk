@@ -6,6 +6,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
+import android.content.pm.ServiceInfo;
 import android.os.Binder;
 import android.os.IBinder;
 
@@ -17,6 +18,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.media.session.MediaButtonReceiver;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
+import org.leo.dictionary.apk.activity.MainActivity;
 
 import javax.inject.Inject;
 
@@ -47,14 +49,16 @@ public class PlayServiceService extends Service {
     private void setupMediaSession() {
         mediaSession = new MediaSessionCompat(this, CHANNEL_ID);
         PlaybackStateCompat state = new PlaybackStateCompat.Builder().
-                setActions(PlaybackStateCompat.ACTION_STOP | PlaybackStateCompat.ACTION_PLAY_PAUSE).
+                setActions(PlaybackStateCompat.ACTION_STOP | PlaybackStateCompat.ACTION_PAUSE).
                 setState(PlaybackStateCompat.STATE_PLAYING, 0, 1.0f).build();
         mediaSession.setActive(true);
         mediaSession.setPlaybackState(state);
 
         MediaMetadataCompat metadata = new MediaMetadataCompat.Builder().
                 putString(MediaMetadataCompat.METADATA_KEY_TITLE, getString(R.string.app_name)).build();
-
+        mediaSession.setMediaButtonReceiver(
+                MediaButtonReceiver.buildMediaButtonPendingIntent(this, PlaybackStateCompat.ACTION_PLAY_PAUSE)
+        );
         mediaSession.setMetadata(metadata);
         mediaSession.setCallback(new MediaSessionCompat.Callback() {
             @Override
@@ -66,13 +70,14 @@ public class PlayServiceService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        MediaButtonReceiver.handleIntent(mediaSession, intent);
         if (intent != null && ACTION_STOP_SERVICE.equals(intent.getAction())) {
             stopPlayService();
             return START_NOT_STICKY;
         }
 
         createNotificationChannel();
-        startForeground(1, buildNotification());
+        startForeground(1, buildNotification(), ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PLAYBACK);
         return START_STICKY;
     }
 
@@ -95,9 +100,22 @@ public class PlayServiceService extends Service {
     }
 
     private Notification buildNotification() {
+        Intent openAppIntent = new Intent(this, MainActivity.class);
+        openAppIntent.setAction(Intent.ACTION_MAIN);
+        openAppIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+        openAppIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+        PendingIntent pendingIntent = PendingIntent.getActivity(
+                this,
+                0,
+                openAppIntent,
+                PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT
+        );
+
         NotificationCompat.Action stopAction = createStopAction();
         return new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle(getText(R.string.app_name))
+                .setContentIntent(pendingIntent)  // <-- opens the app
                 .setSmallIcon(R.drawable.ic_launcher_foreground)
                 .addAction(stopAction)
                 .setStyle(new androidx.media.app.NotificationCompat.MediaStyle()

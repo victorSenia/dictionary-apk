@@ -20,11 +20,22 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.DictionaryApk"
             tools:targetApi="31">
+        <receiver
+                android:name="androidx.media.session.MediaButtonReceiver"
+                android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
         <service
                 android:name=".helper.PlayServiceService"
                 android:foregroundServiceType="mediaPlayback"
-                android:exported="false"
-                android:stopWithTask="false"/>
+                android:exported="true"
+                android:stopWithTask="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+        </service>
         <activity
                 android:name=".activity.SentenceActivity"
                 android:exported="false"/>

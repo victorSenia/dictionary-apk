@@ -17,9 +17,9 @@
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
     <LinearLayout
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
         <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/details_fragment"
                 android:name="org.leo.dictionary.apk.activity.fragment.DetailsFragment"
