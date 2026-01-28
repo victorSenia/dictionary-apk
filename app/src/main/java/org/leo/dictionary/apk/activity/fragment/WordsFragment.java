@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
+import org.leo.dictionary.PlayService;
 import org.leo.dictionary.UiUpdater;
 import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApkUiUpdater;
@@ -111,19 +112,23 @@ public class WordsFragment extends FilteredRecyclerViewFragment<WordsRecyclerVie
             }
         };
         apkUiUpdater.addUiUpdater(uiUpdater);
-        if (savedInstanceState == null && !isPlaying()) {
+        if (savedInstanceState == null && !isPlayServiceSetUp()) {
             replaceData();
         } else {
-            updatePlayer = false;
-            replaceData();
-            updatePlayer = true;
+            try {
+                updatePlayer = false;
+                replaceData();
+            } finally {
+                updatePlayer = true;
+            }
         }
         recyclerView.scrollToPosition(getCurrentIndex());
         return view;
     }
 
-    private boolean isPlaying() {
-        return ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.playService().isPlaying();
+    private boolean isPlayServiceSetUp() {
+        PlayService playService = ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.playService();
+        return playService != null && (playService.isPlaying() || playService.isReady());
     }
 
     @Override

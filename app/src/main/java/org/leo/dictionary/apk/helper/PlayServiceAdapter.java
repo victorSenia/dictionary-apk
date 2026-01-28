@@ -2,7 +2,6 @@ package org.leo.dictionary.apk.helper;
 
 import android.content.Context;
 import android.content.Intent;
-
 import android.media.AudioAttributes;
 import android.media.AudioFocusRequest;
 import android.media.AudioManager;
@@ -140,6 +139,11 @@ public class PlayServiceAdapter implements PlayService, AudioManager.OnAudioFocu
     @Override
     public boolean isPlaying() {
         return playService.isPlaying();
+    }
+
+    @Override
+    public boolean isReady() {
+        return playService.isReady();
     }
 
     @Override
