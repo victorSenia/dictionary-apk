@@ -17,6 +17,7 @@ import org.leo.dictionary.apk.ApkUiUpdater;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.activity.viewadapter.WordsRecyclerViewAdapter;
 import org.leo.dictionary.apk.activity.viewmodel.IsPlayingViewModel;
+import org.leo.dictionary.apk.helper.WordUiFormatter;
 import org.leo.dictionary.entity.Translation;
 import org.leo.dictionary.entity.Word;
 
@@ -178,7 +179,7 @@ public class WordsFragment extends FilteredRecyclerViewFragment<WordsRecyclerVie
 
     @Override
     protected Function<Word, String> getFormatter() {
-        return Word::formatWord;
+        return WordUiFormatter::formatWord;
     }
 
     @Override

@@ -46,8 +46,8 @@
     <string name="already_database_error">Не можливо. Вже використовуеться БД</string>
     <string name="not_database_error">Можна використовувати лише з базою даних</string>
     <string name="delete_word_confirmation">Видалити підтвердження</string>
-    <string name="delete_word_confirmation_message">Ви дійсно хочете видалити слово "%s"?</string>
-    <string name="voice_usage">%s використовується для %s</string>
+    <string name="delete_word_confirmation_message">Ви дійсно хочете видалити слово "%1$s"?</string>
+    <string name="voice_usage">%1$s використовується для %2$s</string>
     <string name="default_voice_usage">Голос за замовчуванням для %s</string>
     <string name="import_started">Імпорт розпочато. Це займе кілька секунд.</string>
     <string name="import_finished">Імпорт зайняв %d мс</string>
@@ -112,3 +112,5 @@
     <string name="reload">Перезавантажити</string>
     <string name="pause">Пауза</string>
 </resources>
+
+

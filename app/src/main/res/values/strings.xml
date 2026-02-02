@@ -52,8 +52,8 @@
     <string name="already_database_error">Not possible. Already used source DB</string>
     <string name="not_database_error">Can only be used with database</string>
     <string name="delete_word_confirmation">Delete confirmation</string>
-    <string name="delete_word_confirmation_message">"Do you really want to delete word '%s'?"</string>
-    <string name="voice_usage">%s used for %s</string>
+    <string name="delete_word_confirmation_message">Do you really want to delete word "%1$s"?</string>
+    <string name="voice_usage">%1$s used for %2$s</string>
     <string name="default_voice_usage">Default voice used for %s</string>
     <string name="import_started">Import started. It will take few seconds.</string>
     <string name="import_finished">Import took %d ms</string>
@@ -121,3 +121,4 @@
     <string name="default_language_recognition" translatable="false">de-DE</string>
     <string name="reload">Reload</string>
 </resources>
+

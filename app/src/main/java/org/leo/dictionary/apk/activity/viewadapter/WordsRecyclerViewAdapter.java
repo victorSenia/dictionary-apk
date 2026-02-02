@@ -17,6 +17,7 @@ import org.leo.dictionary.apk.activity.MainActivity;
 import org.leo.dictionary.apk.databinding.FragmentStringBinding;
 import org.leo.dictionary.apk.databinding.FragmentWordSelectedBinding;
 import org.leo.dictionary.apk.databinding.FragmentWordSelectedDbBinding;
+import org.leo.dictionary.apk.helper.WordUiFormatter;
 import org.leo.dictionary.entity.Word;
 import org.leo.dictionary.word.provider.DBWordProvider;
 
@@ -69,7 +70,7 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
     @Override
     public void onBindViewHolder(final WordViewHolder holder, int position) {
         holder.mItem = values.get(position);
-        holder.mContentView.setText(Word.formatWord(holder.mItem));
+        holder.mContentView.setText(WordUiFormatter.formatWord(holder.mItem));
     }
 
     @Override

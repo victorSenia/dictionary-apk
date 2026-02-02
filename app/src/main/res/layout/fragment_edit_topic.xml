@@ -10,7 +10,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/text_margin"
             android:textAppearance="?attr/textAppearanceListItem" android:layout_weight="1"
-            android:layout_gravity="center_vertical"/>
+            android:layout_gravity="center_vertical"
+            android:gravity="start|center_vertical"
+            android:textAlignment="viewStart"/>
     <Button
             android:text="@string/action_edit"
             android:layout_width="wrap_content"
