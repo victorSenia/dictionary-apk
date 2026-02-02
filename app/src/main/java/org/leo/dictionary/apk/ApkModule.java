@@ -231,6 +231,7 @@ public class ApkModule {
         parseWords.setProperties(new HashMap<>(PreferenceManager.getDefaultSharedPreferences(context).getAll()));
         wordProvider.setConfiguration(parseWords);
         wordProvider.setInputStream(context.getContentResolver().openInputStream(data));
+        wordProvider.parseAndUpdateConfiguration();
         return wordProvider;
     }
 

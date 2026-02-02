@@ -112,7 +112,7 @@ public class WordsFragment extends FilteredRecyclerViewFragment<WordsRecyclerVie
             }
         };
         apkUiUpdater.addUiUpdater(uiUpdater);
-        if (savedInstanceState == null && !isPlayServiceSetUp()) {
+        if (savedInstanceState == null || !isPlayServiceSetUp()) {
             replaceData();
         } else {
             try {

@@ -23,27 +23,33 @@ public class ApplicationWithDI extends Application {
     public final Map<String, Object> data = new HashMap<>();
     // Reference to the application graph that is used across the whole app
     public ApkAppComponent appComponent;
+    private final boolean useLogging = false;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        setupErrorLogging();
+        if (useLogging) {
+            setupLogging(this);
+            setupErrorLogging();
+        }
         appComponent = DaggerApkAppComponent.builder().apkModule(new ApkModule(this)).build();
         if (appComponent.lastState().getBoolean(ApkModule.LAST_STATE_IS_NIGHT_MODE, false)) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         } else {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
         }
-//        setupLogging(this);
     }
 
     private static void setupErrorLogging() {
+        Thread.UncaughtExceptionHandler previousHandler = Thread.getDefaultUncaughtExceptionHandler();
         Thread.setDefaultUncaughtExceptionHandler((thread, throwable) -> {
             Logger logger = Logger.getLogger(ApplicationWithDI.class.getName());
             logger.log(Level.SEVERE, "Uncaught exception in thread " + thread.getName(), throwable);
 
             // Let Android handle the crash
-            Thread.getDefaultUncaughtExceptionHandler().uncaughtException(thread, throwable);
+            if (previousHandler != null) {
+                previousHandler.uncaughtException(thread, throwable);
+            }
         });
     }
 
@@ -55,7 +61,11 @@ public class ApplicationWithDI extends Application {
 
     private void setupLogging(Context context) {
         try {
-            File logDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS), "MyAppLogs");
+            File baseDir = context.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS);
+            if (baseDir == null) {
+                baseDir = context.getFilesDir();
+            }
+            File logDir = new File(baseDir, context.getPackageName() + ".logs");
             if (!logDir.exists()) {
                 logDir.mkdirs();
             }
