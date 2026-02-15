@@ -35,14 +35,16 @@ public abstract class ActivityUtils {
         ViewCompat.setOnApplyWindowInsetsListener(root, (v, insets) -> {
             // get Insets object
             Insets systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            Insets imeInsets = insets.getInsets(WindowInsetsCompat.Type.ime());
             // apply padding using Insets
             v.setPadding(
-                    systemBarsInsets.left,
-                    systemBarsInsets.top,
-                    systemBarsInsets.right,
-                    systemBarsInsets.bottom
+                    Math.max(systemBarsInsets.left, imeInsets.left),
+                    Math.max(systemBarsInsets.top, imeInsets.top),
+                    Math.max(systemBarsInsets.right, imeInsets.right),
+                    Math.max(systemBarsInsets.bottom, imeInsets.bottom)
             );
             return insets; // must return insets
         });
+        ViewCompat.requestApplyInsets(root);
     }
 }

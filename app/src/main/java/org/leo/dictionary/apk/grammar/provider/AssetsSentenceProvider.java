@@ -10,8 +10,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 
-import static org.leo.dictionary.apk.word.provider.AssetsWordProvider.decode;
-import static org.leo.dictionary.apk.word.provider.AssetsWordProvider.encode;
+import static org.leo.dictionary.word.provider.FileWordProvider.decode;
+import static org.leo.dictionary.word.provider.FileWordProvider.encode;
 
 
 public class AssetsSentenceProvider extends FileSentenceProvider {
