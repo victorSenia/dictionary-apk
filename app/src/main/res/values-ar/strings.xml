@@ -1,7 +1,4 @@
 <resources>
-    <string name="yes">نعم</string>
-    <string name="no">لا</string>
-    <string name="ok">حسنًا</string>
     <string name="app_name">القاموس</string>
     <string name="action_settings">الإعدادات</string>
     <string name="next">التالي</string>
@@ -110,7 +107,8 @@
     <string name="order_words_in_sentence">ترتيب الكلمات في الجملة</string>
     <string name="all_translations">تشغيل كل الترجمات</string>
     <string name="example_language_recognition">مثال de-DE</string>
-    <string name="reload">إعادة تحميل</string>
+    <string name="import_order">ترتيب الاستيراد</string>
+    <string name="sorted">مرتب</string>
 </resources>
 
 

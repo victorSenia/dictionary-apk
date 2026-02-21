@@ -21,9 +21,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:id="@+id/play_word"
                 android:layout_weight="0"
-                style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                style="@style/Widget.DictionaryApk.Button.Icon.FilledTonal"
                 android:drawableLeft="@android:drawable/ic_media_play"
-                android:textSize="0sp"
                 android:layout_gravity="center_vertical"/>
     </LinearLayout>
     <TextView

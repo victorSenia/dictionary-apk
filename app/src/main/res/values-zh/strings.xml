@@ -1,7 +1,4 @@
 <resources>
-    <string name="yes">是</string>
-    <string name="no">否</string>
-    <string name="ok">确定</string>
     <string name="app_name">词典</string>
     <string name="action_settings">设置</string>
     <string name="next">下一项</string>
@@ -110,7 +107,8 @@
     <string name="order_words_in_sentence">排列句中单词顺序</string>
     <string name="all_translations">播放所有翻译</string>
     <string name="example_language_recognition">示例 de-DE</string>
-    <string name="reload">重新加载</string>
+    <string name="import_order">导入顺序</string>
+    <string name="sorted">已排序</string>
 </resources>
 
 

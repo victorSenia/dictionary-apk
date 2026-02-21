@@ -2,7 +2,6 @@ package org.leo.dictionary.apk.activity;
 
 import android.app.Activity;
 import android.view.View;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;

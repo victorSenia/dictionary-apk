@@ -1,12 +1,7 @@
 package org.leo.dictionary.apk.activity.fragment;
 
-import android.content.Context;
-import android.media.AudioAttributes;
-import android.media.AudioFocusRequest;
-import android.media.AudioManager;
 import android.os.Bundle;
 import android.view.*;
-import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -16,11 +11,8 @@ import org.leo.dictionary.UiUpdater;
 import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.ApkUiUpdater;
 import org.leo.dictionary.apk.ApplicationWithDI;
-import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.activity.viewmodel.IsPlayingViewModel;
 import org.leo.dictionary.apk.databinding.FragmentPlayerBinding;
-
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class PlayerFragment extends Fragment {
     private FragmentPlayerBinding binding;

@@ -19,8 +19,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/action_edit"
             android:layout_weight="0"
-            style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
-            android:drawableLeft="@android:drawable/ic_menu_edit" android:textSize="0sp"
+            style="@style/Widget.DictionaryApk.Button.Icon.FilledTonal"
+            android:drawableLeft="@android:drawable/ic_menu_edit"
             android:layout_gravity="center_vertical"/>
     <Button
             android:text="@string/action_delete"
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/action_delete"
             android:layout_weight="0"
-            style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
-            android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel" android:textSize="0sp"
+            style="@style/Widget.DictionaryApk.Button.Icon.FilledTonal"
+            android:drawableLeft="@android:drawable/ic_menu_close_clear_cancel"
             android:layout_gravity="center_vertical"/>
 </LinearLayout>

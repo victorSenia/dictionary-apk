@@ -1,7 +1,4 @@
 <resources>
-    <string name="yes">예</string>
-    <string name="no">아니요</string>
-    <string name="ok">확인</string>
     <string name="app_name">사전</string>
     <string name="action_settings">설정</string>
     <string name="next">다음</string>
@@ -110,7 +107,8 @@
     <string name="order_words_in_sentence">문장 내 단어 순서 맞추기</string>
     <string name="all_translations">모든 번역 재생</string>
     <string name="example_language_recognition">예시 de-DE</string>
-    <string name="reload">새로고침</string>
+    <string name="import_order">가져온 순서</string>
+    <string name="sorted">정렬됨</string>
 </resources>
 
 

@@ -1,7 +1,4 @@
 <resources>
-    <string name="yes">Evet</string>
-    <string name="no">Hayır</string>
-    <string name="ok">Tamam</string>
     <string name="app_name">Sözlük</string>
     <string name="action_settings">Ayarlar</string>
     <string name="next">Sonraki</string>
@@ -110,7 +107,8 @@
     <string name="order_words_in_sentence">Cümledeki kelimeleri sırala</string>
     <string name="all_translations">Tüm çevirileri oynat</string>
     <string name="example_language_recognition">Örnek de-DE</string>
-    <string name="reload">Yeniden yükle</string>
+    <string name="import_order">İçe aktarma sırası</string>
+    <string name="sorted">Sıralı</string>
 </resources>
 
 

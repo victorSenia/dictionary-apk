@@ -107,7 +107,7 @@ public class WordMatcherActivity extends AppCompatActivity {
         button.setText(getText(element));
         button.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         setTextSize(element.type, button);
-        button.setBackground(AppCompatResources.getDrawable(this, R.drawable.word_background));
+        setButtonSelectedState(button, false);
         button.setAllCaps(false);
         button.setOnClickListener(v -> onClickListener(element, audioService));
         button.setLayoutParams(layoutParams);
@@ -127,9 +127,9 @@ public class WordMatcherActivity extends AppCompatActivity {
 
     private void onClickListener(Element element, AudioService audioService) {
         if (selected[differentType(element.type)] == NOT_SET) {
-            selected[element.type] = element.current;
+            setSelected(element.type, element.current);
         } else if (element.matches == selected[differentType(element.type)]) {
-            selected[element.type] = element.current;
+            setSelected(element.type, element.current);
             binding.wordContainer.getChildAt(selected[WORDS_ARRAY]).setVisibility(View.INVISIBLE);
             binding.translationContainer.getChildAt(selected[TRANSLATIONS_ARRAY]).setVisibility(View.INVISIBLE);
             clearSelection();
@@ -150,7 +150,37 @@ public class WordMatcherActivity extends AppCompatActivity {
     }
 
     private void clearSelection() {
+        clearSelectionForType(WORDS_ARRAY);
+        clearSelectionForType(TRANSLATIONS_ARRAY);
         Arrays.fill(selected, NOT_SET);
+    }
+
+    private void setSelected(int type, int index) {
+        clearSelectionForType(type);
+        selected[type] = index;
+        updateSelectedUi(type, index, true);
+    }
+
+    private void clearSelectionForType(int type) {
+        if (selected[type] != NOT_SET) {
+            updateSelectedUi(type, selected[type], false);
+        }
+    }
+
+    private void updateSelectedUi(int type, int index, boolean isSelected) {
+        View view = type == WORDS_ARRAY ? binding.wordContainer.getChildAt(index) : binding.translationContainer.getChildAt(index);
+        if (!(view instanceof Button)) {
+            return;
+        }
+        setButtonSelectedState((Button) view, isSelected);
+    }
+
+    private void setButtonSelectedState(Button button, boolean isSelected) {
+        if (isSelected) {
+            button.setBackgroundColor(getColor(R.color.selected_background));
+        } else {
+            button.setBackground(AppCompatResources.getDrawable(this, R.drawable.word_background));
+        }
     }
 
     private void playAudio(AudioService audioService, Element element) {

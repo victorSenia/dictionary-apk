@@ -1,7 +1,4 @@
 <resources>
-    <string name="yes">بله</string>
-    <string name="no">خیر</string>
-    <string name="ok">تأیید</string>
     <string name="app_name">واژه‌نامه</string>
     <string name="action_settings">تنظیمات</string>
     <string name="next">بعدی</string>
@@ -110,7 +107,8 @@
     <string name="order_words_in_sentence">مرتب‌سازی واژه‌ها در جمله</string>
     <string name="all_translations">پخش همه ترجمه‌ها</string>
     <string name="example_language_recognition">نمونه de-DE</string>
-    <string name="reload">بارگذاری مجدد</string>
+    <string name="import_order">ترتیب واردسازی</string>
+    <string name="sorted">مرتب‌شده</string>
 </resources>
 
 

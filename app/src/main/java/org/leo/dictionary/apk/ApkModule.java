@@ -12,7 +12,6 @@ import org.leo.dictionary.PlayService;
 import org.leo.dictionary.PlayServiceImpl;
 import org.leo.dictionary.UiUpdater;
 import org.leo.dictionary.apk.activity.ActivityUtils;
-import org.leo.dictionary.apk.activity.MainActivity;
 import org.leo.dictionary.apk.audio.AndroidAudioService;
 import org.leo.dictionary.apk.config.AssetsConfigurationReader;
 import org.leo.dictionary.apk.config.PreferenceConfigurationReader;

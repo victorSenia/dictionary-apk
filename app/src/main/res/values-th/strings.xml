@@ -1,7 +1,4 @@
 <resources>
-    <string name="yes">ใช่</string>
-    <string name="no">ไม่</string>
-    <string name="ok">ตกลง</string>
     <string name="app_name">พจนานุกรม</string>
     <string name="action_settings">การตั้งค่า</string>
     <string name="next">ถัดไป</string>
@@ -110,7 +107,8 @@
     <string name="order_words_in_sentence">เรียงลำดับคำในประโยค</string>
     <string name="all_translations">เล่นคำแปลทั้งหมด</string>
     <string name="example_language_recognition">ตัวอย่าง de-DE</string>
-    <string name="reload">โหลดใหม่</string>
+    <string name="import_order">ลำดับการนำเข้า</string>
+    <string name="sorted">เรียงลำดับ</string>
 </resources>
 
 

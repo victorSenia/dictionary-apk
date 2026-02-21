@@ -1,13 +1,10 @@
 <resources>
-    <string name="yes">Ja</string>
-    <string name="no">Nein</string>
-    <string name="ok">OK</string>
     <string name="app_name">Wörterbuch</string>
     <string name="action_settings">Einstellungen</string>
     <string name="next">Nächste</string>
     <string name="previous">Vorherige</string>
     <string name="play">Abspielen</string>
-    <string name="pause">Pause</string>
+    <string name="pause">Anhalten</string>
     <string name="action_play_from">Abspielen ab</string>
     <string name="title_activity_topics">Themen</string>
     <string name="parse_words">Wörter aus Datei analysieren</string>
@@ -110,7 +107,8 @@
     <string name="order_words_in_sentence">Wörter im Satz anordnen</string>
     <string name="all_translations">Alle Übersetzungen abspielen</string>
     <string name="example_language_recognition">Beispiel de-DE</string>
-    <string name="reload">Neu laden</string>
+    <string name="import_order">Importreihenfolge</string>
+    <string name="sorted">Sortiert</string>
 </resources>
 
 

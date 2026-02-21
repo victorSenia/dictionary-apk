@@ -1,7 +1,4 @@
 <resources>
-    <string name="yes">Да</string>
-    <string name="no">Нет</string>
-    <string name="ok">OK</string>
     <string name="app_name">Словарь</string>
     <string name="action_settings">Настройки</string>
     <string name="next">Далее</string>
@@ -110,7 +107,8 @@
     <string name="order_words_in_sentence">Упорядочить слова в предложении</string>
     <string name="all_translations">Воспроизвести все переводы</string>
     <string name="example_language_recognition">Пример de-DE</string>
-    <string name="reload">Перезагрузить</string>
+    <string name="import_order">Порядок импорта</string>
+    <string name="sorted">Отсортировано</string>
 </resources>
 
 

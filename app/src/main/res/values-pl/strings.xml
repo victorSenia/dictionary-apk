@@ -1,7 +1,4 @@
 <resources>
-    <string name="yes">Tak</string>
-    <string name="no">Nie</string>
-    <string name="ok">OK</string>
     <string name="app_name">Słownik</string>
     <string name="action_settings">Ustawienia</string>
     <string name="next">Dalej</string>
@@ -110,7 +107,8 @@
     <string name="order_words_in_sentence">Ułóż słowa w zdaniu</string>
     <string name="all_translations">Odtwórz wszystkie tłumaczenia</string>
     <string name="example_language_recognition">Przykład de-DE</string>
-    <string name="reload">Odśwież</string>
+    <string name="import_order">Kolejność importu</string>
+    <string name="sorted">Posortowane</string>
 </resources>
 
 

@@ -1,7 +1,4 @@
 <resources>
-    <string name="yes">はい</string>
-    <string name="no">いいえ</string>
-    <string name="ok">OK</string>
     <string name="app_name">辞書</string>
     <string name="action_settings">設定</string>
     <string name="next">次へ</string>
@@ -110,7 +107,8 @@
     <string name="order_words_in_sentence">文中の単語順を並べ替え</string>
     <string name="all_translations">すべての翻訳を再生</string>
     <string name="example_language_recognition">例 de-DE</string>
-    <string name="reload">再読み込み</string>
+    <string name="import_order">インポート順</string>
+    <string name="sorted">並び替え</string>
 </resources>
 
 

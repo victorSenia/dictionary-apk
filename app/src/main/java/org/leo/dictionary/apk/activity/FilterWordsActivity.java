@@ -6,10 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SwitchCompat;
 import androidx.lifecycle.ViewModelProvider;
 import org.leo.dictionary.ExternalWordProvider;
 import org.leo.dictionary.apk.ApkAppComponent;
@@ -21,7 +21,7 @@ import org.leo.dictionary.apk.activity.fragment.RecyclerViewFragment;
 import org.leo.dictionary.apk.activity.viewadapter.MultiSelectionStringRecyclerViewAdapter;
 import org.leo.dictionary.apk.activity.viewadapter.StringRecyclerViewAdapter;
 import org.leo.dictionary.apk.activity.viewmodel.WordCriteriaViewModel;
-import org.leo.dictionary.apk.databinding.FilterWordsActivityBinding;
+import org.leo.dictionary.apk.databinding.ActivityFilterWordsBinding;
 import org.leo.dictionary.apk.helper.KnowledgeToRatingConverter;
 import org.leo.dictionary.apk.helper.WordCriteriaProvider;
 import org.leo.dictionary.entity.Topic;
@@ -36,6 +36,26 @@ public class FilterWordsActivity extends AppCompatActivity {
 
     public static final int RANGE_FROM_INDEX = 0;
     public static final int RANGE_TO_INDEX = 1;
+
+    private static int checkedIdByMode(WordCriteria.WordsOrderMode mode) {
+        if (mode == WordCriteria.WordsOrderMode.IMPORT_ORDER) {
+            return R.id.import_order;
+        }
+        if (mode == WordCriteria.WordsOrderMode.SHUFFLE) {
+            return R.id.shuffle;
+        }
+        return R.id.sorted;
+    }
+
+    private static WordCriteria.WordsOrderMode modeByCheckedId(int checkedId) {
+        if (checkedId == R.id.import_order) {
+            return WordCriteria.WordsOrderMode.IMPORT_ORDER;
+        }
+        if (checkedId == R.id.shuffle) {
+            return WordCriteria.WordsOrderMode.SHUFFLE;
+        }
+        return WordCriteria.WordsOrderMode.SORTED;
+    }
 
 
     private static WordCriteria getWordCriteria(Context context) {
@@ -57,7 +77,7 @@ public class FilterWordsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         WordCriteriaViewModel wordCriteriaViewModel = new ViewModelProvider(this).get(WordCriteriaViewModel.class);
         wordCriteriaViewModel.getData().observe(this, this::updateCount);
-        FilterWordsActivityBinding binding = FilterWordsActivityBinding.inflate(getLayoutInflater());
+        ActivityFilterWordsBinding binding = ActivityFilterWordsBinding.inflate(getLayoutInflater());
 
         View root = binding.getRoot();
         setContentView(root);
@@ -93,9 +113,11 @@ public class FilterWordsActivity extends AppCompatActivity {
             }
         });
         WordCriteria wordCriteria = getWordCriteria(this);
-        if (wordCriteria.getShuffleRandom() != -1) {
-            binding.shuffle.setChecked(true);
+        WordCriteria.WordsOrderMode wordsOrderMode = wordCriteria.getWordsOrderMode();
+        if (wordsOrderMode == null && wordCriteria.getShuffleRandom() != WordCriteria.NOT_SET) {
+            wordsOrderMode = WordCriteria.WordsOrderMode.SHUFFLE;
         }
+        binding.wordsOrderGroup.check(checkedIdByMode(wordsOrderMode));
         wordCriteriaViewModel.setValue(createCriteriaViewModel(wordCriteria));
         binding.knowledgeRangeSlider.setValues(wordCriteriaViewModel.getValue().getKnowledge());
         binding.knowledgeRangeSlider.addOnChangeListener((slider, value, fromUser) -> {
@@ -136,9 +158,13 @@ public class FilterWordsActivity extends AppCompatActivity {
 
     private WordCriteria createCriteria(WordCriteriaViewModel.WordCriteria criteriaModel) {
         WordCriteria criteria = new WordCriteria();
-        SwitchCompat shuffle = findViewById(R.id.shuffle);
-        if (shuffle.isChecked()) {
+        RadioGroup wordsOrderGroup = findViewById(R.id.words_order_group);
+        WordCriteria.WordsOrderMode wordsOrderMode = modeByCheckedId(wordsOrderGroup.getCheckedRadioButtonId());
+        criteria.setWordsOrderMode(wordsOrderMode);
+        if (wordsOrderMode == WordCriteria.WordsOrderMode.SHUFFLE) {
             criteria.setShuffleRandom(System.currentTimeMillis());
+        } else {
+            criteria.setShuffleRandom(WordCriteria.NOT_SET);
         }
         Set<Topic> selectedTopics = criteriaModel.getTopicsOr();
         if (selectedTopics != null) {

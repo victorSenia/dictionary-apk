@@ -119,8 +119,8 @@ public class MainActivity extends AppCompatActivity {
             }
             importWords(words);
         });
-        builder.setPositiveButton(R.string.yes, dialogClickListener);
-        builder.setNegativeButton(R.string.no, dialogClickListener);
+        builder.setPositiveButton(android.R.string.yes, dialogClickListener);
+        builder.setNegativeButton(android.R.string.no, dialogClickListener);
         return builder;
     }
 
@@ -357,7 +357,7 @@ public class MainActivity extends AppCompatActivity {
         layout.setOrientation(LinearLayout.HORIZONTAL);
         layout.addView(ratingBar);
         builder.setView(layout);
-        builder.setPositiveButton(R.string.ok, (dialog, which) -> setKnowledgeInDatabase(KnowledgeToRatingConverter.ratingToKnowledge(ratingBar.getRating())));
+        builder.setPositiveButton(android.R.string.ok, (dialog, which) -> setKnowledgeInDatabase(KnowledgeToRatingConverter.ratingToKnowledge(ratingBar.getRating())));
         return builder;
     }
 

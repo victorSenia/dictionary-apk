@@ -16,8 +16,8 @@ import java.util.function.Supplier;
 
 public class DatabaseManager extends DatabaseManagerParent<Cursor> {
 
-    private DatabaseHelper dbHelper;
-    private SQLiteDatabase database;
+    private final DatabaseHelper dbHelper;
+    private final SQLiteDatabase database;
 
     public DatabaseManager(DatabaseHelper databaseHelper) {
         dbHelper = databaseHelper;

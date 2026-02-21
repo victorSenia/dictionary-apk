@@ -1,7 +1,4 @@
 <resources>
-    <string name="yes">हाँ</string>
-    <string name="no">नहीं</string>
-    <string name="ok">ठीक है</string>
     <string name="app_name">शब्दकोश</string>
     <string name="action_settings">सेटिंग्स</string>
     <string name="next">अगला</string>
@@ -110,7 +107,8 @@
     <string name="order_words_in_sentence">वाक्य में शब्दों का क्रम</string>
     <string name="all_translations">सभी अनुवाद चलाएँ</string>
     <string name="example_language_recognition">उदाहरण de-DE</string>
-    <string name="reload">रीलोड</string>
+    <string name="import_order">आयात क्रम</string>
+    <string name="sorted">क्रमबद्ध</string>
 </resources>
 
 

@@ -5,7 +5,6 @@ import org.leo.dictionary.entity.SentenceCriteria;
 import org.leo.dictionary.entity.Topic;
 import org.leo.dictionary.grammar.provider.SentenceProvider;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 

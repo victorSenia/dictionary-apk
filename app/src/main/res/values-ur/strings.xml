@@ -1,7 +1,4 @@
 <resources>
-    <string name="yes">ہاں</string>
-    <string name="no">نہیں</string>
-    <string name="ok">ٹھیک ہے</string>
     <string name="app_name">لغت</string>
     <string name="action_settings">ترتیبات</string>
     <string name="next">اگلا</string>
@@ -110,7 +107,8 @@
     <string name="order_words_in_sentence">جملے میں الفاظ کی ترتیب دیں</string>
     <string name="all_translations">تمام تراجم چلائیں</string>
     <string name="example_language_recognition">مثال de-DE</string>
-    <string name="reload">دوبارہ لوڈ کریں</string>
+    <string name="import_order">درآمد کا ترتیب</string>
+    <string name="sorted">مرتب</string>
 </resources>
 
 

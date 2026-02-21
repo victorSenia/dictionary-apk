@@ -58,7 +58,7 @@
             android:layout_height="@dimen/speech_button_dimension"
             android:id="@+id/image_ok"
             android:visibility="invisible"
-            android:layout_gravity="center_horizontal" android:contentDescription="@string/ok"
+            android:layout_gravity="center_horizontal" android:contentDescription="@android:string/ok"
             android:foreground="@android:drawable/checkbox_on_background" android:background="#92C845"
             app:layout_constraintBottom_toTopOf="@+id/next"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"/>

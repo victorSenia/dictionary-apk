@@ -6,7 +6,6 @@ import org.leo.dictionary.entity.Hint;
 import org.leo.dictionary.entity.Topic;
 import org.leo.dictionary.grammar.provider.GrammarProvider;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 

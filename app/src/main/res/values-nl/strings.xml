@@ -1,7 +1,4 @@
 <resources>
-    <string name="yes">Ja</string>
-    <string name="no">Nee</string>
-    <string name="ok">OK</string>
     <string name="app_name">Woordenboek</string>
     <string name="action_settings">Instellingen</string>
     <string name="next">Volgende</string>
@@ -41,7 +38,7 @@
     <string name="unexpected_error">Er is een fout opgetreden. Controleer logs</string>
     <string name="word_not_selected">Woord is niet geselecteerd</string>
     <string name="choose_file">Kies een bestand</string>
-    <string name="correct">Correct</string>
+    <string name="correct">Juist</string>
     <string name="languages_already_present">Taal al aanwezig</string>
     <string name="languages_already_present_question">Er zijn al gegevens voor taal %s in de database. Wilt u deze gegevens verwijderen vóór import?</string>
     <string name="already_database_error">Niet mogelijk. Bron-DB al in gebruik</string>
@@ -88,8 +85,8 @@
     <string name="import_words_from_file">Woorden importeren uit bestand</string>
     <string name="root_topic">Hoofdonderwerp</string>
     <string name="topic_name">Onderwerpnaam</string>
-    <string name="hint">Hint</string>
-    <string name="database">Database</string>
+    <string name="hint">Tip</string>
+    <string name="database">Gegevensbank</string>
     <string name="used_languages">Momenteel gebruikte talen</string>
     <string name="already_created">Al aangemaakt</string>
     <string name="action_apply">Toepassen</string>
@@ -100,8 +97,8 @@
     <string name="word_knowledge">Kennis</string>
     <string name="error">fout</string>
     <string name="grammar_filter">Grammaticafilter</string>
-    <string name="filter">Filter</string>
-    <string name="hints">Hints</string>
+    <string name="filter">Filteren</string>
+    <string name="hints">Tips</string>
     <string name="all_hints">Alle hints</string>
     <string name="learn">Leren</string>
     <string name="practice">Oefenen</string>
@@ -110,7 +107,8 @@
     <string name="order_words_in_sentence">Woorden in zin ordenen</string>
     <string name="all_translations">Alle vertalingen afspelen</string>
     <string name="example_language_recognition">Voorbeeld de-DE</string>
-    <string name="reload">Herladen</string>
+    <string name="import_order">Importvolgorde</string>
+    <string name="sorted">Gesorteerd</string>
 </resources>
 
 

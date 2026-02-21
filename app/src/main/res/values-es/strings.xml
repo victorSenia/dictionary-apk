@@ -1,7 +1,4 @@
 <resources>
-    <string name="yes">Sí</string>
-    <string name="no">No</string>
-    <string name="ok">OK</string>
     <string name="app_name">Diccionario</string>
     <string name="action_settings">Configuración</string>
     <string name="next">Siguiente</string>
@@ -30,7 +27,7 @@
     <string name="knowledge_increase">Aumento de conocimiento</string>
     <string name="delay_per_letter_after">Retraso por letra después</string>
     <string name="delay_before">Retraso antes</string>
-    <string name="general">General</string>
+    <string name="general">Ajustes generales</string>
     <string name="topic_delimiter">Delimitador de tema</string>
     <string name="language_from">Idioma de origen</string>
     <string name="languages_to">Idiomas de destino</string>
@@ -98,7 +95,7 @@
     <string name="action_update">Actualizar</string>
     <string name="word_recognition">Reconocimiento de voz</string>
     <string name="word_knowledge">Conocimiento</string>
-    <string name="error">error</string>
+    <string name="error">Fallo</string>
     <string name="grammar_filter">Filtro gramatical</string>
     <string name="filter">Filtrar</string>
     <string name="hints">Pistas</string>
@@ -110,7 +107,8 @@
     <string name="order_words_in_sentence">Ordenar palabras en la oración</string>
     <string name="all_translations">Reproducir todas las traducciones</string>
     <string name="example_language_recognition">Ejemplo de-DE</string>
-    <string name="reload">Recargar</string>
+    <string name="import_order">Orden de importación</string>
+    <string name="sorted">Ordenado</string>
 </resources>
 
 

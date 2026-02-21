@@ -1,7 +1,4 @@
 <resources>
-    <string name="yes">Yes</string>
-    <string name="no">No</string>
-    <string name="ok">OK</string>
     <string name="app_name">Dictionary</string>
     <string name="action_settings">Settings</string>
     <string name="next">Next</string>
@@ -29,6 +26,8 @@
     <string name="times">Times</string>
     <string name="repeat">Repeat</string>
     <string name="shuffle">Shuffle</string>
+    <string name="import_order">Import order</string>
+    <string name="sorted">Sorted</string>
     <string name="include_article">Include article</string>
     <string name="knowledge_increase">Knowledge increase</string>
     <string name="delay_per_letter_after">Delay per letter after</string>
@@ -119,6 +118,5 @@
     <string name="all_translations">Play all translations</string>
     <string name="example_language_recognition">Example de-DE</string>
     <string name="default_language_recognition" translatable="false">de-DE</string>
-    <string name="reload">Reload</string>
 </resources>
 

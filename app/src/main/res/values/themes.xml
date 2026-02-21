@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.DictionaryApk" parent="Base.Theme.DictionaryApk"/>
+
+    <style name="Widget.DictionaryApk.Button.Icon.FilledTonal" parent="Widget.Material3.Button.IconButton.Filled.Tonal">
+        <item name="android:textSize">0sp</item>
+        <item name="android:drawableTint">?attr/colorOnSecondaryContainer</item>
+    </style>
+
 </resources>

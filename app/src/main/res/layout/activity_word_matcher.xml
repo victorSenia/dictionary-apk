@@ -42,9 +42,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/action_hint"
-                android:textSize="0sp"
                 android:visibility="gone"
-                style="@style/Widget.Material3.Button.TonalButton"
+                style="@style/Widget.DictionaryApk.Button.Icon.FilledTonal"
                 android:layout_weight="0"
                 android:drawableLeft="@android:drawable/ic_menu_help"
                 android:layout_gravity="center_vertical"/>

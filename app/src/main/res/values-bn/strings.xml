@@ -1,7 +1,4 @@
 <resources>
-    <string name="yes">হ্যাঁ</string>
-    <string name="no">না</string>
-    <string name="ok">ঠিক আছে</string>
     <string name="app_name">অভিধান</string>
     <string name="action_settings">সেটিংস</string>
     <string name="next">পরবর্তী</string>
@@ -110,7 +107,8 @@
     <string name="order_words_in_sentence">বাক্যে শব্দের ক্রম সাজান</string>
     <string name="all_translations">সব অনুবাদ চালান</string>
     <string name="example_language_recognition">উদাহরণ de-DE</string>
-    <string name="reload">রিলোড</string>
+    <string name="import_order">ইমপোর্টের ক্রম</string>
+    <string name="sorted">সাজানো</string>
 </resources>
 
 

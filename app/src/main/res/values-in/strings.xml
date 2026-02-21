@@ -1,7 +1,4 @@
 <resources>
-    <string name="yes">Ya</string>
-    <string name="no">Tidak</string>
-    <string name="ok">OK</string>
     <string name="app_name">Kamus</string>
     <string name="action_settings">Pengaturan</string>
     <string name="next">Berikutnya</string>
@@ -11,8 +8,8 @@
     <string name="action_play_from">Putar dari</string>
     <string name="title_activity_topics">Topik</string>
     <string name="parse_words">Urai kata dari file</string>
-    <string name="file">File</string>
-    <string name="pitch">Pitch</string>
+    <string name="file">Berkas</string>
+    <string name="pitch">Nada</string>
     <string name="speed">Kecepatan</string>
     <string name="words">Kata</string>
     <string name="letter_delay">Jeda huruf</string>
@@ -69,7 +66,7 @@
     <string name="set_mode">Ubah tema</string>
     <string name="import_words">Impor yang saat ini ke database</string>
     <string name="use_db">Gunakan database</string>
-    <string name="action_edit">Edit</string>
+    <string name="action_edit">Ubah</string>
     <string name="action_delete">Hapus</string>
     <string name="clean_db">Bersihkan database</string>
     <string name="action_set_knowledge">Atur pengetahuan</string>
@@ -89,7 +86,7 @@
     <string name="root_topic">Topik akar</string>
     <string name="topic_name">Nama topik</string>
     <string name="hint">Petunjuk</string>
-    <string name="database">Database</string>
+    <string name="database">Basis data</string>
     <string name="used_languages">Bahasa yang sedang digunakan</string>
     <string name="already_created">Sudah dibuat</string>
     <string name="action_apply">Terapkan</string>
@@ -100,7 +97,7 @@
     <string name="word_knowledge">Pengetahuan</string>
     <string name="error">kesalahan</string>
     <string name="grammar_filter">Filter tata bahasa</string>
-    <string name="filter">Filter</string>
+    <string name="filter">Saring</string>
     <string name="hints">Petunjuk</string>
     <string name="all_hints">Semua petunjuk</string>
     <string name="learn">Belajar</string>
@@ -110,7 +107,8 @@
     <string name="order_words_in_sentence">Urutkan kata dalam kalimat</string>
     <string name="all_translations">Putar semua terjemahan</string>
     <string name="example_language_recognition">Contoh de-DE</string>
-    <string name="reload">Muat ulang</string>
+    <string name="import_order">Urutan impor</string>
+    <string name="sorted">Diurutkan</string>
 </resources>
 
 

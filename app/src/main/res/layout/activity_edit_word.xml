@@ -56,10 +56,10 @@
                     android:layout_weight="1" android:layout_gravity="center_vertical"/>
             <Button
                     android:text="@string/action_create"
-                    style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+                    style="@style/Widget.DictionaryApk.Button.Icon.FilledTonal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/create_topic" android:layout_weight="0"
-                    android:drawableLeft="@android:drawable/ic_menu_add" android:textSize="0sp"
+                    android:drawableLeft="@android:drawable/ic_menu_add"
                     android:layout_gravity="center_vertical"/>
         </LinearLayout>
         <androidx.recyclerview.widget.RecyclerView

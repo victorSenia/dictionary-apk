@@ -1,7 +1,4 @@
 <resources>
-    <string name="yes">כן</string>
-    <string name="no">לא</string>
-    <string name="ok">אישור</string>
     <string name="app_name">מילון</string>
     <string name="action_settings">הגדרות</string>
     <string name="next">הבא</string>
@@ -110,7 +107,8 @@
     <string name="order_words_in_sentence">סדר מילים במשפט</string>
     <string name="all_translations">נגן את כל התרגומים</string>
     <string name="example_language_recognition">דוגמה de-DE</string>
-    <string name="reload">טען מחדש</string>
+    <string name="import_order">סדר ייבוא</string>
+    <string name="sorted">ממויין</string>
 </resources>
 
 

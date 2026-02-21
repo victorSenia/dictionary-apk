@@ -59,7 +59,7 @@ public class GrammarFilterActivity extends AppCompatActivity {
             criteria = new SentenceCriteriaViewModel.SentenceCriteria();
         }
         criteria.setLanguage(language);
-        criteria.setRootTopics((Set<Topic>) null);
+        criteria.setRootTopics(null);
         criteria.setTopicsOr(null);
         criteria.setHints(null);
         sentenceCriteriaViewModel.setValue(criteria);

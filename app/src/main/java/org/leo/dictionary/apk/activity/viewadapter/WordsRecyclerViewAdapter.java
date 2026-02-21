@@ -169,7 +169,7 @@ public class WordsRecyclerViewAdapter extends RecyclerView.Adapter<WordsRecycler
             builder.setTitle(R.string.delete_word_confirmation);
             builder.setIcon(android.R.drawable.ic_dialog_alert);
             builder.setMessage(fragment.getString(R.string.delete_word_confirmation_message, word.getFullWord()));
-            builder.setPositiveButton(R.string.yes, (dialog, which) -> deleteWord(word));
+            builder.setPositiveButton(android.R.string.yes, (dialog, which) -> deleteWord(word));
             return builder;
         }
     }
