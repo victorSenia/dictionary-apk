@@ -44,6 +44,9 @@ public abstract class FilteredRecyclerViewFragment<V extends RecyclerView.Adapte
     protected void updateListData(Object value) {
         if (stateChanged()) {
             findValuesHideFilterIfNeeded();
+            if (filter != null) {
+                filter.setText("");
+            }
             filterValuesInAdapter();
         }
     }
