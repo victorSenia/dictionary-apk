@@ -224,12 +224,12 @@ public class ApkModule {
         return wordProvider;
     }
 
-    public static InputStreamWordProvider createInputStreamWordProvider(Context context, Uri data) throws FileNotFoundException {
+    public static InputStreamWordProvider createInputStreamWordProvider(Context context, Uri data) {
         InputStreamWordProvider wordProvider = new InputStreamWordProvider();
         ParseWords parseWords = new ParseWords();
         parseWords.setProperties(new HashMap<>(PreferenceManager.getDefaultSharedPreferences(context).getAll()));
         wordProvider.setConfiguration(parseWords);
-        wordProvider.setInputStream(context.getContentResolver().openInputStream(data));
+        wordProvider.setSource(context, data);
         wordProvider.parseAndUpdateConfiguration();
         return wordProvider;
     }
