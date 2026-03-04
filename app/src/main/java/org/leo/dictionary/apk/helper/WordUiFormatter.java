@@ -1,4 +1,5 @@
 package org.leo.dictionary.apk.helper;
+
 import org.leo.dictionary.entity.Translation;
 import org.leo.dictionary.entity.Word;
 
@@ -22,7 +23,8 @@ public final class WordUiFormatter {
         if (word.getAdditionalInformation() != null) {
             builder.append(", ").append(isolate(word.getAdditionalInformation()));
         }
-        builder.append(" - ").append(formatTranslations(word.getTranslations(), ", "));
+        if (word.getTranslations() != null && !word.getTranslations().isEmpty())
+            builder.append(" - ").append(formatTranslations(word.getTranslations(), ", "));
         return builder.toString();
     }
 

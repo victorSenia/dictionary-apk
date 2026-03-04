@@ -174,7 +174,18 @@ public class DatabaseManager extends DatabaseManagerParent<Cursor> {
         getDatabase().delete(DatabaseConstants.TABLE_NAME_WORD, DatabaseConstants.COLUMN_ID + " IN (" + createPlaceholders(wordIds.size()) + ")", wordIds.toArray(new String[0]));
         getDatabase().delete(DatabaseConstants.TABLE_NAME_TRANSLATION, DatabaseConstants.TRANSLATION_COLUMN_WORD_ID + " IN (" + createPlaceholders(wordIds.size()) + ")", wordIds.toArray(new String[0]));
         getDatabase().delete(DatabaseConstants.TABLE_NAME_WORD_TOPIC, DatabaseConstants.TRANSLATION_COLUMN_WORD_ID + " IN (" + createPlaceholders(wordIds.size()) + ")", wordIds.toArray(new String[0]));
+        deleteUnusedTopicsAndRoots();
         return wordIds.size();
+    }
+
+    private void deleteUnusedTopicsAndRoots() {
+        String deleteUnusedTopicsSql = "DELETE FROM " + DatabaseConstants.TABLE_NAME_TOPIC +
+                " WHERE " + DatabaseConstants.COLUMN_ID + " NOT IN (SELECT DISTINCT " + DatabaseConstants.COLUMN_ID + " FROM " + DatabaseConstants.TABLE_NAME_WORD_TOPIC + ")" +
+                " AND " + DatabaseConstants.COLUMN_ID + " NOT IN (SELECT DISTINCT " + DatabaseConstants.TOPIC_COLUMN_ROOT_ID + " FROM " + DatabaseConstants.TABLE_NAME_TOPIC +
+                " WHERE " + DatabaseConstants.TOPIC_COLUMN_ROOT_ID + " IS NOT NULL)";
+
+        getDatabase().execSQL(deleteUnusedTopicsSql);
+        getDatabase().execSQL(deleteUnusedTopicsSql);
     }
 
     public int updateWord(Word word) {
