@@ -44,7 +44,10 @@ public class FilterWordsActivity extends AppCompatActivity {
         if (mode == WordCriteria.WordsOrderMode.SHUFFLE) {
             return R.id.shuffle;
         }
-        return R.id.sorted;
+        if (mode == WordCriteria.WordsOrderMode.SORTED) {
+            return R.id.sorted;
+        }
+        return R.id.import_order;
     }
 
     private static WordCriteria.WordsOrderMode modeByCheckedId(int checkedId) {

@@ -110,7 +110,7 @@
                     android:id="@+id/words_order_group"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:checkedButton="@id/sorted"
+                    android:checkedButton="@id/import_order"
                     android:paddingStart="10dp"
                     android:paddingEnd="10dp">
                 <RadioButton
