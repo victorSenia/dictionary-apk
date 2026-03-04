@@ -4,7 +4,6 @@ import android.content.Context;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
 import android.speech.tts.Voice;
-import androidx.preference.PreferenceManager;
 import org.leo.dictionary.apk.ApkModule;
 import org.leo.dictionary.apk.config.PreferenceConfigurationReader;
 import org.leo.dictionary.apk.config.entity.Speech;
@@ -28,12 +27,9 @@ public class AndroidAudioService implements AudioService {
         this.context = context;
     }
 
-    public void setup() {
-        HashMap<Object, Object> properties = new HashMap<>(PreferenceManager.getDefaultSharedPreferences(context).getAll());
-        PreferenceConfigurationReader.SharedPreferencesProperties changeListener = new PreferenceConfigurationReader.SharedPreferencesProperties(properties);
-        PreferenceManager.getDefaultSharedPreferences(context).registerOnSharedPreferenceChangeListener(changeListener);
+    public void setup(PreferenceConfigurationReader configurationReader) {
         speech = new Speech();
-        speech.setProperties(properties);
+        speech.setProperties(configurationReader.getProperties());
         initTTS();
     }
 

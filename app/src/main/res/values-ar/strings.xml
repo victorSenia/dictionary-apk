@@ -63,7 +63,11 @@
     <string name="default_voice">الصوت الافتراضي</string>
     <string name="find_words">تصفية الكلمات</string>
     <string name="find_words_count">تصفية الكلمات (%d)</string>
-    <string name="set_mode">تغيير السمة</string>
+    <string name="appearance">المظهر</string>
+    <string name="theme_mode">السمة</string>
+    <string name="theme_mode_system">إعدادات النظام</string>
+    <string name="theme_mode_light">فاتح</string>
+    <string name="theme_mode_dark">داكن</string>
     <string name="import_words">استيراد الحالي إلى قاعدة البيانات</string>
     <string name="use_db">استخدام قاعدة البيانات</string>
     <string name="action_edit">تحرير</string>

@@ -63,7 +63,11 @@
     <string name="default_voice">Suara default</string>
     <string name="find_words">Filter kata</string>
     <string name="find_words_count">Filter kata (%d)</string>
-    <string name="set_mode">Ubah tema</string>
+    <string name="appearance">Tampilan</string>
+    <string name="theme_mode">Tema</string>
+    <string name="theme_mode_system">Default sistem</string>
+    <string name="theme_mode_light">Terang</string>
+    <string name="theme_mode_dark">Gelap</string>
     <string name="import_words">Impor yang saat ini ke database</string>
     <string name="use_db">Gunakan database</string>
     <string name="action_edit">Ubah</string>

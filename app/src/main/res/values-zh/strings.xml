@@ -63,7 +63,11 @@
     <string name="default_voice">默认语音</string>
     <string name="find_words">筛选单词</string>
     <string name="find_words_count">筛选单词（%d）</string>
-    <string name="set_mode">切换主题</string>
+    <string name="appearance">外观</string>
+    <string name="theme_mode">主题</string>
+    <string name="theme_mode_system">跟随系统</string>
+    <string name="theme_mode_light">浅色</string>
+    <string name="theme_mode_dark">深色</string>
     <string name="import_words">将当前内容导入数据库</string>
     <string name="use_db">使用数据库</string>
     <string name="action_edit">编辑</string>

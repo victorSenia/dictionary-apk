@@ -62,7 +62,11 @@
     <string name="default_voice">Голос за умовчанням</string>
     <string name="find_words">Фільтрувати слова</string>
     <string name="find_words_count">Фільтрувати слова (%d)</string>
-    <string name="set_mode">Змінити тему</string>
+    <string name="appearance">Зовнішній вигляд</string>
+    <string name="theme_mode">Тема</string>
+    <string name="theme_mode_system">Системна типова</string>
+    <string name="theme_mode_light">Світла</string>
+    <string name="theme_mode_dark">Темна</string>
     <string name="import_words">Імпорт поточних в базу даних</string>
     <string name="use_db">Використовувати базу даних</string>
     <string name="action_edit">Редагувати</string>

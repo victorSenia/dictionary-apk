@@ -18,7 +18,6 @@ import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 import androidx.lifecycle.ViewModelProvider;
 import org.leo.dictionary.PlayService;
 import org.leo.dictionary.UiUpdater;
@@ -67,7 +66,12 @@ public class MainActivity extends AppCompatActivity {
     });
     private final ActivityResultLauncher<Intent> importWordsActivityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
         if (result.getResultCode() == Activity.RESULT_OK && result.getData() != null) {
-            runAtBackground(() -> readWordsFromFile(result.getData().getData()));
+            Uri uri = result.getData().getData();
+            if (uri != null) {
+                runAtBackground(() -> readWordsFromFile(uri));
+            } else {
+                showMessage(getString(R.string.unexpected_error));
+            }
         }
     });
     private final ActivityResultLauncher<Intent> editWordActivityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
@@ -232,9 +236,6 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, FilterWordsActivity.class);
             filterWordsActivityResultLauncher.launch(intent);
             return true;
-        } else if (id == R.id.action_change_mode) {
-            changeNightMode();
-            return true;
         } else if (id == R.id.action_parse_words) {
             Intent i = new Intent(this, ParseWordsSettingsActivity.class);
             parseWordsActivityResultLauncher.launch(i);
@@ -390,17 +391,6 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean isDbSource() {
         return ApkModule.isDBSource(((ApplicationWithDI) getApplicationContext()).appComponent.lastState());
-    }
-
-    protected void changeNightMode() {
-        SharedPreferences preferences = ((ApplicationWithDI) getApplicationContext()).appComponent.lastState();
-        boolean isNightMode = preferences.getBoolean(ApkModule.LAST_STATE_IS_NIGHT_MODE, false);
-        if (!isNightMode) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
-        }
-        preferences.edit().putBoolean(ApkModule.LAST_STATE_IS_NIGHT_MODE, !isNightMode).apply();
     }
 
     private void updateWordsAndUi(WordCriteria wordCriteria) {

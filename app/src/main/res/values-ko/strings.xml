@@ -63,7 +63,11 @@
     <string name="default_voice">기본 음성</string>
     <string name="find_words">단어 필터</string>
     <string name="find_words_count">단어 필터 (%d)</string>
-    <string name="set_mode">테마 변경</string>
+    <string name="appearance">모양</string>
+    <string name="theme_mode">테마</string>
+    <string name="theme_mode_system">시스템 기본값</string>
+    <string name="theme_mode_light">라이트</string>
+    <string name="theme_mode_dark">다크</string>
     <string name="import_words">현재 항목을 데이터베이스로 가져오기</string>
     <string name="use_db">데이터베이스 사용</string>
     <string name="action_edit">편집</string>

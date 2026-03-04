@@ -36,8 +36,13 @@ public class ExportWordsActivity extends AppCompatActivity {
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
                 if (result.getResultCode() == Activity.RESULT_OK && result.getData() != null) {
-                    ActivityUtils.runAtBackground(() -> writeWordsToFile(result.getData().getData()));
-                    finish();
+                    Uri uri = result.getData().getData();
+                    if (uri != null) {
+                        ActivityUtils.runAtBackground(() -> writeWordsToFile(uri));
+                        finish();
+                    } else {
+                        showMessage(getString(R.string.unexpected_error));
+                    }
                 }
             });
 

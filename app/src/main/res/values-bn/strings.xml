@@ -63,7 +63,11 @@
     <string name="default_voice">ডিফল্ট ভয়েস</string>
     <string name="find_words">শব্দ ফিল্টার করুন</string>
     <string name="find_words_count">শব্দ ফিল্টার করুন (%d)</string>
-    <string name="set_mode">থিম পরিবর্তন করুন</string>
+    <string name="appearance">চেহারা</string>
+    <string name="theme_mode">থিম</string>
+    <string name="theme_mode_system">সিস্টেম ডিফল্ট</string>
+    <string name="theme_mode_light">হালকা</string>
+    <string name="theme_mode_dark">গাঢ়</string>
     <string name="import_words">বর্তমানটি ডাটাবেসে ইমপোর্ট করুন</string>
     <string name="use_db">ডাটাবেস ব্যবহার করুন</string>
     <string name="action_edit">সম্পাদনা</string>

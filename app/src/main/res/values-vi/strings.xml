@@ -63,7 +63,11 @@
     <string name="default_voice">Giọng mặc định</string>
     <string name="find_words">Lọc từ</string>
     <string name="find_words_count">Lọc từ (%d)</string>
-    <string name="set_mode">Đổi giao diện</string>
+    <string name="appearance">Giao diện</string>
+    <string name="theme_mode">Chủ đề</string>
+    <string name="theme_mode_system">Mặc định hệ thống</string>
+    <string name="theme_mode_light">Sáng</string>
+    <string name="theme_mode_dark">Tối</string>
     <string name="import_words">Nhập hiện tại vào cơ sở dữ liệu</string>
     <string name="use_db">Dùng cơ sở dữ liệu</string>
     <string name="action_edit">Sửa</string>

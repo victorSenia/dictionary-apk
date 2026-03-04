@@ -63,7 +63,11 @@
     <string name="default_voice">Varsayılan ses</string>
     <string name="find_words">Kelimeleri filtrele</string>
     <string name="find_words_count">Kelimeleri filtrele (%d)</string>
-    <string name="set_mode">Temayı değiştir</string>
+    <string name="appearance">Görünüm</string>
+    <string name="theme_mode">Tema</string>
+    <string name="theme_mode_system">Sistem varsayılanı</string>
+    <string name="theme_mode_light">Açık</string>
+    <string name="theme_mode_dark">Koyu</string>
     <string name="import_words">Mevcut olanı veritabanına aktar</string>
     <string name="use_db">Veritabanını kullan</string>
     <string name="action_edit">Düzenle</string>

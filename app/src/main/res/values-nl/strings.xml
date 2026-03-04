@@ -63,7 +63,11 @@
     <string name="default_voice">Standaardstem</string>
     <string name="find_words">Woorden filteren</string>
     <string name="find_words_count">Woorden filteren (%d)</string>
-    <string name="set_mode">Thema wijzigen</string>
+    <string name="appearance">Weergave</string>
+    <string name="theme_mode">Thema</string>
+    <string name="theme_mode_system">Systeemstandaard</string>
+    <string name="theme_mode_light">Licht</string>
+    <string name="theme_mode_dark">Donker</string>
     <string name="import_words">Huidige importeren naar database</string>
     <string name="use_db">Database gebruiken</string>
     <string name="action_edit">Bewerken</string>

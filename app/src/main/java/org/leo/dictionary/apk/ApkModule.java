@@ -58,7 +58,7 @@ public class ApkModule {
     public static final String LAST_STATE_VOICE = "org.leo.dictionary.apk.config.entity.LastState.voice.";
     public static final String LAST_STATE = "_last_state";
     public static final String LAST_STATE_IS_PORTRAIT = "org.leo.dictionary.apk.config.entity.LastState.isPortrait";
-    public static final String LAST_STATE_IS_NIGHT_MODE = "org.leo.dictionary.apk.config.entity.LastState.isNightMode";
+    public static final String LAST_STATE_THEME_MODE = "org.leo.dictionary.apk.config.entity.LastState.themeMode";
     public static final String LAST_STATE_WORD_CRITERIA = "org.leo.dictionary.apk.config.entity.LastState.wordCriteria";
     public static final String LAST_STATE_GRAMMAR_CRITERIA = "org.leo.dictionary.apk.config.entity.LastState.sentenceCriteria";
     public static final String LAST_STATE_CURRENT_INDEX = "org.leo.dictionary.apk.config.entity.LastState.currentIndex";
@@ -241,10 +241,10 @@ public class ApkModule {
 
     @Provides
     @Singleton
-    public static AudioService provideAudioService(Context context) {
+    public static AudioService provideAudioService(Context context, PreferenceConfigurationReader configurationReader) {
         AndroidAudioService audioService = new AndroidAudioService();
         audioService.setContext(context);
-        audioService.setup();
+        audioService.setup(configurationReader);
         return audioService;
     }
 
@@ -258,9 +258,15 @@ public class ApkModule {
 
     @Provides
     @Singleton
-    public static ConfigurationReader provideConfigurationReader(Context context) {
+    public static PreferenceConfigurationReader providePreferenceConfigurationReader(Context context) {
         PreferenceConfigurationReader configurationReader = new PreferenceConfigurationReader();
         configurationReader.setContext(context);
+        return configurationReader;
+    }
+
+    @Provides
+    @Singleton
+    public static ConfigurationReader provideConfigurationReader(PreferenceConfigurationReader configurationReader) {
         return configurationReader;
     }
 

@@ -63,7 +63,11 @@
     <string name="default_voice">קול ברירת מחדל</string>
     <string name="find_words">סנן מילים</string>
     <string name="find_words_count">סנן מילים (%d)</string>
-    <string name="set_mode">שנה ערכת נושא</string>
+    <string name="appearance">מראה</string>
+    <string name="theme_mode">ערכת נושא</string>
+    <string name="theme_mode_system">ברירת מחדל של המערכת</string>
+    <string name="theme_mode_light">בהיר</string>
+    <string name="theme_mode_dark">כהה</string>
     <string name="import_words">ייבא את הנוכחי למסד הנתונים</string>
     <string name="use_db">השתמש במסד נתונים</string>
     <string name="action_edit">ערוך</string>

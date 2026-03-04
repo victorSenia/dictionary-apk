@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.OpenableColumns;
 import android.view.View;
@@ -31,8 +32,14 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
                 if (result.getResultCode() == Activity.RESULT_OK) {
-                    uri = result.getData().getData();
-                    binding.file.setText(getFileName(result.getData().getData()));
+                    Intent data = result.getData();
+                    if (data == null || data.getData() == null) {
+                        return;
+                    }
+                    Uri selectedUri = data.getData();
+                    persistReadPermissionIfPossible(data, selectedUri);
+                    uri = selectedUri;
+                    binding.file.setText(getFileName(selectedUri));
                     binding.asset.setText(R.string.asset);
                     type = ApkModule.FILE;
                 }
@@ -42,6 +49,9 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
             result -> {
                 if (result.getResultCode() == Activity.RESULT_OK) {
                     Intent data = result.getData();
+                    if (data == null) {
+                        return;
+                    }
                     String string = data.getStringExtra(ReturnSelectedStringRecyclerViewAdapter.DATA_STRING_EXTRA);
                     binding.asset.setText(string);
                     binding.file.setText(R.string.file);
@@ -70,8 +80,10 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
         }
 
         binding.file.setOnClickListener(v -> {
-            Intent chooseFile = new Intent(Intent.ACTION_GET_CONTENT);
+            Intent chooseFile = new Intent(Intent.ACTION_OPEN_DOCUMENT);
             chooseFile.setType("text/plain");
+            chooseFile.addCategory(Intent.CATEGORY_OPENABLE);
+            chooseFile.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION);
             chooseFile = Intent.createChooser(chooseFile, getString(R.string.choose_file));
             filesActivityResultLauncher.launch(chooseFile);
         });
@@ -104,7 +116,7 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
                     finish();
                 } catch (FileNotFoundException e) {
                     ActivityUtils.logUnhandledException(e);
-                    throw new RuntimeException(e);
+                    type = null;
                 }
             }
         });
@@ -120,7 +132,7 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
         try (Cursor cursor = getContentResolver().query(uri, null, null, null, null)) {
             if (cursor != null && cursor.moveToFirst()) {
                 int columnIndex = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME);
-                if (columnIndex > 0) {
+                if (columnIndex >= 0) {
                     return cursor.getString(columnIndex);
                 }
             }
@@ -140,6 +152,20 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
         }
         WordProviderDelegate wordProviderDelegate = (WordProviderDelegate) ((ApplicationWithDI) getApplicationContext()).appComponent.externalWordProvider();
         wordProviderDelegate.setWordProvider(wordProvider);
+    }
+
+    private void persistReadPermissionIfPossible(Intent data, Uri selectedUri) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            int grantedFlags = data.getFlags();
+            if ((grantedFlags & Intent.FLAG_GRANT_READ_URI_PERMISSION) == 0) {
+                return;
+            }
+            try {
+                getContentResolver().takePersistableUriPermission(selectedUri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            } catch (SecurityException e) {
+                ActivityUtils.logUnhandledException(e);
+            }
+        }
     }
 
     public static class SettingsFragment extends PreferenceFragmentCompat {

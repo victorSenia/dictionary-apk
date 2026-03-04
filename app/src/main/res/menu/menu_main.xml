@@ -6,11 +6,6 @@
           android:title="@string/action_settings"
           android:orderInCategory="900"
           app:showAsAction="never"/>
-    <item android:id="@+id/action_change_mode"
-          android:title="@string/set_mode"
-          android:layout_width="wrap_content"
-          android:orderInCategory="100"
-          android:layout_height="wrap_content"/>
     <item android:id="@+id/action_configuration_presets"
           android:title="@string/configuration_presets"
           android:layout_width="wrap_content"

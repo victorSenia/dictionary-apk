@@ -63,7 +63,11 @@
     <string name="default_voice">صدای پیش‌فرض</string>
     <string name="find_words">فیلتر واژه‌ها</string>
     <string name="find_words_count">فیلتر واژه‌ها (%d)</string>
-    <string name="set_mode">تغییر پوسته</string>
+    <string name="appearance">ظاهر</string>
+    <string name="theme_mode">تم</string>
+    <string name="theme_mode_system">پیش‌فرض سیستم</string>
+    <string name="theme_mode_light">روشن</string>
+    <string name="theme_mode_dark">تیره</string>
     <string name="import_words">وارد کردن مورد فعلی به پایگاه داده</string>
     <string name="use_db">استفاده از پایگاه داده</string>
     <string name="action_edit">ویرایش</string>

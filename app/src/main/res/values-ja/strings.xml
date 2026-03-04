@@ -63,7 +63,11 @@
     <string name="default_voice">デフォルト音声</string>
     <string name="find_words">単語をフィルタ</string>
     <string name="find_words_count">単語をフィルタ (%d)</string>
-    <string name="set_mode">テーマを変更</string>
+    <string name="appearance">外観</string>
+    <string name="theme_mode">テーマ</string>
+    <string name="theme_mode_system">システム設定</string>
+    <string name="theme_mode_light">ライト</string>
+    <string name="theme_mode_dark">ダーク</string>
     <string name="import_words">現在の内容をデータベースにインポート</string>
     <string name="use_db">データベースを使用</string>
     <string name="action_edit">編集</string>

@@ -63,7 +63,11 @@
     <string name="default_voice">Voz padrão</string>
     <string name="find_words">Filtrar palavras</string>
     <string name="find_words_count">Filtrar palavras (%d)</string>
-    <string name="set_mode">Alterar tema</string>
+    <string name="appearance">Aparência</string>
+    <string name="theme_mode">Tema</string>
+    <string name="theme_mode_system">Padrão do sistema</string>
+    <string name="theme_mode_light">Claro</string>
+    <string name="theme_mode_dark">Escuro</string>
     <string name="import_words">Importar atual para o banco de dados</string>
     <string name="use_db">Usar banco de dados</string>
     <string name="action_edit">Editar</string>

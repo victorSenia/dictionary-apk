@@ -63,7 +63,11 @@
     <string name="default_voice">डिफ़ॉल्ट आवाज़</string>
     <string name="find_words">शब्द फ़िल्टर करें</string>
     <string name="find_words_count">शब्द फ़िल्टर करें (%d)</string>
-    <string name="set_mode">थीम बदलें</string>
+    <string name="appearance">रूप-रंग</string>
+    <string name="theme_mode">थीम</string>
+    <string name="theme_mode_system">सिस्टम डिफ़ॉल्ट</string>
+    <string name="theme_mode_light">हल्का</string>
+    <string name="theme_mode_dark">गहरा</string>
     <string name="import_words">वर्तमान को डेटाबेस में आयात करें</string>
     <string name="use_db">डेटाबेस उपयोग करें</string>
     <string name="action_edit">संपादित करें</string>

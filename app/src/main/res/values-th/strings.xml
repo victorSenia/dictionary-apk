@@ -63,7 +63,11 @@
     <string name="default_voice">เสียงเริ่มต้น</string>
     <string name="find_words">กรองคำศัพท์</string>
     <string name="find_words_count">กรองคำศัพท์ (%d)</string>
-    <string name="set_mode">เปลี่ยนธีม</string>
+    <string name="appearance">ลักษณะที่ปรากฏ</string>
+    <string name="theme_mode">ธีม</string>
+    <string name="theme_mode_system">ค่าเริ่มต้นของระบบ</string>
+    <string name="theme_mode_light">สว่าง</string>
+    <string name="theme_mode_dark">มืด</string>
     <string name="import_words">นำเข้าปัจจุบันไปยังฐานข้อมูล</string>
     <string name="use_db">ใช้ฐานข้อมูล</string>
     <string name="action_edit">แก้ไข</string>

@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Environment;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.preference.PreferenceManager;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -19,7 +20,6 @@ import java.util.logging.Logger;
 
 // appComponent lives in the Application class to share its lifecycle
 public class ApplicationWithDI extends Application {
-
     public final Map<String, Object> data = new HashMap<>();
     // Reference to the application graph that is used across the whole app
     public ApkAppComponent appComponent;
@@ -33,11 +33,19 @@ public class ApplicationWithDI extends Application {
             setupErrorLogging();
         }
         appComponent = DaggerApkAppComponent.builder().apkModule(new ApkModule(this)).build();
-        if (appComponent.lastState().getBoolean(ApkModule.LAST_STATE_IS_NIGHT_MODE, false)) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+        String themeMode = PreferenceManager.getDefaultSharedPreferences(this)
+                .getString(ApkModule.LAST_STATE_THEME_MODE, String.valueOf(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM));
+        applyThemeMode(themeMode);
+    }
+
+    public static void applyThemeMode(String mode) {
+        int nightMode;
+        try {
+            nightMode = Integer.parseInt(mode);
+        } catch (NumberFormatException e) {
+            nightMode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
         }
+        AppCompatDelegate.setDefaultNightMode(nightMode);
     }
 
     private static void setupErrorLogging() {

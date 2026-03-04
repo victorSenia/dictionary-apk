@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class PreferenceConfigurationReader extends FileConfigurationReader {
     private Context context;
-    private SharedPreferences.OnSharedPreferenceChangeListener changeListener;
+    private SharedPreferencesProperties changeListener;
 
     public void setContext(Context context) {
         this.context = context;
@@ -24,10 +24,16 @@ public class PreferenceConfigurationReader extends FileConfigurationReader {
 
     @Override
     public Map<Object, Object> readConfig(String path) {
-        HashMap<Object, Object> properties = new HashMap<>(PreferenceManager.getDefaultSharedPreferences(context).getAll());
-        changeListener = new SharedPreferencesProperties(properties);
-        PreferenceManager.getDefaultSharedPreferences(context).registerOnSharedPreferenceChangeListener(changeListener);
-        return properties;
+        return getProperties();
+    }
+
+    public Map<Object, Object> getProperties() {
+        if (changeListener == null) {
+            HashMap<Object, Object> properties = new HashMap<>(PreferenceManager.getDefaultSharedPreferences(context).getAll());
+            changeListener = new SharedPreferencesProperties(properties);
+            PreferenceManager.getDefaultSharedPreferences(context).registerOnSharedPreferenceChangeListener(changeListener);
+        }
+        return changeListener.properties;
     }
 
     @Override
@@ -41,7 +47,6 @@ public class PreferenceConfigurationReader extends FileConfigurationReader {
         public SharedPreferencesProperties(HashMap<Object, Object> properties) {
             this.properties = properties;
         }
-
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, @Nullable String key) {
             properties.put(key, sharedPreferences.getAll().get(key));
