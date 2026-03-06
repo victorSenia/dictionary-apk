@@ -49,7 +49,7 @@ public class MatchArticleActivity extends AppCompatActivity {
                 setNext(model);
             }
         }
-        model.getData().observe(this, w -> binding.textWord.setText(w.getWord()));
+        model.getData().observe(this, w -> binding.textWord.setText(w != null ? w.getWord() : ""));
         binding.buttonNext.setOnClickListener(e -> setNext(model));
 
         binding.articlesContainer.removeAllViews();
@@ -70,7 +70,8 @@ public class MatchArticleActivity extends AppCompatActivity {
 
     protected void checkArticle(String article) {
         EditWordViewModel model = new ViewModelProvider(this).get(EditWordViewModel.class);
-        if (Objects.equals(model.getValue().getArticle(), article)) {
+        Word currentWord = model.getValue();
+        if (currentWord != null && Objects.equals(currentWord.getArticle(), article)) {
             binding.textWord.setText(model.getValue().getFullWord());
             this.binding.imageOk.setVisibility(View.VISIBLE);
             if (getCorrectDelayMillis() > -1) {
@@ -82,6 +83,13 @@ public class MatchArticleActivity extends AppCompatActivity {
 
     private void setNext(EditWordViewModel model) {
         binding.imageOk.setVisibility(View.INVISIBLE);
+        boolean hasWords = words != null && !words.isEmpty();
+        binding.buttonNext.setEnabled(hasWords);
+        if (!hasWords) {
+            model.setValue(null);
+            binding.textWord.setText("");
+            return;
+        }
         model.setValue(words.get(random.nextInt(words.size())));
     }
 

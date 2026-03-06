@@ -29,9 +29,6 @@ public final class WordUiFormatter {
     }
 
     private static String formatTranslations(List<Translation> translations, String delimiter) {
-        if (translations == null) {
-            return "";
-        }
         return translations.stream()
                 .map(Translation::getTranslation)
                 .map(WordUiFormatter::isolate)

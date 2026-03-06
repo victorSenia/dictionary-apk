@@ -1,6 +1,7 @@
 package org.leo.dictionary.apk.helper;
 
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import java.io.Serializable;
 
@@ -8,6 +9,7 @@ import static org.leo.dictionary.helper.SerializeUtils.deserialize;
 import static org.leo.dictionary.helper.SerializeUtils.serialize;
 
 public abstract class ObjectInStateProvider<T extends Serializable> {
+    private static final String TAG = ObjectInStateProvider.class.getSimpleName();
     protected SharedPreferences lastState;
     private T object;
 
@@ -25,7 +27,13 @@ public abstract class ObjectInStateProvider<T extends Serializable> {
             if (object == null) {
                 lastState.edit().remove(lastStateName()).apply();
             } else {
-                lastState.edit().putString(lastStateName(), serialize(object)).apply();
+                try {
+                    lastState.edit().putString(lastStateName(), serialize(object)).apply();
+                } catch (Exception | LinkageError e) {
+                    // Keep in-memory state even if persistent serialization is unavailable on runtime.
+                    Log.w(TAG, "Failed to persist state " + lastStateName(), e);
+                    lastState.edit().remove(lastStateName()).apply();
+                }
             }
         }
     }
@@ -36,7 +44,12 @@ public abstract class ObjectInStateProvider<T extends Serializable> {
 
     public T getLastStateObject() {
         if (lastState != null && lastState.contains(lastStateName())) {
-            return (T) deserialize(lastState.getString(lastStateName(), ""));
+            try {
+                return (T) deserialize(lastState.getString(lastStateName(), ""));
+            } catch (Exception | LinkageError e) {
+                Log.w(TAG, "Failed to restore state " + lastStateName(), e);
+                lastState.edit().remove(lastStateName()).apply();
+            }
         }
         return newObject();
     }

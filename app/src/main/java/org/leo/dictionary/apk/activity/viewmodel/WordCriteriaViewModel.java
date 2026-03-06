@@ -8,6 +8,16 @@ import java.util.Set;
 
 public class WordCriteriaViewModel extends ObjectViewModel<WordCriteriaViewModel.WordCriteria> {
 
+    @Override
+    public WordCriteria getValue() {
+        WordCriteria value = super.getValue();
+        if (value == null) {
+            value = new WordCriteria();
+            super.setValue(value);
+        }
+        return value;
+    }
+
     public void triggerUpdate() {
         postValue(getValue());
     }
