@@ -113,6 +113,8 @@
     <string name="example_language_recognition">উদাহরণ de-DE</string>
     <string name="import_order">ইমপোর্টের ক্রম</string>
     <string name="sorted">সাজানো</string>
+    <string name="cannot_be_empty">খালি হতে পারে না</string>
+    <string name="file_cannot_be_accessed">ফাইলে প্রবেশ করা যাচ্ছে না।</string>
 </resources>
 
 

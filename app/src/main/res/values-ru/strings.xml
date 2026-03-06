@@ -113,6 +113,8 @@
     <string name="example_language_recognition">Пример de-DE</string>
     <string name="import_order">Порядок импорта</string>
     <string name="sorted">Отсортировано</string>
+    <string name="cannot_be_empty">Не может быть пустым</string>
+    <string name="file_cannot_be_accessed">Не удается получить доступ к файлу.</string>
 </resources>
 
 

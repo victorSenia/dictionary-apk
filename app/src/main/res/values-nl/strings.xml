@@ -113,6 +113,8 @@
     <string name="example_language_recognition">Voorbeeld de-DE</string>
     <string name="import_order">Importvolgorde</string>
     <string name="sorted">Gesorteerd</string>
+    <string name="cannot_be_empty">Mag niet leeg zijn</string>
+    <string name="file_cannot_be_accessed">Bestand is niet toegankelijk.</string>
 </resources>
 
 

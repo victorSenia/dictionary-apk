@@ -113,6 +113,8 @@
     <string name="example_language_recognition">مثال de-DE</string>
     <string name="import_order">درآمد کا ترتیب</string>
     <string name="sorted">مرتب</string>
+    <string name="cannot_be_empty">خالی نہیں ہو سکتا</string>
+    <string name="file_cannot_be_accessed">فائل تک رسائی ممکن نہیں۔</string>
 </resources>
 
 

@@ -45,6 +45,7 @@
                             android:gravity="center|top"
                             android:textSize="40sp"/>
                     <TextView
+                            android:visibility='@{viewModel.data.translations==null||viewModel.data.translations.empty?android.view.View.GONE:android.view.View.VISIBLE}'
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text='@{viewModel.data.getFormattedTranslations("\n")}'

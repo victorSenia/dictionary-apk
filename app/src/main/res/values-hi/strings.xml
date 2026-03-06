@@ -113,6 +113,8 @@
     <string name="example_language_recognition">उदाहरण de-DE</string>
     <string name="import_order">आयात क्रम</string>
     <string name="sorted">क्रमबद्ध</string>
+    <string name="cannot_be_empty">खाली नहीं हो सकता</string>
+    <string name="file_cannot_be_accessed">फ़ाइल तक पहुँचा नहीं जा सकता।</string>
 </resources>
 
 

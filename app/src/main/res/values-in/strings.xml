@@ -113,6 +113,8 @@
     <string name="example_language_recognition">Contoh de-DE</string>
     <string name="import_order">Urutan impor</string>
     <string name="sorted">Diurutkan</string>
+    <string name="cannot_be_empty">Tidak boleh kosong</string>
+    <string name="file_cannot_be_accessed">File tidak dapat diakses.</string>
 </resources>
 
 

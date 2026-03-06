@@ -1,4 +1,4 @@
-﻿<resources>
+<resources>
     <string name="app_name">Dictionary</string>
     <string name="action_settings">Settings</string>
     <string name="next">Next</string>
@@ -122,6 +122,8 @@
     <string name="all_translations">Play all translations</string>
     <string name="example_language_recognition">Example de-DE</string>
     <string name="default_language_recognition" translatable="false">de-DE</string>
+    <string name="cannot_be_empty">Cannot be empty</string>
+    <string name="file_cannot_be_accessed">File cannot be accessed.</string>
 </resources>
 
 

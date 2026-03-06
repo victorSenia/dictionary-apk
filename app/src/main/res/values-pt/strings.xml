@@ -113,6 +113,8 @@
     <string name="example_language_recognition">Exemplo de-DE</string>
     <string name="import_order">Ordem de importação</string>
     <string name="sorted">Ordenado</string>
+    <string name="cannot_be_empty">Não pode estar vazio</string>
+    <string name="file_cannot_be_accessed">Não é possível acessar o arquivo.</string>
 </resources>
 
 

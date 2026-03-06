@@ -113,6 +113,8 @@
     <string name="example_language_recognition">דוגמה de-DE</string>
     <string name="import_order">סדר ייבוא</string>
     <string name="sorted">ממויין</string>
+    <string name="cannot_be_empty">לא יכול להיות ריק</string>
+    <string name="file_cannot_be_accessed">לא ניתן לגשת לקובץ.</string>
 </resources>
 
 

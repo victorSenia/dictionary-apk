@@ -113,6 +113,8 @@
     <string name="example_language_recognition">Örnek de-DE</string>
     <string name="import_order">İçe aktarma sırası</string>
     <string name="sorted">Sıralı</string>
+    <string name="cannot_be_empty">Boş olamaz</string>
+    <string name="file_cannot_be_accessed">Dosyaya erişilemiyor.</string>
 </resources>
 
 

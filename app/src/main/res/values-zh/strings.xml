@@ -113,6 +113,8 @@
     <string name="example_language_recognition">示例 de-DE</string>
     <string name="import_order">导入顺序</string>
     <string name="sorted">已排序</string>
+    <string name="cannot_be_empty">不能为空</string>
+    <string name="file_cannot_be_accessed">无法访问该文件。</string>
 </resources>
 
 

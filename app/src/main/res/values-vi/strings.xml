@@ -113,4 +113,6 @@
     <string name="example_language_recognition">Ví dụ de-DE</string>
     <string name="import_order">Thứ tự nhập</string>
     <string name="sorted">Đã sắp xếp</string>
+    <string name="cannot_be_empty">Không được để trống</string>
+    <string name="file_cannot_be_accessed">Không thể truy cập tệp.</string>
 </resources>

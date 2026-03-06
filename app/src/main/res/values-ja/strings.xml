@@ -113,6 +113,8 @@
     <string name="example_language_recognition">例 de-DE</string>
     <string name="import_order">インポート順</string>
     <string name="sorted">並び替え</string>
+    <string name="cannot_be_empty">空にできません</string>
+    <string name="file_cannot_be_accessed">ファイルにアクセスできません。</string>
 </resources>
 
 

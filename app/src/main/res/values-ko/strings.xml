@@ -113,6 +113,8 @@
     <string name="example_language_recognition">예시 de-DE</string>
     <string name="import_order">가져온 순서</string>
     <string name="sorted">정렬됨</string>
+    <string name="cannot_be_empty">비워 둘 수 없습니다</string>
+    <string name="file_cannot_be_accessed">파일에 접근할 수 없습니다.</string>
 </resources>
 
 

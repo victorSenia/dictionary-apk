@@ -113,6 +113,8 @@
     <string name="example_language_recognition">ตัวอย่าง de-DE</string>
     <string name="import_order">ลำดับการนำเข้า</string>
     <string name="sorted">เรียงลำดับ</string>
+    <string name="cannot_be_empty">ต้องไม่เว้นว่าง</string>
+    <string name="file_cannot_be_accessed">ไม่สามารถเข้าถึงไฟล์ได้</string>
 </resources>
 
 

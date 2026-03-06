@@ -196,7 +196,7 @@ public class ApkModule {
         } catch (Exception e) {
             ActivityUtils.logUnhandledException(e);
         }
-        Toast.makeText(context, "File cannot be accessed.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, R.string.file_cannot_be_accessed, Toast.LENGTH_SHORT).show();
         criteriaProvider.setObject(null);
         return createAssetsWordProvider(provideParseWordsConfiguration(context), context);
     }

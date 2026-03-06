@@ -113,6 +113,8 @@
     <string name="example_language_recognition">مثال de-DE</string>
     <string name="import_order">ترتيب الاستيراد</string>
     <string name="sorted">مرتب</string>
+    <string name="cannot_be_empty">لا يمكن أن يكون فارغًا</string>
+    <string name="file_cannot_be_accessed">لا يمكن الوصول إلى الملف.</string>
 </resources>
 
 

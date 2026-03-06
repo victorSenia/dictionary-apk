@@ -113,6 +113,8 @@
     <string name="pause">Пауза</string>
     <string name="import_order">Порядок імпорту</string>
     <string name="sorted">Відсортовано</string>
+    <string name="cannot_be_empty">Не може бути порожнім</string>
+    <string name="file_cannot_be_accessed">Неможливо отримати доступ до файлу.</string>
 </resources>
 
 

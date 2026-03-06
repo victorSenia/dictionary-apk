@@ -113,6 +113,8 @@
     <string name="example_language_recognition">نمونه de-DE</string>
     <string name="import_order">ترتیب واردسازی</string>
     <string name="sorted">مرتب‌شده</string>
+    <string name="cannot_be_empty">نمی‌تواند خالی باشد</string>
+    <string name="file_cannot_be_accessed">دسترسی به فایل ممکن نیست.</string>
 </resources>
 
 
