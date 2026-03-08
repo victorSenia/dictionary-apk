@@ -115,6 +115,7 @@
     <string name="sorted">Posortowane</string>
     <string name="cannot_be_empty">Nie może być puste</string>
     <string name="file_cannot_be_accessed">Nie można uzyskać dostępu do pliku.</string>
+    <string name="menu_group_training">Trening</string>
+    <string name="menu_group_data">Dane</string>
+    <string name="menu_group_settings">Ustawienia</string>
 </resources>
-
-

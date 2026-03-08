@@ -115,6 +115,7 @@
     <string name="sorted">Отсортировано</string>
     <string name="cannot_be_empty">Не может быть пустым</string>
     <string name="file_cannot_be_accessed">Не удается получить доступ к файлу.</string>
+    <string name="menu_group_training">Тренировка</string>
+    <string name="menu_group_data">Данные</string>
+    <string name="menu_group_settings">Настройки</string>
 </resources>
-
-

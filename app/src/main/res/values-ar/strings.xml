@@ -115,6 +115,7 @@
     <string name="sorted">مرتب</string>
     <string name="cannot_be_empty">لا يمكن أن يكون فارغًا</string>
     <string name="file_cannot_be_accessed">لا يمكن الوصول إلى الملف.</string>
+    <string name="menu_group_training">التدريب</string>
+    <string name="menu_group_data">البيانات</string>
+    <string name="menu_group_settings">الإعدادات</string>
 </resources>
-
-

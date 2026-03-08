@@ -115,4 +115,7 @@
     <string name="sorted">Đã sắp xếp</string>
     <string name="cannot_be_empty">Không được để trống</string>
     <string name="file_cannot_be_accessed">Không thể truy cập tệp.</string>
+    <string name="menu_group_training">Luyện tập</string>
+    <string name="menu_group_data">Dữ liệu</string>
+    <string name="menu_group_settings">Cài đặt</string>
 </resources>

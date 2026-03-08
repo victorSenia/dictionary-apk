@@ -115,6 +115,7 @@
     <string name="sorted">정렬됨</string>
     <string name="cannot_be_empty">비워 둘 수 없습니다</string>
     <string name="file_cannot_be_accessed">파일에 접근할 수 없습니다.</string>
+    <string name="menu_group_training">학습</string>
+    <string name="menu_group_data">데이터</string>
+    <string name="menu_group_settings">설정</string>
 </resources>
-
-

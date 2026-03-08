@@ -115,6 +115,7 @@
     <string name="sorted">क्रमबद्ध</string>
     <string name="cannot_be_empty">खाली नहीं हो सकता</string>
     <string name="file_cannot_be_accessed">फ़ाइल तक पहुँचा नहीं जा सकता।</string>
+    <string name="menu_group_training">प्रशिक्षण</string>
+    <string name="menu_group_data">डेटा</string>
+    <string name="menu_group_settings">सेटिंग्स</string>
 </resources>
-
-

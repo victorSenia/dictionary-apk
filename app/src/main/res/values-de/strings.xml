@@ -115,6 +115,7 @@
     <string name="sorted">Sortiert</string>
     <string name="cannot_be_empty">Darf nicht leer sein</string>
     <string name="file_cannot_be_accessed">Auf die Datei kann nicht zugegriffen werden.</string>
+    <string name="menu_group_training">Training</string>
+    <string name="menu_group_data">Daten</string>
+    <string name="menu_group_settings">Einstellungen</string>
 </resources>
-
-

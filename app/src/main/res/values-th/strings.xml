@@ -115,6 +115,7 @@
     <string name="sorted">เรียงลำดับ</string>
     <string name="cannot_be_empty">ต้องไม่เว้นว่าง</string>
     <string name="file_cannot_be_accessed">ไม่สามารถเข้าถึงไฟล์ได้</string>
+    <string name="menu_group_training">การฝึก</string>
+    <string name="menu_group_data">ข้อมูล</string>
+    <string name="menu_group_settings">การตั้งค่า</string>
 </resources>
-
-

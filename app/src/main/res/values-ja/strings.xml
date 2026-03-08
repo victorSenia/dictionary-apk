@@ -115,6 +115,7 @@
     <string name="sorted">並び替え</string>
     <string name="cannot_be_empty">空にできません</string>
     <string name="file_cannot_be_accessed">ファイルにアクセスできません。</string>
+    <string name="menu_group_training">トレーニング</string>
+    <string name="menu_group_data">データ</string>
+    <string name="menu_group_settings">設定</string>
 </resources>
-
-

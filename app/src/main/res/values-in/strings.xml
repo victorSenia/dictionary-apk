@@ -115,6 +115,7 @@
     <string name="sorted">Diurutkan</string>
     <string name="cannot_be_empty">Tidak boleh kosong</string>
     <string name="file_cannot_be_accessed">File tidak dapat diakses.</string>
+    <string name="menu_group_training">Pelatihan</string>
+    <string name="menu_group_data">Data</string>
+    <string name="menu_group_settings">Pengaturan</string>
 </resources>
-
-

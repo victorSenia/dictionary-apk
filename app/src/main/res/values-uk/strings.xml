@@ -115,6 +115,7 @@
     <string name="sorted">Відсортовано</string>
     <string name="cannot_be_empty">Не може бути порожнім</string>
     <string name="file_cannot_be_accessed">Неможливо отримати доступ до файлу.</string>
+    <string name="menu_group_training">Тренування</string>
+    <string name="menu_group_data">Дані</string>
+    <string name="menu_group_settings">Налаштування</string>
 </resources>
-
-

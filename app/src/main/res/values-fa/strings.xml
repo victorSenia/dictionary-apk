@@ -115,6 +115,7 @@
     <string name="sorted">مرتب‌شده</string>
     <string name="cannot_be_empty">نمی‌تواند خالی باشد</string>
     <string name="file_cannot_be_accessed">دسترسی به فایل ممکن نیست.</string>
+    <string name="menu_group_training">تمرین</string>
+    <string name="menu_group_data">داده‌ها</string>
+    <string name="menu_group_settings">تنظیمات</string>
 </resources>
-
-

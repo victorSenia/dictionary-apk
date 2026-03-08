@@ -70,6 +70,9 @@
     <string name="default_voice">Default voice</string>
     <string name="find_words">Filter words</string>
     <string name="find_words_count">Filter words (%d)</string>
+    <string name="menu_group_training">Training</string>
+    <string name="menu_group_data">Data</string>
+    <string name="menu_group_settings">Settings</string>
     <string name="appearance">Appearance</string>
     <string name="theme_mode">Theme</string>
     <string name="theme_mode_system">System default</string>

@@ -115,6 +115,7 @@
     <string name="sorted">সাজানো</string>
     <string name="cannot_be_empty">খালি হতে পারে না</string>
     <string name="file_cannot_be_accessed">ফাইলে প্রবেশ করা যাচ্ছে না।</string>
+    <string name="menu_group_training">প্রশিক্ষণ</string>
+    <string name="menu_group_data">ডেটা</string>
+    <string name="menu_group_settings">সেটিংস</string>
 </resources>
-
-
