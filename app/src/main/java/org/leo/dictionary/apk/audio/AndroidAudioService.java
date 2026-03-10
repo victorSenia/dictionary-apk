@@ -92,6 +92,21 @@ public class AndroidAudioService implements AudioService {
         }
     }
 
+    public void pause(long delay) {
+        setTTS(true);
+        isSpeaking = true;
+        textToSpeech.playSilentUtterance(delay, TextToSpeech.QUEUE_ADD, "AndroidAudioService.pause");
+        synchronized (lock) {
+            while (isSpeaking) {
+                try {
+                    lock.wait();
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
+    }
+
     private void setTTS(boolean retry) {
         try {
             textToSpeech.setSpeechRate(speech.getSpeed());

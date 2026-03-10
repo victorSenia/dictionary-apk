@@ -37,11 +37,11 @@ import org.leo.dictionary.word.provider.WordProviderDelegate;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
-import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
 
 @Module
 public class ApkModule {
@@ -279,10 +279,20 @@ public class ApkModule {
         playService.setAudioService(audioService);
         playService.setWordProvider(wordProvider);
         playService.setUiUpdater(uiUpdater);
+        playService.setDelayProvider(audioService instanceof AndroidAudioService ? ((AndroidAudioService) audioService)::pause : delayProvider);
         WordCriteria criteria = criteriaProvider.getObject();
         playService.setPlayTranslationFor(criteria.getPlayTranslationFor());
         return playService;
     }
+
+    private static final Consumer<Long> delayProvider = delay ->
+    {
+        try {
+            Thread.sleep(delay);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    };
 
     @Provides
     @Singleton
