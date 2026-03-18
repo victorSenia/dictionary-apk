@@ -13,6 +13,7 @@ import org.leo.dictionary.PlayServiceImpl;
 import org.leo.dictionary.UiUpdater;
 import org.leo.dictionary.apk.activity.ActivityUtils;
 import org.leo.dictionary.apk.audio.AndroidAudioService;
+import org.leo.dictionary.apk.audio.PauseHelper;
 import org.leo.dictionary.apk.config.AssetsConfigurationReader;
 import org.leo.dictionary.apk.config.PreferenceConfigurationReader;
 import org.leo.dictionary.apk.grammar.provider.AssetsGrammarProvider;
@@ -279,7 +280,7 @@ public class ApkModule {
         playService.setAudioService(audioService);
         playService.setWordProvider(wordProvider);
         playService.setUiUpdater(uiUpdater);
-        playService.setDelayProvider(audioService instanceof AndroidAudioService ? ((AndroidAudioService) audioService)::pause : delayProvider);
+        playService.setDelayProvider(PauseHelper::pause);
         WordCriteria criteria = criteriaProvider.getObject();
         playService.setPlayTranslationFor(criteria.getPlayTranslationFor());
         return playService;
@@ -290,6 +291,7 @@ public class ApkModule {
         try {
             Thread.sleep(delay);
         } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
             throw new RuntimeException(e);
         }
     };

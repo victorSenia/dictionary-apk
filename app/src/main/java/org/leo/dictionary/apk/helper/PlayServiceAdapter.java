@@ -71,21 +71,21 @@ public class PlayServiceAdapter implements PlayService, AudioManager.OnAudioFocu
         if (playService != null) {
             switch (focusChange) {
                 case AudioManager.AUDIOFOCUS_LOSS:
-                    if (playService.isPlaying()) {
-                        playService.pause();
+                    if (isPlaying()) {
+                        pause();
                     }
                     break;
                 case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT:
                 case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK:
-                    if (playService.isPlaying()) {
+                    if (isPlaying()) {
                         resumeOnFocusGain.set(true);
-                        playService.pause();
+                        pause();
                     }
                     break;
                 case AudioManager.AUDIOFOCUS_GAIN:
                     if (resumeOnFocusGain.get()) {
                         resumeOnFocusGain.set(false);
-                        playService.play();
+                        play();
                     }
             }
         }

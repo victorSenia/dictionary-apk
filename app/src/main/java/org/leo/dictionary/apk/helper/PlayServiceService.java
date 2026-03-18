@@ -15,10 +15,10 @@ import android.support.v4.media.MediaMetadataCompat;
 import android.support.v4.media.session.MediaSessionCompat;
 import android.support.v4.media.session.PlaybackStateCompat;
 import androidx.core.app.NotificationCompat;
+import androidx.media.session.MediaButtonReceiver;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.activity.MainActivity;
-
 import javax.inject.Inject;
 
 public class PlayServiceService extends Service {
@@ -50,15 +50,8 @@ public class PlayServiceService extends Service {
     private void setupMediaSession() {
         mediaSession = new MediaSessionCompat(this, CHANNEL_ID);
         mediaSession.setFlags(MediaSessionCompat.FLAG_HANDLES_MEDIA_BUTTONS | MediaSessionCompat.FLAG_HANDLES_TRANSPORT_CONTROLS);
-        PlaybackStateCompat state = new PlaybackStateCompat.Builder().
-                setActions(PlaybackStateCompat.ACTION_STOP
-                        | PlaybackStateCompat.ACTION_PAUSE
-                        | PlaybackStateCompat.ACTION_PLAY_PAUSE
-                        | PlaybackStateCompat.ACTION_SKIP_TO_NEXT
-                        | PlaybackStateCompat.ACTION_SKIP_TO_PREVIOUS).
-                setState(PlaybackStateCompat.STATE_PLAYING, 0, 1.0f).build();
         mediaSession.setActive(true);
-        mediaSession.setPlaybackState(state);
+        updatePlaybackState(playServiceAdapter.isPlaying());
 
         MediaMetadataCompat metadata = new MediaMetadataCompat.Builder().
                 putString(MediaMetadataCompat.METADATA_KEY_TITLE, getString(R.string.app_name)).build();
@@ -67,11 +60,19 @@ public class PlayServiceService extends Service {
             @Override
             public void onSkipToNext() {
                 playServiceAdapter.next();
+                updatePlaybackState(true);
             }
 
             @Override
             public void onSkipToPrevious() {
                 playServiceAdapter.previous();
+                updatePlaybackState(true);
+            }
+
+            @Override
+            public void onPlay() {
+                playServiceAdapter.play();
+                updatePlaybackState(true);
             }
 
             @Override
@@ -97,6 +98,7 @@ public class PlayServiceService extends Service {
                     case KeyEvent.KEYCODE_MEDIA_PREVIOUS:
                         onSkipToPrevious();
                         return true;
+                    case KeyEvent.KEYCODE_HEADSETHOOK:
                     case KeyEvent.KEYCODE_MEDIA_PAUSE:
                     case KeyEvent.KEYCODE_MEDIA_STOP:
                         onPause();
@@ -105,7 +107,7 @@ public class PlayServiceService extends Service {
                         if (playServiceAdapter.isPlaying()) {
                             onPause();
                         } else {
-                            playServiceAdapter.play();
+                            onPlay();
                         }
                         return true;
                     default:
@@ -118,6 +120,10 @@ public class PlayServiceService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         if (intent != null) {
+            if (Intent.ACTION_MEDIA_BUTTON.equals(intent.getAction())) {
+                MediaButtonReceiver.handleIntent(mediaSession, intent);
+                return START_STICKY;
+            }
             String action = intent.getAction();
             if (ACTION_STOP_SERVICE.equals(action)) {
                 stopPlayService();
@@ -136,12 +142,29 @@ public class PlayServiceService extends Service {
 
     private void stopPlayService() {
         playServiceAdapter.pausePlayService();
+        updatePlaybackState(false);
         stopForeground(STOP_FOREGROUND_REMOVE);
         stopSelf();
     }
 
     private void ensurePlaybackStopped() {
         playServiceAdapter.pausePlayService();
+        updatePlaybackState(false);
+    }
+
+    private void updatePlaybackState(boolean isPlaying) {
+        int state = isPlaying ? PlaybackStateCompat.STATE_PLAYING : PlaybackStateCompat.STATE_PAUSED;
+        float speed = isPlaying ? 1.0f : 0.0f;
+        PlaybackStateCompat playbackState = new PlaybackStateCompat.Builder()
+                .setActions(PlaybackStateCompat.ACTION_PLAY
+                        | PlaybackStateCompat.ACTION_STOP
+                        | PlaybackStateCompat.ACTION_PAUSE
+                        | PlaybackStateCompat.ACTION_PLAY_PAUSE
+                        | PlaybackStateCompat.ACTION_SKIP_TO_NEXT
+                        | PlaybackStateCompat.ACTION_SKIP_TO_PREVIOUS)
+                .setState(state, PlaybackStateCompat.PLAYBACK_POSITION_UNKNOWN, speed)
+                .build();
+        mediaSession.setPlaybackState(playbackState);
     }
 
     @Override

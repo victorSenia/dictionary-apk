@@ -18,7 +18,7 @@ public class AndroidAudioService implements AudioService {
 
     private TextToSpeech textToSpeech;
     private final Object lock = new Object();
-    private boolean isSpeaking;
+    private volatile boolean isSpeaking;
     private Context context;
     private Speech speech;
     private Map<String, List<Voice>> voicesPerLanguage;
@@ -47,7 +47,12 @@ public class AndroidAudioService implements AudioService {
 
             @Override
             public void onDone(String utteranceId) {
-                notifyPlayer();
+                stopWaiting();
+            }
+
+            @Override
+            public void onStop(String utteranceId, boolean interrupted) {
+                stopWaiting();
             }
 
             @Override
@@ -58,11 +63,12 @@ public class AndroidAudioService implements AudioService {
             @Override
             public void onError(String utteranceId, int errorCode) {
                 LOGGER.severe("Text '" + utteranceId + "' finished with error " + errorCode);
+                stopWaiting();
             }
         });
     }
 
-    private void notifyPlayer() {
+    private void stopWaiting() {
         synchronized (lock) {
             isSpeaking = false;
             lock.notifyAll();
@@ -86,21 +92,8 @@ public class AndroidAudioService implements AudioService {
                 try {
                     lock.wait();
                 } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        }
-    }
-
-    public void pause(long delay) {
-        setTTS(true);
-        isSpeaking = true;
-        textToSpeech.playSilentUtterance(delay, TextToSpeech.QUEUE_ADD, "AndroidAudioService.pause");
-        synchronized (lock) {
-            while (isSpeaking) {
-                try {
-                    lock.wait();
-                } catch (InterruptedException e) {
+                    isSpeaking = false;
+                    Thread.currentThread().interrupt();
                     throw new RuntimeException(e);
                 }
             }
@@ -152,7 +145,7 @@ public class AndroidAudioService implements AudioService {
 
     @Override
     public void abort() {
-        isSpeaking = false;
+        stopWaiting();
         if (textToSpeech != null) {
             textToSpeech.stop();
             LOGGER.info("abort");
@@ -161,7 +154,7 @@ public class AndroidAudioService implements AudioService {
 
     @Override
     public void shutdown() {
-        isSpeaking = false;
+        stopWaiting();
         if (textToSpeech != null) {
             textToSpeech.shutdown();
         }
