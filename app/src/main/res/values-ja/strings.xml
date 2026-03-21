@@ -118,4 +118,6 @@
     <string name="menu_group_training">トレーニング</string>
     <string name="menu_group_data">データ</string>
     <string name="menu_group_settings">設定</string>
+    <string name="dialog_yes">はい</string>
+    <string name="dialog_no">いいえ</string>
 </resources>

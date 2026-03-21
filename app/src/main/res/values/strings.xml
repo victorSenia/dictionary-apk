@@ -127,6 +127,8 @@
     <string name="default_language_recognition" translatable="false">de-DE</string>
     <string name="cannot_be_empty">Cannot be empty</string>
     <string name="file_cannot_be_accessed">File cannot be accessed.</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_no">No</string>
 </resources>
 
 

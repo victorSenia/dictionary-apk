@@ -118,4 +118,6 @@
     <string name="menu_group_training">تربیت</string>
     <string name="menu_group_data">ڈیٹا</string>
     <string name="menu_group_settings">ترتیبات</string>
+    <string name="dialog_yes">ہاں</string>
+    <string name="dialog_no">نہیں</string>
 </resources>

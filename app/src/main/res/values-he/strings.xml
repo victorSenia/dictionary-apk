@@ -118,4 +118,6 @@
     <string name="menu_group_training">אימון</string>
     <string name="menu_group_data">נתונים</string>
     <string name="menu_group_settings">הגדרות</string>
+    <string name="dialog_yes">כן</string>
+    <string name="dialog_no">לא</string>
 </resources>

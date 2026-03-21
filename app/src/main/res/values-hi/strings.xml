@@ -118,4 +118,6 @@
     <string name="menu_group_training">प्रशिक्षण</string>
     <string name="menu_group_data">डेटा</string>
     <string name="menu_group_settings">सेटिंग्स</string>
+    <string name="dialog_yes">हाँ</string>
+    <string name="dialog_no">नहीं</string>
 </resources>

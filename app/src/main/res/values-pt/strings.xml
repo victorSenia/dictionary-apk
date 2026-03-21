@@ -118,4 +118,6 @@
     <string name="menu_group_training">Treino</string>
     <string name="menu_group_data">Dados</string>
     <string name="menu_group_settings">Configurações</string>
+    <string name="dialog_yes">Sim</string>
+    <string name="dialog_no">Não</string>
 </resources>

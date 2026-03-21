@@ -123,8 +123,8 @@ public class MainActivity extends AppCompatActivity {
             }
             importWords(words);
         });
-        builder.setPositiveButton(android.R.string.yes, dialogClickListener);
-        builder.setNegativeButton(android.R.string.no, dialogClickListener);
+        builder.setPositiveButton(R.string.dialog_yes, dialogClickListener);
+        builder.setNegativeButton(R.string.dialog_no, dialogClickListener);
         return builder;
     }
 
@@ -394,6 +394,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateWordsAndUi(WordCriteria wordCriteria) {
+        stopPlayer();
         WordCriteriaProvider wordCriteriaProvider = ((ApplicationWithDI) getApplicationContext()).appComponent.wordCriteriaProvider();
         wordCriteriaProvider.setObject(wordCriteria);
         if (wordCriteria == null) {

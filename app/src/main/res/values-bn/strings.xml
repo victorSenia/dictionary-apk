@@ -118,4 +118,6 @@
     <string name="menu_group_training">প্রশিক্ষণ</string>
     <string name="menu_group_data">ডেটা</string>
     <string name="menu_group_settings">সেটিংস</string>
+    <string name="dialog_yes">হ্যাঁ</string>
+    <string name="dialog_no">না</string>
 </resources>

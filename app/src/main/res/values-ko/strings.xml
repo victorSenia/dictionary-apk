@@ -118,4 +118,6 @@
     <string name="menu_group_training">학습</string>
     <string name="menu_group_data">데이터</string>
     <string name="menu_group_settings">설정</string>
+    <string name="dialog_yes">예</string>
+    <string name="dialog_no">아니요</string>
 </resources>

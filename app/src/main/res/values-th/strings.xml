@@ -118,4 +118,6 @@
     <string name="menu_group_training">การฝึก</string>
     <string name="menu_group_data">ข้อมูล</string>
     <string name="menu_group_settings">การตั้งค่า</string>
+    <string name="dialog_yes">ใช่</string>
+    <string name="dialog_no">ไม่</string>
 </resources>
