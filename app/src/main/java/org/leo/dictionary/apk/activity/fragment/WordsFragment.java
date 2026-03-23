@@ -157,9 +157,11 @@ public class WordsFragment extends FilteredRecyclerViewFragment<WordsRecyclerVie
         if (filterFunction.apply(w.getWord())) {
             return true;
         }
-        for (Translation t : w.getTranslations()) {
-            if (filterFunction.apply(t.getTranslation())) {
-                return true;
+        if (w.getTranslations() != null) {
+            for (Translation t : w.getTranslations()) {
+                if (filterFunction.apply(t.getTranslation())) {
+                    return true;
+                }
             }
         }
         return false;

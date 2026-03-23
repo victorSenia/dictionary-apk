@@ -40,7 +40,7 @@ public class WordMatcherActivity extends AppCompatActivity {
     private static Translation getTranslation(Word word, Set<String> languageTo, Random random) {
         List<Translation> translations = word.getTranslations().stream().filter(t -> languageTo == null || languageTo.isEmpty() || languageTo.contains(t.getLanguage())).collect(Collectors.toList());
         if (translations.isEmpty()) {
-            return new Translation();
+            return null;
         }
         return translations.get(random.nextInt(translations.size()));
     }
@@ -204,12 +204,12 @@ public class WordMatcherActivity extends AppCompatActivity {
                 return createElements(unknownWords);
             }
             Word word = unknownWords.get(random.nextInt(unknownWords.size()));
-            if (wordsToMatch.contains(word)) {
+            if (wordsToMatch.contains(word) || word.getTranslations() == null || word.getTranslations().isEmpty()) {
                 index--;
                 continue;
             }
             Translation translation = getTranslation(word, languageTo, random);
-            if (translationsToMatch.contains(translation)) {
+            if (translation == null || translationsToMatch.contains(translation)) {
                 index--;
                 continue;
             }
