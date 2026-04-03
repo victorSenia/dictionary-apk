@@ -68,6 +68,13 @@
     <string name="theme_mode_system">ברירת מחדל של המערכת</string>
     <string name="theme_mode_light">בהיר</string>
     <string name="theme_mode_dark">כהה</string>
+    <string name="details_text_size_portrait">גודל טקסט הפרטים (אנכי)</string>
+    <string name="details_text_size_landscape">גודל טקסט הפרטים (אופקי)</string>
+    <string name="details_text_size_compact">קומפקטי</string>
+    <string name="details_text_size_default">ברירת מחדל</string>
+    <string name="details_text_size_large">גדול</string>
+    <string name="details_text_size_landscape_balanced">מאוזן</string>
+    <string name="details_text_size_landscape_extra_large">גדול במיוחד</string>
     <string name="import_words">ייבא את הנוכחי למסד הנתונים</string>
     <string name="use_db">השתמש במסד נתונים</string>
     <string name="action_edit">ערוך</string>

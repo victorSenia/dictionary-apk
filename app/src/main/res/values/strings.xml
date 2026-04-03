@@ -78,6 +78,13 @@
     <string name="theme_mode_system">System default</string>
     <string name="theme_mode_light">Light</string>
     <string name="theme_mode_dark">Dark</string>
+    <string name="details_text_size_portrait">Details text size (portrait)</string>
+    <string name="details_text_size_landscape">Details text size (landscape)</string>
+    <string name="details_text_size_compact">Compact</string>
+    <string name="details_text_size_default">Default</string>
+    <string name="details_text_size_large">Large</string>
+    <string name="details_text_size_landscape_balanced">Balanced</string>
+    <string name="details_text_size_landscape_extra_large">Extra large</string>
     <string name="import_words">Import current into database</string>
     <string name="use_db">Use database</string>
     <string name="action_edit">Edit</string>

@@ -68,6 +68,13 @@
     <string name="theme_mode_system">ค่าเริ่มต้นของระบบ</string>
     <string name="theme_mode_light">สว่าง</string>
     <string name="theme_mode_dark">มืด</string>
+    <string name="details_text_size_portrait">ขนาดข้อความรายละเอียด (แนวตั้ง)</string>
+    <string name="details_text_size_landscape">ขนาดข้อความรายละเอียด (แนวนอน)</string>
+    <string name="details_text_size_compact">กะทัดรัด</string>
+    <string name="details_text_size_default">ค่าเริ่มต้น</string>
+    <string name="details_text_size_large">ใหญ่</string>
+    <string name="details_text_size_landscape_balanced">สมดุล</string>
+    <string name="details_text_size_landscape_extra_large">ใหญ่มาก</string>
     <string name="import_words">นำเข้าปัจจุบันไปยังฐานข้อมูล</string>
     <string name="use_db">ใช้ฐานข้อมูล</string>
     <string name="action_edit">แก้ไข</string>

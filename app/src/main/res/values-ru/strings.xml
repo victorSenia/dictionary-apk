@@ -68,6 +68,13 @@
     <string name="theme_mode_system">По умолчанию в системе</string>
     <string name="theme_mode_light">Светлая</string>
     <string name="theme_mode_dark">Тёмная</string>
+    <string name="details_text_size_portrait">Размер текста деталей (портрет)</string>
+    <string name="details_text_size_landscape">Размер текста деталей (альбомный)</string>
+    <string name="details_text_size_compact">Компактный</string>
+    <string name="details_text_size_default">По умолчанию</string>
+    <string name="details_text_size_large">Большой</string>
+    <string name="details_text_size_landscape_balanced">Сбалансированный</string>
+    <string name="details_text_size_landscape_extra_large">Очень большой</string>
     <string name="import_words">Импортировать текущее в базу данных</string>
     <string name="use_db">Использовать базу данных</string>
     <string name="action_edit">Изменить</string>

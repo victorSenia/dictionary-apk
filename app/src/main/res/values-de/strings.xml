@@ -68,6 +68,13 @@
     <string name="theme_mode_system">Systemstandard</string>
     <string name="theme_mode_light">Hell</string>
     <string name="theme_mode_dark">Dunkel</string>
+    <string name="details_text_size_portrait">Detailtextgröße (Hochformat)</string>
+    <string name="details_text_size_landscape">Detailtextgröße (Querformat)</string>
+    <string name="details_text_size_compact">Kompakt</string>
+    <string name="details_text_size_default">Standard</string>
+    <string name="details_text_size_large">Groß</string>
+    <string name="details_text_size_landscape_balanced">Ausgewogen</string>
+    <string name="details_text_size_landscape_extra_large">Sehr groß</string>
     <string name="import_words">Aktuelles in DB importieren</string>
     <string name="use_db">Datenbank verwenden</string>
     <string name="action_edit">Bearbeiten</string>

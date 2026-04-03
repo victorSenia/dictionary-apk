@@ -11,4 +11,32 @@
         <item>2</item>
     </string-array>
 
+    <string-array name="details_text_size_portrait_entries">
+        <item>@string/details_text_size_compact</item>
+        <item>@string/details_text_size_default</item>
+        <item>@string/details_text_size_large</item>
+    </string-array>
+
+    <string-array name="details_text_size_portrait_values">
+        <item>28,22,24</item>
+        <item>34,28,30</item>
+        <item>40,34,36</item>
+    </string-array>
+
+    <string-array name="details_text_size_landscape_entries">
+        <item>@string/details_text_size_compact</item>
+        <item>@string/details_text_size_landscape_balanced</item>
+        <item>@string/details_text_size_default</item>
+        <item>@string/details_text_size_large</item>
+        <item>@string/details_text_size_landscape_extra_large</item>
+    </string-array>
+
+    <string-array name="details_text_size_landscape_values">
+        <item>42,34,36</item>
+        <item>48,38,42</item>
+        <item>52,42,46</item>
+        <item>56,46,48</item>
+        <item>60,52,54</item>
+    </string-array>
+
 </resources>

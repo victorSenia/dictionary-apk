@@ -68,6 +68,13 @@
     <string name="theme_mode_system">Default sistem</string>
     <string name="theme_mode_light">Terang</string>
     <string name="theme_mode_dark">Gelap</string>
+    <string name="details_text_size_portrait">Ukuran teks detail (potret)</string>
+    <string name="details_text_size_landscape">Ukuran teks detail (lanskap)</string>
+    <string name="details_text_size_compact">Ringkas</string>
+    <string name="details_text_size_default">Default</string>
+    <string name="details_text_size_large">Besar</string>
+    <string name="details_text_size_landscape_balanced">Seimbang</string>
+    <string name="details_text_size_landscape_extra_large">Sangat besar</string>
     <string name="import_words">Impor yang saat ini ke database</string>
     <string name="use_db">Gunakan database</string>
     <string name="action_edit">Ubah</string>

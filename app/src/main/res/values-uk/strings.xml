@@ -67,6 +67,13 @@
     <string name="theme_mode_system">Системна типова</string>
     <string name="theme_mode_light">Світла</string>
     <string name="theme_mode_dark">Темна</string>
+    <string name="details_text_size_portrait">Розмір тексту деталей (портретний)</string>
+    <string name="details_text_size_landscape">Розмір тексту деталей (альбомний)</string>
+    <string name="details_text_size_compact">Компактний</string>
+    <string name="details_text_size_default">Типовий</string>
+    <string name="details_text_size_large">Великий</string>
+    <string name="details_text_size_landscape_balanced">Збалансований</string>
+    <string name="details_text_size_landscape_extra_large">Дуже великий</string>
     <string name="import_words">Імпорт поточних в базу даних</string>
     <string name="use_db">Використовувати базу даних</string>
     <string name="action_edit">Редагувати</string>

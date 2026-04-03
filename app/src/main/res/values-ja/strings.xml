@@ -68,6 +68,13 @@
     <string name="theme_mode_system">システム設定</string>
     <string name="theme_mode_light">ライト</string>
     <string name="theme_mode_dark">ダーク</string>
+    <string name="details_text_size_portrait">詳細テキストサイズ（縦向き）</string>
+    <string name="details_text_size_landscape">詳細テキストサイズ（横向き）</string>
+    <string name="details_text_size_compact">コンパクト</string>
+    <string name="details_text_size_default">デフォルト</string>
+    <string name="details_text_size_large">大</string>
+    <string name="details_text_size_landscape_balanced">バランス重視</string>
+    <string name="details_text_size_landscape_extra_large">特大</string>
     <string name="import_words">現在の内容をデータベースにインポート</string>
     <string name="use_db">データベースを使用</string>
     <string name="action_edit">編集</string>

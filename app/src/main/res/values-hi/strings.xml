@@ -68,6 +68,13 @@
     <string name="theme_mode_system">सिस्टम डिफ़ॉल्ट</string>
     <string name="theme_mode_light">हल्का</string>
     <string name="theme_mode_dark">गहरा</string>
+    <string name="details_text_size_portrait">विवरण पाठ आकार (पोर्ट्रेट)</string>
+    <string name="details_text_size_landscape">विवरण पाठ आकार (लैंडस्केप)</string>
+    <string name="details_text_size_compact">सघन</string>
+    <string name="details_text_size_default">डिफ़ॉल्ट</string>
+    <string name="details_text_size_large">बड़ा</string>
+    <string name="details_text_size_landscape_balanced">संतुलित</string>
+    <string name="details_text_size_landscape_extra_large">अतिरिक्त बड़ा</string>
     <string name="import_words">वर्तमान को डेटाबेस में आयात करें</string>
     <string name="use_db">डेटाबेस उपयोग करें</string>
     <string name="action_edit">संपादित करें</string>

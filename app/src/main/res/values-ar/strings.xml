@@ -68,6 +68,13 @@
     <string name="theme_mode_system">إعدادات النظام</string>
     <string name="theme_mode_light">فاتح</string>
     <string name="theme_mode_dark">داكن</string>
+    <string name="details_text_size_portrait">حجم نص التفاصيل (عمودي)</string>
+    <string name="details_text_size_landscape">حجم نص التفاصيل (أفقي)</string>
+    <string name="details_text_size_compact">مضغوط</string>
+    <string name="details_text_size_default">افتراضي</string>
+    <string name="details_text_size_large">كبير</string>
+    <string name="details_text_size_landscape_balanced">متوازن</string>
+    <string name="details_text_size_landscape_extra_large">كبير جدًا</string>
     <string name="import_words">استيراد الحالي إلى قاعدة البيانات</string>
     <string name="use_db">استخدام قاعدة البيانات</string>
     <string name="action_edit">تحرير</string>

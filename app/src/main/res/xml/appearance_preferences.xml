@@ -9,6 +9,22 @@
             android:entryValues="@array/theme_mode_values"
             android:title="@string/theme_mode"
             app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:key="org.leo.dictionary.apk.config.entity.Appearance.detailsTextSizePortrait"
+            android:defaultValue="34,28,30"
+            android:entries="@array/details_text_size_portrait_entries"
+            android:entryValues="@array/details_text_size_portrait_values"
+            android:title="@string/details_text_size_portrait"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:key="org.leo.dictionary.apk.config.entity.Appearance.detailsTextSizeLandscape"
+            android:defaultValue="52,42,46"
+            android:entries="@array/details_text_size_landscape_entries"
+            android:entryValues="@array/details_text_size_landscape_values"
+            android:title="@string/details_text_size_landscape"
+            app:useSimpleSummaryProvider="true" />
     </PreferenceCategory>
 
 </PreferenceScreen>

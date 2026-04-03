@@ -30,6 +30,7 @@
                         android:visibility="@{viewModel.data==null?android.view.View.GONE:android.view.View.VISIBLE}"
                         android:layout_gravity="center">
                     <TextView
+                            android:id="@+id/detailsWordText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@{viewModel.data.fullWord}"
@@ -37,6 +38,7 @@
                             android:gravity="bottom|center"
                             android:textSize="64sp"/>
                     <TextView
+                            android:id="@+id/detailsAdditionalInformationText"
                             android:visibility='@{viewModel.data.additionalInformation==null||viewModel.data.additionalInformation.empty?android.view.View.GONE:android.view.View.VISIBLE}'
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -45,6 +47,7 @@
                             android:gravity="center|top"
                             android:textSize="40sp"/>
                     <TextView
+                            android:id="@+id/detailsTranslationsText"
                             android:visibility='@{viewModel.data.translations==null||viewModel.data.translations.empty?android.view.View.GONE:android.view.View.VISIBLE}'
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

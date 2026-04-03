@@ -68,6 +68,13 @@
     <string name="theme_mode_system">سسٹم ڈیفالٹ</string>
     <string name="theme_mode_light">روشن</string>
     <string name="theme_mode_dark">گہرا</string>
+    <string name="details_text_size_portrait">تفصیلات کے متن کا سائز (عمودی)</string>
+    <string name="details_text_size_landscape">تفصیلات کے متن کا سائز (افقی)</string>
+    <string name="details_text_size_compact">کمپیکٹ</string>
+    <string name="details_text_size_default">ڈیفالٹ</string>
+    <string name="details_text_size_large">بڑا</string>
+    <string name="details_text_size_landscape_balanced">متوازن</string>
+    <string name="details_text_size_landscape_extra_large">بہت بڑا</string>
     <string name="import_words">موجودہ کو ڈیٹا بیس میں امپورٹ کریں</string>
     <string name="use_db">ڈیٹا بیس استعمال کریں</string>
     <string name="action_edit">ترمیم کریں</string>

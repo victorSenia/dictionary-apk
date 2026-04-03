@@ -68,6 +68,13 @@
     <string name="theme_mode_system">Predefinito di sistema</string>
     <string name="theme_mode_light">Chiaro</string>
     <string name="theme_mode_dark">Scuro</string>
+    <string name="details_text_size_portrait">Dimensione testo dettagli (verticale)</string>
+    <string name="details_text_size_landscape">Dimensione testo dettagli (orizzontale)</string>
+    <string name="details_text_size_compact">Compatto</string>
+    <string name="details_text_size_default">Predefinito</string>
+    <string name="details_text_size_large">Grande</string>
+    <string name="details_text_size_landscape_balanced">Bilanciato</string>
+    <string name="details_text_size_landscape_extra_large">Molto grande</string>
     <string name="import_words">Importa l’attuale nel database</string>
     <string name="use_db">Usa database</string>
     <string name="action_edit">Modifica</string>

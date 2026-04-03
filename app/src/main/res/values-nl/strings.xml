@@ -68,6 +68,13 @@
     <string name="theme_mode_system">Systeemstandaard</string>
     <string name="theme_mode_light">Licht</string>
     <string name="theme_mode_dark">Donker</string>
+    <string name="details_text_size_portrait">Tekstgrootte details (staand)</string>
+    <string name="details_text_size_landscape">Tekstgrootte details (liggend)</string>
+    <string name="details_text_size_compact">Compact</string>
+    <string name="details_text_size_default">Standaard</string>
+    <string name="details_text_size_large">Groot</string>
+    <string name="details_text_size_landscape_balanced">Evenwichtig</string>
+    <string name="details_text_size_landscape_extra_large">Extra groot</string>
     <string name="import_words">Huidige importeren naar database</string>
     <string name="use_db">Database gebruiken</string>
     <string name="action_edit">Bewerken</string>

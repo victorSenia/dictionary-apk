@@ -68,6 +68,13 @@
     <string name="theme_mode_system">跟随系统</string>
     <string name="theme_mode_light">浅色</string>
     <string name="theme_mode_dark">深色</string>
+    <string name="details_text_size_portrait">详情文本大小（竖屏）</string>
+    <string name="details_text_size_landscape">详情文本大小（横屏）</string>
+    <string name="details_text_size_compact">紧凑</string>
+    <string name="details_text_size_default">默认</string>
+    <string name="details_text_size_large">大</string>
+    <string name="details_text_size_landscape_balanced">均衡</string>
+    <string name="details_text_size_landscape_extra_large">超大</string>
     <string name="import_words">将当前内容导入数据库</string>
     <string name="use_db">使用数据库</string>
     <string name="action_edit">编辑</string>

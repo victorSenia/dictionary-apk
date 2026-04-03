@@ -68,6 +68,13 @@
     <string name="theme_mode_system">Mặc định hệ thống</string>
     <string name="theme_mode_light">Sáng</string>
     <string name="theme_mode_dark">Tối</string>
+    <string name="details_text_size_portrait">Cỡ chữ chi tiết (dọc)</string>
+    <string name="details_text_size_landscape">Cỡ chữ chi tiết (ngang)</string>
+    <string name="details_text_size_compact">Gọn</string>
+    <string name="details_text_size_default">Mặc định</string>
+    <string name="details_text_size_large">Lớn</string>
+    <string name="details_text_size_landscape_balanced">Cân bằng</string>
+    <string name="details_text_size_landscape_extra_large">Rất lớn</string>
     <string name="import_words">Nhập hiện tại vào cơ sở dữ liệu</string>
     <string name="use_db">Dùng cơ sở dữ liệu</string>
     <string name="action_edit">Sửa</string>

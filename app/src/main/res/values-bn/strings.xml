@@ -68,6 +68,13 @@
     <string name="theme_mode_system">সিস্টেম ডিফল্ট</string>
     <string name="theme_mode_light">হালকা</string>
     <string name="theme_mode_dark">গাঢ়</string>
+    <string name="details_text_size_portrait">বিস্তারিত লেখার আকার (পোর্ট্রেট)</string>
+    <string name="details_text_size_landscape">বিস্তারিত লেখার আকার (ল্যান্ডস্কেপ)</string>
+    <string name="details_text_size_compact">সংক্ষিপ্ত</string>
+    <string name="details_text_size_default">ডিফল্ট</string>
+    <string name="details_text_size_large">বড়</string>
+    <string name="details_text_size_landscape_balanced">সামঞ্জস্যপূর্ণ</string>
+    <string name="details_text_size_landscape_extra_large">অতিরিক্ত বড়</string>
     <string name="import_words">বর্তমানটি ডাটাবেসে ইমপোর্ট করুন</string>
     <string name="use_db">ডাটাবেস ব্যবহার করুন</string>
     <string name="action_edit">সম্পাদনা</string>

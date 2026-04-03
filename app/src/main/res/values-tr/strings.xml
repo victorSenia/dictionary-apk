@@ -68,6 +68,13 @@
     <string name="theme_mode_system">Sistem varsayılanı</string>
     <string name="theme_mode_light">Açık</string>
     <string name="theme_mode_dark">Koyu</string>
+    <string name="details_text_size_portrait">Ayrıntı metin boyutu (dikey)</string>
+    <string name="details_text_size_landscape">Ayrıntı metin boyutu (yatay)</string>
+    <string name="details_text_size_compact">Kompakt</string>
+    <string name="details_text_size_default">Varsayılan</string>
+    <string name="details_text_size_large">Büyük</string>
+    <string name="details_text_size_landscape_balanced">Dengeli</string>
+    <string name="details_text_size_landscape_extra_large">Çok büyük</string>
     <string name="import_words">Mevcut olanı veritabanına aktar</string>
     <string name="use_db">Veritabanını kullan</string>
     <string name="action_edit">Düzenle</string>

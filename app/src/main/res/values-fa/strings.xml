@@ -68,6 +68,13 @@
     <string name="theme_mode_system">پیش‌فرض سیستم</string>
     <string name="theme_mode_light">روشن</string>
     <string name="theme_mode_dark">تیره</string>
+    <string name="details_text_size_portrait">اندازه متن جزئیات (عمودی)</string>
+    <string name="details_text_size_landscape">اندازه متن جزئیات (افقی)</string>
+    <string name="details_text_size_compact">فشرده</string>
+    <string name="details_text_size_default">پیش‌فرض</string>
+    <string name="details_text_size_large">بزرگ</string>
+    <string name="details_text_size_landscape_balanced">متعادل</string>
+    <string name="details_text_size_landscape_extra_large">بسیار بزرگ</string>
     <string name="import_words">وارد کردن مورد فعلی به پایگاه داده</string>
     <string name="use_db">استفاده از پایگاه داده</string>
     <string name="action_edit">ویرایش</string>
