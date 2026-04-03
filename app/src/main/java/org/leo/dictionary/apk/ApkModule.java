@@ -278,23 +278,13 @@ public class ApkModule {
         PlayServiceImpl playService = new PlayServiceImpl();
         playService.setConfigurationService(configurationService);
         playService.setAudioService(audioService);
-        playService.setWordProvider(wordProvider);
+        playService.setWordUpdater(wordProvider);
         playService.setUiUpdater(uiUpdater);
         playService.setDelayProvider(PauseHelper::pause);
         WordCriteria criteria = criteriaProvider.getObject();
         playService.setPlayTranslationFor(criteria.getPlayTranslationFor());
         return playService;
     }
-
-    private static final Consumer<Long> delayProvider = delay ->
-    {
-        try {
-            Thread.sleep(delay);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-            throw new RuntimeException(e);
-        }
-    };
 
     @Provides
     @Singleton

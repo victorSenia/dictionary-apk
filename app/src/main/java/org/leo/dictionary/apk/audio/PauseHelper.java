@@ -99,11 +99,12 @@ public class PauseHelper {
             }
             written += n;
         }
-
-        sleepUntil(SystemClock.elapsedRealtime() + SILENT_BURST_MS);
-
-        track.pause();
-        track.flush();
+        try {
+            sleepUntil(SystemClock.elapsedRealtime() + SILENT_BURST_MS);
+        } finally {
+            track.pause();
+            track.flush();
+        }
     }
 
     private static int bytesForDurationMs(long durationMs) {
@@ -116,23 +117,17 @@ public class PauseHelper {
     }
 
     private static void sleepUntil(long targetElapsedRealtime) {
-        boolean interrupted = false;
-
         while (true) {
             long remaining = targetElapsedRealtime - SystemClock.elapsedRealtime();
             if (remaining <= 0) {
                 break;
             }
-
             try {
                 Thread.sleep(remaining);
             } catch (InterruptedException e) {
-                interrupted = true;
+                Thread.currentThread().interrupt();
+                throw new RuntimeException(e);
             }
-        }
-
-        if (interrupted) {
-            Thread.currentThread().interrupt();
         }
     }
 }

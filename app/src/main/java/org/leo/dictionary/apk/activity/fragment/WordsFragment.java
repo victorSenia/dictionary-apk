@@ -37,6 +37,7 @@ public class WordsFragment extends FilteredRecyclerViewFragment<WordsRecyclerVie
     private UiUpdater uiUpdater;
     private Handler mHandler;
     private boolean updatePlayer = true;
+    private boolean ignoreNextScrollCallback;
 
     private static Function<String, Boolean> getFilterFunction(CharSequence filterString) {
         Function<String, Boolean> predicate;
@@ -71,7 +72,7 @@ public class WordsFragment extends FilteredRecyclerViewFragment<WordsRecyclerVie
 
     public void replaceData() {
         updateListData(null);
-        recyclerView.scrollToPosition(0);
+        scrollToPositionProgrammatically(0);
     }
 
     public void wordUpdated(int index) {
@@ -94,7 +95,11 @@ public class WordsFragment extends FilteredRecyclerViewFragment<WordsRecyclerVie
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
-                stopStartHandler();
+                if (ignoreNextScrollCallback) {
+                    ignoreNextScrollCallback = false;
+                } else {
+                    stopStartHandler();
+                }
                 super.onScrolled(recyclerView, dx, dy);
             }
         });
@@ -109,7 +114,7 @@ public class WordsFragment extends FilteredRecyclerViewFragment<WordsRecyclerVie
         ApkUiUpdater apkUiUpdater = (ApkUiUpdater) ((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.uiUpdater();
         uiUpdater = (word, index) -> {
             if (scrollAllowed.get()) {
-                requireActivity().runOnUiThread(() -> recyclerView.scrollToPosition(index));
+                requireActivity().runOnUiThread(() -> scrollToPositionProgrammatically(index));
             }
         };
         apkUiUpdater.addUiUpdater(uiUpdater);
@@ -123,7 +128,7 @@ public class WordsFragment extends FilteredRecyclerViewFragment<WordsRecyclerVie
                 updatePlayer = true;
             }
         }
-        recyclerView.scrollToPosition(getCurrentIndex());
+        scrollToPositionProgrammatically(getCurrentIndex());
         return view;
     }
 
@@ -205,6 +210,12 @@ public class WordsFragment extends FilteredRecyclerViewFragment<WordsRecyclerVie
 
     private int getCurrentIndex() {
         return ApkModule.getLastStateCurrentIndex(((ApplicationWithDI) requireActivity().getApplicationContext()).appComponent.lastState());
+    }
+
+
+    private void scrollToPositionProgrammatically(int index) {
+        ignoreNextScrollCallback = true;
+        recyclerView.scrollToPosition(index);
     }
 
     private void stopStartHandler() {

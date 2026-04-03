@@ -163,6 +163,6 @@ public class PlayServiceAdapter implements PlayService, AudioManager.OnAudioFocu
     }
 
     public void setWordProvider(WordProvider wordProvider) {
-        playService.setWordProvider(wordProvider);
+        playService.setWordUpdater(wordProvider);
     }
 }
