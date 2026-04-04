@@ -15,7 +15,7 @@ public class PauseHelper {
     private static final int ENCODING = AudioFormat.ENCODING_PCM_16BIT;
 
     private static final long KEEP_ALIVE_PERIOD_MS = 1500L;
-    private static final long SILENT_BURST_MS = 50L;
+    private static final long SILENT_BURST_MS = 200L;
 
     private static final Object audioLock = new Object();
     private static AudioTrack audioTrack;
