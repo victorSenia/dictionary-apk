@@ -224,6 +224,10 @@ public class MainActivity extends AppCompatActivity {
             Intent i = new Intent(this, SettingsActivity.class);
             startActivity(i);
             return true;
+        } else if (id == R.id.action_privacy_policy) {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.privacy_policy_url)));
+            startActivity(intent);
+            return true;
         } else if (id == R.id.action_order_words_in_sentence) {
             Intent i = new Intent(this, SentenceActivity.class);
             startActivity(i);
@@ -278,9 +282,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
             return true;
         } else if (id == R.id.action_word_recognition) {
-            stopPlayer();
-            Intent i = new Intent(this, SpeechRecognitionActivity.class);
-            startActivity(i);
             return true;
         } else if (id == R.id.action_add_word) {
             stopPlayer();

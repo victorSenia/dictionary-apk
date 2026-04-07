@@ -14,6 +14,7 @@
             <item android:id="@+id/action_word_recognition"
                   android:title="@string/word_recognition"
                   android:orderInCategory="200"
+                  android:visible="false"
                   app:showAsAction="never"/>
             <item android:id="@+id/action_word_matcher"
                   android:title="@string/match_words"
@@ -88,6 +89,10 @@
             <item android:id="@+id/action_settings"
                   android:title="@string/action_settings"
                   android:orderInCategory="300"
+                  app:showAsAction="never"/>
+            <item android:id="@+id/action_privacy_policy"
+                  android:title="@string/privacy_policy"
+                  android:orderInCategory="400"
                   app:showAsAction="never"/>
         </menu>
     </item>

@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK"/>
 
@@ -79,10 +77,6 @@
                 android:name=".activity.SettingsActivity"
                 android:exported="false"
                 android:label="@string/title_activity_settings"/>
-        <activity
-                android:name=".activity.SpeechRecognitionActivity"
-                android:exported="false"
-                android:label="SpeechRecognitionActivity"/>
         <activity
                 android:name=".activity.MainActivity"
                 android:exported="true"

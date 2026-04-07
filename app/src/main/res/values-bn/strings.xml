@@ -127,4 +127,5 @@
     <string name="menu_group_settings">সেটিংস</string>
     <string name="dialog_yes">হ্যাঁ</string>
     <string name="dialog_no">না</string>
+    <string name="privacy_policy">গোপনীয়তা নীতি</string>
 </resources>

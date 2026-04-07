@@ -127,4 +127,5 @@
     <string name="menu_group_settings">Ayarlar</string>
     <string name="dialog_yes">Evet</string>
     <string name="dialog_no">Hayır</string>
+    <string name="privacy_policy">Gizlilik Politikası</string>
 </resources>

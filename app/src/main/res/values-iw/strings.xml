@@ -127,4 +127,5 @@
     <string name="menu_group_settings">הגדרות</string>
     <string name="dialog_yes">כן</string>
     <string name="dialog_no">לא</string>
+    <string name="privacy_policy">מדיניות פרטיות</string>
 </resources>

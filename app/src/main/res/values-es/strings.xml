@@ -127,4 +127,5 @@
     <string name="menu_group_settings">Ajustes</string>
     <string name="dialog_yes">Sí</string>
     <string name="dialog_no">No</string>
+    <string name="privacy_policy">Política de privacidad</string>
 </resources>

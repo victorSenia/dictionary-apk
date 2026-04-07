@@ -127,4 +127,5 @@
     <string name="menu_group_settings">การตั้งค่า</string>
     <string name="dialog_yes">ใช่</string>
     <string name="dialog_no">ไม่</string>
+    <string name="privacy_policy">นโยบายความเป็นส่วนตัว</string>
 </resources>

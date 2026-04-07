@@ -136,6 +136,8 @@
     <string name="file_cannot_be_accessed">File cannot be accessed.</string>
     <string name="dialog_yes">Yes</string>
     <string name="dialog_no">No</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="privacy_policy_url" translatable="false">https://viktorsenia.github.io/DictionaryApk/privacy-policy.html</string>
 </resources>
 
 
