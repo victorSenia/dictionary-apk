@@ -15,6 +15,9 @@
     <string name="letter_delay">Lettervertraging</string>
     <string name="speech">Spraak</string>
     <string name="match_words">Woorden koppelen</string>
+    <string name="show_word">Woord tonen</string>
+    <string name="show_variants">Varianten tonen</string>
+    <string name="variants_limit">Variatielimiet</string>
     <string name="each_time">Elke keer</string>
     <string name="delay">Vertraging</string>
     <string name="active">Actief</string>
@@ -107,7 +110,7 @@
     <string name="word_recognition">Spraakherkenning</string>
     <string name="word_knowledge">Kennis</string>
     <string name="error">fout</string>
-    <string name="grammar_filter">Grammaticafilter</string>
+    <string name="grammar_filter">Grammatica</string>
     <string name="filter">Filteren</string>
     <string name="hints">Tips</string>
     <string name="all_hints">Alle hints</string>
@@ -122,6 +125,7 @@
     <string name="sorted">Gesorteerd</string>
     <string name="cannot_be_empty">Mag niet leeg zijn</string>
     <string name="file_cannot_be_accessed">Bestand is niet toegankelijk.</string>
+    <string name="no_sentences">Geen zinnen beschikbaar.</string>
     <string name="menu_group_training">Training</string>
     <string name="menu_group_data">Gegevens</string>
     <string name="menu_group_settings">Instellingen</string>

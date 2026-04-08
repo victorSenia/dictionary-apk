@@ -15,6 +15,9 @@
     <string name="letter_delay">หน่วงตัวอักษร</string>
     <string name="speech">เสียงพูด</string>
     <string name="match_words">จับคู่คำศัพท์</string>
+    <string name="show_word">แสดงคำ</string>
+    <string name="show_variants">แสดงตัวเลือก</string>
+    <string name="variants_limit">จำนวนตัวเลือกสูงสุด</string>
     <string name="each_time">ทุกครั้ง</string>
     <string name="delay">หน่วงเวลา</string>
     <string name="active">เปิดใช้งาน</string>
@@ -107,7 +110,7 @@
     <string name="word_recognition">รู้จำเสียงพูด</string>
     <string name="word_knowledge">ความรู้</string>
     <string name="error">ข้อผิดพลาด</string>
-    <string name="grammar_filter">ตัวกรองไวยากรณ์</string>
+    <string name="grammar_filter">ไวยากรณ์</string>
     <string name="filter">กรอง</string>
     <string name="hints">คำใบ้</string>
     <string name="all_hints">คำใบ้ทั้งหมด</string>
@@ -122,6 +125,7 @@
     <string name="sorted">เรียงลำดับ</string>
     <string name="cannot_be_empty">ต้องไม่เว้นว่าง</string>
     <string name="file_cannot_be_accessed">ไม่สามารถเข้าถึงไฟล์ได้</string>
+    <string name="no_sentences">ไม่มีประโยคที่พร้อมใช้งาน</string>
     <string name="menu_group_training">การฝึก</string>
     <string name="menu_group_data">ข้อมูล</string>
     <string name="menu_group_settings">การตั้งค่า</string>

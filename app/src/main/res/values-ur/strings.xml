@@ -15,6 +15,9 @@
     <string name="letter_delay">حرفی تاخیر</string>
     <string name="speech">گفتار</string>
     <string name="match_words">الفاظ ملائیں</string>
+    <string name="show_word">لفظ دکھائیں</string>
+    <string name="show_variants">متبادل دکھائیں</string>
+    <string name="variants_limit">متبادل کی حد</string>
     <string name="each_time">ہر بار</string>
     <string name="delay">تاخیر</string>
     <string name="active">فعال</string>
@@ -107,7 +110,7 @@
     <string name="word_recognition">آواز کی شناخت</string>
     <string name="word_knowledge">علم</string>
     <string name="error">خرابی</string>
-    <string name="grammar_filter">گرامر فلٹر</string>
+    <string name="grammar_filter">گرامر</string>
     <string name="filter">فلٹر</string>
     <string name="hints">اشارے</string>
     <string name="all_hints">تمام اشارے</string>
@@ -122,6 +125,7 @@
     <string name="sorted">مرتب</string>
     <string name="cannot_be_empty">خالی نہیں ہو سکتا</string>
     <string name="file_cannot_be_accessed">فائل تک رسائی ممکن نہیں۔</string>
+    <string name="no_sentences">کوئی جملے دستیاب نہیں۔</string>
     <string name="menu_group_training">تربیت</string>
     <string name="menu_group_data">ڈیٹا</string>
     <string name="menu_group_settings">ترتیبات</string>

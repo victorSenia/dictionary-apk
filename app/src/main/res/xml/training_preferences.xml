@@ -1,0 +1,74 @@
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+            app:title="@string/match_words" android:layout_width="wrap_content" android:layout_height="wrap_content">
+
+        <EditTextPreference
+                app:key="org.leo.dictionary.apk.config.entity.MatchWords.limit"
+                android:defaultValue="10"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:inputType="number"
+                android:title="@string/words"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:useSimpleSummaryProvider="true"/>
+        <SwitchPreference
+                app:key="org.leo.dictionary.apk.config.entity.MatchWords.showWord"
+                android:defaultValue="true"
+                android:title="@string/show_word"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            app:title="@string/grammar_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <EditTextPreference
+                app:key="org.leo.dictionary.apk.config.entity.GrammarCheck.correctDelayMillis"
+                android:defaultValue="1500"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:inputType="number"
+                android:title="@string/delay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:useSimpleSummaryProvider="true"/>
+        <EditTextPreference
+                app:key="org.leo.dictionary.apk.config.entity.GrammarCheck.variantsLimit"
+                android:defaultValue="5"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:inputType="number"
+                android:title="@string/variants_limit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:useSimpleSummaryProvider="true"/>
+        <SwitchPreference
+                app:key="org.leo.dictionary.apk.config.entity.GrammarCheck.showVariants"
+                android:defaultValue="true"
+                android:title="@string/show_variants"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            app:title="@string/order_words_in_sentence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <EditTextPreference
+                app:key="org.leo.dictionary.apk.config.entity.SentenceOrder.correctDelayMillis"
+                android:defaultValue="1500"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:inputType="number"
+                android:title="@string/delay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:useSimpleSummaryProvider="true"/>
+    </PreferenceCategory>
+</PreferenceScreen>

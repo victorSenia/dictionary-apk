@@ -15,6 +15,9 @@
     <string name="letter_delay">Jeda huruf</string>
     <string name="speech">Ucapan</string>
     <string name="match_words">Cocokkan kata</string>
+    <string name="show_word">Tampilkan kata</string>
+    <string name="show_variants">Tampilkan varian</string>
+    <string name="variants_limit">Batas varian</string>
     <string name="each_time">Setiap kali</string>
     <string name="delay">Jeda</string>
     <string name="active">Aktif</string>
@@ -107,7 +110,7 @@
     <string name="word_recognition">Pengenalan suara</string>
     <string name="word_knowledge">Pengetahuan</string>
     <string name="error">kesalahan</string>
-    <string name="grammar_filter">Filter tata bahasa</string>
+    <string name="grammar_filter">Tata bahasa</string>
     <string name="filter">Saring</string>
     <string name="hints">Petunjuk</string>
     <string name="all_hints">Semua petunjuk</string>
@@ -122,6 +125,7 @@
     <string name="sorted">Diurutkan</string>
     <string name="cannot_be_empty">Tidak boleh kosong</string>
     <string name="file_cannot_be_accessed">File tidak dapat diakses.</string>
+    <string name="no_sentences">Tidak ada kalimat yang tersedia.</string>
     <string name="menu_group_training">Pelatihan</string>
     <string name="menu_group_data">Data</string>
     <string name="menu_group_settings">Pengaturan</string>

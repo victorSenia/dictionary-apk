@@ -15,6 +15,9 @@
     <string name="letter_delay">Độ trễ chữ cái</string>
     <string name="speech">Giọng nói</string>
     <string name="match_words">Ghép từ</string>
+    <string name="show_word">Hiển thị từ</string>
+    <string name="show_variants">Hiển thị biến thể</string>
+    <string name="variants_limit">Giới hạn biến thể</string>
     <string name="each_time">Mỗi lần</string>
     <string name="delay">Độ trễ</string>
     <string name="active">Hoạt động</string>
@@ -107,7 +110,7 @@
     <string name="word_recognition">Nhận diện giọng nói</string>
     <string name="word_knowledge">Kiến thức</string>
     <string name="error">lỗi</string>
-    <string name="grammar_filter">Bộ lọc ngữ pháp</string>
+    <string name="grammar_filter">Ngữ pháp</string>
     <string name="filter">Lọc</string>
     <string name="hints">Gợi ý</string>
     <string name="all_hints">Tất cả gợi ý</string>
@@ -122,6 +125,7 @@
     <string name="sorted">Đã sắp xếp</string>
     <string name="cannot_be_empty">Không được để trống</string>
     <string name="file_cannot_be_accessed">Không thể truy cập tệp.</string>
+    <string name="no_sentences">Không có câu nào khả dụng.</string>
     <string name="menu_group_training">Luyện tập</string>
     <string name="menu_group_data">Dữ liệu</string>
     <string name="menu_group_settings">Cài đặt</string>

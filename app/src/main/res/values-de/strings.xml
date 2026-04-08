@@ -15,6 +15,9 @@
     <string name="letter_delay">Buchstabenverzögerung</string>
     <string name="speech">Sprache</string>
     <string name="match_words">Wörter zuordnen</string>
+    <string name="show_word">Wort anzeigen</string>
+    <string name="show_variants">Varianten anzeigen</string>
+    <string name="variants_limit">Variantenlimit</string>
     <string name="each_time">Jedes Mal</string>
     <string name="delay">Verzögerung</string>
     <string name="active">Aktiv</string>
@@ -107,7 +110,7 @@
     <string name="word_recognition">Spracherkennung</string>
     <string name="word_knowledge">Wissen</string>
     <string name="error">Fehler</string>
-    <string name="grammar_filter">Grammatik filtern</string>
+    <string name="grammar_filter">Grammatik</string>
     <string name="filter">Filtern</string>
     <string name="hints">Hinweise</string>
     <string name="all_hints">Alle Hinweise</string>
@@ -122,6 +125,7 @@
     <string name="sorted">Sortiert</string>
     <string name="cannot_be_empty">Darf nicht leer sein</string>
     <string name="file_cannot_be_accessed">Auf die Datei kann nicht zugegriffen werden.</string>
+    <string name="no_sentences">Keine Sätze verfügbar.</string>
     <string name="menu_group_training">Training</string>
     <string name="menu_group_data">Daten</string>
     <string name="menu_group_settings">Einstellungen</string>

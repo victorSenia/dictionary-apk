@@ -15,6 +15,9 @@
     <string name="letter_delay">অক্ষর বিলম্ব</string>
     <string name="speech">বক্তব্য</string>
     <string name="match_words">শব্দ মিলান</string>
+    <string name="show_word">শব্দ দেখান</string>
+    <string name="show_variants">বিকল্প দেখান</string>
+    <string name="variants_limit">বিকল্পের সীমা</string>
     <string name="each_time">প্রতিবার</string>
     <string name="delay">বিলম্ব</string>
     <string name="active">সক্রিয়</string>
@@ -107,7 +110,7 @@
     <string name="word_recognition">ভয়েস স্বীকৃতি</string>
     <string name="word_knowledge">জ্ঞান</string>
     <string name="error">ত্রুটি</string>
-    <string name="grammar_filter">ব্যাকরণ ফিল্টার</string>
+    <string name="grammar_filter">ব্যাকরণ</string>
     <string name="filter">ফিল্টার</string>
     <string name="hints">ইঙ্গিতসমূহ</string>
     <string name="all_hints">সব ইঙ্গিত</string>
@@ -122,6 +125,7 @@
     <string name="sorted">সাজানো</string>
     <string name="cannot_be_empty">খালি হতে পারে না</string>
     <string name="file_cannot_be_accessed">ফাইলে প্রবেশ করা যাচ্ছে না।</string>
+    <string name="no_sentences">কোনো বাক্য উপলব্ধ নেই।</string>
     <string name="menu_group_training">প্রশিক্ষণ</string>
     <string name="menu_group_data">ডেটা</string>
     <string name="menu_group_settings">সেটিংস</string>

@@ -18,6 +18,9 @@
     <string name="letter_delay">Letter delay</string>
     <string name="speech">Speech</string>
     <string name="match_words">Match words</string>
+    <string name="show_word">Show word</string>
+    <string name="show_variants">Show variants</string>
+    <string name="variants_limit">Variants limit</string>
     <string name="each_time">Each time</string>
     <string name="delay">Delay</string>
     <string name="active">Active</string>
@@ -119,7 +122,7 @@
     <string name="word_recognition">Speech recognition</string>
     <string name="word_knowledge">Knowledge</string>
     <string name="error">error</string>
-    <string name="grammar_filter">Grammar filter</string>
+    <string name="grammar_filter">Grammar</string>
     <string name="filter">Filter</string>
     <string name="hints">Hints</string>
     <string name="all_hints">All hints</string>
@@ -134,6 +137,7 @@
     <string name="default_language_recognition" translatable="false">de-DE</string>
     <string name="cannot_be_empty">Cannot be empty</string>
     <string name="file_cannot_be_accessed">File cannot be accessed.</string>
+    <string name="no_sentences">No sentences available.</string>
     <string name="dialog_yes">Yes</string>
     <string name="dialog_no">No</string>
     <string name="privacy_policy">Privacy policy</string>

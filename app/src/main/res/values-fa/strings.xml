@@ -15,6 +15,9 @@
     <string name="letter_delay">تأخیر حروف</string>
     <string name="speech">گفتار</string>
     <string name="match_words">تطبیق واژه‌ها</string>
+    <string name="show_word">نمایش واژه</string>
+    <string name="show_variants">نمایش گزینه‌ها</string>
+    <string name="variants_limit">حد گزینه‌ها</string>
     <string name="each_time">هر بار</string>
     <string name="delay">تأخیر</string>
     <string name="active">فعال</string>
@@ -107,7 +110,7 @@
     <string name="word_recognition">تشخیص گفتار</string>
     <string name="word_knowledge">دانش</string>
     <string name="error">خطا</string>
-    <string name="grammar_filter">فیلتر گرامر</string>
+    <string name="grammar_filter">گرامر</string>
     <string name="filter">فیلتر</string>
     <string name="hints">راهنماها</string>
     <string name="all_hints">همه راهنماها</string>
@@ -122,6 +125,7 @@
     <string name="sorted">مرتب‌شده</string>
     <string name="cannot_be_empty">نمی‌تواند خالی باشد</string>
     <string name="file_cannot_be_accessed">دسترسی به فایل ممکن نیست.</string>
+    <string name="no_sentences">جمله‌ای در دسترس نیست.</string>
     <string name="menu_group_training">تمرین</string>
     <string name="menu_group_data">داده‌ها</string>
     <string name="menu_group_settings">تنظیمات</string>

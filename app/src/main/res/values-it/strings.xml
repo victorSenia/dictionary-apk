@@ -15,6 +15,9 @@
     <string name="letter_delay">Ritardo per lettera</string>
     <string name="speech">Voce</string>
     <string name="match_words">Abbina parole</string>
+    <string name="show_word">Mostra parola</string>
+    <string name="show_variants">Mostra varianti</string>
+    <string name="variants_limit">Limite varianti</string>
     <string name="each_time">Ogni volta</string>
     <string name="delay">Ritardo</string>
     <string name="active">Attivo</string>
@@ -107,7 +110,7 @@
     <string name="word_recognition">Riconoscimento vocale</string>
     <string name="word_knowledge">Conoscenza</string>
     <string name="error">errore</string>
-    <string name="grammar_filter">Filtro grammatica</string>
+    <string name="grammar_filter">Grammatica</string>
     <string name="filter">Filtra</string>
     <string name="hints">Suggerimenti</string>
     <string name="all_hints">Tutti i suggerimenti</string>
@@ -122,6 +125,7 @@
     <string name="sorted">Ordinato</string>
     <string name="cannot_be_empty">Non può essere vuoto</string>
     <string name="file_cannot_be_accessed">Impossibile accedere al file.</string>
+    <string name="no_sentences">Nessuna frase disponibile.</string>
     <string name="menu_group_training">Allenamento</string>
     <string name="menu_group_data">Dati</string>
     <string name="menu_group_settings">Impostazioni</string>

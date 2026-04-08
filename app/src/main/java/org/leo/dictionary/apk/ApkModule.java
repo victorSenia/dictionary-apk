@@ -18,6 +18,8 @@ import org.leo.dictionary.apk.config.AssetsConfigurationReader;
 import org.leo.dictionary.apk.config.PreferenceConfigurationReader;
 import org.leo.dictionary.apk.grammar.provider.AssetsGrammarProvider;
 import org.leo.dictionary.apk.grammar.provider.AssetsSentenceProvider;
+import org.leo.dictionary.apk.grammar.provider.InputStreamGrammarProvider;
+import org.leo.dictionary.apk.grammar.provider.InputStreamSentenceProvider;
 import org.leo.dictionary.apk.helper.*;
 import org.leo.dictionary.apk.word.provider.AssetsWordProvider;
 import org.leo.dictionary.apk.word.provider.InputStreamWordProvider;
@@ -115,11 +117,47 @@ public class ApkModule {
         return grammarProvider;
     }
 
+    public static GrammarProvider createInputStreamGrammarProvider(Context context, Uri data) {
+        InputStreamGrammarProvider grammarProvider = new InputStreamGrammarProvider();
+        ParseGrammar parseGrammar = new ParseGrammar();
+        parseGrammar.setProperties(new HashMap<>());
+        grammarProvider.setConfiguration(parseGrammar);
+        grammarProvider.setSource(context, data);
+        grammarProvider.parseAndUpdateConfiguration();
+        return grammarProvider;
+    }
+
+    public static SentenceProvider createInputStreamSentenceProvider(Context context, Uri data) {
+        InputStreamSentenceProvider sentenceProvider = new InputStreamSentenceProvider();
+        ParseSentences parseSentences = new ParseSentences();
+        parseSentences.setProperties(new HashMap<>());
+        sentenceProvider.setConfiguration(parseSentences);
+        sentenceProvider.setSource(context, data);
+        sentenceProvider.parseAndUpdateConfiguration();
+        return sentenceProvider;
+    }
+
     @Provides
     @Singleton
     public static SentenceProvider getOrCreateSentenceProvider(Context context, @Named("lastState") SharedPreferences lastState) {
-//        criteriaProvider.setObject(null);
-        SentenceProvider provider = createAssetsSentenceProvider(lastState.getString(LAST_STATE_SENTENCE_URI, "Sentences.txt"), context);
+        SentenceProvider provider;
+        String source = lastState.getString(LAST_STATE_SENTENCE_SOURCE, ASSET);
+        String uri = lastState.getString(LAST_STATE_SENTENCE_URI, "Sentences.txt");
+        try {
+            if (FILE.equals(source) && uri != null) {
+                provider = createInputStreamSentenceProvider(context, Uri.parse(uri));
+            } else {
+                provider = createAssetsSentenceProvider(uri, context);
+            }
+        } catch (Exception e) {
+            ActivityUtils.logUnhandledException(e);
+            lastState.edit()
+                    .putString(LAST_STATE_SENTENCE_SOURCE, ASSET)
+                    .putString(LAST_STATE_SENTENCE_URI, "Sentences.txt")
+                    .apply();
+            Toast.makeText(context, R.string.file_cannot_be_accessed, Toast.LENGTH_SHORT).show();
+            provider = createAssetsSentenceProvider("Sentences.txt", context);
+        }
         SentenceProviderHolder providerHolder = new SentenceProviderHolder();
         providerHolder.setSentenceProvider(provider);
         return providerHolder;
@@ -205,9 +243,24 @@ public class ApkModule {
     @Provides
     @Singleton
     public static GrammarProvider getOrCreateGrammarProvider(Context context, @Named("lastState") SharedPreferences lastState, GrammarCriteriaProvider criteriaProvider) {
-//        criteriaProvider.setObject(null);
-//        GrammarProvider provider = createAssetsGrammarProvider(lastState.getString(LAST_STATE_GRAMMAR_URI, "Conjugation of Modal Verbs.txt"), context);
-        GrammarProvider provider = createAssetsGrammarProvider(lastState.getString(LAST_STATE_GRAMMAR_URI, "konnen.txt"), context);
+        GrammarProvider provider;
+        String source = lastState.getString(LAST_STATE_GRAMMAR_SOURCE, ASSET);
+        String uri = lastState.getString(LAST_STATE_GRAMMAR_URI, "konnen.txt");
+        try {
+            if (FILE.equals(source) && uri != null) {
+                provider = createInputStreamGrammarProvider(context, Uri.parse(uri));
+            } else {
+                provider = createAssetsGrammarProvider(uri, context);
+            }
+        } catch (Exception e) {
+            ActivityUtils.logUnhandledException(e);
+            lastState.edit()
+                    .putString(LAST_STATE_GRAMMAR_SOURCE, ASSET)
+                    .putString(LAST_STATE_GRAMMAR_URI, "konnen.txt")
+                    .apply();
+            Toast.makeText(context, R.string.file_cannot_be_accessed, Toast.LENGTH_SHORT).show();
+            provider = createAssetsGrammarProvider("konnen.txt", context);
+        }
         GrammarProviderHolder providerHolder = new GrammarProviderHolder();
         providerHolder.setGrammarProvider(provider);
         return providerHolder;

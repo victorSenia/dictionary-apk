@@ -15,6 +15,9 @@
     <string name="letter_delay">字母延迟</string>
     <string name="speech">语音</string>
     <string name="match_words">匹配单词</string>
+    <string name="show_word">显示单词</string>
+    <string name="show_variants">显示变体</string>
+    <string name="variants_limit">变体数量限制</string>
     <string name="each_time">每次</string>
     <string name="delay">延迟</string>
     <string name="active">启用</string>
@@ -107,7 +110,7 @@
     <string name="word_recognition">语音识别</string>
     <string name="word_knowledge">知识</string>
     <string name="error">错误</string>
-    <string name="grammar_filter">语法筛选</string>
+    <string name="grammar_filter">语法</string>
     <string name="filter">筛选</string>
     <string name="hints">提示</string>
     <string name="all_hints">全部提示</string>
@@ -122,6 +125,7 @@
     <string name="sorted">已排序</string>
     <string name="cannot_be_empty">不能为空</string>
     <string name="file_cannot_be_accessed">无法访问该文件。</string>
+    <string name="no_sentences">没有可用句子。</string>
     <string name="menu_group_training">训练</string>
     <string name="menu_group_data">数据</string>
     <string name="menu_group_settings">设置</string>

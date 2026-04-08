@@ -15,6 +15,9 @@
     <string name="letter_delay">文字遅延</string>
     <string name="speech">音声</string>
     <string name="match_words">単語を一致</string>
+    <string name="show_word">単語を表示</string>
+    <string name="show_variants">バリエーションを表示</string>
+    <string name="variants_limit">バリエーション数の上限</string>
     <string name="each_time">毎回</string>
     <string name="delay">遅延</string>
     <string name="active">有効</string>
@@ -107,7 +110,7 @@
     <string name="word_recognition">音声認識</string>
     <string name="word_knowledge">知識</string>
     <string name="error">エラー</string>
-    <string name="grammar_filter">文法フィルタ</string>
+    <string name="grammar_filter">文法</string>
     <string name="filter">フィルタ</string>
     <string name="hints">ヒント</string>
     <string name="all_hints">すべてのヒント</string>
@@ -122,6 +125,7 @@
     <string name="sorted">並び替え</string>
     <string name="cannot_be_empty">空にできません</string>
     <string name="file_cannot_be_accessed">ファイルにアクセスできません。</string>
+    <string name="no_sentences">利用可能な文がありません。</string>
     <string name="menu_group_training">トレーニング</string>
     <string name="menu_group_data">データ</string>
     <string name="menu_group_settings">設定</string>

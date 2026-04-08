@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,20 +36,57 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class GrammarFilterActivity extends AppCompatActivity {
+    private final ActivityResultLauncher<Intent> fileActivityResultLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == Activity.RESULT_OK && result.getData() != null) {
+                    Uri uri = result.getData().getData();
+                    if (uri == null) {
+                        return;
+                    }
+                    try {
+                        GrammarProviderHolder grammarProviderHolder = (GrammarProviderHolder) ((ApplicationWithDI) getApplicationContext()).appComponent.externalGrammarProvider();
+                        GrammarProvider grammarProvider = ApkModule.createInputStreamGrammarProvider(getApplicationContext(), uri);
+                        SharedPreferences preferences = ((ApplicationWithDI) getApplicationContext()).appComponent.lastState();
+                        preferences.edit()
+                                .putString(ApkModule.LAST_STATE_GRAMMAR_SOURCE, ApkModule.FILE)
+                                .putString(ApkModule.LAST_STATE_GRAMMAR_URI, uri.toString())
+                                .apply();
+                        grammarProviderHolder.setGrammarProvider(grammarProvider);
+                        grammarProvider.findSentences(new GrammarCriteria());
+                        updateViewModelLanguage(this, null);
+                        updateViewModelLanguage(this, grammarProvider.languages().isEmpty() ? null : grammarProvider.languages().get(0));
+                    } catch (RuntimeException e) {
+                        ActivityUtils.logUnhandledException(e);
+                        Toast.makeText(this, R.string.file_cannot_be_accessed, Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
     private final ActivityResultLauncher<Intent> assetsActivityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
-                if (result.getResultCode() == Activity.RESULT_OK) {
+                if (result.getResultCode() == Activity.RESULT_OK && result.getData() != null) {
                     Intent data = result.getData();
                     String string = data.getStringExtra(ReturnSelectedStringRecyclerViewAdapter.DATA_STRING_EXTRA);
-                    SharedPreferences preferences = ((ApplicationWithDI) getApplicationContext()).appComponent.lastState();
-                    preferences.edit().putString(ApkModule.LAST_STATE_GRAMMAR_URI, string).apply();
-                    GrammarProviderHolder grammarProviderHolder = (GrammarProviderHolder) ((ApplicationWithDI) getApplicationContext()).appComponent.externalGrammarProvider();
-                    GrammarProvider grammarProvider = ApkModule.createAssetsGrammarProvider(string, getApplicationContext());
-                    grammarProviderHolder.setGrammarProvider(grammarProvider);
-                    grammarProvider.findSentences(new GrammarCriteria());
-                    updateViewModelLanguage(this, null);//to clean UI
-                    updateViewModelLanguage(this, grammarProvider.languages().get(0));
+                    if (string == null) {
+                        return;
+                    }
+                    try {
+                        GrammarProviderHolder grammarProviderHolder = (GrammarProviderHolder) ((ApplicationWithDI) getApplicationContext()).appComponent.externalGrammarProvider();
+                        GrammarProvider grammarProvider = ApkModule.createAssetsGrammarProvider(string, getApplicationContext());
+                        SharedPreferences preferences = ((ApplicationWithDI) getApplicationContext()).appComponent.lastState();
+                        preferences.edit()
+                                .putString(ApkModule.LAST_STATE_GRAMMAR_SOURCE, ApkModule.ASSET)
+                                .putString(ApkModule.LAST_STATE_GRAMMAR_URI, string)
+                                .apply();
+                        grammarProviderHolder.setGrammarProvider(grammarProvider);
+                        grammarProvider.findSentences(new GrammarCriteria());
+                        updateViewModelLanguage(this, null);
+                        updateViewModelLanguage(this, grammarProvider.languages().isEmpty() ? null : grammarProvider.languages().get(0));
+                    } catch (RuntimeException e) {
+                        ActivityUtils.logUnhandledException(e);
+                        Toast.makeText(this, R.string.file_cannot_be_accessed, Toast.LENGTH_LONG).show();
+                    }
                 }
             });
     private ActivityGrammarFilterBinding binding;
@@ -133,6 +172,12 @@ public class GrammarFilterActivity extends AppCompatActivity {
             b.putString(AssetsActivity.FOLDER_NAME, AssetsGrammarProvider.ASSETS_GRAMMAR);
             intent.putExtras(b);
             assetsActivityResultLauncher.launch(intent);
+        });
+        binding.buttonFile.setOnClickListener(e -> {
+            Intent chooseFile = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+            chooseFile.addCategory(Intent.CATEGORY_OPENABLE);
+            chooseFile.setType("text/plain");
+            fileActivityResultLauncher.launch(chooseFile);
         });
 
         binding.allRootTopics.setOnClickListener(v -> {

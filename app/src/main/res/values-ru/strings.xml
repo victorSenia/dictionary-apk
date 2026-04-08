@@ -15,6 +15,9 @@
     <string name="letter_delay">Задержка по буквам</string>
     <string name="speech">Речь</string>
     <string name="match_words">Сопоставить слова</string>
+    <string name="show_word">Показывать слово</string>
+    <string name="show_variants">Показывать варианты</string>
+    <string name="variants_limit">Лимит вариантов</string>
     <string name="each_time">Каждый раз</string>
     <string name="delay">Задержка</string>
     <string name="active">Активно</string>
@@ -107,7 +110,7 @@
     <string name="word_recognition">Распознавание речи</string>
     <string name="word_knowledge">Знание</string>
     <string name="error">ошибка</string>
-    <string name="grammar_filter">Фильтр грамматики</string>
+    <string name="grammar_filter">Грамматика</string>
     <string name="filter">Фильтр</string>
     <string name="hints">Подсказки</string>
     <string name="all_hints">Все подсказки</string>
@@ -122,6 +125,7 @@
     <string name="sorted">Отсортировано</string>
     <string name="cannot_be_empty">Не может быть пустым</string>
     <string name="file_cannot_be_accessed">Не удается получить доступ к файлу.</string>
+    <string name="no_sentences">Нет доступных предложений.</string>
     <string name="menu_group_training">Тренировка</string>
     <string name="menu_group_data">Данные</string>
     <string name="menu_group_settings">Настройки</string>

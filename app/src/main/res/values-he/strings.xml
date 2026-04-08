@@ -15,6 +15,9 @@
     <string name="letter_delay">השהיית אות</string>
     <string name="speech">דיבור</string>
     <string name="match_words">התאם מילים</string>
+    <string name="show_word">הצג מילה</string>
+    <string name="show_variants">הצג וריאציות</string>
+    <string name="variants_limit">מגבלת וריאציות</string>
     <string name="each_time">בכל פעם</string>
     <string name="delay">השהיה</string>
     <string name="active">פעיל</string>
@@ -107,7 +110,7 @@
     <string name="word_recognition">זיהוי דיבור</string>
     <string name="word_knowledge">ידע</string>
     <string name="error">שגיאה</string>
-    <string name="grammar_filter">מסנן דקדוק</string>
+    <string name="grammar_filter">דקדוק</string>
     <string name="filter">סנן</string>
     <string name="hints">רמזים</string>
     <string name="all_hints">כל הרמזים</string>
@@ -122,6 +125,7 @@
     <string name="sorted">ממויין</string>
     <string name="cannot_be_empty">לא יכול להיות ריק</string>
     <string name="file_cannot_be_accessed">לא ניתן לגשת לקובץ.</string>
+    <string name="no_sentences">אין משפטים זמינים.</string>
     <string name="menu_group_training">אימון</string>
     <string name="menu_group_data">נתונים</string>
     <string name="menu_group_settings">הגדרות</string>

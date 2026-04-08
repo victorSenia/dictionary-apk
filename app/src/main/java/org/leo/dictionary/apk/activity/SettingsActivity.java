@@ -19,7 +19,7 @@ import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.R;
 
 public class SettingsActivity extends AppCompatActivity {
-    private final int[] tabNames = {R.string.general, R.string.speech, R.string.match_words, R.string.appearance};
+    private final int[] tabNames = {R.string.general, R.string.speech, R.string.menu_group_training, R.string.appearance};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +48,7 @@ public class SettingsActivity extends AppCompatActivity {
                 return new VoiceCustomPreferencesFragment();
             }
             if (position == 2) {
-                return new MatchWordsCustomPreferencesFragment();
+                return new TrainingCustomPreferencesFragment();
             }
             return new AppearanceCustomPreferencesFragment();
         }
@@ -101,12 +101,15 @@ public class SettingsActivity extends AppCompatActivity {
         }
     }
 
-    public static class MatchWordsCustomPreferencesFragment extends CustomPreferencesFragment {
+    public static class TrainingCustomPreferencesFragment extends CustomPreferencesFragment {
 
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-            setPreferencesFromResource(R.xml.match_words_preferences, rootKey);
+            setPreferencesFromResource(R.xml.training_preferences, rootKey);
             setInputTypeNumber("org.leo.dictionary.apk.config.entity.MatchWords.limit");
+            setInputTypeNumber("org.leo.dictionary.apk.config.entity.GrammarCheck.correctDelayMillis");
+            setInputTypeNumber("org.leo.dictionary.apk.config.entity.GrammarCheck.variantsLimit");
+            setInputTypeNumber("org.leo.dictionary.apk.config.entity.SentenceOrder.correctDelayMillis");
         }
     }
 

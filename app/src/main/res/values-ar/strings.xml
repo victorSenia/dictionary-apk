@@ -15,6 +15,9 @@
     <string name="letter_delay">تأخير الأحرف</string>
     <string name="speech">النطق</string>
     <string name="match_words">مطابقة الكلمات</string>
+    <string name="show_word">إظهار الكلمة</string>
+    <string name="show_variants">إظهار الخيارات</string>
+    <string name="variants_limit">حد الخيارات</string>
     <string name="each_time">كل مرة</string>
     <string name="delay">تأخير</string>
     <string name="active">نشط</string>
@@ -107,7 +110,7 @@
     <string name="word_recognition">التعرف على الكلام</string>
     <string name="word_knowledge">المعرفة</string>
     <string name="error">خطأ</string>
-    <string name="grammar_filter">تصفية القواعد</string>
+    <string name="grammar_filter">القواعد</string>
     <string name="filter">تصفية</string>
     <string name="hints">تلميحات</string>
     <string name="all_hints">كل التلميحات</string>
@@ -122,6 +125,7 @@
     <string name="sorted">مرتب</string>
     <string name="cannot_be_empty">لا يمكن أن يكون فارغًا</string>
     <string name="file_cannot_be_accessed">لا يمكن الوصول إلى الملف.</string>
+    <string name="no_sentences">لا توجد جمل متاحة.</string>
     <string name="menu_group_training">التدريب</string>
     <string name="menu_group_data">البيانات</string>
     <string name="menu_group_settings">الإعدادات</string>

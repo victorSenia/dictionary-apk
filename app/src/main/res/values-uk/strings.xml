@@ -14,6 +14,9 @@
     <string name="letter_delay">Затримка на літеру</string>
     <string name="speech">Вимова</string>
     <string name="match_words">З’єднання слів</string>
+    <string name="show_word">Показувати слово</string>
+    <string name="show_variants">Показувати варіанти</string>
+    <string name="variants_limit">Ліміт варіантів</string>
     <string name="each_time">Кожен раз</string>
     <string name="delay">Затримка</string>
     <string name="active">Активний</string>
@@ -106,7 +109,7 @@
     <string name="word_recognition">Розпізнавання мовлення</string>
     <string name="word_knowledge">Знання</string>
     <string name="error">помилка</string>
-    <string name="grammar_filter">Фільтрувати граматику</string>
+    <string name="grammar_filter">Граматика</string>
     <string name="filter">Фільтрувати</string>
     <string name="hints">Підказки</string>
     <string name="all_hints">Всі підказки</string>
@@ -122,6 +125,7 @@
     <string name="sorted">Відсортовано</string>
     <string name="cannot_be_empty">Не може бути порожнім</string>
     <string name="file_cannot_be_accessed">Неможливо отримати доступ до файлу.</string>
+    <string name="no_sentences">Немає доступних речень.</string>
     <string name="menu_group_training">Тренування</string>
     <string name="menu_group_data">Дані</string>
     <string name="menu_group_settings">Налаштування</string>

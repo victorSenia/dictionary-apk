@@ -15,6 +15,9 @@
     <string name="letter_delay">Harf gecikmesi</string>
     <string name="speech">Konuşma</string>
     <string name="match_words">Kelimeleri eşleştir</string>
+    <string name="show_word">Kelimeyi göster</string>
+    <string name="show_variants">Varyantları göster</string>
+    <string name="variants_limit">Varyant limiti</string>
     <string name="each_time">Her seferinde</string>
     <string name="delay">Gecikme</string>
     <string name="active">Etkin</string>
@@ -107,7 +110,7 @@
     <string name="word_recognition">Konuşma tanıma</string>
     <string name="word_knowledge">Bilgi</string>
     <string name="error">hata</string>
-    <string name="grammar_filter">Dil bilgisi filtresi</string>
+    <string name="grammar_filter">Dil bilgisi</string>
     <string name="filter">Filtre</string>
     <string name="hints">İpuçları</string>
     <string name="all_hints">Tüm ipuçları</string>
@@ -122,6 +125,7 @@
     <string name="sorted">Sıralı</string>
     <string name="cannot_be_empty">Boş olamaz</string>
     <string name="file_cannot_be_accessed">Dosyaya erişilemiyor.</string>
+    <string name="no_sentences">Kullanılabilir cümle yok.</string>
     <string name="menu_group_training">Antrenman</string>
     <string name="menu_group_data">Veri</string>
     <string name="menu_group_settings">Ayarlar</string>

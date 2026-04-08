@@ -15,6 +15,9 @@
     <string name="letter_delay">अक्षर विलंब</string>
     <string name="speech">वाणी</string>
     <string name="match_words">शब्द मिलान</string>
+    <string name="show_word">शब्द दिखाएँ</string>
+    <string name="show_variants">विकल्प दिखाएँ</string>
+    <string name="variants_limit">विकल्प सीमा</string>
     <string name="each_time">हर बार</string>
     <string name="delay">विलंब</string>
     <string name="active">सक्रिय</string>
@@ -107,7 +110,7 @@
     <string name="word_recognition">वाक् पहचान</string>
     <string name="word_knowledge">ज्ञान</string>
     <string name="error">त्रुटि</string>
-    <string name="grammar_filter">व्याकरण फ़िल्टर</string>
+    <string name="grammar_filter">व्याकरण</string>
     <string name="filter">फ़िल्टर</string>
     <string name="hints">संकेत</string>
     <string name="all_hints">सभी संकेत</string>
@@ -122,6 +125,7 @@
     <string name="sorted">क्रमबद्ध</string>
     <string name="cannot_be_empty">खाली नहीं हो सकता</string>
     <string name="file_cannot_be_accessed">फ़ाइल तक पहुँचा नहीं जा सकता।</string>
+    <string name="no_sentences">कोई वाक्य उपलब्ध नहीं हैं।</string>
     <string name="menu_group_training">प्रशिक्षण</string>
     <string name="menu_group_data">डेटा</string>
     <string name="menu_group_settings">सेटिंग्स</string>

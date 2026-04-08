@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 import org.leo.dictionary.apk.ApplicationWithDI;
 import org.leo.dictionary.apk.databinding.ActivityGrammarCheckBinding;
 import org.leo.dictionary.entity.GrammarSentence;
@@ -22,6 +23,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class GrammarCheckActivity extends AppCompatActivity {
+    public static final String CONFIG_PREFIX = "org.leo.dictionary.apk.config.entity.GrammarCheck.";
     public static final int CORRECT_DELAY_MILLIS = 1500;
     public static final int VARIANTS_LIMIT = 5;
     public static final boolean SHOW_VARIANTS = true;
@@ -34,7 +36,18 @@ public class GrammarCheckActivity extends AppCompatActivity {
     }
 
     private int getCorrectDelayMillis() {
-        return CORRECT_DELAY_MILLIS;
+        return Integer.parseInt(PreferenceManager.getDefaultSharedPreferences(this)
+                .getString(CONFIG_PREFIX + "correctDelayMillis", Integer.toString(CORRECT_DELAY_MILLIS)));
+    }
+
+    private int getVariantsLimit() {
+        return Integer.parseInt(PreferenceManager.getDefaultSharedPreferences(this)
+                .getString(CONFIG_PREFIX + "variantsLimit", Integer.toString(VARIANTS_LIMIT)));
+    }
+
+    private boolean isShowVariants() {
+        return PreferenceManager.getDefaultSharedPreferences(this)
+                .getBoolean(CONFIG_PREFIX + "showVariants", SHOW_VARIANTS);
     }
 
     @Override
@@ -81,7 +94,7 @@ public class GrammarCheckActivity extends AppCompatActivity {
         binding.imageOk.setVisibility(View.INVISIBLE);
         binding.sentenceHint.setText(sentence.getHint().getHint());
         binding.sentenceAnswer.setText("");
-        if (SHOW_VARIANTS) {
+        if (isShowVariants()) {
             List<String> variants = fillWrongVariants(sentence.getAnswer(), sentence.getHint().getVariants());
             binding.variantsContainer.removeAllViews();
             for (String variant : variants) {
@@ -132,7 +145,7 @@ public class GrammarCheckActivity extends AppCompatActivity {
         List<String> variants = new ArrayList<>();
         variants.add(answer);
         for (String variant : shuffled) {
-            if (variants.size() == VARIANTS_LIMIT) {
+            if (variants.size() == getVariantsLimit()) {
                 break;
             }
             if (!variant.equals(answer)) {

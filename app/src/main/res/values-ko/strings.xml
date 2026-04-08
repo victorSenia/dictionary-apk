@@ -15,6 +15,9 @@
     <string name="letter_delay">글자 지연</string>
     <string name="speech">음성</string>
     <string name="match_words">단어 매칭</string>
+    <string name="show_word">단어 표시</string>
+    <string name="show_variants">변형 표시</string>
+    <string name="variants_limit">변형 제한</string>
     <string name="each_time">매번</string>
     <string name="delay">지연</string>
     <string name="active">활성</string>
@@ -107,7 +110,7 @@
     <string name="word_recognition">음성 인식</string>
     <string name="word_knowledge">지식</string>
     <string name="error">오류</string>
-    <string name="grammar_filter">문법 필터</string>
+    <string name="grammar_filter">문법</string>
     <string name="filter">필터</string>
     <string name="hints">힌트</string>
     <string name="all_hints">모든 힌트</string>
@@ -122,6 +125,7 @@
     <string name="sorted">정렬됨</string>
     <string name="cannot_be_empty">비워 둘 수 없습니다</string>
     <string name="file_cannot_be_accessed">파일에 접근할 수 없습니다.</string>
+    <string name="no_sentences">사용 가능한 문장이 없습니다.</string>
     <string name="menu_group_training">학습</string>
     <string name="menu_group_data">데이터</string>
     <string name="menu_group_settings">설정</string>
