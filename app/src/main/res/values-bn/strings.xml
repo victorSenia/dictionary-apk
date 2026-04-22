@@ -7,7 +7,7 @@
     <string name="pause">থামান</string>
     <string name="action_play_from">এখান থেকে চালান</string>
     <string name="title_activity_topics">বিষয়সমূহ</string>
-    <string name="parse_words">ফাইল থেকে শব্দ পার্স করুন</string>
+    <string name="parse_words">উৎস থেকে শব্দ পার্স করুন</string>
     <string name="file">ফাইল</string>
     <string name="pitch">পিচ</string>
     <string name="speed">গতি</string>
@@ -28,7 +28,7 @@
     <string name="shuffle">এলোমেলো</string>
     <string name="include_article">আর্টিকেল অন্তর্ভুক্ত করুন</string>
     <string name="knowledge_increase">জ্ঞান বৃদ্ধি</string>
-    <string name="delay_per_letter_after">পরের প্রতি অক্ষরে বিলম্ব</string>
+    <string name="delay_per_letter_after">পরবর্তী প্রতিটি অক্ষরে বিলম্ব</string>
     <string name="delay_before">আগে বিলম্ব</string>
     <string name="general">সাধারণ</string>
     <string name="topic_delimiter">বিষয় বিভাজক</string>
@@ -117,7 +117,7 @@
     <string name="learn">শিখুন</string>
     <string name="practice">অভ্যাস</string>
     <string name="answer">উত্তর</string>
-    <string name="match_word_article">শব্দের আর্টিকেল মিলান</string>
+    <string name="match_word_article">শব্দের সাথে আর্টিকেল মিলান</string>
     <string name="order_words_in_sentence">বাক্যে শব্দের ক্রম সাজান</string>
     <string name="all_translations">সব অনুবাদ চালান</string>
     <string name="example_language_recognition">উদাহরণ de-DE</string>

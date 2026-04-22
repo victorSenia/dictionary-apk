@@ -7,7 +7,7 @@
     <string name="pause">Tạm dừng</string>
     <string name="action_play_from">Phát từ</string>
     <string name="title_activity_topics">Chủ đề</string>
-    <string name="parse_words">Phân tích từ từ tệp</string>
+    <string name="parse_words">Phân tích từ từ nguồn</string>
     <string name="file">Tệp</string>
     <string name="pitch">Cao độ</string>
     <string name="speed">Tốc độ</string>

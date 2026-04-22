@@ -19,6 +19,8 @@ import org.leo.dictionary.apk.R;
 import org.leo.dictionary.apk.activity.viewadapter.ReturnSelectedStringRecyclerViewAdapter;
 import org.leo.dictionary.apk.databinding.ParseWordsSettingsActivityBinding;
 import org.leo.dictionary.apk.word.provider.AssetsWordProvider;
+import org.leo.dictionary.config.entity.ParseWords;
+import org.leo.dictionary.word.provider.FileWordProvider;
 import org.leo.dictionary.word.provider.WordProvider;
 import org.leo.dictionary.word.provider.WordProviderDelegate;
 
@@ -28,6 +30,7 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
     private ParseWordsSettingsActivityBinding binding;
     private Object uri;
     private String type;
+    private WordProvider selectedWordProvider;
     private final ActivityResultLauncher<Intent> filesActivityResultLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
@@ -42,6 +45,8 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
                     binding.file.setText(getFileName(selectedUri));
                     binding.asset.setText(R.string.asset);
                     type = ApkModule.FILE;
+                    selectedWordProvider = ApkModule.createInputStreamWordProvider(getApplicationContext(), selectedUri);
+                    updateSettingsVisibility(selectedWordProvider);
                 }
             });
     private final ActivityResultLauncher<Intent> assetsActivityResultLauncher = registerForActivityResult(
@@ -57,6 +62,10 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
                     binding.file.setText(R.string.file);
                     uri = string;
                     type = ApkModule.ASSET;
+                    ParseWords configuration = ApkModule.provideParseWordsConfiguration(getApplicationContext());
+                    configuration.setPath(string);
+                    selectedWordProvider = ApkModule.createAssetsWordProvider(configuration, getApplicationContext());
+                    updateSettingsVisibility(selectedWordProvider);
                 }
             });
 
@@ -108,7 +117,7 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
                                 .putString(ApkModule.LAST_STATE_URI, uri.toString())
                                 .apply();
                     }
-                    updateWordProvider(uri);
+                    updateWordProvider();
 
                     Intent intent = new Intent();
                     intent.putExtra(ReturnSelectedStringRecyclerViewAdapter.DATA_STRING_EXTRA, ReturnSelectedStringRecyclerViewAdapter.DATA_STRING_EXTRA);
@@ -125,6 +134,9 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        selectedWordProvider = null;
+        uri = null;
+        type = null;
         binding = null;
     }
 
@@ -143,15 +155,20 @@ public class ParseWordsSettingsActivity extends AppCompatActivity {
         return "";
     }
 
-    private void updateWordProvider(Object data) throws FileNotFoundException {
-        WordProvider wordProvider;
-        if (data instanceof Uri) {
-            wordProvider = ApkModule.createInputStreamWordProvider(getApplicationContext(), (Uri) data);
-        } else {
-            wordProvider = ApkModule.createWordProvider(getApplicationContext(), ((ApplicationWithDI) getApplicationContext()).appComponent.lastState(), ((ApplicationWithDI) getApplicationContext()).appComponent.wordCriteriaProvider());
+    private void updateWordProvider() throws FileNotFoundException {
+        if (selectedWordProvider == null) {
+            throw new FileNotFoundException("Word provider is not selected");
         }
         WordProviderDelegate wordProviderDelegate = (WordProviderDelegate) ((ApplicationWithDI) getApplicationContext()).appComponent.externalWordProvider();
-        wordProviderDelegate.setWordProvider(wordProvider);
+        wordProviderDelegate.setWordProvider(selectedWordProvider);
+    }
+
+    private void updateSettingsVisibility(WordProvider wordProvider) {
+        int visibility = View.VISIBLE;
+        if (wordProvider instanceof FileWordProvider && ((FileWordProvider) wordProvider).isConfigurationParsed()) {
+            visibility = View.GONE;
+        }
+        binding.settings.setVisibility(visibility);
     }
 
     private void persistReadPermissionIfPossible(Intent data, Uri selectedUri) {

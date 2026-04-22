@@ -7,7 +7,7 @@
     <string name="pause">Pauze</string>
     <string name="action_play_from">Afspelen vanaf</string>
     <string name="title_activity_topics">Onderwerpen</string>
-    <string name="parse_words">Woorden uit bestand parseren</string>
+    <string name="parse_words">Woorden uit bron parseren</string>
     <string name="file">Bestand</string>
     <string name="pitch">Toonhoogte</string>
     <string name="speed">Snelheid</string>
@@ -32,8 +32,8 @@
     <string name="delay_before">Vertraging ervoor</string>
     <string name="general">Algemeen</string>
     <string name="topic_delimiter">Onderwerp-scheidingsteken</string>
-    <string name="language_from">Taal van</string>
-    <string name="languages_to">Talen naar</string>
+    <string name="language_from">Brontaal</string>
+    <string name="languages_to">Doeltalen</string>
     <string name="languages_to_speak">Talen om uit te spreken</string>
     <string name="languages_to_delete">Talen om te verwijderen</string>
     <string name="no_languages">Er is geen taal in de DB</string>
@@ -78,7 +78,7 @@
     <string name="details_text_size_large">Groot</string>
     <string name="details_text_size_landscape_balanced">Evenwichtig</string>
     <string name="details_text_size_landscape_extra_large">Extra groot</string>
-    <string name="import_words">Huidige importeren naar database</string>
+    <string name="import_words">Huidige inhoud naar database importeren</string>
     <string name="use_db">Database gebruiken</string>
     <string name="action_edit">Bewerken</string>
     <string name="action_delete">Verwijderen</string>

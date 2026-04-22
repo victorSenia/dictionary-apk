@@ -7,7 +7,7 @@
     <string name="pause">Duraklat</string>
     <string name="action_play_from">Şuradan oynat</string>
     <string name="title_activity_topics">Konular</string>
-    <string name="parse_words">Dosyadan kelimeleri ayrıştır</string>
+    <string name="parse_words">Kaynaktan kelimeleri ayrıştır</string>
     <string name="file">Dosya</string>
     <string name="pitch">Perde</string>
     <string name="speed">Hız</string>
@@ -117,7 +117,7 @@
     <string name="learn">Öğren</string>
     <string name="practice">Pratik</string>
     <string name="answer">cevap</string>
-    <string name="match_word_article">Kelime artikeli eşleştir</string>
+    <string name="match_word_article">Kelime ile artikeli eşleştir</string>
     <string name="order_words_in_sentence">Cümledeki kelimeleri sırala</string>
     <string name="all_translations">Tüm çevirileri oynat</string>
     <string name="example_language_recognition">Örnek de-DE</string>

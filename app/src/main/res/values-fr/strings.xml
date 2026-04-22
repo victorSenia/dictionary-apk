@@ -7,7 +7,7 @@
     <string name="pause">Mettre en pause</string>
     <string name="action_play_from">Lire à partir de</string>
     <string name="title_activity_topics">Sujets</string>
-    <string name="parse_words">Analyser les mots depuis un fichier</string>
+    <string name="parse_words">Analyser les mots depuis une source</string>
     <string name="file">Fichier</string>
     <string name="pitch">Tonalité</string>
     <string name="speed">Vitesse</string>
@@ -56,7 +56,7 @@
     <string name="additional_information_delimiter">Délimiteur d’information supplémentaire</string>
     <string name="delimiter">Délimiteur</string>
     <string name="translation_delimiter">Délimiteur de traduction</string>
-    <string name="topic_flag">Indicateur de sujet</string>
+    <string name="topic_flag">Marqueur de sujet</string>
     <string name="all_topics">Tous les sujets</string>
     <string name="asset">Ressource</string>
     <string name="title_activity_assets">Ressources</string>
@@ -117,7 +117,7 @@
     <string name="learn">Apprendre</string>
     <string name="practice">Pratiquer</string>
     <string name="answer">réponse</string>
-    <string name="match_word_article">Associer le mot et l’article</string>
+    <string name="match_word_article">Associer l’article au mot</string>
     <string name="order_words_in_sentence">Ordonner les mots dans la phrase</string>
     <string name="all_translations">Lire toutes les traductions</string>
     <string name="example_language_recognition">Exemple de-DE</string>

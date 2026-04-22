@@ -7,7 +7,7 @@
     <string name="pause">Jeda</string>
     <string name="action_play_from">Putar dari</string>
     <string name="title_activity_topics">Topik</string>
-    <string name="parse_words">Urai kata dari file</string>
+    <string name="parse_words">Urai kata dari sumber</string>
     <string name="file">Berkas</string>
     <string name="pitch">Nada</string>
     <string name="speed">Kecepatan</string>
@@ -78,7 +78,7 @@
     <string name="details_text_size_large">Besar</string>
     <string name="details_text_size_landscape_balanced">Seimbang</string>
     <string name="details_text_size_landscape_extra_large">Sangat besar</string>
-    <string name="import_words">Impor yang saat ini ke database</string>
+    <string name="import_words">Impor data saat ini ke database</string>
     <string name="use_db">Gunakan database</string>
     <string name="action_edit">Ubah</string>
     <string name="action_delete">Hapus</string>
@@ -117,7 +117,7 @@
     <string name="learn">Belajar</string>
     <string name="practice">Latihan</string>
     <string name="answer">jawaban</string>
-    <string name="match_word_article">Cocokkan artikel kata</string>
+    <string name="match_word_article">Cocokkan artikel dengan kata</string>
     <string name="order_words_in_sentence">Urutkan kata dalam kalimat</string>
     <string name="all_translations">Putar semua terjemahan</string>
     <string name="example_language_recognition">Contoh de-DE</string>

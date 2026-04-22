@@ -7,7 +7,7 @@
     <string name="pause">Пауза</string>
     <string name="action_play_from">Воспроизвести с</string>
     <string name="title_activity_topics">Темы</string>
-    <string name="parse_words">Разобрать слова из файла</string>
+    <string name="parse_words">Разобрать слова из источника</string>
     <string name="file">Файл</string>
     <string name="pitch">Тон</string>
     <string name="speed">Скорость</string>
@@ -27,7 +27,7 @@
     <string name="repeat">Повтор</string>
     <string name="shuffle">Перемешать</string>
     <string name="include_article">Включить артикль</string>
-    <string name="knowledge_increase">Увеличение знания</string>
+    <string name="knowledge_increase">Повышение уровня знаний</string>
     <string name="delay_per_letter_after">Задержка после каждой буквы</string>
     <string name="delay_before">Задержка перед</string>
     <string name="general">Общие</string>
@@ -78,7 +78,7 @@
     <string name="details_text_size_large">Большой</string>
     <string name="details_text_size_landscape_balanced">Сбалансированный</string>
     <string name="details_text_size_landscape_extra_large">Очень большой</string>
-    <string name="import_words">Импортировать текущее в базу данных</string>
+    <string name="import_words">Импортировать текущее содержимое в базу данных</string>
     <string name="use_db">Использовать базу данных</string>
     <string name="action_edit">Изменить</string>
     <string name="action_delete">Удалить</string>

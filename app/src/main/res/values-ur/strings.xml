@@ -7,7 +7,7 @@
     <string name="pause">روکیں</string>
     <string name="action_play_from">یہاں سے چلائیں</string>
     <string name="title_activity_topics">موضوعات</string>
-    <string name="parse_words">فائل سے الفاظ پارس کریں</string>
+    <string name="parse_words">ماخذ سے الفاظ پارس کریں</string>
     <string name="file">فائل</string>
     <string name="pitch">زیر و بم</string>
     <string name="speed">رفتار</string>

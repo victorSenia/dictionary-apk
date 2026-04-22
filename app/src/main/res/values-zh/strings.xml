@@ -7,7 +7,7 @@
     <string name="pause">暂停</string>
     <string name="action_play_from">从此处播放</string>
     <string name="title_activity_topics">主题</string>
-    <string name="parse_words">从文件解析单词</string>
+    <string name="parse_words">从数据源解析单词</string>
     <string name="file">文件</string>
     <string name="pitch">音高</string>
     <string name="speed">速度</string>
@@ -117,8 +117,8 @@
     <string name="learn">学习</string>
     <string name="practice">练习</string>
     <string name="answer">答案</string>
-    <string name="match_word_article">匹配单词冠词</string>
-    <string name="order_words_in_sentence">排列句中单词顺序</string>
+    <string name="match_word_article">匹配单词与冠词</string>
+    <string name="order_words_in_sentence">排列句子中的单词顺序</string>
     <string name="all_translations">播放所有翻译</string>
     <string name="example_language_recognition">示例 de-DE</string>
     <string name="import_order">导入顺序</string>

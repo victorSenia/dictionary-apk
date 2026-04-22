@@ -7,7 +7,7 @@
     <string name="pause">השהה</string>
     <string name="action_play_from">נגן מ־</string>
     <string name="title_activity_topics">נושאים</string>
-    <string name="parse_words">נתח מילים מקובץ</string>
+    <string name="parse_words">נתח מילים ממקור</string>
     <string name="file">קובץ</string>
     <string name="pitch">גובה צליל</string>
     <string name="speed">מהירות</string>
@@ -26,7 +26,7 @@
     <string name="times">פעמים</string>
     <string name="repeat">חזור</string>
     <string name="shuffle">ערבב</string>
-    <string name="include_article">כלול תווית יידוע</string>
+    <string name="include_article">כלול יידוע</string>
     <string name="knowledge_increase">הגדלת ידע</string>
     <string name="delay_per_letter_after">השהיה לכל אות לאחר מכן</string>
     <string name="delay_before">השהיה לפני</string>
@@ -52,7 +52,7 @@
     <string name="default_voice_usage">קול ברירת מחדל משמש עבור %s</string>
     <string name="import_started">הייבוא התחיל. זה יימשך כמה שניות.</string>
     <string name="import_finished">הייבוא ארך %d ms</string>
-    <string name="articles">תוויות יידוע</string>
+    <string name="articles">יידוע</string>
     <string name="additional_information_delimiter">מפריד מידע נוסף</string>
     <string name="delimiter">מפריד</string>
     <string name="translation_delimiter">מפריד תרגום</string>
@@ -78,7 +78,7 @@
     <string name="details_text_size_large">גדול</string>
     <string name="details_text_size_landscape_balanced">מאוזן</string>
     <string name="details_text_size_landscape_extra_large">גדול במיוחד</string>
-    <string name="import_words">ייבא את הנוכחי למסד הנתונים</string>
+    <string name="import_words">ייבא את התוכן הנוכחי למסד הנתונים</string>
     <string name="use_db">השתמש במסד נתונים</string>
     <string name="action_edit">ערוך</string>
     <string name="action_delete">מחק</string>
@@ -91,7 +91,7 @@
     <string name="save">שמור</string>
     <string name="language">שפה</string>
     <string name="delete_translation">מחק תרגום</string>
-    <string name="article">תווית יידוע</string>
+    <string name="article">יידוע</string>
     <string name="word">מילה</string>
     <string name="additional_information">מידע נוסף</string>
     <string name="action_create">צור</string>
@@ -117,7 +117,7 @@
     <string name="learn">למד</string>
     <string name="practice">תרגל</string>
     <string name="answer">תשובה</string>
-    <string name="match_word_article">התאם מילה ותווית יידוע</string>
+    <string name="match_word_article">התאם יידוע למילה</string>
     <string name="order_words_in_sentence">סדר מילים במשפט</string>
     <string name="all_translations">נגן את כל התרגומים</string>
     <string name="example_language_recognition">דוגמה de-DE</string>

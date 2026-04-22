@@ -7,7 +7,7 @@
     <string name="pause">إيقاف مؤقت</string>
     <string name="action_play_from">تشغيل من</string>
     <string name="title_activity_topics">الموضوعات</string>
-    <string name="parse_words">تحليل الكلمات من ملف</string>
+    <string name="parse_words">تحليل الكلمات من المصدر</string>
     <string name="file">ملف</string>
     <string name="pitch">حدة الصوت</string>
     <string name="speed">السرعة</string>
@@ -78,7 +78,7 @@
     <string name="details_text_size_large">كبير</string>
     <string name="details_text_size_landscape_balanced">متوازن</string>
     <string name="details_text_size_landscape_extra_large">كبير جدًا</string>
-    <string name="import_words">استيراد الحالي إلى قاعدة البيانات</string>
+    <string name="import_words">استيراد المحتوى الحالي إلى قاعدة البيانات</string>
     <string name="use_db">استخدام قاعدة البيانات</string>
     <string name="action_edit">تحرير</string>
     <string name="action_delete">حذف</string>
@@ -117,7 +117,7 @@
     <string name="learn">تعلم</string>
     <string name="practice">تدرب</string>
     <string name="answer">الإجابة</string>
-    <string name="match_word_article">مطابقة أداة تعريف الكلمة</string>
+    <string name="match_word_article">مطابقة أداة التعريف مع الكلمة</string>
     <string name="order_words_in_sentence">ترتيب الكلمات في الجملة</string>
     <string name="all_translations">تشغيل كل الترجمات</string>
     <string name="example_language_recognition">مثال de-DE</string>

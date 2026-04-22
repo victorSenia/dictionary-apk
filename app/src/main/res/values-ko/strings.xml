@@ -7,14 +7,14 @@
     <string name="pause">일시정지</string>
     <string name="action_play_from">여기부터 재생</string>
     <string name="title_activity_topics">주제</string>
-    <string name="parse_words">파일에서 단어 분석</string>
+    <string name="parse_words">입력 원본에서 단어 분석</string>
     <string name="file">파일</string>
     <string name="pitch">음높이</string>
     <string name="speed">속도</string>
     <string name="words">단어</string>
     <string name="letter_delay">글자 지연</string>
     <string name="speech">음성</string>
-    <string name="match_words">단어 매칭</string>
+    <string name="match_words">단어 맞추기</string>
     <string name="show_word">단어 표시</string>
     <string name="show_variants">변형 표시</string>
     <string name="variants_limit">변형 제한</string>
@@ -48,7 +48,7 @@
     <string name="not_database_error">데이터베이스에서만 사용할 수 있습니다</string>
     <string name="delete_word_confirmation">삭제 확인</string>
     <string name="delete_word_confirmation_message">"%1$s" 단어를 정말 삭제하시겠습니까?</string>
-    <string name="voice_usage">%1$s 에 %2$s 사용됨</string>
+    <string name="voice_usage">%1$s이(가) %2$s에 사용됨</string>
     <string name="default_voice_usage">%s에 기본 음성 사용됨</string>
     <string name="import_started">가져오기를 시작했습니다. 몇 초가 걸립니다.</string>
     <string name="import_finished">가져오기에 %d ms 소요됨</string>
@@ -66,7 +66,7 @@
     <string name="default_voice">기본 음성</string>
     <string name="find_words">단어 필터</string>
     <string name="find_words_count">단어 필터 (%d)</string>
-    <string name="appearance">모양</string>
+    <string name="appearance">화면 모양</string>
     <string name="theme_mode">테마</string>
     <string name="theme_mode_system">시스템 기본값</string>
     <string name="theme_mode_light">라이트</string>
@@ -117,7 +117,7 @@
     <string name="learn">학습</string>
     <string name="practice">연습</string>
     <string name="answer">정답</string>
-    <string name="match_word_article">단어 관사 맞추기</string>
+    <string name="match_word_article">단어와 관사 맞추기</string>
     <string name="order_words_in_sentence">문장 내 단어 순서 맞추기</string>
     <string name="all_translations">모든 번역 재생</string>
     <string name="example_language_recognition">예시 de-DE</string>

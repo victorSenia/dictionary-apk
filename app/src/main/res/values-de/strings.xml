@@ -7,7 +7,7 @@
     <string name="pause">Anhalten</string>
     <string name="action_play_from">Abspielen ab</string>
     <string name="title_activity_topics">Themen</string>
-    <string name="parse_words">Wörter aus Datei analysieren</string>
+    <string name="parse_words">Wörter aus Quelle analysieren</string>
     <string name="file">Datei</string>
     <string name="pitch">Tonhöhe</string>
     <string name="speed">Geschwindigkeit</string>
@@ -32,8 +32,8 @@
     <string name="delay_before">Verzögerung vorher</string>
     <string name="general">Allgemein</string>
     <string name="topic_delimiter">Thementrenner</string>
-    <string name="language_from">Sprache von</string>
-    <string name="languages_to">Sprachen zu</string>
+    <string name="language_from">Ausgangssprache</string>
+    <string name="languages_to">Zielsprachen</string>
     <string name="languages_to_speak">Sprachen zum Sprechen</string>
     <string name="languages_to_delete">Sprachen zum Löschen</string>
     <string name="no_languages">Keine Sprache in DB vorhanden</string>
@@ -56,7 +56,7 @@
     <string name="additional_information_delimiter">Trennzeichen für zusätzliche Informationen</string>
     <string name="delimiter">Trennzeichen</string>
     <string name="translation_delimiter">Übersetzungstrennzeichen</string>
-    <string name="topic_flag">Themenkennzeichen</string>
+    <string name="topic_flag">Themenmarkierung</string>
     <string name="all_topics">Alle Themen</string>
     <string name="asset">Ressource</string>
     <string name="title_activity_assets">Ressourcen</string>

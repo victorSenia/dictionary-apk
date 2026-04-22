@@ -7,7 +7,7 @@
     <string name="pause">หยุดชั่วคราว</string>
     <string name="action_play_from">เล่นจาก</string>
     <string name="title_activity_topics">หัวข้อ</string>
-    <string name="parse_words">แยกคำจากไฟล์</string>
+    <string name="parse_words">แยกคำจากแหล่งข้อมูล</string>
     <string name="file">ไฟล์</string>
     <string name="pitch">ระดับเสียง</string>
     <string name="speed">ความเร็ว</string>

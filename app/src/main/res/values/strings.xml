@@ -10,7 +10,7 @@
     <string name="title_activity_topics">Topics</string>
     <string name="title_activity_parse_words_settings" translatable="false">ParseWordsSettingsActivity</string>
     <string name="title_activity_voice_selector" translatable="false">VoiceSelectorActivity</string>
-    <string name="parse_words">Parse words from file</string>
+    <string name="parse_words">Parse words from source</string>
     <string name="file">File</string>
     <string name="pitch">Pitch</string>
     <string name="speed">Speed</string>

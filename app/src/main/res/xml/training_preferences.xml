@@ -37,6 +37,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:useSimpleSummaryProvider="true"/>
+        <SwitchPreference
+                app:key="org.leo.dictionary.apk.config.entity.GrammarCheck.showVariants"
+                android:defaultValue="true"
+                android:title="@string/show_variants"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
         <EditTextPreference
                 app:key="org.leo.dictionary.apk.config.entity.GrammarCheck.variantsLimit"
                 android:defaultValue="5"
@@ -46,13 +52,8 @@
                 android:title="@string/variants_limit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:dependency="org.leo.dictionary.apk.config.entity.GrammarCheck.showVariants"
                 app:useSimpleSummaryProvider="true"/>
-        <SwitchPreference
-                app:key="org.leo.dictionary.apk.config.entity.GrammarCheck.showVariants"
-                android:defaultValue="true"
-                android:title="@string/show_variants"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
     </PreferenceCategory>
 
     <PreferenceCategory

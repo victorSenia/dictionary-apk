@@ -7,7 +7,7 @@
     <string name="pause">Pausar</string>
     <string name="action_play_from">Reproduzir a partir de</string>
     <string name="title_activity_topics">Tópicos</string>
-    <string name="parse_words">Analisar palavras do arquivo</string>
+    <string name="parse_words">Analisar palavras da origem</string>
     <string name="file">Arquivo</string>
     <string name="pitch">Tom</string>
     <string name="speed">Velocidade</string>
@@ -117,7 +117,7 @@
     <string name="learn">Aprender</string>
     <string name="practice">Praticar</string>
     <string name="answer">resposta</string>
-    <string name="match_word_article">Associar artigo da palavra</string>
+    <string name="match_word_article">Associar o artigo à palavra</string>
     <string name="order_words_in_sentence">Ordenar palavras na frase</string>
     <string name="all_translations">Reproduzir todas as traduções</string>
     <string name="example_language_recognition">Exemplo de-DE</string>

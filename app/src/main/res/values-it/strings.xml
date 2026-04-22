@@ -7,8 +7,8 @@
     <string name="pause">Pausa</string>
     <string name="action_play_from">Riproduci da</string>
     <string name="title_activity_topics">Argomenti</string>
-    <string name="parse_words">Analizza parole da file</string>
-    <string name="file">Archivio</string>
+    <string name="parse_words">Analizza parole dalla fonte</string>
+    <string name="file">File</string>
     <string name="pitch">Tono</string>
     <string name="speed">Velocità</string>
     <string name="words">Parole</string>
@@ -78,7 +78,7 @@
     <string name="details_text_size_large">Grande</string>
     <string name="details_text_size_landscape_balanced">Bilanciato</string>
     <string name="details_text_size_landscape_extra_large">Molto grande</string>
-    <string name="import_words">Importa l’attuale nel database</string>
+    <string name="import_words">Importa il contenuto corrente nel database</string>
     <string name="use_db">Usa database</string>
     <string name="action_edit">Modifica</string>
     <string name="action_delete">Elimina</string>
@@ -117,7 +117,7 @@
     <string name="learn">Impara</string>
     <string name="practice">Esercitati</string>
     <string name="answer">risposta</string>
-    <string name="match_word_article">Abbina articolo della parola</string>
+    <string name="match_word_article">Abbina l'articolo alla parola</string>
     <string name="order_words_in_sentence">Ordina le parole nella frase</string>
     <string name="all_translations">Riproduci tutte le traduzioni</string>
     <string name="example_language_recognition">Esempio de-DE</string>

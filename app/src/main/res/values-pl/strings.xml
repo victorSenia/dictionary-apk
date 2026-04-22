@@ -7,7 +7,7 @@
     <string name="pause">Pauza</string>
     <string name="action_play_from">Odtwórz od</string>
     <string name="title_activity_topics">Tematy</string>
-    <string name="parse_words">Parsuj słowa z pliku</string>
+    <string name="parse_words">Parsuj słowa ze źródła</string>
     <string name="file">Plik</string>
     <string name="pitch">Ton</string>
     <string name="speed">Szybkość</string>
